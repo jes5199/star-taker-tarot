@@ -84,6 +84,9 @@
   % c a r d i n a l
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-31mm) {c\enspace a\enspace r\enspace d\enspace i\enspace n\enspace a\enspace l};
+  % Spirit
+  \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight-34mm) {Spirit};
   % נשמה above neshama
   \node[anchor=base, text=black, font=\hebrewfont\fontsize{14}{16}\selectfont]
     at (0.5\cardwidth-21mm, 0.52\cardheight-39mm) {נשמה};
@@ -106,6 +109,16 @@
     at (0.5\cardwidth, 0.52\cardheight-52mm) {\&};
   \node[anchor=base west, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
     at (0.5\cardwidth+1mm, 0.52\cardheight-52mm) {water};
+  % Lot of Spirit — circle pierced by vertical line (phi-like), bottom left
+  \begin{scope}[shift={(7mm,4mm)}]
+    \draw[thick] (0,0) circle (2.5mm);
+    \draw[thick] (0,-3.5mm) -- (0,3.5mm);
+    % "Lot of Spirit" curved above
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{5}{6}\selectfont|Lot of Spirit},
+      text align=center, raise=0pt}}]
+      (190:3.5mm) arc (190:-10:3.5mm);
+  \end{scope}%
 }
 
 % Alchemical Salt: circle with horizontal line through middle
