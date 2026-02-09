@@ -4,6 +4,12 @@
 \usepackage{graphicx}
 \usepackage{fontspec}
 
+% Preview card dimensions (scaled to fit 3 per row on A4)
+\newlength{\cardwidth}
+\newlength{\cardheight}
+\setlength{\cardwidth}{60mm}
+\setlength{\cardheight}{102.86mm}  % 60 * 120/70 to keep tarot proportions
+
 % Max width for card name (card width minus room for corner elements)
 \newlength{\namewidth}
 \setlength{\namewidth}{\cardwidth}
@@ -19,12 +25,6 @@
     #2%
   \fi
 }
-
-% Preview card dimensions (scaled to fit 3 per row on A4)
-\newlength{\cardwidth}
-\newlength{\cardheight}
-\setlength{\cardwidth}{60mm}
-\setlength{\cardheight}{102.86mm}  % 60 * 120/70 to keep tarot proportions
 
 % Copperplate-like small caps font
 \newfontface\cardfont{EB Garamond SC}[LetterSpace=8]
