@@ -22,9 +22,9 @@
     % Card border
     \draw[rounded corners=2.5mm, thick] (0,0) rectangle (\cardwidth,\cardheight);
     \clip[rounded corners=2.5mm] (0,0) rectangle (\cardwidth,\cardheight);
-    % Background image - fill the card
-    \node[anchor=south west, inner sep=0pt] at (0,0) {%
-      \includegraphics[width=\cardwidth, height=\cardheight]{#1}%
+    % Background image - shifted down to crop off Smith's lettering at bottom
+    \node[anchor=south west, inner sep=0pt] at (0,-10mm) {%
+      \includegraphics[width=\cardwidth]{#1}%
     };
     % Wash out the image
     \fill[white, opacity=0.88] (0,0) rectangle (\cardwidth,\cardheight);
@@ -37,7 +37,7 @@
       inner sep=2.5mm]
       at (\cardwidth,\cardheight) {#4};
     % Card name — centered at top
-    \node[anchor=north, text=black, font=\cardfont\fontsize{8}{10}\selectfont]
+    \node[anchor=north, text=black, font=\cardfont\fontsize{12}{14}\selectfont]
       at (0.5\cardwidth, \cardheight-2mm)
       {#3};
   \end{tikzpicture}%
