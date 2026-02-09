@@ -115,6 +115,26 @@
       text align=center, raise=0pt}}]
       (190:3.5mm) arc (190:-10:3.5mm);
   \end{scope}%
+  % Blank mahjong tile — bottom right
+  \begin{scope}[shift={(\cardwidth-7mm,5mm)}]
+    \draw[thick, rounded corners=0.3mm] (-2mm,-2.5mm) rectangle (2mm,2.5mm);
+    \draw[thin, rounded corners=0.2mm] (-1.4mm,-1.8mm) rectangle (1.4mm,1.8mm);
+    % Corner diagonals inside inner frame
+    \draw[thin] (-1.4mm,1.4mm) -- (-0.8mm,1.8mm);
+    \draw[thin] (1.4mm,1.4mm) -- (0.8mm,1.8mm);
+    \draw[thin] (-1.4mm,-1.4mm) -- (-0.8mm,-1.8mm);
+    \draw[thin] (1.4mm,-1.4mm) -- (0.8mm,-1.8mm);
+    % "bái bǎu" curved above
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{5}{6}\selectfont|bái bǎu},
+      text align=center, raise=0pt}}]
+      (170:3.5mm) arc (170:10:3.5mm);
+    % "clean slate" curved below
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{5}{6}\selectfont|clean slate},
+      text align=center, raise=1pt, reverse path}}]
+      (-10:4.5mm) arc (-10:-170:4.5mm);
+  \end{scope}%
   % water & earth
   \node[anchor=base east, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
     at (0.5\cardwidth-1mm, 0.52\cardheight-52mm) {water};
