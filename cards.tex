@@ -44,6 +44,17 @@
 \newfontface\indexfont{URW Bookman}
 
 
+% Alchemical Sulfur: upward triangle above a cross
+\newcommand{\alcsulfur}{%
+  \begin{scope}[shift={(0.5\cardwidth,0.52\cardheight)}, magenta, line width=3.5mm]
+    % Cross — vertical bar from bottom up to where triangle begins
+    \draw (0,-24mm) -- (0,3mm);
+    \draw (-12mm,-12mm) -- (12mm,-12mm); % horizontal bar
+    % Upward-pointing triangle
+    \draw (-14mm,3mm) -- (0,28mm) -- (14mm,3mm) -- cycle;
+  \end{scope}%
+}
+
 % Alchemical Salt: circle with horizontal line through middle
 \newcommand{\alcsalt}{%
   \begin{scope}[shift={(0.5\cardwidth,0.52\cardheight)}, cyan, line width=3.5mm]
@@ -323,7 +334,7 @@
 \noindent
 \tarotcard{images/a-18}{\Romanbar{XVIII}}{The Moon}{ק}\hfill
 \tarotcard{images/a-19}{\Romanbar{XIX}}{The Sun}{ר}\hfill
-\tarotcard{images/a-20}{\Romanbar{XX}}{Judgement}{ש}
+\tarotcard[\alcsulfur]{images/a-20}{\Romanbar{XX}}{Judgement}{ש}
 
 \vspace{4mm}
 \noindent
