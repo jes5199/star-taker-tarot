@@ -1,0 +1,88 @@
+\documentclass[a4paper]{article}
+\usepackage[margin=10mm]{geometry}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{fontspec}
+
+% Preview card dimensions (scaled to fit 3 per row on A4)
+\newlength{\cardwidth}
+\newlength{\cardheight}
+\setlength{\cardwidth}{60mm}
+\setlength{\cardheight}{102.86mm}  % 60 * 120/70 to keep tarot proportions
+
+% Copperplate-like small caps font
+\newfontface\cardfont{EB Garamond SC}[LetterSpace=8]
+
+% Hebrew font
+\newfontface\hebrewfont{DejaVu Sans}
+
+% Card command: \tarotcard{image file}{roman numeral}{card name}{hebrew letter}
+\newcommand{\tarotcard}[4]{%
+  \begin{tikzpicture}
+    % Card border
+    \draw[rounded corners=2.5mm, thick] (0,0) rectangle (\cardwidth,\cardheight);
+    \clip[rounded corners=2.5mm] (0,0) rectangle (\cardwidth,\cardheight);
+    % Background image - fill the card
+    \node[anchor=south west, inner sep=0pt] at (0,0) {%
+      \includegraphics[width=\cardwidth, height=\cardheight]{#1}%
+    };
+    % Top banner - semi-transparent
+    \fill[black, opacity=0.65] (0,\cardheight) rectangle (\cardwidth,\cardheight-6mm);
+    % Title text: ROMAN — NAME — HEBREW
+    \node[anchor=center, text=white, font=\cardfont\fontsize{6}{7}\selectfont]
+      at (0.5\cardwidth, \cardheight-3mm)
+      {#2\enspace—\enspace#3\enspace—\enspace{\hebrewfont #4}};
+  \end{tikzpicture}%
+}
+
+\begin{document}
+\pagestyle{empty}
+\centering
+
+% Row helper: 4 cards per row
+\noindent
+\tarotcard{images/a-00}{0}{The Fool}{א}\hfill
+\tarotcard{images/a-01}{I}{The Magician}{ב}\hfill
+\tarotcard{images/a-02}{II}{The High Priestess}{ג}
+
+\vspace{4mm}
+\noindent
+\tarotcard{images/a-03}{III}{The Empress}{ד}\hfill
+\tarotcard{images/a-04}{IV}{The Emperor}{ה}\hfill
+\tarotcard{images/a-05}{V}{The Hierophant}{ו}
+
+\vspace{4mm}
+\noindent
+\tarotcard{images/a-06}{VI}{The Lovers}{ז}\hfill
+\tarotcard{images/a-07}{VII}{The Chariot}{ח}\hfill
+\tarotcard{images/a-08}{VIII}{Strength}{ט}
+
+\vspace{4mm}
+\noindent
+\tarotcard{images/a-09}{IX}{The Hermit}{י}\hfill
+\tarotcard{images/a-10}{X}{Wheel of Fortune}{כ}\hfill
+\tarotcard{images/a-11}{XI}{Justice}{ל}
+
+\newpage
+\noindent
+\tarotcard{images/a-12}{XII}{The Hanged Man}{מ}\hfill
+\tarotcard{images/a-13}{XIII}{Death}{נ}\hfill
+\tarotcard{images/a-14}{XIV}{Temperance}{ס}
+
+\vspace{4mm}
+\noindent
+\tarotcard{images/a-15}{XV}{The Devil}{ע}\hfill
+\tarotcard{images/a-16}{XVI}{The Tower}{פ}\hfill
+\tarotcard{images/a-17}{XVII}{The Star}{צ}
+
+\vspace{4mm}
+\noindent
+\tarotcard{images/a-18}{XVIII}{The Moon}{ק}\hfill
+\tarotcard{images/a-19}{XIX}{The Sun}{ר}\hfill
+\tarotcard{images/a-20}{XX}{Judgement}{ש}
+
+\vspace{4mm}
+\noindent
+\tarotcard{images/a-21}{XXI}{The World}{ת}
+
+\end{document}
