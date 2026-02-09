@@ -33,6 +33,9 @@
 % Hebrew font
 \newfontface\hebrewfont{DejaVu Sans}
 
+% Playing card index font (bold serif like Bicycle cards)
+\newfontface\indexfont{URW Bookman}
+
 
 % Alchemical Mercury variant: U (crescent) directly above a cross, no circle
 \newcommand{\alcmercury}{%
@@ -43,6 +46,16 @@
     % U (open arc) sitting on top of the cross
     \draw (-14mm,28mm) -- (-14mm,14mm) arc (180:360:14mm) -- (14mm,28mm);
   \end{scope}%
+  % Vertical JOKER below the numeral, left side
+  \foreach \letter/\i in {J/0,O/1,K/2,E/3,R/4} {
+    \node[anchor=center, text=black, font=\indexfont\bfseries\fontsize{12}{14}\selectfont]
+      at (2.5mm, \cardheight-11mm-\i*5mm) {\letter};
+  }
+  % Rotated JOKER above the Hebrew letter, right side (upside down)
+  \foreach \letter/\i in {J/0,O/1,K/2,E/3,R/4} {
+    \node[anchor=center, rotate=180, text=black, font=\indexfont\bfseries\fontsize{12}{14}\selectfont]
+      at (\cardwidth-2.5mm, 11mm+\i*5mm) {\letter};
+  }
 }
 
 % Card command: \tarotcard[overlay]{image file}{roman numeral}{card name}{hebrew letter}
