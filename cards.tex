@@ -28,10 +28,18 @@
     };
     % Wash out the image
     \fill[white, opacity=0.88] (0,0) rectangle (\cardwidth,\cardheight);
-    % Title text: ROMAN — NAME — HEBREW
-    \node[anchor=center, text=black, font=\cardfont\fontsize{12}{14}\selectfont]
-      at (0.5\cardwidth, \cardheight-6mm)
-      {#2\enspace—\enspace#3\enspace—\enspace{\hebrewfont #4}};
+    % Roman numeral — top left
+    \node[anchor=north west, text=black, font=\cardfont\fontsize{18}{20}\selectfont,
+      inner sep=2.5mm]
+      at (0,\cardheight) {#2};
+    % Hebrew letter — top right
+    \node[anchor=north east, text=black, font=\hebrewfont\fontsize{18}{20}\selectfont,
+      inner sep=2.5mm]
+      at (\cardwidth,\cardheight) {#4};
+    % Card name — centered at top
+    \node[anchor=north, text=black, font=\cardfont\fontsize{8}{10}\selectfont]
+      at (0.5\cardwidth, \cardheight-2mm)
+      {#3};
   \end{tikzpicture}%
 }
 
