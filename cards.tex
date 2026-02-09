@@ -43,6 +43,9 @@
 % Playing card index font (bold serif like Bicycle cards)
 \newfontface\indexfont{URW Bookman}
 
+% Symbol font for planet/zodiac glyphs
+\newfontface\symbfont{DejaVu Sans}
+
 
 % Alchemical Sulfur: upward triangle above a cross
 \newcommand{\alcsulfur}{%
@@ -342,6 +345,16 @@
   }
 }
 
+% Traditional Mercury symbol (Unicode glyph, orange)
+\newcommand{\alcmercurytrad}{%
+  \node[anchor=center, text=orange, font=\symbfont\fontsize{160}{170}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight) {☿};
+  % Mercury
+  \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight-24mm) {Mercury};
+  \jokertext{red}
+}
+
 % Card command: \tarotcard[overlay]{image file}{roman numeral}{card name}{hebrew letter}
 \newcommand{\tarotcard}[5][]{%
   \begin{tikzpicture}
@@ -378,7 +391,7 @@
 % Row helper: 4 cards per row
 \noindent
 \tarotcard[\alcmercury]{images/a-00}{\O}{The Fool}{א}\hfill
-\tarotcard[\jokertext{red}]{images/a-01}{\Romanbar{I}}{The Magician}{ב}\hfill
+\tarotcard[\alcmercurytrad]{images/a-01}{\Romanbar{I}}{The Magician}{ב}\hfill
 \tarotcard{images/a-02}{\Romanbar{II}}{The High Priestess}{ג}
 
 \vspace{4mm}
