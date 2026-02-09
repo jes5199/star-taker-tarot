@@ -46,6 +46,31 @@
 
 % Alchemical Sulfur: upward triangle above a cross
 \newcommand{\alcsulfur}{%
+  % Li trigram (Fire) — left side: solid (red top), broken, solid
+  \begin{scope}[shift={(0.5\cardwidth-23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
+    % Top line — solid, red
+    \draw[red] (-4mm,5mm) -- (4mm,5mm);
+    % Middle line — broken
+    \draw (-4mm,0mm) -- (-1mm,0mm);
+    \draw (1mm,0mm) -- (4mm,0mm);
+    % Bottom line — solid
+    \draw (-4mm,-5mm) -- (4mm,-5mm);
+    % Labels
+    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Li};
+    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Fire};
+  \end{scope}%
+  % Qian trigram (Heaven) — right side: all solid (yellow top)
+  \begin{scope}[shift={(0.5\cardwidth+23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
+    % Top line — solid, yellow
+    \draw[yellow!70!orange] (-4mm,5mm) -- (4mm,5mm);
+    % Middle line — solid
+    \draw (-4mm,0mm) -- (4mm,0mm);
+    % Bottom line — solid
+    \draw (-4mm,-5mm) -- (4mm,-5mm);
+    % Labels
+    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Qian};
+    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Heaven};
+  \end{scope}%
   \begin{scope}[shift={(0.5\cardwidth,0.52\cardheight)}, magenta, line width=3.5mm]
     % Cross — vertical bar from bottom up to where triangle begins
     \draw (0,-24mm) -- (0,3mm);
