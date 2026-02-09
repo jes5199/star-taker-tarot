@@ -350,6 +350,22 @@
 \newcommand{\alcmercurytrad}{%
   \node[anchor=center, text=orange, font=\symbserif\fontsize{160}{170}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight) {☿};
+  % Kǎn trigram (Water) — left side: broken, solid, broken
+  \begin{scope}[shift={(0.5\cardwidth-23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
+    \draw (-4mm,5mm) -- (-1mm,5mm); \draw (1mm,5mm) -- (4mm,5mm);
+    \draw (-4mm,0mm) -- (4mm,0mm);
+    \draw (-4mm,-5mm) -- (-1mm,-5mm); \draw (1mm,-5mm) -- (4mm,-5mm);
+    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Kǎn};
+    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Water};
+  \end{scope}%
+  % Kǎn trigram (Water) — right side
+  \begin{scope}[shift={(0.5\cardwidth+23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
+    \draw (-4mm,5mm) -- (-1mm,5mm); \draw (1mm,5mm) -- (4mm,5mm);
+    \draw (-4mm,0mm) -- (4mm,0mm);
+    \draw (-4mm,-5mm) -- (-1mm,-5mm); \draw (1mm,-5mm) -- (4mm,-5mm);
+    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Kǎn};
+    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Water};
+  \end{scope}%
   % Mercury
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Mercury};
@@ -392,6 +408,22 @@
 \newcommand{\plvenus}{%
   \node[anchor=center, text=green!50!black, font=\symbserif\fontsize{160}{170}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight) {♀};
+  % Qián trigram (Heaven) — left side: all solid
+  \begin{scope}[shift={(0.5\cardwidth-23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
+    \draw (-4mm,5mm) -- (4mm,5mm);
+    \draw (-4mm,0mm) -- (4mm,0mm);
+    \draw (-4mm,-5mm) -- (4mm,-5mm);
+    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Qián};
+    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Heaven};
+  \end{scope}%
+  % Duì trigram (Lake) — right side: broken top, solid, solid
+  \begin{scope}[shift={(0.5\cardwidth+23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
+    \draw (-4mm,5mm) -- (-1mm,5mm); \draw (1mm,5mm) -- (4mm,5mm);
+    \draw (-4mm,0mm) -- (4mm,0mm);
+    \draw (-4mm,-5mm) -- (4mm,-5mm);
+    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Duì};
+    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Lake};
+  \end{scope}%
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Venus};
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
@@ -461,6 +493,22 @@
 \newcommand{\plmars}{%
   \node[anchor=center, text=red, font=\symbserif\fontsize{160}{170}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight) {♂};
+  % Lí trigram (Fire) — left side: solid, broken, solid
+  \begin{scope}[shift={(0.5\cardwidth-23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
+    \draw (-4mm,5mm) -- (4mm,5mm);
+    \draw (-4mm,0mm) -- (-1mm,0mm); \draw (1mm,0mm) -- (4mm,0mm);
+    \draw (-4mm,-5mm) -- (4mm,-5mm);
+    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Lí};
+    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Fire};
+  \end{scope}%
+  % Lí trigram (Fire) — right side
+  \begin{scope}[shift={(0.5\cardwidth+23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
+    \draw (-4mm,5mm) -- (4mm,5mm);
+    \draw (-4mm,0mm) -- (-1mm,0mm); \draw (1mm,0mm) -- (4mm,0mm);
+    \draw (-4mm,-5mm) -- (4mm,-5mm);
+    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Lí};
+    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Fire};
+  \end{scope}%
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Mars};
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
@@ -501,6 +549,22 @@
 \newcommand{\pljupiter}{%
   \node[anchor=center, text=blue, font=\symbserif\fontsize{160}{170}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight) {♃};
+  % Zhèn trigram (Thunder) — left side: broken, broken, solid
+  \begin{scope}[shift={(0.5\cardwidth-23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
+    \draw (-4mm,5mm) -- (-1mm,5mm); \draw (1mm,5mm) -- (4mm,5mm);
+    \draw (-4mm,0mm) -- (-1mm,0mm); \draw (1mm,0mm) -- (4mm,0mm);
+    \draw (-4mm,-5mm) -- (4mm,-5mm);
+    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Zhèn};
+    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Thunder};
+  \end{scope}%
+  % Xùn trigram (Wind) — right side: solid, solid, broken
+  \begin{scope}[shift={(0.5\cardwidth+23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
+    \draw (-4mm,5mm) -- (4mm,5mm);
+    \draw (-4mm,0mm) -- (4mm,0mm);
+    \draw (-4mm,-5mm) -- (-1mm,-5mm); \draw (1mm,-5mm) -- (4mm,-5mm);
+    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Xùn};
+    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Wind};
+  \end{scope}%
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Jupiter};
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
@@ -541,6 +605,22 @@
 \newcommand{\plsaturn}{%
   \node[anchor=center, text=black, font=\symbserif\fontsize{160}{170}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight) {♄};
+  % Kūn trigram (Earth) — left side: all broken
+  \begin{scope}[shift={(0.5\cardwidth-23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
+    \draw (-4mm,5mm) -- (-1mm,5mm); \draw (1mm,5mm) -- (4mm,5mm);
+    \draw (-4mm,0mm) -- (-1mm,0mm); \draw (1mm,0mm) -- (4mm,0mm);
+    \draw (-4mm,-5mm) -- (-1mm,-5mm); \draw (1mm,-5mm) -- (4mm,-5mm);
+    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Kūn};
+    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Earth};
+  \end{scope}%
+  % Gèn trigram (Mountain) — right side: solid top, broken, broken
+  \begin{scope}[shift={(0.5\cardwidth+23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
+    \draw (-4mm,5mm) -- (4mm,5mm);
+    \draw (-4mm,0mm) -- (-1mm,0mm); \draw (1mm,0mm) -- (4mm,0mm);
+    \draw (-4mm,-5mm) -- (-1mm,-5mm); \draw (1mm,-5mm) -- (4mm,-5mm);
+    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Gèn};
+    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Mountain};
+  \end{scope}%
   % Sect and Exaltation — under title
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
     at (0.5\cardwidth, \cardheight-6mm) {Malefic of Day};
