@@ -43,8 +43,9 @@
 % Playing card index font (bold serif like Bicycle cards)
 \newfontface\indexfont{URW Bookman}
 
-% Symbol font for planet/zodiac glyphs
+% Symbol fonts for planet/zodiac glyphs
 \newfontface\symbfont{DejaVu Sans}
+\newfontface\symbserif{FreeSerif}
 
 
 % Alchemical Sulfur: upward triangle above a cross
@@ -347,12 +348,74 @@
 
 % Traditional Mercury symbol (Unicode glyph, orange)
 \newcommand{\alcmercurytrad}{%
-  \node[anchor=center, text=orange, font=\symbfont\fontsize{160}{170}\selectfont]
+  \node[anchor=center, text=orange, font=\symbserif\fontsize{160}{170}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight) {☿};
   % Mercury
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Mercury};
+  \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
+    at (7mm, 5mm) {Ε};
   \jokertext{red}
+}
+
+% Venus (Empress) — green
+\newcommand{\plvenus}{%
+  \node[anchor=center, text=green!50!black, font=\symbserif\fontsize{160}{170}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight) {♀};
+  \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight-24mm) {Venus};
+  \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
+    at (7mm, 5mm) {Η};
+}
+
+% Sun — yellow
+\newcommand{\plsun}{%
+  \node[anchor=center, text=yellow!80!orange, font=\symbfont\fontsize{160}{170}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight) {☉};
+  \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight-24mm) {Sun};
+  \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
+    at (7mm, 5mm) {Ι};
+}
+
+% Mars (Tower) — red
+\newcommand{\plmars}{%
+  \node[anchor=center, text=red, font=\symbserif\fontsize{160}{170}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight) {♂};
+  \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight-24mm) {Mars};
+  \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
+    at (7mm, 5mm) {Ο};
+}
+
+% Jupiter (Wheel of Fortune) — blue
+\newcommand{\pljupiter}{%
+  \node[anchor=center, text=blue, font=\symbserif\fontsize{160}{170}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight) {♃};
+  \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight-24mm) {Jupiter};
+  \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
+    at (7mm, 5mm) {Υ};
+}
+
+% Saturn (World) — black
+\newcommand{\plsaturn}{%
+  \node[anchor=center, text=black, font=\symbserif\fontsize{160}{170}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight) {♄};
+  \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight-24mm) {Saturn};
+  \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
+    at (7mm, 5mm) {Ω};
+}
+
+% Moon — purple
+\newcommand{\plmoon}{%
+  \node[anchor=center, text=purple, font=\symbfont\fontsize{160}{170}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight) {☽};
+  \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight-24mm) {Moon};
+  \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
+    at (7mm, 5mm) {Α};
 }
 
 % Card command: \tarotcard[overlay]{image file}{roman numeral}{card name}{hebrew letter}
@@ -392,11 +455,11 @@
 \noindent
 \tarotcard[\alcmercury]{images/a-00}{\O}{The Fool}{א}\hfill
 \tarotcard[\alcmercurytrad]{images/a-01}{\Romanbar{I}}{The Magician}{ב}\hfill
-\tarotcard{images/a-02}{\Romanbar{II}}{The High Priestess}{ג}
+\tarotcard[\plmoon]{images/a-02}{\Romanbar{II}}{The High Priestess}{ג}
 
 \vspace{4mm}
 \noindent
-\tarotcard{images/a-03}{\Romanbar{III}}{The Empress}{ד}\hfill
+\tarotcard[\plvenus]{images/a-03}{\Romanbar{III}}{The Empress}{ד}\hfill
 \tarotcard{images/a-04}{\Romanbar{IV}}{The Emperor}{ה}\hfill
 \tarotcard{images/a-05}{\Romanbar{V}}{The Hierophant}{ו}
 
@@ -409,7 +472,7 @@
 \vspace{4mm}
 \noindent
 \tarotcard{images/a-09}{\Romanbar{IX}}{The Hermit}{י}\hfill
-\tarotcard{images/a-10}{\Romanbar{X}}{Wheel of Fortune}{כ}\hfill
+\tarotcard[\pljupiter]{images/a-10}{\Romanbar{X}}{Wheel of Fortune}{כ}\hfill
 \tarotcard{images/a-11}{\Romanbar{XI}}{Justice}{ל}
 
 \newpage
@@ -421,17 +484,17 @@
 \vspace{4mm}
 \noindent
 \tarotcard{images/a-15}{\Romanbar{XV}}{The Devil}{ע}\hfill
-\tarotcard{images/a-16}{\Romanbar{XVI}}{The Tower}{פ}\hfill
+\tarotcard[\plmars]{images/a-16}{\Romanbar{XVI}}{The Tower}{פ}\hfill
 \tarotcard{images/a-17}{\Romanbar{XVII}}{The Star}{צ}
 
 \vspace{4mm}
 \noindent
 \tarotcard{images/a-18}{\Romanbar{XVIII}}{The Moon}{ק}\hfill
-\tarotcard{images/a-19}{\Romanbar{XIX}}{The Sun}{ר}\hfill
+\tarotcard[\plsun]{images/a-19}{\Romanbar{XIX}}{The Sun}{ר}\hfill
 \tarotcard[\alcsulfur]{images/a-20}{\Romanbar{XX}}{Judgement}{ש}
 
 \vspace{4mm}
 \noindent
-\tarotcard{images/a-21}{\Romanbar{XXI}}{The World}{ת}
+\tarotcard[\plsaturn]{images/a-21}{\Romanbar{XXI}}{The World}{ת}
 
 \end{document}
