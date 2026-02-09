@@ -56,6 +56,9 @@
     % Bottom line — broken
     \draw (-4mm,-5mm) -- (-1mm,-5mm);
     \draw (1mm,-5mm) -- (4mm,-5mm);
+    % Labels
+    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Kan};
+    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Water};
   \end{scope}%
   % Li trigram (Fire) — right side: solid, broken (red), solid
   \begin{scope}[shift={(0.5\cardwidth+23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
@@ -66,6 +69,9 @@
     \draw[red] (1mm,0mm) -- (4mm,0mm);
     % Bottom line — solid
     \draw (-4mm,-5mm) -- (4mm,-5mm);
+    % Labels
+    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Li};
+    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Fire};
   \end{scope}%
   \jokertext{black}
 }
