@@ -1,6 +1,7 @@
 \documentclass[a4paper]{article}
 \usepackage[margin=10mm]{geometry}
 \usepackage{tikz}
+\usetikzlibrary{decorations.text}
 \usepackage{graphicx}
 \usepackage{fontspec}
 \usepackage{romanbar}
@@ -99,6 +100,26 @@
     % Labels
     \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Li};
     \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Fire};
+  \end{scope}%
+  % Lot of Eros — heart in circle with curved text, bottom left
+  \begin{scope}[shift={(7mm,4mm)}]
+    \draw[thick] (0,0) circle (2.5mm);
+    % Heart
+    \draw[thick] (0,0.7mm)
+      .. controls (-0.8mm,2.1mm) and (-2mm,1.3mm) .. (-2mm,0.5mm)
+      .. controls (-2mm,-0.3mm) and (0,-1.5mm) .. (0,-1.8mm)
+      .. controls (0,-1.5mm) and (2mm,-0.3mm) .. (2mm,0.5mm)
+      .. controls (2mm,1.3mm) and (0.8mm,2.1mm) .. (0,0.7mm);
+    % "Lot of" curved above
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{5}{6}\selectfont|Lot of},
+      text align=center, raise=0pt}}]
+      (150:3.5mm) arc (150:30:3.5mm);
+    % "Eros" curved below
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{5}{6}\selectfont|Eros},
+      text align=center, raise=1pt, reverse path}}]
+      (-30:4.5mm) arc (-30:-150:4.5mm);
   \end{scope}%
   \jokertext{black}
 }
