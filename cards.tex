@@ -104,6 +104,17 @@
     at (0.5\cardwidth+21mm, 0.52\cardheight-39mm) {精};
   \node[anchor=base, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
     at (0.5\cardwidth+21mm, 0.52\cardheight-43mm) {jīng};
+  % Lot of Fortune — circle with X inside, bottom left
+  \begin{scope}[shift={(7mm,4mm)}]
+    \draw[thick] (0,0) circle (2.5mm);
+    \draw[thick] (-1.7mm,1.7mm) -- (1.7mm,-1.7mm);
+    \draw[thick] (-1.7mm,-1.7mm) -- (1.7mm,1.7mm);
+    % "Lot of Fortune" curved above
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{5}{6}\selectfont|Lot of Fortune},
+      text align=center, raise=0pt}}]
+      (190:3.5mm) arc (190:-10:3.5mm);
+  \end{scope}%
   % water & earth
   \node[anchor=base east, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
     at (0.5\cardwidth-1mm, 0.52\cardheight-52mm) {water};
