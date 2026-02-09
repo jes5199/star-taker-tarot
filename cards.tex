@@ -34,30 +34,43 @@
 \newfontface\hebrewfont{DejaVu Sans}
 
 
-% Card command: \tarotcard{image file}{roman numeral}{card name}{hebrew letter}
-\newcommand{\tarotcard}[4]{%
+% Alchemical Mercury variant: U (crescent) directly above a cross, no circle
+\newcommand{\alcmercury}{%
+  \begin{scope}[shift={(0.5\cardwidth,0.45\cardheight)}, yellow!80!orange, line width=1.5mm]
+    % Cross — vertical bar from bottom up to where U begins
+    \draw (0,-12mm) -- (0,0mm);
+    \draw (-6mm,-6mm) -- (6mm,-6mm); % horizontal bar
+    % U (open arc) sitting on top of the cross
+    \draw (-7mm,14mm) -- (-7mm,7mm) arc (180:360:7mm) -- (7mm,14mm);
+  \end{scope}%
+}
+
+% Card command: \tarotcard[overlay]{image file}{roman numeral}{card name}{hebrew letter}
+\newcommand{\tarotcard}[5][]{%
   \begin{tikzpicture}
     % Card border
     \draw[rounded corners=2.5mm, thick] (0,0) rectangle (\cardwidth,\cardheight);
     \clip[rounded corners=2.5mm] (0,0) rectangle (\cardwidth,\cardheight);
     % Background image - shifted down to crop off Smith's lettering at bottom
     \node[anchor=south west, inner sep=0pt] at (0,-10mm) {%
-      \includegraphics[width=\cardwidth]{#1}%
+      \includegraphics[width=\cardwidth]{#2}%
     };
     % Wash out the image
     \fill[white, opacity=0.88] (0,0) rectangle (\cardwidth,\cardheight);
+    % Center overlay (if any)
+    #1
     % Roman numeral — top left, with vinculum (overline/underline)
     \node[anchor=north west, text=black, font=\cardfont\fontsize{18}{20}\selectfont,
       inner sep=2.5mm]
-      at (0,\cardheight+0.7mm) {#2};
+      at (0,\cardheight+0.7mm) {#3};
     % Hebrew letter — top right
     \node[anchor=north east, text=black, font=\hebrewfont\fontsize{18}{20}\selectfont,
       inner sep=2.5mm]
-      at (\cardwidth,\cardheight+0.3mm) {#4};
+      at (\cardwidth,\cardheight+0.3mm) {#5};
     % Card name — centered at top, horizontally squeezed if too wide
     \node[anchor=north, text=black, inner sep=0pt]
       at (0.5\cardwidth, \cardheight-2mm)
-      {\fittext{\namewidth}{\cardfont\fontsize{16}{18}\selectfont #3}};
+      {\fittext{\namewidth}{\cardfont\fontsize{16}{18}\selectfont #4}};
   \end{tikzpicture}%
 }
 
@@ -67,7 +80,7 @@
 
 % Row helper: 4 cards per row
 \noindent
-\tarotcard{images/a-00}{\O}{The Fool}{א}\hfill
+\tarotcard[\alcmercury]{images/a-00}{\O}{The Fool}{א}\hfill
 \tarotcard{images/a-01}{\Romanbar{I}}{The Magician}{ב}\hfill
 \tarotcard{images/a-02}{\Romanbar{II}}{The High Priestess}{ג}
 
