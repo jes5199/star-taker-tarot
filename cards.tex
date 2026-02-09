@@ -46,14 +46,17 @@
     % U (open arc) sitting on top of the cross
     \draw (-14mm,28mm) -- (-14mm,14mm) arc (180:360:14mm) -- (14mm,28mm);
   \end{scope}%
-  % Vertical JOKER below the numeral, left side
+  \jokertext{black}
+}
+
+% Vertical JOKER on both sides, parameterized by color
+\newcommand{\jokertext}[1]{%
   \foreach \letter/\i in {J/0,O/1,K/2,E/3,R/4} {
-    \node[anchor=center, text=black, font=\indexfont\bfseries\fontsize{12}{14}\selectfont]
+    \node[anchor=center, text=#1, font=\indexfont\bfseries\fontsize{12}{14}\selectfont]
       at (2.5mm, \cardheight-11mm-\i*5mm) {\letter};
   }
-  % Rotated JOKER above the Hebrew letter, right side (upside down)
   \foreach \letter/\i in {J/0,O/1,K/2,E/3,R/4} {
-    \node[anchor=center, rotate=180, text=black, font=\indexfont\bfseries\fontsize{12}{14}\selectfont]
+    \node[anchor=center, rotate=180, text=#1, font=\indexfont\bfseries\fontsize{12}{14}\selectfont]
       at (\cardwidth-2.5mm, 11mm+\i*5mm) {\letter};
   }
 }
@@ -94,7 +97,7 @@
 % Row helper: 4 cards per row
 \noindent
 \tarotcard[\alcmercury]{images/a-00}{\O}{The Fool}{א}\hfill
-\tarotcard{images/a-01}{\Romanbar{I}}{The Magician}{ב}\hfill
+\tarotcard[\jokertext{red}]{images/a-01}{\Romanbar{I}}{The Magician}{ב}\hfill
 \tarotcard{images/a-02}{\Romanbar{II}}{The High Priestess}{ג}
 
 \vspace{4mm}
