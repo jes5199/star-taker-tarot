@@ -46,6 +46,27 @@
     % U (open arc) sitting on top of the cross
     \draw (-14mm,28mm) -- (-14mm,14mm) arc (180:360:14mm) -- (14mm,28mm);
   \end{scope}%
+  % Kan trigram (Water) — left side: broken, solid (blue), broken
+  \begin{scope}[shift={(0.5\cardwidth-23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
+    % Top line — broken
+    \draw (-4mm,5mm) -- (-1mm,5mm);
+    \draw (1mm,5mm) -- (4mm,5mm);
+    % Middle line — solid, blue
+    \draw[blue] (-4mm,0mm) -- (4mm,0mm);
+    % Bottom line — broken
+    \draw (-4mm,-5mm) -- (-1mm,-5mm);
+    \draw (1mm,-5mm) -- (4mm,-5mm);
+  \end{scope}%
+  % Li trigram (Fire) — right side: solid, broken (red), solid
+  \begin{scope}[shift={(0.5\cardwidth+23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
+    % Top line — solid
+    \draw (-4mm,5mm) -- (4mm,5mm);
+    % Middle line — broken, red
+    \draw[red] (-4mm,0mm) -- (-1mm,0mm);
+    \draw[red] (1mm,0mm) -- (4mm,0mm);
+    % Bottom line — solid
+    \draw (-4mm,-5mm) -- (4mm,-5mm);
+  \end{scope}%
   \jokertext{black}
 }
 
