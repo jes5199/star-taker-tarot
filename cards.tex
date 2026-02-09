@@ -112,12 +112,27 @@
   % Lot of Spirit — circle pierced by vertical line (phi-like), bottom left
   \begin{scope}[shift={(7mm,4mm)}]
     \draw[thick] (0,0) circle (2.5mm);
-    \draw[thick] (0,-3.5mm) -- (0,3.5mm);
+    \draw[thick] (0,-3.2mm) -- (0,3.2mm);
     % "Lot of Spirit" curved above
     \path[postaction={decorate, decoration={text along path,
       text={|\cardfont\fontsize{5}{6}\selectfont|Lot of Spirit},
       text align=center, raise=0pt}}]
       (190:3.5mm) arc (190:-10:3.5mm);
+  \end{scope}%
+  % Red dragon 中 — bottom right
+  \begin{scope}[shift={(\cardwidth-7mm,5mm)}]
+    \node[anchor=center, text=red, font=\cjkfont\fontsize{18}{20}\selectfont]
+      at (0,0) {中};
+    % "hóng zhōng" curved above
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{5}{6}\selectfont\color{red}|hóng zhōng},
+      text align=center, raise=0pt}}]
+      (170:3mm) arc (170:10:3mm);
+    % "bullseye" curved below
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{5}{6}\selectfont\color{red}|bullseye},
+      text align=center, raise=1pt, reverse path}}]
+      (-10:4.5mm) arc (-10:-170:4.5mm);
   \end{scope}%
 }
 
