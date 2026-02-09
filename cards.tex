@@ -355,6 +355,13 @@
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Mercury};
   \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
     at (7mm, 5mm) {Ε};
+  \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
+    \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra6}};
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{7}{8}\selectfont\color{indigo}|Third Eye},
+      text align=center, raise=0pt}}]
+      (170:8mm) arc (170:10:8mm);
+  \end{scope}%
   \jokertext{red}
 }
 
@@ -366,6 +373,13 @@
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Venus};
   \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
     at (7mm, 5mm) {Η};
+  \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
+    \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra5}};
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{7}{8}\selectfont\color{blue}|Throat},
+      text align=center, raise=0pt}}]
+      (170:8mm) arc (170:10:8mm);
+  \end{scope}%
 }
 
 % Sun — yellow
@@ -376,6 +390,13 @@
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Sun};
   \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
     at (7mm, 5mm) {Ι};
+  \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
+    \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra4}};
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{7}{8}\selectfont\color{green!50!black}|Heart},
+      text align=center, raise=0pt}}]
+      (170:8mm) arc (170:10:8mm);
+  \end{scope}%
 }
 
 % Mars (Tower) — red
@@ -386,6 +407,13 @@
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Mars};
   \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
     at (7mm, 5mm) {Ο};
+  \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
+    \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra3}};
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{7}{8}\selectfont\color{yellow!70!orange}|Solar Plexus},
+      text align=center, raise=0pt}}]
+      (170:8mm) arc (170:10:8mm);
+  \end{scope}%
 }
 
 % Jupiter (Wheel of Fortune) — blue
@@ -396,6 +424,13 @@
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Jupiter};
   \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
     at (7mm, 5mm) {Υ};
+  \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
+    \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra2}};
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{7}{8}\selectfont\color{orange}|Sacral},
+      text align=center, raise=0pt}}]
+      (170:8mm) arc (170:10:8mm);
+  \end{scope}%
 }
 
 % Saturn (World) — black
@@ -406,6 +441,13 @@
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Saturn};
   \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
     at (7mm, 5mm) {Ω};
+  \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
+    \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra1}};
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{7}{8}\selectfont\color{red}|Root},
+      text align=center, raise=0pt}}]
+      (170:8mm) arc (170:10:8mm);
+  \end{scope}%
 }
 
 % Moon — purple
@@ -416,6 +458,13 @@
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Moon};
   \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
     at (7mm, 5mm) {Α};
+  \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
+    \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra7}};
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{7}{8}\selectfont\color{violet}|Crown},
+      text align=center, raise=0pt}}]
+      (170:8mm) arc (170:10:8mm);
+  \end{scope}%
 }
 
 % Card command: \tarotcard[overlay]{image file}{roman numeral}{card name}{hebrew letter}
