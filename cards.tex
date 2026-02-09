@@ -4,6 +4,22 @@
 \usepackage{graphicx}
 \usepackage{fontspec}
 
+% Max width for card name (card width minus room for corner elements)
+\newlength{\namewidth}
+\setlength{\namewidth}{\cardwidth}
+\addtolength{\namewidth}{-20mm}
+
+% Fit text to max width: keeps height, squeezes width if needed
+\newlength{\fitwidth}
+\newcommand{\fittext}[2]{%  #1 = max width, #2 = content
+  \settowidth{\fitwidth}{#2}%
+  \ifdim\fitwidth>#1\relax
+    \resizebox{#1}{\height}{#2}%
+  \else
+    #2%
+  \fi
+}
+
 % Preview card dimensions (scaled to fit 3 per row on A4)
 \newlength{\cardwidth}
 \newlength{\cardheight}
@@ -36,10 +52,10 @@
     \node[anchor=north east, text=black, font=\hebrewfont\fontsize{18}{20}\selectfont,
       inner sep=2.5mm]
       at (\cardwidth,\cardheight) {#4};
-    % Card name — centered at top
-    \node[anchor=north, text=black, font=\cardfont\fontsize{12}{14}\selectfont]
+    % Card name — centered at top, horizontally squeezed if too wide
+    \node[anchor=north, text=black, inner sep=0pt]
       at (0.5\cardwidth, \cardheight-2mm)
-      {#3};
+      {\fittext{\namewidth}{\cardfont\fontsize{16}{18}\selectfont #3}};
   \end{tikzpicture}%
 }
 
