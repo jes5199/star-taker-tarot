@@ -26,11 +26,11 @@
     \node[anchor=south west, inner sep=0pt] at (0,0) {%
       \includegraphics[width=\cardwidth, height=\cardheight]{#1}%
     };
-    % Top banner - semi-transparent
-    \fill[black, opacity=0.65] (0,\cardheight) rectangle (\cardwidth,\cardheight-6mm);
+    % Wash out the image
+    \fill[white, opacity=0.88] (0,0) rectangle (\cardwidth,\cardheight);
     % Title text: ROMAN — NAME — HEBREW
-    \node[anchor=center, text=white, font=\cardfont\fontsize{6}{7}\selectfont]
-      at (0.5\cardwidth, \cardheight-3mm)
+    \node[anchor=center, text=black, font=\cardfont\fontsize{12}{14}\selectfont]
+      at (0.5\cardwidth, \cardheight-6mm)
       {#2\enspace—\enspace#3\enspace—\enspace{\hebrewfont #4}};
   \end{tikzpicture}%
 }
