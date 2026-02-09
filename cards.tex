@@ -31,7 +31,7 @@
 \newfontface\cardfont{EB Garamond SC}[LetterSpace=8]
 
 % Hebrew font
-\newfontface\hebrewfont{DejaVu Sans}
+\newfontface\hebrewfont{Noto Serif Hebrew}
 
 % Playing card index font (bold serif like Bicycle cards)
 \newfontface\indexfont{URW Bookman}
@@ -53,6 +53,8 @@
     at (0.5\cardwidth, 0.52\cardheight-31mm) {m\enspace u\enspace t\enspace a\enspace b\enspace l\enspace e};
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-34mm) {Breath};
+  \node[anchor=base, text=black, font=\hebrewfont\fontsize{14}{16}\selectfont]
+    at (0.5\cardwidth-21mm, 0.52\cardheight-39mm) {רוח};
   \node[anchor=base, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
     at (0.5\cardwidth-21mm, 0.52\cardheight-43mm) {ruach};
   \node[anchor=base, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
@@ -122,7 +124,7 @@
     % Hebrew letter — top right
     \node[anchor=north east, text=black, font=\hebrewfont\fontsize{18}{20}\selectfont,
       inner sep=2.5mm]
-      at (\cardwidth,\cardheight+0.3mm) {#5};
+      at (\cardwidth,\cardheight+1mm) {#5};
     % Card name — centered at top, horizontally squeezed if too wide
     \node[anchor=north, text=black, inner sep=0pt]
       at (0.5\cardwidth, \cardheight-2mm)
