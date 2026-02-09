@@ -3,6 +3,7 @@
 \usepackage{tikz}
 \usepackage{graphicx}
 \usepackage{fontspec}
+\usepackage{romanbar}
 
 % Preview card dimensions (scaled to fit 3 per row on A4)
 \newlength{\cardwidth}
@@ -32,6 +33,7 @@
 % Hebrew font
 \newfontface\hebrewfont{DejaVu Sans}
 
+
 % Card command: \tarotcard{image file}{roman numeral}{card name}{hebrew letter}
 \newcommand{\tarotcard}[4]{%
   \begin{tikzpicture}
@@ -44,7 +46,7 @@
     };
     % Wash out the image
     \fill[white, opacity=0.88] (0,0) rectangle (\cardwidth,\cardheight);
-    % Roman numeral — top left
+    % Roman numeral — top left, with vinculum (overline/underline)
     \node[anchor=north west, text=black, font=\cardfont\fontsize{18}{20}\selectfont,
       inner sep=2.5mm]
       at (0,\cardheight) {#2};
@@ -65,48 +67,48 @@
 
 % Row helper: 4 cards per row
 \noindent
-\tarotcard{images/a-00}{0}{The Fool}{א}\hfill
-\tarotcard{images/a-01}{I}{The Magician}{ב}\hfill
-\tarotcard{images/a-02}{II}{The High Priestess}{ג}
+\tarotcard{images/a-00}{\O}{The Fool}{א}\hfill
+\tarotcard{images/a-01}{\Romanbar{I}}{The Magician}{ב}\hfill
+\tarotcard{images/a-02}{\Romanbar{II}}{The High Priestess}{ג}
 
 \vspace{4mm}
 \noindent
-\tarotcard{images/a-03}{III}{The Empress}{ד}\hfill
-\tarotcard{images/a-04}{IV}{The Emperor}{ה}\hfill
-\tarotcard{images/a-05}{V}{The Hierophant}{ו}
+\tarotcard{images/a-03}{\Romanbar{III}}{The Empress}{ד}\hfill
+\tarotcard{images/a-04}{\Romanbar{IV}}{The Emperor}{ה}\hfill
+\tarotcard{images/a-05}{\Romanbar{V}}{The Hierophant}{ו}
 
 \vspace{4mm}
 \noindent
-\tarotcard{images/a-06}{VI}{The Lovers}{ז}\hfill
-\tarotcard{images/a-07}{VII}{The Chariot}{ח}\hfill
-\tarotcard{images/a-08}{VIII}{Strength}{ט}
+\tarotcard{images/a-06}{\Romanbar{VI}}{The Lovers}{ז}\hfill
+\tarotcard{images/a-07}{\Romanbar{VII}}{The Chariot}{ח}\hfill
+\tarotcard{images/a-08}{\Romanbar{VIII}}{Strength}{ט}
 
 \vspace{4mm}
 \noindent
-\tarotcard{images/a-09}{IX}{The Hermit}{י}\hfill
-\tarotcard{images/a-10}{X}{Wheel of Fortune}{כ}\hfill
-\tarotcard{images/a-11}{XI}{Justice}{ל}
+\tarotcard{images/a-09}{\Romanbar{IX}}{The Hermit}{י}\hfill
+\tarotcard{images/a-10}{\Romanbar{X}}{Wheel of Fortune}{כ}\hfill
+\tarotcard{images/a-11}{\Romanbar{XI}}{Justice}{ל}
 
 \newpage
 \noindent
-\tarotcard{images/a-12}{XII}{The Hanged Man}{מ}\hfill
-\tarotcard{images/a-13}{XIII}{Death}{נ}\hfill
-\tarotcard{images/a-14}{XIV}{Temperance}{ס}
+\tarotcard{images/a-12}{\Romanbar{XII}}{The Hanged Man}{מ}\hfill
+\tarotcard{images/a-13}{\Romanbar{XIII}}{Death}{נ}\hfill
+\tarotcard{images/a-14}{\Romanbar{XIV}}{Temperance}{ס}
 
 \vspace{4mm}
 \noindent
-\tarotcard{images/a-15}{XV}{The Devil}{ע}\hfill
-\tarotcard{images/a-16}{XVI}{The Tower}{פ}\hfill
-\tarotcard{images/a-17}{XVII}{The Star}{צ}
+\tarotcard{images/a-15}{\Romanbar{XV}}{The Devil}{ע}\hfill
+\tarotcard{images/a-16}{\Romanbar{XVI}}{The Tower}{פ}\hfill
+\tarotcard{images/a-17}{\Romanbar{XVII}}{The Star}{צ}
 
 \vspace{4mm}
 \noindent
-\tarotcard{images/a-18}{XVIII}{The Moon}{ק}\hfill
-\tarotcard{images/a-19}{XIX}{The Sun}{ר}\hfill
-\tarotcard{images/a-20}{XX}{Judgement}{ש}
+\tarotcard{images/a-18}{\Romanbar{XVIII}}{The Moon}{ק}\hfill
+\tarotcard{images/a-19}{\Romanbar{XIX}}{The Sun}{ר}\hfill
+\tarotcard{images/a-20}{\Romanbar{XX}}{Judgement}{ש}
 
 \vspace{4mm}
 \noindent
-\tarotcard{images/a-21}{XXI}{The World}{ת}
+\tarotcard{images/a-21}{\Romanbar{XXI}}{The World}{ת}
 
 \end{document}
