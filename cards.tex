@@ -44,6 +44,43 @@
 \newfontface\indexfont{URW Bookman}
 
 
+% Alchemical Salt: circle with horizontal line through middle
+\newcommand{\alcsalt}{%
+  \begin{scope}[shift={(0.5\cardwidth,0.52\cardheight)}, cyan, line width=3.5mm]
+    \draw (0,0) circle (14mm);
+    \draw (-14mm,0) -- (14mm,0);
+  \end{scope}%
+  % Kan trigram (Water) — left side: broken, solid, broken (bottom line blue)
+  \begin{scope}[shift={(0.5\cardwidth-23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
+    % Top line — broken
+    \draw (-4mm,5mm) -- (-1mm,5mm);
+    \draw (1mm,5mm) -- (4mm,5mm);
+    % Middle line — solid
+    \draw (-4mm,0mm) -- (4mm,0mm);
+    % Bottom line — broken, blue
+    \draw[blue] (-4mm,-5mm) -- (-1mm,-5mm);
+    \draw[blue] (1mm,-5mm) -- (4mm,-5mm);
+    % Labels
+    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Kan};
+    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Water};
+  \end{scope}%
+  % Kun trigram (Earth) — right side: all broken (bottom line green)
+  \begin{scope}[shift={(0.5\cardwidth+23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
+    % Top line — broken
+    \draw (-4mm,5mm) -- (-1mm,5mm);
+    \draw (1mm,5mm) -- (4mm,5mm);
+    % Middle line — broken
+    \draw (-4mm,0mm) -- (-1mm,0mm);
+    \draw (1mm,0mm) -- (4mm,0mm);
+    % Bottom line — broken, green
+    \draw[green!50!black] (-4mm,-5mm) -- (-1mm,-5mm);
+    \draw[green!50!black] (1mm,-5mm) -- (4mm,-5mm);
+    % Labels
+    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Kun};
+    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Earth};
+  \end{scope}%
+}
+
 % Alchemical Mercury variant: U (crescent) directly above a cross, no circle
 \newcommand{\alcmercury}{%
   \begin{scope}[shift={(0.5\cardwidth,0.52\cardheight)}, yellow!80!orange, line width=3.5mm]
@@ -209,7 +246,7 @@
 
 \newpage
 \noindent
-\tarotcard{images/a-12}{\Romanbar{XII}}{The Hanged Man}{מ}\hfill
+\tarotcard[\alcsalt]{images/a-12}{\Romanbar{XII}}{The Hanged Man}{מ}\hfill
 \tarotcard{images/a-13}{\Romanbar{XIII}}{Death}{נ}\hfill
 \tarotcard{images/a-14}{\Romanbar{XIV}}{Temperance}{ס}
 
