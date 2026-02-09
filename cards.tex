@@ -116,6 +116,21 @@
       text align=center, raise=0pt}}]
       (170:3.5mm) arc (170:10:3.5mm);
   \end{scope}%
+  % 發 (hatsu/green dragon) — bottom right
+  \begin{scope}[shift={(\cardwidth-7mm,5mm)}]
+    \node[anchor=center, text=green!50!black, font=\cjkfont\fontsize{18}{20}\selectfont]
+      at (0,0) {發};
+    % "fa cái" curved above
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{5}{6}\selectfont\color{green!50!black}|fā cái},
+      text align=center, raise=0pt}}]
+      (170:3mm) arc (170:10:3mm);
+    % "strike it rich" curved below
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{5}{6}\selectfont\color{green!50!black}|strike  it  rich},
+      text align=center, raise=1pt, reverse path}}]
+      (-10:4.5mm) arc (-10:-170:4.5mm);
+  \end{scope}%
   \jokertext{black}
 }
 
