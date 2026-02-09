@@ -33,6 +33,12 @@
 % Hebrew font
 \newfontface\hebrewfont{Noto Serif Hebrew}
 
+% CJK font
+\newfontface\cjkfont{AR PL KaitiM Big5}
+
+% Devanagari font
+\newfontface\devfont{Noto Serif Devanagari}
+
 % Playing card index font (bold serif like Bicycle cards)
 \newfontface\indexfont{URW Bookman}
 
@@ -59,6 +65,12 @@
     at (0.5\cardwidth-21mm, 0.52\cardheight-43mm) {ruach};
   \node[anchor=base, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-43mm) {vāta};
+  \node[anchor=north, text=black, font=\devfont\fontsize{14}{16}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight-44mm) {वात};
+  \node[anchor=north, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight-49mm) {air \& void};
+  \node[anchor=base, text=black, font=\cjkfont\fontsize{18}{20}\selectfont]
+    at (0.5\cardwidth+21mm, 0.52\cardheight-39mm) {氣};
   \node[anchor=base, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
     at (0.5\cardwidth+21mm, 0.52\cardheight-43mm) {qi};
   % Kan trigram (Water) — left side: broken, solid (blue), broken
