@@ -735,113 +735,185 @@
 }
 
 % Zodiac sign overlays
-% Aries (Emperor) — Red
+% Aries (Emperor) — Red — Domicile of Mars
 \newcommand{\zdaries}{%
   \node[anchor=center, text=red, font=\symbserif\fontsize{160}{170}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight) {♈};
+  \node[anchor=base east, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {\resizebox{12mm}{\height}{Domicile of}};
+  \node[anchor=base, text=black, font=\symbserif\fontsize{12}{14}\selectfont]
+    at (0.5\cardwidth, \cardheight-10mm) {♂};
+  \node[anchor=base west, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {Mars};
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
-    at (0.5\cardwidth, \cardheight-6mm) {cardinal fire};
-  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-13mm) {\tinysulfur};
-  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-13mm) {\tinyfire};
+    at (0.5\cardwidth, \cardheight-10mm) {cardinal fire};
+  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinysulfur};
+  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyfire};
 }
-% Taurus (Hierophant) — Red-Orange
+% Taurus (Hierophant) — Red-Orange — Domicile of Venus
 \newcommand{\zdtaurus}{%
   \node[anchor=center, text=red!50!orange, font=\symbserif\fontsize{160}{170}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight) {♉};
+  \node[anchor=base east, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {\resizebox{12mm}{\height}{Domicile of}};
+  \node[anchor=base, text=black, font=\symbserif\fontsize{12}{14}\selectfont]
+    at (0.5\cardwidth, \cardheight-10mm) {♀};
+  \node[anchor=base west, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {Venus};
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
-    at (0.5\cardwidth, \cardheight-6mm) {fixed earth};
-  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-13mm) {\tinysalt};
-  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-13mm) {\tinyearth};
+    at (0.5\cardwidth, \cardheight-10mm) {fixed earth};
+  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinysalt};
+  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyearth};
 }
-% Gemini (Lovers) — Orange
+% Gemini (Lovers) — Orange — Domicile of Mercury
 \newcommand{\zdgemini}{%
   \node[anchor=center, text=orange, font=\symbserif\fontsize{160}{170}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight) {♊};
+  \node[anchor=base east, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {\resizebox{12mm}{\height}{Domicile of}};
+  \node[anchor=base, text=black, font=\symbserif\fontsize{12}{14}\selectfont]
+    at (0.5\cardwidth, \cardheight-10mm) {☿};
+  \node[anchor=base west, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {Mercury};
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
-    at (0.5\cardwidth, \cardheight-6mm) {mutable air};
-  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-13mm) {\tinymercury};
-  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-13mm) {\tinyair};
+    at (0.5\cardwidth, \cardheight-10mm) {mutable air};
+  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinymercury};
+  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyair};
 }
-% Cancer (Chariot) — Amber
+% Cancer (Chariot) — Amber — Domicile of Moon
 \newcommand{\zdcancer}{%
   \node[anchor=center, text=yellow!50!orange, font=\symbserif\fontsize{160}{170}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight) {♋};
+  \node[anchor=base east, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {\resizebox{12mm}{\height}{Domicile of}};
+  \node[anchor=base, text=black, font=\symbfont\fontsize{12}{14}\selectfont]
+    at (0.5\cardwidth, \cardheight-10mm) {☽};
+  \node[anchor=base west, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {Moon};
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
-    at (0.5\cardwidth, \cardheight-6mm) {cardinal water};
-  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-13mm) {\tinysulfur};
-  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-13mm) {\tinywater};
+    at (0.5\cardwidth, \cardheight-10mm) {cardinal water};
+  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinysulfur};
+  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinywater};
 }
-% Leo (Strength) — Yellow
+% Leo (Strength) — Yellow — Domicile of Sun
 \newcommand{\zdleo}{%
   \node[anchor=center, text=yellow!80!orange, font=\symbserif\fontsize{160}{170}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight) {♌};
+  \node[anchor=base east, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {\resizebox{12mm}{\height}{Domicile of}};
+  \node[anchor=base, text=black, font=\symbfont\fontsize{12}{14}\selectfont]
+    at (0.5\cardwidth, \cardheight-10mm) {☉};
+  \node[anchor=base west, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {Sun};
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
-    at (0.5\cardwidth, \cardheight-6mm) {fixed fire};
-  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-13mm) {\tinysalt};
-  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-13mm) {\tinyfire};
+    at (0.5\cardwidth, \cardheight-10mm) {fixed fire};
+  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinysalt};
+  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyfire};
 }
-% Virgo (Hermit) — Yellow-Green
+% Virgo (Hermit) — Yellow-Green — Domicile of Mercury
 \newcommand{\zdvirgo}{%
   \node[anchor=center, text=yellow!50!green, font=\symbserif\fontsize{160}{170}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight) {♍};
+  \node[anchor=base east, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {\resizebox{12mm}{\height}{Domicile of}};
+  \node[anchor=base, text=black, font=\symbserif\fontsize{12}{14}\selectfont]
+    at (0.5\cardwidth, \cardheight-10mm) {☿};
+  \node[anchor=base west, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {Mercury};
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
-    at (0.5\cardwidth, \cardheight-6mm) {mutable earth};
-  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-13mm) {\tinymercury};
-  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-13mm) {\tinyearth};
+    at (0.5\cardwidth, \cardheight-10mm) {mutable earth};
+  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinymercury};
+  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyearth};
 }
-% Libra (Justice) — Green
+% Libra (Justice) — Green — Domicile of Venus
 \newcommand{\zdlibra}{%
   \node[anchor=center, text=green!70!black, font=\symbserif\fontsize{160}{170}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight) {♎};
+  \node[anchor=base east, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {\resizebox{12mm}{\height}{Domicile of}};
+  \node[anchor=base, text=black, font=\symbserif\fontsize{12}{14}\selectfont]
+    at (0.5\cardwidth, \cardheight-10mm) {♀};
+  \node[anchor=base west, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {Venus};
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
-    at (0.5\cardwidth, \cardheight-6mm) {cardinal air};
-  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-13mm) {\tinysulfur};
-  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-13mm) {\tinyair};
+    at (0.5\cardwidth, \cardheight-10mm) {cardinal air};
+  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinysulfur};
+  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyair};
 }
-% Scorpio (Death) — Turquoise
+% Scorpio (Death) — Turquoise — Domicile of Mars
 \newcommand{\zdscorpio}{%
   \node[anchor=center, text=blue!50!green, font=\symbserif\fontsize{160}{170}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight) {♏};
+  \node[anchor=base east, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {\resizebox{12mm}{\height}{Domicile of}};
+  \node[anchor=base, text=black, font=\symbserif\fontsize{12}{14}\selectfont]
+    at (0.5\cardwidth, \cardheight-10mm) {♂};
+  \node[anchor=base west, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {Mars};
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
-    at (0.5\cardwidth, \cardheight-6mm) {fixed water};
-  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-13mm) {\tinysalt};
-  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-13mm) {\tinywater};
+    at (0.5\cardwidth, \cardheight-10mm) {fixed water};
+  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinysalt};
+  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinywater};
 }
-% Sagittarius (Temperance) — Blue
+% Sagittarius (Temperance) — Blue — Domicile of Jupiter
 \newcommand{\zdsagittarius}{%
   \node[anchor=center, text=blue, font=\symbserif\fontsize{160}{170}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight) {♐};
+  \node[anchor=base east, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {\resizebox{12mm}{\height}{Domicile of}};
+  \node[anchor=base, text=black, font=\symbserif\fontsize{12}{14}\selectfont]
+    at (0.5\cardwidth, \cardheight-10mm) {♃};
+  \node[anchor=base west, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {Jupiter};
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
-    at (0.5\cardwidth, \cardheight-6mm) {mutable fire};
-  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-13mm) {\tinymercury};
-  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-13mm) {\tinyfire};
+    at (0.5\cardwidth, \cardheight-10mm) {mutable fire};
+  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinymercury};
+  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyfire};
 }
-% Capricorn (Devil) — Indigo
+% Capricorn (Devil) — Indigo — Domicile of Saturn
 \newcommand{\zdcapricorn}{%
   \node[anchor=center, text=blue!50!violet, font=\symbserif\fontsize{160}{170}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight) {♑};
+  \node[anchor=base east, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {\resizebox{12mm}{\height}{Domicile of}};
+  \node[anchor=base, text=black, font=\symbserif\fontsize{12}{14}\selectfont]
+    at (0.5\cardwidth, \cardheight-10mm) {♄};
+  \node[anchor=base west, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {Saturn};
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
-    at (0.5\cardwidth, \cardheight-6mm) {cardinal earth};
-  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-13mm) {\tinysulfur};
-  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-13mm) {\tinyearth};
+    at (0.5\cardwidth, \cardheight-10mm) {cardinal earth};
+  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinysulfur};
+  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyearth};
 }
-% Aquarius (Star) — Violet
+% Aquarius (Star) — Violet — Domicile of Saturn
 \newcommand{\zdaquarius}{%
   \node[anchor=center, text=violet, font=\symbserif\fontsize{160}{170}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight) {♒};
+  \node[anchor=base east, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {\resizebox{12mm}{\height}{Domicile of}};
+  \node[anchor=base, text=black, font=\symbserif\fontsize{12}{14}\selectfont]
+    at (0.5\cardwidth, \cardheight-10mm) {♄};
+  \node[anchor=base west, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {Saturn};
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
-    at (0.5\cardwidth, \cardheight-6mm) {fixed air};
-  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-13mm) {\tinysalt};
-  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-13mm) {\tinyair};
+    at (0.5\cardwidth, \cardheight-10mm) {fixed air};
+  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinysalt};
+  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyair};
 }
-% Pisces (Moon XVIII) — Red-Violet
+% Pisces (Moon XVIII) — Red-Violet — Domicile of Jupiter
 \newcommand{\zdpisces}{%
   \node[anchor=center, text=red!50!violet, font=\symbserif\fontsize{160}{170}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight) {♓};
+  \node[anchor=base east, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {\resizebox{12mm}{\height}{Domicile of}};
+  \node[anchor=base, text=black, font=\symbserif\fontsize{12}{14}\selectfont]
+    at (0.5\cardwidth, \cardheight-10mm) {♃};
+  \node[anchor=base west, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=3mm]
+    at (0.5\cardwidth, \cardheight-10mm) {Jupiter};
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
-    at (0.5\cardwidth, \cardheight-6mm) {mutable water};
-  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-13mm) {\tinymercury};
-  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-13mm) {\tinywater};
+    at (0.5\cardwidth, \cardheight-10mm) {mutable water};
+  \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinymercury};
+  \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinywater};
 }
 
 % Card command: \tarotcard[overlay]{image file}{roman numeral}{card name}{hebrew letter}
