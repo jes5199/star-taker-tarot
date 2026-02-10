@@ -284,6 +284,11 @@
     % U (open arc) sitting on top of the cross
     \draw (-14mm,28mm) -- (-14mm,14mm) arc (180:360:14mm) -- (14mm,28mm);
   \end{scope}%
+  % 万千 below Aleph (vertical)
+  \node[anchor=north east, text=black, font=\cjkfontgb\fontsize{14}{16}\selectfont,
+    inner sep=1.5mm] at (\cardwidth, \cardheight-6mm) {千};
+  \node[anchor=north east, text=black, font=\cjkfontgb\fontsize{14}{16}\selectfont,
+    inner sep=1.5mm] at (\cardwidth, \cardheight-11mm) {万};
   % QUICKSILVER label below Mercury symbol
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Quicksilver};
