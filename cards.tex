@@ -793,8 +793,8 @@
 }
 
 % Tidal hexagram (消息卦) — drawn centered on card edge, clipped to half
-% #1=x, #2=y (center), #3=line pattern bottom to top (1=yang, 0=yin)
-\newcommand{\drawhexagram}[3]{%
+% #1=x, #2=y (center), #3=line pattern, #4=phonetic, #5=english
+\newcommand{\drawhexagram}[5]{%
   \begin{scope}[shift={(#1, #2)}, line width=1.5mm, line cap=butt]
     \foreach \type [count=\i from 0] in {#3} {
       \ifnum\type=1
@@ -804,6 +804,10 @@
         \draw (2mm, \i*4mm-10mm) -- (6mm, \i*4mm-10mm);
       \fi
     }
+    \node[anchor=south, text=black, font=\cardfont\fontsize{8}{9}\selectfont]
+      at (0, 13mm) {#4};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{8}{9}\selectfont]
+      at (0, -13mm) {#5};
   \end{scope}%
 }
 
@@ -847,8 +851,8 @@
   \firerulers
   \decanrulers{\rMars}{\rSun}{\rVenus}
   \solarterms{春分}{Chūnfēn}{Spring Equinox}{清明}{Qīngmíng}{Clear \& Bright}
-  \drawhexagram{0}{0.5\cardheight}{1,1,1,1,0,0}% 大壮 Pisces→Aries
-  \drawhexagram{\cardwidth}{0.5\cardheight}{1,1,1,1,1,0}% 夬 Aries→Taurus
+  \drawhexagram{0}{0.5\cardheight}{1,1,1,1,0,0}{Dàzhuàng}{Great Strength}% 大壮 Pisces→Aries
+  \drawhexagram{\cardwidth}{0.5\cardheight}{1,1,1,1,1,0}{Guài}{Breakthrough}% 夬 Aries→Taurus
 }
 % Taurus (Hierophant) — Red-Orange — Domicile of Venus
 \newcommand{\zdtaurus}{%
@@ -869,8 +873,8 @@
   \earthrulers
   \decanrulers{\rMercury}{\rMoon}{\rSaturn}
   \solarterms{谷雨}{Gǔyǔ}{Grain Rain}{立夏}{Lìxià}{Start of Summer}
-  \drawhexagram{0}{0.5\cardheight}{1,1,1,1,1,0}% 夬 Aries→Taurus
-  \drawhexagram{\cardwidth}{0.5\cardheight}{1,1,1,1,1,1}% 乾 Taurus→Gemini
+  \drawhexagram{0}{0.5\cardheight}{1,1,1,1,1,0}{Guài}{Breakthrough}% 夬 Aries→Taurus
+  \drawhexagram{\cardwidth}{0.5\cardheight}{1,1,1,1,1,1}{Qián}{Heaven}% 乾 Taurus→Gemini
 }
 % Gemini (Lovers) — Orange — Domicile of Mercury
 \newcommand{\zdgemini}{%
@@ -891,8 +895,8 @@
   \airrulers
   \decanrulers{\rJupiter}{\rMars}{\rSun}
   \solarterms{小满}{Xiǎomǎn}{Grain Buds}{芒种}{Mángzhòng}{Grain in Ear}
-  \drawhexagram{0}{0.5\cardheight}{1,1,1,1,1,1}% 乾 Taurus→Gemini
-  \drawhexagram{\cardwidth}{0.5\cardheight}{0,1,1,1,1,1}% 姤 Gemini→Cancer
+  \drawhexagram{0}{0.5\cardheight}{1,1,1,1,1,1}{Qián}{Heaven}% 乾 Taurus→Gemini
+  \drawhexagram{\cardwidth}{0.5\cardheight}{0,1,1,1,1,1}{Gòu}{Encounter}% 姤 Gemini→Cancer
 }
 % Cancer (Chariot) — Amber — Domicile of Moon
 \newcommand{\zdcancer}{%
@@ -913,8 +917,8 @@
   \waterrulers
   \decanrulers{\rVenus}{\rMercury}{\rMoon}
   \solarterms{夏至}{Xiàzhì}{Summer Solstice}{小暑}{Xiǎoshǔ}{Minor Heat}
-  \drawhexagram{0}{0.5\cardheight}{0,1,1,1,1,1}% 姤 Gemini→Cancer
-  \drawhexagram{\cardwidth}{0.5\cardheight}{0,0,1,1,1,1}% 遯 Cancer→Leo
+  \drawhexagram{0}{0.5\cardheight}{0,1,1,1,1,1}{Gòu}{Encounter}% 姤 Gemini→Cancer
+  \drawhexagram{\cardwidth}{0.5\cardheight}{0,0,1,1,1,1}{Dùn}{Retreat}% 遯 Cancer→Leo
 }
 % Leo (Strength) — Yellow — Domicile of Sun
 \newcommand{\zdleo}{%
@@ -935,8 +939,8 @@
   \firerulers
   \decanrulers{\rSaturn}{\rJupiter}{\rMars}
   \solarterms{大暑}{Dàshǔ}{Major Heat}{立秋}{Lìqiū}{Start of Autumn}
-  \drawhexagram{0}{0.5\cardheight}{0,0,1,1,1,1}% 遯 Cancer→Leo
-  \drawhexagram{\cardwidth}{0.5\cardheight}{0,0,0,1,1,1}% 否 Leo→Virgo
+  \drawhexagram{0}{0.5\cardheight}{0,0,1,1,1,1}{Dùn}{Retreat}% 遯 Cancer→Leo
+  \drawhexagram{\cardwidth}{0.5\cardheight}{0,0,0,1,1,1}{Pǐ}{Stagnation}% 否 Leo→Virgo
 }
 % Virgo (Hermit) — Yellow-Green — Domicile of Mercury
 \newcommand{\zdvirgo}{%
@@ -957,8 +961,8 @@
   \earthrulers
   \decanrulers{\rSun}{\rVenus}{\rMercury}
   \solarterms{处暑}{Chǔshǔ}{End of Heat}{白露}{Báilù}{White Dew}
-  \drawhexagram{0}{0.5\cardheight}{0,0,0,1,1,1}% 否 Leo→Virgo
-  \drawhexagram{\cardwidth}{0.5\cardheight}{0,0,0,0,1,1}% 观 Virgo→Libra
+  \drawhexagram{0}{0.5\cardheight}{0,0,0,1,1,1}{Pǐ}{Stagnation}% 否 Leo→Virgo
+  \drawhexagram{\cardwidth}{0.5\cardheight}{0,0,0,0,1,1}{Guān}{Contemplation}% 观 Virgo→Libra
 }
 % Libra (Justice) — Green — Domicile of Venus
 \newcommand{\zdlibra}{%
@@ -979,8 +983,8 @@
   \airrulers
   \decanrulers{\rMoon}{\rSaturn}{\rJupiter}
   \solarterms{秋分}{Qiūfēn}{Autumn Equinox}{寒露}{Hánlù}{Cold Dew}
-  \drawhexagram{0}{0.5\cardheight}{0,0,0,0,1,1}% 观 Virgo→Libra
-  \drawhexagram{\cardwidth}{0.5\cardheight}{0,0,0,0,0,1}% 剥 Libra→Scorpio
+  \drawhexagram{0}{0.5\cardheight}{0,0,0,0,1,1}{Guān}{Contemplation}% 观 Virgo→Libra
+  \drawhexagram{\cardwidth}{0.5\cardheight}{0,0,0,0,0,1}{Bō}{Splitting Apart}% 剥 Libra→Scorpio
 }
 % Scorpio (Death) — Turquoise — Domicile of Mars
 \newcommand{\zdscorpio}{%
@@ -1001,8 +1005,8 @@
   \waterrulers
   \decanrulers{\rMars}{\rSun}{\rVenus}
   \solarterms{霜降}{Shuāngjiàng}{Frost's Descent}{立冬}{Lìdōng}{Start of Winter}
-  \drawhexagram{0}{0.5\cardheight}{0,0,0,0,0,1}% 剥 Libra→Scorpio
-  \drawhexagram{\cardwidth}{0.5\cardheight}{0,0,0,0,0,0}% 坤 Scorpio→Sagittarius
+  \drawhexagram{0}{0.5\cardheight}{0,0,0,0,0,1}{Bō}{Splitting Apart}% 剥 Libra→Scorpio
+  \drawhexagram{\cardwidth}{0.5\cardheight}{0,0,0,0,0,0}{Kūn}{Earth}% 坤 Scorpio→Sagittarius
 }
 % Sagittarius (Temperance) — Blue — Domicile of Jupiter
 \newcommand{\zdsagittarius}{%
@@ -1023,8 +1027,8 @@
   \firerulers
   \decanrulers{\rMercury}{\rMoon}{\rSaturn}
   \solarterms{小雪}{Xiǎoxuě}{Minor Snow}{大雪}{Dàxuě}{Major Snow}
-  \drawhexagram{0}{0.5\cardheight}{0,0,0,0,0,0}% 坤 Scorpio→Sagittarius
-  \drawhexagram{\cardwidth}{0.5\cardheight}{1,0,0,0,0,0}% 复 Sagittarius→Capricorn
+  \drawhexagram{0}{0.5\cardheight}{0,0,0,0,0,0}{Kūn}{Earth}% 坤 Scorpio→Sagittarius
+  \drawhexagram{\cardwidth}{0.5\cardheight}{1,0,0,0,0,0}{Fù}{Return}% 复 Sagittarius→Capricorn
 }
 % Capricorn (Devil) — Indigo — Domicile of Saturn
 \newcommand{\zdcapricorn}{%
@@ -1045,8 +1049,8 @@
   \earthrulers
   \decanrulers{\rJupiter}{\rMars}{\rSun}
   \solarterms{冬至}{Dōngzhì}{Winter Solstice}{小寒}{Xiǎohán}{Minor Cold}
-  \drawhexagram{0}{0.5\cardheight}{1,0,0,0,0,0}% 复 Sagittarius→Capricorn
-  \drawhexagram{\cardwidth}{0.5\cardheight}{1,1,0,0,0,0}% 临 Capricorn→Aquarius
+  \drawhexagram{0}{0.5\cardheight}{1,0,0,0,0,0}{Fù}{Return}% 复 Sagittarius→Capricorn
+  \drawhexagram{\cardwidth}{0.5\cardheight}{1,1,0,0,0,0}{Lín}{Approach}% 临 Capricorn→Aquarius
 }
 % Aquarius (Star) — Violet — Domicile of Saturn
 \newcommand{\zdaquarius}{%
@@ -1067,8 +1071,8 @@
   \airrulers
   \decanrulers{\rVenus}{\rMercury}{\rMoon}
   \solarterms{大寒}{Dàhán}{Major Cold}{立春}{Lìchūn}{Start of Spring}
-  \drawhexagram{0}{0.5\cardheight}{1,1,0,0,0,0}% 临 Capricorn→Aquarius
-  \drawhexagram{\cardwidth}{0.5\cardheight}{1,1,1,0,0,0}% 泰 Aquarius→Pisces
+  \drawhexagram{0}{0.5\cardheight}{1,1,0,0,0,0}{Lín}{Approach}% 临 Capricorn→Aquarius
+  \drawhexagram{\cardwidth}{0.5\cardheight}{1,1,1,0,0,0}{Tài}{Peace}% 泰 Aquarius→Pisces
 }
 % Pisces (Moon XVIII) — Red-Violet — Domicile of Jupiter
 \newcommand{\zdpisces}{%
@@ -1089,8 +1093,8 @@
   \waterrulers
   \decanrulers{\rSaturn}{\rJupiter}{\rMars}
   \solarterms{雨水}{Yǔshuǐ}{Rain Water}{惊蛰}{Jīngzhé}{Awakening of Insects}
-  \drawhexagram{0}{0.5\cardheight}{1,1,1,0,0,0}% 泰 Aquarius→Pisces
-  \drawhexagram{\cardwidth}{0.5\cardheight}{1,1,1,1,0,0}% 大壮 Pisces→Aries
+  \drawhexagram{0}{0.5\cardheight}{1,1,1,0,0,0}{Tài}{Peace}% 泰 Aquarius→Pisces
+  \drawhexagram{\cardwidth}{0.5\cardheight}{1,1,1,1,0,0}{Dàzhuàng}{Great Strength}% 大壮 Pisces→Aries
 }
 
 % Card command: \tarotcard[overlay]{image file}{roman numeral}{card name}{hebrew letter}
