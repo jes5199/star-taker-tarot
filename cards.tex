@@ -37,6 +37,7 @@
 % CJK fonts
 \newfontface\cjkfont{AR PL KaitiM Big5}
 \newfontface\cjkfontgb{AR PL KaitiM GB}
+\newfontface\cjkfallback{Droid Sans Fallback}
 
 % Devanagari font
 \newfontface\devfont{Noto Serif Devanagari}
@@ -117,6 +118,11 @@
     % Upward-pointing triangle
     \draw (-14mm,3mm) -- (0,28mm) -- (14mm,3mm) -- cycle;
   \end{scope}%
+  % 〇并 below Shin (vertical)
+  \node[anchor=north east, text=black, font=\cjkfallback\fontsize{14}{16}\selectfont,
+    inner sep=1.5mm] at (\cardwidth, \cardheight-6mm) {〇};
+  \node[anchor=north east, text=black, font=\cjkfontgb\fontsize{14}{16}\selectfont,
+    inner sep=1.5mm] at (\cardwidth, \cardheight-11mm) {并};
   % Sulfur
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Sulfur};
@@ -210,6 +216,11 @@
     \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Kūn};
     \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Earth};
   \end{scope}%
+  % 半并 below Mem (vertical)
+  \node[anchor=north east, text=black, font=\cjkfontgb\fontsize{14}{16}\selectfont,
+    inner sep=1.5mm] at (\cardwidth, \cardheight-6mm) {半};
+  \node[anchor=north east, text=black, font=\cjkfontgb\fontsize{14}{16}\selectfont,
+    inner sep=1.5mm] at (\cardwidth, \cardheight-11mm) {并};
   % Salt
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Salt};
