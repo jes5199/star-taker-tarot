@@ -34,8 +34,9 @@
 % Hebrew font
 \newfontface\hebrewfont{Noto Serif Hebrew}
 
-% CJK font
+% CJK fonts
 \newfontface\cjkfont{AR PL KaitiM Big5}
+\newfontface\cjkfontgb{AR PL KaitiM GB}
 
 % Devanagari font
 \newfontface\devfont{Noto Serif Devanagari}
@@ -1130,6 +1131,15 @@
     inner sep=0pt, rotate=180] at (\cardwidth-4.5mm, 11mm) {#3};
 }
 
+% Chinese money suit marks — top-right only
+% #1 = numeral (e.g. 一), #2 = suit name (e.g. 条)
+\newcommand{\chinesecardmarks}[2]{%
+  \node[anchor=north, text=black, font=\cjkfontgb\fontsize{20}{22}\selectfont,
+    inner sep=0pt] at (\cardwidth-4.5mm, \cardheight-4mm) {#1};
+  \node[anchor=north, text=black, font=\cjkfontgb\fontsize{20}{22}\selectfont,
+    inner sep=0pt] at (\cardwidth-4.5mm, \cardheight-9mm) {#2};
+}
+
 % Minor arcana Ace overlays — elemental triangles in Wiccan colors
 \newcommand{\acewands}{%
   \begin{scope}[shift={(0.5\cardwidth, 0.52\cardheight)}, line width=2.5mm, line cap=butt]
@@ -1155,6 +1165,7 @@
       (-10:6.5mm) arc (-10:-170:6.5mm);
   \end{scope}%
   \playingcardmarks{black}{A}{♣}
+  \chinesecardmarks{一}{条}
 }
 \newcommand{\acecups}{%
   \begin{scope}[shift={(0.5\cardwidth, 0.52\cardheight)}, line width=2.5mm, line cap=butt]
@@ -1180,6 +1191,7 @@
       (-10:6.5mm) arc (-10:-170:6.5mm);
   \end{scope}%
   \playingcardmarks{red}{A}{♥}
+  \chinesecardmarks{一}{万}
 }
 \newcommand{\aceswords}{%
   \begin{scope}[shift={(0.5\cardwidth, 0.52\cardheight)}, line width=2.5mm, line cap=butt]
@@ -1206,6 +1218,7 @@
       (-10:6.5mm) arc (-10:-170:6.5mm);
   \end{scope}%
   \playingcardmarks{black}{A}{♠}
+  \chinesecardmarks{一}{十}
 }
 \newcommand{\acepentacles}{%
   \begin{scope}[shift={(0.5\cardwidth, 0.52\cardheight)}, line width=2.5mm, line cap=butt]
@@ -1232,6 +1245,7 @@
       (-10:6.5mm) arc (-10:-170:6.5mm);
   \end{scope}%
   \playingcardmarks{red}{A}{♦}
+  \chinesecardmarks{一}{并}
 }
 
 % Card command: \tarotcard[overlay]{image file}{roman numeral}{card name}{hebrew letter}
