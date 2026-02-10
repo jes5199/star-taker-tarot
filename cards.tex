@@ -1097,6 +1097,38 @@
   \drawhexagram{\cardwidth}{0.5\cardheight}{1,1,1,1,0,0}{Dàzhuàng}{Great Strength}% 大壮 Pisces→Aries
 }
 
+% Minor arcana Ace overlays — elemental triangles in Wiccan colors
+\newcommand{\acewands}{%
+  \begin{scope}[shift={(0.5\cardwidth, 0.52\cardheight)}, line width=2.5mm, line cap=butt]
+    \draw[red] (-20mm,-12mm) -- (0,23mm) -- (20mm,-12mm) -- cycle;
+  \end{scope}%
+  \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight-24mm) {Fire};
+}
+\newcommand{\acecups}{%
+  \begin{scope}[shift={(0.5\cardwidth, 0.52\cardheight)}, line width=2.5mm, line cap=butt]
+    \draw[blue] (-20mm,12mm) -- (0,-23mm) -- (20mm,12mm) -- cycle;
+  \end{scope}%
+  \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight-24mm) {Water};
+}
+\newcommand{\aceswords}{%
+  \begin{scope}[shift={(0.5\cardwidth, 0.52\cardheight)}, line width=2.5mm, line cap=butt]
+    \draw[yellow!80!orange] (-20mm,-12mm) -- (0,23mm) -- (20mm,-12mm) -- cycle;
+    \draw[yellow!80!orange] (-23mm,2mm) -- (23mm,2mm);
+  \end{scope}%
+  \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight-24mm) {Air};
+}
+\newcommand{\acepentacles}{%
+  \begin{scope}[shift={(0.5\cardwidth, 0.52\cardheight)}, line width=2.5mm, line cap=butt]
+    \draw[green!50!black] (-20mm,12mm) -- (0,-23mm) -- (20mm,12mm) -- cycle;
+    \draw[green!50!black] (-23mm,-2mm) -- (23mm,-2mm);
+  \end{scope}%
+  \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight-24mm) {Earth};
+}
+
 % Card command: \tarotcard[overlay]{image file}{roman numeral}{card name}{hebrew letter}
 \newcommand{\tarotcard}[5][]{%
   \begin{tikzpicture}
@@ -1123,6 +1155,27 @@
     \node[anchor=north, text=black, inner sep=0pt]
       at (0.5\cardwidth, \cardheight-2mm)
       {\fittext{\namewidth}{\cardfont\fontsize{16}{18}\selectfont #4}};
+  \end{tikzpicture}%
+}
+
+% Minor arcana card command: \minorcard[overlay]{image file}{card name}
+\newcommand{\minorcard}[3][]{%
+  \begin{tikzpicture}
+    % Card border
+    \draw[rounded corners=2.5mm, thick] (0,0) rectangle (\cardwidth,\cardheight);
+    \clip[rounded corners=2.5mm] (0,0) rectangle (\cardwidth,\cardheight);
+    % Background image - shifted down to crop off Smith's lettering at bottom
+    \node[anchor=south west, inner sep=0pt] at (0,-10mm) {%
+      \includegraphics[width=\cardwidth]{#2}%
+    };
+    % Wash out the image
+    \fill[white, opacity=0.88] (0,0) rectangle (\cardwidth,\cardheight);
+    % Center overlay (if any)
+    #1
+    % Card name — centered at top, horizontally squeezed if too wide
+    \node[anchor=north, text=black, inner sep=0pt]
+      at (0.5\cardwidth, \cardheight-2mm)
+      {\fittext{\namewidth}{\cardfont\fontsize{16}{18}\selectfont #3}};
   \end{tikzpicture}%
 }
 
@@ -1175,5 +1228,15 @@
 \vspace{4mm}
 \noindent
 \tarotcard[\plsaturn]{images/a-21}{\Romanbar{XXI}}{The World}{ת}
+
+\newpage
+\noindent
+\minorcard[\acewands]{images/w-01}{Ace of Wands}\hfill
+\minorcard[\acecups]{images/c-01}{Ace of Cups}\hfill
+\minorcard[\aceswords]{images/s-01}{Ace of Swords}
+
+\vspace{4mm}
+\noindent
+\minorcard[\acepentacles]{images/p-01}{Ace of Pentacles}
 
 \end{document}
