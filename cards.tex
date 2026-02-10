@@ -1097,6 +1097,24 @@
   \drawhexagram{\cardwidth}{0.5\cardheight}{1,1,1,1,0,0}{Dàzhuàng}{Great Strength}% 大壮 Pisces→Aries
 }
 
+% Small hexagram for ace cards — compact version of \drawhexagram
+\newcommand{\drawsmallhexagram}[5]{%
+  \begin{scope}[shift={(#1, #2)}, line width=1mm, line cap=butt]
+    \foreach \type [count=\i from 0] in {#3} {
+      \ifnum\type=1
+        \draw (-4mm, \i*2mm-5mm) -- (4mm, \i*2mm-5mm);
+      \else
+        \draw (-4mm, \i*2mm-5mm) -- (-1.5mm, \i*2mm-5mm);
+        \draw (1.5mm, \i*2mm-5mm) -- (4mm, \i*2mm-5mm);
+      \fi
+    }
+    \node[anchor=south, text=black, font=\cardfont\fontsize{7}{8}\selectfont]
+      at (0, 4.5mm) {#4};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{7}{8}\selectfont]
+      at (0, -5.5mm) {#5};
+  \end{scope}%
+}
+
 % Playing card rank/suit marks — top-left upright, bottom-right inverted
 % #1 = color, #2 = rank (e.g. A), #3 = suit symbol (e.g. ♣)
 \newcommand{\playingcardmarks}[3]{%
@@ -1119,8 +1137,23 @@
   \end{scope}%
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Fire};
-  \node[anchor=south east, text=black, font=\symbserif\fontsize{18}{20}\selectfont,
+  \drawsmallhexagram{0.5\cardwidth}{0.52\cardheight-40mm}{1,0,0,1,0,0}{Zhèn}{Thunder}
+  \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
+    at (0.5\cardwidth, \cardheight-6.5mm) {Spring Equinox};
+  \node[anchor=south east, text=black, font=\symbserif\fontsize{36}{38}\selectfont,
     inner sep=2.5mm] at (\cardwidth-7mm, 0) {♈};
+  \begin{scope}[shift={(7mm,8mm)}]
+    \node[anchor=center, text=black, font=\cjkfont\fontsize{28}{30}\selectfont]
+      at (0,0) {東};
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{7}{8}\selectfont|dōng},
+      text align=center, raise=0pt}}]
+      (170:5mm) arc (170:10:5mm);
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{7}{8}\selectfont|east},
+      text align=center, raise=1pt, reverse path}}]
+      (-10:6.5mm) arc (-10:-170:6.5mm);
+  \end{scope}%
   \playingcardmarks{black}{A}{♣}
 }
 \newcommand{\acecups}{%
@@ -1129,8 +1162,23 @@
   \end{scope}%
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Water};
-  \node[anchor=south east, text=black, font=\symbserif\fontsize{18}{20}\selectfont,
+  \drawsmallhexagram{0.5\cardwidth}{0.52\cardheight-40mm}{1,0,1,1,0,1}{Lí}{Clinging}
+  \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
+    at (0.5\cardwidth, \cardheight-6.5mm) {Summer Solstice};
+  \node[anchor=south east, text=black, font=\symbserif\fontsize{36}{38}\selectfont,
     inner sep=2.5mm] at (\cardwidth-7mm, 0) {♋};
+  \begin{scope}[shift={(7mm,8mm)}]
+    \node[anchor=center, text=black, font=\cjkfont\fontsize{28}{30}\selectfont]
+      at (0,0) {南};
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{7}{8}\selectfont|nán},
+      text align=center, raise=0pt}}]
+      (170:5mm) arc (170:10:5mm);
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{7}{8}\selectfont|south},
+      text align=center, raise=1pt, reverse path}}]
+      (-10:6.5mm) arc (-10:-170:6.5mm);
+  \end{scope}%
   \playingcardmarks{red}{A}{♥}
 }
 \newcommand{\aceswords}{%
@@ -1140,8 +1188,23 @@
   \end{scope}%
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Air};
-  \node[anchor=south east, text=black, font=\symbserif\fontsize{18}{20}\selectfont,
+  \drawsmallhexagram{0.5\cardwidth}{0.52\cardheight-40mm}{0,1,1,0,1,1}{Duì}{Joyous}
+  \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
+    at (0.5\cardwidth, \cardheight-6.5mm) {Autumn Equinox};
+  \node[anchor=south east, text=black, font=\symbserif\fontsize{36}{38}\selectfont,
     inner sep=2.5mm] at (\cardwidth-7mm, 0) {♎};
+  \begin{scope}[shift={(7mm,8mm)}]
+    \node[anchor=center, text=black, font=\cjkfont\fontsize{28}{30}\selectfont]
+      at (0,0) {西};
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{7}{8}\selectfont|xī},
+      text align=center, raise=0pt}}]
+      (170:5mm) arc (170:10:5mm);
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{7}{8}\selectfont|west},
+      text align=center, raise=1pt, reverse path}}]
+      (-10:6.5mm) arc (-10:-170:6.5mm);
+  \end{scope}%
   \playingcardmarks{black}{A}{♠}
 }
 \newcommand{\acepentacles}{%
@@ -1151,8 +1214,23 @@
   \end{scope}%
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Earth};
-  \node[anchor=south east, text=black, font=\symbserif\fontsize{18}{20}\selectfont,
+  \drawsmallhexagram{0.5\cardwidth}{0.52\cardheight-40mm}{0,1,0,0,1,0}{Kǎn}{Abysmal}
+  \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
+    at (0.5\cardwidth, \cardheight-6.5mm) {Winter Solstice};
+  \node[anchor=south east, text=black, font=\symbserif\fontsize{36}{38}\selectfont,
     inner sep=2.5mm] at (\cardwidth-7mm, 0) {♑};
+  \begin{scope}[shift={(7mm,8mm)}]
+    \node[anchor=center, text=black, font=\cjkfont\fontsize{28}{30}\selectfont]
+      at (0,0) {北};
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{7}{8}\selectfont|běi},
+      text align=center, raise=0pt}}]
+      (170:5mm) arc (170:10:5mm);
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{7}{8}\selectfont|north},
+      text align=center, raise=1pt, reverse path}}]
+      (-10:6.5mm) arc (-10:-170:6.5mm);
+  \end{scope}%
   \playingcardmarks{red}{A}{♦}
 }
 
