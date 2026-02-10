@@ -153,7 +153,7 @@
     \draw[thick] (0,-3.2mm) -- (0,3.2mm);
     % "Lot of Spirit" curved above
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{5}{6}\selectfont|Lot of Spirit},
+      text={|\cardfont\fontsize{7}{8}\selectfont|Lot of Spirit},
       text align=center, raise=0pt}}]
       (190:3.5mm) arc (190:-10:3.5mm);
   \end{scope}%
@@ -163,12 +163,12 @@
       at (0,0) {中};
     % "hóng zhōng" curved above
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{5}{6}\selectfont\color{red}|hóng zhōng},
+      text={|\cardfont\fontsize{7}{8}\selectfont\color{red}|hóng zhōng},
       text align=center, raise=0pt}}]
       (170:3mm) arc (170:10:3mm);
     % "bullseye" curved below
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{5}{6}\selectfont\color{red}|bullseye},
+      text={|\cardfont\fontsize{7}{8}\selectfont\color{red}|bullseye},
       text align=center, raise=1pt, reverse path}}]
       (-10:4.5mm) arc (-10:-170:4.5mm);
   \end{scope}%
@@ -241,7 +241,7 @@
     \draw[thick] (-1.7mm,-1.7mm) -- (1.7mm,1.7mm);
     % "Lot of Fortune" curved above
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{5}{6}\selectfont|Lot of Fortune},
+      text={|\cardfont\fontsize{7}{8}\selectfont|Lot of Fortune},
       text align=center, raise=0pt}}]
       (190:3.5mm) arc (190:-10:3.5mm);
   \end{scope}%
@@ -256,12 +256,12 @@
     \draw[thin] (1.4mm,-1.4mm) -- (0.8mm,-1.8mm);
     % "bái bǎu" curved above
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{5}{6}\selectfont|bái bǎu},
+      text={|\cardfont\fontsize{7}{8}\selectfont|bái bǎu},
       text align=center, raise=0pt}}]
       (170:3.5mm) arc (170:10:3.5mm);
     % "clean slate" curved below
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{5}{6}\selectfont|clean slate},
+      text={|\cardfont\fontsize{7}{8}\selectfont|clean slate},
       text align=center, raise=1pt, reverse path}}]
       (-10:4.5mm) arc (-10:-170:4.5mm);
   \end{scope}%
@@ -346,7 +346,7 @@
       .. controls (2mm,1.3mm) and (0.8mm,2.1mm) .. (0,0.7mm);
     % "Lot of" curved above
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{5}{6}\selectfont|Lot of Eros},
+      text={|\cardfont\fontsize{7}{8}\selectfont|Lot of Eros},
       text align=center, raise=0pt}}]
       (170:3.5mm) arc (170:10:3.5mm);
   \end{scope}%
@@ -356,12 +356,12 @@
       at (0,0) {發};
     % "fa cái" curved above
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{5}{6}\selectfont\color{green!50!black}|fā cái},
+      text={|\cardfont\fontsize{7}{8}\selectfont\color{green!50!black}|fā cái},
       text align=center, raise=0pt}}]
       (170:3mm) arc (170:10:3mm);
     % "strike it rich" curved below
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{5}{6}\selectfont\color{green!50!black}|strike  it  rich},
+      text={|\cardfont\fontsize{7}{8}\selectfont\color{green!50!black}|strike  it  rich},
       text align=center, raise=1pt, reverse path}}]
       (-10:4.5mm) arc (-10:-170:4.5mm);
   \end{scope}%
@@ -734,6 +734,64 @@
   \end{scope}%
 }
 
+% Triplicity rulers: day ruler, night ruler, participating ruler
+% Curved "day" and "night" labels above the first two symbols
+\newcommand{\triplicityrulers}[3]{%
+  % #1=day ruler (font+glyph), #2=night ruler, #3=participating ruler
+  \begin{scope}[shift={(0.5\cardwidth, 0.52\cardheight-34mm)}]
+    % Day ruler
+    \node[anchor=center, text=black] at (-10mm, 0) {#1};
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{7}{8}\selectfont|day},
+      text align=center, raise=0pt}}]
+      (-14.33mm, 0.5mm) arc (150:30:5mm);
+    % Night ruler
+    \node[anchor=center, text=black] at (0, 0) {#2};
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{7}{8}\selectfont|night},
+      text align=center, raise=0pt}}]
+      (-4.33mm, 0.5mm) arc (150:30:5mm);
+    % Participating ruler
+    \node[anchor=center, text=black] at (10mm, 0) {#3};
+  \end{scope}%
+}
+% Element-specific triplicity ruler sets (Dorothean)
+\newcommand{\firerulers}{\triplicityrulers{{\symbfont\fontsize{14}{16}\selectfont ☉}}{{\symbserif\fontsize{14}{16}\selectfont ♃}}{{\symbserif\fontsize{14}{16}\selectfont ♄}}}
+\newcommand{\earthrulers}{\triplicityrulers{{\symbserif\fontsize{14}{16}\selectfont ♀}}{{\symbfont\fontsize{14}{16}\selectfont ☽}}{{\symbserif\fontsize{14}{16}\selectfont ♂}}}
+\newcommand{\airrulers}{\triplicityrulers{{\symbserif\fontsize{14}{16}\selectfont ♄}}{{\symbserif\fontsize{14}{16}\selectfont ☿}}{{\symbserif\fontsize{14}{16}\selectfont ♃}}}
+\newcommand{\waterrulers}{\triplicityrulers{{\symbserif\fontsize{14}{16}\selectfont ♀}}{{\symbserif\fontsize{14}{16}\selectfont ♂}}{{\symbfont\fontsize{14}{16}\selectfont ☽}}}
+
+% Small planet symbols for ruler rows
+\newcommand{\rSun}{{\symbfont\fontsize{14}{16}\selectfont ☉}}
+\newcommand{\rMoon}{{\symbfont\fontsize{14}{16}\selectfont ☽}}
+\newcommand{\rMercury}{{\symbserif\fontsize{14}{16}\selectfont ☿}}
+\newcommand{\rVenus}{{\symbserif\fontsize{14}{16}\selectfont ♀}}
+\newcommand{\rMars}{{\symbserif\fontsize{14}{16}\selectfont ♂}}
+\newcommand{\rJupiter}{{\symbserif\fontsize{14}{16}\selectfont ♃}}
+\newcommand{\rSaturn}{{\symbserif\fontsize{14}{16}\selectfont ♄}}
+
+% Decan rulers (Chaldean order): three planet symbols in a row
+\newcommand{\decanrulers}[3]{%
+  \begin{scope}[shift={(0.5\cardwidth, 0.52\cardheight-40mm)}]
+    \node[anchor=center, text=black] at (-10mm, 0) {#1};
+    \node[anchor=center, text=black] at (0, 0) {#2};
+    \node[anchor=center, text=black] at (10mm, 0) {#3};
+    % Degree ranges curved below each symbol
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{7}{8}\selectfont|0-10},
+      text align=center, raise=0pt}}]
+      (-15.2mm, -1mm) arc (210:330:6mm);
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{7}{8}\selectfont|10-20},
+      text align=center, raise=0pt}}]
+      (-5.2mm, -1mm) arc (210:330:6mm);
+    \path[postaction={decorate, decoration={text along path,
+      text={|\cardfont\fontsize{7}{8}\selectfont|20-30},
+      text align=center, raise=0pt}}]
+      (4.8mm, -1mm) arc (210:330:6mm);
+  \end{scope}%
+}
+
 % Zodiac sign overlays
 % Aries (Emperor) — Red — Domicile of Mars
 \newcommand{\zdaries}{%
@@ -751,6 +809,8 @@
     at (0.5\cardwidth, \cardheight-10mm) {cardinal fire};
   \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinysulfur};
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyfire};
+  \firerulers
+  \decanrulers{\rMars}{\rSun}{\rVenus}
 }
 % Taurus (Hierophant) — Red-Orange — Domicile of Venus
 \newcommand{\zdtaurus}{%
@@ -768,6 +828,8 @@
     at (0.5\cardwidth, \cardheight-10mm) {fixed earth};
   \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinysalt};
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyearth};
+  \earthrulers
+  \decanrulers{\rMercury}{\rMoon}{\rSaturn}
 }
 % Gemini (Lovers) — Orange — Domicile of Mercury
 \newcommand{\zdgemini}{%
@@ -785,6 +847,8 @@
     at (0.5\cardwidth, \cardheight-10mm) {mutable air};
   \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinymercury};
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyair};
+  \airrulers
+  \decanrulers{\rJupiter}{\rMars}{\rSun}
 }
 % Cancer (Chariot) — Amber — Domicile of Moon
 \newcommand{\zdcancer}{%
@@ -802,6 +866,8 @@
     at (0.5\cardwidth, \cardheight-10mm) {cardinal water};
   \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinysulfur};
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinywater};
+  \waterrulers
+  \decanrulers{\rVenus}{\rMercury}{\rMoon}
 }
 % Leo (Strength) — Yellow — Domicile of Sun
 \newcommand{\zdleo}{%
@@ -819,6 +885,8 @@
     at (0.5\cardwidth, \cardheight-10mm) {fixed fire};
   \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinysalt};
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyfire};
+  \firerulers
+  \decanrulers{\rSaturn}{\rJupiter}{\rMars}
 }
 % Virgo (Hermit) — Yellow-Green — Domicile of Mercury
 \newcommand{\zdvirgo}{%
@@ -836,6 +904,8 @@
     at (0.5\cardwidth, \cardheight-10mm) {mutable earth};
   \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinymercury};
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyearth};
+  \earthrulers
+  \decanrulers{\rSun}{\rVenus}{\rMercury}
 }
 % Libra (Justice) — Green — Domicile of Venus
 \newcommand{\zdlibra}{%
@@ -853,6 +923,8 @@
     at (0.5\cardwidth, \cardheight-10mm) {cardinal air};
   \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinysulfur};
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyair};
+  \airrulers
+  \decanrulers{\rMoon}{\rSaturn}{\rJupiter}
 }
 % Scorpio (Death) — Turquoise — Domicile of Mars
 \newcommand{\zdscorpio}{%
@@ -870,6 +942,8 @@
     at (0.5\cardwidth, \cardheight-10mm) {fixed water};
   \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinysalt};
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinywater};
+  \waterrulers
+  \decanrulers{\rMars}{\rSun}{\rVenus}
 }
 % Sagittarius (Temperance) — Blue — Domicile of Jupiter
 \newcommand{\zdsagittarius}{%
@@ -887,6 +961,8 @@
     at (0.5\cardwidth, \cardheight-10mm) {mutable fire};
   \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinymercury};
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyfire};
+  \firerulers
+  \decanrulers{\rMercury}{\rMoon}{\rSaturn}
 }
 % Capricorn (Devil) — Indigo — Domicile of Saturn
 \newcommand{\zdcapricorn}{%
@@ -904,6 +980,8 @@
     at (0.5\cardwidth, \cardheight-10mm) {cardinal earth};
   \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinysulfur};
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyearth};
+  \earthrulers
+  \decanrulers{\rJupiter}{\rMars}{\rSun}
 }
 % Aquarius (Star) — Violet — Domicile of Saturn
 \newcommand{\zdaquarius}{%
@@ -921,6 +999,8 @@
     at (0.5\cardwidth, \cardheight-10mm) {fixed air};
   \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinysalt};
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyair};
+  \airrulers
+  \decanrulers{\rVenus}{\rMercury}{\rMoon}
 }
 % Pisces (Moon XVIII) — Red-Violet — Domicile of Jupiter
 \newcommand{\zdpisces}{%
@@ -938,6 +1018,8 @@
     at (0.5\cardwidth, \cardheight-10mm) {mutable water};
   \node[anchor=center, text=black] at (0.5\cardwidth-3.5mm, \cardheight-16mm) {\tinymercury};
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinywater};
+  \waterrulers
+  \decanrulers{\rSaturn}{\rJupiter}{\rMars}
 }
 
 % Card command: \tarotcard[overlay]{image file}{roman numeral}{card name}{hebrew letter}
