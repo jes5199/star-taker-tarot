@@ -1132,12 +1132,16 @@
 }
 
 % Chinese money suit marks — top-right only
-% #1 = numeral (e.g. 一), #2 = suit name (e.g. 条)
-\newcommand{\chinesecardmarks}[2]{%
+% #1 = numeral (e.g. 一), #2 = suit name (e.g. 条), #3 = optional mahjong tile
+\newcommand{\chinesecardmarks}[3][]{%
   \node[anchor=north, text=black, font=\cjkfontgb\fontsize{20}{22}\selectfont,
-    inner sep=0pt] at (\cardwidth-4.5mm, \cardheight-4mm) {#1};
+    inner sep=0pt] at (\cardwidth-4.5mm, \cardheight-4mm) {#2};
   \node[anchor=north, text=black, font=\cjkfontgb\fontsize{20}{22}\selectfont,
-    inner sep=0pt] at (\cardwidth-4.5mm, \cardheight-9mm) {#2};
+    inner sep=0pt] at (\cardwidth-4.5mm, \cardheight-9mm) {#3};
+  \def\temp{#1}\ifx\temp\empty\else
+    \node[anchor=north, text=black, font=\symbserif\fontsize{18}{20}\selectfont,
+      inner sep=0pt] at (\cardwidth-4.5mm, \cardheight-16.5mm) {#1};
+  \fi
 }
 
 % Minor arcana Ace overlays — elemental triangles in Wiccan colors
@@ -1165,7 +1169,7 @@
       (-10:6.5mm) arc (-10:-170:6.5mm);
   \end{scope}%
   \playingcardmarks{black}{A}{♣}
-  \chinesecardmarks{一}{条}
+  \chinesecardmarks[🀐]{一}{条}
 }
 \newcommand{\acecups}{%
   \begin{scope}[shift={(0.5\cardwidth, 0.52\cardheight)}, line width=2.5mm, line cap=butt]
@@ -1191,7 +1195,7 @@
       (-10:6.5mm) arc (-10:-170:6.5mm);
   \end{scope}%
   \playingcardmarks{red}{A}{♥}
-  \chinesecardmarks{一}{万}
+  \chinesecardmarks[🀇]{一}{万}
 }
 \newcommand{\aceswords}{%
   \begin{scope}[shift={(0.5\cardwidth, 0.52\cardheight)}, line width=2.5mm, line cap=butt]
@@ -1245,7 +1249,7 @@
       (-10:6.5mm) arc (-10:-170:6.5mm);
   \end{scope}%
   \playingcardmarks{red}{A}{♦}
-  \chinesecardmarks{一}{并}
+  \chinesecardmarks[🀙]{一}{并}
 }
 
 % Card command: \tarotcard[overlay]{image file}{roman numeral}{card name}{hebrew letter}
