@@ -153,7 +153,7 @@
     \draw[thick] (0,-3.2mm) -- (0,3.2mm);
     % "Lot of Spirit" curved above
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont|Lot of Spirit},
+      text={|\cardfont\fontsize{5}{6}\selectfont|Lot of Spirit},
       text align=center, raise=0pt}}]
       (190:3.5mm) arc (190:-10:3.5mm);
   \end{scope}%
@@ -163,12 +163,12 @@
       at (0,0) {中};
     % "hóng zhōng" curved above
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont\color{red}|hóng zhōng},
+      text={|\cardfont\fontsize{5}{6}\selectfont\color{red}|hóng zhōng},
       text align=center, raise=0pt}}]
       (170:3mm) arc (170:10:3mm);
     % "bullseye" curved below
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont\color{red}|bullseye},
+      text={|\cardfont\fontsize{5}{6}\selectfont\color{red}|bullseye},
       text align=center, raise=1pt, reverse path}}]
       (-10:4.5mm) arc (-10:-170:4.5mm);
   \end{scope}%
@@ -241,7 +241,7 @@
     \draw[thick] (-1.7mm,-1.7mm) -- (1.7mm,1.7mm);
     % "Lot of Fortune" curved above
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont|Lot of Fortune},
+      text={|\cardfont\fontsize{5}{6}\selectfont|Lot of Fortune},
       text align=center, raise=0pt}}]
       (190:3.5mm) arc (190:-10:3.5mm);
   \end{scope}%
@@ -256,12 +256,12 @@
     \draw[thin] (1.4mm,-1.4mm) -- (0.8mm,-1.8mm);
     % "bái bǎu" curved above
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont|bái bǎu},
+      text={|\cardfont\fontsize{5}{6}\selectfont|bái bǎu},
       text align=center, raise=0pt}}]
       (170:3.5mm) arc (170:10:3.5mm);
     % "clean slate" curved below
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont|clean slate},
+      text={|\cardfont\fontsize{5}{6}\selectfont|clean slate},
       text align=center, raise=1pt, reverse path}}]
       (-10:4.5mm) arc (-10:-170:4.5mm);
   \end{scope}%
@@ -346,7 +346,7 @@
       .. controls (2mm,1.3mm) and (0.8mm,2.1mm) .. (0,0.7mm);
     % "Lot of" curved above
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont|Lot of Eros},
+      text={|\cardfont\fontsize{5}{6}\selectfont|Lot of Eros},
       text align=center, raise=0pt}}]
       (170:3.5mm) arc (170:10:3.5mm);
   \end{scope}%
@@ -356,12 +356,12 @@
       at (0,0) {發};
     % "fa cái" curved above
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont\color{green!50!black}|fā cái},
+      text={|\cardfont\fontsize{5}{6}\selectfont\color{green!50!black}|fā cái},
       text align=center, raise=0pt}}]
       (170:3mm) arc (170:10:3mm);
     % "strike it rich" curved below
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont\color{green!50!black}|strike  it  rich},
+      text={|\cardfont\fontsize{5}{6}\selectfont\color{green!50!black}|strike  it  rich},
       text align=center, raise=1pt, reverse path}}]
       (-10:4.5mm) arc (-10:-170:4.5mm);
   \end{scope}%
@@ -792,6 +792,26 @@
   \end{scope}%
 }
 
+% 24 Solar Terms (二十四节气) — two per zodiac sign
+% #1=left kanji, #2=left pinyin, #3=left english
+% #4=right kanji, #5=right pinyin, #6=right english
+\newcommand{\solarterms}[6]{%
+  % Left solar term (0°)
+  \node[anchor=base west, text=black, font=\cjkfont\fontsize{9}{11}\selectfont]
+    at (0.5mm, 7.5mm) {#1};
+  \node[anchor=base west, text=black, font=\cardfont\fontsize{7}{8}\selectfont]
+    at (0.5mm, 4.5mm) {#2};
+  \node[anchor=base west, text=black, font=\cardfont\fontsize{7}{8}\selectfont]
+    at (0.5mm, 1.5mm) {#3};
+  % Right solar term (15°)
+  \node[anchor=base east, text=black, font=\cjkfont\fontsize{9}{11}\selectfont]
+    at (\cardwidth-0.5mm, 7.5mm) {#4};
+  \node[anchor=base east, text=black, font=\cardfont\fontsize{7}{8}\selectfont]
+    at (\cardwidth-0.5mm, 4.5mm) {#5};
+  \node[anchor=base east, text=black, font=\cardfont\fontsize{7}{8}\selectfont]
+    at (\cardwidth-0.5mm, 1.5mm) {#6};
+}
+
 % Zodiac sign overlays
 % Aries (Emperor) — Red — Domicile of Mars
 \newcommand{\zdaries}{%
@@ -811,6 +831,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyfire};
   \firerulers
   \decanrulers{\rMars}{\rSun}{\rVenus}
+  \solarterms{春分}{Chūnfēn}{Spring Equinox}{清明}{Qīngmíng}{Clear \& Bright}
 }
 % Taurus (Hierophant) — Red-Orange — Domicile of Venus
 \newcommand{\zdtaurus}{%
@@ -830,6 +851,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyearth};
   \earthrulers
   \decanrulers{\rMercury}{\rMoon}{\rSaturn}
+  \solarterms{谷雨}{Gǔyǔ}{Grain Rain}{立夏}{Lìxià}{Start of Summer}
 }
 % Gemini (Lovers) — Orange — Domicile of Mercury
 \newcommand{\zdgemini}{%
@@ -849,6 +871,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyair};
   \airrulers
   \decanrulers{\rJupiter}{\rMars}{\rSun}
+  \solarterms{小满}{Xiǎomǎn}{Grain Buds}{芒种}{Mángzhòng}{Grain in Ear}
 }
 % Cancer (Chariot) — Amber — Domicile of Moon
 \newcommand{\zdcancer}{%
@@ -868,6 +891,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinywater};
   \waterrulers
   \decanrulers{\rVenus}{\rMercury}{\rMoon}
+  \solarterms{夏至}{Xiàzhì}{Summer Solstice}{小暑}{Xiǎoshǔ}{Minor Heat}
 }
 % Leo (Strength) — Yellow — Domicile of Sun
 \newcommand{\zdleo}{%
@@ -887,6 +911,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyfire};
   \firerulers
   \decanrulers{\rSaturn}{\rJupiter}{\rMars}
+  \solarterms{大暑}{Dàshǔ}{Major Heat}{立秋}{Lìqiū}{Start of Autumn}
 }
 % Virgo (Hermit) — Yellow-Green — Domicile of Mercury
 \newcommand{\zdvirgo}{%
@@ -906,6 +931,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyearth};
   \earthrulers
   \decanrulers{\rSun}{\rVenus}{\rMercury}
+  \solarterms{处暑}{Chǔshǔ}{End of Heat}{白露}{Báilù}{White Dew}
 }
 % Libra (Justice) — Green — Domicile of Venus
 \newcommand{\zdlibra}{%
@@ -925,6 +951,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyair};
   \airrulers
   \decanrulers{\rMoon}{\rSaturn}{\rJupiter}
+  \solarterms{秋分}{Qiūfēn}{Autumn Equinox}{寒露}{Hánlù}{Cold Dew}
 }
 % Scorpio (Death) — Turquoise — Domicile of Mars
 \newcommand{\zdscorpio}{%
@@ -944,6 +971,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinywater};
   \waterrulers
   \decanrulers{\rMars}{\rSun}{\rVenus}
+  \solarterms{霜降}{Shuāngjiàng}{Frost's Descent}{立冬}{Lìdōng}{Start of Winter}
 }
 % Sagittarius (Temperance) — Blue — Domicile of Jupiter
 \newcommand{\zdsagittarius}{%
@@ -963,6 +991,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyfire};
   \firerulers
   \decanrulers{\rMercury}{\rMoon}{\rSaturn}
+  \solarterms{小雪}{Xiǎoxuě}{Minor Snow}{大雪}{Dàxuě}{Major Snow}
 }
 % Capricorn (Devil) — Indigo — Domicile of Saturn
 \newcommand{\zdcapricorn}{%
@@ -982,6 +1011,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyearth};
   \earthrulers
   \decanrulers{\rJupiter}{\rMars}{\rSun}
+  \solarterms{冬至}{Dōngzhì}{Winter Solstice}{小寒}{Xiǎohán}{Minor Cold}
 }
 % Aquarius (Star) — Violet — Domicile of Saturn
 \newcommand{\zdaquarius}{%
@@ -1001,6 +1031,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyair};
   \airrulers
   \decanrulers{\rVenus}{\rMercury}{\rMoon}
+  \solarterms{大寒}{Dàhán}{Major Cold}{立春}{Lìchūn}{Start of Spring}
 }
 % Pisces (Moon XVIII) — Red-Violet — Domicile of Jupiter
 \newcommand{\zdpisces}{%
@@ -1020,6 +1051,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinywater};
   \waterrulers
   \decanrulers{\rSaturn}{\rJupiter}{\rMars}
+  \solarterms{雨水}{Yǔshuǐ}{Rain Water}{惊蛰}{Jīngzhé}{Awakening of Insects}
 }
 
 % Card command: \tarotcard[overlay]{image file}{roman numeral}{card name}{hebrew letter}
