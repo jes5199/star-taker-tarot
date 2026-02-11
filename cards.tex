@@ -1165,6 +1165,10 @@
   \begin{scope}[shift={(0.5\cardwidth, 0.52\cardheight)}, line width=2.5mm, line cap=butt]
     \draw[red] (-20mm,-12mm) -- (0,23mm) -- (20mm,-12mm) -- cycle;
   \end{scope}%
+  \node[anchor=center, inner sep=0.5mm, draw=black, thick, rounded corners=1mm]
+    at (0.5\cardwidth-22mm, 0.52\cardheight-24mm) {%
+      \includegraphics[height=15mm]{images/ring-crop.png}%
+    };
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Fire};
   \drawsmallhexagram{0.5\cardwidth}{0.52\cardheight-40mm}{1,0,0,1,0,0}{Zhèn}{Thunder}
