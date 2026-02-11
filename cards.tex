@@ -49,6 +49,7 @@
 % Symbol fonts for planet/zodiac glyphs
 \newfontface\symbfont{DejaVu Sans}
 \newfontface\symbserif{FreeSerif}
+\newfontface\cuneiform{Noto Sans Cuneiform}
 
 
 % Small inline alchemical symbols for zodiac cards
@@ -1178,6 +1179,40 @@
     at (7mm, 0.3\cardheight+20mm) {\chakraord{} Chakra - \chakraname};
 }
 
+% Lunar stack — sun at bottom, 7 crescents above (bright sides toward sun)
+% #1 = chakra/gate number (1=root/closest to sun..7=crown/furthest), #2 = "removes" or "reclaims"
+\newcommand{\lunarstack}[2]{%
+  \newcount\activegate\activegate=#1\relax
+  \def\isdescending{removes}\def\direction{#2}%
+  % 8 evenly spaced symbols: sun at position 0, moons at positions 1-7
+  \node[anchor=center, text=black, font=\symbserif\fontsize{10}{12}\selectfont]
+    at (\cardwidth-3mm, 0.3\cardheight+5mm) {☉};
+  \foreach \i in {1,...,7} {
+    \ifnum\i=\activegate
+      \node[anchor=center, text=black, font=\symbserif\fontsize{11}{13}\selectfont, rotate=-90]
+        at (\cardwidth-3mm, 0.3\cardheight+5mm+\i*4.3mm) {☽};
+    \else
+      \node[anchor=center, text=black, font=\symbserif\fontsize{8}{10}\selectfont, rotate=-90]
+        at (\cardwidth-3mm, 0.3\cardheight+5mm+\i*4.3mm) {☽};
+    \fi
+  }
+  % Arrow at the active gate — drawn outside loop to avoid expansion issues
+  \ifx\direction\isdescending
+    \draw[->, thick] (\cardwidth-3mm, 0.3\cardheight+5mm+#1*4.3mm+0.5mm) -- ++(0, -3mm);
+  \else
+    \draw[->, thick] (\cardwidth-3mm, 0.3\cardheight+5mm+#1*4.3mm-1.5mm) -- ++(0, 3mm);
+  \fi
+  % Inanna's gate text — removes reads top-to-bottom, reclaims reads bottom-to-top
+  \def\inannaitem{\ifcase#1\or robe\or anklet\or ring\or breastplate\or lapis necklace\or royal staff\or crown\fi}%
+  \ifx\direction\isdescending
+    \node[anchor=center, text=black, font=\cardfont\fontsize{7}{9}\selectfont, rotate=-90]
+      at (\cardwidth-7mm, 0.3\cardheight+20mm) {{\cuneiform 𒈹} #2 her \inannaitem};
+  \else
+    \node[anchor=center, text=black, font=\cardfont\fontsize{7}{9}\selectfont, rotate=90]
+      at (\cardwidth-7mm, 0.3\cardheight+20mm) {{\cuneiform 𒈹} #2 her \inannaitem};
+  \fi
+}
+
 % Court card planet/sign attribution — two lines centered on symbol
 % #1 = y position, #2 = motion word, #3 = planet symbol, #4 = planet name
 % #5 = sign symbol (empty to skip second line), #6 = sign name
@@ -1534,14 +1569,16 @@
     at (0.5\cardwidth, \cardheight-6.5mm) {Earth of Water};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,2,2,2}{Populus}
   \courtattrib{0.52\cardheight-35mm}{waxing}{☽}{Moon}{♋}{Cancer}
-  \chakrastack{7}}
+  \chakrastack{7}
+  \lunarstack{7}{reclaims}}
 ]{images/c-11}{Page of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{J}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Earth of Air};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,1,2,1}{Acquisitio}
   \courtattrib{0.52\cardheight-35mm}{direct}{♃}{Jupiter}{♐}{Sagittarius}
-  \chakrastack{2}}
+  \chakrastack{2}
+  \lunarstack{2}{reclaims}}
 ]{images/s-11}{Page of Swords}
 
 \vspace{4mm}
@@ -1551,7 +1588,8 @@
     at (0.5\cardwidth, \cardheight-6.5mm) {Earth of Earth};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,2,2,1}{Tristitia}
   \courtattrib{0.52\cardheight-35mm}{direct}{♄}{Saturn}{♒}{Aquarius}
-  \chakrastack{1}}
+  \chakrastack{1}
+  \lunarstack{1}{reclaims}}
 ]{images/p-11}{Page of Pentacles}
 
 % Knights (Air of suit)
@@ -1562,21 +1600,24 @@
     at (0.5\cardwidth, \cardheight-6.5mm) {Air of Fire};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,1,2,2}{Fortuna Minor}
   \courtattrib{0.52\cardheight-35mm}{southern}{☉}{Sun}{♌}{Leo}
-  \chakrastack{4}}
+  \chakrastack{4}
+  \lunarstack{4}{removes}}
 ]{images/w-12}{Knight of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{C}{♥}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Air of Water};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,1,1,1}{Via}
   \courtattrib{0.52\cardheight-35mm}{waning}{☽}{Moon}{♋}{Cancer}
-  \chakrastack{7}}
+  \chakrastack{7}
+  \lunarstack{7}{removes}}
 ]{images/c-12}{Knight of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{C}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Air of Air};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,1,2,2}{Rubeus}
   \courtattrib{0.52\cardheight-35mm}{{\symbserif ℞}etrograde}{♂}{Mars}{♏}{Scorpio}
-  \chakrastack{3}}
+  \chakrastack{3}
+  \lunarstack{3}{removes}}
 ]{images/s-12}{Knight of Swords}
 
 \vspace{4mm}
@@ -1607,21 +1648,24 @@
     at (0.5\cardwidth, \cardheight-6.5mm) {Water of Fire};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,2,1,2}{Amissio}
   \courtattrib{0.52\cardheight-35mm}{{\symbserif ℞}etrograde}{♀}{Venus}{♉}{Taurus}
-  \chakrastack{5}}
+  \chakrastack{5}
+  \lunarstack{5}{removes}}
 ]{images/w-13}{Queen of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{Q}{♥}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Water of Water};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,2,1,2}{Albus}
   \courtattrib{0.52\cardheight-35mm}{direct}{☿}{Mercury}{♊}{Gemini}
-  \chakrastack{6}}
+  \chakrastack{6}
+  \lunarstack{6}{reclaims}}
 ]{images/c-13}{Queen of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{Q}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Water of Air};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,1,1,2}{Conjunctio}
   \courtattrib{0.52\cardheight-35mm}{{\symbserif ℞}etrograde}{☿}{Mercury}{♍}{Virgo}
-  \chakrastack{6}}
+  \chakrastack{6}
+  \lunarstack{6}{removes}}
 ]{images/s-13}{Queen of Swords}
 
 \vspace{4mm}
@@ -1631,7 +1675,8 @@
     at (0.5\cardwidth, \cardheight-6.5mm) {Water of Earth};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,2,1,1}{Fortuna Major}
   \courtattrib{0.52\cardheight-35mm}{northern}{☉}{Sun}{♌}{Leo}
-  \chakrastack{4}}
+  \chakrastack{4}
+  \lunarstack{4}{reclaims}}
 ]{images/p-13}{Queen of Pentacles}
 
 % Kings (Fire of suit)
@@ -1642,21 +1687,24 @@
     at (0.5\cardwidth, \cardheight-6.5mm) {Fire of Fire};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,2,2,2}{Laetitia}
   \courtattrib{0.52\cardheight-35mm}{{\symbserif ℞}etrograde}{♃}{Jupiter}{♓}{Pisces}
-  \chakrastack{2}}
+  \chakrastack{2}
+  \lunarstack{2}{removes}}
 ]{images/w-14}{King of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{K}{♥}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Fire of Water};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,2,1,1}{Puella}
   \courtattrib{0.52\cardheight-35mm}{direct}{♀}{Venus}{♎}{Libra}
-  \chakrastack{5}}
+  \chakrastack{5}
+  \lunarstack{5}{reclaims}}
 ]{images/c-14}{King of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{K}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Fire of Air};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,1,2,1}{Puer}
   \courtattrib{0.52\cardheight-35mm}{direct}{♂}{Mars}{♈}{Aries}
-  \chakrastack{3}}
+  \chakrastack{3}
+  \lunarstack{3}{reclaims}}
 ]{images/s-14}{King of Swords}
 
 \vspace{4mm}
@@ -1666,7 +1714,8 @@
     at (0.5\cardwidth, \cardheight-6.5mm) {Fire of Earth};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,2,2,1}{Carcer}
   \courtattrib{0.52\cardheight-35mm}{{\symbserif ℞}etrograde}{♄}{Saturn}{♑}{Capricorn}
-  \chakrastack{1}}
+  \chakrastack{1}
+  \lunarstack{1}{removes}}
 ]{images/p-14}{King of Pentacles}
 
 \end{document}
