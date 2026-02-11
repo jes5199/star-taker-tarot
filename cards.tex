@@ -1165,12 +1165,22 @@
   \begin{scope}[shift={(0.5\cardwidth, 0.52\cardheight)}, line width=2.5mm, line cap=butt]
     \draw[red] (-20mm,-12mm) -- (0,23mm) -- (20mm,-12mm) -- cycle;
   \end{scope}%
-  \node[anchor=center, inner sep=0.5mm, draw=black, thick, rounded corners=1mm]
-    at (0.5\cardwidth-22mm, 0.52\cardheight-24mm) {%
-      \includegraphics[height=15mm]{images/ring-crop.png}%
-    };
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-24mm-7.5mm)
+      rectangle
+      (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-24mm+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (0.5\cardwidth-22mm, 0.52\cardheight-24mm) {%
+        \includegraphics[width=10.8mm]{images/ring-crop.png}%
+      };
+  \end{scope}
+  \draw[black, thick, rounded corners=1mm]
+    (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-24mm-7.5mm)
+    rectangle
+    (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-24mm+7.5mm);
   \node[anchor=south west, text=black, font=\cardfont\fontsize{10}{11}\selectfont,
-    inner sep=0pt] at (0.5\cardwidth-28mm, 0.52\cardheight-32mm) {25};
+    inner sep=0pt] at (0.5\cardwidth-27mm, 0.52\cardheight-31mm) {25};
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Fire};
   \drawsmallhexagram{0.5\cardwidth}{0.52\cardheight-41mm}{1,0,0,1,0,0}{Zhèn}{Thunder}
@@ -1197,6 +1207,22 @@
   \begin{scope}[shift={(0.5\cardwidth, 0.52\cardheight)}, line width=2.5mm, line cap=butt]
     \draw[blue] (-20mm,12mm) -- (0,-23mm) -- (20mm,12mm) -- cycle;
   \end{scope}%
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-24mm-7.5mm)
+      rectangle
+      (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-24mm+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (0.5\cardwidth-22mm, 0.52\cardheight-24mm) {%
+        \includegraphics[width=10.8mm]{images/man-crop.png}%
+      };
+  \end{scope}
+  \draw[black, thick, rounded corners=1mm]
+    (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-24mm-7.5mm)
+    rectangle
+    (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-24mm+7.5mm);
+  \node[anchor=south east, text=black, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-31mm) {28};
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Water};
   \drawsmallhexagram{0.5\cardwidth}{0.52\cardheight-41mm}{1,0,1,1,0,1}{Lí}{Clinging}
