@@ -30,6 +30,7 @@
 
 % Copperplate-like small caps font
 \newfontface\cardfont{EB Garamond SC}[LetterSpace=8]
+\newfontface\rankfont{cardcharacters.ttf}[Path=/home/jes/tarot/]
 
 % Hebrew font
 \newfontface\hebrewfont{Noto Serif Hebrew}
@@ -1134,15 +1135,16 @@
 
 % Playing card rank/suit marks — top-left upright, bottom-right inverted
 % #1 = color, #2 = rank (e.g. A), #3 = suit symbol (e.g. ♣)
-\newcommand{\playingcardmarks}[3]{%
+% #4 = xscale, #5 = yscale
+\newcommand{\playingcardmarks}[5]{%
   % Top left — rank above suit
-  \node[anchor=north, text=#1, font=\cardfont\fontsize{28}{30}\selectfont,
-    inner sep=0pt, xscale=0.8] at (4.5mm, \cardheight-2mm) {#2};
+  \node[anchor=north, text=#1, font=\rankfont\fontsize{24}{26}\selectfont,
+    inner sep=0pt, xscale=#4, yscale=#5] at (4.5mm, \cardheight-2mm) {#2};
   \node[anchor=north, text=#1, font=\symbfont\fontsize{24}{26}\selectfont,
     inner sep=0pt] at (4.5mm, \cardheight-11mm) {#3};
   % Bottom right — inverted (rotated 180)
-  \node[anchor=north, text=#1, font=\cardfont\fontsize{28}{30}\selectfont,
-    inner sep=0pt, xscale=0.8, rotate=180] at (\cardwidth-4.5mm, 2mm) {#2};
+  \node[anchor=north, text=#1, font=\rankfont\fontsize{24}{26}\selectfont,
+    inner sep=0pt, xscale=#4, yscale=#5, rotate=180] at (\cardwidth-4.5mm, 2mm) {#2};
   \node[anchor=north, text=#1, font=\symbfont\fontsize{24}{26}\selectfont,
     inner sep=0pt, rotate=180] at (\cardwidth-4.5mm, 11mm) {#3};
 }
@@ -1200,7 +1202,7 @@
       text align=center, raise=1pt, reverse path}}]
       (-10:6.5mm) arc (-10:-170:6.5mm);
   \end{scope}%
-  \playingcardmarks{black}{A}{♣}
+  \playingcardmarks{black}{A}{♣}{1.0}{1.0}
   \chinesecardmarks[🀐]{一}{条}
 }
 \newcommand{\acecups}{%
@@ -1242,7 +1244,7 @@
       text align=center, raise=1pt, reverse path}}]
       (-10:6.5mm) arc (-10:-170:6.5mm);
   \end{scope}%
-  \playingcardmarks{red}{A}{♥}
+  \playingcardmarks{red}{A}{♥}{1.0}{1.0}
   \chinesecardmarks[🀇]{一}{万}
 }
 \newcommand{\aceswords}{%
@@ -1285,7 +1287,7 @@
       text align=center, raise=1pt, reverse path}}]
       (-10:6.5mm) arc (-10:-170:6.5mm);
   \end{scope}%
-  \playingcardmarks{black}{A}{♠}
+  \playingcardmarks{black}{A}{♠}{1.0}{1.0}
   \chinesecardmarks{一}{十}
 }
 \newcommand{\acepentacles}{%
@@ -1328,7 +1330,7 @@
       text align=center, raise=1pt, reverse path}}]
       (-10:6.5mm) arc (-10:-170:6.5mm);
   \end{scope}%
-  \playingcardmarks{red}{A}{♦}
+  \playingcardmarks{red}{A}{♦}{1.0}{1.0}
   \chinesecardmarks[🀙]{一}{并}
 }
 
@@ -1445,45 +1447,45 @@
 % Pages
 \newpage
 \noindent
-\minorcard{images/w-11}{Page of Wands}\hfill
-\minorcard{images/c-11}{Page of Cups}\hfill
-\minorcard{images/s-11}{Page of Swords}
+\minorcard[\playingcardmarks{black}{J}{♣}{1.0}{1.0}]{images/w-11}{Page of Wands}\hfill
+\minorcard[\playingcardmarks{red}{J}{♥}{1.0}{1.0}]{images/c-11}{Page of Cups}\hfill
+\minorcard[\playingcardmarks{black}{J}{♠}{1.0}{1.0}]{images/s-11}{Page of Swords}
 
 \vspace{4mm}
 \noindent
-\minorcard{images/p-11}{Page of Pentacles}
+\minorcard[\playingcardmarks{red}{J}{♦}{1.0}{1.0}]{images/p-11}{Page of Pentacles}
 
 % Knights
 \newpage
 \noindent
-\minorcard{images/w-12}{Knight of Wands}\hfill
-\minorcard{images/c-12}{Knight of Cups}\hfill
-\minorcard{images/s-12}{Knight of Swords}
+\minorcard[\playingcardmarks{black}{C}{♣}{1.0}{1.0}]{images/w-12}{Knight of Wands}\hfill
+\minorcard[\playingcardmarks{red}{C}{♥}{1.0}{1.0}]{images/c-12}{Knight of Cups}\hfill
+\minorcard[\playingcardmarks{black}{C}{♠}{1.0}{1.0}]{images/s-12}{Knight of Swords}
 
 \vspace{4mm}
 \noindent
-\minorcard{images/p-12}{Knight of Pentacles}
+\minorcard[\playingcardmarks{red}{C}{♦}{1.0}{1.0}]{images/p-12}{Knight of Pentacles}
 
 % Queens
 \newpage
 \noindent
-\minorcard{images/w-13}{Queen of Wands}\hfill
-\minorcard{images/c-13}{Queen of Cups}\hfill
-\minorcard{images/s-13}{Queen of Swords}
+\minorcard[\playingcardmarks{black}{Q}{♣}{1.0}{1.0}]{images/w-13}{Queen of Wands}\hfill
+\minorcard[\playingcardmarks{red}{Q}{♥}{1.0}{1.0}]{images/c-13}{Queen of Cups}\hfill
+\minorcard[\playingcardmarks{black}{Q}{♠}{1.0}{1.0}]{images/s-13}{Queen of Swords}
 
 \vspace{4mm}
 \noindent
-\minorcard{images/p-13}{Queen of Pentacles}
+\minorcard[\playingcardmarks{red}{Q}{♦}{1.0}{1.0}]{images/p-13}{Queen of Pentacles}
 
 % Kings
 \newpage
 \noindent
-\minorcard{images/w-14}{King of Wands}\hfill
-\minorcard{images/c-14}{King of Cups}\hfill
-\minorcard{images/s-14}{King of Swords}
+\minorcard[\playingcardmarks{black}{K}{♣}{1.0}{1.0}]{images/w-14}{King of Wands}\hfill
+\minorcard[\playingcardmarks{red}{K}{♥}{1.0}{1.0}]{images/c-14}{King of Cups}\hfill
+\minorcard[\playingcardmarks{black}{K}{♠}{1.0}{1.0}]{images/s-14}{King of Swords}
 
 \vspace{4mm}
 \noindent
-\minorcard{images/p-14}{King of Pentacles}
+\minorcard[\playingcardmarks{red}{K}{♦}{1.0}{1.0}]{images/p-14}{King of Pentacles}
 
 \end{document}
