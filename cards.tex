@@ -1116,19 +1116,19 @@
 
 % Small hexagram for ace cards — compact version of \drawhexagram
 \newcommand{\drawsmallhexagram}[5]{%
-  \begin{scope}[shift={(#1, #2)}, line width=1mm, line cap=butt]
+  \begin{scope}[shift={(#1, #2)}, line width=1.2mm, line cap=butt]
     \foreach \type [count=\i from 0] in {#3} {
       \ifnum\type=1
-        \draw (-4mm, \i*2mm-5mm) -- (4mm, \i*2mm-5mm);
+        \draw (-5mm, \i*2.5mm-6.25mm) -- (5mm, \i*2.5mm-6.25mm);
       \else
-        \draw (-4mm, \i*2mm-5mm) -- (-1.5mm, \i*2mm-5mm);
-        \draw (1.5mm, \i*2mm-5mm) -- (4mm, \i*2mm-5mm);
+        \draw (-5mm, \i*2.5mm-6.25mm) -- (-1.5mm, \i*2.5mm-6.25mm);
+        \draw (1.5mm, \i*2.5mm-6.25mm) -- (5mm, \i*2.5mm-6.25mm);
       \fi
     }
-    \node[anchor=south, text=black, font=\cardfont\fontsize{7}{8}\selectfont]
-      at (0, 4.5mm) {#4};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{7}{8}\selectfont]
-      at (0, -5.5mm) {#5};
+    \node[anchor=south, text=black, font=\cardfont\fontsize{8}{9}\selectfont]
+      at (0, 6mm) {#4};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{8}{9}\selectfont]
+      at (0, -7mm) {#5};
   \end{scope}%
 }
 
@@ -1173,7 +1173,7 @@
     inner sep=0pt] at (0.5\cardwidth-28mm, 0.52\cardheight-32mm) {25};
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Fire};
-  \drawsmallhexagram{0.5\cardwidth}{0.52\cardheight-40mm}{1,0,0,1,0,0}{Zhèn}{Thunder}
+  \drawsmallhexagram{0.5\cardwidth}{0.52\cardheight-41mm}{1,0,0,1,0,0}{Zhèn}{Thunder}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Spring Equinox};
   \node[anchor=south east, text=black, font=\symbserif\fontsize{36}{38}\selectfont,
@@ -1199,7 +1199,7 @@
   \end{scope}%
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Water};
-  \drawsmallhexagram{0.5\cardwidth}{0.52\cardheight-40mm}{1,0,1,1,0,1}{Lí}{Clinging}
+  \drawsmallhexagram{0.5\cardwidth}{0.52\cardheight-41mm}{1,0,1,1,0,1}{Lí}{Clinging}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Summer Solstice};
   \node[anchor=south east, text=black, font=\symbserif\fontsize{36}{38}\selectfont,
@@ -1226,7 +1226,7 @@
   \end{scope}%
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Air};
-  \drawsmallhexagram{0.5\cardwidth}{0.52\cardheight-40mm}{0,1,1,0,1,1}{Duì}{Joyous}
+  \drawsmallhexagram{0.5\cardwidth}{0.52\cardheight-41mm}{0,1,1,0,1,1}{Duì}{Joyous}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Autumn Equinox};
   \node[anchor=south east, text=black, font=\symbserif\fontsize{36}{38}\selectfont,
@@ -1253,7 +1253,7 @@
   \end{scope}%
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Earth};
-  \drawsmallhexagram{0.5\cardwidth}{0.52\cardheight-40mm}{0,1,0,0,1,0}{Kǎn}{Abysmal}
+  \drawsmallhexagram{0.5\cardwidth}{0.52\cardheight-41mm}{0,1,0,0,1,0}{Kǎn}{Abysmal}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Winter Solstice};
   \node[anchor=south east, text=black, font=\symbserif\fontsize{36}{38}\selectfont,
