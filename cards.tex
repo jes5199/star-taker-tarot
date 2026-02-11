@@ -1250,6 +1250,22 @@
     \draw[yellow!80!orange] (-20mm,-12mm) -- (0,23mm) -- (20mm,-12mm) -- cycle;
     \draw[yellow!80!orange] (-23mm,2mm) -- (23mm,2mm);
   \end{scope}%
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-24mm-7.5mm)
+      rectangle
+      (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-24mm+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (0.5\cardwidth-22mm, 0.52\cardheight-24mm) {%
+        \includegraphics[width=10.8mm]{images/lady-crop.png}%
+      };
+  \end{scope}
+  \draw[black, thick, rounded corners=1mm]
+    (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-24mm-7.5mm)
+    rectangle
+    (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-24mm+7.5mm);
+  \node[anchor=south east, text=white, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-31mm) {29};
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Air};
   \drawsmallhexagram{0.5\cardwidth}{0.52\cardheight-41mm}{0,1,1,0,1,1}{Duì}{Joyous}
