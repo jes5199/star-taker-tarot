@@ -1150,6 +1150,26 @@
   \end{scope}%
 }
 
+% Court card planet/sign attribution — two lines centered on symbol
+% #1 = y position, #2 = motion word, #3 = planet symbol, #4 = planet name
+% #5 = sign symbol (empty to skip second line), #6 = sign name
+\newcommand{\courtattrib}[6]{%
+  \node[anchor=base east, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=2.5mm]
+    at (0.5\cardwidth, #1) {#2};
+  \node[anchor=base, text=black, font=\symbserif\fontsize{12}{14}\selectfont]
+    at (0.5\cardwidth, #1) {#3};
+  \node[anchor=base west, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=2.5mm]
+    at (0.5\cardwidth, #1) {#4};
+  \ifx\relax#5\relax\else
+    \node[anchor=base east, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=2.5mm]
+      at (0.5\cardwidth, #1-4mm) {in};
+    \node[anchor=base, text=black, font=\symbserif\fontsize{12}{14}\selectfont]
+      at (0.5\cardwidth, #1-4mm) {#5};
+    \node[anchor=base west, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=2.5mm]
+      at (0.5\cardwidth, #1-4mm) {#6};
+  \fi
+}
+
 % Playing card rank/suit marks — top-left upright, bottom-right inverted
 % #1 = color, #2 = rank (e.g. A), #3 = suit symbol (e.g. ♣)
 % #4 = xscale, #5 = yscale
@@ -1467,17 +1487,25 @@
 \minorcard[{\playingcardmarks{black}{J}{♣}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Earth of Fire};
-  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,1,1,2}{Cauda Draconis}}
+  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,1,1,2}{Cauda Draconis}
+  \node[anchor=base east, text=black, font=\cardfont\fontsize{12}{14}\selectfont, inner xsep=2.5mm]
+    at (0.5\cardwidth, 0.52\cardheight-35mm) {south};
+  \node[anchor=base, text=black, font=\symbfont\fontsize{16}{18}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight-35mm) {☋};
+  \node[anchor=base west, text=black, font=\cardfont\fontsize{12}{14}\selectfont, inner xsep=2.5mm]
+    at (0.5\cardwidth, 0.52\cardheight-35mm) {node};}
 ]{images/w-11}{Page of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{J}{♥}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Earth of Water};
-  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,2,2,2}{Populus}}
+  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,2,2,2}{Populus}
+  \courtattrib{0.52\cardheight-35mm}{waxing}{☽}{Moon}{♋}{Cancer}}
 ]{images/c-11}{Page of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{J}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Earth of Air};
-  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,1,2,1}{Acquisitio}}
+  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,1,2,1}{Acquisitio}
+  \courtattrib{0.52\cardheight-35mm}{direct}{♃}{Jupiter}{♐}{Sagittarius}}
 ]{images/s-11}{Page of Swords}
 
 \vspace{4mm}
@@ -1485,7 +1513,8 @@
 \minorcard[{\playingcardmarks{red}{J}{♦}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Earth of Earth};
-  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,2,2,1}{Tristitia}}
+  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,2,2,1}{Tristitia}
+  \courtattrib{0.52\cardheight-35mm}{direct}{♄}{Saturn}{♒}{Aquarius}}
 ]{images/p-11}{Page of Pentacles}
 
 % Knights (Air of suit)
@@ -1494,17 +1523,20 @@
 \minorcard[{\playingcardmarks{black}{C}{♣}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Air of Fire};
-  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,1,2,2}{Fortuna Minor}}
+  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,1,2,2}{Fortuna Minor}
+  \courtattrib{0.52\cardheight-35mm}{southern}{☉}{Sun}{♌}{Leo}}
 ]{images/w-12}{Knight of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{C}{♥}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Air of Water};
-  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,1,1,1}{Via}}
+  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,1,1,1}{Via}
+  \courtattrib{0.52\cardheight-35mm}{waning}{☽}{Moon}{♋}{Cancer}}
 ]{images/c-12}{Knight of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{C}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Air of Air};
-  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,1,2,2}{Rubeus}}
+  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,1,2,2}{Rubeus}
+  \courtattrib{0.52\cardheight-35mm}{retrograde}{♂}{Mars}{♏}{Scorpio}}
 ]{images/s-12}{Knight of Swords}
 
 \vspace{4mm}
@@ -1512,7 +1544,13 @@
 \minorcard[{\playingcardmarks{red}{C}{♦}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Air of Earth};
-  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,1,1,1}{Caput Draconis}}
+  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,1,1,1}{Caput Draconis}
+  \node[anchor=base east, text=black, font=\cardfont\fontsize{12}{14}\selectfont, inner xsep=2.5mm]
+    at (0.5\cardwidth, 0.52\cardheight-35mm) {north};
+  \node[anchor=base, text=black, font=\symbfont\fontsize{16}{18}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight-35mm) {☊};
+  \node[anchor=base west, text=black, font=\cardfont\fontsize{12}{14}\selectfont, inner xsep=2.5mm]
+    at (0.5\cardwidth, 0.52\cardheight-35mm) {node};}
 ]{images/p-12}{Knight of Pentacles}
 
 % Queens (Water of suit)
@@ -1521,17 +1559,20 @@
 \minorcard[{\playingcardmarks{black}{Q}{♣}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Water of Fire};
-  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,2,1,2}{Amissio}}
+  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,2,1,2}{Amissio}
+  \courtattrib{0.52\cardheight-35mm}{retrograde}{♀}{Venus}{♉}{Taurus}}
 ]{images/w-13}{Queen of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{Q}{♥}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Water of Water};
-  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,2,1,2}{Albus}}
+  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,2,1,2}{Albus}
+  \courtattrib{0.52\cardheight-35mm}{direct}{☿}{Mercury}{♊}{Gemini}}
 ]{images/c-13}{Queen of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{Q}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Water of Air};
-  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,1,1,2}{Conjunctio}}
+  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,1,1,2}{Conjunctio}
+  \courtattrib{0.52\cardheight-35mm}{retrograde}{☿}{Mercury}{♍}{Virgo}}
 ]{images/s-13}{Queen of Swords}
 
 \vspace{4mm}
@@ -1539,7 +1580,8 @@
 \minorcard[{\playingcardmarks{red}{Q}{♦}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Water of Earth};
-  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,2,1,1}{Fortuna Major}}
+  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,2,1,1}{Fortuna Major}
+  \courtattrib{0.52\cardheight-35mm}{northern}{☉}{Sun}{♌}{Leo}}
 ]{images/p-13}{Queen of Pentacles}
 
 % Kings (Fire of suit)
@@ -1548,17 +1590,20 @@
 \minorcard[{\playingcardmarks{black}{K}{♣}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Fire of Fire};
-  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,2,2,2}{Laetitia}}
+  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,2,2,2}{Laetitia}
+  \courtattrib{0.52\cardheight-35mm}{retrograde}{♃}{Jupiter}{♓}{Pisces}}
 ]{images/w-14}{King of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{K}{♥}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Fire of Water};
-  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,2,1,1}{Puella}}
+  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,2,1,1}{Puella}
+  \courtattrib{0.52\cardheight-35mm}{direct}{♀}{Venus}{♎}{Libra}}
 ]{images/c-14}{King of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{K}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Fire of Air};
-  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,1,2,1}{Puer}}
+  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,1,2,1}{Puer}
+  \courtattrib{0.52\cardheight-35mm}{direct}{♂}{Mars}{♈}{Aries}}
 ]{images/s-14}{King of Swords}
 
 \vspace{4mm}
@@ -1566,7 +1611,8 @@
 \minorcard[{\playingcardmarks{red}{K}{♦}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Fire of Earth};
-  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,2,2,1}{Carcer}}
+  \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,2,2,1}{Carcer}
+  \courtattrib{0.52\cardheight-35mm}{retrograde}{♄}{Saturn}{♑}{Capricorn}}
 ]{images/p-14}{King of Pentacles}
 
 \end{document}
