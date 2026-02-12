@@ -1231,6 +1231,29 @@
   \fi
 }
 
+% Moon phase diagram — draws a circle showing the lunar phase
+% #1 = x, #2 = y, #3 = phase (0=new, 4=first quarter, 8=full, 12=third quarter)
+\newcommand{\drawmoonphase}[3]{%
+  \begin{scope}[shift={(#1,#2)}]
+    \pgfmathtruncatemacro{\p}{#3}%
+    \fill[black!80] (0,0) circle (3mm);
+    \ifnum\p=8
+      \fill[white] (0,0) circle (3mm);
+    \fi
+    \ifnum\p>0 \ifnum\p<8
+      % Waxing: right side lit
+      \pgfmathsetmacro{\tx}{3 * cos(\p * 22.5)}%
+      \fill[white] (0, 3mm) arc(90:-90:3mm) arc(-90:90:\tx mm and 3mm);
+    \fi\fi
+    \ifnum\p>8 \ifnum\p<16
+      % Waning: left side lit
+      \pgfmathsetmacro{\tx}{-3 * cos(\p * 22.5)}%
+      \fill[white] (0, 3mm) arc(90:270:3mm) arc(-90:90:\tx mm and 3mm);
+    \fi\fi
+    \draw[black!60, thin] (0,0) circle (3mm);
+  \end{scope}%
+}
+
 % Court card planet/sign attribution — two lines centered on symbol
 % #1 = y position, #2 = motion word, #3 = planet symbol, #4 = planet name
 % #5 = sign symbol (empty to skip second line), #6 = sign name
@@ -1601,7 +1624,8 @@
   \node[anchor=north, text=black, font=\devfont\fontsize{14}{16}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-42mm) {केतु};
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
-    at (0.5\cardwidth, 0.52\cardheight-48mm) {Tail of the Dragon};}
+    at (0.5\cardwidth, 0.52\cardheight-48mm) {Tail of the Dragon};
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{8}}
 ]{images/w-11}{Page of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{J}{♥}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -1626,7 +1650,8 @@
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {24};
   \courtattrib{0.52\cardheight-35mm}{waxing}{☽}{Moon}{♋}{Cancer}
   \chakrastack{7}
-  \lunarstack{7}{reclaims}}
+  \lunarstack{7}{reclaims}
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{7}}
 ]{images/c-11}{Page of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{J}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -1651,7 +1676,8 @@
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {13};
   \courtattrib{0.52\cardheight-35mm}{direct}{♃}{Jupiter}{♐}{Sagittarius}
   \chakrastack{2}
-  \lunarstack{2}{reclaims}}
+  \lunarstack{2}{reclaims}
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{2}}
 ]{images/s-11}{Page of Swords}
 
 \vspace{4mm}
@@ -1679,7 +1705,8 @@
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {10};
   \courtattrib{0.52\cardheight-35mm}{direct}{♄}{Saturn}{♒}{Aquarius}
   \chakrastack{1}
-  \lunarstack{1}{reclaims}}
+  \lunarstack{1}{reclaims}
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{1}}
 ]{images/p-11}{Page of Pentacles}
 
 % Knights (Air of suit)
@@ -1691,7 +1718,8 @@
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,1,2,2}{Fortuna Minor}
   \courtattrib{0.52\cardheight-35mm}{southern}{☉}{Sun}{♌}{Leo}
   \chakrastack{4}
-  \lunarstack{4}{removes}}
+  \lunarstack{4}{removes}
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{12}}
 ]{images/w-12}{Knight of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{C}{♥}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -1699,7 +1727,8 @@
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,1,1,1}{Via}
   \courtattrib{0.52\cardheight-35mm}{waning}{☽}{Moon}{♋}{Cancer}
   \chakrastack{7}
-  \lunarstack{7}{removes}}
+  \lunarstack{7}{removes}
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{9}}
 ]{images/c-12}{Knight of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{C}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -1707,7 +1736,8 @@
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,1,2,2}{Rubeus}
   \courtattrib{0.52\cardheight-35mm}{{\symbserif ℞}etrograde}{♂}{Mars}{♏}{Scorpio}
   \chakrastack{3}
-  \lunarstack{3}{removes}}
+  \lunarstack{3}{removes}
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{13}}
 ]{images/s-12}{Knight of Swords}
 
 \vspace{4mm}
@@ -1727,7 +1757,8 @@
   \node[anchor=north, text=black, font=\devfont\fontsize{14}{16}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-42mm) {राहु};
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
-    at (0.5\cardwidth, 0.52\cardheight-48mm) {Head of the Dragon};}
+    at (0.5\cardwidth, 0.52\cardheight-48mm) {Head of the Dragon};
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{0}}
 ]{images/p-12}{Knight of Pentacles}
 
 % Queens (Water of suit)
@@ -1756,7 +1787,8 @@
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {7};
   \courtattrib{0.52\cardheight-35mm}{{\symbserif ℞}etrograde}{♀}{Venus}{♉}{Taurus}
   \chakrastack{5}
-  \lunarstack{5}{removes}}
+  \lunarstack{5}{removes}
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{11}}
 ]{images/w-13}{Queen of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{Q}{♥}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -1781,7 +1813,8 @@
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {17};
   \courtattrib{0.52\cardheight-35mm}{direct}{☿}{Mercury}{♊}{Gemini}
   \chakrastack{6}
-  \lunarstack{6}{reclaims}}
+  \lunarstack{6}{reclaims}
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{6}}
 ]{images/c-13}{Queen of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{Q}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -1806,7 +1839,8 @@
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {9};
   \courtattrib{0.52\cardheight-35mm}{{\symbserif ℞}etrograde}{☿}{Mercury}{♍}{Virgo}
   \chakrastack{6}
-  \lunarstack{6}{removes}}
+  \lunarstack{6}{removes}
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{10}}
 ]{images/s-13}{Queen of Swords}
 
 \vspace{4mm}
@@ -1834,7 +1868,8 @@
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {22};
   \courtattrib{0.52\cardheight-35mm}{northern}{☉}{Sun}{♌}{Leo}
   \chakrastack{4}
-  \lunarstack{4}{reclaims}}
+  \lunarstack{4}{reclaims}
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{4}}
 ]{images/p-13}{Queen of Pentacles}
 
 % Kings (Fire of suit)
@@ -1863,7 +1898,8 @@
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {6};
   \courtattrib{0.52\cardheight-35mm}{{\symbserif ℞}etrograde}{♃}{Jupiter}{♓}{Pisces}
   \chakrastack{2}
-  \lunarstack{2}{removes}}
+  \lunarstack{2}{removes}
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{14}}
 ]{images/w-14}{King of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{K}{♥}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -1888,7 +1924,8 @@
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {4};
   \courtattrib{0.52\cardheight-35mm}{direct}{♀}{Venus}{♎}{Libra}
   \chakrastack{5}
-  \lunarstack{5}{reclaims}}
+  \lunarstack{5}{reclaims}
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{5}}
 ]{images/c-14}{King of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{K}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -1913,7 +1950,8 @@
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {30};
   \courtattrib{0.52\cardheight-35mm}{direct}{♂}{Mars}{♈}{Aries}
   \chakrastack{3}
-  \lunarstack{3}{reclaims}}
+  \lunarstack{3}{reclaims}
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{3}}
 ]{images/s-14}{King of Swords}
 
 \vspace{4mm}
@@ -1941,7 +1979,8 @@
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {34};
   \courtattrib{0.52\cardheight-35mm}{{\symbserif ℞}etrograde}{♄}{Saturn}{♑}{Capricorn}
   \chakrastack{1}
-  \lunarstack{1}{removes}}
+  \lunarstack{1}{removes}
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{15}}
 ]{images/p-14}{King of Pentacles}
 
 \end{document}
