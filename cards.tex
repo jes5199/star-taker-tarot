@@ -1632,6 +1632,23 @@
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Earth of Air};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,1,2,1}{Acquisitio}
+  % Lenormand mini-card: Child (13)
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-34mm-7.5mm)
+      rectangle
+      (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-34mm+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (0.5\cardwidth-22mm, 0.52\cardheight-34mm) {%
+        \includegraphics[height=15mm]{images/child-crop.png}%
+      };
+  \end{scope}
+  \draw[black, thick, rounded corners=1mm]
+    (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-34mm-7.5mm)
+    rectangle
+    (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-34mm+7.5mm);
+  \node[anchor=south east, text=black, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-41mm) {13};
   \courtattrib{0.52\cardheight-35mm}{direct}{♃}{Jupiter}{♐}{Sagittarius}
   \chakrastack{2}
   \lunarstack{2}{reclaims}}
