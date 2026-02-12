@@ -1607,6 +1607,23 @@
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Earth of Water};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,2,2,2}{Populus}
+  % Lenormand mini-card: Heart (24)
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-34mm-7.5mm)
+      rectangle
+      (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-34mm+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (0.5\cardwidth-22mm, 0.52\cardheight-34mm) {%
+        \includegraphics[width=10.8mm]{images/heart-crop.png}%
+      };
+  \end{scope}
+  \draw[black, thick, rounded corners=1mm]
+    (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-34mm-7.5mm)
+    rectangle
+    (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-34mm+7.5mm);
+  \node[anchor=south east, text=black, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-41mm) {24};
   \courtattrib{0.52\cardheight-35mm}{waxing}{☽}{Moon}{♋}{Cancer}
   \chakrastack{7}
   \lunarstack{7}{reclaims}}
