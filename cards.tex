@@ -1762,6 +1762,23 @@
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Water of Water};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,2,1,2}{Albus}
+  % Lenormand mini-card: Stork (17)
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
+      rectangle
+      (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (0.5\cardwidth-22mm, 0.52\cardheight-44mm) {%
+        \includegraphics[height=15mm]{images/stork-crop.png}%
+      };
+  \end{scope}
+  \draw[black, thick, rounded corners=1mm]
+    (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
+    rectangle
+    (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
+  \node[anchor=south east, text=white, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {17};
   \courtattrib{0.52\cardheight-35mm}{direct}{☿}{Mercury}{♊}{Gemini}
   \chakrastack{6}
   \lunarstack{6}{reclaims}}
@@ -1785,7 +1802,7 @@
     (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
     rectangle
     (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
-  \node[anchor=south east, text=white, font=\cardfont\fontsize{10}{11}\selectfont,
+  \node[anchor=south east, text=black, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {9};
   \courtattrib{0.52\cardheight-35mm}{{\symbserif ℞}etrograde}{☿}{Mercury}{♍}{Virgo}
   \chakrastack{6}
