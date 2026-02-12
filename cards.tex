@@ -1135,6 +1135,24 @@
 }
 
 % Geomancy figure — 4 rows of 1 or 2 black diamonds
+% Small geomancy figure for Aces
+% #1 = x, #2 = y, #3 = comma-separated rows (1 or 2, top to bottom), #4 = label below
+\newcommand{\drawsmallgeomancy}[4]{%
+  \begin{scope}[shift={(#1, #2)}]
+    \foreach \dots [count=\i from 0] in {#3} {
+      \ifnum\dots=1
+        \node[fill=black, inner sep=0.8mm, rotate=45] at (0, -\i*3.5mm) {};
+      \else
+        \node[fill=black, inner sep=0.8mm, rotate=45] at (-2mm, -\i*3.5mm) {};
+        \node[fill=black, inner sep=0.8mm, rotate=45] at (2mm, -\i*3.5mm) {};
+      \fi
+    }
+    \node[anchor=north, text=black, font=\cardfont\fontsize{7}{9}\selectfont]
+      at (0, -3*3.5mm-1mm) {#4};
+  \end{scope}%
+}
+
+% Geomancy figure for court cards
 % #1 = x, #2 = y, #3 = comma-separated rows (1 or 2, top to bottom), #4 = label below
 \newcommand{\drawgeomancy}[4]{%
   \begin{scope}[shift={(#1, #2)}]
@@ -1302,6 +1320,7 @@
       text align=center, raise=1pt, reverse path}}]
       (-10:6.5mm) arc (-10:-170:6.5mm);
   \end{scope}%
+  \drawsmallgeomancy{0.5\cardwidth+22mm}{0.52\cardheight-17mm}{1,2,2,2}{Laetitia}
   \playingcardmarks{black}{A}{♣}{1.0}{1.0}
   \chinesecardmarks[🀐]{一}{条}
 }
@@ -1344,6 +1363,7 @@
       text align=center, raise=1pt, reverse path}}]
       (-10:6.5mm) arc (-10:-170:6.5mm);
   \end{scope}%
+  \drawsmallgeomancy{0.5\cardwidth+22mm}{0.52\cardheight-17mm}{2,2,1,2}{Albus}
   \playingcardmarks{red}{A}{♥}{1.0}{1.0}
   \chinesecardmarks[🀇]{一}{万}
 }
@@ -1387,6 +1407,7 @@
       text align=center, raise=1pt, reverse path}}]
       (-10:6.5mm) arc (-10:-170:6.5mm);
   \end{scope}%
+  \drawsmallgeomancy{0.5\cardwidth+22mm}{0.52\cardheight-17mm}{2,1,2,2}{Rubeus}
   \playingcardmarks{black}{A}{♠}{1.0}{1.0}
   \chinesecardmarks{一}{十}
 }
@@ -1430,6 +1451,7 @@
       text align=center, raise=1pt, reverse path}}]
       (-10:6.5mm) arc (-10:-170:6.5mm);
   \end{scope}%
+  \drawsmallgeomancy{0.5\cardwidth+22mm}{0.52\cardheight-17mm}{2,2,2,1}{Tristitia}
   \playingcardmarks{red}{A}{♦}{1.0}{1.0}
   \chinesecardmarks[🀙]{一}{并}
 }
