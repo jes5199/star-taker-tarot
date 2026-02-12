@@ -1573,6 +1573,23 @@
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Earth of Fire};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,1,1,2}{Cauda Draconis}
+  % Lenormand mini-card: Whip/Broom (11)
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-14mm-7.5mm)
+      rectangle
+      (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-14mm+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (0.5\cardwidth-22mm, 0.52\cardheight-14mm) {%
+        \includegraphics[width=10.8mm]{images/whip-crop.png}%
+      };
+  \end{scope}
+  \draw[black, thick, rounded corners=1mm]
+    (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-14mm-7.5mm)
+    rectangle
+    (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-14mm+7.5mm);
+  \node[anchor=south east, text=black, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-21mm) {11};
   \node[anchor=base east, text=black, font=\cardfont\fontsize{12}{14}\selectfont, inner xsep=4mm]
     at (0.5\cardwidth, 0.52\cardheight-35mm) {south};
   \node[anchor=base, text=black, font=\symbfont\fontsize{16}{18}\selectfont]
