@@ -2113,7 +2113,7 @@
   \fill[black] (0,0) rectangle (\cardwidth, \cardheight);
   \foreach \a in {0,5,...,355} {
     \foreach \s in {0,1,...,19} {
-      \pgfmathsetmacro{\op}{1 - \s/20}%
+      \pgfmathsetmacro{\op}{\s < 7 ? 1 : 1 - (\s-7)/13}%
       \pgfmathsetmacro{\startrad}{5 + \s*2.5}%
       \draw[white, thin, opacity=\op]
         (0.5\cardwidth, 0.5\cardheight) ++(\a:\startrad mm) -- ++(\a:2.5mm);
