@@ -2112,7 +2112,9 @@
   \clip[rounded corners=2.5mm] (0,0) rectangle (\cardwidth, \cardheight);
   \fill[black] (0,0) rectangle (\cardwidth, \cardheight);
   \foreach \a in {0,5,...,355} {
-    \draw[white, thin] (0.5\cardwidth, 0.5\cardheight) ++(\a:5mm) -- ++(\a:50mm);
+    \begin{scope}[shift={(0.5\cardwidth, 0.5\cardheight)}, rotate=\a]
+      \fill[white] (5mm, 0.2pt) -- (55mm, 0) -- (5mm, -0.2pt) -- cycle;
+    \end{scope}
   }
 \end{tikzpicture}
 
