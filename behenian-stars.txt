@@ -17,16 +17,16 @@ Castor                  20°34' Cancer       20°56' Cancer       Alpha Geminoru
 Pollux                  23°33' Cancer       23°55' Cancer       Beta Geminorum
 Procyon                 26°07' Cancer       26°29' Cancer       Alpha Canis Minoris
 Regulus *               00°10' Virgo        00°32' Virgo        Alpha Leonis
+Alkaid                  27°16' Virgo        27°39' Virgo        Eta Ursae Majoris
 Vindemiatrix            10°16' Libra        10°38' Libra        Epsilon Virginis
 Algorab                 13°47' Libra        14°09' Libra        Delta Corvi
 Spica                   24°10' Libra        24°33' Libra        Alpha Virginis
 Arcturus                24°34' Libra        24°56' Libra        Alpha Boötis
 Alphecca                12°38' Scorpio      13°00' Scorpio      Alpha Coronae Borealis
 Zubenelgenubi           15°25' Scorpio      15°47' Scorpio      Alpha Librae
-Alkaid                  27°16' Virgo        27°39' Virgo        Eta Ursae Majoris
+Toliman                 29°47' Scorpio      00°07' Sagittarius  Alpha Centauri
 Antares *               10°06' Sagittarius  10°28' Sagittarius  Alpha Scorpii
 Rasalhague              22°47' Sagittarius  23°09' Sagittarius  Alpha Ophiuchi
-Toliman                 29°47' Scorpio      00°07' Sagittarius  Alpha Centauri
 Vega                    15°39' Capricorn    16°01' Capricorn    Alpha Lyrae
 Altair                  02°07' Aquarius     02°29' Aquarius     Alpha Aquilae
 Sadalsuud               23°44' Aquarius     24°06' Aquarius     Beta Aquarii
