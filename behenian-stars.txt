@@ -1,21 +1,42 @@
-15 Behenian Fixed Stars — Ecliptic Longitudes
+Astrologically Significant Fixed Stars — Ecliptic Longitudes
 
-Star                    2024 (Tropical)     2050 (Tropical)     Constellation
-Algol                   26°29' Taurus       26°52' Taurus       Beta Persei
-Alcyone                 00°19' Gemini       00°42' Gemini       Eta Tauri
-Aldebaran               10°07' Gemini       10°30' Gemini       Alpha Tauri
-Capella                 22°11' Gemini       22°34' Gemini       Alpha Aurigae
-Sirius                  14°24' Cancer       14°47' Cancer       Alpha Canis Majoris
-Procyon                 26°06' Cancer       26°29' Cancer       Alpha Canis Minoris
-Regulus                 00°09' Virgo        00°32' Virgo        Alpha Leonis
-Alkaid                  27°16' Virgo        27°39' Virgo        Eta Ursae Majoris
+Star                    2024 (Tropical)     2050 (Tropical)     Designation
+─────────────────────────────────────────────────────────────────────────────
+Hamal                   08°00' Taurus       08°22' Taurus       Alpha Arietis
+Algol                   26°30' Taurus       26°52' Taurus       Beta Persei
+Alcyone                 00°20' Gemini       00°42' Gemini       Eta Tauri (Pleiades)
+Aldebaran *             10°07' Gemini       10°30' Gemini       Alpha Tauri
+Rigel                   17°10' Gemini       17°32' Gemini       Beta Orionis
+Bellatrix               21°17' Gemini       21°39' Gemini       Gamma Orionis
+Capella                 22°12' Gemini       22°34' Gemini       Alpha Aurigae
+Polaris                 28°54' Gemini       29°16' Gemini       Alpha Ursae Minoris
+Betelgeuse              29°05' Gemini       29°27' Gemini       Alpha Orionis
+Sirius                  14°25' Cancer       14°47' Cancer       Alpha Canis Majoris
+Canopus                 15°17' Cancer       15°39' Cancer       Alpha Carinae
+Castor                  20°34' Cancer       20°56' Cancer       Alpha Geminorum
+Pollux                  23°33' Cancer       23°55' Cancer       Beta Geminorum
+Procyon                 26°07' Cancer       26°29' Cancer       Alpha Canis Minoris
+Regulus *               00°10' Virgo        00°32' Virgo        Alpha Leonis
+Vindemiatrix            10°16' Libra        10°38' Libra        Epsilon Virginis
 Algorab                 13°47' Libra        14°09' Libra        Delta Corvi
 Spica                   24°10' Libra        24°33' Libra        Alpha Virginis
-Arcturus                24°33' Libra        24°56' Libra        Alpha Boötis
-Alphecca                12°37' Scorpio      13°00' Scorpio      Alpha Coronae Borealis
-Antares                 10°05' Sagittarius  10°28' Sagittarius  Alpha Scorpii
-Vega                    15°38' Capricorn    16°01' Capricorn    Alpha Lyrae
-Deneb Algedi            23°52' Aquarius     24°15' Aquarius     Delta Capricorni
+Arcturus                24°34' Libra        24°56' Libra        Alpha Boötis
+Alphecca                12°38' Scorpio      13°00' Scorpio      Alpha Coronae Borealis
+Zubenelgenubi           15°25' Scorpio      15°47' Scorpio      Alpha Librae
+Alkaid                  27°16' Virgo        27°39' Virgo        Eta Ursae Majoris
+Antares *               10°06' Sagittarius  10°28' Sagittarius  Alpha Scorpii
+Rasalhague              22°47' Sagittarius  23°09' Sagittarius  Alpha Ophiuchi
+Toliman                 29°47' Scorpio      00°07' Sagittarius  Alpha Centauri
+Vega                    15°39' Capricorn    16°01' Capricorn    Alpha Lyrae
+Altair                  02°07' Aquarius     02°29' Aquarius     Alpha Aquilae
+Sadalsuud               23°44' Aquarius     24°06' Aquarius     Beta Aquarii
+Deneb Algedi            23°53' Aquarius     24°15' Aquarius     Delta Capricorni
+Fomalhaut *             04°12' Pisces       04°34' Pisces       Alpha Piscis Austrini
+Deneb                   05°39' Pisces       06°01' Pisces       Alpha Cygni
+Achernar                15°39' Pisces       16°02' Pisces       Alpha Eridani
+Scheat                  29°42' Pisces       00°05' Aries        Beta Pegasi
 
-2024 source: https://orphicastrology.com/fixedstars/behenian
+* = Royal Star (Watchers of the sky)
+
+2024 source: https://orphicastrology.com/fixedstars/behenian (Behenian 15)
 2050 positions: computed via skyfield (Hipparcos + DE421), see precess-stars.py
