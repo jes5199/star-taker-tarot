@@ -2031,4 +2031,16 @@
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{15}}
 ]{images/p-14}{King of Pentacles}
 
+% Card back
+\newpage
+\noindent
+\begin{tikzpicture}
+  \draw[rounded corners=2.5mm, thick] (0,0) rectangle (\cardwidth, \cardheight);
+  \clip[rounded corners=2.5mm] (0,0) rectangle (\cardwidth, \cardheight);
+  \fill[black] (0,0) rectangle (\cardwidth, \cardheight);
+  \foreach \a in {0,5,...,355} {
+    \draw[white, thin] (0.5\cardwidth, 0.5\cardheight) ++(\a:5mm) -- ++(\a:50mm);
+  }
+\end{tikzpicture}
+
 \end{document}
