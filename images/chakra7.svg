@@ -30,7 +30,7 @@
   </metadata>
   <sodipodi:namedview
      pagecolor="#ffffff"
-     bordercolor="#666666"
+     bordercolor="#b2b2b2"
      borderopacity="1"
      objecttolerance="10"
      gridtolerance="10"
@@ -75,7 +75,7 @@
          id="stop6006" />
       <stop
          offset="70%"
-         stop-color="#a92dd2"
+         stop-color="#d496e8"
          id="stop6008" />
     </radialGradient>
     <radialGradient
@@ -86,11 +86,11 @@
        r="350">
       <stop
          offset="93%"
-         stop-color="#d496e9"
+         stop-color="#e9caf4"
          id="stop6011" />
       <stop
          offset="96%"
-         stop-color="#9828bd"
+         stop-color="#cb93de"
          id="stop6013" />
     </radialGradient>
     <radialGradient
@@ -101,11 +101,11 @@
        r="350">
       <stop
          offset="89%"
-         stop-color="#d496e9"
+         stop-color="#e9caf4"
          id="stop6016" />
       <stop
          offset="93.5%"
-         stop-color="#9828bd"
+         stop-color="#cb93de"
          id="stop6018" />
     </radialGradient>
     <radialGradient
@@ -116,11 +116,11 @@
        r="350">
       <stop
          offset="83%"
-         stop-color="#d496e9"
+         stop-color="#e9caf4"
          id="stop6021" />
       <stop
          offset="89.5%"
-         stop-color="#9828bd"
+         stop-color="#cb93de"
          id="stop6023" />
     </radialGradient>
     <radialGradient
@@ -131,11 +131,11 @@
        r="350">
       <stop
          offset="75%"
-         stop-color="#d496e9"
+         stop-color="#e9caf4"
          id="stop6026" />
       <stop
          offset="81.5%"
-         stop-color="#9828bd"
+         stop-color="#cb93de"
          id="stop6028" />
     </radialGradient>
     <radialGradient
@@ -146,11 +146,11 @@
        r="350">
       <stop
          offset="69%"
-         stop-color="#d496e9"
+         stop-color="#e9caf4"
          id="stop6031" />
       <stop
          offset="76.5%"
-         stop-color="#9828bd"
+         stop-color="#cb93de"
          id="stop6033" />
     </radialGradient>
     <radialGradient
@@ -161,11 +161,11 @@
        r="350">
       <stop
          offset="59%"
-         stop-color="#d496e9"
+         stop-color="#e9caf4"
          id="stop6036" />
       <stop
          offset="67.5%"
-         stop-color="#9828bd"
+         stop-color="#cb93de"
          id="stop6038" />
     </radialGradient>
     <radialGradient
@@ -176,11 +176,11 @@
        r="350">
       <stop
          offset="52%"
-         stop-color="#d496e9"
+         stop-color="#e9caf4"
          id="stop6041" />
       <stop
          offset="60.5%"
-         stop-color="#9828bd"
+         stop-color="#cb93de"
          id="stop6043" />
     </radialGradient>
     <radialGradient
@@ -191,11 +191,11 @@
        r="350">
       <stop
          offset="40%"
-         stop-color="#d496e9"
+         stop-color="#e9caf4"
          id="stop6046" />
       <stop
          offset="50%"
-         stop-color="#9828bd"
+         stop-color="#cb93de"
          id="stop6048" />
     </radialGradient>
     <path

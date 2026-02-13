@@ -30,7 +30,7 @@
   </metadata>
   <sodipodi:namedview
      pagecolor="#ffffff"
-     bordercolor="#666666"
+     bordercolor="#b2b2b2"
      borderopacity="1"
      objecttolerance="10"
      gridtolerance="10"
@@ -71,11 +71,11 @@
        r="350">
       <stop
          offset="70%"
-         stop-color="#96e99d"
+         stop-color="#caf4ce"
          id="stop4147" />
       <stop
          offset="84.5%"
-         stop-color="#28bd35"
+         stop-color="#93de9a"
          id="stop4149" />
     </radialGradient>
     <path
@@ -135,20 +135,20 @@
      transform="rotate(345 350 350)"
      id="use4174" />
   <path
-     style="fill:#2dd23a;stroke:#1b7e23;stroke-width:7"
+     style="fill:#96e89c;stroke:#1b7e23;stroke-width:7"
      d="M 595,350 C 595,485.30976 485.30976,595 350,595 214.69024,595 105,485.30976 105,350 105,214.69024 214.69024,105 350,105 c 135.30976,0 245,109.69024 245,245 z"
      id="circle4176" />
   <path
-     style="fill:#57db62;stroke:#1b7e23;stroke-width:4;stroke-linejoin:round"
+     style="fill:#abedb0;stroke:#1b7e23;stroke-width:4;stroke-linejoin:round"
      d="m 350,105 212.17622,367.5 -424.35244,0 z"
      id="polygon4178" />
   <path
      transform="rotate(60 350 350)"
-     style="fill:#57db62;stroke:#1b7e23;stroke-width:4;stroke-linejoin:round"
+     style="fill:#abedb0;stroke:#1b7e23;stroke-width:4;stroke-linejoin:round"
      d="m 350,105 212.17622,367.5 -424.35244,0 z"
      id="polygon4180" />
   <path
-     style="fill:#2dd23a;stroke:#1b7e23;stroke-width:4;stroke-linejoin:round"
+     style="fill:#96e89c;stroke:#1b7e23;stroke-width:4;stroke-linejoin:round"
      d="m 208.54918,350 70.72541,-122.5 141.45082,0 70.72541,122.5 -70.72541,122.5 -141.45082,0 z"
      id="polygon4182" />
   <g
@@ -164,15 +164,15 @@
        id="path4375" />
   </g>
   <g
-     style="font-size:245px;stroke:#c0f2c4;stroke-width:4;font-family:Sanskrit 2003"
+     style="font-size:245px;stroke:#dff8e1;stroke-width:4;font-family:Sanskrit 2003"
      id="text4186">
     <path
        d="m 409.61621,305.15381 -15.07324,0 0.11963,137.09473 c -1.2e-4,1.6748 -0.35901,2.59195 -1.07666,2.75146 -0.8774,0 -2.71171,-1.15641 -5.50293,-3.46924 l -12.68067,-12.91992 c -2.07366,-2.07355 -3.42946,-3.98761 -4.06738,-5.74219 l -0.8374,-7.29736 0.47851,-8.85254 0.35889,-9.0918 c 0.0797,-2.31277 -0.55837,-3.46918 -1.91406,-3.46924 -0.79762,6e-5 -1.79453,0.39882 -2.99072,1.19629 -6.22079,4.22694 -14.15617,6.34038 -23.80616,6.34034 -17.46587,4e-5 -33.29675,-10.64692 -47.49267,-31.94092 l -7.89551,-11.84326 c -4.78517,-7.17764 -7.33725,-11.68366 -7.65625,-13.51807 -10e-6,-2.23297 1.07665,-3.58876 3.22998,-4.06738 l 8.85254,-0.35889 c 8.77276,-0.3189 15.07321,-1.6747 18.90137,-4.06738 5.26363,-3.11024 7.89546,-8.65304 7.8955,-16.62842 -4e-5,-5.98131 -1.19633,-10.68671 -3.58886,-14.11621 l -41.87012,0 0,-18.66211 136.61621,0 0,18.66211 m -37.32422,0 -46.05713,0 c -5e-5,3.589 0.59809,8.1349 1.79444,13.63769 l 2.87109,13.51807 1.67481,10.16846 c -6e-5,6.46005 -5.02447,11.88323 -15.07325,16.26953 l -10.04883,2.15332 c -2.39261,0.4786 -3.58889,1.83439 -3.58886,4.06738 -0.0798,4.62573 3.22994,8.69311 9.9292,12.20215 5.74214,3.03066 11.12543,4.54596 16.1499,4.5459 10.12851,6e-5 19.45956,-2.83115 27.99316,-8.49365 9.49047,-6.30038 14.27562,-14.11613 14.35547,-23.44727 l 0,-44.62158"
-       style="font-size:245px;stroke:#c0f2c4;stroke-width:4;font-family:Sanskrit 2003"
+       style="font-size:245px;stroke:#dff8e1;stroke-width:4;font-family:Sanskrit 2003"
        id="path4368" />
     <path
        d="m 400.64404,259.45557 -7.65625,9.33105 -6.2207,6.93848 c -1.75452,0.9572 -3.11031,1.43571 -4.06738,1.43554 -1.276,1.7e-4 -4.62561,-3.18993 -10.04883,-9.57031 l -7.53662,-8.61328 0,-4.42627 8.97217,-12.20215 c 2.23311,-3.03039 4.46618,-5.18371 6.69921,-6.45996 2.23312,2.1e-4 8.85258,6.22091 19.8584,18.66211 l 0.23926,2.51221 -0.23926,2.39258"
-       style="font-size:245px;stroke:#c0f2c4;stroke-width:4;font-family:Sanskrit 2003"
+       style="font-size:245px;stroke:#dff8e1;stroke-width:4;font-family:Sanskrit 2003"
        id="path4370" />
   </g>
   <g
