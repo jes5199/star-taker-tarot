@@ -1,20 +1,21 @@
-15 Behenian Fixed Stars — Ecliptic Longitudes (Tropical, April 2024)
+15 Behenian Fixed Stars — Ecliptic Longitudes
 
-Star                    Longitude           Constellation
-Algol                   26°29' Taurus       Beta Persei
-Alcyone                 00°19' Gemini       Eta Tauri
-Aldebaran               10°07' Gemini       Alpha Tauri
-Capella                 22°11' Gemini       Alpha Aurigae
-Sirius                  14°24' Cancer       Alpha Canis Majoris
-Procyon                 26°06' Cancer       Alpha Canis Minoris
-Regulus                 00°09' Virgo        Alpha Leonis
-Alkaid                  27°16' Virgo        Eta Ursae Majoris
-Algorab                 13°47' Libra        Delta Corvi
-Spica                   24°10' Libra        Alpha Virginis
-Arcturus                24°33' Libra        Alpha Boötis
-Alphecca                12°37' Scorpio      Alpha Coronae Borealis
-Antares                 10°05' Sagittarius  Alpha Scorpii
-Vega                    15°38' Capricorn    Alpha Lyrae
-Deneb Algedi            23°52' Aquarius     Delta Capricorni
+Star                    2024 (Tropical)     2050 (Tropical)     Constellation
+Algol                   26°29' Taurus       26°52' Taurus       Beta Persei
+Alcyone                 00°19' Gemini       00°42' Gemini       Eta Tauri
+Aldebaran               10°07' Gemini       10°30' Gemini       Alpha Tauri
+Capella                 22°11' Gemini       22°34' Gemini       Alpha Aurigae
+Sirius                  14°24' Cancer       14°47' Cancer       Alpha Canis Majoris
+Procyon                 26°06' Cancer       26°29' Cancer       Alpha Canis Minoris
+Regulus                 00°09' Virgo        00°32' Virgo        Alpha Leonis
+Alkaid                  27°16' Virgo        27°39' Virgo        Eta Ursae Majoris
+Algorab                 13°47' Libra        14°09' Libra        Delta Corvi
+Spica                   24°10' Libra        24°33' Libra        Alpha Virginis
+Arcturus                24°33' Libra        24°56' Libra        Alpha Boötis
+Alphecca                12°37' Scorpio      13°00' Scorpio      Alpha Coronae Borealis
+Antares                 10°05' Sagittarius  10°28' Sagittarius  Alpha Scorpii
+Vega                    15°38' Capricorn    16°01' Capricorn    Alpha Lyrae
+Deneb Algedi            23°52' Aquarius     04°45' Aquarius     Delta Capricorni
 
-Source: https://orphicastrology.com/fixedstars/behenian
+2024 source: https://orphicastrology.com/fixedstars/behenian
+2050 positions: computed via skyfield (Hipparcos + DE421), see precess-stars.py
