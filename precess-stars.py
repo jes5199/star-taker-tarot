@@ -19,7 +19,7 @@ BEHENIAN = {
     "Alphecca":     76267,
     "Antares":      80763,
     "Vega":         91262,
-    "Deneb Algedi": 100345,
+    "Deneb Algedi": 107556,
 }
 
 SIGNS = [

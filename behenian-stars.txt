@@ -15,7 +15,7 @@ Arcturus                24°33' Libra        24°56' Libra        Alpha Boötis
 Alphecca                12°37' Scorpio      13°00' Scorpio      Alpha Coronae Borealis
 Antares                 10°05' Sagittarius  10°28' Sagittarius  Alpha Scorpii
 Vega                    15°38' Capricorn    16°01' Capricorn    Alpha Lyrae
-Deneb Algedi            23°52' Aquarius     04°45' Aquarius     Delta Capricorni
+Deneb Algedi            23°52' Aquarius     24°15' Aquarius     Delta Capricorni
 
 2024 source: https://orphicastrology.com/fixedstars/behenian
 2050 positions: computed via skyfield (Hipparcos + DE421), see precess-stars.py
