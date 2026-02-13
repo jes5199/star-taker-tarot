@@ -1679,7 +1679,12 @@
     \pgfmathsetmacro{\ypos}{\d * (\cardheight-20mm)/10}%
     \draw[black, thin] (0, \ypos pt) -- (6mm, \ypos pt);
   }
-  \draw[black, thin] (0, \cardheight-20mm) -- ++(10:10mm);
+  % Scheat (Beta Pegasi) — 00°05' Aries (2050)
+  \pgfmathsetmacro{\scheatpos}{(5/60) * (\cardheight-20mm)/10}%
+  \node[anchor=west, text=black, font=\symbserif\fontsize{6}{7}\selectfont]
+    at (7mm, \scheatpos pt) {★};
+  \node[anchor=west, text=black, font=\cardfont\fontsize{7}{8}\selectfont]
+    at (10mm, \scheatpos pt + 0.25mm) {Scheat};
   \chinesecardmarks[🀑]{二}{条}}]{images/w-02}{Two of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{2}{♥}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -1694,7 +1699,6 @@
     \pgfmathsetmacro{\ypos}{\d * (\cardheight-20mm)/10}%
     \draw[black, thin] (0, \ypos pt) -- (6mm, \ypos pt);
   }
-  \draw[black, thin] (0, \cardheight-20mm) -- ++(10:10mm);
   \chinesecardmarks[🀈]{二}{万}}]{images/c-02}{Two of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{2}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -1709,7 +1713,6 @@
     \pgfmathsetmacro{\ypos}{\d * (\cardheight-20mm)/10}%
     \draw[black, thin] (0, \ypos pt) -- (6mm, \ypos pt);
   }
-  \draw[black, thin] (0, \cardheight-20mm) -- ++(10:10mm);
   \chinesecardmarks{二}{十}}]{images/s-02}{Two of Swords}
 
 \vspace{4mm}
@@ -1727,7 +1730,6 @@
     \pgfmathsetmacro{\ypos}{\d * (\cardheight-20mm)/10}%
     \draw[black, thin] (0, \ypos pt) -- (6mm, \ypos pt);
   }
-  \draw[black, thin] (0, \cardheight-20mm) -- ++(10:10mm);
   \chinesecardmarks[🀚]{二}{并}}]{images/p-02}{Two of Pentacles}
 
 % Pages (Earth of suit)
