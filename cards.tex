@@ -1694,6 +1694,19 @@
   \draw[black, thick] (6.5mm, \fivedegs pt) -- (8mm, \fivedegs pt);
   \node[anchor=west, rotate=90, text=black]
     at (7mm, \fivedegs pt + 0.5mm) {{\cjkfont\fontsize{6}{7}\selectfont 雷乃發聲} {\cardfont\fontsize{6}{7}\selectfont Thunder sounds}};
+  % Xiù boundary at 03°24' Aries: 室 Shì (Encampment) ends, 壁 Bì (Wall) starts
+  \pgfmathsetmacro{\xiuboundary}{(3 + 24/60) * (\cardheight-20mm)/10}%
+  \draw[black, thick] (14.5mm, \xiuboundary pt) -- (16mm, \xiuboundary pt);
+  \node[anchor=west, rotate=90, text=black]
+    at (15mm, \xiuboundary pt + 0.5mm) {{\cjkfont\fontsize{6}{7}\selectfont 壁} {\cardfont\fontsize{6}{7}\selectfont 14 Wall}};
+  \node[anchor=east, rotate=90, text=black]
+    at (15mm, \xiuboundary pt - 0.5mm) {{\cardfont\fontsize{6}{7}\selectfont 13 Encampment} {\cjkfont\fontsize{6}{7}\selectfont 室}};
+  % Algenib (γ Pegasi) at 09°35' Aries
+  \pgfmathsetmacro{\algenibpos}{(9 + 35/60) * (\cardheight-20mm)/10}%
+  \node[anchor=center, text=black, font=\symbfont\fontsize{6}{7}\selectfont]
+    at (7mm, \algenibpos pt) {★};
+  \node[anchor=south west, rotate=45, text=black, font=\cardfont\fontsize{6}{7}\selectfont, inner sep=0.5pt]
+    at (7.5mm, \algenibpos pt) {Algenib};
   \chinesecardmarks[🀑]{二}{条}}]{images/w-02}{Two of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{2}{♥}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
