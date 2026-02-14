@@ -3,52 +3,72 @@ Astrologically Significant Fixed Stars — Ecliptic Longitudes
 Star                    2024 (Tropical)     2030 (Tropical)     2050 (Tropical)     Designation
 ────────────────────────────────────────────────────────────────────────────────────────────────────
 Algenib                 09°29' Aries        09°35' Aries        09°51' Aries        Gamma Pegasi
+Eta Andromedae          22°43' Aries        22°48' Aries        23°05' Aries        Eta Andromedae
 Mirach                  00°44' Taurus       00°50' Taurus       01°06' Taurus       Beta Andromedae
 Sheratan                04°18' Taurus       04°24' Taurus       04°40' Taurus       Beta Arietis
 Hamal                   08°00' Taurus       08°05' Taurus       08°22' Taurus       Alpha Arietis
+35 Arietis              17°16' Taurus       17°22' Taurus       17°38' Taurus       35 Arietis
 Botein                  21°11' Taurus       21°17' Taurus       21°33' Taurus       Delta Arietis
 Algol                   26°30' Taurus       26°35' Taurus       26°52' Taurus       Beta Persei
+Electra                 29°45' Taurus       29°50' Taurus       00°07' Gemini       17 Tauri (Pleiades)
 Alcyone                 00°20' Gemini       00°25' Gemini       00°42' Gemini       Eta Tauri (Pleiades)
+Ain                     08°48' Gemini       08°53' Gemini       09°10' Gemini       Epsilon Tauri
 Aldebaran *             10°07' Gemini       10°13' Gemini       10°30' Gemini       Alpha Tauri
 Rigel                   17°10' Gemini       17°15' Gemini       17°32' Gemini       Beta Orionis
 Bellatrix               21°17' Gemini       21°22' Gemini       21°39' Gemini       Gamma Orionis
 Capella                 22°12' Gemini       22°17' Gemini       22°34' Gemini       Alpha Aurigae
 Meissa                  24°02' Gemini       24°08' Gemini       24°25' Gemini       Lambda Orionis
+Alnitak                 25°01' Gemini       25°06' Gemini       25°23' Gemini       Zeta Orionis
 Polaris                 28°54' Gemini       29°00' Gemini       29°16' Gemini       Alpha Ursae Minoris
 Betelgeuse              29°05' Gemini       29°11' Gemini       29°27' Gemini       Alpha Orionis
+Tejat                   05°38' Cancer       05°44' Cancer       06°00' Cancer       Mu Geminorum
 Alhena                  09°26' Cancer       09°32' Cancer       09°48' Cancer       Gamma Geminorum
 Sirius                  14°25' Cancer       14°30' Cancer       14°47' Cancer       Alpha Canis Majoris
 Canopus                 15°17' Cancer       15°23' Cancer       15°39' Cancer       Alpha Carinae
 Castor                  20°34' Cancer       20°40' Cancer       20°56' Cancer       Alpha Geminorum
 Pollux                  23°33' Cancer       23°38' Cancer       23°55' Cancer       Beta Geminorum
 Procyon                 26°07' Cancer       26°12' Cancer       26°29' Cancer       Alpha Canis Minoris
+Theta Cancri            06°04' Leo          06°09' Leo          06°26' Leo          Theta Cancri
 Praesepe                07°44' Leo          07°49' Leo          08°06' Leo          Epsilon Cancri (M44)
+Delta Hydrae            10°38' Leo          10°44' Leo          11°00' Leo          Delta Hydrae
 Alterf                  18°12' Leo          18°18' Leo          18°35' Leo          Lambda Leonis
+Alphard                 27°37' Leo          27°42' Leo          27°59' Leo          Alpha Hydrae
 Regulus *               00°10' Virgo        00°15' Virgo        00°32' Virgo        Alpha Leonis
+Upsilon-1 Hydrae        06°01' Virgo        06°07' Virgo        06°23' Virgo        Upsilon-1 Hydrae
 Zosma                   11°39' Virgo        11°45' Virgo        12°01' Virgo        Delta Leonis
 Denebola                21°57' Virgo        22°02' Virgo        22°19' Virgo        Beta Leonis
+Alkes                   24°01' Virgo        24°06' Virgo        24°23' Virgo        Alpha Crateris
 Alkaid                  27°16' Virgo        27°22' Virgo        27°39' Virgo        Eta Ursae Majoris
 Zavijava                27°30' Virgo        27°36' Virgo        27°53' Virgo        Beta Virginis
 Vindemiatrix            10°16' Libra        10°22' Libra        10°38' Libra        Epsilon Virginis
+Gienah                  11°03' Libra        11°09' Libra        11°25' Libra        Gamma Corvi
 Algorab                 13°47' Libra        13°52' Libra        14°09' Libra        Delta Corvi
 Spica                   24°10' Libra        24°16' Libra        24°33' Libra        Alpha Virginis
 Arcturus                24°34' Libra        24°39' Libra        24°56' Libra        Alpha Boötis
 Syrma                   04°08' Scorpio      04°13' Scorpio      04°30' Scorpio      Iota Virginis
+Kang                    04°50' Scorpio      04°55' Scorpio      05°12' Scorpio      Kappa Virginis
 Alphecca                12°38' Scorpio      12°43' Scorpio      13°00' Scorpio      Alpha Coronae Borealis
 Zubenelgenubi           15°25' Scorpio      15°30' Scorpio      15°47' Scorpio      Alpha Librae
 Toliman                 29°47' Scorpio      29°52' Scorpio      00°07' Sagittarius  Alpha Centauri
+Fang                    03°16' Sagittarius  03°22' Sagittarius  03°39' Sagittarius  Pi Scorpii
 Acrab                   03°31' Sagittarius  03°37' Sagittarius  03°54' Sagittarius  Beta Scorpii
+Alniyat                 08°08' Sagittarius  08°13' Sagittarius  08°30' Sagittarius  Sigma Scorpii
 Antares *               10°06' Sagittarius  10°11' Sagittarius  10°28' Sagittarius  Alpha Scorpii
+Xamidimura              16°29' Sagittarius  16°35' Sagittarius  16°51' Sagittarius  Mu-1 Scorpii
 Rasalhague              22°47' Sagittarius  22°52' Sagittarius  23°09' Sagittarius  Alpha Ophiuchi
 Shaula                  24°55' Sagittarius  25°01' Sagittarius  25°17' Sagittarius  Lambda Scorpii
+Alnasl                  01°36' Capricorn    01°41' Capricorn    01°58' Capricorn    Gamma-2 Sagittarii
+Phi Sagittarii          10°31' Capricorn    10°36' Capricorn    10°53' Capricorn    Phi Sagittarii
 Ascella                 13°58' Capricorn    14°04' Capricorn    14°20' Capricorn    Zeta Sagittarii
 Vega                    15°39' Capricorn    15°45' Capricorn    16°01' Capricorn    Alpha Lyrae
 Albaldah                16°35' Capricorn    16°41' Capricorn    16°57' Capricorn    Pi Sagittarii
 Altair                  02°07' Aquarius     02°12' Aquarius     02°29' Aquarius     Alpha Aquilae
 Giedi Prima             04°12' Aquarius     04°17' Aquarius     04°34' Aquarius     Alpha-2 Capricorni
+Dabih                   04°23' Aquarius     04°28' Aquarius     04°45' Aquarius     Beta-1 Capricorni
 Albali                  12°03' Aquarius     12°09' Aquarius     12°26' Aquarius     Epsilon Aquarii
 Sadalsuud               23°44' Aquarius     23°49' Aquarius     24°06' Aquarius     Beta Aquarii
 Deneb Algedi            23°53' Aquarius     23°58' Aquarius     24°15' Aquarius     Delta Capricorni
+Sadalmelik              03°41' Pisces       03°47' Pisces       04°03' Pisces       Alpha Aquarii
 Fomalhaut *             04°12' Pisces       04°17' Pisces       04°34' Pisces       Alpha Piscis Austrini
 Deneb                   05°39' Pisces       05°45' Pisces       06°01' Pisces       Alpha Cygni
 Sadalachbia             07°03' Pisces       07°08' Pisces       07°25' Pisces       Gamma Aquarii
@@ -61,4 +81,5 @@ Scheat                  29°42' Pisces       29°48' Pisces       00°05' Aries 
 2024 source: https://orphicastrology.com/fixedstars/behenian (Behenian 15)
 2030/2050 positions: computed via skyfield (Hipparcos + DE421), see precess-stars.py
 Manzil indicator stars from al-Biruni via Shuly Rose.
+Xiù determinative stars from astrologyking.com/chinese-lunar-mansions.
 Praesepe position uses Epsilon Cancri (Meleph), brightest member of the M44 cluster.

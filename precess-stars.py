@@ -66,6 +66,27 @@ STARS = {
     "Markab":           113963,
     "Algenib":          1067,
     "Mirach":           5447,
+    # Xiù determinative stars
+    "Kang":             69427,   # κ Virginis (亢)
+    "Fang":             78265,   # π Scorpii (房)
+    "Alniyat":          80112,   # σ Scorpii (心)
+    "Xamidimura":       82514,   # μ¹ Scorpii (尾)
+    "Alnasl":           88635,   # γ² Sagittarii (箕)
+    "Phi Sagittarii":   92041,   # φ Sagittarii (斗)
+    "Dabih":            100345,  # β¹ Capricorni (牛)
+    "Sadalmelik":       109074,  # α Aquarii (危)
+    "Eta Andromedae":   4463,    # η Andromedae (奎)
+    "35 Arietis":       12719,   # (胃)
+    "Electra":          17499,   # 17 Tauri (昴)
+    "Ain":              20889,   # ε Tauri (畢)
+    "Alnitak":          26727,   # ζ Orionis (参)
+    "Tejat":            30343,   # μ Geminorum (井)
+    "Theta Cancri":     41822,   # θ Cancri (鬼)
+    "Delta Hydrae":     42313,   # δ Hydrae (柳)
+    "Alphard":          46390,   # α Hydrae (星)
+    "Upsilon-1 Hydrae": 48356,  # υ¹ Hydrae (張)
+    "Alkes":            53740,   # α Crateris (翼)
+    "Gienah":           59803,   # γ Corvi (軫)
 }
 
 SIGNS = [
