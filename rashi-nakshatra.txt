@@ -1,0 +1,58 @@
+Rāśi and Nakṣatra — Tropical Boundaries (2030)
+
+Lahiri (Chitrapaksha) ayanamsa for 2030: 24°16'
+Derived from Spica at 24°16' Libra tropical (Spica = 0° sidereal Libra by definition).
+
+RĀŚI (12 Sidereal Signs)
+Each rāśi spans 30° of sidereal longitude.
+
+#    Name           देवनागरी    Start               End                 Ruler
+──────────────────────────────────────────────────────────────────────────────────
+1    Meṣa           मेष        24°16' Aries        24°16' Taurus       Mars
+2    Vṛṣabha        वृषभ       24°16' Taurus       24°16' Gemini       Venus
+3    Mithuna        मिथुन      24°16' Gemini       24°16' Cancer       Mercury
+4    Karka          कर्क       24°16' Cancer       24°16' Leo          Moon
+5    Siṃha          सिंह       24°16' Leo          24°16' Virgo        Sun
+6    Kanyā          कन्या      24°16' Virgo        24°16' Libra        Mercury
+7    Tulā           तुला       24°16' Libra        24°16' Scorpio      Venus
+8    Vṛścika        वृश्चिक    24°16' Scorpio      24°16' Sagittarius  Mars
+9    Dhanu          धनु        24°16' Sagittarius  24°16' Capricorn    Jupiter
+10   Makara         मकर        24°16' Capricorn    24°16' Aquarius     Saturn
+11   Kumbha         कुम्भ      24°16' Aquarius     24°16' Pisces       Saturn
+12   Mīna           मीन        24°16' Pisces       24°16' Aries        Jupiter
+
+NAKṢATRA (27 Lunar Mansions)
+Each nakṣatra spans 13°20' of sidereal longitude.
+
+#    Name                     देवनागरी            Start               End                 Ruler     Meaning
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+1    Aśvinī                   अश्विनी            24°16' Aries        07°36' Taurus       Ketu      The Physicians
+2    Bharaṇī                  भरणी               07°36' Taurus       20°56' Taurus       Venus     The Bearer
+3    Kṛttikā                  कृत्तिका           20°56' Taurus       04°16' Gemini       Sun       The Cutter
+4    Rohiṇī                   रोहिणी             04°16' Gemini       17°36' Gemini       Moon      The Red One
+5    Mṛgaśīrṣā                मृगशीर्षा          17°36' Gemini       00°56' Cancer       Mars      The Deer's Head
+6    Ārdrā                    आर्द्रा            00°56' Cancer       14°16' Cancer       Rahu      The Moist One
+7    Punarvasu                पुनर्वसु           14°16' Cancer       27°36' Cancer       Jupiter   The Restorer
+8    Puṣya                    पुष्य              27°36' Cancer       10°56' Leo          Saturn    The Nourisher
+9    Āśleṣā                   आश्लेषा            10°56' Leo          24°16' Leo          Mercury   The Embracer
+10   Maghā                    मघा                24°16' Leo          07°36' Virgo        Ketu      The Great One
+11   Pūrva Phālgunī           पूर्व फाल्गुनी     07°36' Virgo        20°56' Virgo        Venus     The Former Red One
+12   Uttara Phālgunī          उत्तर फाल्गुनी     20°56' Virgo        04°16' Libra        Sun       The Latter Red One
+13   Hasta                    हस्त               04°16' Libra        17°36' Libra        Moon      The Hand
+14   Chitrā                   चित्रा             17°36' Libra        00°56' Scorpio      Mars      The Bright One
+15   Svātī                    स्वाती             00°56' Scorpio      14°16' Scorpio      Rahu      The Independent
+16   Viśākhā                  विशाखा             14°16' Scorpio      27°36' Scorpio      Jupiter   The Forked
+17   Anurādhā                 अनुराधा            27°36' Scorpio      10°56' Sagittarius  Saturn    The Follower of Rādhā
+18   Jyeṣṭhā                  ज्येष्ठा           10°56' Sagittarius  24°16' Sagittarius  Mercury   The Eldest
+19   Mūla                     मूल                24°16' Sagittarius  07°36' Capricorn    Ketu      The Root
+20   Pūrvāṣāḍhā               पूर्वाषाढ़ा        07°36' Capricorn    20°56' Capricorn    Venus     The Former Invincible
+21   Uttarāṣāḍhā              उत्तराषाढ़ा        20°56' Capricorn    04°16' Aquarius     Sun       The Latter Invincible
+22   Śravaṇa                  श्रवण              04°16' Aquarius     17°36' Aquarius     Moon      The Ear
+23   Dhaniṣṭhā                धनिष्ठा            17°36' Aquarius     00°56' Pisces       Mars      The Wealthiest
+24   Śatabhiṣā                शतभिषा             00°56' Pisces       14°16' Pisces       Rahu      The Hundred Physicians
+25   Pūrva Bhādrapadā         पूर्व भाद्रपदा     14°16' Pisces       27°36' Pisces       Jupiter   Former Lucky Feet
+26   Uttara Bhādrapadā        उत्तर भाद्रपदा     27°36' Pisces       10°56' Aries        Saturn    Latter Lucky Feet
+27   Revatī                   रेवती              10°56' Aries        24°16' Aries        Mercury   The Wealthy
+
+Computed via compute-rashi-nakshatra.py.
+Lahiri ayanamsa derived from Spica's tropical position using skyfield (Hipparcos + DE421).
