@@ -1,53 +1,53 @@
-二十八宿 — 28 Xiù (Chinese Lunar Mansions) — Ecliptic Longitudes (2030)
+二十八宿 — 28 Xiù (Chinese Lunar Mansions) — Hour-Circle Projection (2030)
 
-Boundaries defined by determinative stars (距星), projected onto the ecliptic.
-Note: xiù are traditionally equatorial divisions; ecliptic projection is approximate.
-Positions computed via skyfield (Hipparcos + DE421).
+Boundaries defined by projecting each determinative star's hour circle
+onto the ecliptic: λ = atan2(sin α★ · cos ε, cos α★)
+Obliquity ε = 23°26'07" (IAU 2006).  Positions via skyfield (Hipparcos + DE421).
 Source: https://astrologyking.com/chinese-lunar-mansions/
 
 Eastern Azure Dragon 東方青龍 (Spring)
 ─────────────────────────────────────────────────────────────────────────────────────────
 #    Xiù     Name                 Determinative Star          Start (2030)        Span
-1    角 Jiǎo  Horn                 Spica (α Virginis)          24°16' Libra        10°39'
-2    亢 Kàng  Neck                 Kang (κ Virginis)           04°55' Scorpio      10°35'
-3    氐 Dǐ    Root                 Zubenelgenubi (α Librae)    15°30' Scorpio      14°22'
-4    房 Fáng  Room                 Fang (π Scorpii)            03°22' Sagittarius  04°51'
-5    心 Xīn   Heart                Alniyat (σ Scorpii)         08°13' Sagittarius  08°22'
-6    尾 Wěi   Tail                 Xamidimura (μ¹ Scorpii)     16°35' Sagittarius  08°27'
-7    箕 Jī    Winnowing Basket     Alnasl (γ² Sagittarii)      25°01' Sagittarius  06°40'
+1    角 Jiǎo  Horn                 Spica (α Virginis)          20°03' Libra        11°20'
+2    亢 Kàng  Neck                 Kang (κ Virginis)           01°24' Scorpio      09°18'
+3    氐 Dǐ    Root                 Zubenelgenubi (α Librae)    10°41' Scorpio      17°19'
+4    房 Fáng  Room                 Fang (π Scorpii)            28°00' Scorpio      05°52'
+5    心 Xīn   Heart                Alniyat (σ Scorpii)         03°52' Sagittarius  08°14'
+6    尾 Wěi   Tail                 Xamidimura (μ¹ Scorpii)     12°05' Sagittarius  20°01'
+7    箕 Jī    Winnowing Basket     Alnasl (γ² Sagittarii)      02°07' Capricorn    10°48'
 
 Northern Black Tortoise 北方玄武 (Winter)
 ─────────────────────────────────────────────────────────────────────────────────────────
 #    Xiù     Name                 Determinative Star          Start (2030)        Span
-8    斗 Dǒu   Southern Dipper      Phi Sagittarii (φ Sgr)      01°41' Capricorn    08°55'
-9    牛 Niú   Ox                   Dabih (β¹ Capricorni)       10°36' Capricorn    23°52'
-10   女 Nǚ    Girl                 Albali (ε Aquarii)          04°28' Aquarius     07°41'
-11   虛 Xū    Emptiness            Sadalsuud (β Aquarii)       12°09' Aquarius     11°40'
-12   危 Wēi   Rooftop              Sadalmelik (α Aquarii)      23°49' Aquarius     09°58'
-13   室 Shì   Encampment           Markab (α Pegasi)           03°47' Pisces       19°48'
-14   壁 Bì    Wall                 Algenib (γ Pegasi)          23°55' Pisces       08°53'
+8    斗 Dǒu   Southern Dipper      Phi Sagittarii (φ Sgr)      12°55' Capricorn    25°07'
+9    牛 Niú   Ox                   Dabih (β¹ Capricorni)       08°03' Aquarius     06°45'
+10   女 Nǚ    Girl                 Albali (ε Aquarii)          14°47' Aquarius     10°50'
+11   虛 Xū    Emptiness            Sadalsuud (β Aquarii)       25°37' Aquarius     08°13'
+12   危 Wēi   Rooftop              Sadalmelik (α Aquarii)      03°50' Pisces       13°48'
+13   室 Shì   Encampment           Markab (α Pegasi)           17°38' Pisces       15°45'
+14   壁 Bì    Wall                 Algenib (γ Pegasi)          03°24' Aries        10°09'
 
 Western White Tiger 西方白虎 (Autumn)
 ─────────────────────────────────────────────────────────────────────────────────────────
 #    Xiù     Name                 Determinative Star          Start (2030)        Span
-15   奎 Kuí   Legs                 Eta Andromedae (η And)      09°35' Aries        13°13'
-16   婁 Lóu   Bond                 Sheratan (β Arietis)        22°48' Aries        11°36'
-17   胃 Wèi   Stomach              35 Arietis                  04°24' Taurus       12°58'
-18   昴 Mǎo   Hairy Head           Electra (17 Tauri)          17°22' Taurus       12°28'
-19   畢 Bì    Net                  Ain (ε Tauri)               29°50' Taurus       09°03'
-20   觜 Zī    Turtle Beak          Meissa (λ Orionis)          08°53' Gemini       15°15'
-21   參 Shēn  Three Stars          Alnitak (ζ Orionis)         24°08' Gemini       05°58'
+15   奎 Kuí   Legs                 Eta Andromedae (η And)      13°33' Aries        13°30'
+16   婁 Lóu   Bond                 Sheratan (β Arietis)        27°02' Aries        11°51'
+17   胃 Wèi   Stomach              35 Arietis                  08°53' Taurus       15°29'
+18   昴 Mǎo   Hairy Head           Electra (17 Tauri)          24°22' Taurus       11°26'
+19   畢 Bì    Net                  Ain (ε Tauri)               05°48' Gemini       17°53'
+20   觜 Zī    Turtle Beak          Meissa (λ Orionis)          23°41' Gemini       01°29'
+21   參 Shēn  Three Stars          Alnitak (ζ Orionis)         25°11' Gemini       11°34'
 
 Southern Vermilion Bird 南方朱雀 (Summer)
 ─────────────────────────────────────────────────────────────────────────────────────────
 #    Xiù     Name                 Determinative Star          Start (2030)        Span
-22   井 Jǐng  Well                 Tejat (μ Geminorum)         00°06' Cancer       29°38'
-23   鬼 Guǐ   Ghost                Theta Cancri (θ Cnc)        05°44' Cancer       04°25'
-24   柳 Liǔ   Willow               Delta Hydrae (δ Hya)        06°09' Leo          04°35'
-25   星 Xīng  Star                 Alphard (α Hydrae)          10°44' Leo          16°58'
-26   張 Zhāng Extended Net         Upsilon-1 Hydrae (υ¹ Hya)   27°42' Leo          08°25'
-27   翼 Yì    Wings                Alkes (α Crateris)          06°07' Virgo        17°59'
-28   軫 Zhěn  Chariot              Gienah (γ Corvi)            24°06' Virgo        13°07'
+22   井 Jǐng  Well                 Tejat (μ Geminorum)         06°45' Cancer       34°00'
+23   鬼 Guǐ   Ghost                Theta Cancri (θ Cnc)        10°45' Leo          01°30'
+24   柳 Liǔ   Willow               Delta Hydrae (δ Hya)        12°15' Leo          12°22'
+25   星 Xīng  Star                 Alphard (α Hydrae)          24°38' Leo          05°46'
+26   張 Zhāng Extended Net         Upsilon-1 Hydrae (υ¹ Hya)   00°24' Virgo        16°05'
+27   翼 Yì    Wings                Alkes (α Crateris)          16°29' Virgo        17°30'
+28   軫 Zhěn  Chariot              Gienah (γ Corvi)            03°59' Libra        16°04'
 
-Spans are unequal (from ~4° to ~30°), unlike the equal divisions of the manāzil or nakṣatra.
-Each xiù runs from its determinative star to the next xiù's determinative star.
+Spans are unequal (from ~1° to ~34°), unlike the equal divisions of the manāzil or nakṣatra.
+Each xiù boundary is the hour circle of its determinative star projected onto the ecliptic.
