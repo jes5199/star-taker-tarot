@@ -45,6 +45,27 @@ STARS = {
     # Requested
     "Sadalsuud":        106278,
     "Rasalhague":       86032,
+    # Manzil indicator stars
+    "Sheratan":         8903,
+    "Botein":           14838,
+    "Meissa":           26207,
+    "Alhena":           31681,
+    "Praesepe":         42556,   # Epsilon Cancri (Meleph), brightest member of M44
+    "Alterf":           46750,
+    "Zosma":            54872,
+    "Denebola":         57632,
+    "Zavijava":         57757,
+    "Syrma":            69701,
+    "Acrab":            78820,
+    "Shaula":           85927,
+    "Ascella":          93506,
+    "Albaldah":         94141,
+    "Giedi Prima":      100064,
+    "Albali":           102618,
+    "Sadalachbia":      110395,
+    "Markab":           113963,
+    "Algenib":          1067,
+    "Mirach":           5447,
 }
 
 SIGNS = [
@@ -71,7 +92,7 @@ earth = eph['earth']
 with load.open(hipparcos.URL) as f:
     df = hipparcos.load_dataframe(f)
 
-for year in [2024, 2050]:
+for year in [2024, 2030, 2050]:
     t = ts.tt(year, 1, 1)
     print(f"Fixed Stars — Tropical Ecliptic Longitudes ({year})")
     print()
