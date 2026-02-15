@@ -826,7 +826,7 @@
 % Curved "day" and "night" labels above the first two symbols
 \newcommand{\triplicityrulers}[3]{%
   % #1=day ruler (font+glyph), #2=night ruler, #3=participating ruler
-  \begin{scope}[shift={(0.5\cardwidth, 0.52\cardheight-34mm)}]
+  \begin{scope}[shift={(0.5\cardwidth, 0.52\cardheight-35.5mm)}]
     % Day ruler
     \node[anchor=center, text=black] at (-10mm, 0) {#1};
     \path[postaction={decorate, decoration={text along path,
@@ -860,7 +860,7 @@
 
 % Decan rulers (Chaldean order): three planet symbols in a row
 \newcommand{\decanrulers}[3]{%
-  \begin{scope}[shift={(0.5\cardwidth, 0.52\cardheight-40mm)}]
+  \begin{scope}[shift={(0.5\cardwidth, 0.52\cardheight-41.5mm)}]
     \node[anchor=center, text=black] at (-10mm, 0) {#1};
     \node[anchor=center, text=black] at (0, 0) {#2};
     \node[anchor=center, text=black] at (10mm, 0) {#3};
