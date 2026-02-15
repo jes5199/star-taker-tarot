@@ -51,6 +51,7 @@
 \newfontface\symbserif{FreeSerif}
 \newfontface\cuneiform{Noto Sans Cuneiform}
 \newfontface\arabfont{Noto Naskh Arabic}[Script=Arabic]
+\newfontface\greekfont{GFS Theokritos}
 \TeXXeTstate=1
 
 
@@ -460,7 +461,7 @@
     at (0.5\cardwidth+9mm, 0.52\cardheight-42.5mm) {癸};
   \node[anchor=north, text=black, font=\cardfont\fontsize{7}{8}\selectfont]
     at (0.5\cardwidth+9mm, 0.52\cardheight-46mm) {10};
-  \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
+  \node[anchor=center, text=black, font=\greekfont\fontsize{18}{20}\selectfont]
     at (7mm, 5mm) {Ε};
   \begin{scope}[shift={(\cardwidth-11mm,5mm)}]
     \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra6}};
@@ -530,7 +531,7 @@
     at (0.5\cardwidth+9mm, 0.52\cardheight-42.5mm) {辛};
   \node[anchor=north, text=black, font=\cardfont\fontsize{7}{8}\selectfont]
     at (0.5\cardwidth+9mm, 0.52\cardheight-46mm) {8};
-  \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
+  \node[anchor=center, text=black, font=\greekfont\fontsize{18}{20}\selectfont]
     at (7mm, 5mm) {Η};
   \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
     \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra5}};
@@ -566,7 +567,7 @@
     at (0.5\cardwidth, 0.52\cardheight-42.5mm) {日};
   \node[anchor=north, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-49mm) {yang};
-  \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
+  \node[anchor=center, text=black, font=\greekfont\fontsize{18}{20}\selectfont]
     at (7mm, 5mm) {Ι};
   \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
     \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra4}};
@@ -635,7 +636,7 @@
     at (0.5\cardwidth+9mm, 0.52\cardheight-42.5mm) {丁};
   \node[anchor=north, text=black, font=\cardfont\fontsize{7}{8}\selectfont]
     at (0.5\cardwidth+9mm, 0.52\cardheight-46mm) {4};
-  \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
+  \node[anchor=center, text=black, font=\greekfont\fontsize{18}{20}\selectfont]
     at (7mm, 5mm) {Ο};
   \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
     \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra3}};
@@ -704,7 +705,7 @@
     at (0.5\cardwidth+9mm, 0.52\cardheight-42.5mm) {乙};
   \node[anchor=north, text=black, font=\cardfont\fontsize{7}{8}\selectfont]
     at (0.5\cardwidth+9mm, 0.52\cardheight-46mm) {2};
-  \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
+  \node[anchor=center, text=black, font=\greekfont\fontsize{18}{20}\selectfont]
     at (7mm, 5mm) {Υ};
   \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
     \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra2}};
@@ -774,7 +775,7 @@
     at (0.5\cardwidth+9mm, 0.52\cardheight-42.5mm) {己};
   \node[anchor=north, text=black, font=\cardfont\fontsize{7}{8}\selectfont]
     at (0.5\cardwidth+9mm, 0.52\cardheight-46mm) {6};
-  \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
+  \node[anchor=center, text=black, font=\greekfont\fontsize{18}{20}\selectfont]
     at (7mm, 5mm) {Ω};
   \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
     \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra1}};
@@ -810,7 +811,7 @@
     at (0.5\cardwidth, 0.52\cardheight-42.5mm) {月};
   \node[anchor=north, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-49mm) {yin};
-  \node[anchor=center, text=black, font=\symbserif\fontsize{18}{20}\selectfont]
+  \node[anchor=center, text=black, font=\greekfont\fontsize{18}{20}\selectfont]
     at (7mm, 5mm) {Α};
   \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
     \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra7}};
@@ -1683,6 +1684,7 @@
     \pgfmathsetmacro{\ypos}{\d * (\cardheight-20mm)/10}%
     \draw[black, thin] (0, \ypos pt) -- (1mm, \ypos pt);
   }
+  \draw[black, thin] (6.5mm, 15mm) -- (36.5mm, 15mm);
   \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
     at (12.5mm, 13.55mm) {{\cardfont\fontsize{5}{6}\selectfont Fargh al-Mu'akhkhar}};
   \node[anchor=south west, text=black, inner sep=0pt]
