@@ -1,0 +1,23 @@
+十二次 — 12 Cì (Chinese Jupiter Stations)
+
+Jupiter takes ~12 years to orbit the sky; each cì is the segment it occupies
+for roughly one year.  Boundaries align with xiù boundaries (hour-circle
+projection onto the ecliptic).  Positions for 2030.
+
+#    Cì                    Meaning              Xiù              Start (2030)
+──────────────────────────────────────────────────────────────────────────────────
+1    星紀 Xīngjì           Star Chronicle       斗・牛            12°55' Capricorn
+2    玄枵 Xuánxiāo          Dark Emptiness       女・虛・危         14°47' Aquarius
+3    娵訾 Jūzī              Juzi, who sighs      室・壁            17°38' Pisces
+4    降婁 Jiànglóu          Drawing downward     奎・婁            13°33' Aries
+5    大梁 Dàliáng           Great Beam           胃・昴・畢         08°53' Taurus
+6    實沈 Shíchén           Shichen, exiled      觜・參            23°41' Gemini
+7    鶉首 Chúnshǒu          Quail Head           井・鬼            06°45' Cancer
+8    鶉火 Chúnhuǒ           Quail Fire           柳・星・張         12°15' Leo
+9    鶉尾 Chúnwěi           Quail Tail           翼・軫            16°29' Virgo
+10   壽星 Shòuxīng          Longevity Star       角・亢            20°03' Libra
+11   大火 Dàhuǒ             Great Fire           氐・房・心         10°41' Scorpio
+12   析木 Xīmù              Split Wood           尾・箕            12°05' Sagittarius
+
+Each cì boundary aligns with the start of its first xiù (hour-circle projection).
+Source xiù positions: compute-xiu.py (Hipparcos + DE421, 2030).

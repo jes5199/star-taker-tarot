@@ -1682,18 +1682,22 @@
   }
   % Solar terms and pentads
   \pgfmathsetmacro{\fivedegs}{5 * (\cardheight-20mm)/10}%
+  \pgfmathsetmacro{\decanheight}{\cardheight-20mm}%
+  % Solar term column box
+  \draw[black, thin] (1mm, 0) rectangle (2.5mm, \decanheight pt);
   % 春分 Spring Equinox at 0°
-  \draw[black, thick] (1mm, 0) -- (2.5mm, 0);
   \node[anchor=west, rotate=90, text=black]
     at (1.5mm, 0.5mm) {{\cjkfont\fontsize{6}{7}\selectfont 春分} {\cardfont\fontsize{6}{7}\selectfont Spring Equinox}};
+  % Pentad column box
+  \draw[black, thin] (5mm, 0) rectangle (6.5mm, \decanheight pt);
   % 玄鳥至 Swallows arrive at 0°
-  \draw[black, thick] (5mm, 0) -- (6.5mm, 0);
   \node[anchor=west, rotate=90, text=black]
     at (5.5mm, 0.5mm) {{\cjkfont\fontsize{6}{7}\selectfont 玄鳥至} {\cardfont\fontsize{6}{7}\selectfont Swallows arrive}};
   % 雷乃發聲 Thunder sounds at 5°
-  \draw[black, thick] (5mm, \fivedegs pt) -- (6.5mm, \fivedegs pt);
   \node[anchor=west, rotate=90, text=black]
     at (5.5mm, \fivedegs pt + 0.5mm) {{\cjkfont\fontsize{6}{7}\selectfont 雷乃發聲} {\cardfont\fontsize{6}{7}\selectfont Thunder sounds}};
+  % Xiù column box
+  \draw[black, thin] (9mm, 0) rectangle (10.5mm, \decanheight pt);
   % Xiù boundary at 03°24' Aries: 室 Shì (Encampment) ends, 壁 Bì (Wall) starts
   \pgfmathsetmacro{\xiuboundary}{(3 + 24/60) * (\cardheight-20mm)/10}%
   \draw[black, thick] (9mm, \xiuboundary pt) -- (10.5mm, \xiuboundary pt);
