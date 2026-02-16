@@ -1890,7 +1890,31 @@
     \pgfmathsetmacro{\ymid}{(\i + 0.5) * (\cardheight-20mm)/10}%
     \node[anchor=west, text=black, inner sep=0pt, font=\symbfont\fontsize{4}{5}\selectfont]
       at (0.5mm, \ymid pt) {\sym};
-  }}]{images/w-03}{Three of Wands}\hfill
+  }
+  % Nakshatra boundary: Uttara Bhādrapadā → Revatī at 10°56' (0.933°)
+  \pgfmathsetmacro{\nakshatrabdy}{0.933 * (\cardheight-20mm)/10}%
+  \draw[black, thin] (2mm, \nakshatrabdy pt) -- (12.5mm, \nakshatrabdy pt);
+  \node[anchor=south west, text=black, inner sep=0pt]
+    at (2.5mm, \nakshatrabdy pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 27.}\hspace{0.1em}{\devfont\fontsize{5}{6}\selectfont रेवती}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont The Wealthy}};
+  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
+    at (7.25mm, \nakshatrabdy pt + 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Revatī}};
+  \node[anchor=north west, text=black, inner sep=0pt]
+    at (2.5mm, \nakshatrabdy pt - 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 26.}\hspace{0.1em}{\devfont\fontsize{5}{6}\selectfont उत्तर भाद्रपद}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Latter Lucky Feet}};
+  \node[anchor=north west, text=black, inner sep=0pt, xscale=0.48]
+    at (7.25mm, \nakshatrabdy pt - 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Uttara Bhādrapadā}};
+  % Bounds boundary: Venus → Mercury at 12° (2.0°)
+  \pgfmathsetmacro{\boundsbdy}{2.0 * (\cardheight-20mm)/10}%
+  \draw[black, thin] (2mm, \boundsbdy pt) -- (12.5mm, \boundsbdy pt);
+  % Manzil boundary: Fargh al-Muʾakhkhar → Rishāʾ at 12°18' (2.3°)
+  \pgfmathsetmacro{\manzilbdy}{2.3 * (\cardheight-20mm)/10}%
+  \draw[black, thin] (2mm, \manzilbdy pt) -- (12.5mm, \manzilbdy pt);
+  % Xiù/Cì boundary: Bì → Kuí / Jūzī → Jiànglóu at 13°33' (3.55°)
+  \pgfmathsetmacro{\xiubdy}{3.55 * (\cardheight-20mm)/10}%
+  \draw[black, thin] (2mm, \xiubdy pt) -- (12.5mm, \xiubdy pt);
+  % Solar term: 清明 Qīngmíng at 15° (5.0°)
+  \pgfmathsetmacro{\qingming}{5.0 * (\cardheight-20mm)/10}%
+  \draw[black, thin] (2mm, \qingming pt) -- (12.5mm, \qingming pt);
+  }]{images/w-03}{Three of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{3}{♥}{1.0}{1.0}
   \chinesecardmarks[🀉]{三}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
