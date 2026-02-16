@@ -909,7 +909,11 @@
 % 24 Solar Terms (二十四节气) — two per zodiac sign
 % #1=left kanji, #2=left pinyin, #3=left english
 % #4=right kanji, #5=right pinyin, #6=right english
-\newcommand{\solarterms}[6]{%
+% #7=left animal color, #8=right animal color
+\newcommand{\solarterms}[8]{%
+  % Season animal indicator line at bottom
+  \fill[#7] (0, 0) rectangle (0.5\cardwidth, 0.75mm);
+  \fill[#8] (0.5\cardwidth, 0) rectangle (\cardwidth, 0.75mm);
   % Left solar term (0°)
   \node[anchor=base west, text=black, font=\cjkfont\fontsize{9}{11}\selectfont]
     at (0.5mm, 7.5mm) {#1};
@@ -945,7 +949,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyfire};
   \firerulers
   \decanrulers{\rMars}{\rSun}{\rVenus}
-  \solarterms{春分}{Chūnfēn}{Spring Equinox}{清明}{Qīngmíng}{Clear \& Bright}
+  \solarterms{春分}{Chūnfēn}{Spring Equinox}{清明}{Qīngmíng}{Clear \& Bright}{blue}{blue}
   \drawhexagram{0}{0.5\cardheight}{1,1,1,1,0,0}{Dàzhuàng}{Great Strength}{Mǎo}{卯}{Rabbit}% 大壮 Pisces→Aries
   \drawhexagram{\cardwidth}{0.5\cardheight}{1,1,1,1,1,0}{Guài}{Breakthrough}{Chén}{辰}{Dragon}% 夬 Aries→Taurus
 }
@@ -967,7 +971,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyearth};
   \earthrulers
   \decanrulers{\rMercury}{\rMoon}{\rSaturn}
-  \solarterms{谷雨}{Gǔyǔ}{Grain Rain}{立夏}{Lìxià}{Start of Summer}
+  \solarterms{谷雨}{Gǔyǔ}{Grain Rain}{立夏}{Lìxià}{Start of Summer}{blue}{red}
   \drawhexagram{0}{0.5\cardheight}{1,1,1,1,1,0}{Guài}{Breakthrough}{Chén}{辰}{Dragon}% 夬 Aries→Taurus
   \drawhexagram{\cardwidth}{0.5\cardheight}{1,1,1,1,1,1}{Qián}{Heaven}{Sì}{巳}{Snake}% 乾 Taurus→Gemini
 }
@@ -989,7 +993,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyair};
   \airrulers
   \decanrulers{\rJupiter}{\rMars}{\rSun}
-  \solarterms{小满}{Xiǎomǎn}{Grain Buds}{芒种}{Mángzhòng}{Grain in Ear}
+  \solarterms{小满}{Xiǎomǎn}{Grain Buds}{芒种}{Mángzhòng}{Grain in Ear}{red}{red}
   \drawhexagram{0}{0.5\cardheight}{1,1,1,1,1,1}{Qián}{Heaven}{Sì}{巳}{Snake}% 乾 Taurus→Gemini
   \drawhexagram{\cardwidth}{0.5\cardheight}{0,1,1,1,1,1}{Gòu}{Encounter}{Wǔ}{午}{Horse}% 姤 Gemini→Cancer
 }
@@ -1011,7 +1015,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinywater};
   \waterrulers
   \decanrulers{\rVenus}{\rMercury}{\rMoon}
-  \solarterms{夏至}{Xiàzhì}{Summer Solstice}{小暑}{Xiǎoshǔ}{Minor Heat}
+  \solarterms{夏至}{Xiàzhì}{Summer Solstice}{小暑}{Xiǎoshǔ}{Minor Heat}{red}{red}
   \drawhexagram{0}{0.5\cardheight}{0,1,1,1,1,1}{Gòu}{Encounter}{Wǔ}{午}{Horse}% 姤 Gemini→Cancer
   \drawhexagram{\cardwidth}{0.5\cardheight}{0,0,1,1,1,1}{Dùn}{Retreat}{Wèi}{未}{Goat}% 遯 Cancer→Leo
 }
@@ -1033,7 +1037,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyfire};
   \firerulers
   \decanrulers{\rSaturn}{\rJupiter}{\rMars}
-  \solarterms{大暑}{Dàshǔ}{Major Heat}{立秋}{Lìqiū}{Start of Autumn}
+  \solarterms{大暑}{Dàshǔ}{Major Heat}{立秋}{Lìqiū}{Start of Autumn}{red}{white}
   \drawhexagram{0}{0.5\cardheight}{0,0,1,1,1,1}{Dùn}{Retreat}{Wèi}{未}{Goat}% 遯 Cancer→Leo
   \drawhexagram{\cardwidth}{0.5\cardheight}{0,0,0,1,1,1}{Pǐ}{Stagnation}{Shēn}{申}{Monkey}% 否 Leo→Virgo
 }
@@ -1055,7 +1059,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyearth};
   \earthrulers
   \decanrulers{\rSun}{\rVenus}{\rMercury}
-  \solarterms{处暑}{Chǔshǔ}{End of Heat}{白露}{Báilù}{White Dew}
+  \solarterms{处暑}{Chǔshǔ}{End of Heat}{白露}{Báilù}{White Dew}{white}{white}
   \drawhexagram{0}{0.5\cardheight}{0,0,0,1,1,1}{Pǐ}{Stagnation}{Shēn}{申}{Monkey}% 否 Leo→Virgo
   \drawhexagram{\cardwidth}{0.5\cardheight}{0,0,0,0,1,1}{Guān}{Contemplation}{Yǒu}{酉}{Rooster}% 观 Virgo→Libra
 }
@@ -1077,7 +1081,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyair};
   \airrulers
   \decanrulers{\rMoon}{\rSaturn}{\rJupiter}
-  \solarterms{秋分}{Qiūfēn}{Autumn Equinox}{寒露}{Hánlù}{Cold Dew}
+  \solarterms{秋分}{Qiūfēn}{Autumn Equinox}{寒露}{Hánlù}{Cold Dew}{white}{white}
   \drawhexagram{0}{0.5\cardheight}{0,0,0,0,1,1}{Guān}{Contemplation}{Yǒu}{酉}{Rooster}% 观 Virgo→Libra
   \drawhexagram{\cardwidth}{0.5\cardheight}{0,0,0,0,0,1}{Bō}{Splitting Apart}{Xū}{戌}{Dog}% 剥 Libra→Scorpio
 }
@@ -1099,7 +1103,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinywater};
   \waterrulers
   \decanrulers{\rMars}{\rSun}{\rVenus}
-  \solarterms{霜降}{Shuāngjiàng}{Frost's Descent}{立冬}{Lìdōng}{Start of Winter}
+  \solarterms{霜降}{Shuāngjiàng}{Frost's Descent}{立冬}{Lìdōng}{Start of Winter}{white}{black}
   \drawhexagram{0}{0.5\cardheight}{0,0,0,0,0,1}{Bō}{Splitting Apart}{Xū}{戌}{Dog}% 剥 Libra→Scorpio
   \drawhexagram{\cardwidth}{0.5\cardheight}{0,0,0,0,0,0}{Kūn}{Earth}{Hài}{亥}{Pig}% 坤 Scorpio→Sagittarius
 }
@@ -1121,7 +1125,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyfire};
   \firerulers
   \decanrulers{\rMercury}{\rMoon}{\rSaturn}
-  \solarterms{小雪}{Xiǎoxuě}{Minor Snow}{大雪}{Dàxuě}{Major Snow}
+  \solarterms{小雪}{Xiǎoxuě}{Minor Snow}{大雪}{Dàxuě}{Major Snow}{black}{black}
   \drawhexagram{0}{0.5\cardheight}{0,0,0,0,0,0}{Kūn}{Earth}{Hài}{亥}{Pig}% 坤 Scorpio→Sagittarius
   \drawhexagram{\cardwidth}{0.5\cardheight}{1,0,0,0,0,0}{Fù}{Return}{Zǐ}{子}{Rat}% 复 Sagittarius→Capricorn
 }
@@ -1143,7 +1147,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyearth};
   \earthrulers
   \decanrulers{\rJupiter}{\rMars}{\rSun}
-  \solarterms{冬至}{Dōngzhì}{Winter Solstice}{小寒}{Xiǎohán}{Minor Cold}
+  \solarterms{冬至}{Dōngzhì}{Winter Solstice}{小寒}{Xiǎohán}{Minor Cold}{black}{black}
   \drawhexagram{0}{0.5\cardheight}{1,0,0,0,0,0}{Fù}{Return}{Zǐ}{子}{Rat}% 复 Sagittarius→Capricorn
   \drawhexagram{\cardwidth}{0.5\cardheight}{1,1,0,0,0,0}{Lín}{Approach}{Chǒu}{丑}{Ox}% 临 Capricorn→Aquarius
 }
@@ -1165,7 +1169,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinyair};
   \airrulers
   \decanrulers{\rVenus}{\rMercury}{\rMoon}
-  \solarterms{大寒}{Dàhán}{Major Cold}{立春}{Lìchūn}{Start of Spring}
+  \solarterms{大寒}{Dàhán}{Major Cold}{立春}{Lìchūn}{Start of Spring}{black}{blue}
   \drawhexagram{0}{0.5\cardheight}{1,1,0,0,0,0}{Lín}{Approach}{Chǒu}{丑}{Ox}% 临 Capricorn→Aquarius
   \drawhexagram{\cardwidth}{0.5\cardheight}{1,1,1,0,0,0}{Tài}{Peace}{Yín}{寅}{Tiger}% 泰 Aquarius→Pisces
 }
@@ -1187,7 +1191,7 @@
   \node[anchor=center, text=black] at (0.5\cardwidth+3.5mm, \cardheight-16mm) {\tinywater};
   \waterrulers
   \decanrulers{\rSaturn}{\rJupiter}{\rMars}
-  \solarterms{雨水}{Yǔshuǐ}{Rain Water}{惊蛰}{Jīngzhé}{Awakening of Insects}
+  \solarterms{雨水}{Yǔshuǐ}{Rain Water}{惊蛰}{Jīngzhé}{Awakening of Insects}{blue}{blue}
   \drawhexagram{0}{0.5\cardheight}{1,1,1,0,0,0}{Tài}{Peace}{Yín}{寅}{Tiger}% 泰 Aquarius→Pisces
   \drawhexagram{\cardwidth}{0.5\cardheight}{1,1,1,1,0,0}{Dàzhuàng}{Great Strength}{Mǎo}{卯}{Rabbit}% 大壮 Pisces→Aries
 }
