@@ -1879,7 +1879,18 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-2mm) {♈};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Aries};}]{images/w-03}{Three of Wands}\hfill
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Aries};
+  \draw[black, thin] (0, 0) -- (0, \cardheight-20mm);
+  \foreach \d in {0,1,...,10} {
+    \pgfmathsetmacro{\ypos}{\d * (\cardheight-20mm)/10}%
+    \draw[black, thin] (0, \ypos pt) -- (1mm, \ypos pt);
+  }
+  % Monomoiria: planet rulers for degrees 11-20 of Aries
+  \foreach \sym [count=\i from 0] in {☿,☽,♄,♃,♂,☉,♀,☿,☽,♄} {
+    \pgfmathsetmacro{\ymid}{(\i + 0.5) * (\cardheight-20mm)/10}%
+    \node[anchor=west, text=black, inner sep=0pt, font=\symbfont\fontsize{4}{5}\selectfont]
+      at (0.5mm, \ymid pt) {\sym};
+  }}]{images/w-03}{Three of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{3}{♥}{1.0}{1.0}
   \chinesecardmarks[🀉]{三}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
