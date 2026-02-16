@@ -1684,6 +1684,12 @@
     \pgfmathsetmacro{\ypos}{\d * (\cardheight-20mm)/10}%
     \draw[black, thin] (0, \ypos pt) -- (1mm, \ypos pt);
   }
+  % Monomoiria: planet rulers for each degree (Chaldean order from Mars)
+  \foreach \sym [count=\i from 0] in {♂,☉,♀,☿,☽,♄,♃,♂,☉,♀} {
+    \pgfmathsetmacro{\ymid}{(\i + 0.5) * (\cardheight-20mm)/10}%
+    \node[anchor=west, text=black, inner sep=0pt, font=\symbfont\fontsize{4}{5}\selectfont]
+      at (0.5mm, \ymid pt) {\sym};
+  }
   \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
     at (7mm, 8.3mm) {{\cardfont\fontsize{5}{6}\selectfont Xuánniǎo zhì}};
   \node[anchor=south west, text=black, inner sep=0pt]
