@@ -1721,6 +1721,18 @@
   \pgfmathsetmacro{\algenibpos}{9.583 * (\cardheight-20mm)/10}%
   \node[anchor=south west, text=black, inner sep=0pt]
     at (2.5mm, \algenibpos pt) {{\symbfont\fontsize{5}{6}\selectfont ★}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Algenib}};
+  % Hexagram lines: degrees 0-5 = hexagram 40 (解), degrees 6-9 = bottom 4 of hexagram 34 (大壯)
+  \begin{scope}[line width=1mm, line cap=butt]
+    \foreach \type [count=\i from 0] in {0,1,0,1,0,0,1,1,1,1} {
+      \pgfmathsetmacro{\yy}{(\i + 0.5) * (\cardheight-20mm)/10}%
+      \ifnum\type=1
+        \draw (\cardwidth-18mm, \yy pt) -- (\cardwidth-10mm, \yy pt);
+      \else
+        \draw (\cardwidth-18mm, \yy pt) -- (\cardwidth-15.5mm, \yy pt);
+        \draw (\cardwidth-12.5mm, \yy pt) -- (\cardwidth-10mm, \yy pt);
+      \fi
+    }
+  \end{scope}
   \chinesecardmarks[🀑]{二}{条}}]{images/w-02}{Two of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{2}{♥}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
