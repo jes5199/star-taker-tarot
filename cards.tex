@@ -1366,6 +1366,13 @@
     at (2.5mm, \starpos pt) {{\symbfont\fontsize{5}{6}\selectfont ★}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont #2}};
 }
 
+% Egyptian bound starting at bottom of decan
+% #1 = bound number within sign (1-5), #2 = ruling planet
+\newcommand{\boundstart}[2]{%
+  \node[anchor=south west, text=black, inner sep=0pt]
+    at (2.5mm, 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont #1.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} #2}};
+}
+
 % Playing card rank/suit marks — top-left upright, bottom-right inverted
 % #1 = color, #2 = rank (e.g. A), #3 = suit symbol (e.g. ♣)
 % #4 = xscale, #5 = yscale
@@ -1768,8 +1775,7 @@
     at (7mm, 5.05mm) {{\cardfont\fontsize{5}{6}\selectfont Chūnfēn}};
   \node[anchor=south west, text=black, inner sep=0pt]
     at (2.5mm, 3mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 4.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 春分}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Spring Equinox}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 1.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} Jupiter}};
+  \boundstart{1}{Jupiter}
   \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
     at (7.5mm, 43.55mm) {{\cardfont\fontsize{5}{6}\selectfont Léi nǎi fāshēng}};
   \node[anchor=south west, text=black, inner sep=0pt]
@@ -1841,6 +1847,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Cancer};
   \decanticks{90}
+  \boundstart{1}{Mars}
   \fixedstar{5.733}{Tejat}
   \fixedstar{9.533}{Alhena}
   \hexagram{3}{0,0,1,1,1,0}{0}{0}{Xián}{Influence}
@@ -1856,6 +1863,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Libra};
   \decanticks{180}
+  \boundstart{1}{Saturn}
   % no fixed stars in 1st decan of Libra
   \hexagram{3}{1,0,1,0,0,1}{0}{0}{Bì}{Grace}
   \hexagram{8}{0,0,0,1,1,0}{0}{2}{Guān}{Contemplation}
@@ -1873,6 +1881,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Capricorn};
   \decanticks{270}
+  \boundstart{1}{Mercury}
   \fixedstar{1.683}{Alnasl}
   \hexagram{3}{1,1,0,0,1,1}{0}{0}{Zhōng Fú}{Inner\\Truth}
   \hexagram{8}{1,0,0,0,0,0}{0}{2}{Fù}{Return}
@@ -2114,6 +2123,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Aries};
   \decanticks{20}
+  \boundstart{4}{Mars}
   \fixedstar{2.8}{Eta Andromedae}
   \hexagram{2}{0,1,0,1,1,1}{2}{0}{Sòng}{Conflict}
   \hexagram{7}{0,1,1,0,0,1}{0}{0}{Gǔ}{Correcting}
@@ -2181,6 +2191,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Leo};
   \decanticks{120}
+  \boundstart{1}{Jupiter}
   \fixedstar{6.15}{Theta Cancri}
   \fixedstar{7.817}{Praesepe}
   \hexagram{3}{1,1,0,1,1,1}{0}{0}{Lǚ}{Treading}
@@ -2196,6 +2207,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Scorpio};
   \decanticks{210}
+  \boundstart{1}{Mars}
   \fixedstar{4.217}{Syrma}
   \fixedstar{4.917}{Kang}
   \hexagram{3}{0,1,0,1,1,0}{0}{0}{Kùn}{Oppression}
@@ -2211,6 +2223,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Aquarius};
   \decanticks{300}
+  \boundstart{1}{Mercury}
   \fixedstar{2.2}{Altair}
   \fixedstar{4.283}{Giedi Prima}
   \fixedstar{4.467}{Dabih}
@@ -2230,6 +2243,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Taurus};
   \decanticks{30}
+  \boundstart{1}{Venus}
   \fixedstar{0.833}{Mirach}
   \fixedstar{4.4}{Sheratan}
   \fixedstar{8.083}{Hamal}
@@ -2347,6 +2361,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Aquarius};
   \decanticks{320}
+  \boundstart{4}{Mars}
   \fixedstar{3.817}{Sadalsuud}
   \fixedstar{3.967}{Deneb Algedi}
   \hexagram{2}{0,1,0,0,0,1}{2}{0}{Méng}{Youthful\\Folly}
@@ -2385,6 +2400,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Sagittarius};
   \decanticks{240}
+  \boundstart{1}{Jupiter}
   \fixedstar{3.367}{Fang}
   \fixedstar{3.617}{Acrab}
   \fixedstar{8.217}{Alniyat}
@@ -2401,6 +2417,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Pisces};
   \decanticks{330}
+  \boundstart{1}{Venus}
   \fixedstar{3.783}{Sadalmelik}
   \fixedstar{4.283}{Fomalhaut}
   \fixedstar{5.75}{Deneb}
@@ -2418,6 +2435,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Gemini};
   \decanticks{60}
+  \boundstart{1}{Mercury}
   \fixedstar{0.417}{Alcyone}
   \fixedstar{8.883}{Ain}
   \hexagram{3}{1,1,1,0,1,1}{0}{0}{Xiǎo Chù}{Small\\Taming}
@@ -2436,6 +2454,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Virgo};
   \decanticks{150}
+  \boundstart{1}{Mercury}
   \fixedstar{0.25}{Regulus}
   \fixedstar{6.117}{Upsilon-1 Hydrae}
   \hexagram{3}{1,1,0,0,0,1}{0}{0}{Sǔn}{Decrease}
