@@ -1789,24 +1789,6 @@
     at (0.5\cardwidth, 0.52\cardheight-2mm) {♋};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Cancer};
-  \foreach \d in {0,1,...,10} {
-    \pgfmathsetmacro{\ypos}{\d * (\cardheight-20mm)/10}%
-    \draw[black, thin] (0, \ypos pt) -- (6mm, \ypos pt);
-  }
-  % Solar terms and pentads
-  \pgfmathsetmacro{\fivedegs}{5 * (\cardheight-20mm)/10}%
-  % 夏至 Summer Solstice at 0°
-  \draw[black, thick] (6.5mm, 0) -- (8mm, 0);
-  \node[anchor=west, rotate=90, text=black]
-    at (7mm, 0.5mm) {{\cjkfont\fontsize{6}{7}\selectfont 夏至} {\cardfont\fontsize{6}{7}\selectfont Summer Solstice}};
-  % 鹿角解 Deer shed antlers at 0°
-  \draw[black, thick] (10.5mm, 0) -- (12mm, 0);
-  \node[anchor=west, rotate=90, text=black]
-    at (11mm, 0.5mm) {{\cjkfont\fontsize{6}{7}\selectfont 鹿角解} {\cardfont\fontsize{6}{7}\selectfont Deer shed antlers}};
-  % 蜩始鳴 Cicadas sing at 5°
-  \draw[black, thick] (6.5mm, \fivedegs pt) -- (8mm, \fivedegs pt);
-  \node[anchor=west, rotate=90, text=black]
-    at (7mm, \fivedegs pt + 0.5mm) {{\cjkfont\fontsize{6}{7}\selectfont 蜩始鳴} {\cardfont\fontsize{6}{7}\selectfont Cicadas sing}};
   \chinesecardmarks[🀈]{二}{万}}]{images/c-02}{Two of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{2}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -1817,24 +1799,6 @@
     at (0.5\cardwidth, 0.52\cardheight-2mm) {♎};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Libra};
-  \foreach \d in {0,1,...,10} {
-    \pgfmathsetmacro{\ypos}{\d * (\cardheight-20mm)/10}%
-    \draw[black, thin] (0, \ypos pt) -- (6mm, \ypos pt);
-  }
-  % Solar terms and pentads
-  \pgfmathsetmacro{\fivedegs}{5 * (\cardheight-20mm)/10}%
-  % 秋分 Autumn Equinox at 0°
-  \draw[black, thick] (6.5mm, 0) -- (8mm, 0);
-  \node[anchor=west, rotate=90, text=black]
-    at (7mm, 0.5mm) {{\cjkfont\fontsize{6}{7}\selectfont 秋分} {\cardfont\fontsize{6}{7}\selectfont Autumn Equinox}};
-  % 雷始收聲 Thunder ceases at 0°
-  \draw[black, thick] (10.5mm, 0) -- (12mm, 0);
-  \node[anchor=west, rotate=90, text=black]
-    at (11mm, 0.5mm) {{\cjkfont\fontsize{6}{7}\selectfont 雷始收聲} {\cardfont\fontsize{6}{7}\selectfont Thunder ceases}};
-  % 蟄蟲壞戶 Insects seal burrows at 5°
-  \draw[black, thick] (6.5mm, \fivedegs pt) -- (8mm, \fivedegs pt);
-  \node[anchor=west, rotate=90, text=black]
-    at (7mm, \fivedegs pt + 0.5mm) {{\cjkfont\fontsize{6}{7}\selectfont 蟄蟲壞戶} {\cardfont\fontsize{6}{7}\selectfont Insects seal burrows}};
   \chinesecardmarks{二}{十}}]{images/s-02}{Two of Swords}
 
 \vspace{4mm}
@@ -1848,24 +1812,6 @@
     at (0.5\cardwidth, 0.52\cardheight-2mm) {♑};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Capricorn};
-  \foreach \d in {0,1,...,10} {
-    \pgfmathsetmacro{\ypos}{\d * (\cardheight-20mm)/10}%
-    \draw[black, thin] (0, \ypos pt) -- (6mm, \ypos pt);
-  }
-  % Solar terms and pentads
-  \pgfmathsetmacro{\fivedegs}{5 * (\cardheight-20mm)/10}%
-  % 冬至 Winter Solstice at 0°
-  \draw[black, thick] (6.5mm, 0) -- (8mm, 0);
-  \node[anchor=west, rotate=90, text=black]
-    at (7mm, 0.5mm) {{\cjkfont\fontsize{6}{7}\selectfont 冬至} {\cardfont\fontsize{6}{7}\selectfont Winter Solstice}};
-  % 蚯蚓結 Earthworms curl at 0°
-  \draw[black, thick] (10.5mm, 0) -- (12mm, 0);
-  \node[anchor=west, rotate=90, text=black]
-    at (11mm, 0.5mm) {{\cjkfont\fontsize{6}{7}\selectfont 蚯蚓結} {\cardfont\fontsize{6}{7}\selectfont Earthworms curl}};
-  % 麋角解 Elk shed antlers at 5°
-  \draw[black, thick] (6.5mm, \fivedegs pt) -- (8mm, \fivedegs pt);
-  \node[anchor=west, rotate=90, text=black]
-    at (7mm, \fivedegs pt + 0.5mm) {{\cjkfont\fontsize{6}{7}\selectfont 麋角解} {\cardfont\fontsize{6}{7}\selectfont Elk shed antlers}};
   \chinesecardmarks[🀚]{二}{并}}]{images/p-02}{Two of Pentacles}
 
 % Threes
