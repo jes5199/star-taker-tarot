@@ -1358,6 +1358,14 @@
   \fi
 }
 
+% Fixed star annotation on decan scale
+% #1 = position in decan (degrees, 0-10), #2 = star name
+\newcommand{\fixedstar}[2]{%
+  \pgfmathsetmacro{\starpos}{#1 * (\cardheight-20mm)/10}%
+  \node[anchor=south west, text=black, inner sep=0pt]
+    at (2.5mm, \starpos pt) {{\symbfont\fontsize{5}{6}\selectfont ★}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont #2}};
+}
+
 % Playing card rank/suit marks — top-left upright, bottom-right inverted
 % #1 = color, #2 = rank (e.g. A), #3 = suit symbol (e.g. ♣)
 % #4 = xscale, #5 = yscale
@@ -1786,9 +1794,7 @@
     at (2.5mm, \wallboundary pt - 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 13.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 室}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Encampment}};
   \node[anchor=north west, text=black, inner sep=0pt, xscale=0.48]
     at (7.5mm, \wallboundary pt - 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Shì}};
-  \pgfmathsetmacro{\algenibpos}{9.583 * (\cardheight-20mm)/10}%
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, \algenibpos pt) {{\symbfont\fontsize{5}{6}\selectfont ★}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Algenib}};
+  \fixedstar{9.583}{Algenib}
   % Small hexagram 40 (解) centered on 4th tick
   \pgfmathsetmacro{\hextick}{3 * (\cardheight-20mm)/10}%
   \begin{scope}[shift={(\cardwidth-14mm, \hextick pt)}, line width=0.6mm, line cap=butt]
@@ -1835,6 +1841,8 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Cancer};
   \decanticks{90}
+  \fixedstar{5.733}{Tejat}
+  \fixedstar{9.533}{Alhena}
   \hexagram{3}{0,0,1,1,1,0}{0}{0}{Xián}{Influence}
   \hexagram{8}{0,1,1,1,1,1}{0}{2}{Gòu}{Coming\\to Meet}
   \chinesecardmarks[🀈]{二}{万}}]{images/c-02}{Two of Cups}\hfill
@@ -1848,6 +1856,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Libra};
   \decanticks{180}
+  % no fixed stars in 1st decan of Libra
   \hexagram{3}{1,0,1,0,0,1}{0}{0}{Bì}{Grace}
   \hexagram{8}{0,0,0,1,1,0}{0}{2}{Guān}{Contemplation}
   \chinesecardmarks{二}{十}}]{images/s-02}{Two of Swords}
@@ -1864,6 +1873,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Capricorn};
   \decanticks{270}
+  \fixedstar{1.683}{Alnasl}
   \hexagram{3}{1,1,0,0,1,1}{0}{0}{Zhōng Fú}{Inner\\Truth}
   \hexagram{8}{1,0,0,0,0,0}{0}{2}{Fù}{Return}
   \chinesecardmarks[🀚]{二}{并}}]{images/p-02}{Two of Pentacles}
@@ -2025,6 +2035,8 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Cancer};
   \decanticks{100}
+  \fixedstar{4.5}{Sirius}
+  \fixedstar{5.383}{Canopus}
   % Hexagram 44 姤 (Coming to Meet): near bottom of card, tighter label
   \pgfmathsetmacro{\hexticka}{1 * (\cardheight-20mm)/10}%
   \begin{scope}[shift={(\cardwidth-14mm, \hexticka pt)}, line cap=butt]
@@ -2060,6 +2072,9 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Libra};
   \decanticks{190}
+  \fixedstar{0.367}{Vindemiatrix}
+  \fixedstar{1.15}{Gienah}
+  \fixedstar{3.867}{Algorab}
   \hexagram{1}{0,0,0,1,1,0}{4}{0}{Guān}{Contemplation}
   \hexagram{5}{1,1,0,1,0,0}{0}{0}{Guī Mèi}{Marrying\\Maiden}
   \hexagram{9}{1,0,0,1,1,1}{0}{4}{Wú Wàng}{Innocence}}]{images/s-03}{Three of Swords}
@@ -2077,6 +2092,10 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Capricorn};
   \decanticks{280}
+  \fixedstar{0.6}{Phi Sagittarii}
+  \fixedstar{4.067}{Ascella}
+  \fixedstar{5.75}{Vega}
+  \fixedstar{6.683}{Albaldah}
   \hexagram{1}{1,0,0,0,0,0}{4}{0}{Fù}{Return}
   \hexagram{5}{1,0,0,0,1,0}{0}{0}{Zhūn}{Difficulty}
   \hexagram{9}{0,0,1,0,0,0}{0}{4}{Qiān}{Modesty}}]{images/p-03}{Three of Pentacles}
@@ -2095,6 +2114,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Aries};
   \decanticks{20}
+  \fixedstar{2.8}{Eta Andromedae}
   \hexagram{2}{0,1,0,1,1,1}{2}{0}{Sòng}{Conflict}
   \hexagram{7}{0,1,1,0,0,1}{0}{0}{Gǔ}{Correcting}
   }]{images/w-04}{Four of Wands}\hfill
@@ -2109,6 +2129,9 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Cancer};
   \decanticks{110}
+  \fixedstar{0.667}{Castor}
+  \fixedstar{3.633}{Pollux}
+  \fixedstar{6.2}{Procyon}
   \hexagram{2}{1,0,1,1,0,0}{2}{0}{Fēng}{Abundance}
   \hexagram{7}{0,1,0,0,1,1}{0}{0}{Huàn}{Dispersion}}]{images/c-04}{Four of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{4}{♠}{1.0}{1.0}
@@ -2122,6 +2145,8 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Libra};
   \decanticks{200}
+  \fixedstar{4.267}{Spica}
+  \fixedstar{4.65}{Arcturus}
   \hexagram{2}{1,0,0,1,1,1}{2}{0}{Wú Wàng}{Innocence}
   \hexagram{7}{1,0,1,0,0,0}{0}{0}{Míng Yí}{Darkening}}]{images/s-04}{Four of Swords}
 
@@ -2138,6 +2163,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Capricorn};
   \decanticks{290}
+  % no fixed stars in 3rd decan of Capricorn
   \hexagram{2}{0,0,1,0,0,0}{2}{0}{Qiān}{Modesty}
   \hexagram{7}{1,1,0,1,0,1}{0}{0}{Kuí}{Opposition}}]{images/p-04}{Four of Pentacles}
 
@@ -2155,6 +2181,8 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Leo};
   \decanticks{120}
+  \fixedstar{6.15}{Theta Cancri}
+  \fixedstar{7.817}{Praesepe}
   \hexagram{3}{1,1,0,1,1,1}{0}{0}{Lǚ}{Treading}
   \hexagram{8}{0,0,1,1,1,1}{0}{2}{Dùn}{Retreat}}]{images/w-05}{Five of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{5}{♥}{1.0}{1.0}
@@ -2168,6 +2196,8 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Scorpio};
   \decanticks{210}
+  \fixedstar{4.217}{Syrma}
+  \fixedstar{4.917}{Kang}
   \hexagram{3}{0,1,0,1,1,0}{0}{0}{Kùn}{Oppression}
   \hexagram{8}{0,0,0,0,0,1}{0}{2}{Bō}{Splitting\\Apart}}]{images/c-05}{Five of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{5}{♠}{1.0}{1.0}
@@ -2181,6 +2211,9 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Aquarius};
   \decanticks{300}
+  \fixedstar{2.2}{Altair}
+  \fixedstar{4.283}{Giedi Prima}
+  \fixedstar{4.467}{Dabih}
   \hexagram{3}{0,1,1,0,0,0}{0}{0}{Shēng}{Pushing\\Upward}
   \hexagram{8}{1,1,0,0,0,0}{0}{2}{Lín}{Approach}}]{images/s-05}{Five of Swords}
 
@@ -2197,6 +2230,9 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Taurus};
   \decanticks{30}
+  \fixedstar{0.833}{Mirach}
+  \fixedstar{4.4}{Sheratan}
+  \fixedstar{8.083}{Hamal}
   \hexagram{3}{1,0,1,1,1,0}{0}{0}{Gé}{Revolution}
   \hexagram{8}{1,1,1,1,1,0}{0}{2}{Guài}{Breakthrough}}]{images/p-05}{Five of Pentacles}
 
@@ -2214,6 +2250,8 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Leo};
   \decanticks{130}
+  \fixedstar{0.733}{Delta Hydrae}
+  \fixedstar{8.3}{Alterf}
   \hexagram{1}{0,0,1,1,1,1}{4}{0}{Dùn}{Retreat}
   \hexagram{5}{0,1,1,1,0,0}{0}{0}{Héng}{Duration}
   \hexagram{9}{1,1,0,0,1,0}{0}{4}{Jié}{Limitation}}]{images/w-06}{Six of Wands}\hfill
@@ -2228,6 +2266,8 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Scorpio};
   \decanticks{220}
+  \fixedstar{2.717}{Alphecca}
+  \fixedstar{5.5}{Zubenelgenubi}
   \hexagram{1}{0,0,0,0,0,1}{4}{0}{Bō}{Splitting\\Apart}
   \hexagram{5}{0,0,1,0,0,1}{0}{0}{Gèn}{Keeping\\Still}
   \hexagram{9}{1,0,1,0,1,0}{0}{4}{Jì Jì}{After\\Completion}}]{images/c-06}{Six of Cups}\hfill
@@ -2242,6 +2282,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Aquarius};
   \decanticks{310}
+  \fixedstar{2.15}{Albali}
   \hexagram{1}{1,1,0,0,0,0}{4}{0}{Lín}{Approach}
   \hexagram{5}{0,0,1,1,0,0}{0}{0}{Xiǎo Guò}{Small\\Exceeding}
   \hexagram{9}{0,1,0,0,0,1}{0}{4}{Méng}{Youthful\\Folly}}]{images/s-06}{Six of Swords}
@@ -2259,6 +2300,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Taurus};
   \decanticks{40}
+  \fixedstar{7.367}{35 Arietis}
   \hexagram{1}{1,1,1,1,1,0}{4}{0}{Guài}{Breakthrough}
   \hexagram{5}{0,0,1,1,0,1}{0}{0}{Lǚ}{The Wanderer}
   \hexagram{9}{0,1,0,0,0,0}{0}{4}{Shī}{The Army}}]{images/p-06}{Six of Pentacles}
@@ -2277,6 +2319,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Leo};
   \decanticks{140}
+  \fixedstar{7.7}{Alphard}
   \hexagram{2}{1,1,0,0,1,0}{2}{0}{Jié}{Limitation}
   \hexagram{7}{1,0,1,1,1,1}{0}{0}{Tóng Rén}{Fellowship}}]{images/w-07}{Seven of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{7}{♥}{1.0}{1.0}
@@ -2290,6 +2333,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Scorpio};
   \decanticks{230}
+  \fixedstar{9.867}{Toliman}
   \hexagram{2}{1,0,1,0,1,0}{2}{0}{Jì Jì}{After\\Completion}
   \hexagram{7}{1,0,0,1,0,1}{0}{0}{Shì Kè}{Biting\\Through}}]{images/c-07}{Seven of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{7}{♠}{1.0}{1.0}
@@ -2303,6 +2347,8 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Aquarius};
   \decanticks{320}
+  \fixedstar{3.817}{Sadalsuud}
+  \fixedstar{3.967}{Deneb Algedi}
   \hexagram{2}{0,1,0,0,0,1}{2}{0}{Méng}{Youthful\\Folly}
   \hexagram{7}{1,0,0,0,1,1}{0}{0}{Yì}{Increase}}]{images/s-07}{Seven of Swords}
 
@@ -2319,6 +2365,9 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Taurus};
   \decanticks{50}
+  \fixedstar{1.283}{Botein}
+  \fixedstar{6.583}{Algol}
+  \fixedstar{9.833}{Electra}
   \hexagram{2}{0,1,0,0,0,0}{2}{0}{Shī}{The Army}
   \hexagram{7}{0,0,0,0,1,0}{0}{0}{Bǐ}{Holding\\Together}}]{images/p-07}{Seven of Pentacles}
 
@@ -2336,6 +2385,9 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Sagittarius};
   \decanticks{240}
+  \fixedstar{3.367}{Fang}
+  \fixedstar{3.617}{Acrab}
+  \fixedstar{8.217}{Alniyat}
   \hexagram{3}{0,1,1,1,1,0}{0}{0}{Dà Guò}{Great\\Exceeding}
   \hexagram{8}{0,0,0,0,0,0}{0}{2}{Kūn}{Receptive}}]{images/w-08}{Eight of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{8}{♥}{1.0}{1.0}
@@ -2349,6 +2401,10 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Pisces};
   \decanticks{330}
+  \fixedstar{3.783}{Sadalmelik}
+  \fixedstar{4.283}{Fomalhaut}
+  \fixedstar{5.75}{Deneb}
+  \fixedstar{7.133}{Sadalachbia}
   \hexagram{3}{0,0,1,0,1,1}{0}{0}{Jiàn}{Development}
   \hexagram{8}{1,1,1,0,0,0}{0}{2}{Tài}{Peace}}]{images/c-08}{Eight of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{8}{♠}{1.0}{1.0}
@@ -2362,6 +2418,8 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Gemini};
   \decanticks{60}
+  \fixedstar{0.417}{Alcyone}
+  \fixedstar{8.883}{Ain}
   \hexagram{3}{1,1,1,0,1,1}{0}{0}{Xiǎo Chù}{Small\\Taming}
   \hexagram{8}{1,1,1,1,1,1}{0}{2}{Qián}{Creative}}]{images/s-08}{Eight of Swords}
 
@@ -2378,6 +2436,8 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Virgo};
   \decanticks{150}
+  \fixedstar{0.25}{Regulus}
+  \fixedstar{6.117}{Upsilon-1 Hydrae}
   \hexagram{3}{1,1,0,0,0,1}{0}{0}{Sǔn}{Decrease}
   \hexagram{8}{0,0,0,1,1,1}{0}{2}{Pǐ}{Standstill}}]{images/p-08}{Eight of Pentacles}
 
@@ -2395,6 +2455,8 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Sagittarius};
   \decanticks{250}
+  \fixedstar{0.183}{Antares}
+  \fixedstar{6.583}{Xamidimura}
   \hexagram{1}{0,0,0,0,0,0}{4}{0}{Kūn}{Receptive}
   \hexagram{5}{0,1,0,1,0,1}{0}{0}{Wèi Jì}{Before\\Completion}
   \hexagram{9}{0,0,1,0,1,0}{0}{4}{Jiǎn}{Obstruction}}]{images/w-09}{Nine of Wands}\hfill
@@ -2409,6 +2471,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Pisces};
   \decanticks{340}
+  \fixedstar{5.75}{Achernar}
   \hexagram{1}{1,1,1,0,0,0}{4}{0}{Tài}{Peace}
   \hexagram{5}{1,1,1,0,1,0}{0}{0}{Xū}{Waiting}
   \hexagram{9}{1,0,0,1,1,0}{0}{4}{Suí}{Following}}]{images/c-09}{Nine of Cups}\hfill
@@ -2423,6 +2486,8 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Gemini};
   \decanticks{70}
+  \fixedstar{0.217}{Aldebaran}
+  \fixedstar{7.25}{Rigel}
   \hexagram{1}{1,1,1,1,1,1}{4}{0}{Qián}{Creative}
   \hexagram{5}{1,1,1,1,0,1}{0}{0}{Dà Yǒu}{Great\\Possession}
   \hexagram{9}{1,0,1,0,1,1}{0}{4}{Jiā Rén}{The Family}}]{images/s-09}{Nine of Swords}
@@ -2440,6 +2505,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Virgo};
   \decanticks{160}
+  \fixedstar{1.75}{Zosma}
   \hexagram{1}{0,0,0,1,1,1}{4}{0}{Pǐ}{Standstill}
   \hexagram{5}{0,1,1,0,1,1}{0}{0}{Xùn}{The Gentle}
   \hexagram{9}{0,0,0,1,1,0}{0}{4}{Cuì}{Gathering}}]{images/p-09}{Nine of Pentacles}
@@ -2458,6 +2524,8 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Sagittarius};
   \decanticks{260}
+  \fixedstar{2.867}{Rasalhague}
+  \fixedstar{5.017}{Shaula}
   \hexagram{2}{0,0,1,0,1,0}{2}{0}{Jiǎn}{Obstruction}
   \hexagram{7}{1,0,0,0,0,1}{0}{0}{Yí}{Nourishment}}]{images/w-10}{Ten of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{10}{♥}{0.7}{1.0}
@@ -2471,6 +2539,8 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Pisces};
   \decanticks{350}
+  \fixedstar{3.917}{Markab}
+  \fixedstar{9.8}{Scheat}
   \hexagram{2}{1,0,0,1,1,0}{2}{0}{Suí}{Following}
   \hexagram{7}{0,0,0,1,0,1}{0}{0}{Jìn}{Progress}
   \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
@@ -2499,6 +2569,12 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Gemini};
   \decanticks{80}
+  \fixedstar{1.367}{Bellatrix}
+  \fixedstar{2.283}{Capella}
+  \fixedstar{4.133}{Meissa}
+  \fixedstar{5.1}{Alnitak}
+  \fixedstar{9.0}{Polaris}
+  \fixedstar{9.183}{Betelgeuse}
   \hexagram{2}{1,0,1,0,1,1}{2}{0}{Jiā Rén}{The Family}
   \hexagram{7}{0,1,1,0,1,0}{0}{0}{Jǐng}{The Well}}]{images/s-10}{Ten of Swords}
 
@@ -2515,6 +2591,10 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Virgo};
   \decanticks{170}
+  \fixedstar{2.033}{Denebola}
+  \fixedstar{4.1}{Alkes}
+  \fixedstar{7.367}{Alkaid}
+  \fixedstar{7.6}{Zavijava}
   \hexagram{2}{0,0,0,1,1,0}{2}{0}{Cuì}{Gathering}
   \hexagram{7}{1,1,1,0,0,1}{0}{0}{Dà Chù}{Great\\Taming}}]{images/p-10}{Ten of Pentacles}
 
