@@ -1,0 +1,230 @@
+Meng Xi Guaqi (孟喜卦氣) Hexagram System on Decan Cards
+======================================================
+
+Overview
+--------
+The Meng Xi guaqi system assigns 60 of the 64 I Ching hexagrams to the
+360° of the zodiac, with each hexagram spanning exactly 6°. Four hexagrams
+(Kan 坎 #29, Li 離 #30, Zhen 震 #51, Dui 兌 #58) are excluded as seasonal
+markers, leaving 60 hexagrams × 6° = 360°.
+
+Each zodiac sign (30°) contains 5 hexagrams. Each decan (10°) therefore
+overlaps with portions of these hexagrams, typically showing 2 or 3.
+
+Mapping to Decans
+-----------------
+Since hexagrams span 6° and decans span 10°, the boundaries don't align
+neatly. A typical decan contains:
+
+  - One hexagram that straddles the start of the decan (partially visible)
+  - One hexagram fully within the decan
+  - One hexagram that straddles the end of the decan (partially visible)
+
+Some decans (like the 3rd decan, 20°-30°) may only contain 2 hexagrams
+if the boundaries happen to align at the 6° intervals.
+
+Example: Second Decan of Aries (10°-20°)
+  - Hex 34 大壯 (Great Strength): spans 6°-12°, visible at 10°-12°
+  - Hex 16 豫 (Enthusiasm): spans 12°-18°, fully visible
+  - Hex 6 訟 (Conflict): spans 18°-24°, visible at 18°-20°
+
+Rendering on Cards
+------------------
+Each hexagram is drawn on the right side of the card (at \cardwidth-14mm),
+vertically centered on the midpoint of its visible degree range within
+the decan.
+
+The 6 lines of each hexagram are rendered differently depending on whether
+they fall inside or outside the decan:
+
+  IN-DECAN LINES (normal rendering):
+    Yang (solid): thick black line, 6mm wide
+      \draw[line width=0.6mm] (-3mm, y) -- (3mm, y);
+
+    Yin (broken): two segments with 1mm gap
+      \draw[line width=0.6mm] (-3mm, y) -- (-0.5mm, y);
+      \draw[line width=0.6mm] (0.5mm, y) -- (3mm, y);
+
+  OUTSIDE-DECAN LINES (outlined/ghosted):
+    Yang (solid): white-filled rectangle with thin black border
+      \fill[white, draw=black, line width=0.2mm]
+        (-3mm, y-0.3mm) rectangle (3mm, y+0.3mm);
+
+    Yin (broken): two white-filled rectangles with gap
+      \fill[white, draw=black, line width=0.2mm]
+        (-3mm, y-0.3mm) rectangle (-0.5mm, y+0.3mm);
+      \fill[white, draw=black, line width=0.2mm]
+        (0.5mm, y-0.3mm) rectangle (3mm, y+0.3mm);
+
+Lines are spaced 1.5mm apart vertically, centered with the formula:
+  y = \i*1.5mm - 3.75mm  (where \i = 0 for bottom line, 5 for top)
+
+Each hexagram has a pinyin label above and an English name below,
+both in \cardfont at 4pt.
+
+Line-to-Degree Mapping
+----------------------
+Each hexagram's 6 lines correspond to 1° each. Line 1 (bottom) maps to
+the lowest degree of the hexagram's range, line 6 (top) to the highest.
+
+For a hexagram spanning D° to (D+6)°:
+  Line 1 (i=0) = D°
+  Line 2 (i=1) = D+1°
+  Line 3 (i=2) = D+2°
+  Line 4 (i=3) = D+3°
+  Line 5 (i=4) = D+4°
+  Line 6 (i=5) = D+5°
+
+If the decan starts at S°, lines with degree < S° are "outside" (outlined),
+and lines with degree >= S° are "inside" (normal). Similarly at the end
+of the decan.
+
+Positioning
+-----------
+The hexagram graphic is centered at the tick mark corresponding to the
+midpoint of its visible degree range within the decan.
+
+Example: Hex 34 spans 6°-12°, visible in 2nd decan (10°-20°) at 10°-12°.
+  Midpoint of visible range = 11° → tick 1 (since tick 0 = 10°).
+
+Example: Hex 16 spans 12°-18°, fully in 2nd decan.
+  Midpoint = 15° → tick 5.
+
+Complete Meng Xi Guaqi Sequence (60 Hexagrams)
+-----------------------------------------------
+Starting at "Spring Begins" (立春), which maps to 312° ecliptic (12° Aquarius).
+The four seasonal hexagrams (29 Kan, 30 Li, 51 Zhen, 58 Dui) are excluded.
+Each row = one Chinese month (30°), five hexagrams of 6° each.
+
+Month  Solar Term         Start°   Hexagrams
+  1    Spring Begins      312°     62  4  42  53  11
+  2    Insects Awaken     342°      5 17  35  40  34
+  3    Clear & Bright      12°     16  6  18  49  43
+  4    Summer Begins       42°     56  7   8   9   1
+  5    Grain in Ear        72°     14 37  48  31  44
+  6    Slight Heat        102°     50 55  59  10  33
+  7    Autumn Begins      132°     32 60  13  41  12
+  8    White Dew          162°     57 45  26  22  20
+  9    Cold Dew           192°     54 25  36  47  23
+ 10    Winter Begins      222°     52 63  21  28   2
+ 11    Heavy Snow         252°     64 39  27  61  24
+ 12    Slight Cold        282°      3 15  38  46  19
+
+Hexagram Degree Assignments (sorted by zodiac degree)
+-----------------------------------------------------
+ Hex  Start°  End°   Zodiac Position
+  40    0°      6°   0°-6° Aries
+  34    6°     12°   6°-12° Aries
+  16   12°     18°   12°-18° Aries
+   6   18°     24°   18°-24° Aries
+  18   24°     30°   24°-30° Aries
+  49   30°     36°   0°-6° Taurus
+  43   36°     42°   6°-12° Taurus
+  56   42°     48°   12°-18° Taurus
+   7   48°     54°   18°-24° Taurus
+   8   54°     60°   24°-30° Taurus
+   9   60°     66°   0°-6° Gemini
+   1   66°     72°   6°-12° Gemini
+  14   72°     78°   12°-18° Gemini
+  37   78°     84°   18°-24° Gemini
+  48   84°     90°   24°-30° Gemini
+  31   90°     96°   0°-6° Cancer
+  44   96°    102°   6°-12° Cancer
+  50  102°    108°   12°-18° Cancer
+  55  108°    114°   18°-24° Cancer
+  59  114°    120°   24°-30° Cancer
+  10  120°    126°   0°-6° Leo
+  33  126°    132°   6°-12° Leo
+  32  132°    138°   12°-18° Leo
+  60  138°    144°   18°-24° Leo
+  13  144°    150°   24°-30° Leo
+  41  150°    156°   0°-6° Virgo
+  12  156°    162°   6°-12° Virgo
+  57  162°    168°   12°-18° Virgo
+  45  168°    174°   18°-24° Virgo
+  26  174°    180°   24°-30° Virgo
+  22  180°    186°   0°-6° Libra
+  20  186°    192°   6°-12° Libra
+  54  192°    198°   12°-18° Libra
+  25  198°    204°   18°-24° Libra
+  36  204°    210°   24°-30° Libra
+  47  210°    216°   0°-6° Scorpio
+  23  216°    222°   6°-12° Scorpio
+  52  222°    228°   12°-18° Scorpio
+  63  228°    234°   18°-24° Scorpio
+  21  234°    240°   24°-30° Scorpio
+  28  240°    246°   0°-6° Sagittarius
+   2  246°    252°   6°-12° Sagittarius
+  64  252°    258°   12°-18° Sagittarius
+  39  258°    264°   18°-24° Sagittarius
+  27  264°    270°   24°-30° Sagittarius
+  61  270°    276°   0°-6° Capricorn
+  24  276°    282°   6°-12° Capricorn
+   3  282°    288°   12°-18° Capricorn
+  15  288°    294°   18°-24° Capricorn
+  38  294°    300°   24°-30° Capricorn
+  46  300°    306°   0°-6° Aquarius
+  19  306°    312°   6°-12° Aquarius
+  62  312°    318°   12°-18° Aquarius
+   4  318°    324°   18°-24° Aquarius
+  42  324°    330°   24°-30° Aquarius
+  53  330°    336°   0°-6° Pisces
+  11  336°    342°   6°-12° Pisces
+   5  342°    348°   12°-18° Pisces
+  17  348°    354°   18°-24° Pisces
+  35  354°    360°   24°-30° Pisces
+
+Hexagrams Per Decan Card
+------------------------
+Pattern: 1st decans have 2 hexagrams (6°+4°), 2nd decans have 3 (2°+6°+2°),
+3rd decans have 2 (4°+6°). "Vis" = visible degrees in decan.
+
+Card               Decan         Hex (Vis°)
+2 of Wands         Aries 1st     40(6) 34(4)
+3 of Wands         Aries 2nd     34(2) 16(6) 6(2)
+4 of Wands         Aries 3rd     6(4) 18(6)
+2 of Cups          Cancer 1st    31(6) 44(4)
+3 of Cups          Cancer 2nd    44(2) 50(6) 55(2)
+4 of Cups          Cancer 3rd    55(4) 59(6)
+2 of Swords        Libra 1st     22(6) 20(4)
+3 of Swords        Libra 2nd     20(2) 54(6) 25(2)
+4 of Swords        Libra 3rd     25(4) 36(6)
+2 of Pentacles     Capricorn 1st 61(6) 24(4)
+3 of Pentacles     Capricorn 2nd 24(2) 3(6) 15(2)
+4 of Pentacles     Capricorn 3rd 15(4) 38(6)
+5 of Wands         Leo 1st       10(6) 33(4)
+6 of Wands         Leo 2nd       33(2) 32(6) 60(2)
+7 of Wands         Leo 3rd       60(4) 13(6)
+5 of Cups          Scorpio 1st   47(6) 23(4)
+6 of Cups          Scorpio 2nd   23(2) 52(6) 63(2)
+7 of Cups          Scorpio 3rd   63(4) 21(6)
+5 of Swords        Aquarius 1st  46(6) 19(4)
+6 of Swords        Aquarius 2nd  19(2) 62(6) 4(2)
+7 of Swords        Aquarius 3rd  4(4) 42(6)
+5 of Pentacles     Taurus 1st    49(6) 43(4)
+6 of Pentacles     Taurus 2nd    43(2) 56(6) 7(2)
+7 of Pentacles     Taurus 3rd    7(4) 8(6)
+8 of Wands         Sagittarius 1st 28(6) 2(4)
+9 of Wands         Sagittarius 2nd 2(2) 64(6) 39(2)
+10 of Wands        Sagittarius 3rd 39(4) 27(6)
+8 of Cups          Pisces 1st    53(6) 11(4)
+9 of Cups          Pisces 2nd    11(2) 5(6) 17(2)
+10 of Cups         Pisces 3rd    17(4) 35(6)
+8 of Swords        Gemini 1st    9(6) 1(4)
+9 of Swords        Gemini 2nd    1(2) 14(6) 37(2)
+10 of Swords       Gemini 3rd    37(4) 48(6)
+8 of Pentacles     Virgo 1st     41(6) 12(4)
+9 of Pentacles     Virgo 2nd     12(2) 57(6) 45(2)
+10 of Pentacles    Virgo 3rd     45(4) 26(6)
+
+Hexagram Line Patterns (King Wen sequence)
+------------------------------------------
+Lines are read bottom to top. Yang = 1 (solid), Yin = 0 (broken).
+
+The lower trigram occupies lines 1-3, the upper trigram lines 4-6.
+
+Standard trigrams (bottom to top):
+  Qian ☰ (Heaven):  1,1,1    Kun ☷ (Earth):   0,0,0
+  Zhen ☳ (Thunder): 1,0,0    Xun ☴ (Wind):    1,1,0
+  Kan ☵ (Water):    0,1,0    Li ☲ (Fire):     1,0,1
+  Gen ☶ (Mountain): 0,0,1    Dui ☱ (Lake):    0,1,1
