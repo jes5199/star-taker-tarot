@@ -1603,6 +1603,25 @@
   \end{tikzpicture}%
 }
 
+% Chaldean monomoiria: planet ruler for each degree
+\newcommand{\chaldeanplanet}[1]{%
+  \ifcase#1 ♂\or ☉\or ♀\or ☿\or ☽\or ♄\or ♃\fi}
+% Decan tick marks + monomoiria: #1 = starting absolute degree (0-359)
+\newcommand{\decanticks}[1]{%
+  \def\decantickstart{#1}%
+  \draw[black, thin] (0, 0) -- (0, \cardheight-20mm);
+  \foreach \d in {0,1,...,10} {
+    \pgfmathsetmacro{\ypos}{\d * (\cardheight-20mm)/10}%
+    \draw[black, thin] (0, \ypos pt) -- (1mm, \ypos pt);
+  }
+  \foreach \deg in {0,1,...,9} {
+    \pgfmathsetmacro{\ymid}{(\deg + 0.5) * (\cardheight-20mm)/10}%
+    \pgfmathtruncatemacro{\idx}{Mod(\decantickstart + \deg, 7)}%
+    \node[anchor=west, text=black, inner sep=0pt, font=\symbfont\fontsize{4}{5}\selectfont]
+      at (0.5mm, \ymid pt) {\chaldeanplanet{\idx}};
+  }
+}
+
 % Minor arcana card command: \minorcard[overlay]{image file}{card name}
 \newcommand{\minorcardshift}{-2mm}
 \newcommand{\minorcard}[3][]{%
@@ -1697,17 +1716,7 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♈};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Aries};
-  \draw[black, thin] (0, 0) -- (0, \cardheight-20mm);
-  \foreach \d in {0,1,...,10} {
-    \pgfmathsetmacro{\ypos}{\d * (\cardheight-20mm)/10}%
-    \draw[black, thin] (0, \ypos pt) -- (1mm, \ypos pt);
-  }
-  % Monomoiria: planet rulers for each degree (Chaldean order from Mars)
-  \foreach \sym [count=\i from 0] in {♂,☉,♀,☿,☽,♄,♃,♂,☉,♀} {
-    \pgfmathsetmacro{\ymid}{(\i + 0.5) * (\cardheight-20mm)/10}%
-    \node[anchor=west, text=black, inner sep=0pt, font=\symbfont\fontsize{4}{5}\selectfont]
-      at (0.5mm, \ymid pt) {\sym};
-  }
+  \decanticks{0}
   \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
     at (7mm, 8.3mm) {{\cardfont\fontsize{5}{6}\selectfont Xuánniǎo zhì}};
   \node[anchor=south west, text=black, inner sep=0pt]
@@ -1790,6 +1799,7 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♋};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Cancer};
+  \decanticks{90}
   \chinesecardmarks[🀈]{二}{万}}]{images/c-02}{Two of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{2}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -1800,6 +1810,7 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♎};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Libra};
+  \decanticks{180}
   \chinesecardmarks{二}{十}}]{images/s-02}{Two of Swords}
 
 \vspace{4mm}
@@ -1813,6 +1824,7 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♑};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Capricorn};
+  \decanticks{270}
   \chinesecardmarks[🀚]{二}{并}}]{images/p-02}{Two of Pentacles}
 
 % Threes
@@ -1828,17 +1840,7 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♈};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Aries};
-  \draw[black, thin] (0, 0) -- (0, \cardheight-20mm);
-  \foreach \d in {0,1,...,10} {
-    \pgfmathsetmacro{\ypos}{\d * (\cardheight-20mm)/10}%
-    \draw[black, thin] (0, \ypos pt) -- (1mm, \ypos pt);
-  }
-  % Monomoiria: planet rulers for degrees 11-20 of Aries
-  \foreach \sym [count=\i from 0] in {☿,☽,♄,♃,♂,☉,♀,☿,☽,♄} {
-    \pgfmathsetmacro{\ymid}{(\i + 0.5) * (\cardheight-20mm)/10}%
-    \node[anchor=west, text=black, inner sep=0pt, font=\symbfont\fontsize{4}{5}\selectfont]
-      at (0.5mm, \ymid pt) {\sym};
-  }
+  \decanticks{10}
   % Pentad: 始電 Lightning Begins at 10° (tick 0)
   \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
     at (7mm, 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Shǐdiàn}};
@@ -1980,7 +1982,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♋};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Cancer};}]{images/c-03}{Three of Cups}\hfill
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Cancer};
+  \decanticks{100}}]{images/c-03}{Three of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{3}{♠}{1.0}{1.0}
   \chinesecardmarks{三}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -1990,7 +1993,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♎};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Libra};}]{images/s-03}{Three of Swords}
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Libra};
+  \decanticks{190}}]{images/s-03}{Three of Swords}
 
 \vspace{4mm}
 \noindent
@@ -2003,7 +2007,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♑};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Capricorn};}]{images/p-03}{Three of Pentacles}
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Capricorn};
+  \decanticks{280}}]{images/p-03}{Three of Pentacles}
 
 % Fours
 \newpage
@@ -2017,7 +2022,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♈};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Aries};}]{images/w-04}{Four of Wands}\hfill
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Aries};
+  \decanticks{20}}]{images/w-04}{Four of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{4}{♥}{1.0}{1.0}
   \chinesecardmarks[🀊]{四}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2027,7 +2033,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♋};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Cancer};}]{images/c-04}{Four of Cups}\hfill
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Cancer};
+  \decanticks{110}}]{images/c-04}{Four of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{4}{♠}{1.0}{1.0}
   \chinesecardmarks{四}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2037,7 +2044,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♎};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Libra};}]{images/s-04}{Four of Swords}
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Libra};
+  \decanticks{200}}]{images/s-04}{Four of Swords}
 
 \vspace{4mm}
 \noindent
@@ -2050,7 +2058,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♑};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Capricorn};}]{images/p-04}{Four of Pentacles}
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Capricorn};
+  \decanticks{290}}]{images/p-04}{Four of Pentacles}
 
 % Fives
 \newpage
@@ -2064,7 +2073,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♌};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Leo};}]{images/w-05}{Five of Wands}\hfill
+    at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Leo};
+  \decanticks{120}}]{images/w-05}{Five of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{5}{♥}{1.0}{1.0}
   \chinesecardmarks[🀋]{五}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2074,7 +2084,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♏};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Scorpio};}]{images/c-05}{Five of Cups}\hfill
+    at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Scorpio};
+  \decanticks{210}}]{images/c-05}{Five of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{5}{♠}{1.0}{1.0}
   \chinesecardmarks{五}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2084,7 +2095,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♒};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Aquarius};}]{images/s-05}{Five of Swords}
+    at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Aquarius};
+  \decanticks{300}}]{images/s-05}{Five of Swords}
 
 \vspace{4mm}
 \noindent
@@ -2097,7 +2109,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♉};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Taurus};}]{images/p-05}{Five of Pentacles}
+    at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Taurus};
+  \decanticks{30}}]{images/p-05}{Five of Pentacles}
 
 % Sixes
 \newpage
@@ -2111,7 +2124,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♌};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Leo};}]{images/w-06}{Six of Wands}\hfill
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Leo};
+  \decanticks{130}}]{images/w-06}{Six of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{6}{♥}{1.0}{1.0}
   \chinesecardmarks[🀌]{六}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2121,7 +2135,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♏};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Scorpio};}]{images/c-06}{Six of Cups}\hfill
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Scorpio};
+  \decanticks{220}}]{images/c-06}{Six of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{6}{♠}{1.0}{1.0}
   \chinesecardmarks{六}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2131,7 +2146,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♒};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Aquarius};}]{images/s-06}{Six of Swords}
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Aquarius};
+  \decanticks{310}}]{images/s-06}{Six of Swords}
 
 \vspace{4mm}
 \noindent
@@ -2144,7 +2160,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♉};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Taurus};}]{images/p-06}{Six of Pentacles}
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Taurus};
+  \decanticks{40}}]{images/p-06}{Six of Pentacles}
 
 % Sevens
 \newpage
@@ -2158,7 +2175,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♌};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Leo};}]{images/w-07}{Seven of Wands}\hfill
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Leo};
+  \decanticks{140}}]{images/w-07}{Seven of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{7}{♥}{1.0}{1.0}
   \chinesecardmarks[🀍]{七}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2168,7 +2186,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♏};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Scorpio};}]{images/c-07}{Seven of Cups}\hfill
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Scorpio};
+  \decanticks{230}}]{images/c-07}{Seven of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{7}{♠}{1.0}{1.0}
   \chinesecardmarks{七}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2178,7 +2197,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♒};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Aquarius};}]{images/s-07}{Seven of Swords}
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Aquarius};
+  \decanticks{320}}]{images/s-07}{Seven of Swords}
 
 \vspace{4mm}
 \noindent
@@ -2191,7 +2211,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♉};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Taurus};}]{images/p-07}{Seven of Pentacles}
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Taurus};
+  \decanticks{50}}]{images/p-07}{Seven of Pentacles}
 
 % Eights
 \newpage
@@ -2205,7 +2226,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♐};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Sagittarius};}]{images/w-08}{Eight of Wands}\hfill
+    at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Sagittarius};
+  \decanticks{240}}]{images/w-08}{Eight of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{8}{♥}{1.0}{1.0}
   \chinesecardmarks[🀎]{八}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2215,7 +2237,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♓};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Pisces};}]{images/c-08}{Eight of Cups}\hfill
+    at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Pisces};
+  \decanticks{330}}]{images/c-08}{Eight of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{8}{♠}{1.0}{1.0}
   \chinesecardmarks{八}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2225,7 +2248,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♊};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Gemini};}]{images/s-08}{Eight of Swords}
+    at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Gemini};
+  \decanticks{60}}]{images/s-08}{Eight of Swords}
 
 \vspace{4mm}
 \noindent
@@ -2238,7 +2262,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♍};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Virgo};}]{images/p-08}{Eight of Pentacles}
+    at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Virgo};
+  \decanticks{150}}]{images/p-08}{Eight of Pentacles}
 
 % Nines
 \newpage
@@ -2252,7 +2277,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♐};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Sagittarius};}]{images/w-09}{Nine of Wands}\hfill
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Sagittarius};
+  \decanticks{250}}]{images/w-09}{Nine of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{9}{♥}{1.0}{1.0}
   \chinesecardmarks[🀏]{九}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2262,7 +2288,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♓};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Pisces};}]{images/c-09}{Nine of Cups}\hfill
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Pisces};
+  \decanticks{340}}]{images/c-09}{Nine of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{9}{♠}{1.0}{1.0}
   \chinesecardmarks{九}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2272,7 +2299,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♊};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Gemini};}]{images/s-09}{Nine of Swords}
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Gemini};
+  \decanticks{70}}]{images/s-09}{Nine of Swords}
 
 \vspace{4mm}
 \noindent
@@ -2285,7 +2313,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♍};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Virgo};}]{images/p-09}{Nine of Pentacles}
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Virgo};
+  \decanticks{160}}]{images/p-09}{Nine of Pentacles}
 
 % Tens
 \newpage
@@ -2299,7 +2328,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♐};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Sagittarius};}]{images/w-10}{Ten of Wands}\hfill
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Sagittarius};
+  \decanticks{260}}]{images/w-10}{Ten of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{10}{♥}{0.7}{1.0}
   \chinesecardmarks{十}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2310,6 +2340,7 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♓};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Pisces};
+  \decanticks{350}
   \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
     at (10.5mm, 13.55mm) {{\cardfont\fontsize{5}{6}\selectfont Fargh al-Mu'akhkhar}};
   \node[anchor=south west, text=black, inner sep=0pt]
@@ -2334,7 +2365,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♊};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Gemini};}]{images/s-10}{Ten of Swords}
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Gemini};
+  \decanticks{80}}]{images/s-10}{Ten of Swords}
 
 \vspace{4mm}
 \noindent
@@ -2347,7 +2379,8 @@
   \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♍};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
-    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Virgo};}]{images/p-10}{Ten of Pentacles}
+    at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Virgo};
+  \decanticks{170}}]{images/p-10}{Ten of Pentacles}
 
 % Pages (Earth of suit)
 \renewcommand{\minorcardshift}{-10mm}
@@ -2745,8 +2778,7 @@
 ]{images/p-14}{King of Pentacles}
 
 % Card back
-\newpage
-\noindent
+\newcommand{\cardback}{%
 \begin{tikzpicture}
   \draw[rounded corners=2.5mm, thick] (0,0) rectangle (\cardwidth, \cardheight);
   \clip[rounded corners=2.5mm] (0,0) rectangle (\cardwidth, \cardheight);
@@ -2759,6 +2791,19 @@
         (0.5\cardwidth, 0.5\cardheight) ++(\a:\startrad mm) -- ++(\a:2.5mm);
     }
   }
-\end{tikzpicture}
+\end{tikzpicture}%
+}
+
+\newpage
+\noindent
+\cardback\hfill
+\cardback\hfill
+\cardback
+
+\vspace{4mm}
+\noindent
+\cardback\hfill
+\cardback\hfill
+\cardback
 
 \end{document}
