@@ -1604,13 +1604,14 @@
 }
 
 % Minor arcana card command: \minorcard[overlay]{image file}{card name}
+\newcommand{\minorcardshift}{-10mm}
 \newcommand{\minorcard}[3][]{%
   \begin{tikzpicture}
     % Card border
     \draw[rounded corners=2.5mm, thick] (0,0) rectangle (\cardwidth,\cardheight);
     \clip[rounded corners=2.5mm] (0,0) rectangle (\cardwidth,\cardheight);
     % Background image - shifted down to crop off Smith's lettering at bottom
-    \node[anchor=south west, inner sep=0pt] at (0,-10mm) {%
+    \node[anchor=south west, inner sep=0pt] at (0,\minorcardshift) {%
       \includegraphics[width=\cardwidth]{#2}%
     };
     % Wash out the image
@@ -1817,7 +1818,7 @@
 % Threes
 \newpage
 \noindent
-\minorcard[{\playingcardmarks{black}{3}{♣}{1.0}{1.0}
+\renewcommand{\minorcardshift}{0mm}\minorcard[{\playingcardmarks{black}{3}{♣}{1.0}{1.0}
   \chinesecardmarks[🀒]{三}{条}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Form of Fire};
@@ -1970,7 +1971,7 @@
       at (0, -4.5mm) {Conflict};
   \end{scope}
   }]{images/w-03}{Three of Wands}\hfill
-\minorcard[{\playingcardmarks{red}{3}{♥}{1.0}{1.0}
+\renewcommand{\minorcardshift}{-10mm}\minorcard[{\playingcardmarks{red}{3}{♥}{1.0}{1.0}
   \chinesecardmarks[🀉]{三}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Form of Water};
@@ -1993,7 +1994,7 @@
 
 \vspace{4mm}
 \noindent
-\minorcard[{\playingcardmarks{red}{3}{♦}{1.0}{1.0}
+\renewcommand{\minorcardshift}{0mm}\minorcard[{\playingcardmarks{red}{3}{♦}{1.0}{1.0}
   \chinesecardmarks[🀛]{三}{并}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Form of Earth};
@@ -2003,6 +2004,7 @@
     at (0.5\cardwidth, 0.52\cardheight-2mm) {♑};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Capricorn};}]{images/p-03}{Three of Pentacles}
+\renewcommand{\minorcardshift}{-10mm}
 
 % Fours
 \newpage
@@ -2017,7 +2019,7 @@
     at (0.5\cardwidth, 0.52\cardheight-2mm) {♈};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Aries};}]{images/w-04}{Four of Wands}\hfill
-\minorcard[{\playingcardmarks{red}{4}{♥}{1.0}{1.0}
+\renewcommand{\minorcardshift}{-5mm}\minorcard[{\playingcardmarks{red}{4}{♥}{1.0}{1.0}
   \chinesecardmarks[🀊]{四}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Stability of Water};
@@ -2027,7 +2029,7 @@
     at (0.5\cardwidth, 0.52\cardheight-2mm) {♋};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Cancer};}]{images/c-04}{Four of Cups}\hfill
-\minorcard[{\playingcardmarks{black}{4}{♠}{1.0}{1.0}
+\renewcommand{\minorcardshift}{0mm}\minorcard[{\playingcardmarks{black}{4}{♠}{1.0}{1.0}
   \chinesecardmarks{四}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Stability of Air};
@@ -2038,6 +2040,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Libra};}]{images/s-04}{Four of Swords}
 
+\renewcommand{\minorcardshift}{-10mm}
 \vspace{4mm}
 \noindent
 \minorcard[{\playingcardmarks{red}{4}{♦}{1.0}{1.0}
@@ -2064,7 +2067,7 @@
     at (0.5\cardwidth, 0.52\cardheight-2mm) {♌};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Leo};}]{images/w-05}{Five of Wands}\hfill
-\minorcard[{\playingcardmarks{red}{5}{♥}{1.0}{1.0}
+\renewcommand{\minorcardshift}{-5mm}\minorcard[{\playingcardmarks{red}{5}{♥}{1.0}{1.0}
   \chinesecardmarks[🀋]{五}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Trial of Water};
@@ -2085,6 +2088,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Aquarius};}]{images/s-05}{Five of Swords}
 
+\renewcommand{\minorcardshift}{0mm}
 \vspace{4mm}
 \noindent
 \minorcard[{\playingcardmarks{red}{5}{♦}{1.0}{1.0}
@@ -2205,7 +2209,7 @@
     at (0.5\cardwidth, 0.52\cardheight-2mm) {♐};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Sagittarius};}]{images/w-08}{Eight of Wands}\hfill
-\minorcard[{\playingcardmarks{red}{8}{♥}{1.0}{1.0}
+\renewcommand{\minorcardshift}{-5mm}\minorcard[{\playingcardmarks{red}{8}{♥}{1.0}{1.0}
   \chinesecardmarks[🀎]{八}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Labor of Water};
@@ -2215,7 +2219,7 @@
     at (0.5\cardwidth, 0.52\cardheight-2mm) {♓};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Pisces};}]{images/c-08}{Eight of Cups}\hfill
-\minorcard[{\playingcardmarks{black}{8}{♠}{1.0}{1.0}
+\renewcommand{\minorcardshift}{-10mm}\minorcard[{\playingcardmarks{black}{8}{♠}{1.0}{1.0}
   \chinesecardmarks{八}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Labor of Air};
@@ -2228,7 +2232,7 @@
 
 \vspace{4mm}
 \noindent
-\minorcard[{\playingcardmarks{red}{8}{♦}{1.0}{1.0}
+\renewcommand{\minorcardshift}{0mm}\minorcard[{\playingcardmarks{red}{8}{♦}{1.0}{1.0}
   \chinesecardmarks[🀠]{八}{并}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Labor of Earth};
@@ -2238,6 +2242,7 @@
     at (0.5\cardwidth, 0.52\cardheight-2mm) {♍};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Virgo};}]{images/p-08}{Eight of Pentacles}
+\renewcommand{\minorcardshift}{-10mm}
 
 % Nines
 \newpage
@@ -2337,7 +2342,7 @@
 
 \vspace{4mm}
 \noindent
-\minorcard[{\playingcardmarks{red}{10}{♦}{0.7}{1.0}
+\renewcommand{\minorcardshift}{-5mm}\minorcard[{\playingcardmarks{red}{10}{♦}{0.7}{1.0}
   \chinesecardmarks{十}{并}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Harvest of Earth};
@@ -2347,6 +2352,7 @@
     at (0.5\cardwidth, 0.52\cardheight-2mm) {♍};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Virgo};}]{images/p-10}{Ten of Pentacles}
+\renewcommand{\minorcardshift}{-10mm}
 
 % Pages (Earth of suit)
 \newpage
