@@ -394,11 +394,11 @@
 % Vertical JOKER on both sides, parameterized by color
 \newcommand{\jokertext}[1]{%
   \foreach \letter/\i in {J/0,O/1,K/2,E/3,R/4} {
-    \node[anchor=center, text=#1, font=\indexfont\bfseries\fontsize{12}{14}\selectfont]
+    \node[anchor=center, text=#1, font=\rankfont\fontsize{12}{14}\selectfont]
       at (2.5mm, \cardheight-11mm-\i*5mm) {\letter};
   }
   \foreach \letter/\i in {J/0,O/1,K/2,E/3,R/4} {
-    \node[anchor=center, rotate=180, text=#1, font=\indexfont\bfseries\fontsize{12}{14}\selectfont]
+    \node[anchor=center, rotate=180, text=#1, font=\rankfont\fontsize{12}{14}\selectfont]
       at (\cardwidth-2.5mm, 11mm+\i*5mm) {\letter};
   }
 }
