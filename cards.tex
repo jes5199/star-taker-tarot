@@ -53,7 +53,8 @@
 \newfontface\cuneiform{Noto Sans Cuneiform}
 \newfontface\arabfont{Noto Naskh Arabic}[Script=Arabic]
 \newfontface\greekfont{GFS Theokritos}
-\ifdefined\TeXXeTstate\TeXXeTstate=1\fi
+\ifdefined\beginR\else\def\beginR{\textdir TRT }\fi
+\ifdefined\endR\else\def\endR{\textdir TLT }\fi
 
 
 % Small inline alchemical symbols for zodiac cards
