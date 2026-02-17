@@ -225,6 +225,6 @@ The lower trigram occupies lines 1-3, the upper trigram lines 4-6.
 
 Standard trigrams (bottom to top):
   Qian ☰ (Heaven):  1,1,1    Kun ☷ (Earth):   0,0,0
-  Zhen ☳ (Thunder): 1,0,0    Xun ☴ (Wind):    1,1,0
+  Zhen ☳ (Thunder): 1,0,0    Xun ☴ (Wind):    0,1,1
   Kan ☵ (Water):    0,1,0    Li ☲ (Fire):     1,0,1
-  Gen ☶ (Mountain): 0,0,1    Dui ☱ (Lake):    0,1,1
+  Gen ☶ (Mountain): 0,0,1    Dui ☱ (Lake):    1,1,0

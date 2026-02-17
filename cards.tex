@@ -1622,6 +1622,40 @@
   }
 }
 
+% Hexagram command: \hexagram{tick}{line1,line2,...,line6}{outsideBot}{outsideTop}{pinyin}{english}
+% Lines are bottom to top. Yang=1 (solid), Yin=0 (broken).
+% outsideBot/outsideTop = number of lines outside decan (rendered outlined).
+\newcommand{\hexagram}[6]{%
+  \pgfmathsetmacro{\hextickpos}{#1 * (\cardheight-20mm)/10}%
+  \begin{scope}[shift={(\cardwidth-14mm, \hextickpos pt)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {#2} {%
+      \pgfmathtruncatemacro{\isout}{(\i < #3) || (\i >= (6 - #4)) ? 1 : 0}%
+      \ifnum\isout=1
+        \ifnum\type=1
+          \fill[white, draw=black, line width=0.2mm]
+            (-3mm, \i*1.5mm-3.75mm-0.3mm) rectangle (3mm, \i*1.5mm-3.75mm+0.3mm);
+        \else
+          \fill[white, draw=black, line width=0.2mm]
+            (-3mm, \i*1.5mm-3.75mm-0.3mm) rectangle (-0.5mm, \i*1.5mm-3.75mm+0.3mm);
+          \fill[white, draw=black, line width=0.2mm]
+            (0.5mm, \i*1.5mm-3.75mm-0.3mm) rectangle (3mm, \i*1.5mm-3.75mm+0.3mm);
+        \fi
+      \else
+        \ifnum\type=1
+          \draw[line width=0.6mm] (-3mm, \i*1.5mm-3.75mm) -- (3mm, \i*1.5mm-3.75mm);
+        \else
+          \draw[line width=0.6mm] (-3mm, \i*1.5mm-3.75mm) -- (-0.5mm, \i*1.5mm-3.75mm);
+          \draw[line width=0.6mm] (0.5mm, \i*1.5mm-3.75mm) -- (3mm, \i*1.5mm-3.75mm);
+        \fi
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 4.5mm) {#5};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
+      at (0, -4.5mm) {#6};
+  \end{scope}
+}
+
 % Minor arcana card command: \minorcard[overlay]{image file}{card name}
 \newcommand{\minorcardshift}{-2mm}
 \newcommand{\minorcard}[3][]{%
@@ -1800,6 +1834,8 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Cancer};
   \decanticks{90}
+  \hexagram{3}{0,0,1,1,1,0}{0}{0}{Xián}{Influence}
+  \hexagram{8}{0,1,1,1,1,1}{0}{2}{Gòu}{Coming to\\Meet}
   \chinesecardmarks[🀈]{二}{万}}]{images/c-02}{Two of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{2}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -1811,6 +1847,8 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Libra};
   \decanticks{180}
+  \hexagram{3}{1,0,1,0,0,1}{0}{0}{Bì}{Grace}
+  \hexagram{8}{0,0,0,1,1,0}{0}{2}{Guān}{Contemplation}
   \chinesecardmarks{二}{十}}]{images/s-02}{Two of Swords}
 
 \vspace{4mm}
@@ -1825,6 +1863,8 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Capricorn};
   \decanticks{270}
+  \hexagram{3}{1,1,0,0,1,1}{0}{0}{Zhōng Fú}{Inner\\Truth}
+  \hexagram{8}{1,0,0,0,0,0}{0}{2}{Fù}{Return}
   \chinesecardmarks[🀚]{二}{并}}]{images/p-02}{Two of Pentacles}
 
 % Threes
@@ -1983,7 +2023,10 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♋};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Cancer};
-  \decanticks{100}}]{images/c-03}{Three of Cups}\hfill
+  \decanticks{100}
+  \hexagram{1}{0,1,1,1,1,1}{4}{0}{Gòu}{Coming to\\Meet}
+  \hexagram{5}{0,1,1,1,0,1}{0}{0}{Dǐng}{The Cauldron}
+  \hexagram{9}{1,0,1,1,0,0}{0}{4}{Fēng}{Abundance}}]{images/c-03}{Three of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{3}{♠}{1.0}{1.0}
   \chinesecardmarks{三}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -1994,7 +2037,10 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♎};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Libra};
-  \decanticks{190}}]{images/s-03}{Three of Swords}
+  \decanticks{190}
+  \hexagram{1}{0,0,0,1,1,0}{4}{0}{Guān}{Contemplation}
+  \hexagram{5}{1,1,0,1,0,0}{0}{0}{Guī Mèi}{Marrying\\Maiden}
+  \hexagram{9}{1,0,0,1,1,1}{0}{4}{Wú Wàng}{Innocence}}]{images/s-03}{Three of Swords}
 
 \vspace{4mm}
 \noindent
@@ -2008,7 +2054,10 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♑};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Capricorn};
-  \decanticks{280}}]{images/p-03}{Three of Pentacles}
+  \decanticks{280}
+  \hexagram{1}{1,0,0,0,0,0}{4}{0}{Fù}{Return}
+  \hexagram{5}{1,0,0,0,1,0}{0}{0}{Zhūn}{Difficulty}
+  \hexagram{9}{0,0,1,0,0,0}{0}{4}{Qiān}{Modesty}}]{images/p-03}{Three of Pentacles}
 
 % Fours
 \newpage
@@ -2024,45 +2073,8 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Aries};
   \decanticks{20}
-  % Hexagram 6 訟 (Conflict): spans 18°-24°, visible 20°-24°, center tick 2
-  \pgfmathsetmacro{\hexticka}{2 * (\cardheight-20mm)/10}%
-  \begin{scope}[shift={(\cardwidth-14mm, \hexticka pt)}, line cap=butt]
-    % Line 1 (yin): outside → outlined broken
-    \fill[white, draw=black, line width=0.2mm]
-      (-3mm, 0*1.5mm-3.75mm-0.3mm) rectangle (-0.5mm, 0*1.5mm-3.75mm+0.3mm);
-    \fill[white, draw=black, line width=0.2mm]
-      (0.5mm, 0*1.5mm-3.75mm-0.3mm) rectangle (3mm, 0*1.5mm-3.75mm+0.3mm);
-    % Line 2 (yang): outside → outlined solid
-    \fill[white, draw=black, line width=0.2mm]
-      (-3mm, 1*1.5mm-3.75mm-0.3mm) rectangle (3mm, 1*1.5mm-3.75mm+0.3mm);
-    % Line 3 (yin): in decan → normal broken
-    \draw[line width=0.6mm] (-3mm, 2*1.5mm-3.75mm) -- (-0.5mm, 2*1.5mm-3.75mm);
-    \draw[line width=0.6mm] (0.5mm, 2*1.5mm-3.75mm) -- (3mm, 2*1.5mm-3.75mm);
-    % Lines 4-6 (yang, yang, yang): in decan → solid
-    \foreach \i in {3,4,5} {
-      \draw[line width=0.6mm] (-3mm, \i*1.5mm-3.75mm) -- (3mm, \i*1.5mm-3.75mm);
-    }
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 4.5mm) {Sòng};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, -4.5mm) {Conflict};
-  \end{scope}
-  % Hexagram 18 蛊 (Correcting): spans 24°-30°, fully in decan, center tick 7
-  \pgfmathsetmacro{\hextickb}{7 * (\cardheight-20mm)/10}%
-  \begin{scope}[shift={(\cardwidth-14mm, \hextickb pt)}, line width=0.6mm, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,1,0,0,0,1} {
-      \ifnum\type=1
-        \draw (-3mm, \i*1.5mm-3.75mm) -- (3mm, \i*1.5mm-3.75mm);
-      \else
-        \draw (-3mm, \i*1.5mm-3.75mm) -- (-0.5mm, \i*1.5mm-3.75mm);
-        \draw (0.5mm, \i*1.5mm-3.75mm) -- (3mm, \i*1.5mm-3.75mm);
-      \fi
-    }
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 4.5mm) {Gǔ};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, -4.5mm) {Correcting};
-  \end{scope}
+  \hexagram{2}{0,1,0,1,1,1}{2}{0}{Sòng}{Conflict}
+  \hexagram{7}{0,1,1,0,0,1}{0}{0}{Gǔ}{Correcting}
   }]{images/w-04}{Four of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{4}{♥}{1.0}{1.0}
   \chinesecardmarks[🀊]{四}{万}
@@ -2074,7 +2086,9 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♋};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Cancer};
-  \decanticks{110}}]{images/c-04}{Four of Cups}\hfill
+  \decanticks{110}
+  \hexagram{2}{1,0,1,1,0,0}{2}{0}{Fēng}{Abundance}
+  \hexagram{7}{0,1,0,0,1,1}{0}{0}{Huàn}{Dispersion}}]{images/c-04}{Four of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{4}{♠}{1.0}{1.0}
   \chinesecardmarks{四}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2085,7 +2099,9 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♎};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Libra};
-  \decanticks{200}}]{images/s-04}{Four of Swords}
+  \decanticks{200}
+  \hexagram{2}{1,0,0,1,1,1}{2}{0}{Wú Wàng}{Innocence}
+  \hexagram{7}{1,0,1,0,0,0}{0}{0}{Míng Yí}{Darkening}}]{images/s-04}{Four of Swords}
 
 \vspace{4mm}
 \noindent
@@ -2099,7 +2115,9 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♑};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Capricorn};
-  \decanticks{290}}]{images/p-04}{Four of Pentacles}
+  \decanticks{290}
+  \hexagram{2}{0,0,1,0,0,0}{2}{0}{Qiān}{Modesty}
+  \hexagram{7}{1,1,0,1,0,1}{0}{0}{Kuí}{Opposition}}]{images/p-04}{Four of Pentacles}
 
 % Fives
 \newpage
@@ -2114,7 +2132,9 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♌};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Leo};
-  \decanticks{120}}]{images/w-05}{Five of Wands}\hfill
+  \decanticks{120}
+  \hexagram{3}{1,1,0,1,1,1}{0}{0}{Lǚ}{Treading}
+  \hexagram{8}{0,0,1,1,1,1}{0}{2}{Dùn}{Retreat}}]{images/w-05}{Five of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{5}{♥}{1.0}{1.0}
   \chinesecardmarks[🀋]{五}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2125,7 +2145,9 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♏};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Scorpio};
-  \decanticks{210}}]{images/c-05}{Five of Cups}\hfill
+  \decanticks{210}
+  \hexagram{3}{0,1,0,1,1,0}{0}{0}{Kùn}{Oppression}
+  \hexagram{8}{0,0,0,0,0,1}{0}{2}{Bō}{Splitting\\\\Apart}}]{images/c-05}{Five of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{5}{♠}{1.0}{1.0}
   \chinesecardmarks{五}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2136,7 +2158,9 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♒};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Aquarius};
-  \decanticks{300}}]{images/s-05}{Five of Swords}
+  \decanticks{300}
+  \hexagram{3}{0,1,1,0,0,0}{0}{0}{Shēng}{Pushing\\\\Upward}
+  \hexagram{8}{1,1,0,0,0,0}{0}{2}{Lín}{Approach}}]{images/s-05}{Five of Swords}
 
 \vspace{4mm}
 \noindent
@@ -2150,7 +2174,9 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♉};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Taurus};
-  \decanticks{30}}]{images/p-05}{Five of Pentacles}
+  \decanticks{30}
+  \hexagram{3}{1,0,1,1,1,0}{0}{0}{Gé}{Revolution}
+  \hexagram{8}{1,1,1,1,1,0}{0}{2}{Guài}{Breakthrough}}]{images/p-05}{Five of Pentacles}
 
 % Sixes
 \newpage
@@ -2165,7 +2191,10 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♌};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Leo};
-  \decanticks{130}}]{images/w-06}{Six of Wands}\hfill
+  \decanticks{130}
+  \hexagram{1}{0,0,1,1,1,1}{4}{0}{Dùn}{Retreat}
+  \hexagram{5}{0,1,1,1,0,0}{0}{0}{Héng}{Duration}
+  \hexagram{9}{1,1,0,0,1,0}{0}{4}{Jié}{Limitation}}]{images/w-06}{Six of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{6}{♥}{1.0}{1.0}
   \chinesecardmarks[🀌]{六}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2176,7 +2205,10 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♏};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Scorpio};
-  \decanticks{220}}]{images/c-06}{Six of Cups}\hfill
+  \decanticks{220}
+  \hexagram{1}{0,0,0,0,0,1}{4}{0}{Bō}{Splitting\\\\Apart}
+  \hexagram{5}{0,0,1,0,0,1}{0}{0}{Gèn}{Keeping\\\\Still}
+  \hexagram{9}{1,0,1,0,1,0}{0}{4}{Jì Jì}{After\\\\Completion}}]{images/c-06}{Six of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{6}{♠}{1.0}{1.0}
   \chinesecardmarks{六}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2187,7 +2219,10 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♒};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Aquarius};
-  \decanticks{310}}]{images/s-06}{Six of Swords}
+  \decanticks{310}
+  \hexagram{1}{1,1,0,0,0,0}{4}{0}{Lín}{Approach}
+  \hexagram{5}{0,0,1,1,0,0}{0}{0}{Xiǎo Guò}{Small\\\\Exceeding}
+  \hexagram{9}{0,1,0,0,0,1}{0}{4}{Méng}{Youthful\\\\Folly}}]{images/s-06}{Six of Swords}
 
 \vspace{4mm}
 \noindent
@@ -2201,7 +2236,10 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♉};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Taurus};
-  \decanticks{40}}]{images/p-06}{Six of Pentacles}
+  \decanticks{40}
+  \hexagram{1}{1,1,1,1,1,0}{4}{0}{Guài}{Breakthrough}
+  \hexagram{5}{0,0,1,1,0,1}{0}{0}{Lǚ}{The Wanderer}
+  \hexagram{9}{0,1,0,0,0,0}{0}{4}{Shī}{The Army}}]{images/p-06}{Six of Pentacles}
 
 % Sevens
 \newpage
@@ -2216,7 +2254,9 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♌};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Leo};
-  \decanticks{140}}]{images/w-07}{Seven of Wands}\hfill
+  \decanticks{140}
+  \hexagram{2}{1,1,0,0,1,0}{2}{0}{Jié}{Limitation}
+  \hexagram{7}{1,0,1,1,1,1}{0}{0}{Tóng Rén}{Fellowship}}]{images/w-07}{Seven of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{7}{♥}{1.0}{1.0}
   \chinesecardmarks[🀍]{七}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2227,7 +2267,9 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♏};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Scorpio};
-  \decanticks{230}}]{images/c-07}{Seven of Cups}\hfill
+  \decanticks{230}
+  \hexagram{2}{1,0,1,0,1,0}{2}{0}{Jì Jì}{After\\\\Completion}
+  \hexagram{7}{1,0,0,1,0,1}{0}{0}{Shì Kè}{Biting\\\\Through}}]{images/c-07}{Seven of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{7}{♠}{1.0}{1.0}
   \chinesecardmarks{七}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2238,7 +2280,9 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♒};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Aquarius};
-  \decanticks{320}}]{images/s-07}{Seven of Swords}
+  \decanticks{320}
+  \hexagram{2}{0,1,0,0,0,1}{2}{0}{Méng}{Youthful\\\\Folly}
+  \hexagram{7}{1,0,0,0,1,1}{0}{0}{Yì}{Increase}}]{images/s-07}{Seven of Swords}
 
 \vspace{4mm}
 \noindent
@@ -2252,7 +2296,9 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♉};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Taurus};
-  \decanticks{50}}]{images/p-07}{Seven of Pentacles}
+  \decanticks{50}
+  \hexagram{2}{0,1,0,0,0,0}{2}{0}{Shī}{The Army}
+  \hexagram{7}{0,0,0,0,1,0}{0}{0}{Bǐ}{Holding\\\\Together}}]{images/p-07}{Seven of Pentacles}
 
 % Eights
 \newpage
@@ -2267,7 +2313,9 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♐};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Sagittarius};
-  \decanticks{240}}]{images/w-08}{Eight of Wands}\hfill
+  \decanticks{240}
+  \hexagram{3}{0,1,1,1,1,0}{0}{0}{Dà Guò}{Great\\\\Exceeding}
+  \hexagram{8}{0,0,0,0,0,0}{0}{2}{Kūn}{Receptive}}]{images/w-08}{Eight of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{8}{♥}{1.0}{1.0}
   \chinesecardmarks[🀎]{八}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2278,7 +2326,9 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♓};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Pisces};
-  \decanticks{330}}]{images/c-08}{Eight of Cups}\hfill
+  \decanticks{330}
+  \hexagram{3}{0,0,1,0,1,1}{0}{0}{Jiàn}{Development}
+  \hexagram{8}{1,1,1,0,0,0}{0}{2}{Tài}{Peace}}]{images/c-08}{Eight of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{8}{♠}{1.0}{1.0}
   \chinesecardmarks{八}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2289,7 +2339,9 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♊};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Gemini};
-  \decanticks{60}}]{images/s-08}{Eight of Swords}
+  \decanticks{60}
+  \hexagram{3}{1,1,1,0,1,1}{0}{0}{Xiǎo Chù}{Small\\\\Taming}
+  \hexagram{8}{1,1,1,1,1,1}{0}{2}{Qián}{Creative}}]{images/s-08}{Eight of Swords}
 
 \vspace{4mm}
 \noindent
@@ -2303,7 +2355,9 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♍};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Virgo};
-  \decanticks{150}}]{images/p-08}{Eight of Pentacles}
+  \decanticks{150}
+  \hexagram{3}{1,1,0,0,0,1}{0}{0}{Sǔn}{Decrease}
+  \hexagram{8}{0,0,0,1,1,1}{0}{2}{Pǐ}{Standstill}}]{images/p-08}{Eight of Pentacles}
 
 % Nines
 \newpage
@@ -2318,7 +2372,10 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♐};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Sagittarius};
-  \decanticks{250}}]{images/w-09}{Nine of Wands}\hfill
+  \decanticks{250}
+  \hexagram{1}{0,0,0,0,0,0}{4}{0}{Kūn}{Receptive}
+  \hexagram{5}{0,1,0,1,0,1}{0}{0}{Wèi Jì}{Before\\\\Completion}
+  \hexagram{9}{0,0,1,0,1,0}{0}{4}{Jiǎn}{Obstruction}}]{images/w-09}{Nine of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{9}{♥}{1.0}{1.0}
   \chinesecardmarks[🀏]{九}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2329,7 +2386,10 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♓};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Pisces};
-  \decanticks{340}}]{images/c-09}{Nine of Cups}\hfill
+  \decanticks{340}
+  \hexagram{1}{1,1,1,0,0,0}{4}{0}{Tài}{Peace}
+  \hexagram{5}{1,1,1,0,1,0}{0}{0}{Xū}{Waiting}
+  \hexagram{9}{1,0,0,1,1,0}{0}{4}{Suí}{Following}}]{images/c-09}{Nine of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{9}{♠}{1.0}{1.0}
   \chinesecardmarks{九}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2340,7 +2400,10 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♊};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Gemini};
-  \decanticks{70}}]{images/s-09}{Nine of Swords}
+  \decanticks{70}
+  \hexagram{1}{1,1,1,1,1,1}{4}{0}{Qián}{Creative}
+  \hexagram{5}{1,1,1,1,0,1}{0}{0}{Dà Yǒu}{Great\\\\Possession}
+  \hexagram{9}{1,0,1,0,1,1}{0}{4}{Jiā Rén}{The Family}}]{images/s-09}{Nine of Swords}
 
 \vspace{4mm}
 \noindent
@@ -2354,7 +2417,10 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♍};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Virgo};
-  \decanticks{160}}]{images/p-09}{Nine of Pentacles}
+  \decanticks{160}
+  \hexagram{1}{0,0,0,1,1,1}{4}{0}{Pǐ}{Standstill}
+  \hexagram{5}{0,1,1,0,1,1}{0}{0}{Xùn}{The Gentle}
+  \hexagram{9}{0,0,0,1,1,0}{0}{4}{Cuì}{Gathering}}]{images/p-09}{Nine of Pentacles}
 
 % Tens
 \newpage
@@ -2369,7 +2435,9 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♐};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Sagittarius};
-  \decanticks{260}}]{images/w-10}{Ten of Wands}\hfill
+  \decanticks{260}
+  \hexagram{2}{0,0,1,0,1,0}{2}{0}{Jiǎn}{Obstruction}
+  \hexagram{7}{1,0,0,0,0,1}{0}{0}{Yí}{Nourishment}}]{images/w-10}{Ten of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{10}{♥}{0.7}{1.0}
   \chinesecardmarks{十}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2381,6 +2449,8 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Pisces};
   \decanticks{350}
+  \hexagram{2}{1,0,0,1,1,0}{2}{0}{Suí}{Following}
+  \hexagram{7}{0,0,0,1,0,1}{0}{0}{Jìn}{Progress}
   \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
     at (10.5mm, 13.55mm) {{\cardfont\fontsize{5}{6}\selectfont Fargh al-Mu'akhkhar}};
   \node[anchor=south west, text=black, inner sep=0pt]
@@ -2406,7 +2476,9 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♊};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Gemini};
-  \decanticks{80}}]{images/s-10}{Ten of Swords}
+  \decanticks{80}
+  \hexagram{2}{1,0,1,0,1,1}{2}{0}{Jiā Rén}{The Family}
+  \hexagram{7}{0,1,1,0,1,0}{0}{0}{Jǐng}{The Well}}]{images/s-10}{Ten of Swords}
 
 \vspace{4mm}
 \noindent
@@ -2420,7 +2492,9 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♍};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Virgo};
-  \decanticks{170}}]{images/p-10}{Ten of Pentacles}
+  \decanticks{170}
+  \hexagram{2}{0,0,0,1,1,0}{2}{0}{Cuì}{Gathering}
+  \hexagram{7}{1,1,1,0,0,1}{0}{0}{Dà Chù}{Great\\\\Taming}}]{images/p-10}{Ten of Pentacles}
 
 % Pages (Earth of suit)
 \renewcommand{\minorcardshift}{-10mm}
