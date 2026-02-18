@@ -1366,11 +1366,17 @@
     at (2.5mm, \starpos pt) {{\symbfont\fontsize{5}{6}\selectfont ★}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont #2}};
 }
 
+% Planet name to symbol mapping for bounds
+\newcommand{\planetsym}[1]{%
+  \directlua{
+    local syms = {Jupiter="♃", Venus="♀", Mercury="☿", Mars="♂", Saturn="♄"}
+    tex.sprint(syms["#1"] or "☉")
+  }}
 % Egyptian bound starting at bottom of decan
 % #1 = bound number within sign (1-5), #2 = ruling planet
 \newcommand{\boundstart}[2]{%
   \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont #1.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} #2}};
+    at (2.5mm, 0.5mm) {\makebox[0.6em][c]{\symbserif\fontsize{5}{6}\selectfont \planetsym{#2}}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont #1.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} #2}};
 }
 
 % Solar term at bottom of decan (above bounds label)
@@ -1792,7 +1798,7 @@
     at (15mm, 42mm) {{\cardfont\fontsize{4}{5}\selectfont Sounds}};
   \pgfmathsetmacro{\venusbounds}{6 * (\cardheight-20mm)/10}%
   \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, \venusbounds pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 2.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} Venus}};
+    at (2.5mm, \venusbounds pt + 0.5mm) {\makebox[0.6em][c]{\symbserif\fontsize{5}{6}\selectfont ♀}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 2.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} Venus}};
   \draw[black, thin] (2mm, \venusbounds pt) -- (12.5mm, \venusbounds pt);
   \pgfmathsetmacro{\midtick}{5 * (\cardheight-20mm)/10}%
   \draw[black, thin] (2mm, \midtick pt) -- (12.5mm, \midtick pt);
@@ -1931,9 +1937,9 @@
   \pgfmathsetmacro{\boundslow}{\boundsbdy - 3.8/25.4*72.27}%
   \draw[black, thin] (2mm, \boundsbdy pt) -- (2.5mm, \boundsbdy pt) -- (6mm, \boundslow pt) -- (25mm, \boundslow pt);
   \node[anchor=south west, text=black, inner sep=0pt]
-    at (13mm, \boundslow pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 3.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} Mercury}};
+    at (13mm, \boundslow pt + 0.5mm) {\makebox[0.6em][c]{\symbserif\fontsize{5}{6}\selectfont ☿}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 3.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} Mercury}};
   \node[anchor=north west, text=black, inner sep=0pt]
-    at (13mm, \boundslow pt - 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 2.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} Venus}};
+    at (13mm, \boundslow pt - 0.5mm) {\makebox[0.6em][c]{\symbserif\fontsize{5}{6}\selectfont ♀}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 2.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} Venus}};
   % Manzil boundary: Fargh al-Muʾakhkhar → Baṭn al-Ḥūt at 12°18' (2.3°)
   \pgfmathsetmacro{\manzilbdy}{2.3 * (\cardheight-20mm)/10}%
   \draw[black, thin] (2mm, \manzilbdy pt) -- (12.5mm, \manzilbdy pt);
@@ -2160,7 +2166,7 @@
     at (2.5mm, \boundsbdy pt + 2.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 15.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 虹始見}};\node[anchor=south west, text=black, inner sep=0pt, xscale=0.65]
     at (13mm, \boundsbdy pt + 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Rainbows Appear}};
   \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, \boundsbdy pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 5.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} Saturn}};
+    at (2.5mm, \boundsbdy pt + 0.5mm) {\makebox[0.6em][c]{\symbserif\fontsize{5}{6}\selectfont ♄}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 5.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} Saturn}};
   % Manzil boundary: Baṭn al-Ḥūt → Sharaṭayn at 25°09' (5.15°)
   \pgfmathsetmacro{\manzilbdy}{5.15 * (\cardheight-20mm)/10}%
   \pgfmathsetmacro{\manzilhigh}{\manzilbdy + 8.8/25.4*72.27}%
@@ -2261,7 +2267,7 @@
   \pgfmathsetmacro{\boundslow}{\boundsbdy - 2.0/25.4*72.27}%
   \draw[black, thin] (2mm, \boundsbdy pt) -- (2.5mm, \boundsbdy pt) -- (3mm, \boundslow pt) -- (12.5mm, \boundslow pt);
   \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, \boundslow pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 2.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} Venus}};
+    at (2.5mm, \boundslow pt + 0.5mm) {\makebox[0.6em][c]{\symbserif\fontsize{5}{6}\selectfont ♀}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 2.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} Venus}};
   \fixedstar{6.15}{Theta Cancri}
   \fixedstar{7.817}{Praesepe}
   % Manzil boundary: Nathra → Ṭarfa at 08°01' Leo (8.017°)
