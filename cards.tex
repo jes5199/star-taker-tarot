@@ -42,7 +42,7 @@
 \newfontface\cjkfallback{Droid Sans Fallback}
 
 % Devanagari font
-\newfontface\devfont{Noto Serif Devanagari}[BoldFont=Noto Serif Devanagari Bold]
+\newfontface\devfont{Noto Serif Devanagari}[Script=Devanagari, Renderer=HarfBuzz, BoldFont=Noto Serif Devanagari Bold]
 
 % Playing card index font (bold serif like Bicycle cards)
 \newfontface\indexfont{URW Bookman}
@@ -2174,9 +2174,20 @@
   \node[anchor=north west, text=black, inner sep=0pt]
     at (2.5mm, \manzilhigh pt - 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 28.}\hspace{0.1em}{\arabfont\fontsize{5}{6}\selectfont \beginR بطن الحوت\endR}};
   \node[anchor=north west, text=black, inner sep=0pt, xscale=0.65]
-    at (13mm, \manzilhigh pt - 0.5mm) {{\cardfont\fontsize{5}{6}\selectfont Belly of the Fish}};
+    at (15mm, \manzilhigh pt - 0.5mm) {{\cardfont\fontsize{5}{6}\selectfont Belly of the Fish}};
   \node[anchor=north west, text=black, inner sep=0pt, xscale=0.48]
     at (7mm, \manzilhigh pt - 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Baṭn al-Ḥūt}};
+  % Xiù boundary: Kuí → Lóu at 27°02' (7.033°)
+  \pgfmathsetmacro{\xiubdy}{7.033 * (\cardheight-20mm)/10}%
+  \draw[black, thin] (2mm, \xiubdy pt) -- (19.5mm, \xiubdy pt);
+  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
+    at (14mm, \xiubdy pt + 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Lóu}};
+  \node[anchor=south west, text=black, inner sep=0pt]
+    at (9.5mm, \xiubdy pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 16.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 婁}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Bond}};
+  \node[anchor=north west, text=black, inner sep=0pt]
+    at (9.5mm, \xiubdy pt - 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 15.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 奎}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Legs}};
+  \node[anchor=north west, text=black, inner sep=0pt, xscale=0.48]
+    at (14mm, \xiubdy pt - 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Kuí}};
   \hexagram{2}{0,1,0,1,1,1}{2}{0}{Sòng}{Conflict}
   \hexagram{7}{0,1,1,0,0,1}{0}{0}{Gǔ}{Correcting}
   }]{images/w-04}{Four of Wands}\hfill
