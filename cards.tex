@@ -1373,6 +1373,15 @@
     at (2.5mm, 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont #1.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} #2}};
 }
 
+% Solar term at bottom of decan (above bounds label)
+% #1 = term number (1-24), #2 = CJK name, #3 = pinyin, #4 = English name
+\newcommand{\solartermstart}[4]{%
+  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
+    at (7mm, 5.05mm) {{\cardfont\fontsize{5}{6}\selectfont #3}};
+  \node[anchor=south west, text=black, inner sep=0pt]
+    at (2.5mm, 3mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont #1.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont #2}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont #4}};
+}
+
 % Playing card rank/suit marks — top-left upright, bottom-right inverted
 % #1 = color, #2 = rank (e.g. A), #3 = suit symbol (e.g. ♣)
 % #4 = xscale, #5 = yscale
@@ -1771,10 +1780,7 @@
     at (7mm, 8.3mm) {{\cardfont\fontsize{5}{6}\selectfont Xuánniǎo zhì}};
   \node[anchor=south west, text=black, inner sep=0pt]
     at (2.5mm, 6.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 10.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 玄鳥至}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Swallows Arrive}};
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (7mm, 5.05mm) {{\cardfont\fontsize{5}{6}\selectfont Chūnfēn}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, 3mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 4.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 春分}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Spring Equinox}};
+  \solartermstart{4}{春分}{Chūnfēn}{Spring Equinox}
   \boundstart{1}{Jupiter}
   \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
     at (7.5mm, 43.55mm) {{\cardfont\fontsize{5}{6}\selectfont Léi nǎi fāshēng}};
@@ -1847,6 +1853,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Cancer};
   \decanticks{90}
+  \solartermstart{10}{夏至}{Xiàzhì}{Summer Solstice}
   \boundstart{1}{Mars}
   \fixedstar{5.733}{Tejat}
   \fixedstar{9.533}{Alhena}
@@ -1863,6 +1870,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Libra};
   \decanticks{180}
+  \solartermstart{16}{秋分}{Qiūfēn}{Autumn Equinox}
   \boundstart{1}{Saturn}
   % no fixed stars in 1st decan of Libra
   \hexagram{3}{1,0,1,0,0,1}{0}{0}{Bì}{Grace}
@@ -1881,6 +1889,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Capricorn};
   \decanticks{270}
+  \solartermstart{22}{冬至}{Dōngzhì}{Winter Solstice}
   \boundstart{1}{Mercury}
   \fixedstar{1.683}{Alnasl}
   \hexagram{3}{1,1,0,0,1,1}{0}{0}{Zhōng Fú}{Inner\\Truth}
@@ -2125,6 +2134,49 @@
   \decanticks{20}
   \boundstart{4}{Mars}
   \fixedstar{2.8}{Eta Andromedae}
+  % Nakṣatra/Rāśi boundary: Revatī → Aśvinī / Mīna → Meṣa at 24°16' (4.267°)
+  \pgfmathsetmacro{\nakshatrabdy}{4.267 * (\cardheight-20mm)/10}%
+  \draw[black, thin] (2mm, \nakshatrabdy pt) -- (12.5mm, \nakshatrabdy pt);
+  % Rāśi (left side) — inline romanization
+  \node[anchor=south west, text=black, inner sep=0pt]
+    at (2.5mm, \nakshatrabdy pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ♈}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 1.}\hspace{0.1em}{\devfont\fontsize{5}{6}\selectfont मेष}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Meṣa}};
+  \node[anchor=north west, text=black, inner sep=0pt]
+    at (2.5mm, \nakshatrabdy pt - 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ♓}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 12.}\hspace{0.1em}{\devfont\fontsize{5}{6}\selectfont मीन}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Mīna}};
+  % Nakṣatra (right side) — with transliteration
+  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
+    at (18.65mm, \nakshatrabdy pt + 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Aśvinī}};
+  \node[anchor=south west, text=black, inner sep=0pt]
+    at (14mm, \nakshatrabdy pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 1.}\hspace{0.1em}{\devfont\fontsize{5}{6}\selectfont अश्विनी}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont The Physicians}};
+  \node[anchor=north west, text=black, inner sep=0pt]
+    at (14mm, \nakshatrabdy pt - 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 27.}\hspace{0.1em}{\devfont\fontsize{5}{6}\selectfont रेवती}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont The Wealthy}};
+  \node[anchor=north west, text=black, inner sep=0pt, xscale=0.48]
+    at (18.65mm, \nakshatrabdy pt - 2.25mm) {{\cardfont\fontsize{5}{6}\selectfont Revatī}};
+  % Bounds boundary: Saturn starts at 25° (5.0°) + Pentad 15: Rainbows Appear
+  \pgfmathsetmacro{\boundsbdy}{5.0 * (\cardheight-20mm)/10}%
+  \draw[black, thin] (2mm, \boundsbdy pt) -- (12.5mm, \boundsbdy pt);
+  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
+    at (7mm, \boundsbdy pt + 4.5mm) {{\cardfont\fontsize{5}{6}\selectfont Hóng shǐ xiàn}};
+  \node[anchor=south west, text=black, inner sep=0pt]
+    at (2.5mm, \boundsbdy pt + 2.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 15.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 虹始見}};\node[anchor=south west, text=black, inner sep=0pt, xscale=0.65]
+    at (13mm, \boundsbdy pt + 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Rainbows Appear}};
+  \node[anchor=south west, text=black, inner sep=0pt]
+    at (2.5mm, \boundsbdy pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 5.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} Saturn}};
+  % Manzil boundary: Baṭn al-Ḥūt → Sharaṭayn at 25°09' (5.15°)
+  \pgfmathsetmacro{\manzilbdy}{5.15 * (\cardheight-20mm)/10}%
+  \pgfmathsetmacro{\manzilhigh}{\manzilbdy + 8.8/25.4*72.27}%
+  \draw[black, thin] (2mm, \manzilbdy pt) -- (2.5mm, \manzilbdy pt) -- (3mm, \manzilhigh pt) -- (12.5mm, \manzilhigh pt);
+  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
+    at (7mm, \manzilhigh pt + 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Sharaṭayn}};
+  \node[anchor=south west, text=black, inner sep=0pt]
+    at (2.5mm, \manzilhigh pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 1.}\hspace{0.1em}{\arabfont\fontsize{5}{6}\selectfont \beginR شرطين\endR}};
+  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.65]
+    at (13mm, \manzilhigh pt + 0.5mm) {{\cardfont\fontsize{5}{6}\selectfont The Two Signs}};
+  \node[anchor=north west, text=black, inner sep=0pt]
+    at (2.5mm, \manzilhigh pt - 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 28.}\hspace{0.1em}{\arabfont\fontsize{5}{6}\selectfont \beginR بطن الحوت\endR}};
+  \node[anchor=north west, text=black, inner sep=0pt, xscale=0.65]
+    at (13mm, \manzilhigh pt - 0.5mm) {{\cardfont\fontsize{5}{6}\selectfont Belly of the Fish}};
+  \node[anchor=north west, text=black, inner sep=0pt, xscale=0.48]
+    at (7mm, \manzilhigh pt - 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Baṭn al-Ḥūt}};
   \hexagram{2}{0,1,0,1,1,1}{2}{0}{Sòng}{Conflict}
   \hexagram{7}{0,1,1,0,0,1}{0}{0}{Gǔ}{Correcting}
   }]{images/w-04}{Four of Wands}\hfill
@@ -2191,6 +2243,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Leo};
   \decanticks{120}
+  \solartermstart{12}{大暑}{Dàshǔ}{Major Heat}
   \boundstart{1}{Jupiter}
   \fixedstar{6.15}{Theta Cancri}
   \fixedstar{7.817}{Praesepe}
@@ -2207,6 +2260,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Scorpio};
   \decanticks{210}
+  \solartermstart{18}{霜降}{Shuāngjiàng}{Frost's Descent}
   \boundstart{1}{Mars}
   \fixedstar{4.217}{Syrma}
   \fixedstar{4.917}{Kang}
@@ -2223,6 +2277,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Aquarius};
   \decanticks{300}
+  \solartermstart{24}{大寒}{Dàhán}{Major Cold}
   \boundstart{1}{Mercury}
   \fixedstar{2.2}{Altair}
   \fixedstar{4.283}{Giedi Prima}
@@ -2243,6 +2298,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Taurus};
   \decanticks{30}
+  \solartermstart{6}{穀雨}{Gǔyǔ}{Grain Rain}
   \boundstart{1}{Venus}
   \fixedstar{0.833}{Mirach}
   \fixedstar{4.4}{Sheratan}
@@ -2400,6 +2456,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Sagittarius};
   \decanticks{240}
+  \solartermstart{20}{小雪}{Xiǎoxuě}{Minor Snow}
   \boundstart{1}{Jupiter}
   \fixedstar{3.367}{Fang}
   \fixedstar{3.617}{Acrab}
@@ -2417,6 +2474,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Pisces};
   \decanticks{330}
+  \solartermstart{2}{雨水}{Yǔshuǐ}{Rain Water}
   \boundstart{1}{Venus}
   \fixedstar{3.783}{Sadalmelik}
   \fixedstar{4.283}{Fomalhaut}
@@ -2435,6 +2493,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Gemini};
   \decanticks{60}
+  \solartermstart{8}{小滿}{Xiǎomǎn}{Grain Buds}
   \boundstart{1}{Mercury}
   \fixedstar{0.417}{Alcyone}
   \fixedstar{8.883}{Ain}
@@ -2454,6 +2513,7 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Virgo};
   \decanticks{150}
+  \solartermstart{14}{處暑}{Chǔshǔ}{End of Heat}
   \boundstart{1}{Mercury}
   \fixedstar{0.25}{Regulus}
   \fixedstar{6.117}{Upsilon-1 Hydrae}
