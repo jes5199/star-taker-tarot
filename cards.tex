@@ -1417,7 +1417,7 @@
   \pgfmathsetmacro{\padabot}{#1 * (\cardheight-20mm)/10}%
   \node[anchor=south west, draw=black, thin, circle, minimum size=3.5mm, inner sep=0pt, text=black,
         font=\devfont\fontsize{5}{6}\selectfont] (pada\thepadactr)
-    at (7.5mm, \padabot pt) {#3};
+    at (9mm, \padabot pt) {#3};
 }
 % Nakṣatra start marker: ordinal number + rāśi symbol and name, placed right of pāda circle
 % #1 = optional yshift, #2 = pada node name (e.g. pada1), #3 = nakṣatra number, #4 = rāśi symbol, #5 = rāśi Devanagari, #6 = rāśi romanization
@@ -1433,21 +1433,21 @@
   \pgfmathsetmacro{\xiubot}{#1 * (\cardheight-20mm)/10}%
   \node[anchor=south west, draw=black, thin, circle, minimum size=3.5mm, inner sep=0pt, text=black,
         font=\cjkfont\fontsize{5}{6}\selectfont] (xiu#3)
-    at (11mm, \xiubot pt) {#2};
+    at (12.5mm, \xiubot pt) {#2};
   \node[anchor=west, text=black, inner sep=0pt,
         font=\cardfont\fontsize{5}{6}\selectfont] (xiunum#3)
     at ([xshift=0.25mm]xiu#3.east) {#3};
 }
 % Manzil lane: Arabic letter in a thin circle + ordinal number
-% #1 = degree position (bottom of span), #2 = Arabic letter, #3 = ordinal (1-28)
-\newcommand{\manzillane}[3]{%
-  \pgfmathsetmacro{\manzilbot}{#1 * (\cardheight-20mm)/10}%
+% #1 = optional yshift for ordinal number, #2 = degree position, #3 = Arabic letter, #4 = ordinal (1-28)
+\newcommand{\manzillane}[4][0mm]{%
+  \pgfmathsetmacro{\manzilbot}{#2 * (\cardheight-20mm)/10}%
   \node[anchor=south west, draw=black, thin, circle, minimum size=3.5mm, inner sep=0pt, text=black,
-        font=\kufifont\fontsize{5}{6}\selectfont] (manzil#3)
-    at (5mm, \manzilbot pt) {\beginR #2\endR};
-  \node[anchor=west, text=black, inner sep=0pt,
-        font=\cardfont\fontsize{5}{6}\selectfont] (manzilnum#3)
-    at ([xshift=0.25mm]manzil#3.east) {#3};
+        font=\kufifont\fontsize{5}{6}\selectfont] (manzil#4)
+    at (5mm, \manzilbot pt) {\beginR #3\endR};
+  \node[anchor=west, text=black, inner sep=0pt, yshift=#1,
+        font=\cardfont\fontsize{5}{6}\selectfont] (manzilnum#4)
+    at ([xshift=-1.5mm]manzil#4.east) {#4};
 }
 % Cì start marker: cì name attached right of xiù ordinal number
 % #1 = xiù ordinal number node (e.g. xiunum15), #2 = cì CJK, #3 = pinyin, #4 = English gloss
@@ -2335,7 +2335,24 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Leo};
   \decanticks{140}
-  \fixedstar{7.7}{Alphard}
+  % Bounds: Mercury at 0°, Mars at 6°
+  \boundsquare{0}{Mercury}
+  \boundsquare{6}{Mars}
+  % Manzil: Jabha (10th) at 20°52' Leo (0.867°)
+  \manzillane[-2.5mm]{0.867}{ي}{10}
+  % Pādas: Āśleṣā 4 (डो), Maghā 1-2 (मा मी) — nakṣatra 10 + rāśi Siṃha start at 4.267°
+  \padasyllable{0.933}{4.267}{डो}
+  \padasyllable{4.267}{7.6}{मा}
+  \nakshatrastart{pada\thepadactr}{10}{♌}{सिंह}{Siṃha}
+  \padasyllable{7.6}{10}{मी}
+  % Xiù: 星 Xīng (25) at 24°38' Leo (4.633°)
+  \xiulane{4.633}{星}{25}
+  % Fixed star
+  \fixedstar[label below=1, rotate label=-45]{7.7}{Alphard}
+  % Pentads (立秋 cont., no solar term starts on this card)
+  \pentadlane{0}{白露降}{Báilù jiàng}{White Dew Falls}
+  \pentadlane{5}{寒蟬鳴}{Hánchán míng}{Autumn Cicadas Chirp}
+  % Hexagrams
   \hexagram{2}{1,1,0,0,1,0}{2}{0}{Jié}{Limitation}
   \hexagram{7}{1,0,1,1,1,1}{0}{0}{Tóng Rén}{Fellowship}}]{images/w-07}{Seven of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{7}{♥}{1.0}{1.0}

@@ -10,9 +10,9 @@ LEFT LANES (reading upward along the decan scale)
 Lane 0: Degree ticks (0–1mm from left edge)
 Lane 1: Monomoiria — Chaldean planetary ruler for each degree (0.5mm, 4pt symbol font)
 Lane 2: Egyptian bounds — planet symbol in a thin black-outlined square (\boundsquare, 5pt, anchor=south west at 2.5mm). One square per bound transition.
-Lane 3: Manzil — reserved for a single Arabic letter. ~5–7mm. (Not yet implemented; empty if no manzil on that card.)
-Lane 4: Nakṣatra pādas — Devanagari syllable in a thin circle (\padasyllable, 5pt, anchor=south west at 7.5mm). Anchored at the bottom of each pāda span.
-Lane 5: Xiù — CJK character in a thin circle (\xiulane, 5pt, anchor=south west at 11mm). Anchored at the bottom of each xiù span.
+Lane 3: Manzil — Kufi Arabic letter in a thin circle (\manzillane, 5pt, anchor=south west at 5mm). Anchored at the bottom of each manzil span.
+Lane 4: Nakṣatra pādas — Devanagari syllable in a thin circle (\padasyllable, 5pt, anchor=south west at 9mm). Anchored at the bottom of each pāda span.
+Lane 5: Xiù — CJK character in a thin circle (\xiulane, 5pt, anchor=south west at 12.5mm). Anchored at the bottom of each xiù span.
 
 MIDDLE: Fixed stars, other boundary annotations as needed.
 
