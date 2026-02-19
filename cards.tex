@@ -2605,8 +2605,24 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Sagittarius};
   \decanticks{260}
+  % Bounds: Mercury at 0°, Saturn at 1°, Mars at 6°
+  \boundsquare{0}{Mercury}
+  \boundsquare{1}{Saturn}
+  \boundsquare{6}{Mars}
+  % Manzil: Naʿāʾim (20th) at 29°26' Sag (9.433°)
+  \manzillane{9.433}{ر}{20}
+  % Pādas: Jyeṣṭhā 4 (यू), Mūla 1-2 (ये यो) — nakṣatra 19 + rāśi 9 Dhanu at 4.267°
+  \padasyllable{0.933}{4.267}{यू}
+  \padasyllable{4.267}{7.6}{ये}
+  \nakshatrastart{pada\thepadactr}{19}{♐}{धनु}{Dhanu}
+  \padasyllable{7.6}{10}{यो}
+  % Fixed stars
   \fixedstar{2.867}{Rasalhague}
   \fixedstar{5.017}{Shaula}
+  % Pentads (大雪 Major Snow continues from 9W)
+  \pentadlane{0}{虎始交}{Hǔ shǐ jiāo}{Tigers Begin to Mate}
+  \pentadlane{5}{荔挺出}{Lì tǐng chū}{Iris Sprouts}
+  % Hexagrams
   \hexagram{2}{0,0,1,0,1,0}{2}{0}{Jiǎn}{Obstruction}
   \hexagram{7}{1,0,0,0,0,1}{0}{0}{Yí}{Nourishment}}]{images/w-10}{Ten of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{10}{♥}{0.7}{1.0}
