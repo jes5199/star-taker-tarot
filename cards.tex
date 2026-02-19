@@ -1407,13 +1407,29 @@
     at ([xshift=0.25mm]xiu#3.east) {#3};
 }
 
-% Solar term at bottom of decan (above bounds label)
+% Solar term at bottom of decan (above bounds label) — OLD, kept for other cards
 % #1 = term number (1-24), #2 = CJK name, #3 = pinyin, #4 = English name
 \newcommand{\solartermstart}[4]{%
   \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
     at (7mm, 5.05mm) {{\cardfont\fontsize{5}{6}\selectfont #3}};
   \node[anchor=south west, text=black, inner sep=0pt]
     at (2.5mm, 3mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont #1.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont #2}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont #4}};
+}
+% Solar term lane: rotated label left of hexagrams
+% #1 = degree position, #2 = CJK name, #3 = pinyin, #4 = English name
+\newcommand{\solartermlane}[4]{%
+  \pgfmathsetmacro{\stpos}{#1 * (\cardheight-20mm)/10}%
+  \node[anchor=west, text=black, inner sep=0pt, rotate=90,
+        font=\fontsize{5}{6}\selectfont]
+    at (\cardwidth-11mm, \stpos pt) {{\cjkfont #2}\hspace{0.3em}{\cardfont #3}\hspace{0.6em}{\cardfont #4}};
+}
+% Microseason (pentad/hòu) lane: rotated label right of solar terms
+% #1 = degree position, #2 = CJK name, #3 = pinyin, #4 = English name
+\newcommand{\pentadlane}[4]{%
+  \pgfmathsetmacro{\plpos}{#1 * (\cardheight-20mm)/10}%
+  \node[anchor=west, text=black, inner sep=0pt, rotate=90,
+        font=\fontsize{4}{5}\selectfont]
+    at (\cardwidth-9mm, \plpos pt) {{\cjkfont #2}\hspace{0.3em}{\cardfont #3}\hspace{0.6em}{\cardfont #4}};
 }
 
 % Playing card rank/suit marks — top-left upright, bottom-right inverted
@@ -1686,7 +1702,7 @@
 % outsideBot/outsideTop = number of lines outside decan (rendered outlined).
 \newcommand{\hexagram}[6]{%
   \pgfmathsetmacro{\hextickpos}{#1 * (\cardheight-20mm)/10}%
-  \begin{scope}[shift={(\cardwidth-14mm, \hextickpos pt)}, line cap=butt]
+  \begin{scope}[shift={(\cardwidth-17mm, \hextickpos pt)}, line cap=butt]
     \foreach \type [count=\i from 0] in {#2} {%
       \pgfmathtruncatemacro{\isout}{(\i < #3) || (\i >= (6 - #4)) ? 1 : 0}%
       \ifnum\isout=1
@@ -1810,21 +1826,10 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Aries};
   \decanticks{0}
-  % Solar term: 春分 Spring Equinox at 0°, lane left of hexagrams
-  \node[anchor=west, text=black, inner sep=0pt, rotate=90,
-        font=\fontsize{5}{6}\selectfont]
-    at (\cardwidth-11mm, 0pt) {{\cjkfont 春分}\hspace{0.3em}{\cardfont Chūnfēn}\hspace{0.6em}{\cardfont Spring Equinox}};
-  % Pentad: 玄鳥至 Swallows Arrive at 0°
-  \pgfmathsetmacro{\pentadA}{0 * (\cardheight-20mm)/10}%
-  \node[anchor=west, text=black, inner sep=0pt, rotate=90,
-        font=\fontsize{4}{5}\selectfont]
-    at (\cardwidth-9mm, \pentadA pt) {{\cjkfont 玄鳥至}\hspace{0.3em}{\cardfont Xuánniǎo zhì}\hspace{0.6em}{\cardfont Swallows Arrive}};
+  \solartermlane{0}{春分}{Chūnfēn}{Spring Equinox}
+  \pentadlane{0}{玄鳥至}{Xuánniǎo zhì}{Swallows Arrive}
   \boundsquare{0}{Jupiter}
-  % Pentad: 雷乃發聲 Thunder Sounds at 5°
-  \pgfmathsetmacro{\pentadB}{5 * (\cardheight-20mm)/10}%
-  \node[anchor=west, text=black, inner sep=0pt, rotate=90,
-        font=\fontsize{4}{5}\selectfont]
-    at (\cardwidth-9mm, \pentadB pt) {{\cjkfont 雷乃發聲}\hspace{0.3em}{\cardfont Léi nǎi fāshēng}\hspace{0.6em}{\cardfont Thunder Sounds}};
+  \pentadlane{5}{雷乃發聲}{Léi nǎi fāshēng}{Thunder Sounds}
   \boundsquare{6}{Venus}
   % Pādas of Uttara Bhādrapadā (#26): दू थ झ ञ
   \padasyllable{0}{0.933}{दू}
@@ -1835,41 +1840,8 @@
   \xiulane{0}{室}{13}
   \xiulane{3.4}{壁}{14}
   \fixedstar{9.583}{Algenib}
-  % Small hexagram 40 (解) centered on 4th tick
-  \pgfmathsetmacro{\hextick}{3 * (\cardheight-20mm)/10}%
-  \begin{scope}[shift={(\cardwidth-17mm, \hextick pt)}, line width=0.6mm, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,1,0,1,0,0} {
-      \ifnum\type=1
-        \draw (-3mm, \i*1.5mm-3.75mm) -- (3mm, \i*1.5mm-3.75mm);
-      \else
-        \draw (-3mm, \i*1.5mm-3.75mm) -- (-0.5mm, \i*1.5mm-3.75mm);
-        \draw (0.5mm, \i*1.5mm-3.75mm) -- (3mm, \i*1.5mm-3.75mm);
-      \fi
-    }
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 4.5mm) {Xiè};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, -4.5mm) {Deliverance};
-  \end{scope}
-  % Small hexagram 34 (大壯) centered on 8th tick
-  \pgfmathsetmacro{\hextickb}{8 * (\cardheight-20mm)/10}%
-  \begin{scope}[shift={(\cardwidth-17mm, \hextickb pt)}, line cap=butt]
-    % Bottom 4 lines: solid (yang)
-    \foreach \i in {0,1,2,3} {
-      \draw[line width=0.6mm] (-3mm, \i*1.5mm-3.75mm) -- (3mm, \i*1.5mm-3.75mm);
-    }
-    % Top 2 lines: broken (yin) with white fill, black border
-    \foreach \i in {4,5} {
-      \fill[white, draw=black, line width=0.2mm]
-        (-3mm, \i*1.5mm-3.75mm-0.3mm) rectangle (-0.5mm, \i*1.5mm-3.75mm+0.3mm);
-      \fill[white, draw=black, line width=0.2mm]
-        (0.5mm, \i*1.5mm-3.75mm-0.3mm) rectangle (3mm, \i*1.5mm-3.75mm+0.3mm);
-    }
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 4.5mm) {Dàzhuàng};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
-      at (0, -4.5mm) {Great\\Strength};
-  \end{scope}
+  \hexagram{3}{0,1,0,1,0,0}{0}{0}{Xiè}{Deliverance}
+  \hexagram{8}{1,1,1,1,0,0}{0}{2}{Dàzhuàng}{Great\\Strength}
   \chinesecardmarks[🀑]{二}{条}}]{images/w-02}{Two of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{2}{♥}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
