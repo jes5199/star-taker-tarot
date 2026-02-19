@@ -1439,15 +1439,16 @@
     at ([xshift=0.25mm]xiu#3.east) {#3};
 }
 % Manzil lane: Arabic letter in a thin circle + ordinal number
-% #1 = optional yshift for ordinal number, #2 = degree position, #3 = Arabic letter, #4 = ordinal (1-28)
-\newcommand{\manzillane}[4][0mm]{%
+% #1 = optional TikZ keys for ordinal node (e.g. yshift=-2.5mm, xshift=-1.5mm)
+% #2 = degree position, #3 = Arabic letter, #4 = ordinal (1-28)
+\newcommand{\manzillane}[4][]{%
   \pgfmathsetmacro{\manzilbot}{#2 * (\cardheight-20mm)/10}%
   \node[anchor=south west, draw=black, thin, circle, minimum size=3.5mm, inner sep=0pt, text=black,
         font=\kufifont\fontsize{5}{6}\selectfont] (manzil#4)
     at (5mm, \manzilbot pt) {\beginR #3\endR};
-  \node[anchor=west, text=black, inner sep=0pt, yshift=#1,
+  \node[anchor=west, text=black, inner sep=0pt, #1,
         font=\cardfont\fontsize{5}{6}\selectfont] (manzilnum#4)
-    at ([xshift=-1.5mm]manzil#4.east) {#4};
+    at ([xshift=0.25mm]manzil#4.east) {#4};
 }
 % Cì start marker: cì name attached right of xiù ordinal number
 % #1 = xiù ordinal number node (e.g. xiunum15), #2 = cì CJK, #3 = pinyin, #4 = English gloss
@@ -2339,7 +2340,7 @@
   \boundsquare{0}{Mercury}
   \boundsquare{6}{Mars}
   % Manzil: Jabha (10th) at 20°52' Leo (0.867°)
-  \manzillane[-2.5mm]{0.867}{ي}{10}
+  \manzillane[yshift=-2.5mm, xshift=-1.5mm]{0.867}{ي}{10}
   % Pādas: Āśleṣā 4 (डो), Maghā 1-2 (मा मी) — nakṣatra 10 + rāśi Siṃha start at 4.267°
   \padasyllable{0.933}{4.267}{डो}
   \padasyllable{4.267}{7.6}{मा}
@@ -2419,11 +2420,25 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Sagittarius};
   \decanticks{240}
-  \solartermstart{20}{小雪}{Xiǎoxuě}{Minor Snow}
-  \boundstart{1}{Jupiter}
-  \fixedstar{3.367}{Fang}
+  % Bounds: Jupiter spans entire decan (0°-12° Sag)
+  \boundsquare{0}{Jupiter}
+  % Manzil: Qalb (18th) at 03°44' Sag (3.733°)
+  \manzillane{3.733}{ص}{18}
+  % Pādas: Anurādhā 2-4 (नी नू ने) — pāda 1 is continuation
+  \padasyllable{0.933}{4.267}{नी}
+  \padasyllable{4.267}{7.6}{नू}
+  \padasyllable{7.6}{10}{ने}
+  % Xiù: 心 Xīn (5) at 03°52' Sag (3.867°)
+  \xiulane{3.867}{心}{5}
+  % Fixed stars — Fang and Acrab 0.25° apart, use label below on Fang
+  \fixedstar[label below=1]{3.367}{Fang}
   \fixedstar{3.617}{Acrab}
   \fixedstar{8.217}{Alniyat}
+  % Solar term and pentads
+  \solartermlane{0}{小雪}{Xiǎoxuě}{Minor Snow}
+  \pentadlane{0}{虹藏不見}{Hóng cáng bùjiàn}{Rainbows Hide}
+  \pentadlane[0.5]{5}{天氣上升地氣下降}{Tiānqì shàngshēng dìqì xiàjiàng}{Heaven and Earth Qi Separates}
+  % Hexagrams
   \hexagram{3}{0,1,1,1,1,0}{0}{0}{Dà Guò}{Great\\Exceeding}
   \hexagram{8}{0,0,0,0,0,0}{0}{2}{Kūn}{Receptive}}]{images/w-08}{Eight of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{8}{♥}{1.0}{1.0}
