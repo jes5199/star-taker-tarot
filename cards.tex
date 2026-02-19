@@ -1369,17 +1369,19 @@
   xshift/.initial=0mm,
   rotate label/.initial=0,
   label below/.initial=0,
+  label yshift/.initial=0mm,
 }
 \newcommand{\fixedstar}[3][]{%
-  \pgfkeys{/fixedstar/.cd, xshift=0mm, rotate label=0, label below=0, #1}%
+  \pgfkeys{/fixedstar/.cd, xshift=0mm, rotate label=0, label below=0, label yshift=0mm, #1}%
   \pgfkeysgetvalue{/fixedstar/xshift}{\fsxshift}%
   \pgfkeysgetvalue{/fixedstar/rotate label}{\fsrotate}%
   \pgfkeysgetvalue{/fixedstar/label below}{\fslabelbelow}%
+  \pgfkeysgetvalue{/fixedstar/label yshift}{\fslabelyshift}%
   \pgfmathsetmacro{\starpos}{#2 * (\cardheight-20mm)/10}%
   \ifnum\fslabelbelow=1
     \node[anchor=west, text=black, inner sep=0pt, xshift=\fsxshift] (fixedstar@tmp)
       at (2.5mm, \starpos pt) {{\symbfont\fontsize{5}{6}\selectfont ★}};
-    \node[anchor=west, text=black, inner sep=0pt, rotate=-45]
+    \node[anchor=west, text=black, inner sep=0pt, rotate=\fsrotate, yshift=\fslabelyshift]
       at (fixedstar@tmp.south east) {{\cardfont\fontsize{5}{6}\selectfont #3}};
   \else
     \node[anchor=west, text=black, inner sep=0pt, xshift=\fsxshift]
@@ -1418,11 +1420,11 @@
     at (7.5mm, \padabot pt) {#3};
 }
 % Nakṣatra start marker: ordinal number + rāśi symbol and name, placed right of pāda circle
-% #1 = pada node name (e.g. pada1), #2 = nakṣatra number, #3 = rāśi symbol, #4 = rāśi Devanagari, #5 = rāśi romanization
-\newcommand{\nakshatrastart}[5]{%
+% #1 = optional yshift, #2 = pada node name (e.g. pada1), #3 = nakṣatra number, #4 = rāśi symbol, #5 = rāśi Devanagari, #6 = rāśi romanization
+\newcommand{\nakshatrastart}[6][0mm]{%
   \node[anchor=west, text=black, inner sep=0pt,
         font=\fontsize{5}{6}\selectfont]
-    at ([xshift=0.25mm]#1.east) {{\cardfont #2}\hspace{0.3em}{\symbfont #3}\hspace{0.1em}{\devfont #4}\hspace{0.1em}{\cardfont #5}};
+    at ([xshift=0.25mm, yshift=#1]#2.east) {{\cardfont #3}\hspace{0.3em}{\symbfont #4}\hspace{0.1em}{\devfont #5}\hspace{0.1em}{\cardfont #6}};
 }
 
 % Xiù lane: CJK character in a thin circle + ordinal number
@@ -1431,7 +1433,7 @@
   \pgfmathsetmacro{\xiubot}{#1 * (\cardheight-20mm)/10}%
   \node[anchor=south west, draw=black, thin, circle, minimum size=3.5mm, inner sep=0pt, text=black,
         font=\cjkfont\fontsize{5}{6}\selectfont] (xiu#3)
-    at (10mm, \xiubot pt) {#2};
+    at (11mm, \xiubot pt) {#2};
   \node[anchor=west, text=black, inner sep=0pt,
         font=\cardfont\fontsize{5}{6}\selectfont] (xiunum#3)
     at ([xshift=0.25mm]xiu#3.east) {#3};
@@ -2165,7 +2167,7 @@
   % Xiù: none (井 Jǐng continues across entire decan)
   % Fixed stars
   \fixedstar[xshift=2mm]{6.15}{Theta Cancri}
-  \fixedstar[label below=1]{7.817}{Praesepe}
+  \fixedstar[label below=1, rotate label=-45]{7.817}{Praesepe}
   % Solar term and pentads
   \solartermlane{0}{大暑}{Dàshǔ}{Major Heat}
   \pentadlane[0.7]{0}{腐草為螢}{Fǔcǎo wéi yíng}{Decaying Grass Becomes Fireflies}
@@ -2244,68 +2246,28 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Leo};
   \decanticks{130}
-  \fixedstar{0.733}{Delta Hydrae}
-  % Xiù boundary: Jǐng → Guǐ at 10°45' Leo (0.75°) — diagonal UP just above star
-  \pgfmathsetmacro{\xiubdya}{0.75 * (\cardheight-20mm)/10}%
-  \pgfmathsetmacro{\xiuhigha}{\xiubdya + 5.0/25.4*72.27}%
-  \draw[black, thin] (2mm, \xiubdya pt) -- (2.5mm, \xiubdya pt) -- (3mm, \xiuhigha pt) -- (12.5mm, \xiuhigha pt);
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (7mm, \xiuhigha pt + 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Guǐ}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, \xiuhigha pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 23.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 鬼}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Ghost}};
-  \node[anchor=north west, text=black, inner sep=0pt]
-    at (2.5mm, \xiuhigha pt - 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 22.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 井}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Well}};
-  \node[anchor=north west, text=black, inner sep=0pt, xscale=0.48]
-    at (7mm, \xiuhigha pt - 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Jǐng}};
-  % Nakṣatra boundary: Puṣya → Āśleṣā at 10°56' Leo (0.933°) — diagonal UP above xiù
-  \pgfmathsetmacro{\nakshatrabdy}{0.933 * (\cardheight-20mm)/10}%
-  \pgfmathsetmacro{\nakshatrahigh}{\nakshatrabdy + 12.0/25.4*72.27}%
-  \draw[black, thin] (2mm, \nakshatrabdy pt) -- (2.5mm, \nakshatrabdy pt) -- (3mm, \nakshatrahigh pt) -- (12.5mm, \nakshatrahigh pt);
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (7mm, \nakshatrahigh pt + 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Āśleṣā}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, \nakshatrahigh pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 9.}\hspace{0.1em}{\devfont\fontsize{5}{6}\selectfont आश्लेषा}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont The Embracer}};
-  \node[anchor=north west, text=black, inner sep=0pt]
-    at (2.5mm, \nakshatrahigh pt - 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 8.}\hspace{0.1em}{\devfont\fontsize{5}{6}\selectfont पुष्य}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont The Nourisher}};
-  \node[anchor=north west, text=black, inner sep=0pt, xscale=0.48]
-    at (7mm, \nakshatrahigh pt - 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Puṣya}};
-  % Bounds boundary: Venus → Saturn at 11° Leo (1.0°) — diagonal UP above nakṣatra
-  \pgfmathsetmacro{\boundsbdya}{1.0 * (\cardheight-20mm)/10}%
-  \pgfmathsetmacro{\boundshigha}{\boundsbdya + 18.0/25.4*72.27}%
-  \draw[black, thin] (2mm, \boundsbdya pt) -- (2.5mm, \boundsbdya pt) -- (3mm, \boundshigha pt) -- (12.5mm, \boundshigha pt);
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, \boundshigha pt + 0.5mm) {\makebox[0.6em][c]{\symbserif\fontsize{5}{6}\selectfont ♄}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 3.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} Saturn}};
-  \node[anchor=north west, text=black, inner sep=0pt]
-    at (2.5mm, \boundshigha pt - 0.5mm) {\makebox[0.6em][c]{\symbserif\fontsize{5}{6}\selectfont ♀}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 2.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} Venus}};
-  % Xiù/Cì boundary: Guǐ → Liǔ / Chúnhuǒ at 12°15' Leo (2.25°)
-  \pgfmathsetmacro{\xiubdyb}{2.25 * (\cardheight-20mm)/10}%
-  \pgfmathsetmacro{\xiuhighb}{\xiubdyb + 6.0/25.4*72.27}%
-  \draw[black, thin] (2mm, \xiubdyb pt) -- (2.5mm, \xiubdyb pt) -- (3mm, \xiuhighb pt) -- (12.5mm, \xiuhighb pt);
-  % Cì (left side)
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, \xiuhighb pt + 0.5mm) {\makebox[0.6em][c]{\symbserif\fontsize{5}{6}\selectfont ♃}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 8.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 鶉火}};
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.65]
-    at (13mm, \xiuhighb pt + 0.5mm) {{\cardfont\fontsize{5}{6}\selectfont Quail Fire}};
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (7mm, \xiuhighb pt + 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Chúnhuǒ}};
-  % Xiù (right side)
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (28.65mm, \xiuhighb pt + 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Liǔ}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (24mm, \xiuhighb pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 24.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 柳}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Willow}};
-  \node[anchor=north west, text=black, inner sep=0pt]
-    at (24mm, \xiuhighb pt - 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 23.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 鬼}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Ghost}};
-  \node[anchor=north west, text=black, inner sep=0pt, xscale=0.48]
-    at (28.65mm, \xiuhighb pt - 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Guǐ}};
-  \fixedstar{8.3}{Alterf}
-  % Bounds boundary: Saturn → Mercury at 18° Leo (8.0°) — diagonal DOWN below Alterf
-  \pgfmathsetmacro{\boundsbdyb}{8.0 * (\cardheight-20mm)/10}%
-  \pgfmathsetmacro{\boundslowb}{\boundsbdyb - 2.0/25.4*72.27}%
-  \draw[black, thin] (2mm, \boundsbdyb pt) -- (2.5mm, \boundsbdyb pt) -- (3mm, \boundslowb pt) -- (12.5mm, \boundslowb pt);
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, \boundslowb pt + 0.5mm) {\makebox[0.6em][c]{\symbserif\fontsize{5}{6}\selectfont ☿}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 4.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} Mercury}};
-  \node[anchor=north west, text=black, inner sep=0pt]
-    at (2.5mm, \boundslowb pt - 0.5mm) {\makebox[0.6em][c]{\symbserif\fontsize{5}{6}\selectfont ♄}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 3.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} Saturn}};
+  % Bounds: Venus at 0° (cont.), Saturn at 1°, Mercury at 8°
+  \boundsquare{0}{Venus}
+  \boundsquare{1}{Saturn}
+  \boundsquare{8}{Mercury}
+  % Manzil: none (Ṭarfa continues entire decan)
+  % Pādas: Āśleṣā 1-3 (डी डू डे) — nakṣatra 9 starts here
+  \padasyllable{0.933}{4.267}{डी}
+  \nakshatrastart[2mm]{pada\thepadactr}{9}{}{}{}
+  \padasyllable{4.267}{7.6}{डू}
+  \padasyllable{7.6}{10}{डे}
+  % Xiù: 鬼 Guǐ (23) at 0.75°, 柳 Liǔ (24) at 2.25°
+  \xiulane{0.75}{鬼}{23}
+  \xiulane{2.25}{柳}{24}
+  \cistart{xiunum24}{鶉火}{Chúnhuǒ}{Quail Fire}
+  % Fixed stars
+  \fixedstar[label below=1, label yshift=-0.5mm]{0.733}{Delta Hydrae}
+  \fixedstar[xshift=2mm]{8.3}{Alterf}
+  % Solar term and pentads
+  \solartermlane{5}{立秋}{Lìqiū}{Start of Autumn}
+  \pentadlane[0.7]{0}{大雨時行}{Dàyǔ shí xíng}{Heavy Rains Sometimes Fall}
+  \pentadlane{5}{涼風至}{Liángfēng zhì}{Cool Winds Arrive}
+  % Hexagrams
   \hexagram{1}{0,0,1,1,1,1}{4}{0}{Dùn}{Retreat}
   \hexagram{5}{0,1,1,1,0,0}{0}{0}{Héng}{Duration}
   \hexagram{9}{1,1,0,0,1,0}{0}{4}{Jié}{Limitation}}]{images/w-06}{Six of Wands}\hfill
