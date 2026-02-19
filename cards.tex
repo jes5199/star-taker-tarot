@@ -1700,8 +1700,10 @@
 % Hexagram command: \hexagram{tick}{line1,line2,...,line6}{outsideBot}{outsideTop}{pinyin}{english}
 % Lines are bottom to top. Yang=1 (solid), Yin=0 (broken).
 % outsideBot/outsideTop = number of lines outside decan (rendered outlined).
+% English label is clamped so it never drops below the card bottom edge.
 \newcommand{\hexagram}[6]{%
   \pgfmathsetmacro{\hextickpos}{#1 * (\cardheight-20mm)/10}%
+  \pgfmathsetmacro{\hexbotlabel}{max(-4.5, -\hextickpos * 25.4/72.27 + 0.5)}%
   \begin{scope}[shift={(\cardwidth-17mm, \hextickpos pt)}, line cap=butt]
     \foreach \type [count=\i from 0] in {#2} {%
       \pgfmathtruncatemacro{\isout}{(\i < #3) || (\i >= (6 - #4)) ? 1 : 0}%
@@ -1727,7 +1729,7 @@
     \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
       at (0, 4.5mm) {#5};
     \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
-      at (0, -4.5mm) {#6};
+      at (0, \hexbotlabel mm) {#6};
   \end{scope}
 }
 
@@ -1979,68 +1981,9 @@
     at (6.5mm, \qingming pt + 2mm) {{\cardfont\fontsize{5}{6}\selectfont {\cardfontplain Q}īngmíng}};
   \node[anchor=south west, text=black, inner sep=0pt]
     at (2.5mm, \qingming pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 5.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 清明}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Clear \& Bright}};
-  % Hexagram 34 大壯 (Great Strength): spans 6°-12°, visible 10°-12°, center tick 1
-  \pgfmathsetmacro{\hexticka}{1 * (\cardheight-20mm)/10}%
-  \begin{scope}[shift={(\cardwidth-14mm, \hexticka pt)}, line cap=butt]
-    % Bottom 4 lines (yang): outside decan → outlined
-    \foreach \i in {0,1,2,3} {
-      \fill[white, draw=black, line width=0.2mm]
-        (-3mm, \i*1.5mm-3.75mm-0.3mm) rectangle (3mm, \i*1.5mm-3.75mm+0.3mm);
-    }
-    % Top 2 lines (yin): in decan → normal broken
-    \foreach \i in {4,5} {
-      \draw[line width=0.6mm] (-3mm, \i*1.5mm-3.75mm) -- (-0.5mm, \i*1.5mm-3.75mm);
-      \draw[line width=0.6mm] (0.5mm, \i*1.5mm-3.75mm) -- (3mm, \i*1.5mm-3.75mm);
-    }
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 4.5mm) {Dàzhuàng};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
-      at (0, -3.5mm) {Great\\Strength};
-  \end{scope}
-  % Hexagram 16 豫 (Enthusiasm): spans 12°-18°, fully in decan, center tick 5
-  \pgfmathsetmacro{\hextickb}{5 * (\cardheight-20mm)/10}%
-  \begin{scope}[shift={(\cardwidth-14mm, \hextickb pt)}, line width=0.6mm, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,0,0,1,0,0} {
-      \ifnum\type=1
-        \draw (-3mm, \i*1.5mm-3.75mm) -- (3mm, \i*1.5mm-3.75mm);
-      \else
-        \draw (-3mm, \i*1.5mm-3.75mm) -- (-0.5mm, \i*1.5mm-3.75mm);
-        \draw (0.5mm, \i*1.5mm-3.75mm) -- (3mm, \i*1.5mm-3.75mm);
-      \fi
-    }
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 4.5mm) {Yù};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, -4.5mm) {Enthusiasm};
-  \end{scope}
-  % Hexagram 6 訟 (Conflict): spans 18°-24°, visible 18°-20°, center tick 9
-  \pgfmathsetmacro{\hextickc}{9 * (\cardheight-20mm)/10}%
-  \begin{scope}[shift={(\cardwidth-14mm, \hextickc pt)}, line cap=butt]
-    % Bottom 2 lines (yang): in decan → solid black
-    \foreach \i in {0,1} {
-      \draw[line width=0.6mm] (-3mm, \i*1.5mm-3.75mm) -- (3mm, \i*1.5mm-3.75mm);
-    }
-    % Line 3 (yang): outside → outlined solid
-    \fill[white, draw=black, line width=0.2mm]
-      (-3mm, 2*1.5mm-3.75mm-0.3mm) rectangle (3mm, 2*1.5mm-3.75mm+0.3mm);
-    % Line 4 (yin): outside → outlined broken
-    \fill[white, draw=black, line width=0.2mm]
-      (-3mm, 3*1.5mm-3.75mm-0.3mm) rectangle (-0.5mm, 3*1.5mm-3.75mm+0.3mm);
-    \fill[white, draw=black, line width=0.2mm]
-      (0.5mm, 3*1.5mm-3.75mm-0.3mm) rectangle (3mm, 3*1.5mm-3.75mm+0.3mm);
-    % Line 5 (yang): outside → outlined solid
-    \fill[white, draw=black, line width=0.2mm]
-      (-3mm, 4*1.5mm-3.75mm-0.3mm) rectangle (3mm, 4*1.5mm-3.75mm+0.3mm);
-    % Line 6 (yin): outside → outlined broken
-    \fill[white, draw=black, line width=0.2mm]
-      (-3mm, 5*1.5mm-3.75mm-0.3mm) rectangle (-0.5mm, 5*1.5mm-3.75mm+0.3mm);
-    \fill[white, draw=black, line width=0.2mm]
-      (0.5mm, 5*1.5mm-3.75mm-0.3mm) rectangle (3mm, 5*1.5mm-3.75mm+0.3mm);
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 4.5mm) {Sòng};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, -4.5mm) {Conflict};
-  \end{scope}
+  \hexagram{1}{1,1,1,1,0,0}{4}{0}{Dàzhuàng}{Great\\Strength}
+  \hexagram{5}{0,0,0,1,0,0}{0}{0}{Yù}{Enthusiasm}
+  \hexagram{9}{1,1,0,0,1,1}{0}{4}{Sòng}{Conflict}
   }]{images/w-03}{Three of Wands}\hfill
 \minorcard[{\playingcardmarks{red}{3}{♥}{1.0}{1.0}
   \chinesecardmarks[🀉]{三}{万}
