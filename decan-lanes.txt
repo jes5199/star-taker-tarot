@@ -22,9 +22,37 @@ Lane R1: Hexagrams — I Ching hexagram with pinyin above and English below (\ca
 Lane R2: Solar terms — rotated label: CJK + pinyin + English (5pt, \cardwidth-11mm). One per decan, anchored at 0°.
 Lane R3: Microseasons (pentads/hòu) — rotated label: CJK + pinyin + English (4pt, \cardwidth-9mm). Anchored at their degree position. Typically 2 per decan.
 
+BOUNDARY START MARKERS
+─────────────────────
+When a division system begins on a card, an annotation is placed to the
+right of its circle/square:
+
+Nakṣatra start (\nakshatrastart): ordinal number right of the first pāda
+  circle. If a rāśi also starts at the same degree, the rāśi symbol +
+  Devanagari + romanization follow. This only happens on 3 cards (4W, 7W,
+  10W) because rāśi-nakṣatra coincidences occur every 120° sidereal,
+  which is the fire trine (Aries/Leo/Sagittarius = Wands).
+
+Rāśi start (\rashistart — TBD): The remaining 9 rāśi boundaries do NOT
+  coincide with nakṣatra boundaries. These need a separate rendering,
+  attached to the pāda circle at the rāśi boundary degree. All 12 rāśi
+  boundaries fall at 4.267° in a 3rd decan (24°16' of each sign):
+    Meṣa (4W*)  Vṛṣabha (7P)  Mithuna (10S)  Karka (4C)
+    Siṃha (7W*) Kanyā (10P)   Tulā (4S)      Vṛścika (7C)
+    Dhanu (10W*) Makara (4P)   Kumbha (7S)    Mīna (10C)
+  * = coincides with nakṣatra start, handled by \nakshatrastart
+
+Cì start (\cistart): CJK name with pinyin above + squished English gloss,
+  attached right of the xiù ordinal number at the cì boundary.
+
+Manzil start: ordinal number right of the Kufi circle, with optional
+  TikZ keys for nudging when crowded.
+
+Xiù ordinal: number right of the CJK circle.
+
 SYMBOLS
 ───────
 Bounds: planet glyph inside □ (square)
 Pādas:  Devanagari syllable inside ○ (circle)
 Xiù:    CJK character inside ○ (circle)
-Manzil: (TBD, reserved lane)
+Manzil: Kufi Arabic letter inside ○ (circle)

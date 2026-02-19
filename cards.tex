@@ -1752,6 +1752,10 @@
     \node[anchor=west, text=black, inner sep=0pt, font=\symbfont\fontsize{4}{5}\selectfont]
       at (0.5mm, \ymid pt) {\chaldeanplanet{\idx}};
   }
+  % Decan number (1-36) at bottom center
+  \pgfmathtruncatemacro{\decannum}{#1/10 + 1}%
+  \node[anchor=south, text=black, inner sep=0pt, font=\cardfont\fontsize{8}{10}\selectfont]
+    at (0.5\cardwidth, 1mm) {\decannum};
 }
 
 % Hexagram command: \hexagram{tick}{line1,line2,...,line6}{outsideBot}{outsideTop}{pinyin}{english}
