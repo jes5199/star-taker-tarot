@@ -1807,20 +1807,21 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Aries};
   \decanticks{0}
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (7mm, 8.3mm) {{\cardfont\fontsize{5}{6}\selectfont Xuánniǎo zhì}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, 6.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 10.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 玄鳥至}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Swallows Arrive}};
-  \solartermstart{4}{春分}{Chūnfēn}{Spring Equinox}
+  % Solar term: 春分 Spring Equinox at 0°, lane left of hexagrams
+  \node[anchor=west, text=black, inner sep=0pt, rotate=90,
+        font=\fontsize{5}{6}\selectfont]
+    at (\cardwidth-20mm, 0pt) {{\cjkfont 春分}\hspace{0.3em}{\cardfont Chūnfēn}\hspace{0.6em}{\cardfont Spring Equinox}};
+  % Pentad: 玄鳥至 Swallows Arrive at 0°
+  \pgfmathsetmacro{\pentadA}{0 * (\cardheight-20mm)/10}%
+  \node[anchor=west, text=black, inner sep=0pt, rotate=90,
+        font=\fontsize{4}{5}\selectfont]
+    at (\cardwidth-9mm, \pentadA pt) {{\cjkfont 玄鳥至}\hspace{0.3em}{\cardfont Xuánniǎo zhì}\hspace{0.6em}{\cardfont Swallows Arrive}};
   \boundsquare{0}{Jupiter}
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (7.5mm, 43.55mm) {{\cardfont\fontsize{5}{6}\selectfont Léi nǎi fāshēng}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, 41.75mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 11.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 雷乃發聲}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (15mm, 43.5mm) {{\cardfont\fontsize{4}{5}\selectfont Thunder}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (15mm, 42mm) {{\cardfont\fontsize{4}{5}\selectfont Sounds}};
+  % Pentad: 雷乃發聲 Thunder Sounds at 5°
+  \pgfmathsetmacro{\pentadB}{5 * (\cardheight-20mm)/10}%
+  \node[anchor=west, text=black, inner sep=0pt, rotate=90,
+        font=\fontsize{4}{5}\selectfont]
+    at (\cardwidth-9mm, \pentadB pt) {{\cjkfont 雷乃發聲}\hspace{0.3em}{\cardfont Léi nǎi fāshēng}\hspace{0.6em}{\cardfont Thunder Sounds}};
   \boundsquare{6}{Venus}
   % Pādas of Uttara Bhādrapadā (#26): दू थ झ ञ
   \padasyllable{0}{0.933}{दू}
