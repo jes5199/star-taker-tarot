@@ -1416,11 +1416,17 @@
     at ([xshift=0.25mm]xiu#3.east) {#3};
 }
 % Cì start marker: cì name attached right of xiù ordinal number
-% #1 = xiù ordinal number node (e.g. xiunum15), #2 = cì CJK, #3 = cì romanization
-\newcommand{\cistart}[3]{%
+% #1 = xiù ordinal number node (e.g. xiunum15), #2 = cì CJK, #3 = pinyin, #4 = English gloss
+\newcommand{\cistart}[4]{%
   \node[anchor=west, text=black, inner sep=0pt,
-        font=\fontsize{5}{6}\selectfont]
-    at ([xshift=0.3em]#1.east) {{\cjkfont #2}\hspace{0.1em}{\cardfont #3}};
+        font=\fontsize{5}{6}\selectfont] (cihanzi#1)
+    at ([xshift=0.3em]#1.east) {{\cjkfont #2}};
+  \node[anchor=south west, text=black, inner sep=0pt,
+        font=\cardfont\fontsize{4}{5}\selectfont, xscale=0.48]
+    at (cihanzi#1.north west) {#3};
+  \node[anchor=west, text=black, inner sep=0pt,
+        font=\cardfont\fontsize{5}{6}\selectfont, xscale=0.65]
+    at ([xshift=0.1em]cihanzi#1.east) {#4};
 }
 
 % Solar term at bottom of decan (above bounds label) — OLD, kept for other cards
@@ -1935,7 +1941,7 @@
   \padasyllable{7.6}{10}{च}
   % Xiù: 奎 Kuí starts at 3.55° — 壁 Bì is continuation from 2W
   \xiulane{3.55}{奎}{15}
-  \cistart{xiunum15}{降婁}{Jiànglóu}
+  \cistart{xiunum15}{降婁}{Jiànglóu}{Drawing Downward}
   % No fixed stars in 2nd decan of Aries
   % Solar term + pentads
   \solartermlane{5}{清明}{Qīngmíng}{Clear \& Bright}
