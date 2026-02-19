@@ -54,5 +54,39 @@ Each nakṣatra spans 13°20' of sidereal longitude.
 26   Uttara Bhādrapadā        उत्तर भाद्रपदा     27°36' Pisces       10°56' Aries        Saturn    Latter Lucky Feet
 27   Revatī                   रेवती              10°56' Aries        24°16' Aries        Mercury   The Wealthy
 
+NAKṢATRA PĀDA SYLLABLES (108 Akṣaras)
+Each nakṣatra has 4 pādas of 3°20'. Each pāda is assigned a syllable for name-giving.
+
+#    Name                     Pāda 1  Pāda 2  Pāda 3  Pāda 4
+─────────────────────────────────────────────────────────────────
+1    Aśvinī                   चु      चे      चो      ला
+2    Bharaṇī                  ली      लू      ले      लो
+3    Kṛttikā                  अ       ई       उ       ए
+4    Rohiṇī                   ओ       वा      वी      वु
+5    Mṛgaśīrṣā                वे      वो      का      की
+6    Ārdrā                    कु      घ       ङ       छ
+7    Punarvasu                के      को      हा      ही
+8    Puṣya                    हु      हे      हो      डा
+9    Āśleṣā                   डी      डू      डे      डो
+10   Maghā                    मा      मी      मू      मे
+11   Pūrva Phālgunī           मो      टा      टी      टू
+12   Uttara Phālgunī          टे      टो      पा      पी
+13   Hasta                    पू      ष       ण       ठ
+14   Chitrā                   पे      पो      रा      री
+15   Svātī                    रू      रे      रो      ता
+16   Viśākhā                  ती      तू      ते      तो
+17   Anurādhā                 ना      नी      नू      ने
+18   Jyeṣṭhā                  नो      या      यी      यू
+19   Mūla                     ये      यो      भा      भी
+20   Pūrvāṣāḍhā               भू      धा      फा      ढ
+21   Uttarāṣāḍhā              भे      भो      जा      जी
+22   Śravaṇa                  खी      खू      खे      खो
+23   Dhaniṣṭhā                गा      गी      गु      गे
+24   Śatabhiṣā                गो      सा      सी      सू
+25   Pūrva Bhādrapadā         से      सो      दा      दी
+26   Uttara Bhādrapadā        दू      थ       झ       ञ
+27   Revatī                   दे      दो      च       ची
+
 Computed via compute-rashi-nakshatra.py.
 Lahiri ayanamsa derived from Spica's tropical position using skyfield (Hipparcos + DE421).
+Pāda syllables from Drik Panchang (drikpanchang.com).

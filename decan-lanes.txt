@@ -1,0 +1,13 @@
+Decan Card Annotation Lanes
+===========================
+
+Each decan pip card has a vertical scale from 0° to 10° on the left edge,
+with tick marks at each degree. Information is arranged in vertical lanes
+from left to right:
+
+Lane 0: Degree ticks (0–1mm from left edge)
+Lane 1: Monomoiria — Chaldean planetary ruler for each degree (0.5mm, centered in each degree cell, 4pt symbol font)
+Lane 2: Egyptian bounds — planet symbol in a thin black-outlined square, placed at the degree where that bound begins (\boundsquare command, anchor=south west at 2.5mm)
+Lane 3: Manzil — reserved for a single Arabic letter (indicator for the manzil in force), ~5–7mm. Empty if no manzil content on that card.
+Lane 4: Nakṣatra pādas — Devanagari syllable rotated 90°, centered vertically within each pāda span (\padasyllable command at 7.5mm). Each nakṣatra has 4 pādas of 3°20'. Syllables from the 108 akṣara system.
+Lane 5+: Other annotations (fixed stars, xiù, manzil boundaries, nakṣatra boundaries, pentads, solar terms, hexagrams, etc.)
