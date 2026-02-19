@@ -1388,11 +1388,20 @@
 }
 % Nakṣatra pāda syllable: Devanagari syllable in a thin circle
 % #1 = degree position (bottom of pāda span), #2 = unused (kept for compat), #3 = syllable
+\newcounter{padactr}
 \newcommand{\padasyllable}[3]{%
+  \stepcounter{padactr}%
   \pgfmathsetmacro{\padabot}{#1 * (\cardheight-20mm)/10}%
   \node[anchor=south west, draw=black, thin, circle, minimum size=3.5mm, inner sep=0pt, text=black,
-        font=\devfont\fontsize{5}{6}\selectfont]
+        font=\devfont\fontsize{5}{6}\selectfont] (pada\thepadactr)
     at (7.5mm, \padabot pt) {#3};
+}
+% Nakṣatra start marker: ordinal number + rāśi symbol and name, placed right of pāda circle
+% #1 = pada node name (e.g. pada1), #2 = nakṣatra number, #3 = rāśi symbol, #4 = rāśi Devanagari, #5 = rāśi romanization
+\newcommand{\nakshatrastart}[5]{%
+  \node[anchor=west, text=black, inner sep=0pt,
+        font=\fontsize{5}{6}\selectfont]
+    at ([xshift=0.25mm]#1.east) {{\cardfont #2}\hspace{0.3em}{\symbfont #3}\hspace{0.1em}{\devfont #4}\hspace{0.1em}{\cardfont #5}};
 }
 
 % Xiù lane: CJK character in a thin circle + ordinal number
@@ -1403,8 +1412,15 @@
         font=\cjkfont\fontsize{5}{6}\selectfont] (xiu#3)
     at (10mm, \xiubot pt) {#2};
   \node[anchor=west, text=black, inner sep=0pt,
-        font=\cardfont\fontsize{4}{5}\selectfont]
+        font=\cardfont\fontsize{5}{6}\selectfont] (xiunum#3)
     at ([xshift=0.25mm]xiu#3.east) {#3};
+}
+% Cì start marker: cì name attached right of xiù ordinal number
+% #1 = xiù ordinal number node (e.g. xiunum15), #2 = cì CJK, #3 = cì romanization
+\newcommand{\cistart}[3]{%
+  \node[anchor=west, text=black, inner sep=0pt,
+        font=\fontsize{5}{6}\selectfont]
+    at ([xshift=0.3em]#1.east) {{\cjkfont #2}\hspace{0.1em}{\cardfont #3}};
 }
 
 % Solar term at bottom of decan (above bounds label) — OLD, kept for other cards
@@ -1919,6 +1935,7 @@
   \padasyllable{7.6}{10}{च}
   % Xiù: 奎 Kuí starts at 3.55° — 壁 Bì is continuation from 2W
   \xiulane{3.55}{奎}{15}
+  \cistart{xiunum15}{降婁}{Jiànglóu}
   % No fixed stars in 2nd decan of Aries
   % Solar term + pentads
   \solartermlane{5}{清明}{Qīngmíng}{Clear \& Bright}
@@ -2019,62 +2036,19 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Aries};
   \decanticks{20}
-  \boundstart{4}{Mars}
+  % Bounds: Mars at 0°, Saturn at 5.0°
+  \boundsquare{0}{Mars}
+  \boundsquare{5}{Saturn}
   \fixedstar{2.8}{Eta Andromedae}
-  % Nakṣatra/Rāśi boundary: Revatī → Aśvinī / Mīna → Meṣa at 24°16' (4.267°)
-  \pgfmathsetmacro{\nakshatrabdy}{4.267 * (\cardheight-20mm)/10}%
-  \draw[black, thin] (2mm, \nakshatrabdy pt) -- (12.5mm, \nakshatrabdy pt);
-  % Rāśi (left side) — inline romanization
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, \nakshatrabdy pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ♈}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 1.}\hspace{0.1em}{\devfont\fontsize{5}{6}\selectfont मेष}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Meṣa}};
-  \node[anchor=north west, text=black, inner sep=0pt]
-    at (2.5mm, \nakshatrabdy pt - 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ♓}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 12.}\hspace{0.1em}{\devfont\fontsize{5}{6}\selectfont मीन}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Mīna}};
-  % Nakṣatra (right side) — with transliteration
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (19.325mm, \nakshatrabdy pt + 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Aśvinī}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (14mm, \nakshatrabdy pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 1.}\hspace{0.1em}{\devfont\fontsize{5}{6}\selectfont अश्विनी}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont The Physicians}};
-  \node[anchor=north west, text=black, inner sep=0pt]
-    at (14mm, \nakshatrabdy pt - 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 27.}\hspace{0.1em}{\devfont\fontsize{5}{6}\selectfont रेवती}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont The Wealthy}};
-  \node[anchor=north west, text=black, inner sep=0pt, xscale=0.48]
-    at (18.65mm, \nakshatrabdy pt - 2.25mm) {{\cardfont\fontsize{5}{6}\selectfont Revatī}};
-  % Bounds boundary: Saturn starts at 25° (5.0°) + Pentad 15: Rainbows Appear
-  \pgfmathsetmacro{\boundsbdy}{5.0 * (\cardheight-20mm)/10}%
-  \draw[black, thin] (2mm, \boundsbdy pt) -- (12.5mm, \boundsbdy pt);
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (7mm, \boundsbdy pt + 4.5mm) {{\cardfont\fontsize{5}{6}\selectfont Hóng shǐ xiàn}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, \boundsbdy pt + 2.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 15.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 虹始見}};\node[anchor=south west, text=black, inner sep=0pt, xscale=0.65]
-    at (13mm, \boundsbdy pt + 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Rainbows Appear}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, \boundsbdy pt + 0.5mm) {\makebox[0.6em][c]{\symbserif\fontsize{5}{6}\selectfont ♄}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 5.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} Saturn}};
-  % Manzil boundary: Baṭn al-Ḥūt → Sharaṭayn at 25°09' (5.15°)
-  \pgfmathsetmacro{\manzilbdy}{5.15 * (\cardheight-20mm)/10}%
-  \pgfmathsetmacro{\manzilhigh}{\manzilbdy + 8.8/25.4*72.27}%
-  \draw[black, thin] (2mm, \manzilbdy pt) -- (2.5mm, \manzilbdy pt) -- (3mm, \manzilhigh pt) -- (12.5mm, \manzilhigh pt);
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (7mm, \manzilhigh pt + 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Sharaṭayn}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, \manzilhigh pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 1.}\hspace{0.1em}{\arabfont\fontsize{5}{6}\selectfont \beginR شرطين\endR}};
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.65]
-    at (13mm, \manzilhigh pt + 0.5mm) {{\cardfont\fontsize{5}{6}\selectfont The Two Signs}};
-  \node[anchor=north west, text=black, inner sep=0pt]
-    at (2.5mm, \manzilhigh pt - 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 28.}\hspace{0.1em}{\arabfont\fontsize{5}{6}\selectfont \beginR بطن الحوت\endR}};
-  \node[anchor=north west, text=black, inner sep=0pt, xscale=0.65]
-    at (15mm, \manzilhigh pt - 0.5mm) {{\cardfont\fontsize{5}{6}\selectfont Belly of the Fish}};
-  \node[anchor=north west, text=black, inner sep=0pt, xscale=0.48]
-    at (7mm, \manzilhigh pt - 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Baṭn al-Ḥūt}};
-  % Xiù boundary: Kuí → Lóu at 27°02' (7.033°)
-  \pgfmathsetmacro{\xiubdy}{7.033 * (\cardheight-20mm)/10}%
-  \draw[black, thin] (2mm, \xiubdy pt) -- (19.5mm, \xiubdy pt);
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (14.25mm, \xiubdy pt + 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Lóu}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (9.5mm, \xiubdy pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 16.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 婁}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Bond}};
-  \node[anchor=north west, text=black, inner sep=0pt]
-    at (9.5mm, \xiubdy pt - 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 15.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 奎}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Legs}};
-  \node[anchor=north west, text=black, inner sep=0pt, xscale=0.48]
-    at (14.25mm, \xiubdy pt - 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Kuí}};
+  % Pādas: Aśvinī (चु चे) — ची is continuation from 3W
+  \padasyllable{4.267}{7.6}{चु}
+  \nakshatrastart{pada\thepadactr}{1}{♈}{मेष}{Meṣa}
+  \padasyllable{7.6}{10}{चे}
+  % Xiù: 婁 Lóu starts at 7.033° — 奎 Kuí is continuation from 3W
+  \xiulane{7.033}{婁}{16}
+  % Pentad: 虹始見 Rainbows Appear at 25° (5.0°)
+  \pentadlane{5}{虹始見}{Hóng shǐ xiàn}{Rainbows Appear}
+  % Hexagrams
   \hexagram{2}{0,1,0,1,1,1}{2}{0}{Sòng}{Conflict}
   \hexagram{7}{0,1,1,0,0,1}{0}{0}{Gǔ}{Correcting}
   }]{images/w-04}{Four of Wands}\hfill
