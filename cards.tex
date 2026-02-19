@@ -1395,13 +1395,16 @@
     at (7.5mm, \padabot pt) {#3};
 }
 
-% Xiù lane: CJK character in a thin circle
-% #1 = degree position (bottom of span), #2 = xiù character
-\newcommand{\xiulane}[2]{%
+% Xiù lane: CJK character in a thin circle + ordinal number
+% #1 = degree position (bottom of span), #2 = xiù character, #3 = ordinal (1-28)
+\newcommand{\xiulane}[3]{%
   \pgfmathsetmacro{\xiubot}{#1 * (\cardheight-20mm)/10}%
   \node[anchor=south west, draw=black, thin, circle, inner sep=0.2mm, text=black,
-        font=\cjkfont\fontsize{5}{6}\selectfont]
+        font=\cjkfont\fontsize{5}{6}\selectfont] (xiu#3)
     at (10mm, \xiubot pt) {#2};
+  \node[anchor=west, text=black, inner sep=0pt,
+        font=\cardfont\fontsize{4}{5}\selectfont]
+    at ([xshift=0.25mm]xiu#3.east) {#3};
 }
 
 % Solar term at bottom of decan (above bounds label)
@@ -1829,8 +1832,8 @@
   \padasyllable{4.267}{7.6}{झ}
   \padasyllable{7.6}{10}{ञ}
   % Xiù lane: 室 Shì (0°–3.4°), 壁 Bì (3.4°–10°)
-  \xiulane{0}{室}
-  \xiulane{3.4}{壁}
+  \xiulane{0}{室}{13}
+  \xiulane{3.4}{壁}{14}
   \fixedstar{9.583}{Algenib}
   % Small hexagram 40 (解) centered on 4th tick
   \pgfmathsetmacro{\hextick}{3 * (\cardheight-20mm)/10}%
