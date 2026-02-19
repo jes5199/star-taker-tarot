@@ -1390,7 +1390,7 @@
 % #1 = degree position (bottom of pāda span), #2 = unused (kept for compat), #3 = syllable
 \newcommand{\padasyllable}[3]{%
   \pgfmathsetmacro{\padabot}{#1 * (\cardheight-20mm)/10}%
-  \node[anchor=south west, draw=black, thin, circle, inner sep=0.2mm, text=black,
+  \node[anchor=south west, draw=black, thin, circle, minimum size=3.5mm, inner sep=0pt, text=black,
         font=\devfont\fontsize{5}{6}\selectfont]
     at (7.5mm, \padabot pt) {#3};
 }
@@ -1399,7 +1399,7 @@
 % #1 = degree position (bottom of span), #2 = xiù character, #3 = ordinal (1-28)
 \newcommand{\xiulane}[3]{%
   \pgfmathsetmacro{\xiubot}{#1 * (\cardheight-20mm)/10}%
-  \node[anchor=south west, draw=black, thin, circle, inner sep=0.2mm, text=black,
+  \node[anchor=south west, draw=black, thin, circle, minimum size=3.5mm, inner sep=0pt, text=black,
         font=\cjkfont\fontsize{5}{6}\selectfont] (xiu#3)
     at (10mm, \xiubot pt) {#2};
   \node[anchor=west, text=black, inner sep=0pt,
@@ -1833,13 +1833,11 @@
   \boundsquare{0}{Jupiter}
   \pentadlane{5}{雷乃發聲}{Léi nǎi fāshēng}{Thunder Sounds}
   \boundsquare{6}{Venus}
-  % Pādas of Uttara Bhādrapadā (#26): दू थ झ ञ
-  \padasyllable{0}{0.933}{दू}
+  % Pādas of Uttara Bhādrapadā (#26): थ झ ञ (दू is continuation from Pisces)
   \padasyllable{0.933}{4.267}{थ}
   \padasyllable{4.267}{7.6}{झ}
   \padasyllable{7.6}{10}{ञ}
-  % Xiù lane: 室 Shì (0°–3.4°), 壁 Bì (3.4°–10°)
-  \xiulane{0}{室}{13}
+  % Xiù lane: 壁 Bì starts at 3.4° (室 Shì is continuation from Pisces)
   \xiulane{3.4}{壁}{14}
   \fixedstar{9.583}{Algenib}
   \hexagram{3}{0,1,0,1,0,0}{0}{0}{Xiè}{Deliverance}
@@ -1912,75 +1910,21 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Aries};
   \decanticks{10}
-  % Pentad: 始電 Lightning Begins at 10° (tick 0)
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (7mm, 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Shǐdiàn}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 12.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 始電}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Lightning Begins}};
-  % Nakshatra boundary: Uttara Bhādrapadā → Revatī at 10°56' (0.933°)
-  \pgfmathsetmacro{\nakshatrabdy}{0.933 * (\cardheight-20mm)/10}%
-  \draw[black, thin] (2mm, \nakshatrabdy pt) -- (12.5mm, \nakshatrabdy pt);
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, \nakshatrabdy pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 27.}\hspace{0.1em}{\devfont\fontsize{5}{6}\selectfont रेवती}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont The Wealthy}};
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (7mm, \nakshatrabdy pt + 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Revatī}};
-  \node[anchor=north west, text=black, inner sep=0pt]
-    at (2.5mm, \nakshatrabdy pt - 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 26.}\hspace{0.1em}{\devfont\fontsize{5}{6}\selectfont उत्तर भाद्रपद}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Latter Lucky Feet}};
-  \node[anchor=north west, text=black, inner sep=0pt, xscale=0.48]
-    at (7mm, \nakshatrabdy pt - 2.25mm) {{\cardfont\fontsize{5}{6}\selectfont Uttara Bhādrapadā}};
-  % Bounds boundary: Venus → Mercury at 12° (2.0°)
-  \pgfmathsetmacro{\boundsbdy}{2.0 * (\cardheight-20mm)/10}%
-  \pgfmathsetmacro{\boundslow}{\boundsbdy - 3.8/25.4*72.27}%
-  \draw[black, thin] (2mm, \boundsbdy pt) -- (2.5mm, \boundsbdy pt) -- (6mm, \boundslow pt) -- (25mm, \boundslow pt);
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (13mm, \boundslow pt + 0.5mm) {\makebox[0.6em][c]{\symbserif\fontsize{5}{6}\selectfont ☿}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 3.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} Mercury}};
-  \node[anchor=north west, text=black, inner sep=0pt]
-    at (13mm, \boundslow pt - 0.5mm) {\makebox[0.6em][c]{\symbserif\fontsize{5}{6}\selectfont ♀}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 2.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} Venus}};
-  % Manzil boundary: Fargh al-Muʾakhkhar → Baṭn al-Ḥūt at 12°18' (2.3°)
-  \pgfmathsetmacro{\manzilbdy}{2.3 * (\cardheight-20mm)/10}%
-  \draw[black, thin] (2mm, \manzilbdy pt) -- (12.5mm, \manzilbdy pt);
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (7mm, \manzilbdy pt + 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Baṭn al-Ḥūt}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, \manzilbdy pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 28.}\hspace{0.1em}{\arabfont\fontsize{5}{6}\selectfont \beginR بطن الحوت\endR}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Belly of the Fish}};
-  \node[anchor=north west, text=black, inner sep=0pt]
-    at (2.5mm, \manzilbdy pt - 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 27.}\hspace{0.1em}{\arabfont\fontsize{5}{6}\selectfont \beginR فَرْغ المُؤَخَّر\endR}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Latter Spout}};
-  \node[anchor=north west, text=black, inner sep=0pt, xscale=0.48]
-    at (7mm, \manzilbdy pt - 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Fargh al-Mu\kern0.2pt'\kern-0.2ptakhkhar}};
-  % Xiù/Cì boundary: Bì → Kuí / Jūzī → Jiànglóu at 13°33' (3.55°)
-  \pgfmathsetmacro{\xiubdy}{3.55 * (\cardheight-20mm)/10}%
-  \draw[black, thin] (2mm, \xiubdy pt) -- (12.5mm, \xiubdy pt);
-  % Cì (Jupiter stations) — left side
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, \xiubdy pt + 0.5mm) {\makebox[0.6em][c]{\symbserif\fontsize{5}{6}\selectfont ♃}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 4.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 降婁}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Drawing Downward}}};
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (7mm, \xiubdy pt + 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Jiànglóu}};
-  \node[anchor=north west, text=black, inner sep=0pt]
-    at (2.5mm, \xiubdy pt - 0.5mm) {\makebox[0.6em][c]{\symbserif\fontsize{5}{6}\selectfont ♃}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 3.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 娵訾}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Jūzī, who sighs}};
-  % Xiù (lunar mansions) — right side
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (28.65mm, \xiubdy pt + 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Kuí}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (24mm, \xiubdy pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 15.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 奎}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Legs}};
-  \node[anchor=north west, text=black, inner sep=0pt]
-    at (24mm, \xiubdy pt - 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 14.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 壁}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Wall}};
-  \node[anchor=north west, text=black, inner sep=0pt, xscale=0.48]
-    at (29.1mm, \xiubdy pt - 2.5mm) {{\cardfont\fontsize{5}{6}\selectfont Bì}};
-  % Solar term: 清明 Qīngmíng at 15° (5.0°)
-  \pgfmathsetmacro{\qingming}{5.0 * (\cardheight-20mm)/10}%
-  \draw[black, thin] (2mm, \qingming pt) -- (12.5mm, \qingming pt);
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (6.75mm, \qingming pt + 5.4mm) {{\cardfont\fontsize{5}{6}\selectfont Tóng shǐ huá}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, \qingming pt + 3.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 13.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 桐始華}};
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.65]
-    at (13mm, \qingming pt + 5.25mm) {{\cardfont\fontsize{5}{6}\selectfont Paulownia}};
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.65]
-    at (13mm, \qingming pt + 3.75mm) {{\cardfont\fontsize{5}{6}\selectfont Blooms}};
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (6.5mm, \qingming pt + 2mm) {{\cardfont\fontsize{5}{6}\selectfont {\cardfontplain Q}īngmíng}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, \qingming pt + 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 5.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 清明}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Clear \& Bright}};
+  % Bounds: Venus at 0°, Mercury at 2.0°
+  \boundsquare{0}{Venus}
+  \boundsquare{2}{Mercury}
+  % Pādas: Revatī (दे दो च) — ञ is continuation from 2W
+  \padasyllable{0.933}{4.267}{दे}
+  \padasyllable{4.267}{7.6}{दो}
+  \padasyllable{7.6}{10}{च}
+  % Xiù: 奎 Kuí starts at 3.55° — 壁 Bì is continuation from 2W
+  \xiulane{3.55}{奎}{15}
+  % No fixed stars in 2nd decan of Aries
+  % Solar term + pentads
+  \solartermlane{5}{清明}{Qīngmíng}{Clear \& Bright}
+  \pentadlane{0}{始電}{Shǐdiàn}{Lightning Begins}
+  \pentadlane{5}{桐始華}{Tóng shǐ huá}{Paulownia Blooms}
+  % Hexagrams
   \hexagram{1}{1,1,1,1,0,0}{4}{0}{Dàzhuàng}{Great\\Strength}
   \hexagram{5}{0,0,0,1,0,0}{0}{0}{Yù}{Enthusiasm}
   \hexagram{9}{1,1,0,0,1,1}{0}{4}{Sòng}{Conflict}
