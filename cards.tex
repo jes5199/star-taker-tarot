@@ -2095,9 +2095,30 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Libra};
   \decanticks{190}
+  % Bounds: Mercury @0, Jupiter @4
+  \boundsquare{0}{Mercury}
+  \boundsquare{4}{Jupiter}
+  % Manzil: Simāk al-ʿĀzal (14th) starts at 12°18' Libra (2.3°)
+  \manzillane{2.3}{ن}{14}
+  % Pādas: Hasta cont., ण @0.933°, ठ @4.267°, Chitrā (#14) starts @7.6°
+  \padasyllable{0.933}{4.267}{ण}
+  \padasyllable{4.267}{7.6}{ठ}
+  \padasyllable[solid]{7.6}{10}{पे}
+  \nakshatrastart{pada\thepadactr}{14}{}{}{}
+  % Xiù: 軫 Zhěn continues (no boundary in this decan)
+  % Fixed stars
   \fixedstar{0.367}{Vindemiatrix}
-  \fixedstar{1.15}{Gienah}
+  \fixedstar{1.15}{}%
+  \pgfmathsetmacro{\gienahpos}{1.15 * (\cardheight-20mm)/10}%
+  \node[anchor=south west, text=black, inner sep=0pt, rotate=45,
+        font=\cardfont\fontsize{5}{6}\selectfont]
+    at ([xshift=1.8mm, yshift=0.8mm]2.5mm, \gienahpos pt) {Gienah};
   \fixedstar{3.867}{Algorab}
+  % Solar term and pentads
+  \solartermlane{5}{寒露}{Hánlù}{Cold Dew}
+  \pentadlane{0}{水始涸}{Shuǐ shǐ hé}{Waters Dry Up}
+  \pentadlane[0.55]{5}{鴻雁來賓}{Hóngyàn lái bīn}{Wild Geese Arrive}
+  % Hexagrams
   \hexagram{1}{0,0,0,1,1,0}{4}{0}{Guān}{Contemplation}
   \hexagram{5}{1,1,0,1,0,0}{0}{0}{Guī Mèi}{Marrying\\Maiden}
   \hexagram{9}{1,0,0,1,1,1}{0}{4}{Wú Wàng}{Innocence}}]{images/s-03}{Three of Swords}
