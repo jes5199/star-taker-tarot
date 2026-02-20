@@ -2219,8 +2219,26 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Libra};
   \decanticks{200}
+  % Bounds: Jupiter @0, Venus @1, Mars @8
+  \boundsquare{0}{Jupiter}
+  \boundsquare{1}{Venus}
+  \boundsquare{8}{Mars}
+  % Manzil: Ghafr (15th) starts at 25°09' Libra (5.15°)
+  \manzillane{5.15}{ص}{15}
+  % Pādas: Chitrā cont. — पो @0.933°, रा @4.267°, री @7.6°
+  \padasyllable{0.933}{4.267}{पो}
+  \padasyllable{4.267}{7.6}{रा}
+  \padasyllable{7.6}{10}{री}
+  % Xiù: 角 Jiǎo #1 starts at 20°03' Libra (0.05°)
+  \xiulane{0.05}{角}{1}
+  \cistartrotated{yshift=1.5mm}{xiunum1}{壽星}{}{Shòuxīng, Longevity Star}
+  % Fixed stars
   \fixedstar{4.267}{Spica}
-  \fixedstar{4.65}{Arcturus}
+  \fixedstar[label below=1, label yshift=1.5mm]{4.65}{Arcturus}
+  % Pentads (寒露 cont.)
+  \pentadlane[0.55]{0}{雀入大水為蛤}{Què rù dàshuǐ wéi gé}{Sparrows Become Clams}
+  \pentadlane{5}{菊有黃華}{Jú yǒu huáng huá}{Chrysanthemums Bloom}
+  % Hexagrams
   \hexagram{2}{1,0,0,1,1,1}{2}{0}{Wú Wàng}{Innocence}
   \hexagram{7}{1,0,1,0,0,0}{0}{0}{Míng Yí}{Darkening}}]{images/s-04}{Four of Swords}
 
@@ -2576,7 +2594,7 @@
   % Bounds: Jupiter spans entire decan (0°-12° Sag)
   \boundsquare{0}{Jupiter}
   % Manzil: Qalb (18th) at 03°44' Sag (3.733°)
-  \manzillane{3.733}{ص}{18}
+  \manzillane{3.733}{ض}{18}
   % Pādas: Anurādhā 2-4 (नी नू ने) — pāda 1 is continuation
   \padasyllable{0.933}{4.267}{नी}
   \padasyllable{4.267}{7.6}{नू}
