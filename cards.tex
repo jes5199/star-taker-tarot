@@ -2590,9 +2590,29 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Aquarius};
   \decanticks{320}
-  \boundstart{4}{Mars}
-  \fixedstar{3.817}{Sadalsuud}
-  \fixedstar{3.967}{Deneb Algedi}
+  % Bounds: Mars @0, Saturn @5
+  \boundsquare{0}{Mars}
+  \boundsquare{5}{Saturn}
+  % Manzil: Saʿd al-Suʿūd (24th) starts at 20°52' Aquarius (0.867°)
+  \manzillane[yshift=-1.5mm, xshift=-0.5mm]{0.867}{خ}{24}
+  % Pādas: Dhaniṣṭhā cont. गी @0.933°, गु @4.267° (rāśi Kumbha), गे @7.6°
+  \padasyllable{0.933}{4.267}{गी}
+  \padasyllable{4.267}{7.6}{गु}
+  \rashistart{pada\thepadactr}{♒}{कुम्भ}{Kumbha}
+  \padasyllable{7.6}{10}{गे}
+  % Xiù: 虛 Xū #11 starts at 25°37' Aquarius (5.617°)
+  \xiulane{5.617}{虛}{11}
+  % Fixed stars — Sadalsuud (3.817°) and Deneb Algedi (3.967°) 0.15° apart
+  \fixedstar[label below=1, rotate label=-45]{3.817}{Sadalsuud}
+  \fixedstar{3.967}{}%
+  \pgfmathsetmacro{\denebalgedipos}{3.967 * (\cardheight-20mm)/10}%
+  \node[anchor=south west, text=black, inner sep=0pt, rotate=45,
+        font=\cardfont\fontsize{5}{6}\selectfont]
+    at ([xshift=1.8mm, yshift=0.8mm]2.5mm, \denebalgedipos pt) {Deneb Algedi};
+  % Pentads (立春 cont.)
+  \pentadlane{0}{蟄蟲始振}{Zhé chóng shǐ zhèn}{Insects Begin to Stir}
+  \pentadlane[0.55]{5}{魚陟負冰}{Yú zhì fù bīng}{Fish Rise Under Ice}
+  % Hexagrams
   \hexagram{2}{0,1,0,0,0,1}{2}{0}{Méng}{Youthful\\Folly}
   \hexagram{7}{1,0,0,0,1,1}{0}{0}{Yì}{Increase}}]{images/s-07}{Seven of Swords}
 
