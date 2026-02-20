@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass{book}
 \usepackage[paperwidth=60mm, paperheight=102.86mm, margin=0mm]{geometry}
 \usepackage{tikz}
 \usepackage{fontspec}
@@ -6,6 +6,37 @@
 \newfontface\cardfont{EB Garamond SC}[LetterSpace=8]
 \newfontface\reversedC{FreeSerif}
 \newfontface\cuneiform{Noto Sans Cuneiform}
+\setmainfont{EB Garamond}[Scale=0.7]
+
+% Small page numbers at bottom center
+\usepackage{fancyhdr}
+\fancypagestyle{content}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\fontsize{5}{6}\selectfont\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+
+% Smaller section headings for tiny pages
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\cardfont\fontsize{10}{12}\selectfont\centering}{}{0pt}{}
+\titleformat{\section}
+  {\cardfont\fontsize{7}{9}\selectfont\centering}{}{0pt}{}
+\titlespacing*{\chapter}{0pt}{5mm}{3mm}
+\titlespacing*{\section}{0pt}{2mm}{1mm}
+
+% Tiny TOC formatting
+\usepackage{tocloft}
+\renewcommand{\cftchapfont}{\cardfont\fontsize{6}{8}\selectfont}
+\renewcommand{\cftchappagefont}{\fontsize{6}{8}\selectfont}
+\renewcommand{\cftsecfont}{\fontsize{5}{7}\selectfont}
+\renewcommand{\cftsecpagefont}{\fontsize{5}{7}\selectfont}
+\renewcommand{\cfttoctitlefont}{\cardfont\fontsize{10}{12}\selectfont\centering}
+\setlength{\cftbeforechapskip}{1mm}
+\setlength{\cftbeforesecskip}{0.5mm}
+\setlength{\cftsecindent}{3mm}
+\renewcommand{\cftdotsep}{2}
 
 \pagestyle{empty}
 
@@ -68,5 +99,32 @@
         text=black, text width=48mm, align=center]
     at (30mm, 51.43mm) {to {\cuneiform 𒀭𒈹}\kern1pt, Queen of Heaven\\[4mm]and to the muse who inspires\\all creation\\[4mm]and to my child Isaac\\who keeps my brain busy};
 \end{tikzpicture}
+
+% Switch to content layout with margins and page numbers
+\newgeometry{paperwidth=60mm, paperheight=102.86mm, margin=4mm, top=6mm, bottom=6mm}
+\pagestyle{content}
+\setcounter{page}{1}
+
+\tableofcontents
+
+\chapter{Introduction}
+
+\chapter{The Major Arcana}
+
+\section{0 -- The Fool}
+
+\section{I -- The Magician}
+
+\chapter{The Minor Arcana}
+
+\section{Wands}
+
+\section{Cups}
+
+\section{Swords}
+
+\section{Pentacles}
+
+\chapter{Reading the Cards}
 
 \end{document}
