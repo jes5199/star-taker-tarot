@@ -1,0 +1,62 @@
+Egyptian Bounds (Terms) — from Ptolemy's Tetrabiblos I.21
+
+Each sign is divided into 5 unequal segments, each ruled by a classical
+planet (excluding Sun and Moon).  These are the "Egyptian" terms as
+transmitted by Ptolemy, the system used in Hellenistic and medieval practice.
+
+Sign            1st bound        2nd bound        3rd bound        4th bound        5th bound
+──────────────────────────────────────────────────────────────────────────────────────────────
+Aries           Jupiter  0–6°    Venus    6–12°   Mercury 12–20°   Mars    20–25°   Saturn  25–30°
+Taurus          Venus    0–8°    Mercury  8–14°   Jupiter 14–22°   Saturn  22–27°   Mars    27–30°
+Gemini          Mercury  0–6°    Jupiter  6–12°   Venus   12–17°   Mars    17–24°   Saturn  24–30°
+Cancer          Mars     0–7°    Venus    7–13°   Mercury 13–19°   Jupiter 19–26°   Saturn  26–30°
+Leo             Jupiter  0–6°    Venus    6–11°   Saturn  11–18°   Mercury 18–24°   Mars    24–30°
+Virgo           Mercury  0–7°    Venus    7–17°   Jupiter 17–21°   Mars    21–28°   Saturn  28–30°
+Libra           Saturn   0–6°    Mercury  6–14°   Jupiter 14–21°   Venus   21–28°   Mars    28–30°
+Scorpio         Mars     0–7°    Venus    7–11°   Mercury 11–19°   Jupiter 19–24°   Saturn  24–30°
+Sagittarius     Jupiter  0–12°   Venus   12–17°   Mercury 17–21°   Saturn  21–26°   Mars    26–30°
+Capricorn       Mercury  0–7°    Jupiter  7–14°   Venus   14–22°   Saturn  22–26°   Mars    26–30°
+Aquarius        Mercury  0–7°    Venus    7–13°   Jupiter 13–20°   Mars    20–25°   Saturn  25–30°
+Pisces          Venus    0–12°   Jupiter 12–16°   Mercury 16–19°   Mars    19–28°   Saturn  28–30°
+
+Bounds per decan card (\boundsquare degree = position within decan)
+───────────────────────────────────────────────────────────────────
+2W   Aries 1st     Jupiter @0, Venus @6
+3W   Aries 2nd     Venus @0, Mercury @2
+4W   Aries 3rd     Mars @0, Saturn @5
+5P   Taurus 1st    Venus @0, Mercury @8
+6P   Taurus 2nd    Mercury @0, Jupiter @4
+7P   Taurus 3rd    Jupiter @0, Saturn @2, Mars @7
+8S   Gemini 1st    Mercury @0, Jupiter @6
+9S   Gemini 2nd    Jupiter @0, Venus @2, Mars @7
+10S  Gemini 3rd    Mars @0, Saturn @4
+2C   Cancer 1st    Mars @0, Venus @7
+3C   Cancer 2nd    Venus @0, Mercury @3, Jupiter @9
+4C   Cancer 3rd    Jupiter @0, Saturn @6
+5W   Leo 1st       Jupiter @0, Venus @6
+6W   Leo 2nd       Venus @0, Saturn @1, Mercury @8
+7W   Leo 3rd       Mercury @0, Mars @4
+8P   Virgo 1st     Mercury @0, Venus @7
+9P   Virgo 2nd     Venus @0, Jupiter @7
+10P  Virgo 3rd     Jupiter @0, Mars @1, Saturn @8
+2S   Libra 1st     Saturn @0, Mercury @6
+3S   Libra 2nd     Mercury @0, Jupiter @4
+4S   Libra 3rd     Jupiter @0, Venus @1, Mars @8
+5C   Scorpio 1st   Mars @0, Venus @7
+6C   Scorpio 2nd   Venus @0, Mercury @1, Jupiter @9
+7C   Scorpio 3rd   Jupiter @0, Saturn @4
+8W   Sag 1st       Jupiter @0
+9W   Sag 2nd       Jupiter @0, Venus @2, Mercury @7
+10W  Sag 3rd       Mercury @0, Saturn @1, Mars @6
+2P   Cap 1st       Mercury @0, Jupiter @7
+3P   Cap 2nd       Jupiter @0, Venus @4
+4P   Cap 3rd       Venus @0, Saturn @2, Mars @6
+5S   Aquarius 1st  Mercury @0, Venus @7
+6S   Aquarius 2nd  Venus @0, Jupiter @3
+7S   Aquarius 3rd  Mars @0, Saturn @5
+8C   Pisces 1st    Venus @0
+9C   Pisces 2nd    Venus @0, Jupiter @2, Mercury @6, Mars @9
+10C  Pisces 3rd    Mars @0, Saturn @8
+
+Source: Ptolemy, Tetrabiblos I.21, via LacusCurtius (penelope.uchicago.edu).
+Verified against card annotations in cards.tex.

@@ -1532,13 +1532,18 @@
 % Chinese money suit marks — top-right only
 % #1 = numeral (e.g. 一), #2 = suit name (e.g. 条), #3 = optional mahjong tile
 \newcommand{\chinesecardmarks}[3][]{%
+  \directlua{
+    if "\luaescapestring{#2}" == "一" then
+      tex.sprint([[\noexpand\node[anchor=north, text=black, font=\noexpand\cjkfontgb\noexpand\fontsize{20}{22}\noexpand\selectfont, inner sep=0pt] at (\noexpand\cardwidth-4.5mm, \noexpand\cardheight-4mm) {#2};]])
+    else
+      tex.sprint([[\noexpand\node[anchor=north, text=black, font=\noexpand\cjkfontgb\noexpand\fontsize{20}{22}\noexpand\selectfont, inner sep=0pt] at (\noexpand\cardwidth-4.5mm, \noexpand\cardheight-2mm) {#2};]])
+    end
+  }
   \node[anchor=north, text=black, font=\cjkfontgb\fontsize{20}{22}\selectfont,
-    inner sep=0pt] at (\cardwidth-4.5mm, \cardheight-4mm) {#2};
-  \node[anchor=north, text=black, font=\cjkfontgb\fontsize{20}{22}\selectfont,
-    inner sep=0pt] at (\cardwidth-4.5mm, \cardheight-9mm) {#3};
+    inner sep=0pt] at (\cardwidth-4.5mm, \cardheight-8.5mm) {#3};
   \def\temp{#1}\ifx\temp\empty\else
     \node[anchor=north, text=black, font=\symbserif\fontsize{18}{20}\selectfont,
-      inner sep=0pt] at (\cardwidth-4.5mm, \cardheight-16.5mm) {#1};
+      inner sep=0pt] at (\cardwidth-4.5mm, \cardheight-15.5mm) {#1};
   \fi
 }
 
@@ -2565,12 +2570,36 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Pisces};
   \decanticks{330}
-  \solartermstart{2}{雨水}{Yǔshuǐ}{Rain Water}
-  \boundstart{1}{Venus}
-  \fixedstar{3.783}{Sadalmelik}
-  \fixedstar{4.283}{Fomalhaut}
+  % Bounds: Venus @0 (Venus rules 0–12° Pisces)
+  \boundsquare{0}{Venus}
+  % Manzil: Saʿd al-Akhbiyya (25th) at 03°44' Pisces (3.733°)
+  \manzillane{3.733}{ذ}{25}
+  % Pādas: Dhaniṣṭhā 4 (गे), then Śatabhiṣā 1-3 (गो सा सी) — nakṣatra 24 starts at 0.933°
+  \padasyllable{0}{0.933}{गे}
+  \padasyllable[solid]{0.933}{4.267}{गो}
+  \nakshatrastart{pada\thepadactr}{24}{}{}{}
+  \padasyllable{4.267}{7.6}{सा}
+  \padasyllable{7.6}{10}{सी}
+  % Xiù: 危 Wēi (12) at 03°50' Pisces (3.833°) — no cì boundary
+  \xiulane{3.833}{危}{12}
+  % Fixed stars — Sadalmelik and Fomalhaut 0.5° apart
+  \fixedstar{3.783}{}%
+  \pgfmathsetmacro{\sadalpos}{3.783 * (\cardheight-20mm)/10}%
+  \node[anchor=north west, text=black, inner sep=0pt, rotate=-45,
+        font=\cardfont\fontsize{5}{6}\selectfont]
+    at ([xshift=1.8mm, yshift=-0.8mm]2.5mm, \sadalpos pt) {Sadalmelik};
+  \fixedstar{4.283}{}%
+  \pgfmathsetmacro{\fomalpos}{4.283 * (\cardheight-20mm)/10}%
+  \node[anchor=south west, text=black, inner sep=0pt, rotate=45,
+        font=\cardfont\fontsize{5}{6}\selectfont]
+    at ([xshift=1.8mm, yshift=0.8mm]2.5mm, \fomalpos pt) {Fomalhaut};
   \fixedstar{5.75}{Deneb}
   \fixedstar{7.133}{Sadalachbia}
+  % Solar term and pentads
+  \solartermlane{0}{雨水}{Yǔshuǐ}{Rain Water}
+  \pentadlane{0}{獺祭魚}{Tǎ jì yú}{Otters Sacrifice Fish}
+  \pentadlane{5}{鴻雁來}{Hóngyàn lái}{Wild Geese Arrive}
+  % Hexagrams
   \hexagram{3}{0,0,1,0,1,1}{0}{0}{Jiàn}{Development}
   \hexagram{8}{1,1,1,0,0,0}{0}{2}{Tài}{Peace}}]{images/c-08}{Eight of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{8}{♠}{1.0}{1.0}
