@@ -1370,18 +1370,20 @@
   rotate label/.initial=0,
   label below/.initial=0,
   label yshift/.initial=0mm,
+  label xshift/.initial=0mm,
 }
 \newcommand{\fixedstar}[3][]{%
-  \pgfkeys{/fixedstar/.cd, xshift=0mm, rotate label=0, label below=0, label yshift=0mm, #1}%
+  \pgfkeys{/fixedstar/.cd, xshift=0mm, rotate label=0, label below=0, label yshift=0mm, label xshift=0mm, #1}%
   \pgfkeysgetvalue{/fixedstar/xshift}{\fsxshift}%
   \pgfkeysgetvalue{/fixedstar/rotate label}{\fsrotate}%
   \pgfkeysgetvalue{/fixedstar/label below}{\fslabelbelow}%
   \pgfkeysgetvalue{/fixedstar/label yshift}{\fslabelyshift}%
+  \pgfkeysgetvalue{/fixedstar/label xshift}{\fslabelxshift}%
   \pgfmathsetmacro{\starpos}{#2 * (\cardheight-20mm)/10}%
   \ifnum\fslabelbelow=1
     \node[anchor=west, text=black, inner sep=0pt, xshift=\fsxshift] (fixedstar@tmp)
       at (2.5mm, \starpos pt) {{\symbfont\fontsize{5}{6}\selectfont ★}};
-    \node[anchor=west, text=black, inner sep=0pt, rotate=\fsrotate, yshift=\fslabelyshift]
+    \node[anchor=west, text=black, inner sep=0pt, rotate=\fsrotate, yshift=\fslabelyshift, xshift=\fslabelxshift]
       at (fixedstar@tmp.south east) {{\cardfont\fontsize{5}{6}\selectfont #3}};
   \else
     \node[anchor=west, text=black, inner sep=0pt, xshift=\fsxshift]
@@ -2009,9 +2011,24 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Capricorn};
   \decanticks{270}
-  \solartermstart{22}{冬至}{Dōngzhì}{Winter Solstice}
-  \boundstart{1}{Mercury}
+  % Bounds: Mercury @0, Jupiter @7
+  \boundsquare{0}{Mercury}
+  \boundsquare{7}{Jupiter}
+  % No manzil starts in this decan (Naʿāʾim #20 continues)
+  % Pādas: Mūla cont. (भा भी), Pūrvāṣāḍhā (#20) starts @7.6°
+  \padasyllable{0.933}{4.267}{भा}
+  \padasyllable{4.267}{7.6}{भी}
+  \padasyllable[solid]{7.6}{10}{भू}
+  \nakshatrastart{pada\thepadactr}{20}{}{}{}
+  % Xiù: 箕 Jī (#7) starts at 2°07' Cap (2.117°)
+  \xiulane{2.117}{箕}{7}
+  % Fixed star
   \fixedstar{1.683}{Alnasl}
+  % Solar term and pentads
+  \solartermlane{0}{冬至}{Dōngzhì}{Winter Solstice}
+  \pentadlane{0}{蚯蚓結}{Qiūyǐn jié}{Earthworms Coil Up}
+  \pentadlane{5}{麋角解}{Mí jiǎo jiě}{Elk Shed Antlers}
+  % Hexagrams
   \hexagram{3}{1,1,0,0,1,1}{0}{0}{Zhōng Fú}{Inner\\Truth}
   \hexagram{8}{1,0,0,0,0,0}{0}{2}{Fù}{Return}
   \chinesecardmarks[🀚]{二}{并}}]{images/p-02}{Two of Pentacles}
@@ -2139,10 +2156,28 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Capricorn};
   \decanticks{280}
+  % Bounds: Jupiter @0, Venus @4
+  \boundsquare{0}{Jupiter}
+  \boundsquare{4}{Venus}
+  % Manzil: Balda (21st) starts at 12°18' Cap (2.3°)
+  \manzillane{2.3}{س}{21}
+  % Pādas: Pūrvāṣāḍhā cont. — धा @0.933°, फा @4.267°, ढ @7.6°
+  \padasyllable{0.933}{4.267}{धा}
+  \padasyllable{4.267}{7.6}{फा}
+  \padasyllable{7.6}{10}{ढ}
+  % Xiù: 斗 Dǒu (#8) starts at 12°55' Cap (2.917°)
+  \xiulane{2.917}{斗}{8}
+  \cistart{xiunum8}{星紀}{Xīngjì}{Star Chronicle}
+  % Fixed stars
   \fixedstar{0.6}{Phi Sagittarii}
-  \fixedstar{4.067}{Ascella}
+  \fixedstar[xshift=2mm]{4.067}{Ascella}
   \fixedstar{5.75}{Vega}
   \fixedstar{6.683}{Albaldah}
+  % Solar term and pentads
+  \pentadlane{0}{水泉動}{Shuǐquán dòng}{Springs Begin to Flow}
+  \solartermlane{5}{小寒}{Xiǎohán}{Minor Cold}
+  \pentadlane{5}{雁北鄉}{Yàn běi xiāng}{Wild Geese Return North}
+  % Hexagrams
   \hexagram{1}{1,0,0,0,0,0}{4}{0}{Fù}{Return}
   \hexagram{5}{1,0,0,0,1,0}{0}{0}{Zhūn}{Difficulty}
   \hexagram{9}{0,0,1,0,0,0}{0}{4}{Qiān}{Modesty}}]{images/p-03}{Three of Pentacles}
@@ -2263,7 +2298,24 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Capricorn};
   \decanticks{290}
-  % no fixed stars in 3rd decan of Capricorn
+  % Bounds: Venus @0, Saturn @2, Mars @6
+  \boundsquare{0}{Venus}
+  \boundsquare{2}{Saturn}
+  \boundsquare{6}{Mars}
+  % Manzil: Saʿd al-Dhābiḥ (22nd) starts at 25°09' Cap (5.15°)
+  \manzillane{5.15}{ت}{22}
+  % Pādas: Uttarāṣāḍhā (#21) starts @0.933°, rāśi Makara @4.267°
+  \padasyllable[solid]{0.933}{4.267}{भे}
+  \nakshatrastart{pada\thepadactr}{21}{}{}{}
+  \padasyllable{4.267}{7.6}{भो}
+  \rashistart{pada\thepadactr}{♑}{मकर}{Makara}
+  \padasyllable{7.6}{10}{जा}
+  % Xiù: 斗 Dǒu continues (no boundary in this decan)
+  % No fixed stars in 3rd decan of Capricorn
+  % Pentads (小寒 cont.)
+  \pentadlane{0}{鵲始巢}{Què shǐ cháo}{Magpies Begin to Nest}
+  \pentadlane{5}{雉始雊}{Zhì shǐ gòu}{Pheasants Begin to Crow}
+  % Hexagrams
   \hexagram{2}{0,0,1,0,0,0}{2}{0}{Qiān}{Modesty}
   \hexagram{7}{1,1,0,1,0,1}{0}{0}{Kuí}{Opposition}}]{images/p-04}{Four of Pentacles}
 
@@ -2386,11 +2438,28 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Taurus};
   \decanticks{30}
-  \solartermstart{6}{穀雨}{Gǔyǔ}{Grain Rain}
-  \boundstart{1}{Venus}
+  % Bounds: Venus @0, Mercury @8
+  \boundsquare{0}{Venus}
+  \boundsquare{8}{Mercury}
+  % Manzil: Buṭayn (2nd) starts at 8°01' Taurus (8.017°)
+  \manzillane{8.017}{ب}{2}
+  % Pādas: Aśvinī cont. (चो ला), Bharaṇī (#2) starts @7.6°
+  \padasyllable{0.933}{4.267}{चो}
+  \padasyllable{4.267}{7.6}{ला}
+  \padasyllable[solid]{7.6}{10}{ली}
+  \nakshatrastart{pada\thepadactr}{2}{}{}{}
+  % Xiù: 胃 Wèi (#17) starts at 8°53' Taurus (8.883°)
+  \xiulane{8.883}{胃}{17}
+  \cistart{xiunum17}{大梁}{Dàliáng}{Great Beam}
+  % Fixed stars
   \fixedstar{0.833}{Mirach}
-  \fixedstar{4.4}{Sheratan}
-  \fixedstar{8.083}{Hamal}
+  \fixedstar[label below=1, rotate label=-45]{4.4}{Sheratan}
+  \fixedstar[xshift=4mm]{8.083}{Hamal}
+  % Solar term and pentads
+  \solartermlane{0}{穀雨}{Gǔyǔ}{Grain Rain}
+  \pentadlane{0}{萍始生}{Píng shǐ shēng}{Duckweed Begins to Grow}
+  \pentadlane{5}{鳴鳩拂其羽}{Míng jiū fú qí yǔ}{Cooing Doves Preen}
+  % Hexagrams
   \hexagram{3}{1,0,1,1,1,0}{0}{0}{Gé}{Revolution}
   \hexagram{8}{1,1,1,1,1,0}{0}{2}{Guài}{Breakthrough}}]{images/p-05}{Five of Pentacles}
 
@@ -2515,7 +2584,22 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Taurus};
   \decanticks{40}
+  % Bounds: Mercury @0, Jupiter @4
+  \boundsquare{0}{Mercury}
+  \boundsquare{4}{Jupiter}
+  % No manzil starts in this decan (Buṭayn #2 continues)
+  % Pādas: Bharaṇī cont. — लू @0.933°, ले @4.267°, लो @7.6°
+  \padasyllable{0.933}{4.267}{लू}
+  \padasyllable{4.267}{7.6}{ले}
+  \padasyllable{7.6}{10}{लो}
+  % Xiù: 胃 Wèi continues (no boundary in this decan)
+  % Fixed star
   \fixedstar{7.367}{35 Arietis}
+  % Solar term and pentads
+  \pentadlane[0.6]{0}{戴勝降於桑}{Dài shèng jiàng yú sāng}{Hoopoes Alight on Mulberries}
+  \solartermlane{5}{立夏}{Lìxià}{Start of Summer}
+  \pentadlane{5}{螻蟈鳴}{Lóuguō míng}{Frogs Begin to Croak}
+  % Hexagrams
   \hexagram{1}{1,1,1,1,1,0}{4}{0}{Guài}{Breakthrough}
   \hexagram{5}{0,0,1,1,0,1}{0}{0}{Lǚ}{The Wanderer}
   \hexagram{9}{0,1,0,0,0,0}{0}{4}{Shī}{The Army}}]{images/p-06}{Six of Pentacles}
@@ -2637,9 +2721,28 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Taurus};
   \decanticks{50}
-  \fixedstar{1.283}{Botein}
+  % Bounds: Jupiter @0, Saturn @2, Mars @7
+  \boundsquare{0}{Jupiter}
+  \boundsquare{2}{Saturn}
+  \boundsquare{7}{Mars}
+  % Manzil: Thurayyā (3rd) starts at 20°52' Taurus (0.867°)
+  \manzillane[yshift=-1.5mm]{0.867}{ج}{3}
+  % Pādas: Kṛttikā (#3) starts @0.933°, rāśi Vṛṣabha @4.267°
+  \padasyllable[solid]{0.933}{4.267}{अ}
+  \nakshatrastart{pada\thepadactr}{3}{}{}{}
+  \padasyllable{4.267}{7.6}{ई}
+  \rashistart{pada\thepadactr}{♉}{वृषभ}{Vṛṣabha}
+  \padasyllable{7.6}{10}{उ}
+  % Xiù: 昴 Mǎo (#18) starts at 24°22' Taurus (4.367°)
+  \xiulane{4.367}{昴}{18}
+  % Fixed stars
+  \fixedstar[label below=1, rotate label=45, label yshift=1mm, label xshift=1mm]{1.283}{Botein}
   \fixedstar{6.583}{Algol}
   \fixedstar{9.833}{Electra}
+  % Pentads (立夏 cont.)
+  \pentadlane{0}{蚯蚓出}{Qiūyǐn chū}{Earthworms Emerge}
+  \pentadlane{5}{王瓜生}{Wángguā shēng}{Royal Melons Grow}
+  % Hexagrams
   \hexagram{2}{0,1,0,0,0,0}{2}{0}{Shī}{The Army}
   \hexagram{7}{0,0,0,0,1,0}{0}{0}{Bǐ}{Holding\\Together}}]{images/p-07}{Seven of Pentacles}
 
@@ -2767,10 +2870,26 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Virgo};
   \decanticks{150}
-  \solartermstart{14}{處暑}{Chǔshǔ}{End of Heat}
-  \boundstart{1}{Mercury}
+  % Bounds: Mercury @0, Venus @7
+  \boundsquare{0}{Mercury}
+  \boundsquare{7}{Venus}
+  % Manzil: Zubra (11th) starts at 3°44' Virgo (3.733°)
+  \manzillane{3.733}{ك}{11}
+  % Pādas: Maghā cont. (मू मे), Pūrva Phālgunī (#11) starts @7.6°
+  \padasyllable{0.933}{4.267}{मू}
+  \padasyllable{4.267}{7.6}{मे}
+  \padasyllable[solid]{7.6}{10}{मो}
+  \nakshatrastart{pada\thepadactr}{11}{}{}{}
+  % Xiù: 張 Zhāng (#26) starts at 0°24' Virgo (0.4°)
+  \xiulane{0.4}{張}{26}
+  % Fixed stars
   \fixedstar{0.25}{Regulus}
   \fixedstar{6.117}{Upsilon-1 Hydrae}
+  % Solar term and pentads
+  \solartermlane{0}{處暑}{Chǔshǔ}{End of Heat}
+  \pentadlane{0}{鷹乃祭鳥}{Yīng nǎi jì niǎo}{Hawks Offer Birds}
+  \pentadlane{5}{天地始肅}{Tiāndì shǐ sù}{Heaven \& Earth Grow Austere}
+  % Hexagrams
   \hexagram{3}{1,1,0,0,0,1}{0}{0}{Sǔn}{Decrease}
   \hexagram{8}{0,0,0,1,1,1}{0}{2}{Pǐ}{Standstill}}]{images/p-08}{Eight of Pentacles}
 
@@ -2897,7 +3016,25 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Virgo};
   \decanticks{160}
+  % Bounds: Venus @0, Jupiter @7
+  \boundsquare{0}{Venus}
+  \boundsquare{7}{Jupiter}
+  % Manzil: Ṣarfa (12th) starts at 16°35' Virgo (6.583°)
+  \manzillane{6.583}{ل}{12}
+  % Pādas: Pūrva Phālgunī cont. — टा @0.933°, टी @4.267°, टू @7.6°
+  \padasyllable{0.933}{4.267}{टा}
+  \padasyllable{4.267}{7.6}{टी}
+  \padasyllable{7.6}{10}{टू}
+  % Xiù: 翼 Yì (#27) starts at 16°29' Virgo (6.483°)
+  \xiulane{6.483}{翼}{27}
+  \cistartrotated{}{xiunum27}{鶉尾}{}{Chúnwěi, Quail Tail}
+  % Fixed star
   \fixedstar{1.75}{Zosma}
+  % Solar term and pentads
+  \pentadlane{0}{禾乃登}{Hé nǎi dēng}{Grain Ripens}
+  \solartermlane{5}{白露}{Báilù}{White Dew}
+  \pentadlane{5}{鴻雁來}{Hóngyàn lái}{Wild Geese Arrive}
+  % Hexagrams
   \hexagram{1}{0,0,0,1,1,1}{4}{0}{Pǐ}{Standstill}
   \hexagram{5}{0,1,1,0,1,1}{0}{0}{Xùn}{The Gentle}
   \hexagram{9}{0,0,0,1,1,0}{0}{4}{Cuì}{Gathering}}]{images/p-09}{Nine of Pentacles}
@@ -3024,10 +3161,28 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Virgo};
   \decanticks{170}
+  % Bounds: Jupiter @0, Mars @1, Saturn @8
+  \boundsquare{0}{Jupiter}
+  \boundsquare{1}{Mars}
+  \boundsquare{8}{Saturn}
+  % Manzil: ʿAwwāʾ (13th) starts at 29°26' Virgo (9.433°)
+  \manzillane{9.433}{م}{13}
+  % Pādas: Uttara Phālgunī (#12) starts @0.933°, rāśi Kanyā @4.267°
+  \padasyllable[solid]{0.933}{4.267}{टे}
+  \nakshatrastart{pada\thepadactr}{12}{}{}{}
+  \padasyllable{4.267}{7.6}{टो}
+  \rashistart{pada\thepadactr}{♍}{कन्या}{Kanyā}
+  \padasyllable{7.6}{10}{पा}
+  % Xiù: 翼 Yì continues (no boundary in this decan)
+  % Fixed stars — Alkaid (7.367°) and Zavijava (7.6°) 0.233° apart
   \fixedstar{2.033}{Denebola}
   \fixedstar{4.1}{Alkes}
   \fixedstar{7.367}{Alkaid}
-  \fixedstar{7.6}{Zavijava}
+  \fixedstar[label below=1]{7.6}{Zavijava}
+  % Pentads (白露 cont.)
+  \pentadlane{0}{玄鳥歸}{Xuánniǎo guī}{Swallows Return South}
+  \pentadlane{5}{群鳥養羞}{Qúnniǎo yǎng xiū}{Birds Store Provisions}
+  % Hexagrams
   \hexagram{2}{0,0,0,1,1,0}{2}{0}{Cuì}{Gathering}
   \hexagram{7}{1,1,1,0,0,1}{0}{0}{Dà Chù}{Great\\Taming}}]{images/p-10}{Ten of Pentacles}
 
