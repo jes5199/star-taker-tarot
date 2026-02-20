@@ -2360,8 +2360,27 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Scorpio};
   \decanticks{220}
+  % Bounds: Venus at 0°, Mercury at 1°, Jupiter at 9°
+  \boundsquare{0}{Venus}
+  \boundsquare{1}{Mercury}
+  \boundsquare{9}{Jupiter}
+  % No manzil starts (Zubānā continues)
+  % Pādas: Svātī 4 (ता), Viśākhā 1-2 (ती तू) — nakṣatra 16 starts at 4.267°
+  \padasyllable{0.933}{4.267}{ता}
+  \padasyllable[solid]{4.267}{7.6}{ती}
+  \nakshatrastart{pada\thepadactr}{16}{}{}{}
+  \padasyllable{7.6}{10}{तू}
+  % Xiù: 氐 Dǐ (3) at 10°41' Scorpio (0.683°) + cì 大火 Dàhuǒ
+  \xiulane{0.683}{氐}{3}
+  \cistart{xiunum3}{大火}{Dàhuǒ}{Great Fire}
+  % Fixed stars
   \fixedstar{2.717}{Alphecca}
   \fixedstar{5.5}{Zubenelgenubi}
+  % Solar term and pentads
+  \pentadlane{0}{蟄蟲咸俯}{Zhé chóng xián fǔ}{Insects Bow Down}
+  \solartermlane{5}{立冬}{Lìdōng}{Start of Winter}
+  \pentadlane{5}{水始冰}{Shuǐ shǐ bīng}{Water Begins to Freeze}
+  % Hexagrams
   \hexagram{1}{0,0,0,0,0,1}{4}{0}{Bō}{Splitting\\Apart}
   \hexagram{5}{0,0,1,0,0,1}{0}{0}{Gèn}{Keeping\\Still}
   \hexagram{9}{1,0,1,0,1,0}{0}{4}{Jì Jì}{After\\Completion}}]{images/c-06}{Six of Cups}\hfill
