@@ -4,6 +4,8 @@
 \usepackage{fontspec}
 
 \newfontface\cardfont{EB Garamond SC}[LetterSpace=8]
+\newfontface\reversedC{FreeSerif}
+\newfontface\cuneiform{Noto Sans Cuneiform}
 
 \pagestyle{empty}
 
@@ -33,6 +35,38 @@
 
 \newpage
 
-Page two.
+% Page two - blank back of cover
+\phantom{x}
+
+\newpage
+
+% Page three - author page
+\noindent
+\begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle (60mm, 102.86mm);
+  % Title at top
+  \node[anchor=north, font=\cardfont\fontsize{20}{24}\selectfont,
+        text=black, text width=50mm, align=center]
+    at (30mm, 97mm) {Star\\Taker\\Tarot};
+  % "by" in the middle
+  \node[anchor=center, font=\cardfont\fontsize{10}{14}\selectfont,
+        text=black, text width=50mm, align=center]
+    at (30mm, 51.43mm) {by};
+  % Author and numeral at bottom
+  \node[anchor=south, font=\cardfont\fontsize{10}{14}\selectfont,
+        text=black, text width=50mm, align=center]
+    at (30mm, 6mm) {Jes\\Annalemma\\Haze Janvir\\Dolan-Wolfe\\I{\reversedC Ↄ}{\reversedC Ↄ}CXCIX};
+\end{tikzpicture}
+
+\newpage
+
+% Page four - dedications
+\noindent
+\begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle (60mm, 102.86mm);
+  \node[anchor=center, font=\cardfont\fontsize{8}{12}\selectfont,
+        text=black, text width=48mm, align=center]
+    at (30mm, 51.43mm) {to {\cuneiform 𒀭𒈹}\kern1pt, Queen of Heaven\\[4mm]and to the muse who inspires\\all creation\\[4mm]and to my child Isaac\\who keeps my brain busy};
+\end{tikzpicture}
 
 \end{document}
