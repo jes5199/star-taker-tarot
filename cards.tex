@@ -1976,9 +1976,23 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Libra};
   \decanticks{180}
-  \solartermstart{16}{秋分}{Qiūfēn}{Autumn Equinox}
-  \boundstart{1}{Saturn}
-  % no fixed stars in 1st decan of Libra
+  % Bounds: Saturn @0, Mercury @6
+  \boundsquare{0}{Saturn}
+  \boundsquare{6}{Mercury}
+  % No manzil starts in this decan (ʿAwwāʾ #13 continues)
+  % Pādas: Uttara Phālgunī pāda 4 (पी) @0.933°, Hasta (#13) starts @4.267°
+  \padasyllable{0.933}{4.267}{पी}
+  \padasyllable[solid]{4.267}{7.6}{पू}
+  \nakshatrastart{pada\thepadactr}{13}{}{}{}
+  \padasyllable{7.6}{10}{ष}
+  % Xiù: 軫 Zhěn (#28) starts at 3°59' Libra (3.983°)
+  \xiulane{3.983}{軫}{28}
+  % No fixed stars in 1st decan of Libra
+  % Solar term and pentads
+  \solartermlane{0}{秋分}{Qiūfēn}{Autumn Equinox}
+  \pentadlane[0.55]{0}{雷始收聲}{Léi shǐ shōu shēng}{Thunder Subsides}
+  \pentadlane[0.55]{5}{蟄蟲壞戶}{Zhé chóng huài hù}{Insects Seal Burrows}
+  % Hexagrams
   \hexagram{3}{1,0,1,0,0,1}{0}{0}{Bì}{Grace}
   \hexagram{8}{0,0,0,1,1,0}{0}{2}{Guān}{Contemplation}
   \chinesecardmarks{二}{十}}]{images/s-02}{Two of Swords}
@@ -2574,8 +2588,7 @@
   \boundsquare{0}{Venus}
   % Manzil: Saʿd al-Akhbiyya (25th) at 03°44' Pisces (3.733°)
   \manzillane{3.733}{ذ}{25}
-  % Pādas: Dhaniṣṭhā 4 (गे), then Śatabhiṣā 1-3 (गो सा सी) — nakṣatra 24 starts at 0.933°
-  \padasyllable{0}{0.933}{गे}
+  % Pādas: Śatabhiṣā 1-3 (गो सा सी) — nakṣatra 24 starts at 0.933°
   \padasyllable[solid]{0.933}{4.267}{गो}
   \nakshatrastart{pada\thepadactr}{24}{}{}{}
   \padasyllable{4.267}{7.6}{सा}
@@ -2697,8 +2710,7 @@
   \boundsquare{9}{Mars}
   % Manzil: Fargh al-Muqaddim (26th) starts at 16°35' Pisces (6.583°)
   \manzillane{6.583}{ظ}{26}
-  % Pādas: Śatabhiṣā 4 (सी) continues, then सू @0.933°, Pūrva Bhādrapadā (#25) starts @4.267°
-  \padasyllable{0}{0.933}{सी}
+  % Pādas: सू @0.933°, Pūrva Bhādrapadā (#25) starts @4.267°
   \padasyllable{0.933}{4.267}{सू}
   \padasyllable[solid]{4.267}{7.587}{से}
   \nakshatrastart{pada\thepadactr}{25}{}{}{}
@@ -2801,8 +2813,7 @@
   \boundsquare{8}{Saturn}
   % Manzil: Fargh al-Muʾakkhir (27th) starts at 29°26' Pisces (9.433°)
   \manzillane{9.433}{غ}{27}
-  % Pādas: Pūrva Bhādrapadā cont. (सो), then दा @0.907°, दी @4.227°, Uttara Bhādrapadā (#26) @7.6°
-  \padasyllable{0}{0.907}{सो}
+  % Pādas: दा @0.907°, दी @4.227°, Uttara Bhādrapadā (#26) @7.6°
   \padasyllable{0.907}{4.227}{दा}
   \padasyllable{4.227}{7.6}{दी}
   \padasyllable[solid]{7.6}{10}{दू}
