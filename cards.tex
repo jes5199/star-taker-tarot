@@ -1432,22 +1432,23 @@
 
 % Rāśi start marker (standalone, when not coinciding with nakṣatra start)
 % #1 = pada node name, #2 = rāśi symbol, #3 = rāśi Devanagari, #4 = rāśi romanization
-\newcommand{\rashistart}[4]{%
-  \node[anchor=west, text=black, inner sep=0pt,
+\newcommand{\rashistart}[5][]{%
+  \node[anchor=west, text=black, inner sep=0pt, #1,
         font=\fontsize{5}{6}\selectfont]
-    at ([xshift=0.25mm]#1.east) {{\symbfont #2}\hspace{0.1em}{\devfont #3}\hspace{0.1em}{\cardfont #4}};
+    at ([xshift=0.25mm]#2.east) {{\symbfont #3}\hspace{0.1em}{\devfont #4}\hspace{0.1em}{\cardfont #5}};
 }
 
 % Xiù lane: CJK character in a thin circle + ordinal number
-% #1 = degree position (bottom of span), #2 = xiù character, #3 = ordinal (1-28)
-\newcommand{\xiulane}[3]{%
-  \pgfmathsetmacro{\xiubot}{#1 * (\cardheight-20mm)/10}%
+% #1 = optional TikZ keys for ordinal node (e.g. yshift=-1.5mm)
+% #2 = degree position (bottom of span), #3 = xiù character, #4 = ordinal (1-28)
+\newcommand{\xiulane}[4][]{%
+  \pgfmathsetmacro{\xiubot}{#2 * (\cardheight-20mm)/10}%
   \node[anchor=south west, draw=black, thin, circle, minimum size=3.5mm, inner sep=0pt, text=black,
-        font=\cjkfont\fontsize{5}{6}\selectfont] (xiu#3)
-    at (12.5mm, \xiubot pt) {#2};
-  \node[anchor=west, text=black, inner sep=0pt,
-        font=\cardfont\fontsize{5}{6}\selectfont] (xiunum#3)
-    at ([xshift=0.25mm]xiu#3.east) {#3};
+        font=\cjkfont\fontsize{5}{6}\selectfont] (xiu#4)
+    at (12.5mm, \xiubot pt) {#3};
+  \node[anchor=west, text=black, inner sep=0pt, #1,
+        font=\cardfont\fontsize{5}{6}\selectfont] (xiunum#4)
+    at ([xshift=0.25mm]xiu#4.east) {#4};
 }
 % Manzil lane: Arabic letter in a thin circle + ordinal number
 % #1 = optional TikZ keys for ordinal node (e.g. yshift=-2.5mm, xshift=-1.5mm)
@@ -2450,11 +2451,11 @@
   \nakshatrastart{pada\thepadactr}{2}{}{}{}
   % Xiù: 胃 Wèi (#17) starts at 8°53' Taurus (8.883°)
   \xiulane{8.883}{胃}{17}
-  \cistart{xiunum17}{大梁}{Dàliáng}{Great Beam}
+  \cistartrotated{rotate=90, yshift=-1mm}{xiunum17}{大梁}{Dàliáng}{Great Beam}
   % Fixed stars
   \fixedstar{0.833}{Mirach}
   \fixedstar[label below=1, rotate label=-45]{4.4}{Sheratan}
-  \fixedstar[xshift=4mm]{8.083}{Hamal}
+  \fixedstar[xshift=6mm]{8.083}{Hamal}
   % Solar term and pentads
   \solartermlane{0}{穀雨}{Gǔyǔ}{Grain Rain}
   \pentadlane{0}{萍始生}{Píng shǐ shēng}{Duckweed Begins to Grow}
@@ -2731,7 +2732,7 @@
   \padasyllable[solid]{0.933}{4.267}{अ}
   \nakshatrastart{pada\thepadactr}{3}{}{}{}
   \padasyllable{4.267}{7.6}{ई}
-  \rashistart{pada\thepadactr}{♉}{वृषभ}{Vṛṣabha}
+  \rashistart[xshift=5mm]{pada\thepadactr}{♉}{वृषभ}{Vṛṣabha}
   \padasyllable{7.6}{10}{उ}
   % Xiù: 昴 Mǎo (#18) starts at 24°22' Taurus (4.367°)
   \xiulane{4.367}{昴}{18}
@@ -3027,7 +3028,7 @@
   \padasyllable{7.6}{10}{टू}
   % Xiù: 翼 Yì (#27) starts at 16°29' Virgo (6.483°)
   \xiulane{6.483}{翼}{27}
-  \cistartrotated{}{xiunum27}{鶉尾}{}{Chúnwěi, Quail Tail}
+  \cistartrotated{rotate=90, yshift=-1mm}{xiunum27}{鶉尾}{Chúnwěi}{Quail Tail}
   % Fixed star
   \fixedstar{1.75}{Zosma}
   % Solar term and pentads
