@@ -2033,8 +2033,11 @@
   % Bounds: Venus at 0°, Mercury at 2.0°
   \boundsquare{0}{Venus}
   \boundsquare{2}{Mercury}
-  % Pādas: Revatī (दे दो च) — ञ is continuation from 2W
-  \padasyllable{0.933}{4.267}{दे}
+  % Manzil: Rishāʾ/Baṭn al-Ḥūt (28th) starts at 12°18' Aries (2.3°)
+  \manzillane{2.3}{ش}{28}
+  % Pādas: Revatī (#27) starts at 10°56' Aries (0.933°), then दो, च
+  \padasyllable[solid]{0.933}{4.267}{दे}
+  \nakshatrastart{pada\thepadactr}{27}{}{}{}
   \padasyllable{4.267}{7.6}{दो}
   \padasyllable{7.6}{10}{च}
   % Xiù: 奎 Kuí starts at 3.55° — 壁 Bì is continuation from 2W
@@ -2164,7 +2167,8 @@
   % Manzil: Sharaṭayn (1st) starts at 25°09' Aries (5.15°)
   \manzillane{5.15}{أ}{1}
   \fixedstar{2.8}{Eta Andromedae}
-  % Pādas: Aśvinī (चु चे) — ची is continuation from 3W
+  % Pādas: Revatī 4 (ची) continuation, then Aśvinī (चु चे)
+  \padasyllable{0.933}{4.267}{ची}
   \padasyllable[solid]{4.267}{7.6}{चु}
   \nakshatrastart{pada\thepadactr}{1}{♈}{मेष}{Meṣa}
   \padasyllable{7.6}{10}{चे}
@@ -2231,6 +2235,7 @@
   % Pādas: Chitrā cont. — पो @0.933°, रा @4.267°, री @7.6°
   \padasyllable{0.933}{4.267}{पो}
   \padasyllable{4.267}{7.6}{रा}
+  \rashistart{pada\thepadactr}{♎}{तुला}{Tulā}
   \padasyllable{7.6}{10}{री}
   % Xiù: 角 Jiǎo #1 starts at 20°03' Libra (0.05°)
   \xiulane{0.05}{角}{1}
@@ -2529,9 +2534,9 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Leo};
   \decanticks{140}
-  % Bounds: Mercury at 0°, Mars at 6°
+  % Bounds: Mercury at 0°, Mars at 4°
   \boundsquare{0}{Mercury}
-  \boundsquare{6}{Mars}
+  \boundsquare{4}{Mars}
   % Manzil: Jabha (10th) at 20°52' Leo (0.867°)
   \manzillane[yshift=-2.5mm, xshift=-1.5mm]{0.867}{ي}{10}
   % Pādas: Āśleṣā 4 (डो), Maghā 1-2 (मा मी) — nakṣatra 10 + rāśi Siṃha start at 4.267°
@@ -2828,9 +2833,9 @@
   \manzillane{6.583}{ظ}{26}
   % Pādas: सू @0.933°, Pūrva Bhādrapadā (#25) starts @4.267°
   \padasyllable{0.933}{4.267}{सू}
-  \padasyllable[solid]{4.267}{7.587}{से}
+  \padasyllable[solid]{4.267}{7.6}{से}
   \nakshatrastart{pada\thepadactr}{25}{}{}{}
-  \padasyllable{7.587}{10}{सो}
+  \padasyllable{7.6}{10}{सो}
   % Xiù: 危 Wēi continues, 室 Shì (#13) starts at 17°38' Pisces (7.633°)
   \xiulane{7.633}{室}{13}
   \cistartrotated{rotate=90, yshift=-1mm}{xiunum13}{娵訾}{}{Jūzī, who sighs}
@@ -2947,15 +2952,12 @@
   \boundsquare{8}{Saturn}
   % Manzil: Fargh al-Muʾakkhir (27th) starts at 29°26' Pisces (9.433°)
   \manzillane{9.433}{غ}{27}
-  % Pādas: दा @0.907°, दी @4.227°, Uttara Bhādrapadā (#26) @7.6°
-  \padasyllable{0.907}{4.227}{दा}
-  \padasyllable{4.227}{7.6}{दी}
+  % Pādas: दा @0.933°, दी @4.267°, Uttara Bhādrapadā (#26) @7.6°
+  \padasyllable{0.933}{4.267}{दा}
+  \padasyllable{4.267}{7.6}{दी}
+  \rashistart{pada\thepadactr}{♓}{मीन}{Mīna}
   \padasyllable[solid]{7.6}{10}{दू}
   \nakshatrastart{pada\thepadactr}{26}{}{}{}
-  % Rāśi boundary: Mīna starts at 24°16' Pisces (4.267°) — rotated to avoid crowding
-  \node[anchor=south west, text=black, inner sep=0pt, rotate=90,
-        font=\fontsize{5}{6}\selectfont]
-    at ([xshift=3.5mm]pada\thepadactr.east) {{\symbfont ♓}\hspace{0.1em}{\devfont मीन}\hspace{0.1em}{\cardfont Mīna}};
   % Xiù: 室 Shì continues (no boundary in this decan)
   % Fixed stars
   \fixedstar{3.917}{Markab}
