@@ -21,6 +21,11 @@
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
   {\cardfont\fontsize{10}{12}\selectfont\centering}{}{0pt}{}
+\renewcommand{\chaptername}{}
+\newcommand{\numchapter}[2]{%
+  \chapter*{{\fontsize{8}{10}\selectfont #1}\\[1mm] #2}%
+  \addcontentsline{toc}{chapter}{#1\hspace{1.5mm}#2}%
+}
 \titleformat{\section}
   {\cardfont\fontsize{7}{9}\selectfont\centering}{}{0pt}{}
 \titlespacing*{\chapter}{0pt}{5mm}{3mm}
@@ -107,24 +112,9 @@
 
 \tableofcontents
 
-\chapter{Introduction}
+\numchapter{i}{Introduction}
 
-\chapter{The Major Arcana}
+\numchapter{0}{The Void}
 
-\section{0 -- The Fool}
-
-\section{I -- The Magician}
-
-\chapter{The Minor Arcana}
-
-\section{Wands}
-
-\section{Cups}
-
-\section{Swords}
-
-\section{Pentacles}
-
-\chapter{Reading the Cards}
 
 \end{document}
