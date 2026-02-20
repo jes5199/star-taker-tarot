@@ -1428,6 +1428,14 @@
     at ([xshift=0.25mm, yshift=#1]#2.east) {{\cardfont #3}\hspace{0.3em}{\symbfont #4}\hspace{0.1em}{\devfont #5}\hspace{0.1em}{\cardfont #6}};
 }
 
+% Rāśi start marker (standalone, when not coinciding with nakṣatra start)
+% #1 = pada node name, #2 = rāśi symbol, #3 = rāśi Devanagari, #4 = rāśi romanization
+\newcommand{\rashistart}[4]{%
+  \node[anchor=west, text=black, inner sep=0pt,
+        font=\fontsize{5}{6}\selectfont]
+    at ([xshift=0.25mm]#1.east) {{\symbfont #2}\hspace{0.1em}{\devfont #3}\hspace{0.1em}{\cardfont #4}};
+}
+
 % Xiù lane: CJK character in a thin circle + ordinal number
 % #1 = degree position (bottom of span), #2 = xiù character, #3 = ordinal (1-28)
 \newcommand{\xiulane}[3]{%
@@ -2139,9 +2147,27 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Cancer};
   \decanticks{110}
-  \fixedstar{0.667}{Castor}
+  % Bounds: Jupiter at 0°, Saturn at 6°
+  \boundsquare{0}{Jupiter}
+  \boundsquare{6}{Saturn}
+  % Manzil: Nathra (8th) at 25°09' Cancer (5.15°)
+  \manzillane{5.15}{ح}{8}
+  % Pādas: Punarvasu 3-4 (हा ही), Puṣya 1 (हु) — nakṣatra 8 at 7.6°
+  % Rāśi Karka (♋ कर्क) starts at 4.267° (on ही pāda)
+  \padasyllable{0.933}{4.267}{हा}
+  \padasyllable{4.267}{7.6}{ही}
+  \rashistart{pada\thepadactr}{♋}{कर्क}{Karka}
+  \padasyllable[solid]{7.6}{10}{हु}
+  \nakshatrastart{pada\thepadactr}{8}{}{}{}
+  % No xiù starts (井 Jǐng continues)
+  % Fixed stars
+  \fixedstar[xshift=2mm]{0.667}{Castor}
   \fixedstar{3.633}{Pollux}
-  \fixedstar{6.2}{Procyon}
+  \fixedstar[xshift=2mm]{6.2}{Procyon}
+  % Pentads (小暑 Slight Heat continues from 3C)
+  \pentadlane{0}{蟋蟀居壁}{Xīshuài jū bì}{Crickets Dwell in Walls}
+  \pentadlane{5}{鷹始摯}{Yīng shǐ zhì}{Hawks Begin to Hunt}
+  % Hexagrams
   \hexagram{2}{1,0,1,1,0,0}{2}{0}{Fēng}{Abundance}
   \hexagram{7}{0,1,0,0,1,1}{0}{0}{Huàn}{Dispersion}}]{images/c-04}{Four of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{4}{♠}{1.0}{1.0}
