@@ -1,12 +1,33 @@
 \documentclass{article}
-\usepackage[paperwidth=60mm, paperheight=102.86mm, margin=5mm]{geometry}
+\usepackage[paperwidth=60mm, paperheight=102.86mm, margin=0mm]{geometry}
+\usepackage{tikz}
 \usepackage{fontspec}
+
+\newfontface\cardfont{EB Garamond SC}[LetterSpace=8]
+
+\pagestyle{empty}
 
 \begin{document}
 
-\section*{Title Page}
-
-This is a placeholder for the tarot companion book.
+% Title page
+\noindent
+\begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle (60mm, 102.86mm);
+  \clip (0,0) rectangle (60mm, 102.86mm);
+  % Radiating lines - black on white, matching card back pattern
+  \foreach \a in {0,5,...,355} {
+    \foreach \s in {0,1,...,19} {
+      \pgfmathsetmacro{\op}{1 - \s/19}%
+      \pgfmathsetmacro{\startrad}{5 + \s*2.5}%
+      \draw[black, thin, opacity=\op]
+        (30mm, 51.43mm) ++(\a:\startrad mm) -- ++(\a:2.5mm);
+    }
+  }
+  % Title text
+  \node[anchor=center, font=\cardfont\fontsize{14}{17}\selectfont,
+        text=black, text width=40mm, align=center]
+    at (30mm, 51.43mm) {Star\\Taker\\Tarot};
+\end{tikzpicture}
 
 \newpage
 
