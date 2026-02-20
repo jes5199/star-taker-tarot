@@ -2852,8 +2852,26 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Gemini};
   \decanticks{70}
-  \fixedstar{0.217}{Aldebaran}
-  \fixedstar{7.25}{Rigel}
+  % Bounds: Jupiter @0, Venus @2, Mars @7
+  \boundsquare{0}{Jupiter}
+  \boundsquare{2}{Venus}
+  \boundsquare{7}{Mars}
+  % Manzil: Haqʿa (5th) starts at 16°35' Gemini (6.583°)
+  \manzillane{6.583}{ه}{5}
+  % Pādas: Rohiṇī cont. वी @0.933°, वु @4.267°, Mṛgaśīrṣā (#5) starts @7.6°
+  \padasyllable{0.933}{4.267}{वी}
+  \padasyllable{4.267}{7.6}{वु}
+  \padasyllable[solid]{7.6}{10}{वे}
+  \nakshatrastart{pada\thepadactr}{5}{}{}{}
+  % Xiù: 畢 Bì continues (no boundary in this decan)
+  % Fixed stars
+  \fixedstar[xshift=2mm]{0.217}{Aldebaran}
+  \fixedstar[xshift=2mm]{7.25}{Rigel}
+  % Solar term and pentads
+  \pentadlane{0}{麥秋至}{Mài qiū zhì}{Wheat Ripens}
+  \solartermlane{5}{芒種}{Mángzhòng}{Grain in Ear}
+  \pentadlane{5}{螳螂生}{Tángláng shēng}{Mantises Are Born}
+  % Hexagrams
   \hexagram{1}{1,1,1,1,1,1}{4}{0}{Qián}{Creative}
   \hexagram{5}{1,1,1,1,0,1}{0}{0}{Dà Yǒu}{Great\\Possession}
   \hexagram{9}{1,0,1,0,1,1}{0}{4}{Jiā Rén}{The Family}}]{images/s-09}{Nine of Swords}
