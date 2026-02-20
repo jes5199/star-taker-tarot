@@ -1460,34 +1460,32 @@
     at ([xshift=0.25mm]manzil#4.east) {#4};
 }
 % Cì start marker: cì name attached right of xiù ordinal number
-% #1 = optional TikZ keys for scope (e.g. rotate=90 for vertical layout)
-% #2 = xiù ordinal number node (e.g. xiunum15), #3 = cì CJK, #4 = pinyin, #5 = English gloss
-\newcommand{\cistart}[5][]{%
-  \def\cistart@keys{#1}%
-  \def\cistart@empty{}%
-  \ifx\cistart@keys\cistart@empty
+% #1 = xiù ordinal number node (e.g. xiunum15), #2 = cì CJK, #3 = pinyin, #4 = English gloss
+\newcommand{\cistart}[4]{%
+  \node[anchor=west, text=black, inner sep=0pt,
+        font=\fontsize{5}{6}\selectfont] (cihanzi#1)
+    at ([xshift=2.5mm]#1.east) {{\cjkfont #2}};
+  \node[anchor=south west, text=black, inner sep=0pt,
+        font=\cardfont\fontsize{4}{5}\selectfont, xscale=0.48]
+    at (cihanzi#1.north west) {#3};
+  \node[anchor=west, text=black, inner sep=0pt,
+        font=\cardfont\fontsize{5}{6}\selectfont, xscale=0.65]
+    at ([xshift=0.1em]cihanzi#1.east) {#4};
+}
+% Rotated variant: whole cì label rotated, anchored at ordinal's north
+% #1 = TikZ keys (e.g. rotate=90, yshift=-1mm), #2-#5 = same as \cistart
+\newcommand{\cistartrotated}[5]{%
+  \begin{scope}[shift={(#2.north)}, transform shape, #1]
     \node[anchor=west, text=black, inner sep=0pt,
           font=\fontsize{5}{6}\selectfont] (cihanzi#2)
-      at ([xshift=0.3em]#2.east) {{\cjkfont #3}};
+      at (0, 0) {{\cjkfont #3}};
     \node[anchor=south west, text=black, inner sep=0pt,
           font=\cardfont\fontsize{4}{5}\selectfont, xscale=0.48]
       at (cihanzi#2.north west) {#4};
     \node[anchor=west, text=black, inner sep=0pt,
           font=\cardfont\fontsize{5}{6}\selectfont, xscale=0.65]
       at ([xshift=0.1em]cihanzi#2.east) {#5};
-  \else
-    \begin{scope}[shift={(#2.north)}, transform shape, #1]
-      \node[anchor=west, text=black, inner sep=0pt,
-            font=\fontsize{5}{6}\selectfont] (cihanzi#2)
-        at (0, 0) {{\cjkfont #3}};
-      \node[anchor=south west, text=black, inner sep=0pt,
-            font=\cardfont\fontsize{4}{5}\selectfont, xscale=0.48]
-        at (cihanzi#2.north west) {#4};
-      \node[anchor=west, text=black, inner sep=0pt,
-            font=\cardfont\fontsize{5}{6}\selectfont, xscale=0.65]
-        at ([xshift=0.1em]cihanzi#2.east) {#5};
-    \end{scope}
-  \fi
+  \end{scope}
 }
 
 % Solar term at bottom of decan (above bounds label) — OLD, kept for other cards
@@ -1951,7 +1949,7 @@
   \padasyllable{7.6}{10}{ङ}
   % Xiù: 井 Jǐng (22) at 6°45' Cancer (6.75°) + cì 鶉首 Chúnshǒu
   \xiulane{6.75}{井}{22}
-  \cistart[rotate=90, yshift=-1mm]{xiunum22}{鶉首}{Chúnshǒu}{Quail Head}
+  \cistartrotated{rotate=90, yshift=-1mm}{xiunum22}{鶉首}{Chúnshǒu}{Quail Head}
   % Fixed stars
   \fixedstar{5.733}{Tejat}
   \fixedstar{9.533}{Alhena}
@@ -2463,7 +2461,26 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Scorpio};
   \decanticks{230}
+  % Bounds: Jupiter at 0°, Saturn at 4°
+  \boundsquare{0}{Jupiter}
+  \boundsquare{4}{Saturn}
+  % Manzil: Iklīl (17th) at 20°52' Scorpio (0.867°)
+  \manzillane[yshift=-2.5mm]{0.867}{ف}{17}
+  % Pādas: Viśākhā 3-4 (ते तो), Anurādhā 1 (ना) — nakṣatra 17 at 7.6°
+  % Rāśi Vṛścika (♏ वृश्चिक) starts at 4.267° (on तो pāda)
+  \padasyllable{0.933}{4.267}{ते}
+  \padasyllable{4.267}{7.6}{तो}
+  \rashistart{pada\thepadactr}{♏}{वृश्चिक}{Vṛścika}
+  \padasyllable[solid]{7.6}{10}{ना}
+  \nakshatrastart{pada\thepadactr}{17}{}{}{}
+  % Xiù: 房 Fáng (4) at 28°00' Scorpio (8°)
+  \xiulane{8}{房}{4}
+  % Fixed star
   \fixedstar{9.867}{Toliman}
+  % Pentads (立冬 Start of Winter continues from 6C)
+  \pentadlane{0}{地始凍}{Dì shǐ dòng}{Earth Begins to Freeze}
+  \pentadlane[0.45]{5}{雉入大水為蜃}{Zhì rù dàshuǐ wéi shèn}{Pheasants Become Mirages}
+  % Hexagrams
   \hexagram{2}{1,0,1,0,1,0}{2}{0}{Jì Jì}{After\\Completion}
   \hexagram{7}{1,0,0,1,0,1}{0}{0}{Shì Kè}{Biting\\Through}}]{images/c-07}{Seven of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{7}{♠}{1.0}{1.0}
