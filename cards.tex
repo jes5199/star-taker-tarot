@@ -2471,7 +2471,25 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Aquarius};
   \decanticks{310}
+  % Bounds: Venus @0, Jupiter @3
+  \boundsquare{0}{Venus}
+  \boundsquare{3}{Jupiter}
+  % No manzil boundary (M23 continues)
+  % Pādas: Śravaṇa cont. खे @0.933°, खो @4.267°, Dhaniṣṭhā (#23) starts @7.6°
+  \padasyllable{0.933}{4.267}{खे}
+  \padasyllable{4.267}{7.6}{खो}
+  \padasyllable[solid]{7.6}{10}{गा}
+  \nakshatrastart{pada\thepadactr}{23}{}{}{}
+  % Xiù: 女 Nǚ #10 starts at 14°47' Aquarius (4.783°)
+  \xiulane{4.783}{女}{10}
+  \cistartrotated{xshift=1mm}{xiunum10}{玄枵}{}{Xuánxiāo, Dark Emptiness}
+  % Fixed stars
   \fixedstar{2.15}{Albali}
+  % Solar term and pentads
+  \pentadlane[0.55]{0}{水澤腹堅}{Shuǐzé fù jiān}{Lakes Freeze Solid}
+  \solartermlane{5}{立春}{Lìchūn}{Start of Spring}
+  \pentadlane[0.55]{5}{東風解凍}{Dōngfēng jiědòng}{East Wind Thaws}
+  % Hexagrams
   \hexagram{1}{1,1,0,0,0,0}{4}{0}{Lín}{Approach}
   \hexagram{5}{0,0,1,1,0,0}{0}{0}{Xiǎo Guò}{Small\\Exceeding}
   \hexagram{9}{0,1,0,0,0,1}{0}{4}{Méng}{Youthful\\Folly}}]{images/s-06}{Six of Swords}
