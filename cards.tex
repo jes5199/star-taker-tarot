@@ -2723,10 +2723,26 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Gemini};
   \decanticks{60}
-  \solartermstart{8}{小滿}{Xiǎomǎn}{Grain Buds}
-  \boundstart{1}{Mercury}
+  % Bounds: Mercury @0, Jupiter @6
+  \boundsquare{0}{Mercury}
+  \boundsquare{6}{Jupiter}
+  % Manzil: Dabarān (4th) starts at 03°44' Gemini (3.733°)
+  \manzillane{3.733}{د}{4}
+  % Pādas: Kṛttikā cont. ए @0.933°, Rohiṇī (#4) starts @4.267°
+  \padasyllable{0.933}{4.267}{ए}
+  \padasyllable[solid]{4.267}{7.6}{ओ}
+  \nakshatrastart{pada\thepadactr}{4}{}{}{}
+  \padasyllable{7.6}{10}{वा}
+  % Xiù: 畢 Bì #19 starts at 05°48' Gemini (5.8°)
+  \xiulane{5.8}{畢}{19}
+  % Fixed stars
   \fixedstar{0.417}{Alcyone}
   \fixedstar{8.883}{Ain}
+  % Solar term and pentads
+  \solartermlane{0}{小滿}{Xiǎomǎn}{Grain Buds}
+  \pentadlane{0}{苦菜秀}{Kǔcài xiù}{Bitter Greens Flourish}
+  \pentadlane{5}{靡草死}{Mícǎo sǐ}{Soft Grasses Wither}
+  % Hexagrams
   \hexagram{3}{1,1,1,0,1,1}{0}{0}{Xiǎo Chù}{Small\\Taming}
   \hexagram{8}{1,1,1,1,1,1}{0}{2}{Qián}{Creative}}]{images/s-08}{Eight of Swords}
 
