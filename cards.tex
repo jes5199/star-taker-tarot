@@ -2337,11 +2337,31 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Aquarius};
   \decanticks{300}
-  \solartermstart{24}{大寒}{Dàhán}{Major Cold}
-  \boundstart{1}{Mercury}
+  % Bounds: Mercury @0, Venus @7
+  \boundsquare{0}{Mercury}
+  \boundsquare{7}{Venus}
+  % Manzil: Saʿd Bulaʿ (23rd) starts at 08°01' Aquarius (8.017°)
+  \manzillane{8.017}{ث}{23}
+  % Pādas: Uttarāṣāḍhā cont. जी @0.933°, Śravaṇa (#22) starts @4.267°
+  \padasyllable{0.933}{4.267}{जी}
+  \padasyllable[solid]{4.267}{7.6}{खी}
+  \nakshatrastart{pada\thepadactr}{22}{}{}{}
+  \padasyllable{7.6}{10}{खू}
+  % Xiù: 牛 Niú #9 starts at 08°03' Aquarius (8.05°)
+  \xiulane{8.05}{牛}{9}
+  % Fixed stars
   \fixedstar{2.2}{Altair}
-  \fixedstar{4.283}{Giedi Prima}
-  \fixedstar{4.467}{Dabih}
+  \fixedstar[label below=1, rotate label=-45]{4.283}{Giedi Prima}
+  \fixedstar{4.467}{}%
+  \pgfmathsetmacro{\dabihpos}{4.467 * (\cardheight-20mm)/10}%
+  \node[anchor=south west, text=black, inner sep=0pt, rotate=45,
+        font=\cardfont\fontsize{5}{6}\selectfont]
+    at ([xshift=1.8mm, yshift=0.8mm]2.5mm, \dabihpos pt) {Dabih};
+  % Solar term and pentads
+  \solartermlane{0}{大寒}{Dàhán}{Major Cold}
+  \pentadlane{0}{雞乳}{Jī rǔ}{Chickens Begin Brooding}
+  \pentadlane[0.55]{5}{征鳥厲疾}{Zhēngniǎo lì jí}{Raptors Fly Fierce}
+  % Hexagrams
   \hexagram{3}{0,1,1,0,0,0}{0}{0}{Shēng}{Pushing\\Upward}
   \hexagram{8}{1,1,0,0,0,0}{0}{2}{Lín}{Approach}}]{images/s-05}{Five of Swords}
 
