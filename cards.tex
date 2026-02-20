@@ -2978,12 +2978,31 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Gemini};
   \decanticks{80}
+  % Bounds: Mars @0, Saturn @4
+  \boundsquare{0}{Mars}
+  \boundsquare{4}{Saturn}
+  % Manzil: Hanʿa (6th) starts at 29°26' Gemini (9.433°)
+  \manzillane{9.433}{و}{6}
+  % Pādas: Mṛgaśīrṣā cont. वो @0.933°, का @4.267° (rāśi Mithuna), की @7.6°
+  \padasyllable{0.933}{4.267}{वो}
+  \padasyllable{4.267}{7.6}{का}
+  \rashistart{pada\thepadactr}{♊}{मिथुन}{Mithuna}
+  \padasyllable{7.6}{10}{की}
+  % Xiù: 觜 Zī #20 starts at 23°41' Gemini (3.683°)
+  \xiulane{3.683}{觜}{20}
+  \cistartrotated{xshift=1mm}{xiunum20}{實沈}{}{Shíchén, the exiled}
+  % Xiù: 參 Shēn #21 starts at 25°11' Gemini (5.183°)
+  \xiulane{5.183}{參}{21}
+  % Fixed stars (Polaris omitted — too far from ecliptic)
   \fixedstar{1.367}{Bellatrix}
   \fixedstar{2.283}{Capella}
-  \fixedstar{4.133}{Meissa}
+  \fixedstar[xshift=2mm]{4.133}{Meissa}
   \fixedstar{5.1}{Alnitak}
-  \fixedstar{9.0}{Polaris}
   \fixedstar{9.183}{Betelgeuse}
+  % Pentads (芒種 cont.)
+  \pentadlane{0}{鵙始鳴}{Jú shǐ míng}{Shrikes Begin to Cry}
+  \pentadlane{5}{反舌無聲}{Fǎnshé wú shēng}{Mockingbirds Fall Silent}
+  % Hexagrams
   \hexagram{2}{1,0,1,0,1,1}{2}{0}{Jiā Rén}{The Family}
   \hexagram{7}{0,1,1,0,1,0}{0}{0}{Jǐng}{The Well}}]{images/s-10}{Ten of Swords}
 
