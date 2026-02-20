@@ -2796,25 +2796,35 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Pisces};
   \decanticks{350}
+  % Bounds: Mars @0, Saturn @8
+  \boundsquare{0}{Mars}
+  \boundsquare{8}{Saturn}
+  % Manzil: Fargh al-Muʾakkhir (27th) starts at 29°26' Pisces (9.433°)
+  \manzillane{9.433}{غ}{27}
+  % Pādas: Pūrva Bhādrapadā cont. (सो), then दा @0.907°, दी @4.227°, Uttara Bhādrapadā (#26) @7.6°
+  \padasyllable{0}{0.907}{सो}
+  \padasyllable{0.907}{4.227}{दा}
+  \padasyllable{4.227}{7.6}{दी}
+  \padasyllable[solid]{7.6}{10}{दू}
+  \nakshatrastart{pada\thepadactr}{26}{}{}{}
+  % Rāśi boundary: Mīna starts at 24°16' Pisces (4.267°) — rotated to avoid crowding
+  \node[anchor=south west, text=black, inner sep=0pt, rotate=90,
+        font=\fontsize{5}{6}\selectfont]
+    at ([xshift=3.5mm]pada\thepadactr.east) {{\symbfont ♓}\hspace{0.1em}{\devfont मीन}\hspace{0.1em}{\cardfont Mīna}};
+  % Xiù: 室 Shì continues (no boundary in this decan)
+  % Fixed stars
   \fixedstar{3.917}{Markab}
-  \fixedstar{9.8}{Scheat}
+  \fixedstar{9.8}{}%
+  \pgfmathsetmacro{\scheatpos}{9.8 * (\cardheight-20mm)/10}%
+  \node[anchor=south west, text=black, inner sep=0pt, rotate=45,
+        font=\cardfont\fontsize{5}{6}\selectfont]
+    at ([xshift=1.8mm, yshift=0.8mm]2.5mm, \scheatpos pt) {Scheat};
+  % Pentads (驚蟄 cont., no solar term starts on this card)
+  \pentadlane{0}{倉庚鳴}{Cānggēng míng}{Orioles Sing}
+  \pentadlane{5}{鷹化為鳩}{Yīng huà wéi jiū}{Eagles to Doves}
+  % Hexagrams
   \hexagram{2}{1,0,0,1,1,0}{2}{0}{Suí}{Following}
-  \hexagram{7}{0,0,0,1,0,1}{0}{0}{Jìn}{Progress}
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (10.5mm, 13.55mm) {{\cardfont\fontsize{5}{6}\selectfont Fargh al-Mu'akhkhar}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (6.5mm, 11.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 27.}\hspace{0.1em}{\arabfont\fontsize{5}{6}\selectfont \beginR فَرْغ المُؤَخَّر\endR}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Latter Spout}};
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (10.5mm, 9.8mm) {{\cardfont\fontsize{5}{6}\selectfont Uttara Bhadrapada}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (6.5mm, 8mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 26.}\hspace{0.1em}{\devfont\fontsize{5}{6}\selectfont उत्तर भाद्रपद}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Latter Lucky Feet}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (6.5mm, 5.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☽}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 13.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 室}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Shì – Encampment}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (6.5mm, 3mm) {\makebox[0.6em][c]{\symbserif\fontsize{5}{6}\selectfont ♃}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 3.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont 娵訾}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Jūzī, who sighs}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (6.5mm, 0.5mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont 12.}\hspace{0.1em}{\devfont\fontsize{5}{6}\selectfont मीन}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont Mīna}\hspace{0.1em}{\symbserif\fontsize{5}{6}\selectfont ♓}};
-}]{images/c-10}{Ten of Cups}\hfill
+  \hexagram{7}{0,0,0,1,0,1}{0}{0}{Jìn}{Progress}}]{images/c-10}{Ten of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{10}{♠}{0.7}{1.0}
   \chinesecardmarks{十}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
