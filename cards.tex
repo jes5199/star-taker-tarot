@@ -1451,17 +1451,34 @@
     at ([xshift=0.25mm]manzil#4.east) {#4};
 }
 % Cì start marker: cì name attached right of xiù ordinal number
-% #1 = xiù ordinal number node (e.g. xiunum15), #2 = cì CJK, #3 = pinyin, #4 = English gloss
-\newcommand{\cistart}[4]{%
-  \node[anchor=west, text=black, inner sep=0pt,
-        font=\fontsize{5}{6}\selectfont] (cihanzi#1)
-    at ([xshift=0.3em]#1.east) {{\cjkfont #2}};
-  \node[anchor=south west, text=black, inner sep=0pt,
-        font=\cardfont\fontsize{4}{5}\selectfont, xscale=0.48]
-    at (cihanzi#1.north west) {#3};
-  \node[anchor=west, text=black, inner sep=0pt,
-        font=\cardfont\fontsize{5}{6}\selectfont, xscale=0.65]
-    at ([xshift=0.1em]cihanzi#1.east) {#4};
+% #1 = optional TikZ keys for scope (e.g. rotate=90 for vertical layout)
+% #2 = xiù ordinal number node (e.g. xiunum15), #3 = cì CJK, #4 = pinyin, #5 = English gloss
+\newcommand{\cistart}[5][]{%
+  \def\cistart@keys{#1}%
+  \def\cistart@empty{}%
+  \ifx\cistart@keys\cistart@empty
+    \node[anchor=west, text=black, inner sep=0pt,
+          font=\fontsize{5}{6}\selectfont] (cihanzi#2)
+      at ([xshift=0.3em]#2.east) {{\cjkfont #3}};
+    \node[anchor=south west, text=black, inner sep=0pt,
+          font=\cardfont\fontsize{4}{5}\selectfont, xscale=0.48]
+      at (cihanzi#2.north west) {#4};
+    \node[anchor=west, text=black, inner sep=0pt,
+          font=\cardfont\fontsize{5}{6}\selectfont, xscale=0.65]
+      at ([xshift=0.1em]cihanzi#2.east) {#5};
+  \else
+    \begin{scope}[shift={(#2.north)}, transform shape, #1]
+      \node[anchor=west, text=black, inner sep=0pt,
+            font=\fontsize{5}{6}\selectfont] (cihanzi#2)
+        at (0, 0) {{\cjkfont #3}};
+      \node[anchor=south west, text=black, inner sep=0pt,
+            font=\cardfont\fontsize{4}{5}\selectfont, xscale=0.48]
+        at (cihanzi#2.north west) {#4};
+      \node[anchor=west, text=black, inner sep=0pt,
+            font=\cardfont\fontsize{5}{6}\selectfont, xscale=0.65]
+        at ([xshift=0.1em]cihanzi#2.east) {#5};
+    \end{scope}
+  \fi
 }
 
 % Solar term at bottom of decan (above bounds label) — OLD, kept for other cards
@@ -1914,10 +1931,26 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Cancer};
   \decanticks{90}
-  \solartermstart{10}{夏至}{Xiàzhì}{Summer Solstice}
-  \boundstart{1}{Mars}
+  % Bounds: Mars at 0°, Venus at 7°
+  \boundsquare{0}{Mars}
+  \boundsquare{7}{Venus}
+  % No manzil starts in this decan (Hanʿa continues)
+  % Pādas: Ārdrā 1-3 (कु घ ङ) — nakṣatra 6 starts at 0.933°
+  \padasyllable{0.933}{4.267}{कु}
+  \nakshatrastart{pada\thepadactr}{6}{}{}{}
+  \padasyllable{4.267}{7.6}{घ}
+  \padasyllable{7.6}{10}{ङ}
+  % Xiù: 井 Jǐng (22) at 6°45' Cancer (6.75°) + cì 鶉首 Chúnshǒu
+  \xiulane{6.75}{井}{22}
+  \cistart[rotate=90, yshift=-1mm]{xiunum22}{鶉首}{Chúnshǒu}{Quail Head}
+  % Fixed stars
   \fixedstar{5.733}{Tejat}
   \fixedstar{9.533}{Alhena}
+  % Solar term and pentads
+  \solartermlane{0}{夏至}{Xiàzhì}{Summer Solstice}
+  \pentadlane{0}{鹿角解}{Lù jiǎo jiě}{Deer Shed Antlers}
+  \pentadlane{5}{蜩始鳴}{Tiáo shǐ míng}{Cicadas Begin to Sing}
+  % Hexagrams
   \hexagram{3}{0,0,1,1,1,0}{0}{0}{Xián}{Influence}
   \hexagram{8}{0,1,1,1,1,1}{0}{2}{Gòu}{Coming\\to Meet}
   \chinesecardmarks[🀈]{二}{万}}]{images/c-02}{Two of Cups}\hfill
