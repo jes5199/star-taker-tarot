@@ -6,7 +6,14 @@
 \newfontface\cardfont{EB Garamond SC}[LetterSpace=8]
 \newfontface\reversedC{FreeSerif}
 \newfontface\cuneiform{Noto Sans Cuneiform}
-\setmainfont{EB Garamond}[Scale=0.7]
+\setmainfont{EB Garamond}[
+  Scale=0.7,
+  Extension=.ttf,
+  Path=/usr/share/fonts/truetype/ebgaramond/,
+  UprightFont=EBGaramond12-Regular,
+  ItalicFont=EBGaramond12-Italic,
+  BoldFont=EBGaramond12-Bold,
+]
 
 % Small page numbers at bottom center
 \usepackage{fancyhdr}
@@ -106,8 +113,9 @@
 \end{tikzpicture}
 
 % Switch to content layout with margins and page numbers
-\newgeometry{paperwidth=60mm, paperheight=102.86mm, margin=4mm, top=6mm, bottom=6mm}
+\newgeometry{paperwidth=60mm, paperheight=102.86mm, margin=4mm, top=6mm, bottom=8mm, footskip=4mm}
 \pagestyle{content}
+\fancypagestyle{plain}{\pagestyle{content}}
 \setcounter{page}{1}
 
 \tableofcontents
@@ -116,5 +124,12 @@
 
 \numchapter{0}{The Void}
 
+{\fontsize{6.6}{8.1}\selectfont\itshape
+Avalokiteshvara Bodhisattva, when deeply practicing prajña paramita, clearly saw that all five aggregates are empty and thus relieved all suffering. Shariputra, form does not differ from emptiness, emptiness does not differ from form. Form itself is emptiness, emptiness itself form. Sensations, perceptions, formations, and consciousness are also like this. Shariputra, all dharmas are marked by emptiness; they neither arise nor cease, are neither defiled nor pure, neither increase nor decrease. Therefore, given emptiness, there is no form, no sensation, no perception, no formation, no consciousness; no eyes, no ears, no nose, no tongue, no body, no mind; no sight, no sound, no smell, no taste, no touch, no object of mind; no realm of sight \ldots\ no realm of mind consciousness. There is neither ignorance nor extinction of ignorance\ldots\ neither old age and death, nor extinction of old age and death; no suffering, no cause, no cessation, no path; no knowledge and no attainment. With nothing to attain, a bodhisattva relies on prajña paramita, and thus the mind is without hindrance. Without hindrance, there is no fear. Far beyond all inverted views, one realizes nirvana. All buddhas of past, present, and future rely on prajña paramita and thereby attain unsurpassed, complete, perfect enlightenment. Therefore, know the prajña paramita as the great miraculous mantra, the great bright mantra, the supreme mantra, the incomparable mantra, which removes all suffering and is true, not false. Therefore we proclaim the prajña paramita mantra, the mantra that says: ``Gate Gate Paragate Parasamgate Bodhi Svaha.''
+
+\begin{flushright}
+--- Heart of Great Perfect Wisdom Sutra
+\end{flushright}
+}
 
 \end{document}
