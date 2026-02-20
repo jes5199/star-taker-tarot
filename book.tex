@@ -23,9 +23,11 @@
         (30mm, 51.43mm) ++(\a:\startrad mm) -- ++(\a:2.5mm);
     }
   }
+  % White backing to keep text readable
+  \fill[white] (30mm, 51.43mm) circle (12mm);
   % Title text
-  \node[anchor=center, font=\cardfont\fontsize{14}{17}\selectfont,
-        text=black, text width=40mm, align=center]
+  \node[anchor=center, font=\cardfont\fontsize{46}{50}\selectfont,
+        text=black, text width=55mm, align=center]
     at (30mm, 51.43mm) {Star\\Taker\\Tarot};
 \end{tikzpicture}
 
