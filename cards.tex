@@ -2035,30 +2035,27 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Cancer};
   \decanticks{100}
-  \fixedstar{4.5}{Sirius}
+  % Bounds: Venus at 0°, Mercury at 3°, Jupiter at 9°
+  \boundsquare{0}{Venus}
+  \boundsquare{3}{Mercury}
+  \boundsquare{9}{Jupiter}
+  % Manzil: Dhirāʿ (7th) at 12°18' Cancer (2.3°)
+  \manzillane{2.3}{ز}{7}
+  % Pādas: Ārdrā 4 (छ), Punarvasu 1-2 (के को) — nakṣatra 7 starts at 4.267°
+  \padasyllable{0.933}{4.267}{छ}
+  \padasyllable{4.267}{7.6}{के}
+  \nakshatrastart{pada\thepadactr}{7}{}{}{}
+  \padasyllable{7.6}{10}{को}
+  % No xiù starts (井 Jǐng continues)
+  % Fixed stars
+  \fixedstar[label below=1, rotate label=-45]{4.5}{Sirius}
   \fixedstar{5.383}{Canopus}
-  % Hexagram 44 姤 (Coming to Meet): near bottom of card, tighter label
-  \pgfmathsetmacro{\hexticka}{1 * (\cardheight-20mm)/10}%
-  \begin{scope}[shift={(\cardwidth-14mm, \hexticka pt)}, line cap=butt]
-    % Line 1 (yin): outside → outlined broken
-    \fill[white, draw=black, line width=0.2mm]
-      (-3mm, 0*1.5mm-3.75mm-0.3mm) rectangle (-0.5mm, 0*1.5mm-3.75mm+0.3mm);
-    \fill[white, draw=black, line width=0.2mm]
-      (0.5mm, 0*1.5mm-3.75mm-0.3mm) rectangle (3mm, 0*1.5mm-3.75mm+0.3mm);
-    % Lines 2-4 (yang): outside → outlined solid
-    \foreach \i in {1,2,3} {
-      \fill[white, draw=black, line width=0.2mm]
-        (-3mm, \i*1.5mm-3.75mm-0.3mm) rectangle (3mm, \i*1.5mm-3.75mm+0.3mm);
-    }
-    % Lines 5-6 (yang): in decan → solid
-    \foreach \i in {4,5} {
-      \draw[line width=0.6mm] (-3mm, \i*1.5mm-3.75mm) -- (3mm, \i*1.5mm-3.75mm);
-    }
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 4.5mm) {Gòu};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
-      at (0, -3.5mm) {Coming\\to Meet};
-  \end{scope}
+  % Solar term and pentads
+  \pentadlane{0}{半夏生}{Bànxià shēng}{Pinellia Sprouts}
+  \solartermlane{5}{小暑}{Xiǎoshǔ}{Slight Heat}
+  \pentadlane{5}{溫風至}{Wēn fēng zhì}{Warm Winds Arrive}
+  % Hexagrams
+  \hexagram{1}{0,1,1,1,1,1}{4}{0}{Gòu}{Coming\\to Meet}
   \hexagram{5}{0,1,1,1,0,1}{0}{0}{Dǐng}{The Cauldron}
   \hexagram{9}{1,0,1,1,0,0}{0}{4}{Fēng}{Abundance}}]{images/c-03}{Three of Cups}\hfill
 \minorcard[{\playingcardmarks{black}{3}{♠}{1.0}{1.0}
