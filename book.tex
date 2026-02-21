@@ -1,31 +1,31 @@
 \documentclass[openany]{book}
-\usepackage[paperwidth=70mm, paperheight=120mm, margin=0mm, headsep=0pt, headheight=0pt, footskip=0pt]{geometry}
+\usepackage[paperwidth=5.5in, paperheight=8.5in, margin=0mm, headsep=0pt, headheight=0pt, footskip=0pt]{geometry}
 \usepackage{tikz}
 \usepackage{fontspec}
 
 \newfontface\cardfont{EB Garamond SC}[LetterSpace=8]
 \newfontface\reversedC{FreeSerif}
 \newfontface\cuneiform{Noto Sans Cuneiform}
-\setmainfont{Gentium Book Basic}[Scale=0.82]
+\setmainfont{Gentium Book Basic}[Scale=1.0]
 \usepackage{leading}
-\leading{9.3pt}
+\leading{14pt}
 
 % Small page numbers at bottom center
 \usepackage{fancyhdr}
 \fancypagestyle{content}{%
   \fancyhf{}%
-  \fancyfoot[C]{\fontsize{8}{9}\selectfont\thepage}%
+  \fancyfoot[C]{\fontsize{10}{12}\selectfont\thepage}%
   \renewcommand{\headrulewidth}{0pt}%
   \renewcommand{\footrulewidth}{0pt}%
 }
 
-% Smaller section headings for tiny pages
+% Section headings
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
-  {\cardfont\fontsize{12}{14}\selectfont\centering}{}{0pt}{}
+  {\cardfont\fontsize{18}{22}\selectfont\centering}{}{0pt}{}
 \renewcommand{\chaptername}{}
 \newcommand{\numchapter}[2]{%
-  \chapter*{{\fontsize{9}{11}\selectfont #1}\\[1mm] #2}%
+  \chapter*{{\fontsize{14}{17}\selectfont #1}\\[2mm] #2}%
   \addcontentsline{toc}{chapter}{#1\hspace{1.5mm}#2}%
 }
 \newcommand{\partpage}[2][]{%
@@ -34,20 +34,20 @@
   \restoregeometry
   \noindent
   \begin{tikzpicture}
-    \useasboundingbox (0,0) rectangle (70mm, 120mm);
-    \clip (0,0) rectangle (70mm, 120mm);
+    \useasboundingbox (0,0) rectangle (139.7mm, 215.9mm);
+    \clip (0,0) rectangle (139.7mm, 215.9mm);
     \foreach \a in {0,5,...,355} {
       \foreach \s in {0,1,...,19} {
         \pgfmathsetmacro{\op}{1 - \s/19}%
-        \pgfmathsetmacro{\startrad}{5 + \s*2.5}%
+        \pgfmathsetmacro{\startrad}{10 + \s*5}%
         \draw[black, thin, opacity=\op]
-          (35mm, 60mm) ++(\a:\startrad mm) -- ++(\a:2.5mm);
+          (69.85mm, 107.95mm) ++(\a:\startrad mm) -- ++(\a:5mm);
       }
     }
-    \fill[white] (35mm, 60mm) circle (12mm);
-    \node[anchor=center, font=\cardfont\fontsize{33}{40}\selectfont,
-          text=black, text width=52mm, align=center]
-      at (35mm, 60mm) {#2};
+    \fill[white] (69.85mm, 107.95mm) circle (24mm);
+    \node[anchor=center, font=\cardfont\fontsize{50}{60}\selectfont,
+          text=black, text width=100mm, align=center]
+      at (69.85mm, 107.95mm) {#2};
   \end{tikzpicture}
   \def\temp{#1}\ifx\temp\empty
     \addcontentsline{toc}{part}{#2}
@@ -55,28 +55,28 @@
     \addcontentsline{toc}{part}{#1}
   \fi
   \newpage
-  \newgeometry{paperwidth=60mm, paperheight=102.86mm, margin=5mm, top=7mm, bottom=9mm, footskip=5mm}
+  \newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=18mm, top=20mm, bottom=24mm, footskip=10mm}
   \pagestyle{content}
 }
 \titleformat{\section}
-  {\cardfont\fontsize{8}{10}\selectfont\centering}{}{0pt}{}
-\titlespacing*{\chapter}{0pt}{5mm}{3mm}
-\titlespacing*{\section}{0pt}{2mm}{1mm}
+  {\cardfont\fontsize{14}{17}\selectfont\centering}{}{0pt}{}
+\titlespacing*{\chapter}{0pt}{10mm}{6mm}
+\titlespacing*{\section}{0pt}{4mm}{2mm}
 
-% Tiny TOC formatting
+% TOC formatting
 \usepackage{tocloft}
-\renewcommand{\cftchapfont}{\cardfont\fontsize{7}{9}\selectfont}
-\renewcommand{\cftchappagefont}{\fontsize{7}{9}\selectfont}
-\renewcommand{\cftsecfont}{\fontsize{6}{8}\selectfont}
-\renewcommand{\cftsecpagefont}{\fontsize{6}{8}\selectfont}
-\renewcommand{\cfttoctitlefont}{\cardfont\fontsize{12}{14}\selectfont\centering}
-\setlength{\cftbeforechapskip}{1mm}
-\setlength{\cftbeforesecskip}{0.5mm}
-\setlength{\cftsecindent}{3mm}
+\renewcommand{\cftchapfont}{\cardfont\fontsize{10}{13}\selectfont}
+\renewcommand{\cftchappagefont}{\fontsize{10}{13}\selectfont}
+\renewcommand{\cftsecfont}{\fontsize{9}{12}\selectfont}
+\renewcommand{\cftsecpagefont}{\fontsize{9}{12}\selectfont}
+\renewcommand{\cfttoctitlefont}{\cardfont\fontsize{18}{22}\selectfont\centering}
+\setlength{\cftbeforechapskip}{2mm}
+\setlength{\cftbeforesecskip}{1mm}
+\setlength{\cftsecindent}{5mm}
 \renewcommand{\cftdotsep}{2}
-\renewcommand{\cftpartfont}{\cardfont\fontsize{8}{10}\selectfont}
-\renewcommand{\cftpartpagefont}{\fontsize{8}{10}\selectfont}
-\setlength{\cftbeforepartskip}{2mm}
+\renewcommand{\cftpartfont}{\cardfont\fontsize{12}{15}\selectfont}
+\renewcommand{\cftpartpagefont}{\fontsize{12}{15}\selectfont}
+\setlength{\cftbeforepartskip}{4mm}
 \setlength{\cftpartindent}{0pt}
 \setlength{\cftpartnumwidth}{0pt}
 
@@ -86,23 +86,23 @@
 % Title page
 \noindent
 \begin{tikzpicture}
-  \useasboundingbox (0,0) rectangle (70mm, 120mm);
-  \clip (0,0) rectangle (70mm, 120mm);
+  \useasboundingbox (0,0) rectangle (139.7mm, 215.9mm);
+  \clip (0,0) rectangle (139.7mm, 215.9mm);
   % Radiating lines - black on white, matching card back pattern
   \foreach \a in {0,5,...,355} {
     \foreach \s in {0,1,...,19} {
       \pgfmathsetmacro{\op}{1 - \s/19}%
-      \pgfmathsetmacro{\startrad}{5 + \s*2.5}%
+      \pgfmathsetmacro{\startrad}{10 + \s*5}%
       \draw[black, thin, opacity=\op]
-        (35mm, 60mm) ++(\a:\startrad mm) -- ++(\a:2.5mm);
+        (69.85mm, 107.95mm) ++(\a:\startrad mm) -- ++(\a:5mm);
     }
   }
   % White backing to keep text readable
-  \fill[white] (35mm, 60mm) circle (14mm);
+  \fill[white] (69.85mm, 107.95mm) circle (28mm);
   % Title text
-  \node[anchor=center, font=\cardfont\fontsize{46}{50}\selectfont,
-        text=black, text width=65mm, align=center]
-    at (35mm, 60mm) {Star\\Taker\\Tarot};
+  \node[anchor=center, font=\cardfont\fontsize{60}{66}\selectfont,
+        text=black, text width=120mm, align=center]
+    at (69.85mm, 107.95mm) {Star\\Taker\\Tarot};
 \end{tikzpicture}
 
 \newpage
@@ -115,19 +115,19 @@
 % Page three - author page
 \noindent
 \begin{tikzpicture}
-  \useasboundingbox (0,0) rectangle (70mm, 120mm);
+  \useasboundingbox (0,0) rectangle (139.7mm, 215.9mm);
   % Title at top
-  \node[anchor=north, font=\cardfont\fontsize{23}{28}\selectfont,
-        text=black, text width=58mm, align=center]
-    at (35mm, 113mm) {Star\\Taker\\Tarot};
+  \node[anchor=north, font=\cardfont\fontsize{36}{44}\selectfont,
+        text=black, text width=110mm, align=center]
+    at (69.85mm, 205mm) {Star\\Taker\\Tarot};
   % "by" in the middle
-  \node[anchor=center, font=\cardfont\fontsize{12}{16}\selectfont,
-        text=black, text width=58mm, align=center]
-    at (35mm, 60mm) {by};
+  \node[anchor=center, font=\cardfont\fontsize{18}{24}\selectfont,
+        text=black, text width=110mm, align=center]
+    at (69.85mm, 107.95mm) {by};
   % Author and numeral at bottom
-  \node[anchor=south, font=\cardfont\fontsize{12}{16}\selectfont,
-        text=black, text width=58mm, align=center]
-    at (35mm, 7mm) {Jes\\Annalemma\\Haze Janvir\\Dolan-Wolfe\\I{\reversedC Ↄ}{\reversedC Ↄ}CXCIX};
+  \node[anchor=south, font=\cardfont\fontsize{18}{24}\selectfont,
+        text=black, text width=110mm, align=center]
+    at (69.85mm, 12mm) {Jes\\Annalemma\\Haze Janvir\\Dolan-Wolfe\\I{\reversedC Ↄ}{\reversedC Ↄ}CXCIX};
 \end{tikzpicture}
 
 \newpage
@@ -135,14 +135,14 @@
 % Page four - dedications
 \noindent
 \begin{tikzpicture}
-  \useasboundingbox (0,0) rectangle (70mm, 120mm);
-  \node[anchor=center, font=\cardfont\fontsize{9}{14}\selectfont,
-        text=black, text width=56mm, align=center]
-    at (35mm, 60mm) {to {\cuneiform 𒀭𒈹}\kern1pt, Queen of Heaven\\[4mm]and to the muse who inspires\\all creation\\[4mm]and to my child Isaac\\who keeps my brain busy};
+  \useasboundingbox (0,0) rectangle (139.7mm, 215.9mm);
+  \node[anchor=center, font=\cardfont\fontsize{14}{22}\selectfont,
+        text=black, text width=110mm, align=center]
+    at (69.85mm, 107.95mm) {to {\cuneiform 𒀭𒈹}\kern1pt, Queen of Heaven\\[6mm]and to the muse who inspires\\all creation\\[6mm]and to my child Isaac\\who keeps my brain busy};
 \end{tikzpicture}
 
 % Switch to content layout with margins and page numbers
-\newgeometry{paperwidth=60mm, paperheight=102.86mm, margin=5mm, top=7mm, bottom=9mm, footskip=5mm}
+\newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=18mm, top=20mm, bottom=24mm, footskip=10mm}
 \pagestyle{content}
 \fancypagestyle{plain}{\pagestyle{content}}
 \setcounter{page}{1}
@@ -151,7 +151,7 @@
 
 \numchapter{0}{The Void}
 
-{\fontsize{9}{10.3}\selectfont\itshape
+{\fontsize{11}{13}\selectfont\itshape
 Avalokiteshvara Bodhisattva, when deeply practicing prajña paramita, clearly saw that all five aggregates are empty and thus relieved all suffering. Shariputra, form does not differ from emptiness, emptiness does not differ from form. Form itself is emptiness, emptiness itself form. Sensations, perceptions, formations, and consciousness are also like this. Shariputra, all dharmas are marked by emptiness; they neither arise nor cease, are neither defiled nor pure, neither increase nor decrease. Therefore, given emptiness, there is no form, no sensation, no perception, no formation, no consciousness; no eyes, no ears, no nose, no tongue, no body, no mind; no sight, no sound, no smell, no taste, no touch, no object of mind; no realm of sight \ldots\ no realm of mind consciousness. There is neither ignorance nor extinction of ignorance\ldots\ neither old age and death, nor extinction of old age and death; no suffering, no cause, no cessation, no path; no knowledge and no attainment. With nothing to attain, a bodhisattva relies on prajña paramita, and thus the mind is without hindrance. Without hindrance, there is no fear. Far beyond all inverted views, one realizes nirvana. All buddhas of past, present, and future rely on prajña paramita and thereby attain unsurpassed, complete, perfect enlightenment. Therefore, know the prajña paramita as the great miraculous mantra, the great bright mantra, the supreme mantra, the incomparable mantra, which removes all suffering and is true, not false. Therefore we proclaim the prajña paramita mantra, the mantra that says: ``Gate Gate Paragate Parasamgate Bodhi Svaha.''
 
 \begin{flushright}
@@ -165,13 +165,13 @@ Avalokiteshvara Bodhisattva, when deeply practicing prajña paramita, clearly sa
 
 \vfill
 \begin{center}
-\includegraphics[height=25mm]{cardback.pdf}
+\includegraphics[height=40mm]{cardback.pdf}
 \end{center}
 \vfill
 
 \numchapter{1}{The One}
 
-\begin{center}\fontsize{14}{20}\selectfont\itshape
+\begin{center}\fontsize{16}{24}\selectfont\itshape
 Toward the One\\
 The Perfection of Love,\\
 Harmony, and Beauty\\
@@ -184,7 +184,7 @@ The Spirit of Guidance
 \end{center}
 
 \begin{flushright}
-{\fontsize{8}{10}\selectfont --- universalist Sufi prayer of invocation}
+{\fontsize{10}{13}\selectfont --- universalist Sufi prayer of invocation}
 \end{flushright}
 
 \newpage
@@ -195,7 +195,7 @@ The Spirit of Guidance
 
 \numchapter{2}{Yin and Yang}
 
-\begin{center}\fontsize{12}{16}\selectfont\itshape
+\begin{center}\fontsize{16}{22}\selectfont\itshape
 Therefore there is in the Changes\\
 the Great Primal Beginning.\\
 This generates\\
@@ -211,7 +211,7 @@ create the great field of action.
 \end{center}
 
 \begin{flushright}
-{\fontsize{6.5}{7.5}\selectfont\raggedleft --- The I Ching or Book of Changes,\\translated by Richard Wilhelm,\\rendered into English\\by Cary F. Baynes\par}
+{\fontsize{9}{11}\selectfont\raggedleft --- The I Ching or Book of Changes,\\translated by Richard Wilhelm,\\rendered into English\\by Cary F. Baynes\par}
 \end{flushright}
 
 \newpage
@@ -226,23 +226,23 @@ create the great field of action.
 \restoregeometry
 \noindent
 \begin{tikzpicture}
-  \useasboundingbox (0,0) rectangle (70mm, 120mm);
-  \clip (0,0) rectangle (70mm, 120mm);
+  \useasboundingbox (0,0) rectangle (139.7mm, 215.9mm);
+  \clip (0,0) rectangle (139.7mm, 215.9mm);
   % Radiating lines - same as front cover
   \foreach \a in {0,5,...,355} {
     \foreach \s in {0,1,...,19} {
       \pgfmathsetmacro{\op}{1 - \s/19}%
-      \pgfmathsetmacro{\startrad}{5 + \s*2.5}%
+      \pgfmathsetmacro{\startrad}{10 + \s*5}%
       \draw[black, thin, opacity=\op]
-        (35mm, 60mm) ++(\a:\startrad mm) -- ++(\a:2.5mm);
+        (69.85mm, 107.95mm) ++(\a:\startrad mm) -- ++(\a:5mm);
     }
   }
   % White backing to keep text readable
-  \fill[white] (35mm, 60mm) circle (14mm);
+  \fill[white] (69.85mm, 107.95mm) circle (28mm);
   % Back cover text
-  \node[anchor=center, font=\cardfont\fontsize{33}{40}\selectfont,
-        text=black, text width=52mm, align=center]
-    at (35mm, 60mm) {written\\in the\\stars};
+  \node[anchor=center, font=\cardfont\fontsize{50}{60}\selectfont,
+        text=black, text width=100mm, align=center]
+    at (69.85mm, 107.95mm) {written\\in the\\stars};
 \end{tikzpicture}
 
 \end{document}
