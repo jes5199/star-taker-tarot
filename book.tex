@@ -115,8 +115,6 @@
 
 \tableofcontents
 
-\numchapter{i}{Introduction}
-
 \numchapter{0}{The Void}
 
 {\fontsize{7.8}{8.8}\selectfont\itshape
@@ -155,6 +153,10 @@ The Spirit of Guidance
 {\fontsize{7}{9}\selectfont --- universalist Sufi prayer of invocation}
 \end{flushright}
 
+\newpage
+
+\noindent If you're reading this, then my weird little deck is here in your hands, and you have a question like ``what the hell is going on'' or ``why is it like this''. Let me start at the beginning. My name is Jes, and I'm an astrolabist, which means I'm concerned with astronomy and astrology through the lens of how people understood them before the modern era: the math and mythology are deeply intertwined, and to get to the good stuff you need to understand a lot of interlocking systems. No particular part on its own is overwhelming, but all together is too much for the human mind to deal with. It is my hope that tarot can be a bridge between these different parts. Tarot, despite its origins as a simple card game, took on esoteric connotations as various people noticed numerical coincidences in its structure, and gradually reinterpreted it to be a projection of some deep structure of the universe, or the human mind, or aspects of the divine, etc. The Tarot we know today is deeply astrological, as systematic mappings to the planets, zodiac, and ecliptic were used to design the illustrations on the most recognizable historical tarot decks. Many of those associations are obscure now, and one goal of this project is to try to bring them to the forefront. At the same time, many people over thousands of years attempted to systematize the motion of the planets and the stars. They all made slightly different choices, but because they were all referring to the same real objects in the actual sky, similar patterns emerged in all of them. An extraordinary gift of our time is that information for cultures that once had sparse contact with each other are now freely available for anyone to read about. I have selected a few of the best known systems of astrology and divination to represent here, from a few of the world's largest cultures --- not because they are the best, but because they are well-documented, and an easy place to start. I lament that it is impossible to know every idea that was ever revered by any culture, but I have done my best to present the little sliver of the world's knowledge that I have managed to understand. I hope you find them as beautiful as I do.
+
 \numchapter{2}{Yin and Yang}
 
 \begin{center}\fontsize{10}{14}\selectfont\itshape
@@ -175,5 +177,30 @@ create the great field of action.
 \begin{flushright}
 {\fontsize{5.5}{6.5}\selectfont\raggedleft --- The I Ching or Book of Changes,\\translated by Richard Wilhelm,\\rendered into English\\by Cary F. Baynes\par}
 \end{flushright}
+
+% Back cover
+\newpage
+\thispagestyle{empty}
+\restoregeometry
+\noindent
+\begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle (60mm, 102.86mm);
+  \clip (0,0) rectangle (60mm, 102.86mm);
+  % Radiating lines - same as front cover
+  \foreach \a in {0,5,...,355} {
+    \foreach \s in {0,1,...,19} {
+      \pgfmathsetmacro{\op}{1 - \s/19}%
+      \pgfmathsetmacro{\startrad}{5 + \s*2.5}%
+      \draw[black, thin, opacity=\op]
+        (30mm, 51.43mm) ++(\a:\startrad mm) -- ++(\a:2.5mm);
+    }
+  }
+  % White backing to keep text readable
+  \fill[white] (30mm, 51.43mm) circle (12mm);
+  % Back cover text
+  \node[anchor=center, font=\cardfont\fontsize{28}{34}\selectfont,
+        text=black, text width=45mm, align=center]
+    at (30mm, 51.43mm) {written\\in the\\stars};
+\end{tikzpicture}
 
 \end{document}
