@@ -231,6 +231,64 @@ create the great field of action.
 
 \noindent This book is in two parts, the first part is concerned with the individual systems that appear on the cards, while the second part will examine each card individually, with reference to how each of those systems manifest on a particular card. Big picture, little picture. We'll start with the simplest system possible: duality.
 
+Long before Alan Turing, John von Neumann, and Claude Shannon applied binary encodings to the problem of electronically processing information, masters of divination used binary logic to transform randomness into recognizable symbols. The inputs could be as simple as a coin flip or be composed of laborious rituals that could take the better part of an hour to generate a single figure.
+
+The oldest such system is the I Ching, which originated in the Yellow River valley of China, around 1050 BCE. In this system, the two fundamental bits are yang lines and yin lines, the active and passive elements. A remarkably similar system developed in West Africa where it is known as Ifá (or Fa, or Afa), and was transmitted to the Arab world where it was called \textit{ilm al-raml} (``the science of sand''), and eventually reached medieval Europe where it became Geomancy. In this system, active and passive elements are marked as single (odd) or paired (even) dots.
+
+\newpage
+
+\vfill
+\begin{center}
+\begin{tikzpicture}
+  % I Ching lines
+  \begin{scope}[shift={(0,0)}, line width=2mm, line cap=butt]
+    \draw (-8mm, 0) -- (8mm, 0);
+  \end{scope}
+  \begin{scope}[shift={(50mm,0)}, line width=2mm, line cap=butt]
+    \draw (-8mm, 0) -- (-1.5mm, 0);
+    \draw (1.5mm, 0) -- (8mm, 0);
+  \end{scope}
+  % yang / yin
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (0, -5mm) {yang};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (50mm, -5mm) {yin};
+  % Geomantic dots
+  \node[fill=black, inner sep=1.2mm, rotate=45] at (0, -17mm) {};
+  \node[fill=black, inner sep=1.2mm, rotate=45] at (50mm-2.5mm, -17mm) {};
+  \node[fill=black, inner sep=1.2mm, rotate=45] at (50mm+2.5mm, -17mm) {};
+  % active / passive
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (0, -22mm) {active};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (50mm, -22mm) {passive};
+  % Word pairs
+  \foreach \word/\opp [count=\i from 0] in {%
+    odd/even,
+    male/female,
+    light/dark,
+    exhale/inhale,
+    transmission/reception,
+    loud/quiet,
+    summer/winter,
+    explicit/implicit,
+    manifest/potential,
+    movement/rest%
+  } {
+    \pgfmathsetmacro{\ypos}{-35 - \i*5}
+    \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (0, \ypos mm) {\word};
+    \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (50mm, \ypos mm) {\opp};
+  }
+  % Celestial pairs below with gap
+  \foreach \word/\opp [count=\i from 0] in {%
+    sun/moon,
+    jupiter/saturn,
+    mars/venus%
+  } {
+    \pgfmathsetmacro{\ypos}{-93 - \i*5}
+    \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (0, \ypos mm) {\word};
+    \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (50mm, \ypos mm) {\opp};
+  }
+\end{tikzpicture}
+\end{center}
+\vfill
+
 \partpage[The Cards]{The\\Cards}
 
 % Back cover
