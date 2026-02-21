@@ -2635,6 +2635,23 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♉};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Taurus};
+  % Lenormand mini-card: Clover (2)
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+      rectangle
+      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (0.5\cardwidth, 17mm) {%
+        \includegraphics[width=10.8mm]{images/clover-crop.png}%
+      };
+  \end{scope}
+  \draw[black, thick, rounded corners=1mm]
+    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+    rectangle
+    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \node[anchor=south east, text=black, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm+0.5mm) {2};
   \decanticks{40}
   % Bounds: Mercury @0, Jupiter @4
   \boundsquare{0}{Mercury}
