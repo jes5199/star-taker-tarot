@@ -233,13 +233,16 @@ create the great field of action.
 
 Long before Alan Turing, John von Neumann, and Claude Shannon applied binary encodings to the problem of electronically processing information, masters of divination used binary logic to transform randomness into recognizable symbols. The inputs could be as simple as a coin flip or be composed of laborious rituals that could take the better part of an hour to generate a single figure.
 
-The oldest such system is the I Ching, which originated in the Yellow River valley of China, around 1050 BCE. In this system, the two fundamental bits are yang lines and yin lines, the active and passive elements. A remarkably similar system developed in West Africa where it is known as Ifá (or Fa, or Afa), and was transmitted to the Arab world where it was called \textit{ilm al-raml} (``the science of sand''), and eventually reached medieval Europe where it became Geomancy. In this system, active and passive elements are marked as single (odd) or paired (even) dots.
+The oldest such system is the I Ching, which originated in the Yellow River valley of China, around 1050 BCE. In this system, the two fundamental bits are yang lines and yin lines, the active and passive elements.
+
+A remarkably similar system developed in West Africa where it is known as Ifá (or Fa, or Afa), and was transmitted to the Arab world where it was called \textit{ilm al-raml} (``the science of sand''), and eventually reached medieval Europe where it became Geomancy. In this system, active and passive elements are marked as single (odd) or paired (even) dots.
 
 \newpage
 
-\vfill
+\null\vfill
 \begin{center}
 \begin{tikzpicture}
+  \useasboundingbox (-15mm, -107mm) rectangle (65mm, 2mm);
   % I Ching lines
   \begin{scope}[shift={(0,0)}, line width=2mm, line cap=butt]
     \draw (-8mm, 0) -- (8mm, 0);
@@ -287,7 +290,7 @@ The oldest such system is the I Ching, which originated in the Yellow River vall
   }
 \end{tikzpicture}
 \end{center}
-\vfill
+\vfill\null
 
 \partpage[The Cards]{The\\Cards}
 
