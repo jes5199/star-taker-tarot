@@ -133,8 +133,8 @@ if $in_dense && [ "$TOP_KILL" -lt 0 ]; then
     TOP_KILL=-1
 fi
 
-# --- Apply: adaptive top/bottom, fixed 5px left/right ---
-DRAW_ARGS="-draw \"rectangle 0,0 4,877\" -draw \"rectangle 495,0 499,877\""
+# --- Apply: adaptive top/bottom, fixed left (5px) / right (15px) ---
+DRAW_ARGS="-draw \"rectangle 0,0 4,877\" -draw \"rectangle 485,0 499,877\""
 if [ "$TOP_KILL" -ge 0 ]; then
     DRAW_ARGS="$DRAW_ARGS -draw \"rectangle 0,0 499,$TOP_KILL\""
 else
