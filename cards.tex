@@ -1,5 +1,5 @@
 \documentclass[letterpaper]{article}
-\usepackage[margin=10mm]{geometry}
+\usepackage[letterpaper, left=2.95mm, right=2.95mm, top=19.5mm, bottom=19.5mm]{geometry}
 \usepackage{tikz}
 \usetikzlibrary{decorations.text}
 \usepackage{graphicx}
@@ -11,6 +11,9 @@
 \newlength{\cardheight}
 \setlength{\cardwidth}{60mm}
 \setlength{\cardheight}{102.86mm}  % 60 * 120/70 to keep tarot proportions
+
+% Scale factor for print: 70mm/60mm = 1.16667
+\def\cardscale{1.16667}
 
 % Max width for card name (card width minus room for corner elements)
 \newlength{\namewidth}
@@ -1740,7 +1743,9 @@
 
 % Card command: \tarotcard[overlay]{image file}{roman numeral}{card name}{hebrew letter}
 \newcommand{\tarotcard}[5][]{%
+  \scalebox{\cardscale}{%
   \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle (\cardwidth,\cardheight);
     % Card border
     \draw[rounded corners=2.5mm, thick] (0,0) rectangle (\cardwidth,\cardheight);
     \clip[rounded corners=2.5mm] (0,0) rectangle (\cardwidth,\cardheight);
@@ -1765,6 +1770,7 @@
       at (0.5\cardwidth, \cardheight-2mm)
       {\fittext{\namewidth}{\cardfont\fontsize{16}{18}\selectfont #4}};
   \end{tikzpicture}%
+  }%
 }
 
 % Chaldean monomoiria: planet ruler for each degree
@@ -1829,7 +1835,9 @@
 % Minor arcana card command: \minorcard[overlay]{image file}{card name}
 \newcommand{\minorcardshift}{-2mm}
 \newcommand{\minorcard}[3][]{%
+  \scalebox{\cardscale}{%
   \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle (\cardwidth,\cardheight);
     % Card border
     \draw[rounded corners=2.5mm, thick] (0,0) rectangle (\cardwidth,\cardheight);
     \clip[rounded corners=2.5mm] (0,0) rectangle (\cardwidth,\cardheight);
@@ -1846,69 +1854,69 @@
       at (0.5\cardwidth, \cardheight-2mm)
       {\fittext{\namewidth}{\cardfont\fontsize{16}{18}\selectfont #3}};
   \end{tikzpicture}%
+  }%
 }
 
 \begin{document}
 \pagestyle{empty}
-\centering
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\lineskip}{0pt}
+\setlength{\lineskiplimit}{\maxdimen}
+\raggedright
 
-% Row helper: 4 cards per row
+% Majors: 6 per page (3 across × 2 down)
 \noindent
-\tarotcard[\alcmercury]{images/a-00}{\O}{The Fool}{א}\hfill
-\tarotcard[\alcmercurytrad]{images/a-01}{\Romanbar{I}}{The Magician}{ב}\hfill
+\tarotcard[\alcmercury]{images/a-00}{\O}{The Fool}{א}%
+\tarotcard[\alcmercurytrad]{images/a-01}{\Romanbar{I}}{The Magician}{ב}%
 \tarotcard[\plmoon]{images/a-02}{\Romanbar{II}}{The High Priestess}{ג}
 
-\vspace{4mm}
 \noindent
-\tarotcard[\plvenus]{images/a-03}{\Romanbar{III}}{The Empress}{ד}\hfill
-\tarotcard[\zdaries]{images/a-04}{\Romanbar{IV}}{The Emperor}{ה}\hfill
+\tarotcard[\plvenus]{images/a-03}{\Romanbar{III}}{The Empress}{ד}%
+\tarotcard[\zdaries]{images/a-04}{\Romanbar{IV}}{The Emperor}{ה}%
 \tarotcard[\zdtaurus]{images/a-05}{\Romanbar{V}}{The Hierophant}{ו}
 
-\vspace{4mm}
+\newpage
 \noindent
-\tarotcard[\zdgemini]{images/a-06}{\Romanbar{VI}}{The Lovers}{ז}\hfill
-\tarotcard[\zdcancer]{images/a-07}{\Romanbar{VII}}{The Chariot}{ח}\hfill
+\tarotcard[\zdgemini]{images/a-06}{\Romanbar{VI}}{The Lovers}{ז}%
+\tarotcard[\zdcancer]{images/a-07}{\Romanbar{VII}}{The Chariot}{ח}%
 \tarotcard[\zdleo]{images/a-08}{\Romanbar{VIII}}{Strength}{ט}
 
-\vspace{4mm}
 \noindent
-\tarotcard[\zdvirgo]{images/a-09}{\Romanbar{IX}}{The Hermit}{י}\hfill
-\tarotcard[\pljupiter]{images/a-10}{\Romanbar{X}}{Wheel of Fortune}{כ}\hfill
+\tarotcard[\zdvirgo]{images/a-09}{\Romanbar{IX}}{The Hermit}{י}%
+\tarotcard[\pljupiter]{images/a-10}{\Romanbar{X}}{Wheel of Fortune}{כ}%
 \tarotcard[\zdlibra]{images/a-11}{\Romanbar{XI}}{Justice}{ל}
 
 \newpage
 \noindent
-\tarotcard[\alcsalt]{images/a-12}{\Romanbar{XII}}{The Hanged Man}{מ}\hfill
-\tarotcard[\zdscorpio]{images/a-13}{\Romanbar{XIII}}{Death}{נ}\hfill
+\tarotcard[\alcsalt]{images/a-12}{\Romanbar{XII}}{The Hanged Man}{מ}%
+\tarotcard[\zdscorpio]{images/a-13}{\Romanbar{XIII}}{Death}{נ}%
 \tarotcard[\zdsagittarius]{images/a-14}{\Romanbar{XIV}}{Temperance}{ס}
 
-\vspace{4mm}
 \noindent
-\tarotcard[\zdcapricorn]{images/a-15}{\Romanbar{XV}}{The Devil}{ע}\hfill
-\tarotcard[\plmars]{images/a-16}{\Romanbar{XVI}}{The Tower}{פ}\hfill
+\tarotcard[\zdcapricorn]{images/a-15}{\Romanbar{XV}}{The Devil}{ע}%
+\tarotcard[\plmars]{images/a-16}{\Romanbar{XVI}}{The Tower}{פ}%
 \tarotcard[\zdaquarius]{images/a-17}{\Romanbar{XVII}}{The Star}{צ}
 
-\vspace{4mm}
+\newpage
 \noindent
-\tarotcard[\zdpisces]{images/a-18}{\Romanbar{XVIII}}{The Moon}{ק}\hfill
-\tarotcard[\plsun]{images/a-19}{\Romanbar{XIX}}{The Sun}{ר}\hfill
+\tarotcard[\zdpisces]{images/a-18}{\Romanbar{XVIII}}{The Moon}{ק}%
+\tarotcard[\plsun]{images/a-19}{\Romanbar{XIX}}{The Sun}{ר}%
 \tarotcard[\alcsulfur]{images/a-20}{\Romanbar{XX}}{Judgement}{ש}
 
-\vspace{4mm}
 \noindent
 \tarotcard[\plsaturn]{images/a-21}{\Romanbar{XXI}}{The World}{ת}
 
 \newpage
 \noindent
-\minorcard[\acewands]{images/w-01}{Ace of Wands}\hfill
-\minorcard[\acecups]{images/c-01}{Ace of Cups}\hfill
+\minorcard[\acewands]{images/w-01}{Ace of Wands}%
+\minorcard[\acecups]{images/c-01}{Ace of Cups}%
 \minorcard[\aceswords]{images/s-01}{Ace of Swords}
 
-\vspace{4mm}
 \noindent
 \minorcard[\acepentacles]{images/p-01}{Ace of Pentacles}
 
-% Twos
+% Pips 2-10: 36 cards, 6 per page, flowing continuously
 \newpage
 \noindent
 \minorcard[{\playingcardmarks{black}{2}{♣}{1.0}{1.0}
@@ -1935,7 +1943,7 @@
   \fixedstar{9.583}{Algenib}
   \hexagram{3}{0,1,0,1,0,0}{0}{0}{Xiè}{Deliverance}
   \hexagram{8}{1,1,1,1,0,0}{0}{2}{Dàzhuàng}{Great\\Strength}
-  \chinesecardmarks[🀑]{二}{条}}]{images/w-02}{Two of Wands}\hfill
+  \chinesecardmarks[🀑]{二}{条}}]{images/w-02}{Two of Wands}%
 \minorcard[{\playingcardmarks{red}{2}{♥}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Choice of Water};
@@ -1968,7 +1976,7 @@
   % Hexagrams
   \hexagram{3}{0,0,1,1,1,0}{0}{0}{Xián}{Influence}
   \hexagram{8}{0,1,1,1,1,1}{0}{2}{Gòu}{Coming\\to Meet}
-  \chinesecardmarks[🀈]{二}{万}}]{images/c-02}{Two of Cups}\hfill
+  \chinesecardmarks[🀈]{二}{万}}]{images/c-02}{Two of Cups}%
 \minorcard[{\playingcardmarks{black}{2}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Choice of Air};
@@ -2000,7 +2008,6 @@
   \hexagram{8}{0,0,0,1,1,0}{0}{2}{Guān}{Contemplation}
   \chinesecardmarks{二}{十}}]{images/s-02}{Two of Swords}
 
-\vspace{4mm}
 \noindent
 \minorcard[{\playingcardmarks{red}{2}{♦}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2032,11 +2039,7 @@
   % Hexagrams
   \hexagram{3}{1,1,0,0,1,1}{0}{0}{Zhōng Fú}{Inner\\Truth}
   \hexagram{8}{1,0,0,0,0,0}{0}{2}{Fù}{Return}
-  \chinesecardmarks[🀚]{二}{并}}]{images/p-02}{Two of Pentacles}
-
-% Threes
-\newpage
-\noindent
+  \chinesecardmarks[🀚]{二}{并}}]{images/p-02}{Two of Pentacles}%
 \minorcard[{\playingcardmarks{black}{3}{♣}{1.0}{1.0}
   \chinesecardmarks[🀒]{三}{条}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2070,7 +2073,7 @@
   \hexagram{1}{1,1,1,1,0,0}{4}{0}{Dàzhuàng}{Great\\Strength}
   \hexagram{5}{0,0,0,1,0,0}{0}{0}{Yù}{Enthusiasm}
   \hexagram{9}{1,1,0,0,1,1}{0}{4}{Sòng}{Conflict}
-  }]{images/w-03}{Three of Wands}\hfill
+  }]{images/w-03}{Three of Wands}%
 \minorcard[{\playingcardmarks{red}{3}{♥}{1.0}{1.0}
   \chinesecardmarks[🀉]{三}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2104,7 +2107,10 @@
   % Hexagrams
   \hexagram{1}{0,1,1,1,1,1}{4}{0}{Gòu}{Coming\\to Meet}
   \hexagram{5}{0,1,1,1,0,1}{0}{0}{Dǐng}{The Cauldron}
-  \hexagram{9}{1,0,1,1,0,0}{0}{4}{Fēng}{Abundance}}]{images/c-03}{Three of Cups}\hfill
+  \hexagram{9}{1,0,1,1,0,0}{0}{4}{Fēng}{Abundance}}]{images/c-03}{Three of Cups}
+
+\newpage
+\noindent
 \minorcard[{\playingcardmarks{black}{3}{♠}{1.0}{1.0}
   \chinesecardmarks{三}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2142,10 +2148,7 @@
   % Hexagrams
   \hexagram{1}{0,0,0,1,1,0}{4}{0}{Guān}{Contemplation}
   \hexagram{5}{1,1,0,1,0,0}{0}{0}{Guī Mèi}{Marrying\\Maiden}
-  \hexagram{9}{1,0,0,1,1,1}{0}{4}{Wú Wàng}{Innocence}}]{images/s-03}{Three of Swords}
-
-\vspace{4mm}
-\noindent
+  \hexagram{9}{1,0,0,1,1,1}{0}{4}{Wú Wàng}{Innocence}}]{images/s-03}{Three of Swords}%
 \minorcard[{\playingcardmarks{red}{3}{♦}{1.0}{1.0}
   \chinesecardmarks[🀛]{三}{并}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2181,11 +2184,7 @@
   % Hexagrams
   \hexagram{1}{1,0,0,0,0,0}{4}{0}{Fù}{Return}
   \hexagram{5}{1,0,0,0,1,0}{0}{0}{Zhūn}{Difficulty}
-  \hexagram{9}{0,0,1,0,0,0}{0}{4}{Qiān}{Modesty}}]{images/p-03}{Three of Pentacles}
-
-% Fours
-\newpage
-\noindent
+  \hexagram{9}{0,0,1,0,0,0}{0}{4}{Qiān}{Modesty}}]{images/p-03}{Three of Pentacles}%
 \minorcard[{\playingcardmarks{black}{4}{♣}{1.0}{1.0}
   \chinesecardmarks[🀓]{四}{条}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2216,7 +2215,9 @@
   % Hexagrams
   \hexagram{2}{0,1,0,1,1,1}{2}{0}{Sòng}{Conflict}
   \hexagram{7}{0,1,1,0,0,1}{0}{0}{Gǔ}{Correcting}
-  }]{images/w-04}{Four of Wands}\hfill
+  }]{images/w-04}{Four of Wands}
+
+\noindent
 \minorcard[{\playingcardmarks{red}{4}{♥}{1.0}{1.0}
   \chinesecardmarks[🀊]{四}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2250,7 +2251,7 @@
   \pentadlane{5}{鷹始摯}{Yīng shǐ zhì}{Hawks Begin to Hunt}
   % Hexagrams
   \hexagram{2}{1,0,1,1,0,0}{2}{0}{Fēng}{Abundance}
-  \hexagram{7}{0,1,0,0,1,1}{0}{0}{Huàn}{Dispersion}}]{images/c-04}{Four of Cups}\hfill
+  \hexagram{7}{0,1,0,0,1,1}{0}{0}{Huàn}{Dispersion}}]{images/c-04}{Four of Cups}%
 \minorcard[{\playingcardmarks{black}{4}{♠}{1.0}{1.0}
   \chinesecardmarks{四}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2284,10 +2285,7 @@
   \pentadlane{5}{菊有黃華}{Jú yǒu huáng huá}{Chrysanthemums Bloom}
   % Hexagrams
   \hexagram{2}{1,0,0,1,1,1}{2}{0}{Wú Wàng}{Innocence}
-  \hexagram{7}{1,0,1,0,0,0}{0}{0}{Míng Yí}{Darkening}}]{images/s-04}{Four of Swords}
-
-\vspace{4mm}
-\noindent
+  \hexagram{7}{1,0,1,0,0,0}{0}{0}{Míng Yí}{Darkening}}]{images/s-04}{Four of Swords}%
 \minorcard[{\playingcardmarks{red}{4}{♦}{1.0}{1.0}
   \chinesecardmarks[🀜]{四}{并}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2353,7 +2351,7 @@
   \pentadlane{5}{土潤溽暑}{Tǔ rùn rùshǔ}{Earth is Damp and Hot}
   % Hexagrams
   \hexagram{3}{1,1,0,1,1,1}{0}{0}{Lǚ}{Treading}
-  \hexagram{8}{0,0,1,1,1,1}{0}{2}{Dùn}{Retreat}}]{images/w-05}{Five of Wands}\hfill
+  \hexagram{8}{0,0,1,1,1,1}{0}{2}{Dùn}{Retreat}}]{images/w-05}{Five of Wands}%
 \minorcard[{\playingcardmarks{red}{5}{♥}{1.0}{1.0}
   \chinesecardmarks[🀋]{五}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2386,7 +2384,7 @@
   \pentadlane{5}{草木黃落}{Cǎomù huáng luò}{Plants Yellow and Fall}
   % Hexagrams
   \hexagram{3}{0,1,0,1,1,0}{0}{0}{Kùn}{Oppression}
-  \hexagram{8}{0,0,0,0,0,1}{0}{2}{Bō}{Splitting\\Apart}}]{images/c-05}{Five of Cups}\hfill
+  \hexagram{8}{0,0,0,0,0,1}{0}{2}{Bō}{Splitting\\Apart}}]{images/c-05}{Five of Cups}%
 \minorcard[{\playingcardmarks{black}{5}{♠}{1.0}{1.0}
   \chinesecardmarks{五}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2426,7 +2424,6 @@
   \hexagram{3}{0,1,1,0,0,0}{0}{0}{Shēng}{Pushing\\Upward}
   \hexagram{8}{1,1,0,0,0,0}{0}{2}{Lín}{Approach}}]{images/s-05}{Five of Swords}
 
-\vspace{4mm}
 \noindent
 \minorcard[{\playingcardmarks{red}{5}{♦}{1.0}{1.0}
   \chinesecardmarks[🀝]{五}{并}
@@ -2462,11 +2459,7 @@
   \pentadlane{5}{鳴鳩拂其羽}{Míng jiū fú qí yǔ}{Cooing Doves Preen}
   % Hexagrams
   \hexagram{3}{1,0,1,1,1,0}{0}{0}{Gé}{Revolution}
-  \hexagram{8}{1,1,1,1,1,0}{0}{2}{Guài}{Breakthrough}}]{images/p-05}{Five of Pentacles}
-
-% Sixes
-\newpage
-\noindent
+  \hexagram{8}{1,1,1,1,1,0}{0}{2}{Guài}{Breakthrough}}]{images/p-05}{Five of Pentacles}%
 \minorcard[{\playingcardmarks{black}{6}{♣}{1.0}{1.0}
   \chinesecardmarks[🀕]{六}{条}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2519,7 +2512,7 @@
   % Hexagrams
   \hexagram{1}{0,0,1,1,1,1}{4}{0}{Dùn}{Retreat}
   \hexagram{5}{0,1,1,1,0,0}{0}{0}{Héng}{Duration}
-  \hexagram{9}{1,1,0,0,1,0}{0}{4}{Jié}{Limitation}}]{images/w-06}{Six of Wands}\hfill
+  \hexagram{9}{1,1,0,0,1,0}{0}{4}{Jié}{Limitation}}]{images/w-06}{Six of Wands}%
 \minorcard[{\playingcardmarks{red}{6}{♥}{1.0}{1.0}
   \chinesecardmarks[🀌]{六}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2571,7 +2564,10 @@
   % Hexagrams
   \hexagram{1}{0,0,0,0,0,1}{4}{0}{Bō}{Splitting\\Apart}
   \hexagram{5}{0,0,1,0,0,1}{0}{0}{Gèn}{Keeping\\Still}
-  \hexagram{9}{1,0,1,0,1,0}{0}{4}{Jì Jì}{After\\Completion}}]{images/c-06}{Six of Cups}\hfill
+  \hexagram{9}{1,0,1,0,1,0}{0}{4}{Jì Jì}{After\\Completion}}]{images/c-06}{Six of Cups}
+
+\newpage
+\noindent
 \minorcard[{\playingcardmarks{black}{6}{♠}{1.0}{1.0}
   \chinesecardmarks{六}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2621,10 +2617,7 @@
   % Hexagrams
   \hexagram{1}{1,1,0,0,0,0}{4}{0}{Lín}{Approach}
   \hexagram{5}{0,0,1,1,0,0}{0}{0}{Xiǎo Guò}{Small\\Exceeding}
-  \hexagram{9}{0,1,0,0,0,1}{0}{4}{Méng}{Youthful\\Folly}}]{images/s-06}{Six of Swords}
-
-\vspace{4mm}
-\noindent
+  \hexagram{9}{0,1,0,0,0,1}{0}{4}{Méng}{Youthful\\Folly}}]{images/s-06}{Six of Swords}%
 \minorcard[{\playingcardmarks{red}{6}{♦}{1.0}{1.0}
   \chinesecardmarks[🀞]{六}{并}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2671,11 +2664,7 @@
   % Hexagrams
   \hexagram{1}{1,1,1,1,1,0}{4}{0}{Guài}{Breakthrough}
   \hexagram{5}{0,0,1,1,0,1}{0}{0}{Lǚ}{The Wanderer}
-  \hexagram{9}{0,1,0,0,0,0}{0}{4}{Shī}{The Army}}]{images/p-06}{Six of Pentacles}
-
-% Sevens
-\newpage
-\noindent
+  \hexagram{9}{0,1,0,0,0,0}{0}{4}{Shī}{The Army}}]{images/p-06}{Six of Pentacles}%
 \minorcard[{\playingcardmarks{black}{7}{♣}{1.0}{1.0}
   \chinesecardmarks[🀖]{七}{条}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2723,7 +2712,9 @@
   \pentadlane{5}{寒蟬鳴}{Hánchán míng}{Autumn Cicadas Chirp}
   % Hexagrams
   \hexagram{2}{1,1,0,0,1,0}{2}{0}{Jié}{Limitation}
-  \hexagram{7}{1,0,1,1,1,1}{0}{0}{Tóng Rén}{Fellowship}}]{images/w-07}{Seven of Wands}\hfill
+  \hexagram{7}{1,0,1,1,1,1}{0}{0}{Tóng Rén}{Fellowship}}]{images/w-07}{Seven of Wands}
+
+\noindent
 \minorcard[{\playingcardmarks{red}{7}{♥}{1.0}{1.0}
   \chinesecardmarks[🀍]{七}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2773,7 +2764,7 @@
   \pentadlane{5}{雉入大水為蜃}{Zhì rù dàshuǐ wéi shèn}{Pheasants Become Mirages}
   % Hexagrams
   \hexagram{2}{1,0,1,0,1,0}{2}{0}{Jì Jì}{After\\Completion}
-  \hexagram{7}{1,0,0,1,0,1}{0}{0}{Shì Kè}{Biting\\Through}}]{images/c-07}{Seven of Cups}\hfill
+  \hexagram{7}{1,0,0,1,0,1}{0}{0}{Shì Kè}{Biting\\Through}}]{images/c-07}{Seven of Cups}%
 \minorcard[{\playingcardmarks{black}{7}{♠}{1.0}{1.0}
   \chinesecardmarks{七}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2826,10 +2817,7 @@
   \pentadlane{5}{魚陟負冰}{Yú zhì fù bīng}{Fish Rise Under Ice}
   % Hexagrams
   \hexagram{2}{0,1,0,0,0,1}{2}{0}{Méng}{Youthful\\Folly}
-  \hexagram{7}{1,0,0,0,1,1}{0}{0}{Yì}{Increase}}]{images/s-07}{Seven of Swords}
-
-\vspace{4mm}
-\noindent
+  \hexagram{7}{1,0,0,0,1,1}{0}{0}{Yì}{Increase}}]{images/s-07}{Seven of Swords}%
 \minorcard[{\playingcardmarks{red}{7}{♦}{1.0}{1.0}
   \chinesecardmarks[🀟]{七}{并}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2938,7 +2926,7 @@
   \pentadlane[0.5]{5}{天氣上升地氣下降}{Tiānqì shàngshēng dìqì xiàjiàng}{Heaven and Earth Qi Separates}
   % Hexagrams
   \hexagram{3}{0,1,1,1,1,0}{0}{0}{Dà Guò}{Great\\Exceeding}
-  \hexagram{8}{0,0,0,0,0,0}{0}{2}{Kūn}{Receptive}}]{images/w-08}{Eight of Wands}\hfill
+  \hexagram{8}{0,0,0,0,0,0}{0}{2}{Kūn}{Receptive}}]{images/w-08}{Eight of Wands}%
 \minorcard[{\playingcardmarks{red}{8}{♥}{1.0}{1.0}
   \chinesecardmarks[🀎]{八}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -2997,7 +2985,7 @@
   \pentadlane{5}{鴻雁來}{Hóngyàn lái}{Wild Geese Arrive}
   % Hexagrams
   \hexagram{3}{0,0,1,0,1,1}{0}{0}{Jiàn}{Development}
-  \hexagram{8}{1,1,1,0,0,0}{0}{2}{Tài}{Peace}}]{images/c-08}{Eight of Cups}\hfill
+  \hexagram{8}{1,1,1,0,0,0}{0}{2}{Tài}{Peace}}]{images/c-08}{Eight of Cups}%
 \minorcard[{\playingcardmarks{black}{8}{♠}{1.0}{1.0}
   \chinesecardmarks{八}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -3053,7 +3041,6 @@
   \hexagram{3}{1,1,1,0,1,1}{0}{0}{Xiǎo Chù}{Small\\Taming}
   \hexagram{8}{1,1,1,1,1,1}{0}{2}{Qián}{Creative}}]{images/s-08}{Eight of Swords}
 
-\vspace{4mm}
 \noindent
 \minorcard[{\playingcardmarks{red}{8}{♦}{1.0}{1.0}
   \chinesecardmarks[🀠]{八}{并}
@@ -3104,11 +3091,7 @@
   \pentadlane{5}{天地始肅}{Tiāndì shǐ sù}{Heaven \& Earth Grow Austere}
   % Hexagrams
   \hexagram{3}{1,1,0,0,0,1}{0}{0}{Sǔn}{Decrease}
-  \hexagram{8}{0,0,0,1,1,1}{0}{2}{Pǐ}{Standstill}}]{images/p-08}{Eight of Pentacles}
-
-% Nines
-\newpage
-\noindent
+  \hexagram{8}{0,0,0,1,1,1}{0}{2}{Pǐ}{Standstill}}]{images/p-08}{Eight of Pentacles}%
 \minorcard[{\playingcardmarks{black}{9}{♣}{1.0}{1.0}
   \chinesecardmarks[🀘]{九}{条}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -3161,7 +3144,7 @@
   % Hexagrams
   \hexagram{1}{0,0,0,0,0,0}{4}{0}{Kūn}{Receptive}
   \hexagram{5}{0,1,0,1,0,1}{0}{0}{Wèi Jì}{Before\\Completion}
-  \hexagram{9}{0,0,1,0,1,0}{0}{4}{Jiǎn}{Obstruction}}]{images/w-09}{Nine of Wands}\hfill
+  \hexagram{9}{0,0,1,0,1,0}{0}{4}{Jiǎn}{Obstruction}}]{images/w-09}{Nine of Wands}%
 \minorcard[{\playingcardmarks{red}{9}{♥}{1.0}{1.0}
   \chinesecardmarks[🀏]{九}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -3214,7 +3197,10 @@
   % Hexagrams
   \hexagram{1}{1,1,1,0,0,0}{4}{0}{Tài}{Peace}
   \hexagram{5}{1,1,1,0,1,0}{0}{0}{Xū}{Waiting}
-  \hexagram{9}{1,0,0,1,1,0}{0}{4}{Suí}{Following}}]{images/c-09}{Nine of Cups}\hfill
+  \hexagram{9}{1,0,0,1,1,0}{0}{4}{Suí}{Following}}]{images/c-09}{Nine of Cups}
+
+\newpage
+\noindent
 \minorcard[{\playingcardmarks{black}{9}{♠}{1.0}{1.0}
   \chinesecardmarks{九}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -3269,10 +3255,7 @@
   % Hexagrams
   \hexagram{1}{1,1,1,1,1,1}{4}{0}{Qián}{Creative}
   \hexagram{5}{1,1,1,1,0,1}{0}{0}{Dà Yǒu}{Great\\Possession}
-  \hexagram{9}{1,0,1,0,1,1}{0}{4}{Jiā Rén}{The Family}}]{images/s-09}{Nine of Swords}
-
-\vspace{4mm}
-\noindent
+  \hexagram{9}{1,0,1,0,1,1}{0}{4}{Jiā Rén}{The Family}}]{images/s-09}{Nine of Swords}%
 \minorcard[{\playingcardmarks{red}{9}{♦}{1.0}{1.0}
   \chinesecardmarks[🀡]{九}{并}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -3322,11 +3305,7 @@
   % Hexagrams
   \hexagram{1}{0,0,0,1,1,1}{4}{0}{Pǐ}{Standstill}
   \hexagram{5}{0,1,1,0,1,1}{0}{0}{Xùn}{The Gentle}
-  \hexagram{9}{0,0,0,1,1,0}{0}{4}{Cuì}{Gathering}}]{images/p-09}{Nine of Pentacles}
-
-% Tens
-\newpage
-\noindent
+  \hexagram{9}{0,0,0,1,1,0}{0}{4}{Cuì}{Gathering}}]{images/p-09}{Nine of Pentacles}%
 \minorcard[{\playingcardmarks{black}{10}{♣}{0.7}{1.0}
   \chinesecardmarks{十}{条}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -3374,7 +3353,9 @@
   \pentadlane{5}{荔挺出}{Lì tǐng chū}{Iris Sprouts}
   % Hexagrams
   \hexagram{2}{0,0,1,0,1,0}{2}{0}{Jiǎn}{Obstruction}
-  \hexagram{7}{1,0,0,0,0,1}{0}{0}{Yí}{Nourishment}}]{images/w-10}{Ten of Wands}\hfill
+  \hexagram{7}{1,0,0,0,0,1}{0}{0}{Yí}{Nourishment}}]{images/w-10}{Ten of Wands}
+
+\noindent
 \minorcard[{\playingcardmarks{red}{10}{♥}{0.7}{1.0}
   \chinesecardmarks{十}{万}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -3427,7 +3408,7 @@
   \pentadlane{5}{鷹化為鳩}{Yīng huà wéi jiū}{Eagles to Doves}
   % Hexagrams
   \hexagram{2}{1,0,0,1,1,0}{2}{0}{Suí}{Following}
-  \hexagram{7}{0,0,0,1,0,1}{0}{0}{Jìn}{Progress}}]{images/c-10}{Ten of Cups}\hfill
+  \hexagram{7}{0,0,0,1,0,1}{0}{0}{Jìn}{Progress}}]{images/c-10}{Ten of Cups}%
 \minorcard[{\playingcardmarks{black}{10}{♠}{0.7}{1.0}
   \chinesecardmarks{十}{十}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -3482,10 +3463,7 @@
   \pentadlane{5}{反舌無聲}{Fǎnshé wú shēng}{Mockingbirds Fall Silent}
   % Hexagrams
   \hexagram{2}{1,0,1,0,1,1}{2}{0}{Jiā Rén}{The Family}
-  \hexagram{7}{0,1,1,0,1,0}{0}{0}{Jǐng}{The Well}}]{images/s-10}{Ten of Swords}
-
-\vspace{4mm}
-\noindent
+  \hexagram{7}{0,1,1,0,1,0}{0}{0}{Jǐng}{The Well}}]{images/s-10}{Ten of Swords}%
 \minorcard[{\playingcardmarks{red}{10}{♦}{0.7}{1.0}
   \chinesecardmarks{十}{并}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -3577,7 +3555,7 @@
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-48mm) {Tail of the Dragon};
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{8}}
-]{images/w-11}{Page of Wands}\hfill
+]{images/w-11}{Page of Wands}%
 \minorcard[{\playingcardmarks{red}{J}{♥}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Earth of Water};
@@ -3603,7 +3581,7 @@
   \chakrastack{7}
   \lunarstack{7}{reclaims}
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{7}}
-]{images/c-11}{Page of Cups}\hfill
+]{images/c-11}{Page of Cups}%
 \minorcard[{\playingcardmarks{black}{J}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Earth of Air};
@@ -3631,7 +3609,6 @@
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{2}}
 ]{images/s-11}{Page of Swords}
 
-\vspace{4mm}
 \noindent
 \minorcard[{\playingcardmarks{red}{J}{♦}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -3658,11 +3635,7 @@
   \chakrastack{1}
   \lunarstack{1}{reclaims}
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{1}}
-]{images/p-11}{Page of Pentacles}
-
-% Knights (Air of suit)
-\newpage
-\noindent
+]{images/p-11}{Page of Pentacles}%
 \minorcard[{\playingcardmarks{black}{C}{♣}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Air of Fire};
@@ -3671,7 +3644,7 @@
   \chakrastack{4}
   \lunarstack{4}{removes}
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{12}}
-]{images/w-12}{Knight of Wands}\hfill
+]{images/w-12}{Knight of Wands}%
 \minorcard[{\playingcardmarks{red}{C}{♥}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Air of Water};
@@ -3680,7 +3653,10 @@
   \chakrastack{7}
   \lunarstack{7}{removes}
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{9}}
-]{images/c-12}{Knight of Cups}\hfill
+]{images/c-12}{Knight of Cups}
+
+\newpage
+\noindent
 \minorcard[{\playingcardmarks{black}{C}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Air of Air};
@@ -3689,10 +3665,7 @@
   \chakrastack{3}
   \lunarstack{3}{removes}
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{13}}
-]{images/s-12}{Knight of Swords}
-
-\vspace{4mm}
-\noindent
+]{images/s-12}{Knight of Swords}%
 \minorcard[{\playingcardmarks{red}{C}{♦}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Air of Earth};
@@ -3710,11 +3683,7 @@
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-48mm) {Head of the Dragon};
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{0}}
-]{images/p-12}{Knight of Pentacles}
-
-% Queens (Water of suit)
-\newpage
-\noindent
+]{images/p-12}{Knight of Pentacles}%
 \minorcard[{\playingcardmarks{black}{Q}{♣}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Water of Fire};
@@ -3740,7 +3709,9 @@
   \chakrastack{5}
   \lunarstack{5}{removes}
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{11}}
-]{images/w-13}{Queen of Wands}\hfill
+]{images/w-13}{Queen of Wands}
+
+\noindent
 \minorcard[{\playingcardmarks{red}{Q}{♥}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Water of Water};
@@ -3766,7 +3737,7 @@
   \chakrastack{6}
   \lunarstack{6}{reclaims}
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{6}}
-]{images/c-13}{Queen of Cups}\hfill
+]{images/c-13}{Queen of Cups}%
 \minorcard[{\playingcardmarks{black}{Q}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Water of Air};
@@ -3792,10 +3763,7 @@
   \chakrastack{6}
   \lunarstack{6}{removes}
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{10}}
-]{images/s-13}{Queen of Swords}
-
-\vspace{4mm}
-\noindent
+]{images/s-13}{Queen of Swords}%
 \minorcard[{\playingcardmarks{red}{Q}{♦}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Water of Earth};
@@ -3851,7 +3819,7 @@
   \chakrastack{2}
   \lunarstack{2}{removes}
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{14}}
-]{images/w-14}{King of Wands}\hfill
+]{images/w-14}{King of Wands}%
 \minorcard[{\playingcardmarks{red}{K}{♥}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Fire of Water};
@@ -3877,7 +3845,7 @@
   \chakrastack{5}
   \lunarstack{5}{reclaims}
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{5}}
-]{images/c-14}{King of Cups}\hfill
+]{images/c-14}{King of Cups}%
 \minorcard[{\playingcardmarks{black}{K}{♠}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Fire of Air};
@@ -3905,7 +3873,6 @@
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{3}}
 ]{images/s-14}{King of Swords}
 
-\vspace{4mm}
 \noindent
 \minorcard[{\playingcardmarks{red}{K}{♦}{1.0}{1.0}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
@@ -3936,7 +3903,9 @@
 
 % Card back
 \newcommand{\cardback}{%
+\scalebox{\cardscale}{%
 \begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle (\cardwidth, \cardheight);
   \draw[rounded corners=2.5mm, thick] (0,0) rectangle (\cardwidth, \cardheight);
   \clip[rounded corners=2.5mm] (0,0) rectangle (\cardwidth, \cardheight);
   \fill[black] (0,0) rectangle (\cardwidth, \cardheight);
@@ -3949,18 +3918,18 @@
     }
   }
 \end{tikzpicture}%
+}%
 }
 
 \newpage
 \noindent
-\cardback\hfill
-\cardback\hfill
+\cardback%
+\cardback%
 \cardback
 
-\vspace{4mm}
 \noindent
-\cardback\hfill
-\cardback\hfill
+\cardback%
+\cardback%
 \cardback
 
 \end{document}
