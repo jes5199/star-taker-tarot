@@ -1,20 +1,20 @@
-\documentclass{book}
-\usepackage[paperwidth=60mm, paperheight=102.86mm, margin=0mm]{geometry}
+\documentclass[openany]{book}
+\usepackage[paperwidth=70mm, paperheight=120mm, margin=0mm, headsep=0pt, headheight=0pt, footskip=0pt]{geometry}
 \usepackage{tikz}
 \usepackage{fontspec}
 
 \newfontface\cardfont{EB Garamond SC}[LetterSpace=8]
 \newfontface\reversedC{FreeSerif}
 \newfontface\cuneiform{Noto Sans Cuneiform}
-\setmainfont{Gentium Book Basic}[Scale=0.7]
+\setmainfont{Gentium Book Basic}[Scale=0.82]
 \usepackage{leading}
-\leading{8pt}
+\leading{9.3pt}
 
 % Small page numbers at bottom center
 \usepackage{fancyhdr}
 \fancypagestyle{content}{%
   \fancyhf{}%
-  \fancyfoot[C]{\fontsize{7}{8}\selectfont\thepage}%
+  \fancyfoot[C]{\fontsize{8}{9}\selectfont\thepage}%
   \renewcommand{\headrulewidth}{0pt}%
   \renewcommand{\footrulewidth}{0pt}%
 }
@@ -22,53 +22,87 @@
 % Smaller section headings for tiny pages
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
-  {\cardfont\fontsize{10}{12}\selectfont\centering}{}{0pt}{}
+  {\cardfont\fontsize{12}{14}\selectfont\centering}{}{0pt}{}
 \renewcommand{\chaptername}{}
 \newcommand{\numchapter}[2]{%
-  \chapter*{{\fontsize{8}{10}\selectfont #1}\\[1mm] #2}%
+  \chapter*{{\fontsize{9}{11}\selectfont #1}\\[1mm] #2}%
   \addcontentsline{toc}{chapter}{#1\hspace{1.5mm}#2}%
 }
+\newcommand{\partpage}[2][]{%
+  \newpage
+  \thispagestyle{empty}
+  \restoregeometry
+  \noindent
+  \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle (70mm, 120mm);
+    \clip (0,0) rectangle (70mm, 120mm);
+    \foreach \a in {0,5,...,355} {
+      \foreach \s in {0,1,...,19} {
+        \pgfmathsetmacro{\op}{1 - \s/19}%
+        \pgfmathsetmacro{\startrad}{5 + \s*2.5}%
+        \draw[black, thin, opacity=\op]
+          (35mm, 60mm) ++(\a:\startrad mm) -- ++(\a:2.5mm);
+      }
+    }
+    \fill[white] (35mm, 60mm) circle (12mm);
+    \node[anchor=center, font=\cardfont\fontsize{33}{40}\selectfont,
+          text=black, text width=52mm, align=center]
+      at (35mm, 60mm) {#2};
+  \end{tikzpicture}
+  \def\temp{#1}\ifx\temp\empty
+    \addcontentsline{toc}{part}{#2}
+  \else
+    \addcontentsline{toc}{part}{#1}
+  \fi
+  \newpage
+  \newgeometry{paperwidth=60mm, paperheight=102.86mm, margin=5mm, top=7mm, bottom=9mm, footskip=5mm}
+  \pagestyle{content}
+}
 \titleformat{\section}
-  {\cardfont\fontsize{7}{9}\selectfont\centering}{}{0pt}{}
+  {\cardfont\fontsize{8}{10}\selectfont\centering}{}{0pt}{}
 \titlespacing*{\chapter}{0pt}{5mm}{3mm}
 \titlespacing*{\section}{0pt}{2mm}{1mm}
 
 % Tiny TOC formatting
 \usepackage{tocloft}
-\renewcommand{\cftchapfont}{\cardfont\fontsize{6}{8}\selectfont}
-\renewcommand{\cftchappagefont}{\fontsize{6}{8}\selectfont}
-\renewcommand{\cftsecfont}{\fontsize{5}{7}\selectfont}
-\renewcommand{\cftsecpagefont}{\fontsize{5}{7}\selectfont}
-\renewcommand{\cfttoctitlefont}{\cardfont\fontsize{10}{12}\selectfont\centering}
+\renewcommand{\cftchapfont}{\cardfont\fontsize{7}{9}\selectfont}
+\renewcommand{\cftchappagefont}{\fontsize{7}{9}\selectfont}
+\renewcommand{\cftsecfont}{\fontsize{6}{8}\selectfont}
+\renewcommand{\cftsecpagefont}{\fontsize{6}{8}\selectfont}
+\renewcommand{\cfttoctitlefont}{\cardfont\fontsize{12}{14}\selectfont\centering}
 \setlength{\cftbeforechapskip}{1mm}
 \setlength{\cftbeforesecskip}{0.5mm}
 \setlength{\cftsecindent}{3mm}
 \renewcommand{\cftdotsep}{2}
+\renewcommand{\cftpartfont}{\cardfont\fontsize{8}{10}\selectfont}
+\renewcommand{\cftpartpagefont}{\fontsize{8}{10}\selectfont}
+\setlength{\cftbeforepartskip}{2mm}
+\setlength{\cftpartindent}{0pt}
+\setlength{\cftpartnumwidth}{0pt}
 
 \pagestyle{empty}
 
 \begin{document}
-
 % Title page
 \noindent
 \begin{tikzpicture}
-  \useasboundingbox (0,0) rectangle (60mm, 102.86mm);
-  \clip (0,0) rectangle (60mm, 102.86mm);
+  \useasboundingbox (0,0) rectangle (70mm, 120mm);
+  \clip (0,0) rectangle (70mm, 120mm);
   % Radiating lines - black on white, matching card back pattern
   \foreach \a in {0,5,...,355} {
     \foreach \s in {0,1,...,19} {
       \pgfmathsetmacro{\op}{1 - \s/19}%
       \pgfmathsetmacro{\startrad}{5 + \s*2.5}%
       \draw[black, thin, opacity=\op]
-        (30mm, 51.43mm) ++(\a:\startrad mm) -- ++(\a:2.5mm);
+        (35mm, 60mm) ++(\a:\startrad mm) -- ++(\a:2.5mm);
     }
   }
   % White backing to keep text readable
-  \fill[white] (30mm, 51.43mm) circle (12mm);
+  \fill[white] (35mm, 60mm) circle (14mm);
   % Title text
   \node[anchor=center, font=\cardfont\fontsize{46}{50}\selectfont,
-        text=black, text width=55mm, align=center]
-    at (30mm, 51.43mm) {Star\\Taker\\Tarot};
+        text=black, text width=65mm, align=center]
+    at (35mm, 60mm) {Star\\Taker\\Tarot};
 \end{tikzpicture}
 
 \newpage
@@ -81,19 +115,19 @@
 % Page three - author page
 \noindent
 \begin{tikzpicture}
-  \useasboundingbox (0,0) rectangle (60mm, 102.86mm);
+  \useasboundingbox (0,0) rectangle (70mm, 120mm);
   % Title at top
-  \node[anchor=north, font=\cardfont\fontsize{20}{24}\selectfont,
-        text=black, text width=50mm, align=center]
-    at (30mm, 97mm) {Star\\Taker\\Tarot};
+  \node[anchor=north, font=\cardfont\fontsize{23}{28}\selectfont,
+        text=black, text width=58mm, align=center]
+    at (35mm, 113mm) {Star\\Taker\\Tarot};
   % "by" in the middle
-  \node[anchor=center, font=\cardfont\fontsize{10}{14}\selectfont,
-        text=black, text width=50mm, align=center]
-    at (30mm, 51.43mm) {by};
+  \node[anchor=center, font=\cardfont\fontsize{12}{16}\selectfont,
+        text=black, text width=58mm, align=center]
+    at (35mm, 60mm) {by};
   % Author and numeral at bottom
-  \node[anchor=south, font=\cardfont\fontsize{10}{14}\selectfont,
-        text=black, text width=50mm, align=center]
-    at (30mm, 6mm) {Jes\\Annalemma\\Haze Janvir\\Dolan-Wolfe\\I{\reversedC Ↄ}{\reversedC Ↄ}CXCIX};
+  \node[anchor=south, font=\cardfont\fontsize{12}{16}\selectfont,
+        text=black, text width=58mm, align=center]
+    at (35mm, 7mm) {Jes\\Annalemma\\Haze Janvir\\Dolan-Wolfe\\I{\reversedC Ↄ}{\reversedC Ↄ}CXCIX};
 \end{tikzpicture}
 
 \newpage
@@ -101,14 +135,14 @@
 % Page four - dedications
 \noindent
 \begin{tikzpicture}
-  \useasboundingbox (0,0) rectangle (60mm, 102.86mm);
-  \node[anchor=center, font=\cardfont\fontsize{8}{12}\selectfont,
-        text=black, text width=48mm, align=center]
-    at (30mm, 51.43mm) {to {\cuneiform 𒀭𒈹}\kern1pt, Queen of Heaven\\[4mm]and to the muse who inspires\\all creation\\[4mm]and to my child Isaac\\who keeps my brain busy};
+  \useasboundingbox (0,0) rectangle (70mm, 120mm);
+  \node[anchor=center, font=\cardfont\fontsize{9}{14}\selectfont,
+        text=black, text width=56mm, align=center]
+    at (35mm, 60mm) {to {\cuneiform 𒀭𒈹}\kern1pt, Queen of Heaven\\[4mm]and to the muse who inspires\\all creation\\[4mm]and to my child Isaac\\who keeps my brain busy};
 \end{tikzpicture}
 
 % Switch to content layout with margins and page numbers
-\newgeometry{paperwidth=60mm, paperheight=102.86mm, margin=4mm, top=6mm, bottom=8mm, footskip=4mm}
+\newgeometry{paperwidth=60mm, paperheight=102.86mm, margin=5mm, top=7mm, bottom=9mm, footskip=5mm}
 \pagestyle{content}
 \fancypagestyle{plain}{\pagestyle{content}}
 \setcounter{page}{1}
@@ -117,7 +151,7 @@
 
 \numchapter{0}{The Void}
 
-{\fontsize{7.8}{8.8}\selectfont\itshape
+{\fontsize{9}{10.3}\selectfont\itshape
 Avalokiteshvara Bodhisattva, when deeply practicing prajña paramita, clearly saw that all five aggregates are empty and thus relieved all suffering. Shariputra, form does not differ from emptiness, emptiness does not differ from form. Form itself is emptiness, emptiness itself form. Sensations, perceptions, formations, and consciousness are also like this. Shariputra, all dharmas are marked by emptiness; they neither arise nor cease, are neither defiled nor pure, neither increase nor decrease. Therefore, given emptiness, there is no form, no sensation, no perception, no formation, no consciousness; no eyes, no ears, no nose, no tongue, no body, no mind; no sight, no sound, no smell, no taste, no touch, no object of mind; no realm of sight \ldots\ no realm of mind consciousness. There is neither ignorance nor extinction of ignorance\ldots\ neither old age and death, nor extinction of old age and death; no suffering, no cause, no cessation, no path; no knowledge and no attainment. With nothing to attain, a bodhisattva relies on prajña paramita, and thus the mind is without hindrance. Without hindrance, there is no fear. Far beyond all inverted views, one realizes nirvana. All buddhas of past, present, and future rely on prajña paramita and thereby attain unsurpassed, complete, perfect enlightenment. Therefore, know the prajña paramita as the great miraculous mantra, the great bright mantra, the supreme mantra, the incomparable mantra, which removes all suffering and is true, not false. Therefore we proclaim the prajña paramita mantra, the mantra that says: ``Gate Gate Paragate Parasamgate Bodhi Svaha.''
 
 \begin{flushright}
@@ -137,7 +171,7 @@ Avalokiteshvara Bodhisattva, when deeply practicing prajña paramita, clearly sa
 
 \numchapter{1}{The One}
 
-\begin{center}\fontsize{12}{17}\selectfont\itshape
+\begin{center}\fontsize{14}{20}\selectfont\itshape
 Toward the One\\
 The Perfection of Love,\\
 Harmony, and Beauty\\
@@ -150,16 +184,18 @@ The Spirit of Guidance
 \end{center}
 
 \begin{flushright}
-{\fontsize{7}{9}\selectfont --- universalist Sufi prayer of invocation}
+{\fontsize{8}{10}\selectfont --- universalist Sufi prayer of invocation}
 \end{flushright}
 
 \newpage
 
 \noindent If you're reading this, then my weird little deck is here in your hands, and you have a question like ``what the hell is going on'' or ``why is it like this''. Let me start at the beginning. My name is Jes, and I'm an astrolabist, which means I'm concerned with astronomy and astrology through the lens of how people understood them before the modern era: the math and mythology are deeply intertwined, and to get to the good stuff you need to understand a lot of interlocking systems. No particular part on its own is overwhelming, but all together is too much for the human mind to deal with. It is my hope that tarot can be a bridge between these different parts. Tarot, despite its origins as a simple card game, took on esoteric connotations as various people noticed numerical coincidences in its structure, and gradually reinterpreted it to be a projection of some deep structure of the universe, or the human mind, or aspects of the divine, etc. The Tarot we know today is deeply astrological, as systematic mappings to the planets, zodiac, and ecliptic were used to design the illustrations on the most recognizable historical tarot decks. Many of those associations are obscure now, and one goal of this project is to try to bring them to the forefront. At the same time, many people over thousands of years attempted to systematize the motion of the planets and the stars. They all made slightly different choices, but because they were all referring to the same real objects in the actual sky, similar patterns emerged in all of them. An extraordinary gift of our time is that information for cultures that once had sparse contact with each other are now freely available for anyone to read about. I have selected a few of the best known systems of astrology and divination to represent here, from a few of the world's largest cultures --- not because they are the best, but because they are well-documented, and an easy place to start. I lament that it is impossible to know every idea that was ever revered by any culture, but I have done my best to present the little sliver of the world's knowledge that I have managed to understand. I hope you find them as beautiful as I do.
 
+\partpage[The Systems]{The\\Systems}
+
 \numchapter{2}{Yin and Yang}
 
-\begin{center}\fontsize{10}{14}\selectfont\itshape
+\begin{center}\fontsize{12}{16}\selectfont\itshape
 Therefore there is in the Changes\\
 the Great Primal Beginning.\\
 This generates\\
@@ -175,8 +211,14 @@ create the great field of action.
 \end{center}
 
 \begin{flushright}
-{\fontsize{5.5}{6.5}\selectfont\raggedleft --- The I Ching or Book of Changes,\\translated by Richard Wilhelm,\\rendered into English\\by Cary F. Baynes\par}
+{\fontsize{6.5}{7.5}\selectfont\raggedleft --- The I Ching or Book of Changes,\\translated by Richard Wilhelm,\\rendered into English\\by Cary F. Baynes\par}
 \end{flushright}
+
+\newpage
+
+\noindent This book is in two parts, the first part is concerned with the individual systems that appear on the cards, while the second part will examine each card individually, with reference to how each of those systems manifest on a particular card. Big picture, little picture. We'll start with the simplest system possible: duality.
+
+\partpage[The Cards]{The\\Cards}
 
 % Back cover
 \newpage
@@ -184,23 +226,23 @@ create the great field of action.
 \restoregeometry
 \noindent
 \begin{tikzpicture}
-  \useasboundingbox (0,0) rectangle (60mm, 102.86mm);
-  \clip (0,0) rectangle (60mm, 102.86mm);
+  \useasboundingbox (0,0) rectangle (70mm, 120mm);
+  \clip (0,0) rectangle (70mm, 120mm);
   % Radiating lines - same as front cover
   \foreach \a in {0,5,...,355} {
     \foreach \s in {0,1,...,19} {
       \pgfmathsetmacro{\op}{1 - \s/19}%
       \pgfmathsetmacro{\startrad}{5 + \s*2.5}%
       \draw[black, thin, opacity=\op]
-        (30mm, 51.43mm) ++(\a:\startrad mm) -- ++(\a:2.5mm);
+        (35mm, 60mm) ++(\a:\startrad mm) -- ++(\a:2.5mm);
     }
   }
   % White backing to keep text readable
-  \fill[white] (30mm, 51.43mm) circle (12mm);
+  \fill[white] (35mm, 60mm) circle (14mm);
   % Back cover text
-  \node[anchor=center, font=\cardfont\fontsize{28}{34}\selectfont,
-        text=black, text width=45mm, align=center]
-    at (30mm, 51.43mm) {written\\in the\\stars};
+  \node[anchor=center, font=\cardfont\fontsize{33}{40}\selectfont,
+        text=black, text width=52mm, align=center]
+    at (35mm, 60mm) {written\\in the\\stars};
 \end{tikzpicture}
 
 \end{document}
