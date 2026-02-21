@@ -62,79 +62,97 @@ convert "$TMPDIR/cropped.jpg" \
     -threshold 35% \
     "$TMPDIR/card.pbm"
 
-# 2b. Adaptive edge kill: remove top/bottom border remnants
-#     Scans inward from each edge looking for a dense band (>40% black)
-#     followed by a gap (<15% black) — that pattern indicates a border line.
-#     If black density is continuous (dark art), leaves it alone.
-#     Left/right get a fixed 5px kill (vertical elements cause false positives).
+# 2b. Adaptive edge kill: remove border remnants on all four edges.
+#     For each edge, scans inward looking for a dense band followed by a
+#     gap — that pattern indicates a border line. If density is continuous
+#     (dark art extending to the edge), leaves it alone.
+#     Top/bottom scan rows (40px depth, thresholds based on 500px width).
+#     Right edge scans columns (20px depth, thresholds based on 878px height).
+#     Left edge gets a fixed 5px kill (border rarely survives the crop there).
 echo "Removing edge artifacts..."
-SCAN_DEPTH=40
-DENSITY_THRESH=40
-GAP_THRESH=15
-MIN_DENSE=$((500 * DENSITY_THRESH / 100))
-MIN_GAP=$((500 * GAP_THRESH / 100))
 
-# --- Bottom edge ---
-BOT_START=$((878 - SCAN_DEPTH))
-BOT_DATA=$(convert "$TMPDIR/card.pbm" -crop "500x${SCAN_DEPTH}+0+${BOT_START}" -depth 1 txt: 2>/dev/null \
+# --- Helper: adaptive border scan ---
+# Scans a 1D density profile from the edge inward.
+# Prints the kill depth, or -1 if no border detected.
+adaptive_kill() {
+    local -n COUNTS=$1
+    local depth=$2
+    local min_dense=$3
+    local min_gap=$4
+    local direction=$5  # "from_end" or "from_start"
+
+    local kill=-1 in_dense=false last_dense=-1
+    if [ "$direction" = "from_end" ]; then
+        for ((i=depth-1; i>=0; i--)); do
+            local c=${COUNTS[$i]:-0}
+            if [ "$c" -ge "$min_dense" ]; then
+                in_dense=true; last_dense=$i
+            elif $in_dense && [ "$c" -lt "$min_gap" ]; then
+                kill=$((depth - 1 - last_dense + 2)); break
+            fi
+        done
+    else
+        for ((i=0; i<depth; i++)); do
+            local c=${COUNTS[$i]:-0}
+            if [ "$c" -ge "$min_dense" ]; then
+                in_dense=true; last_dense=$i
+            elif $in_dense && [ "$c" -lt "$min_gap" ]; then
+                kill=$((last_dense + 2)); break
+            fi
+        done
+    fi
+    if $in_dense && [ "$kill" -lt 0 ]; then kill=-1; fi
+    echo "$kill"
+}
+
+# --- Bottom edge (row scan, 40px depth) ---
+H_SCAN=40
+H_DENSE=$((500 * 40 / 100))
+H_GAP=$((500 * 15 / 100))
+
+BOT_START=$((878 - H_SCAN))
+BOT_DATA=$(convert "$TMPDIR/card.pbm" -crop "500x${H_SCAN}+0+${BOT_START}" -depth 1 txt: 2>/dev/null \
     | grep "gray(0)" | cut -d, -f2 | cut -d: -f1 | sort -n | uniq -c)
-
 declare -A BOT_ROW
-while read count row; do
-    [ -z "$row" ] && continue
-    BOT_ROW[$row]=$count
-done <<< "$BOT_DATA"
+while read count row; do [ -z "$row" ] && continue; BOT_ROW[$row]=$count; done <<< "$BOT_DATA"
+BOT_KILL=$(adaptive_kill BOT_ROW $H_SCAN $H_DENSE $H_GAP from_end)
 
-BOT_KILL=-1
-in_dense=false
-last_dense=-1
-for ((i=SCAN_DEPTH-1; i>=0; i--)); do
-    count=${BOT_ROW[$i]:-0}
-    if [ "$count" -ge "$MIN_DENSE" ]; then
-        in_dense=true
-        last_dense=$i
-    else
-        if $in_dense && [ "$count" -lt "$MIN_GAP" ]; then
-            BOT_KILL=$((SCAN_DEPTH - 1 - last_dense + 2))
-            break
-        fi
-    fi
-done
-if $in_dense && [ "$BOT_KILL" -lt 0 ]; then
-    BOT_KILL=-1
-fi
-
-# --- Top edge ---
-TOP_DATA=$(convert "$TMPDIR/card.pbm" -crop "500x${SCAN_DEPTH}+0+0" -depth 1 txt: 2>/dev/null \
+# --- Top edge (row scan, 40px depth) ---
+TOP_DATA=$(convert "$TMPDIR/card.pbm" -crop "500x${H_SCAN}+0+0" -depth 1 txt: 2>/dev/null \
     | grep "gray(0)" | cut -d, -f2 | cut -d: -f1 | sort -n | uniq -c)
-
 declare -A TOP_ROW
-while read count row; do
-    [ -z "$row" ] && continue
-    TOP_ROW[$row]=$count
-done <<< "$TOP_DATA"
+while read count row; do [ -z "$row" ] && continue; TOP_ROW[$row]=$count; done <<< "$TOP_DATA"
+TOP_KILL=$(adaptive_kill TOP_ROW $H_SCAN $H_DENSE $H_GAP from_start)
 
-TOP_KILL=-1
-in_dense=false
-last_dense=-1
-for ((i=0; i<SCAN_DEPTH; i++)); do
-    count=${TOP_ROW[$i]:-0}
-    if [ "$count" -ge "$MIN_DENSE" ]; then
-        in_dense=true
-        last_dense=$i
-    else
-        if $in_dense && [ "$count" -lt "$MIN_GAP" ]; then
-            TOP_KILL=$((last_dense + 2))
-            break
-        fi
+# --- Right edge (peak detection, 20px depth) ---
+# Gap detection fails here because some cards have dense art (70%+) that
+# merges with the border. Instead, find the innermost column with >85%
+# density (the border peak) and kill from there to the edge with margin.
+V_SCAN=20
+PEAK_THRESH=$((878 * 85 / 100))
+
+RIGHT_START=$((500 - V_SCAN))
+RIGHT_DATA=$(convert "$TMPDIR/card.pbm" -crop "${V_SCAN}x878+${RIGHT_START}+0" -depth 1 txt: 2>/dev/null \
+    | grep "gray(0)" | sed 's/,.*//' | sort -n | uniq -c)
+declare -A RIGHT_COL
+while read count col; do [ -z "$col" ] && continue; RIGHT_COL[$col]=$count; done <<< "$RIGHT_DATA"
+
+# Find innermost column with >85% density (border peak)
+innermost_peak=-1
+for ((i=0; i<V_SCAN; i++)); do
+    if [ "${RIGHT_COL[$i]:-0}" -ge "$PEAK_THRESH" ]; then
+        innermost_peak=$i
+        break
     fi
 done
-if $in_dense && [ "$TOP_KILL" -lt 0 ]; then
-    TOP_KILL=-1
+if [ "$innermost_peak" -ge 0 ]; then
+    RIGHT_KILL=$((V_SCAN - innermost_peak + 2))
+else
+    RIGHT_KILL=-1
 fi
 
-# --- Apply: adaptive top/bottom, fixed left (5px) / right (15px) ---
-DRAW_ARGS="-draw \"rectangle 0,0 4,877\" -draw \"rectangle 485,0 499,877\""
+# --- Apply ---
+DRAW_ARGS="-draw \"rectangle 0,0 4,877\""
 if [ "$TOP_KILL" -ge 0 ]; then
     DRAW_ARGS="$DRAW_ARGS -draw \"rectangle 0,0 499,$TOP_KILL\""
 else
@@ -145,6 +163,12 @@ if [ "$BOT_KILL" -ge 0 ]; then
     DRAW_ARGS="$DRAW_ARGS -draw \"rectangle 0,$BOT_ABS 499,877\""
 else
     DRAW_ARGS="$DRAW_ARGS -draw \"rectangle 0,873 499,877\""
+fi
+if [ "$RIGHT_KILL" -ge 0 ]; then
+    RIGHT_ABS=$((500 - 1 - RIGHT_KILL))
+    DRAW_ARGS="$DRAW_ARGS -draw \"rectangle $RIGHT_ABS,0 499,877\""
+else
+    DRAW_ARGS="$DRAW_ARGS -draw \"rectangle 495,0 499,877\""
 fi
 eval convert "$TMPDIR/card.pbm" -fill white $DRAW_ARGS "$TMPDIR/card.pbm"
 
