@@ -2513,6 +2513,23 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♏};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Scorpio};
+  % Lenormand mini-card: Stars (16)
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (0.5\cardwidth-5.4mm, 19mm-7.5mm)
+      rectangle
+      (0.5\cardwidth+5.4mm, 19mm+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (0.5\cardwidth, 19mm) {%
+        \includegraphics[width=10.8mm]{images/stars-crop.png}%
+      };
+  \end{scope}
+  \draw[black, thick, rounded corners=1mm]
+    (0.5\cardwidth-5.4mm, 19mm-7.5mm)
+    rectangle
+    (0.5\cardwidth+5.4mm, 19mm+7.5mm);
+  \node[anchor=south east, text=white, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth+5mm, 19mm-7.5mm) {16};
   \decanticks{220}
   % Bounds: Venus at 0°, Mercury at 1°, Jupiter at 9°
   \boundsquare{0}{Venus}
