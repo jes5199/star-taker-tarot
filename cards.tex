@@ -2477,6 +2477,23 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♌};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Leo};
+  % Lenormand mini-card: Cross (36)
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+      rectangle
+      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (0.5\cardwidth, 17mm) {%
+        \includegraphics[width=10.8mm]{images/cross-crop.png}%
+      };
+  \end{scope}
+  \draw[black, thick, rounded corners=1mm]
+    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+    rectangle
+    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \node[anchor=south east, text=black, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {36};
   \decanticks{130}
   % Bounds: Venus at 0° (cont.), Saturn at 1°, Mercury at 8°
   \boundsquare{0}{Venus}
@@ -2491,7 +2508,7 @@
   % Xiù: 鬼 Guǐ (23) at 0.75°, 柳 Liǔ (24) at 2.25°
   \xiulane{0.75}{鬼}{23}
   \xiulane{2.25}{柳}{24}
-  \cistart{xiunum24}{鶉火}{Chúnhuǒ}{Quail Fire}
+  \cistartrotated{rotate=90, yshift=-1mm}{xiunum24}{鶉火}{Chúnhuǒ}{Quail Fire}
   % Fixed stars
   \fixedstar[label below=1, label yshift=-0.5mm]{0.733}{Delta Hydrae}
   \fixedstar[xshift=2mm]{8.3}{Alterf}
@@ -2919,6 +2936,23 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♊};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Gemini};
+  % Lenormand mini-card: Garden (20)
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+      rectangle
+      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (0.5\cardwidth, 17mm) {%
+        \includegraphics[width=10.8mm]{images/garden-crop.png}%
+      };
+  \end{scope}
+  \draw[black, thick, rounded corners=1mm]
+    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+    rectangle
+    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \node[anchor=south east, text=white, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {20};
   \decanticks{60}
   % Bounds: Mercury @0, Jupiter @6
   \boundsquare{0}{Mercury}
@@ -3081,6 +3115,23 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♊};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Gemini};
+  % Lenormand mini-card: Anchor (35)
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+      rectangle
+      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (0.5\cardwidth, 17mm) {%
+        \includegraphics[width=10.8mm]{images/anchor-crop.png}%
+      };
+  \end{scope}
+  \draw[black, thick, rounded corners=1mm]
+    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+    rectangle
+    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \node[anchor=south east, text=white, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {35};
   \decanticks{70}
   % Bounds: Jupiter @0, Venus @2, Mars @7
   \boundsquare{0}{Jupiter}
@@ -3222,6 +3273,23 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♊};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Gemini};
+  % Lenormand mini-card: Ship (3)
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+      rectangle
+      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (0.5\cardwidth, 17mm) {%
+        \includegraphics[width=10.8mm]{images/ship-crop.png}%
+      };
+  \end{scope}
+  \draw[black, thick, rounded corners=1mm]
+    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+    rectangle
+    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \node[anchor=south east, text=white, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {3};
   \decanticks{80}
   % Bounds: Mars @0, Saturn @4
   \boundsquare{0}{Mars}
