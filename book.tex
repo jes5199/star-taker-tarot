@@ -1,4 +1,4 @@
-\documentclass[openany]{book}
+\documentclass[openright]{book}
 \usepackage[paperwidth=5.5in, paperheight=8.5in, margin=0mm, headsep=0pt, headheight=0pt, footskip=0pt]{geometry}
 \usepackage{tikz}
 \usepackage{fontspec}
@@ -29,7 +29,7 @@
   \addcontentsline{toc}{chapter}{#1\hspace{1.5mm}#2}%
 }
 \newcommand{\partpage}[2][]{%
-  \newpage
+  \cleardoublepage
   \thispagestyle{empty}
   \restoregeometry
   \noindent
