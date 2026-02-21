@@ -2826,6 +2826,23 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♓};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Pisces};
+  % Lenormand mini-card: Moon (32)
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+      rectangle
+      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (0.5\cardwidth, 17mm) {%
+        \includegraphics[width=10.8mm]{images/moon-crop.png}%
+      };
+  \end{scope}
+  \draw[black, thick, rounded corners=1mm]
+    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+    rectangle
+    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \node[anchor=south east, text=white, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {32};
   \decanticks{330}
   % Bounds: Venus @0 (Venus rules 0–12° Pisces)
   \boundsquare{0}{Venus}
