@@ -2733,6 +2733,23 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♒};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Aquarius};
+  % Lenormand mini-card: Letter (27)
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+      rectangle
+      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (0.5\cardwidth, 17mm) {%
+        \includegraphics[width=10.8mm]{images/letter-crop.png}%
+      };
+  \end{scope}
+  \draw[black, thick, rounded corners=1mm]
+    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+    rectangle
+    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \node[anchor=south east, text=white, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {27};
   \decanticks{320}
   % Bounds: Mars @0, Saturn @5
   \boundsquare{0}{Mars}
