@@ -2666,6 +2666,23 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♏};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Scorpio};
+  % Lenormand mini-card: Tree (5)
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (0.5\cardwidth-5.4mm, 19mm-7.5mm)
+      rectangle
+      (0.5\cardwidth+5.4mm, 19mm+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (0.5\cardwidth, 19mm) {%
+        \includegraphics[width=10.8mm]{images/tree-crop.png}%
+      };
+  \end{scope}
+  \draw[black, thick, rounded corners=1mm]
+    (0.5\cardwidth-5.4mm, 19mm-7.5mm)
+    rectangle
+    (0.5\cardwidth+5.4mm, 19mm+7.5mm);
+  \node[anchor=south east, text=black, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth+5mm, 19mm-7.5mm+1.5mm) {5};
   \decanticks{230}
   % Bounds: Jupiter at 0°, Saturn at 4°
   \boundsquare{0}{Jupiter}
