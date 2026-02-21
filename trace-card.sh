@@ -38,14 +38,21 @@ else
 fi
 
 # 1. Crop border: trim white margin, shave scan border, trim remainder,
-#    then shave 45 to get inside the printed black card frame
+#    then asymmetric crop to get inside the printed black card frame.
+#    Top gets 25px (less, to preserve roman numerals near the border).
+#    Bottom gets 45px (more, to fully remove the thicker bottom border).
+#    Sides get 30px each.
 echo "Cropping border..."
 convert "$TMPDIR/source.jpg" \
     -fuzz 15% -trim +repage \
     -shave 20x20 +repage \
     -fuzz 15% -trim +repage \
-    -shave 45x45 +repage \
-    "$TMPDIR/cropped.jpg"
+    "$TMPDIR/trimmed.jpg"
+TRIM_W=$(identify -format '%w' "$TMPDIR/trimmed.jpg")
+TRIM_H=$(identify -format '%h' "$TMPDIR/trimmed.jpg")
+CROP_W=$((TRIM_W - 60))
+CROP_H=$((TRIM_H - 70))
+convert "$TMPDIR/trimmed.jpg" -crop "${CROP_W}x${CROP_H}+30+25" +repage "$TMPDIR/cropped.jpg"
 
 # 2. Extract red channel, resize, threshold to B&W bitmap
 echo "Converting to B&W bitmap (red channel, threshold 35%)..."
@@ -55,49 +62,84 @@ convert "$TMPDIR/cropped.jpg" \
     -threshold 35% \
     "$TMPDIR/card.pbm"
 
-# 2b. Adaptive edge kill: remove bottom border remnants
-#     Scans inward from bottom edge looking for a dense band (>40% black)
+# 2b. Adaptive edge kill: remove top/bottom border remnants
+#     Scans inward from each edge looking for a dense band (>40% black)
 #     followed by a gap (<15% black) — that pattern indicates a border line.
 #     If black density is continuous (dark art), leaves it alone.
-#     Top/left/right get a fixed 5px kill.
+#     Left/right get a fixed 5px kill (vertical elements cause false positives).
 echo "Removing edge artifacts..."
-SCAN_DEPTH=30
+SCAN_DEPTH=40
 DENSITY_THRESH=40
 GAP_THRESH=15
 MIN_DENSE=$((500 * DENSITY_THRESH / 100))
 MIN_GAP=$((500 * GAP_THRESH / 100))
 
+# --- Bottom edge ---
 BOT_START=$((878 - SCAN_DEPTH))
 BOT_DATA=$(convert "$TMPDIR/card.pbm" -crop "500x${SCAN_DEPTH}+0+${BOT_START}" -depth 1 txt: 2>/dev/null \
     | grep "gray(0)" | cut -d, -f2 | cut -d: -f1 | sort -n | uniq -c)
 
-declare -A ROW_COUNT
+declare -A BOT_ROW
 while read count row; do
     [ -z "$row" ] && continue
-    ROW_COUNT[$row]=$count
+    BOT_ROW[$row]=$count
 done <<< "$BOT_DATA"
 
 BOT_KILL=-1
 in_dense=false
 last_dense=-1
 for ((i=SCAN_DEPTH-1; i>=0; i--)); do
-    count=${ROW_COUNT[$i]:-0}
+    count=${BOT_ROW[$i]:-0}
     if [ "$count" -ge "$MIN_DENSE" ]; then
         in_dense=true
-        last_dense=$i  # tracks furthest dense row from edge
+        last_dense=$i
     else
         if $in_dense && [ "$count" -lt "$MIN_GAP" ]; then
-            # Exited a dense band into a clear gap — it was a border
-            BOT_KILL=$((last_dense + 2))
+            BOT_KILL=$((SCAN_DEPTH - 1 - last_dense + 2))
             break
         fi
     fi
 done
 if $in_dense && [ "$BOT_KILL" -lt 0 ]; then
-    BOT_KILL=-1  # continuous dark art, don't kill
+    BOT_KILL=-1
 fi
 
-DRAW_ARGS="-draw \"rectangle 0,0 499,4\" -draw \"rectangle 0,0 4,877\" -draw \"rectangle 495,0 499,877\""
+# --- Top edge ---
+TOP_DATA=$(convert "$TMPDIR/card.pbm" -crop "500x${SCAN_DEPTH}+0+0" -depth 1 txt: 2>/dev/null \
+    | grep "gray(0)" | cut -d, -f2 | cut -d: -f1 | sort -n | uniq -c)
+
+declare -A TOP_ROW
+while read count row; do
+    [ -z "$row" ] && continue
+    TOP_ROW[$row]=$count
+done <<< "$TOP_DATA"
+
+TOP_KILL=-1
+in_dense=false
+last_dense=-1
+for ((i=0; i<SCAN_DEPTH; i++)); do
+    count=${TOP_ROW[$i]:-0}
+    if [ "$count" -ge "$MIN_DENSE" ]; then
+        in_dense=true
+        last_dense=$i
+    else
+        if $in_dense && [ "$count" -lt "$MIN_GAP" ]; then
+            TOP_KILL=$((last_dense + 2))
+            break
+        fi
+    fi
+done
+if $in_dense && [ "$TOP_KILL" -lt 0 ]; then
+    TOP_KILL=-1
+fi
+
+# --- Apply: adaptive top/bottom, fixed 5px left/right ---
+DRAW_ARGS="-draw \"rectangle 0,0 4,877\" -draw \"rectangle 495,0 499,877\""
+if [ "$TOP_KILL" -ge 0 ]; then
+    DRAW_ARGS="$DRAW_ARGS -draw \"rectangle 0,0 499,$TOP_KILL\""
+else
+    DRAW_ARGS="$DRAW_ARGS -draw \"rectangle 0,0 499,4\""
+fi
 if [ "$BOT_KILL" -ge 0 ]; then
     BOT_ABS=$((878 - 1 - BOT_KILL))
     DRAW_ARGS="$DRAW_ARGS -draw \"rectangle 0,$BOT_ABS 499,877\""
