@@ -8,6 +8,11 @@
 \colorlet{lenormandblack}{black}
 \colorlet{lenormandwhite}{white}
 
+% Chakra label colors (redefined lighter in dark mode)
+\colorlet{chakraviolet}{violet}
+\colorlet{chakrablue}{blue}
+\colorlet{chakraindigo}{blue!50!violet}
+
 % Preview card dimensions (scaled to fit 3 per row on A4)
 \newlength{\cardwidth}
 \newlength{\cardheight}
@@ -474,7 +479,7 @@
   \begin{scope}[shift={(\cardwidth-11mm,5mm)}]
     \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra6}};
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont\color{blue!50!violet}|Third Eye},
+      text={|\cardfont\fontsize{7}{8}\selectfont\color{chakraindigo}|Third Eye},
       text align=center, raise=0pt}}]
       (170:6mm) arc (170:10:6mm);
   \end{scope}%
@@ -544,7 +549,7 @@
   \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
     \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra5}};
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont\color{blue}|Voice},
+      text={|\cardfont\fontsize{7}{8}\selectfont\color{chakrablue}|Voice},
       text align=center, raise=0pt}}]
       (170:8mm) arc (170:10:8mm);
   \end{scope}%
@@ -824,7 +829,7 @@
   \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
     \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra7}};
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont\color{violet}|Crown},
+      text={|\cardfont\fontsize{7}{8}\selectfont\color{chakraviolet}|Crown},
       text align=center, raise=0pt}}]
       (170:8mm) arc (170:10:8mm);
   \end{scope}%
@@ -1324,21 +1329,21 @@
 \newcommand{\drawmoonphase}[3]{%
   \begin{scope}[shift={(#1,#2)}]
     \pgfmathtruncatemacro{\p}{#3}%
-    \fill[black!80] (0,0) circle (3mm);
+    \fill[lenormandblack!80] (0,0) circle (3mm);
     \ifnum\p=8
-      \fill[white] (0,0) circle (3mm);
+      \fill[lenormandwhite] (0,0) circle (3mm);
     \fi
     \ifnum\p>0 \ifnum\p<8
       % Waxing: right side lit
       \pgfmathsetmacro{\tx}{3 * cos(\p * 22.5)}%
-      \fill[white] (0, 3mm) arc(90:-90:3mm) arc(-90:90:\tx mm and 3mm);
+      \fill[lenormandwhite] (0, 3mm) arc(90:-90:3mm) arc(-90:90:\tx mm and 3mm);
     \fi\fi
     \ifnum\p>8 \ifnum\p<16
       % Waning: left side lit
       \pgfmathsetmacro{\tx}{-3 * cos(\p * 22.5)}%
-      \fill[white] (0, 3mm) arc(90:270:3mm) arc(-90:90:\tx mm and 3mm);
+      \fill[lenormandwhite] (0, 3mm) arc(90:270:3mm) arc(-90:90:\tx mm and 3mm);
     \fi\fi
-    \draw[black!60, thin] (0,0) circle (3mm);
+    \draw[lenormandblack!60, thin] (0,0) circle (3mm);
     \node[anchor=north, text=black, font=\cardfont\fontsize{9}{10}\selectfont]
       at (0, -3.2mm) {#3};
   \end{scope}%
@@ -1755,8 +1760,8 @@
     \node[anchor=south west, inner sep=0pt] at (0,-10mm) {%
       \includegraphics[width=\cardwidth]{#2}%
     };
-    % Wash out the image
-    \fill[white, opacity=0.88] (0,0) rectangle (\cardwidth,\cardheight);
+    % Wash out the image (oversized so it covers under the border stroke)
+    \fill[white, opacity=0.88] (-1mm,-1mm) rectangle (\cardwidth+1mm,\cardheight+1mm);
     % Center overlay (if any)
     #1
     % Roman numeral — top left, with vinculum (overline/underline)
@@ -1847,8 +1852,8 @@
     \node[anchor=south west, inner sep=0pt] at (0,\minorcardshift) {%
       \includegraphics[width=\cardwidth]{#2}%
     };
-    % Wash out the image
-    \fill[white, opacity=0.88] (0,0) rectangle (\cardwidth,\cardheight);
+    % Wash out the image (oversized so it covers under the border stroke)
+    \fill[white, opacity=0.88] (-1mm,-1mm) rectangle (\cardwidth+1mm,\cardheight+1mm);
     % Center overlay (if any)
     #1
     % Card name — centered at top, horizontally squeezed if too wide
