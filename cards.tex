@@ -2862,6 +2862,23 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♐};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Sagittarius};
+  % Lenormand mini-card: Mountain (21)
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+      rectangle
+      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (0.5\cardwidth, 17mm) {%
+        \includegraphics[width=10.8mm]{images/mountain-crop.png}%
+      };
+  \end{scope}
+  \draw[black, thick, rounded corners=1mm]
+    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+    rectangle
+    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \node[anchor=south east, text=white, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {21};
   \decanticks{240}
   % Bounds: Jupiter spans entire decan (0°-12° Sag)
   \boundsquare{0}{Jupiter}
@@ -3043,6 +3060,23 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♐};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Sagittarius};
+  % Lenormand mini-card: Fox (14)
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+      rectangle
+      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (0.5\cardwidth, 17mm) {%
+        \includegraphics[width=10.8mm]{images/fox-crop.png}%
+      };
+  \end{scope}
+  \draw[black, thick, rounded corners=1mm]
+    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+    rectangle
+    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \node[anchor=south east, text=black, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {14};
   \decanticks{250}
   % Bounds: Jupiter at 0°, Venus at 2°, Mercury at 7°
   \boundsquare{0}{Jupiter}
@@ -3057,7 +3091,7 @@
   \padasyllable{7.6}{10}{यी}
   % Xiù: 尾 Wěi (6) at 12°05' Sag (2.083°) + cì 析木 Xīmù
   \xiulane{2.083}{尾}{6}
-  \cistart{xiunum6}{析木}{Xīmù}{Split Wood}
+  \cistartrotated{rotate=90, yshift=-1mm}{xiunum6}{析木}{Xīmù}{Split Wood}
   % Fixed stars
   \fixedstar[xshift=2mm]{0.183}{Antares}
   \fixedstar[label below=1, rotate label=-45]{6.583}{Xamidimura}
@@ -3223,6 +3257,23 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♐};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Sagittarius};
+  % Lenormand mini-card: Bear (15)
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+      rectangle
+      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (0.5\cardwidth, 17mm) {%
+        \includegraphics[width=10.8mm]{images/bear-crop.png}%
+      };
+  \end{scope}
+  \draw[black, thick, rounded corners=1mm]
+    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+    rectangle
+    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \node[anchor=south east, text=white, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {15};
   \decanticks{260}
   % Bounds: Mercury at 0°, Saturn at 1°, Mars at 6°
   \boundsquare{0}{Mercury}
@@ -3254,6 +3305,23 @@
     at (0.5\cardwidth, 0.52\cardheight+6mm) {♓};
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Pisces};
+  % Lenormand mini-card: Dog (18)
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+      rectangle
+      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (0.5\cardwidth, 17mm) {%
+        \includegraphics[width=10.8mm]{images/dog-crop.png}%
+      };
+  \end{scope}
+  \draw[black, thick, rounded corners=1mm]
+    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
+    rectangle
+    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \node[anchor=south east, text=black, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {18};
   \decanticks{350}
   % Bounds: Mars @0, Saturn @8
   \boundsquare{0}{Mars}
