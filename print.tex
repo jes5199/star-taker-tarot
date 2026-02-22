@@ -38,12 +38,13 @@
 \newlength{\decanboty}
 \pgfmathsetlength{\decanboty}{-0.5*\scaledcardheight - \decanmeterheight*cos(10)}
 % Print pip card with decan neighbors: #1=prev decan, #2=this card, #3=next decan
+% Ecliptic goes CCW, so prev is below (next wall down) and next is above (next wall up)
 \newcommand{\printpipcard}[3]{%
   ~\begin{tikzpicture}[remember picture, overlay]
   \node[anchor=south west, rotate=-10, inner sep=0pt, outer sep=0pt]
-    at ([xshift=\decanbotx, yshift=\decanboty]current page.center) {#3};
+    at ([xshift=\decanbotx, yshift=\decanboty]current page.center) {#1};
   \node[anchor=south west, rotate=10, inner sep=0pt, outer sep=0pt]
-    at ([xshift=\decantopx, yshift=\decantopy]current page.center) {#1};
+    at ([xshift=\decantopx, yshift=\decantopy]current page.center) {#3};
   \node[inner sep=0pt, outer sep=0pt] at (current page.center) {#2};
   \end{tikzpicture}%
   \newpage
