@@ -523,6 +523,34 @@
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
+% Next decan (Two of Pentacles) behind, rotated 10° CCW at decan meter top
+\node[anchor=south west, rotate=10] at ([xshift=\decantopx, yshift=\decantopy]current page.center) {
+\minorcard[{\playingcardmarks{gray}{2}{♦}{1.0}{1.0}
+  \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
+    at (0.5\cardwidth, \cardheight-6.5mm) {Choice of Earth};
+  \node[anchor=south, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight+10mm) {♃};
+  \node[anchor=north, text=black, font=\symbserif\fontsize{70}{72}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight+6mm) {♑};
+  \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
+    at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Capricorn};
+  \decanticks{270}
+  \boundsquare{0}{Mercury}
+  \boundsquare{7}{Jupiter}
+  \padasyllable{0.933}{4.267}{भा}
+  \padasyllable{4.267}{7.6}{भी}
+  \padasyllable[solid]{7.6}{10}{भू}
+  \nakshatrastart{pada\thepadactr}{20}{}{}{}
+  \xiulane{2.117}{箕}{7}
+  \fixedstar{1.683}{Alnasl}
+  \solartermlane{0}{冬至}{Dōngzhì}{Winter Solstice}
+  \pentadlane{0}{蚯蚓結}{Qiūyǐn jié}{Earthworms Coil Up}
+  \pentadlane{5}{麋角解}{Mí jiǎo jiě}{Elk Shed Antlers}
+  \hexagram{3}{1,1,0,0,1,1}{0}{0}{Zhōng Fú}{Inner\\Truth}
+  \hexagram{8}{1,0,0,0,0,0}{0}{2}{Fù}{Return}
+  \chinesecardmarks[🀚]{二}{并}}]{images/p-02}{Two of Pentacles}%
+};
+% Main card (Three of Pentacles) on top
 \node at (current page.center) {
 \minorcard[{\playingcardmarks{red}{3}{♦}{1.0}{1.0}
   \chinesecardmarks[🀛]{三}{并}
