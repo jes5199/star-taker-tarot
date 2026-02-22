@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage[paperwidth=2.99in, paperheight=4.99in, margin=0pt]{geometry}
+\usepackage{eso-pic}
+\input{cards-preamble}
+\showbordertrue
+\def\cardscale{1.06257}
+% Guide lines drawn in foreground on top of card content
+\AddToShipoutPictureFG{%
+  \begin{tikzpicture}[remember picture, overlay]
+    % Cut line: 2.75" x 4.75", inset 0.12in from page edge
+    \draw[rounded corners=6mm, thin, black!40]
+      ([xshift=0.12in, yshift=0.12in]current page.south west)
+      rectangle
+      ([xshift=-0.12in, yshift=-0.12in]current page.north east);
+    % Safe zone: 2.51" x 4.51", inset 0.24in from page edge
+    \draw[rounded corners=6mm, semithick, red, densely dashed]
+      ([xshift=0.24in, yshift=0.24in]current page.south west)
+      rectangle
+      ([xshift=-0.24in, yshift=-0.24in]current page.north east);
+  \end{tikzpicture}%
+}
+\begin{document}
+\pagestyle{empty}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+\input{print-body}
+\end{document}

@@ -13,6 +13,9 @@
 \colorlet{chakrablue}{blue}
 \colorlet{chakraindigo}{blue!50!violet}
 
+% Border toggle: true by default, false for print (bleed cards)
+\newif\ifshowborder \showbordertrue
+
 % Preview card dimensions (scaled to fit 3 per row on A4)
 \newlength{\cardwidth}
 \newlength{\cardheight}
@@ -1754,7 +1757,7 @@
   \begin{tikzpicture}
     \useasboundingbox (0,0) rectangle (\cardwidth,\cardheight);
     % Card border
-    \draw[rounded corners=2.5mm, thick] (0,0) rectangle (\cardwidth,\cardheight);
+    \ifshowborder\draw[rounded corners=2.5mm, thick] (0,0) rectangle (\cardwidth,\cardheight);\fi
     \clip[rounded corners=2.5mm] (0,0) rectangle (\cardwidth,\cardheight);
     % Background image - shifted down to crop off Smith's lettering at bottom
     \node[anchor=south west, inner sep=0pt] at (0,-10mm) {%
@@ -1846,7 +1849,7 @@
   \begin{tikzpicture}
     \useasboundingbox (0,0) rectangle (\cardwidth,\cardheight);
     % Card border
-    \draw[rounded corners=2.5mm, thick] (0,0) rectangle (\cardwidth,\cardheight);
+    \ifshowborder\draw[rounded corners=2.5mm, thick] (0,0) rectangle (\cardwidth,\cardheight);\fi
     \clip[rounded corners=2.5mm] (0,0) rectangle (\cardwidth,\cardheight);
     % Background image - shifted down to crop off Smith's lettering at bottom
     \node[anchor=south west, inner sep=0pt] at (0,\minorcardshift) {%
