@@ -1,0 +1,19 @@
+\documentclass[letterpaper]{article}
+\usepackage[letterpaper, margin=10mm]{geometry}
+\input{cards-preamble}
+% lenormandblack/lenormandwhite already saved real colors in preamble
+\definecolor{black}{rgb}{1,1,1}
+\definecolor{white}{rgb}{0,0,0}
+% Lighten chakra labels for dark background
+\colorlet{chakraviolet}{violet!60!lenormandwhite}
+\colorlet{chakrablue}{blue!60!lenormandwhite}
+\colorlet{chakraindigo}{blue!40!violet!60!lenormandwhite}
+\color{black}
+\begin{document}
+\pagestyle{empty}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+\pagecolor{lenormandblack}
+\color{black}
+\input{cards-body}
+\end{document}
