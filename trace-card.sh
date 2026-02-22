@@ -40,7 +40,7 @@ fi
 # 1. Crop border: trim white margin, shave scan border, trim remainder,
 #    then asymmetric crop to get inside the printed black card frame.
 #    Top gets 25px (less, to preserve roman numerals near the border).
-#    Bottom gets 45px (more, to fully remove the thicker bottom border).
+#    Bottom gets 60px (more, to fully remove the thicker bottom border).
 #    Sides get 30px each.
 echo "Cropping border..."
 convert "$TMPDIR/source.jpg" \
@@ -51,7 +51,7 @@ convert "$TMPDIR/source.jpg" \
 TRIM_W=$(identify -format '%w' "$TMPDIR/trimmed.jpg")
 TRIM_H=$(identify -format '%h' "$TMPDIR/trimmed.jpg")
 CROP_W=$((TRIM_W - 60))
-CROP_H=$((TRIM_H - 70))
+CROP_H=$((TRIM_H - 85))
 convert "$TMPDIR/trimmed.jpg" -crop "${CROP_W}x${CROP_H}+30+25" +repage "$TMPDIR/cropped.jpg"
 
 # 2. Extract red channel, resize, threshold to B&W bitmap
@@ -116,6 +116,17 @@ BOT_DATA=$(convert "$TMPDIR/card.pbm" -crop "500x${H_SCAN}+0+${BOT_START}" -dept
 declare -A BOT_ROW
 while read count row; do [ -z "$row" ] && continue; BOT_ROW[$row]=$count; done <<< "$BOT_DATA"
 BOT_KILL=$(adaptive_kill BOT_ROW $H_SCAN $H_DENSE $H_GAP from_end)
+# Fallback: if gap detection fails (dense art), use peak detection.
+# Larger margin (+8) catches inner border lines at lower density.
+if [ "$BOT_KILL" -lt 0 ]; then
+    H_PEAK=$((500 * 80 / 100))
+    for ((i=0; i<H_SCAN; i++)); do
+        if [ "${BOT_ROW[$i]:-0}" -ge "$H_PEAK" ]; then
+            BOT_KILL=$((H_SCAN - i + 8))
+            break
+        fi
+    done
+fi
 
 # --- Top edge (row scan, 40px depth) ---
 TOP_DATA=$(convert "$TMPDIR/card.pbm" -crop "500x${H_SCAN}+0+0" -depth 1 txt: 2>/dev/null \
@@ -123,6 +134,16 @@ TOP_DATA=$(convert "$TMPDIR/card.pbm" -crop "500x${H_SCAN}+0+0" -depth 1 txt: 2>
 declare -A TOP_ROW
 while read count row; do [ -z "$row" ] && continue; TOP_ROW[$row]=$count; done <<< "$TOP_DATA"
 TOP_KILL=$(adaptive_kill TOP_ROW $H_SCAN $H_DENSE $H_GAP from_start)
+# Fallback: if gap detection fails (dense art), use peak detection
+if [ "$TOP_KILL" -lt 0 ]; then
+    H_PEAK=$((500 * 80 / 100))
+    for ((i=H_SCAN-1; i>=0; i--)); do
+        if [ "${TOP_ROW[$i]:-0}" -ge "$H_PEAK" ]; then
+            TOP_KILL=$((i + 2))
+            break
+        fi
+    done
+fi
 
 # --- Right edge (peak detection, 20px depth) ---
 # Gap detection fails here because some cards have dense art (70%+) that
