@@ -1,406 +1,445 @@
-% Singles layout: one card per page, no cut lines, no decan neighbors
+% Singles layout: same as print layout but without cut lines
 % 79 pages: 22 major arcana + 4 aces + 36 pips + 16 courts + 1 card back
 
-% Major Arcana (22 cards)
-
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAzero};
+\node at (current page.center) {
+\cardAzero%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAone};
+\node at (current page.center) {
+\cardAone%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAtwo};
+\node at (current page.center) {
+\cardAtwo%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAthree};
+\node at (current page.center) {
+\cardAthree%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAfour};
+\node at ([xshift=-\scaledcardwidth]current page.center) {
+\cardAeighteen%
+};
+\node at (current page.center) {
+\cardAfour%
+};
+\node at ([xshift=\scaledcardwidth]current page.center) {
+\cardAfive%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAfive};
+\node at ([xshift=-\scaledcardwidth]current page.center) {
+\cardAfour%
+};
+\node at (current page.center) {
+\cardAfive%
+};
+\node at ([xshift=\scaledcardwidth]current page.center) {
+\cardAsix%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAsix};
+\node at ([xshift=-\scaledcardwidth]current page.center) {
+\cardAfive%
+};
+\node at (current page.center) {
+\cardAsix%
+};
+\node at ([xshift=\scaledcardwidth]current page.center) {
+\cardAseven%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAseven};
+\node at ([xshift=-\scaledcardwidth]current page.center) {
+\cardAsix%
+};
+\node at (current page.center) {
+\cardAseven%
+};
+\node at ([xshift=\scaledcardwidth]current page.center) {
+\cardAeight%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAeight};
+\node at ([xshift=-\scaledcardwidth]current page.center) {
+\cardAseven%
+};
+\node at (current page.center) {
+\cardAeight%
+};
+\node at ([xshift=\scaledcardwidth]current page.center) {
+\cardAnine%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAnine};
+\node at ([xshift=-\scaledcardwidth]current page.center) {
+\cardAeight%
+};
+\node at (current page.center) {
+\cardAnine%
+};
+\node at ([xshift=\scaledcardwidth]current page.center) {
+\cardAeleven%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAten};
+\node at (current page.center) {
+\cardAten%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAeleven};
+\node at ([xshift=-\scaledcardwidth]current page.center) {
+\cardAnine%
+};
+\node at (current page.center) {
+\cardAeleven%
+};
+\node at ([xshift=\scaledcardwidth]current page.center) {
+\cardAthirteen%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAtwelve};
+\node at (current page.center) {
+\cardAtwelve%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAthirteen};
+\node at ([xshift=-\scaledcardwidth]current page.center) {
+\cardAeleven%
+};
+\node at (current page.center) {
+\cardAthirteen%
+};
+\node at ([xshift=\scaledcardwidth]current page.center) {
+\cardAfourteen%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAfourteen};
+\node at ([xshift=-\scaledcardwidth]current page.center) {
+\cardAthirteen%
+};
+\node at (current page.center) {
+\cardAfourteen%
+};
+\node at ([xshift=\scaledcardwidth]current page.center) {
+\cardAfifteen%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAfifteen};
+\node at ([xshift=-\scaledcardwidth]current page.center) {
+\cardAfourteen%
+};
+\node at (current page.center) {
+\cardAfifteen%
+};
+\node at ([xshift=\scaledcardwidth]current page.center) {
+\cardAseventeen%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAsixteen};
+\node at (current page.center) {
+\cardAsixteen%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAseventeen};
+\node at ([xshift=-\scaledcardwidth]current page.center) {
+\cardAfifteen%
+};
+\node at (current page.center) {
+\cardAseventeen%
+};
+\node at ([xshift=\scaledcardwidth]current page.center) {
+\cardAeighteen%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAeighteen};
+\node at ([xshift=-\scaledcardwidth]current page.center) {
+\cardAseventeen%
+};
+\node at (current page.center) {
+\cardAeighteen%
+};
+\node at ([xshift=\scaledcardwidth]current page.center) {
+\cardAfour%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAnineteen};
+\node at (current page.center) {
+\cardAnineteen%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAtwenty};
+\node at (current page.center) {
+\cardAtwenty%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardAtwentyone};
-\end{tikzpicture}
-\newpage
-
-% Aces (4 cards)
-
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardWone};
+\node at (current page.center) {
+\cardAtwentyone%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardCone};
+\node at (current page.center) {
+\cardWone%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardSone};
+\node at (current page.center) {
+\cardCone%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardPone};
-\end{tikzpicture}
-\newpage
-
-% Pips 2-10 (36 cards, by rank: W/C/S/P for each rank)
-
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardWtwo{black}};
+\node at (current page.center) {
+\cardSone%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardCtwo{red}};
+\node at (current page.center) {
+\cardPone%
+};
 \end{tikzpicture}
 \newpage
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardStwo{black}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardCten{gray}}{\cardWtwo{black}}{\cardWthree{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardPtwo{red}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardSten{gray}}{\cardCtwo{red}}{\cardCthree{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardWthree{black}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardPten{gray}}{\cardStwo{black}}{\cardSthree{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardCthree{red}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardWten{gray}}{\cardPtwo{red}}{\cardPthree{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardSthree{black}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardWtwo{gray}}{\cardWthree{black}}{\cardWfour{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardPthree{red}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardCtwo{gray}}{\cardCthree{red}}{\cardCfour{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardWfour{black}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardStwo{gray}}{\cardSthree{black}}{\cardSfour{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardCfour{red}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardPtwo{gray}}{\cardPthree{red}}{\cardPfour{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardSfour{black}};
-\end{tikzpicture}
-\newpage
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardPfour{red}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardWthree{gray}}{\cardWfour{black}}{\cardPfive{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardWfive{black}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardCthree{gray}}{\cardCfour{red}}{\cardWfive{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardCfive{red}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardSthree{gray}}{\cardSfour{black}}{\cardCfive{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardSfive{black}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardPthree{gray}}{\cardPfour{red}}{\cardSfive{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardPfive{red}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardCfour{gray}}{\cardWfive{black}}{\cardWsix{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardWsix{black}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardSfour{gray}}{\cardCfive{red}}{\cardCsix{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardCsix{red}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardPfour{gray}}{\cardSfive{black}}{\cardSsix{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardSsix{black}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardWfour{gray}}{\cardPfive{red}}{\cardPsix{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardPsix{red}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardWfive{gray}}{\cardWsix{black}}{\cardWseven{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardWseven{black}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardCfive{gray}}{\cardCsix{red}}{\cardCseven{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardCseven{red}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardSfive{gray}}{\cardSsix{black}}{\cardSseven{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardSseven{black}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardPfive{gray}}{\cardPsix{red}}{\cardPseven{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardPseven{red}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardWsix{gray}}{\cardWseven{black}}{\cardPeight{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardWeight{black}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardCsix{gray}}{\cardCseven{red}}{\cardWeight{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardCeight{red}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardSsix{gray}}{\cardSseven{black}}{\cardCeight{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardSeight{black}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardPsix{gray}}{\cardPseven{red}}{\cardSeight{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardPeight{red}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardCseven{gray}}{\cardWeight{black}}{\cardWnine{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardWnine{black}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardSseven{gray}}{\cardCeight{red}}{\cardCnine{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardCnine{red}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardPseven{gray}}{\cardSeight{black}}{\cardSnine{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardSnine{black}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardWseven{gray}}{\cardPeight{red}}{\cardPnine{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardPnine{red}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardWeight{gray}}{\cardWnine{black}}{\cardWten{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardWten{black}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardCeight{gray}}{\cardCnine{red}}{\cardCten{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardCten{red}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardSeight{gray}}{\cardSnine{black}}{\cardSten{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardSten{black}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardPeight{gray}}{\cardPnine{red}}{\cardPten{gray}}
 
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardPten{red}};
-\end{tikzpicture}
-\newpage
+\printpipcard{\cardWnine{gray}}{\cardWten{black}}{\cardPtwo{gray}}
 
-% Courts (16 cards)
+\printpipcard{\cardCnine{gray}}{\cardCten{red}}{\cardWtwo{gray}}
+
+\printpipcard{\cardSnine{gray}}{\cardSten{black}}{\cardCtwo{gray}}
+
+\printpipcard{\cardPnine{gray}}{\cardPten{red}}{\cardStwo{gray}}
+
 % Pages (Earth of suit)
 \renewcommand{\minorcardshift}{-10mm}
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardWeleven{black}};
+\node at (current page.center) {
+\cardWeleven{black}%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardCeleven{red}};
+\node at (current page.center) {
+\cardCeleven{red}%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardSeleven{black}};
+\node at (current page.center) {
+\cardSeleven{black}%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardPeleven{red}};
-\end{tikzpicture}
-\newpage
-
-% Knights
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardWtwelve{black}};
+\node at (current page.center) {
+\cardPeleven{red}%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardCtwelve{red}};
+\node at (current page.center) {
+\cardWtwelve{black}%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardStwelve{black}};
+\node at (current page.center) {
+\cardCtwelve{red}%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardPtwelve{red}};
-\end{tikzpicture}
-\newpage
-
-% Queens
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardWthirteen{black}};
+\node at (current page.center) {
+\cardStwelve{black}%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardCthirteen{red}};
+\node at (current page.center) {
+\cardPtwelve{red}%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardSthirteen{black}};
+\node at (current page.center) {
+\cardWthirteen{black}%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardPthirteen{red}};
-\end{tikzpicture}
-\newpage
-
-% Kings
-~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardWfourteen{black}};
+\node at (current page.center) {
+\cardCthirteen{red}%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardCfourteen{red}};
+\node at (current page.center) {
+\cardSthirteen{black}%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardSfourteen{black}};
+\node at (current page.center) {
+\cardPthirteen{red}%
+};
 \end{tikzpicture}
 \newpage
 
 ~\begin{tikzpicture}[remember picture, overlay]
-\node at (current page.center) {\cardPfourteen{red}};
+\node at (current page.center) {
+\cardWfourteen{black}%
+};
+\end{tikzpicture}
+\newpage
+
+~\begin{tikzpicture}[remember picture, overlay]
+\node at (current page.center) {
+\cardCfourteen{red}%
+};
+\end{tikzpicture}
+\newpage
+
+~\begin{tikzpicture}[remember picture, overlay]
+\node at (current page.center) {
+\cardSfourteen{black}%
+};
+\end{tikzpicture}
+\newpage
+
+~\begin{tikzpicture}[remember picture, overlay]
+\node at (current page.center) {
+\cardPfourteen{red}%
+};
 \end{tikzpicture}
 \newpage
 
