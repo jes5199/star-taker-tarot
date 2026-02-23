@@ -403,6 +403,132 @@ and the tongue of edict decides between them.
 
 \partpage[The Cards]{The\\Cards}
 
+% Gematria / Abjad / Isopsephy number table (recto)
+\cleardoublepage
+\thispagestyle{empty}
+\restoregeometry
+\noindent
+\begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle (139.7mm, 215.9mm);
+  \pgfmathsetmacro{\cx}{69.85}
+  \pgfmathsetmacro{\topy}{208}
+  %
+  % Title
+  \node[anchor=north, font=\cardfont\fontsize{12}{14}\selectfont] at (\cx mm, \topy mm) {Gematria \quad Abjad \quad Isopsephy};
+  %
+  % Three groups: Units, Tens, Hundreds
+  % Each group: Number | Hebrew | Arabic | Greek
+  % Group positions (center x of each group)
+  \pgfmathsetmacro{\gA}{23.5}   % Units group center
+  \pgfmathsetmacro{\gB}{69.85}  % Tens group center
+  \pgfmathsetmacro{\gC}{116.2}  % Hundreds group center
+  %
+  % Column offsets within each group (from group center)
+  \pgfmathsetmacro{\colNum}{-14}   % numeral
+  \pgfmathsetmacro{\colHeb}{-5}    % Hebrew
+  \pgfmathsetmacro{\colAra}{4}     % Arabic
+  \pgfmathsetmacro{\colGrk}{13}    % Greek
+  %
+  % Row spacing
+  \pgfmathsetmacro{\rowstart}{\topy - 22}
+  \pgfmathsetmacro{\rowstep}{16}
+  %
+  % --- Headers ---
+  \pgfmathsetmacro{\hdr}{\topy - 12}
+  \foreach \gx/\label in {\gA/Units, \gB/Tens, \gC/Hundreds} {
+    \node[anchor=center, font=\cardfont\fontsize{9}{11}\selectfont] at (\gx mm, \hdr mm) {\label};
+  }
+  %
+  % --- Units (1-9) ---
+  % Rows with standard Greek letters
+  \foreach \i/\num/\heb/\ara/\grk in {
+    0/1/א/ا/α,
+    1/2/ב/ب/β,
+    2/3/ג/ج/γ,
+    3/4/ד/د/δ,
+    4/5/ה/ه/ε,
+    6/7/ז/ز/ζ,
+    7/8/ח/ح/η,
+    8/9/ט/ط/θ%
+  } {
+    \pgfmathsetmacro{\ry}{\rowstart - \i*\rowstep}
+    \node[anchor=center, font=\cardfont\fontsize{10}{12}\selectfont] at (\gA mm + \colNum mm, \ry mm) {\num};
+    \node[anchor=center, font=\hebrewfont\fontsize{12}{14}\selectfont] at (\gA mm + \colHeb mm, \ry mm) {\heb};
+    \node[anchor=center, font=\kufifont\fontsize{10}{12}\selectfont] at (\gA mm + \colAra mm, \ry mm) {\ara};
+    \node[anchor=center, font=\greekfont\fontsize{11}{13}\selectfont] at (\gA mm + \colGrk mm, \ry mm) {\grk};
+  }
+  % Row 6: stigma (ϛ) - use symbfont for archaic Greek
+  \pgfmathsetmacro{\ry}{\rowstart - 5*\rowstep}
+  \node[anchor=center, font=\cardfont\fontsize{10}{12}\selectfont] at (\gA mm + \colNum mm, \ry mm) {6};
+  \node[anchor=center, font=\hebrewfont\fontsize{12}{14}\selectfont] at (\gA mm + \colHeb mm, \ry mm) {ו};
+  \node[anchor=center, font=\kufifont\fontsize{10}{12}\selectfont] at (\gA mm + \colAra mm, \ry mm) {و};
+  \node[anchor=center, font=\symbfont\fontsize{11}{13}\selectfont] at (\gA mm + \colGrk mm, \ry mm) {ϛ};
+  %
+  % --- Tens (10-90) ---
+  % Rows with standard Greek letters
+  \foreach \i/\num/\heb/\ara/\grk in {
+    0/10/י/ي/ι,
+    1/20/כ/ك/κ,
+    2/30/ל/ل/λ,
+    3/40/מ/م/μ,
+    4/50/נ/ن/ν,
+    5/60/ס/س/ξ,
+    6/70/ע/ع/ο,
+    7/80/פ/ف/π%
+  } {
+    \pgfmathsetmacro{\ry}{\rowstart - \i*\rowstep}
+    \node[anchor=center, font=\cardfont\fontsize{10}{12}\selectfont] at (\gB mm + \colNum mm, \ry mm) {\num};
+    \node[anchor=center, font=\hebrewfont\fontsize{12}{14}\selectfont] at (\gB mm + \colHeb mm, \ry mm) {\heb};
+    \node[anchor=center, font=\kufifont\fontsize{10}{12}\selectfont] at (\gB mm + \colAra mm, \ry mm) {\ara};
+    \node[anchor=center, font=\greekfont\fontsize{11}{13}\selectfont] at (\gB mm + \colGrk mm, \ry mm) {\grk};
+  }
+  % Row 90: koppa (ϟ) - use symbfont for archaic Greek
+  \pgfmathsetmacro{\ry}{\rowstart - 8*\rowstep}
+  \node[anchor=center, font=\cardfont\fontsize{10}{12}\selectfont] at (\gB mm + \colNum mm, \ry mm) {90};
+  \node[anchor=center, font=\hebrewfont\fontsize{12}{14}\selectfont] at (\gB mm + \colHeb mm, \ry mm) {צ};
+  \node[anchor=center, font=\kufifont\fontsize{10}{12}\selectfont] at (\gB mm + \colAra mm, \ry mm) {ص};
+  \node[anchor=center, font=\symbfont\fontsize{11}{13}\selectfont] at (\gB mm + \colGrk mm, \ry mm) {ϟ};
+  %
+  % --- Hundreds (100-400) with Hebrew ---
+  \foreach \i/\num/\heb/\ara/\grk in {
+    0/100/ק/ق/ρ,
+    1/200/ר/ر/σ,
+    2/300/ש/ش/τ,
+    3/400/ת/ت/υ%
+  } {
+    \pgfmathsetmacro{\ry}{\rowstart - \i*\rowstep}
+    \node[anchor=center, font=\cardfont\fontsize{10}{12}\selectfont] at (\gC mm + \colNum mm, \ry mm) {\num};
+    \node[anchor=center, font=\hebrewfont\fontsize{12}{14}\selectfont] at (\gC mm + \colHeb mm, \ry mm) {\heb};
+    \node[anchor=center, font=\kufifont\fontsize{10}{12}\selectfont] at (\gC mm + \colAra mm, \ry mm) {\ara};
+    \node[anchor=center, font=\greekfont\fontsize{11}{13}\selectfont] at (\gC mm + \colGrk mm, \ry mm) {\grk};
+  }
+  % --- Hundreds (500-800) without Hebrew, standard Greek ---
+  \foreach \i/\num/\ara/\grk in {
+    4/500/ث/φ,
+    5/600/خ/χ,
+    6/700/ذ/ψ,
+    7/800/ض/ω%
+  } {
+    \pgfmathsetmacro{\ry}{\rowstart - \i*\rowstep}
+    \node[anchor=center, font=\cardfont\fontsize{10}{12}\selectfont] at (\gC mm + \colNum mm, \ry mm) {\num};
+    \node[anchor=center, font=\cardfont\fontsize{10}{12}\selectfont] at (\gC mm + \colHeb mm, \ry mm) {---};
+    \node[anchor=center, font=\kufifont\fontsize{10}{12}\selectfont] at (\gC mm + \colAra mm, \ry mm) {\ara};
+    \node[anchor=center, font=\greekfont\fontsize{11}{13}\selectfont] at (\gC mm + \colGrk mm, \ry mm) {\grk};
+  }
+  % Row 900: sampi (ϡ) - use symbfont for archaic Greek
+  \pgfmathsetmacro{\ry}{\rowstart - 8*\rowstep}
+  \node[anchor=center, font=\cardfont\fontsize{10}{12}\selectfont] at (\gC mm + \colNum mm, \ry mm) {900};
+  \node[anchor=center, font=\cardfont\fontsize{10}{12}\selectfont] at (\gC mm + \colHeb mm, \ry mm) {---};
+  \node[anchor=center, font=\kufifont\fontsize{10}{12}\selectfont] at (\gC mm + \colAra mm, \ry mm) {ظ};
+  \node[anchor=center, font=\symbfont\fontsize{11}{13}\selectfont] at (\gC mm + \colGrk mm, \ry mm) {ϡ};
+  % Row 1000: Arabic only
+  \pgfmathsetmacro{\ry}{\rowstart - 9*\rowstep}
+  \node[anchor=center, font=\cardfont\fontsize{10}{12}\selectfont] at (\gC mm + \colNum mm, \ry mm) {1000};
+  \node[anchor=center, font=\cardfont\fontsize{10}{12}\selectfont] at (\gC mm + \colHeb mm, \ry mm) {---};
+  \node[anchor=center, font=\kufifont\fontsize{10}{12}\selectfont] at (\gC mm + \colAra mm, \ry mm) {غ};
+  \node[anchor=center, font=\cardfont\fontsize{10}{12}\selectfont] at (\gC mm + \colGrk mm, \ry mm) {---};
+\end{tikzpicture}
+
 % Symbol page (verso, before back cover)
 \newpage
 \thispagestyle{empty}
@@ -412,9 +538,14 @@ and the tongue of edict decides between them.
   \useasboundingbox (0,0) rectangle (139.7mm, 215.9mm);
   \pgfmathsetmacro{\cx}{69.85}
   \pgfmathsetmacro{\topy}{200}
-  % Row 1: I Ching yang/yin (2 symbols)
-  \node[anchor=center, font=\symbfont\fontsize{18}{20}\selectfont] at (\cx mm - 10mm, \topy mm) {⚊};
-  \node[anchor=center, font=\symbfont\fontsize{18}{20}\selectfont] at (\cx mm + 10mm, \topy mm) {⚋};
+  % Row 1: I Ching yang/yin (drawn lines, matching hexagram style)
+  \begin{scope}[shift={(\cx mm - 10mm, \topy mm)}, line width=0.6mm, line cap=butt]
+    \draw (-3mm, 0) -- (3mm, 0);
+  \end{scope}
+  \begin{scope}[shift={(\cx mm + 10mm, \topy mm)}, line width=0.6mm, line cap=butt]
+    \draw (-3mm, 0) -- (-0.75mm, 0);
+    \draw (0.75mm, 0) -- (3mm, 0);
+  \end{scope}
   % Row 1b: Geomancy dots under yang/yin
   \node[fill=black, inner sep=1.2mm, rotate=45] at (\cx mm - 10mm, \topy mm - 7mm) {};
   \node[fill=black, inner sep=1.2mm, rotate=45] at (\cx mm + 10mm - 2.5mm, \topy mm - 7mm) {};
