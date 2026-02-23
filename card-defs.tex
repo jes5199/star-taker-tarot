@@ -1136,6 +1136,10 @@
     (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
     rectangle
     (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
+  \foreach \angle in {0,22.5,...,337.5}{
+    \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
+      inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {22};
+  }
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {22};
   \courtattrib{0.52\cardheight-35mm}{northern}{☉}{Sun}{♌}{Leo}
@@ -2063,11 +2067,11 @@
     rectangle
     (0.5\cardwidth+5.4mm, 17mm+7.5mm);
   \foreach \angle in {0,22.5,...,337.5}{
-    \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
-      inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth+5mm, 17mm-7.5mm) {14};
+    \node[anchor=south west, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
+      inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth-5mm, 17mm-7.25mm) {14};
   }
-  \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
-    inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {14};
+  \node[anchor=south west, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth-5mm, 17mm-7.25mm) {14};
   \decanticks{250}
   % Bounds: Jupiter at 0°, Venus at 2°, Mercury at 7°
   \boundsquare{0}{Jupiter}
