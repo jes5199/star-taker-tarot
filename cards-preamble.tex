@@ -43,6 +43,7 @@
 
 % Copperplate-like small caps font
 \newfontface\cardfont{EB Garamond SC}[LetterSpace=8]
+\newfontface\cardfontnotrak{EB Garamond SC}  % same font, no tracking — for arc text measurement
 \newfontface\cardfontplain{EB Garamond}
 \newfontface\rankfont{cardcharacters.ttf}[Path=/home/jes/tarot/]
 
@@ -181,9 +182,9 @@
     \draw[thick] (0,-3.2mm) -- (0,3.2mm);
     % "Lot of Spirit" curved above
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{5}{6}\selectfont|Lot of Spirit},
+      text={|\cardfontnotrak\fontsize{5}{6}\selectfont|Lot of Spirit},
       text align=center, raise=0pt}}]
-      (182:3.5mm) arc (182:-18:3.5mm);
+      (190:3.5mm) arc (190:-10:3.5mm);
   \end{scope}%
   % Red dragon 中 — bottom right
   \begin{scope}[shift={(\cardwidth-7mm,5mm)}]
@@ -191,14 +192,14 @@
       at (0,0) {中};
     % "hóng zhōng" curved above
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{5}{6}\selectfont\color{red}|hóng  zhōng},
+      text={|\cardfontnotrak\fontsize{5}{6}\selectfont\color{red}|hóng  zhōng},
       text align=center, raise=0pt}}]
-      (160:3mm) arc (160:0:3mm);
+      (170:3mm) arc (170:10:3mm);
     % "bullseye" curved below
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{5}{6}\selectfont\color{red}|bullseye},
+      text={|\cardfontnotrak\fontsize{5}{6}\selectfont\color{red}|bullseye},
       text align=center, raise=1pt, reverse path}}]
-      (-5:4.5mm) arc (-5:-165:4.5mm);
+      (-10:4.5mm) arc (-10:-170:4.5mm);
   \end{scope}%
 }
 
@@ -274,9 +275,9 @@
     \draw[thick] (-1.7mm,-1.7mm) -- (1.7mm,1.7mm);
     % "Lot of Fortune" curved above
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{5}{6}\selectfont|Lot of Fortune},
+      text={|\cardfontnotrak\fontsize{5}{6}\selectfont|Lot of Fortune},
       text align=center, raise=0pt}}]
-      (177:3.5mm) arc (177:-23:3.5mm);
+      (190:3.5mm) arc (190:-10:3.5mm);
   \end{scope}%
   % Blank mahjong tile — bottom right
   \begin{scope}[shift={(\cardwidth-7mm,5mm)}]
@@ -289,14 +290,14 @@
     \draw[thin] (1.4mm,-1.4mm) -- (0.8mm,-1.8mm);
     % "bái bǎu" curved above
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{5}{6}\selectfont|bái bǎu},
+      text={|\cardfontnotrak\fontsize{5}{6}\selectfont|bái bǎu},
       text align=center, raise=0pt}}]
-      (165:3.5mm) arc (165:5:3.5mm);
+      (170:3.5mm) arc (170:10:3.5mm);
     % "clean slate" curved below
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{5}{6}\selectfont|clean slate},
+      text={|\cardfontnotrak\fontsize{5}{6}\selectfont|clean slate},
       text align=center, raise=1pt, reverse path}}]
-      (-5:4.5mm) arc (-5:-165:4.5mm);
+      (-10:4.5mm) arc (-10:-170:4.5mm);
   \end{scope}%
   % water & earth
   \node[anchor=base east, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
@@ -384,9 +385,9 @@
       .. controls (2mm,1.3mm) and (0.8mm,2.1mm) .. (0,0.7mm);
     % "Lot of" curved above
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{5}{6}\selectfont|Lot of Eros},
+      text={|\cardfontnotrak\fontsize{5}{6}\selectfont|Lot of Eros},
       text align=center, raise=0pt}}]
-      (160:3.5mm) arc (160:0:3.5mm);
+      (170:3.5mm) arc (170:10:3.5mm);
   \end{scope}%
   % 發 (hatsu/green dragon) — bottom right
   \begin{scope}[shift={(\cardwidth-7mm,5mm)}]
@@ -394,14 +395,14 @@
       at (0,0) {發};
     % "fa cái" curved above
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{5}{6}\selectfont\color{green!50!black}|fā cái},
+      text={|\cardfontnotrak\fontsize{5}{6}\selectfont\color{green!50!black}|fā cái},
       text align=center, raise=0pt}}]
-      (165:3mm) arc (165:5:3mm);
+      (170:3mm) arc (170:10:3mm);
     % "strike it rich" curved below
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{5}{6}\selectfont\color{green!50!black}|strike  it  rich},
+      text={|\cardfontnotrak\fontsize{5}{6}\selectfont\color{green!50!black}|strike  it  rich},
       text align=center, raise=1pt, reverse path}}]
-      (0:4.5mm) arc (0:-160:4.5mm);
+      (-10:4.5mm) arc (-10:-170:4.5mm);
   \end{scope}%
   \jokertext{black}
 }
@@ -482,9 +483,9 @@
   \begin{scope}[shift={(\cardwidth-11mm,5mm)}]
     \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra6}};
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont\color{chakraindigo}|Third Eye},
+      text={|\cardfontnotrak\fontsize{7}{8}\selectfont\color{chakraindigo}|Third Eye},
       text align=center, raise=0pt}}]
-      (163:6mm) arc (163:3:6mm);
+      (170:6mm) arc (170:10:6mm);
   \end{scope}%
   \jokertext{red}
 }
@@ -552,9 +553,9 @@
   \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
     \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra5}};
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont\color{chakrablue}|Voice},
+      text={|\cardfontnotrak\fontsize{7}{8}\selectfont\color{chakrablue}|Voice},
       text align=center, raise=0pt}}]
-      (165:8mm) arc (165:5:8mm);
+      (170:8mm) arc (170:10:8mm);
   \end{scope}%
 }
 
@@ -588,9 +589,9 @@
   \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
     \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra4}};
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont\color{green!50!black}|Heart},
+      text={|\cardfontnotrak\fontsize{7}{8}\selectfont\color{green!50!black}|Heart},
       text align=center, raise=0pt}}]
-      (165:8mm) arc (165:5:8mm);
+      (170:8mm) arc (170:10:8mm);
   \end{scope}%
 }
 
@@ -657,9 +658,9 @@
   \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
     \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra3}};
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont\color{yellow!50!orange}|Solar Plexus},
+      text={|\cardfontnotrak\fontsize{7}{8}\selectfont\color{yellow!50!orange}|Solar Plexus},
       text align=center, raise=0pt}}]
-      (165:8mm) arc (165:5:8mm);
+      (170:8mm) arc (170:10:8mm);
   \end{scope}%
 }
 
@@ -726,7 +727,7 @@
   \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
     \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra2}};
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont\color{orange}|Sacral},
+      text={|\cardfontnotrak\fontsize{7}{8}\selectfont\color{orange}|Sacral},
       text align=center, raise=0pt}}]
       (160:8mm) arc (160:0:8mm);
   \end{scope}%
@@ -796,9 +797,9 @@
   \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
     \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra1}};
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont\color{red}|Root},
+      text={|\cardfontnotrak\fontsize{7}{8}\selectfont\color{red}|Root},
       text align=center, raise=0pt}}]
-      (167:8mm) arc (167:7:8mm);
+      (170:8mm) arc (170:10:8mm);
   \end{scope}%
 }
 
@@ -832,9 +833,9 @@
   \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
     \node[anchor=center, inner sep=0pt] at (0,0) {\includegraphics[width=14mm]{images/chakra7}};
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont\color{chakraviolet}|Crown},
+      text={|\cardfontnotrak\fontsize{7}{8}\selectfont\color{chakraviolet}|Crown},
       text align=center, raise=0pt}}]
-      (165:8mm) arc (165:5:8mm);
+      (170:8mm) arc (170:10:8mm);
   \end{scope}%
 }
 
@@ -846,13 +847,13 @@
     % Day ruler
     \node[anchor=center, text=black] at (-10mm, 0) {#1};
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont|day},
+      text={|\cardfontnotrak\fontsize{7}{8}\selectfont|day},
       text align=center, raise=0pt}}]
       (-14.33mm, 0.5mm) arc (150:30:5mm);
     % Night ruler
     \node[anchor=center, text=black] at (0, 0) {#2};
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont|night},
+      text={|\cardfontnotrak\fontsize{7}{8}\selectfont|night},
       text align=center, raise=0pt}}]
       (-4.33mm, 0.5mm) arc (150:30:5mm);
     % Participating ruler
@@ -882,15 +883,15 @@
     \node[anchor=center, text=black] at (10mm, 0) {#3};
     % Degree ranges curved below each symbol
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont|0-10},
+      text={|\cardfontnotrak\fontsize{7}{8}\selectfont|0-10},
       text align=center, raise=0pt}}]
       (-15.2mm, -1mm) arc (210:330:6mm);
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont|10-20},
+      text={|\cardfontnotrak\fontsize{7}{8}\selectfont|10-20},
       text align=center, raise=0pt}}]
       (-5.2mm, -1mm) arc (210:330:6mm);
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont|20-30},
+      text={|\cardfontnotrak\fontsize{7}{8}\selectfont|20-30},
       text align=center, raise=0pt}}]
       (4.8mm, -1mm) arc (210:330:6mm);
   \end{scope}%
@@ -1598,13 +1599,13 @@
     \node[anchor=center, text=black, font=\cjkfont\fontsize{28}{30}\selectfont]
       at (0,0) {東};
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont|dōng},
+      text={|\cardfontnotrak\fontsize{7}{8}\selectfont|dōng},
       text align=center, raise=0pt}}]
-      (165:5mm) arc (165:5:5mm);
+      (170:5mm) arc (170:10:5mm);
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont|east},
+      text={|\cardfontnotrak\fontsize{7}{8}\selectfont|east},
       text align=center, raise=1pt, reverse path}}]
-      (-15:6.5mm) arc (-15:-175:6.5mm);
+      (-10:6.5mm) arc (-10:-170:6.5mm);
   \end{scope}%
   \drawsmallgeomancy{0.5\cardwidth+22mm}{0.52\cardheight-17.5mm}{1,2,2,2}{Laetitia}
   \playingcardmarks{black}{A}{♣}{1.0}{1.0}
@@ -1644,13 +1645,13 @@
     \node[anchor=center, text=black, font=\cjkfont\fontsize{28}{30}\selectfont]
       at (0,0) {南};
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont|nán},
+      text={|\cardfontnotrak\fontsize{7}{8}\selectfont|nán},
       text align=center, raise=0pt}}]
-      (165:5mm) arc (165:5:5mm);
+      (170:5mm) arc (170:10:5mm);
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont|south},
+      text={|\cardfontnotrak\fontsize{7}{8}\selectfont|south},
       text align=center, raise=1pt, reverse path}}]
-      (-15:6.5mm) arc (-15:-175:6.5mm);
+      (-10:6.5mm) arc (-10:-170:6.5mm);
   \end{scope}%
   \drawsmallgeomancy{0.5\cardwidth+22mm}{0.52\cardheight-17.5mm}{2,2,1,2}{Albus}
   \playingcardmarks{red}{A}{♥}{1.0}{1.0}
@@ -1695,13 +1696,13 @@
     \node[anchor=center, text=black, font=\cjkfont\fontsize{28}{30}\selectfont]
       at (0,0) {西};
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont|xī},
+      text={|\cardfontnotrak\fontsize{7}{8}\selectfont|xī},
       text align=center, raise=0pt}}]
-      (165:5mm) arc (165:5:5mm);
+      (170:5mm) arc (170:10:5mm);
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont|west},
+      text={|\cardfontnotrak\fontsize{7}{8}\selectfont|west},
       text align=center, raise=1pt, reverse path}}]
-      (-15:6.5mm) arc (-15:-175:6.5mm);
+      (-10:6.5mm) arc (-10:-170:6.5mm);
   \end{scope}%
   \drawsmallgeomancy{0.5\cardwidth+22mm}{0.52\cardheight-17.5mm}{2,1,2,2}{Rubeus}
   \playingcardmarks{black}{A}{♠}{1.0}{1.0}
@@ -1742,13 +1743,13 @@
     \node[anchor=center, text=black, font=\cjkfont\fontsize{28}{30}\selectfont]
       at (0,0) {北};
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont|běi},
+      text={|\cardfontnotrak\fontsize{7}{8}\selectfont|běi},
       text align=center, raise=0pt}}]
-      (165:5mm) arc (165:5:5mm);
+      (170:5mm) arc (170:10:5mm);
     \path[postaction={decorate, decoration={text along path,
-      text={|\cardfont\fontsize{7}{8}\selectfont|north},
+      text={|\cardfontnotrak\fontsize{7}{8}\selectfont|north},
       text align=center, raise=1pt, reverse path}}]
-      (-15:6.5mm) arc (-15:-175:6.5mm);
+      (-10:6.5mm) arc (-10:-170:6.5mm);
   \end{scope}%
   \drawsmallgeomancy{0.5\cardwidth+22mm}{0.52\cardheight-17.5mm}{2,2,2,1}{Tristitia}
   \playingcardmarks{red}{A}{♦}{1.0}{1.0}
