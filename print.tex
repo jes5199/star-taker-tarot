@@ -37,8 +37,6 @@
 \pgfmathsetlength{\decanbotx}{\decantopx - \decanmeterheight*sin(10)}
 \newlength{\decanboty}
 \pgfmathsetlength{\decanboty}{-0.5*\scaledcardheight - \decanmeterheight*cos(10)}
-% Jaunty-card flag: when true, Lenormand minicards render greyscale
-\newif\ifjaunty
 % Print pip card with decan neighbors: #1=prev decan, #2=this card, #3=next decan
 % Ecliptic goes CCW, so prev is below (next wall down) and next is above (next wall up)
 \newcommand{\printpipcard}[3]{%
