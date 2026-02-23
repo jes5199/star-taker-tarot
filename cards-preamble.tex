@@ -1844,6 +1844,7 @@
 
 % Minor arcana card command: \minorcard[overlay]{image file}{card name}
 \newcommand{\minorcardshift}{-2mm}
+\newcommand{\minorcardimgwidth}{1.0\cardwidth}
 \newcommand{\minorcard}[3][]{%
   \scalebox{\cardscale}{%
   \begin{tikzpicture}
@@ -1852,8 +1853,8 @@
     \ifshowborder\draw[rounded corners=2.5mm, thick] (0,0) rectangle (\cardwidth,\cardheight);\fi
     \clip[rounded corners=2.5mm] (0,0) rectangle (\cardwidth,\cardheight);
     % Background image - shifted down to crop off Smith's lettering at bottom
-    \node[anchor=south west, inner sep=0pt] at (0,\minorcardshift) {%
-      \includegraphics[width=\cardwidth]{#2}%
+    \node[anchor=south, inner sep=0pt] at (0.5\cardwidth,\minorcardshift) {%
+      \includegraphics[width=\minorcardimgwidth]{#2}%
     };
     % Wash out the image (oversized so it covers under the border stroke)
     \fill[white, opacity=0.88] (-1mm,-1mm) rectangle (\cardwidth+1mm,\cardheight+1mm);
