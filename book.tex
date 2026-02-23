@@ -421,23 +421,23 @@ and the tongue of edict decides between them.
   \node[fill=black, inner sep=1.2mm, rotate=45] at (\cx mm + 10mm + 2.5mm, \topy mm - 7mm) {};
   % Row 2: Tria Prima (3 drawn symbols)
   \pgfmathsetmacro{\ry}{\topy - 16}
-  \node[anchor=center] at (\cx mm - 10mm, \ry mm) {\tinysalt};
-  \node[anchor=center] at (\cx mm, \ry mm) {\tinysulfur};
+  \node[anchor=center] at (\cx mm - 10mm, \ry mm) {\tinysulfur};
+  \node[anchor=center] at (\cx mm, \ry mm) {\tinysalt};
   \node[anchor=center] at (\cx mm + 10mm, \ry mm) {\tinymercury};
   % Row 3: Four elements (4 drawn symbols)
-  \pgfmathsetmacro{\ry}{\topy - 28}
+  \pgfmathsetmacro{\ry}{\topy - 26}
   \node[anchor=center] at (\cx mm - 12mm, \ry mm) {\tinyfire};
   \node[anchor=center] at (\cx mm - 4mm, \ry mm) {\tinywater};
   \node[anchor=center] at (\cx mm + 4mm, \ry mm) {\tinyair};
   \node[anchor=center] at (\cx mm + 12mm, \ry mm) {\tinyearth};
   % Row 4: Wu Xing (5 CJK)
-  \pgfmathsetmacro{\ry}{\topy - 40}
+  \pgfmathsetmacro{\ry}{\topy - 37}
   \foreach \sym [count=\i from 0] in {木, 火, 土, 金, 水} {
     \pgfmathsetmacro{\xp}{\cx - 14 + \i*7}
     \node[anchor=center, font=\cjkfontgb\fontsize{14}{16}\selectfont] at (\xp mm, \ry mm) {\sym};
   }
   % Row 5: Chakra bijas (7 Devanagari)
-  \pgfmathsetmacro{\ry}{\topy - 49}
+  \pgfmathsetmacro{\ry}{\topy - 46}
   \foreach \sym [count=\i from 0] in {लं, वं, रं, यं, हं, ॐ, ०} {
     \pgfmathsetmacro{\xp}{\cx - 18 + \i*6}
     \node[anchor=center, font=\devfont\fontsize{13}{15}\selectfont] at (\xp mm, \ry mm) {\sym};
@@ -465,16 +465,16 @@ and the tongue of edict decides between them.
     \pgfmathsetmacro{\xp}{\cx - 19.25 + \i*5.5}
     \node[anchor=center, font=\symbfont\fontsize{12}{14}\selectfont] at (\xp mm, \ry mm) {\sym};
   }
-  % Row 9: Heavenly Stems (10 CJK)
+  % Row 9: Heavenly Stems (10 CJK, centered on 12-column grid — positions 1-10)
   \pgfmathsetmacro{\ry}{\topy - 92}
-  \foreach \sym [count=\i from 0] in {甲, 乙, 丙, 丁, 戊, 己, 庚, 辛, 壬, 癸} {
-    \pgfmathsetmacro{\xp}{\cx - 24.75 + \i*5.5}
+  \foreach \sym [count=\i from 1] in {甲, 乙, 丙, 丁, 戊, 己, 庚, 辛, 壬, 癸} {
+    \pgfmathsetmacro{\xp}{\cx - 38.5 + \i*7}
     \node[anchor=center, font=\cjkfontgb\fontsize{11}{13}\selectfont] at (\xp mm, \ry mm) {\sym};
   }
   % Row 10: Earthly Branches (12 CJK)
   \pgfmathsetmacro{\ry}{\topy - 101}
   \foreach \sym [count=\i from 0] in {子, 丑, 寅, 卯, 辰, 巳, 午, 未, 申, 酉, 戌, 亥} {
-    \pgfmathsetmacro{\xp}{\cx - 27.5 + \i*5}
+    \pgfmathsetmacro{\xp}{\cx - 38.5 + \i*7}
     \node[anchor=center, font=\cjkfontgb\fontsize{10}{12}\selectfont] at (\xp mm, \ry mm) {\sym};
   }
   % Row 10b: Tidal hexagrams (12, aligned to earthly branches)
@@ -492,7 +492,7 @@ and the tongue of edict decides between them.
     {0,0,0,0,0,1},
     {0,0,0,0,0,0}%
   } {
-    \pgfmathsetmacro{\xp}{\cx - 27.5 + \i*5}
+    \pgfmathsetmacro{\xp}{\cx - 38.5 + \i*7}
     \begin{scope}[shift={(\xp mm, \topy mm - 110mm)}, line width=0.6mm, line cap=butt]
       \foreach \type [count=\j from 0] in \lines {
         \ifnum\type=1
@@ -507,33 +507,34 @@ and the tongue of edict decides between them.
   % Row 11: Zodiac (12 symbols)
   \pgfmathsetmacro{\ry}{\topy - 120}
   \foreach \sym [count=\i from 0] in {♈, ♉, ♊, ♋, ♌, ♍, ♎, ♏, ♐, ♑, ♒, ♓} {
-    \pgfmathsetmacro{\xp}{\cx - 27.5 + \i*5}
+    \pgfmathsetmacro{\xp}{\cx - 38.5 + \i*7}
     \node[anchor=center, font=\symbfont\fontsize{10}{12}\selectfont] at (\xp mm, \ry mm) {\sym};
   }
   % Row 12: Sanskrit zodiac names (12 Devanagari)
   \pgfmathsetmacro{\ry}{\topy - 129}
   \foreach \sym [count=\i from 0] in {मेष, वृष, मिथुन, कर्क, सिंह, कन्या, तुला, वृश्चिक, धनु, मकर, कुम्भ, मीन} {
-    \pgfmathsetmacro{\xp}{\cx - 30 + \i*5.45}
+    \pgfmathsetmacro{\xp}{\cx - 38.5 + \i*7}
     \node[anchor=center, font=\devfont\fontsize{7}{9}\selectfont] at (\xp mm, \ry mm) {\sym};
   }
   % Row 13: Chinese Jupiter stations (12 CJK)
   \pgfmathsetmacro{\ry}{\topy - 137}
   \foreach \sym [count=\i from 0] in {星紀, 玄枵, 娵訾, 降婁, 大梁, 實沈, 鶉首, 鶉火, 鶉尾, 壽星, 大火, 析木} {
-    \pgfmathsetmacro{\xp}{\cx - 36 + \i*6.5}
+    \pgfmathsetmacro{\xp}{\cx - 38.5 + \i*7}
     \node[anchor=center, font=\cjkfont\fontsize{7}{9}\selectfont] at (\xp mm, \ry mm) {\sym};
   }
-  % Row 14: Hebrew alphabet (22 letters)
-  \pgfmathsetmacro{\ry}{\topy - 145}
-  \foreach \sym [count=\i from 0] in {ת, ש, ר, ק, צ, פ, ע, ס, נ, מ, ל, כ, י, ט, ח, ז, ו, ה, ד, ג, ב, א} {
-    \pgfmathsetmacro{\xp}{\cx - 36.75 + \i*3.5}
-    \node[anchor=center, font=\hebrewfont\fontsize{9}{11}\selectfont] at (\xp mm, \ry mm) {\sym};
-  }
-  % Shared grid: 28 columns at 3.3mm spacing, 27 padas in the gaps
+  % Shared grid: 28 columns at 3.3mm spacing
+  % Arabic in abjadi order so first 22 columns align with Hebrew cognates
   \pgfmathsetmacro{\gridstart}{\cx - 44.55} % left edge of 28-column grid
   \pgfmathsetmacro{\gs}{3.3} % column spacing
-  % Row 15: Arabic alphabet (28 letters)
+  % Row 14: Hebrew alphabet (22 letters, RTL, on columns 6-27 so aleph aligns with alif)
+  \pgfmathsetmacro{\ry}{\topy - 145}
+  \foreach \sym [count=\i from 6] in {ת, ש, ר, ק, צ, פ, ע, ס, נ, מ, ל, כ, י, ט, ח, ז, ו, ה, ד, ג, ב, א} {
+    \pgfmathsetmacro{\xp}{\gridstart + \i*\gs}
+    \node[anchor=center, font=\hebrewfont\fontsize{9}{11}\selectfont] at (\xp mm, \ry mm) {\sym};
+  }
+  % Row 15: Arabic alphabet (28 letters, RTL, abjadi order — first 22 align with Hebrew)
   \pgfmathsetmacro{\ry}{\topy - 153}
-  \foreach \sym [count=\i from 0] in {ي, و, ه, ن, م, ل, ك, ق, ف, غ, ع, ظ, ط, ض, ص, ش, س, ز, ر, ذ, د, خ, ح, ج, ث, ت, ب, ا} {
+  \foreach \sym [count=\i from 0] in {غ, ظ, ض, ذ, خ, ث, ت, ش, ر, ق, ص, ف, ع, س, ن, م, ل, ك, ي, ط, ح, ز, و, ه, د, ج, ب, ا} {
     \pgfmathsetmacro{\xp}{\gridstart + \i*\gs}
     \node[anchor=center, font=\kufifont\fontsize{7}{9}\selectfont] at (\xp mm, \ry mm) {\sym};
   }
