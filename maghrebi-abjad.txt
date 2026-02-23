@@ -1,14 +1,20 @@
-Maghrebi Abjad Letter Assignments for 28 Manāzil
+Mashriqi Abjad Letter Assignments for 28 Manāzil
 =================================================
 
-The project uses the Maghrebi (Western/North African) abjad ordering,
-NOT the Mashriqi (Eastern) ordering.  The key difference is in positions
-15–21 and 26–28:
+The project uses the Mashriqi (Eastern) abjad ordering, following the
+Shams al-Ma'arif (al-Buni) and the standard tradition of manzil-letter
+correspondences. The key difference from the Maghrebi ordering is in
+positions 15–21 and 26–28:
 
   Mashriqi: ...ن(14) س(15) ع ف ص(18) ق ر ش(21)...ض(26) ظ(27) غ(28)
   Maghrebi: ...ن(14) ص(15) ع ف ض(18) ق ر س(21)...ظ(26) غ(27) ش(28)
 
-Full Maghrebi abjad mapping for manāzil:
+Rationale: Although the Maghrebi order is considered older as a general
+abjad system, no classical source on manzil-letter magic uses it. The
+Shams al-Ma'arif uses Mashriqi ordering despite al-Buni's North African
+origin, and all modern practitioners follow suit.
+
+Full Mashriqi abjad mapping for manāzil:
 
 #    Manzil                    Letter    Abjad #
 ──────────────────────────────────────────────────
@@ -26,20 +32,20 @@ Full Maghrebi abjad mapping for manāzil:
 12   Ṣarfa                     ل         12
 13   ʿAwwāʾ · Zāwiya           م         13
 14   Simāk al-ʿĀzal            ن         14
-15   Ghafr                     ص         15
+15   Ghafr                     س         15
 16   Zubānā                    ع         16
 17   Iklīl                     ف         17
-18   Qalb                      ض         18
+18   Qalb                      ص         18
 19   Shawla                    ق         19
 20   Naʿāʾim                   ر         20
-21   Balda                     س         21
+21   Balda                     ش         21
 22   Saʿd al-Dhābiḥ            ت         22
 23   Saʿd Bulaʿ                ث         23
 24   Saʿd al-Suʿūd             خ         24
 25   Saʿd al-Akhbiyya          ذ         25
-26   Fargh al-Muqaddim         ظ         26
-27   Fargh al-Muʾakkhir        غ         27
-28   Rishāʾ · Baṭn al-Ḥūt     ش         28
+26   Fargh al-Muqaddim         ض         26
+27   Fargh al-Muʾakkhir        ظ         27
+28   Rishāʾ · Baṭn al-Ḥūt     غ         28
 
-Source: Maghrebi abjad mnemonic صعفض (ṣaʿfaḍ) for positions 15–18,
-vs Mashriqi سعفص (saʿfaṣ).
+Source: Shams al-Ma'arif (al-Buni), Ch. 2 on Mansions of the Moon.
+Mashriqi mnemonic سعفص (saʿfaṣ) for positions 15–18.

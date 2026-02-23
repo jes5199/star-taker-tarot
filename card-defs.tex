@@ -442,6 +442,10 @@
     (0.5\cardwidth-5.4mm, 17mm-7.5mm)
     rectangle
     (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \foreach \angle in {0,22.5,...,337.5}{
+    \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
+      inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth+5mm, 17mm-7.5mm+0.75mm) {1};
+  }
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm+0.75mm) {1};
   \decanticks{340}
@@ -451,7 +455,7 @@
   \boundsquare{6}{Mercury}
   \boundsquare{9}{Mars}
   % Manzil: Fargh al-Muqaddim (26th) starts at 16°35' Pisces (6.583°)
-  \manzillane{6.583}{ظ}{26}
+  \manzillane{6.583}{ض}{26}
   % Pādas: सू @0.933°, Pūrva Bhādrapadā (#25) starts @4.267°
   \padasyllable{0.933}{4.267}{सू}
   \padasyllable[solid]{4.267}{7.6}{से}
@@ -499,6 +503,10 @@
     (0.5\cardwidth-5.4mm, 17mm-7.5mm)
     rectangle
     (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \foreach \angle in {0,22.5,...,337.5}{
+    \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
+      inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth+5mm, 17mm-7.5mm+0.25mm) {18};
+  }
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm+0.25mm) {18};
   \decanticks{350}
@@ -506,7 +514,7 @@
   \boundsquare{0}{Mars}
   \boundsquare{8}{Saturn}
   % Manzil: Fargh al-Muʾakkhir (27th) starts at 29°26' Pisces (9.433°)
-  \manzillane{9.433}{غ}{27}
+  \manzillane{9.433}{ظ}{27}
   % Pādas: दा @0.933°, दी @4.267°, Uttara Bhādrapadā (#26) @7.6°
   \padasyllable{0.933}{4.267}{दा}
   \padasyllable{4.267}{7.6}{दी}
@@ -592,8 +600,12 @@
     (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
     rectangle
     (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
-  \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
-    inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {17};
+  \foreach \angle in {0,22.5,...,337.5}{
+    \node[anchor=south west, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
+      inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth-27mm, 0.52\cardheight-51mm) {17};
+  }
+  \node[anchor=south west, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth-27mm, 0.52\cardheight-51mm) {17};
   \courtattrib{0.52\cardheight-35mm}{direct}{☿}{Mercury}{♊}{Gemini}
   \chakrastack{6}
   \lunarstack{6}{reclaims}
@@ -622,7 +634,11 @@
     (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
     rectangle
     (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
-  \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
+  \foreach \angle in {0,22.5,...,337.5}{
+    \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
+      inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {4};
+  }
+  \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {4};
   \courtattrib{0.52\cardheight-35mm}{direct}{♀}{Venus}{♎}{Libra}
   \chakrastack{5}
@@ -683,7 +699,7 @@
   \decanticks{280}
   \boundsquare{0}{Jupiter}
   \boundsquare{4}{Venus}
-  \manzillane{2.3}{س}{21}
+  \manzillane{2.3}{ش}{21}
   \padasyllable{0.933}{4.267}{धा}
   \padasyllable{4.267}{7.6}{फा}
   \padasyllable{7.6}{10}{ढ}
@@ -912,7 +928,7 @@
     rectangle
     (0.5\cardwidth+5.4mm, 17mm+7.5mm);
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
-    inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {33};
+    inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.25mm) {33};
   \decanticks{150}
   % Bounds: Mercury @0, Venus @7
   \boundsquare{0}{Mercury}
@@ -1150,7 +1166,11 @@
     (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
     rectangle
     (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
-  \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
+  \foreach \angle in {0,22.5,...,337.5}{
+    \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
+      inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {34};
+  }
+  \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {34};
   \courtattrib{0.52\cardheight-35mm}{{\symbserif ℞}etrograde}{♄}{Saturn}{♑}{Capricorn}
   \chakrastack{1}
@@ -1254,7 +1274,7 @@
   \boundsquare{1}{Venus}
   \boundsquare{8}{Mars}
   % Manzil: Ghafr (15th) starts at 25°09' Libra (5.15°)
-  \manzillane{5.15}{ص}{15}
+  \manzillane{5.15}{س}{15}
   % Pādas: Chitrā cont. — पो @0.933°, रा @4.267°, री @7.6°
   \padasyllable{0.933}{4.267}{पो}
   \padasyllable{4.267}{7.6}{रा}
@@ -1396,7 +1416,11 @@
     (0.5\cardwidth-5.4mm, 17mm-7.5mm)
     rectangle
     (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-  \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
+  \foreach \angle in {0,22.5,...,337.5}{
+    \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
+      inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth+5mm, 17mm-7.5mm) {27};
+  }
+  \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {27};
   \decanticks{320}
   % Bounds: Mars @0, Saturn @5
@@ -1512,11 +1536,11 @@
     rectangle
     (0.5\cardwidth+5.4mm, 17mm+7.5mm);
   \foreach \angle in {0,22.5,...,337.5}{
-    \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
-      inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth+5mm, 17mm-7.5mm) {35};
+    \node[anchor=south west, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
+      inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth-5mm, 17mm-7.25mm) {35};
   }
-  \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
-    inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {35};
+  \node[anchor=south west, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth-5mm, 17mm-7.25mm) {35};
   \decanticks{70}
   % Bounds: Jupiter @0, Venus @2, Mars @7
   \boundsquare{0}{Jupiter}
@@ -1570,6 +1594,10 @@
     (0.5\cardwidth-5.4mm, 17mm-7.5mm)
     rectangle
     (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \foreach \angle in {0,22.5,...,337.5}{
+    \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
+      inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth+5mm, 17mm-7.5mm) {3};
+  }
   \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {3};
   \decanticks{80}
@@ -1752,7 +1780,7 @@
   \boundsquare{0}{Venus}
   \boundsquare{2}{Mercury}
   % Manzil: Rishāʾ/Baṭn al-Ḥūt (28th) starts at 12°18' Aries (2.3°)
-  \manzillane{2.3}{ش}{28}
+  \manzillane{2.3}{غ}{28}
   % Pādas: Revatī (#27) starts at 10°56' Aries (0.933°), then दो, च
   \padasyllable[solid]{0.933}{4.267}{दे}
   \nakshatrastart{pada\thepadactr}{27}{}{}{}
@@ -1869,7 +1897,7 @@
     rectangle
     (0.5\cardwidth+5.4mm, 17mm+7.5mm);
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
-    inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {36};
+    inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.25mm) {3\kern-0.3ex6};
   \decanticks{130}
   % Bounds: Venus at 0° (cont.), Saturn at 1°, Mercury at 8°
   \boundsquare{0}{Venus}
@@ -1925,8 +1953,12 @@
     (0.5\cardwidth-5.4mm, 17mm-7.5mm)
     rectangle
     (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-  \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
-    inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {23};
+  \foreach \angle in {0,22.5,...,337.5}{
+    \node[anchor=south west, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
+      inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth-5mm, 17mm-7.25mm) {23};
+  }
+  \node[anchor=south west, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
+    inner sep=0pt] at (0.5\cardwidth-5mm, 17mm-7.25mm) {23};
   \decanticks{140}
   % Bounds: Mercury at 0°, Mars at 4°
   \boundsquare{0}{Mercury}
@@ -1978,12 +2010,12 @@
     rectangle
     (0.5\cardwidth+5.4mm, 17mm+7.5mm);
   \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
-    inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {21};
+    inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.25mm) {21};
   \decanticks{240}
   % Bounds: Jupiter spans entire decan (0°-12° Sag)
   \boundsquare{0}{Jupiter}
   % Manzil: Qalb (18th) at 03°44' Sag (3.733°)
-  \manzillane{3.733}{ض}{18}
+  \manzillane{3.733}{ص}{18}
   % Pādas: Anurādhā 2-4 (नी नू ने) — pāda 1 is continuation
   \padasyllable{0.933}{4.267}{नी}
   \padasyllable{4.267}{7.6}{नू}
@@ -2030,6 +2062,10 @@
     (0.5\cardwidth-5.4mm, 17mm-7.5mm)
     rectangle
     (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \foreach \angle in {0,22.5,...,337.5}{
+    \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
+      inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth+5mm, 17mm-7.5mm) {14};
+  }
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {14};
   \decanticks{250}
@@ -2087,6 +2123,10 @@
     (0.5\cardwidth-5.4mm, 17mm-7.5mm)
     rectangle
     (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \foreach \angle in {0,22.5,...,337.5}{
+    \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
+      inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth+5mm, 17mm-7.5mm) {15};
+  }
   \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {15};
   \decanticks{260}
@@ -2184,6 +2224,10 @@
     (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
     rectangle
     (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
+  \foreach \angle in {0,22.5,...,337.5}{
+    \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
+      inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {7};
+  }
   \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {7};
   \courtattrib{0.52\cardheight-35mm}{{\symbserif ℞}etrograde}{♀}{Venus}{♉}{Taurus}
