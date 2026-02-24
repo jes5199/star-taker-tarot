@@ -2,51 +2,16 @@
 \usepackage[paperwidth=5.5in, paperheight=8.5in, margin=0mm, headsep=0pt, headheight=0pt, footskip=0pt]{geometry}
 \usepackage{tikz}
 \usepackage{fontspec}
+\usepackage{graphicx}
 
-\newfontface\cardfont{EB Garamond SC}[LetterSpace=8]
+% Card rendering machinery (fonts, symbols, card commands)
+\input{cards-preamble}
+\input{card-defs}
+
+% Book-only fonts
 \newfontface\reversedC{FreeSerif}
-\newfontface\cuneiform{Noto Sans Cuneiform}
-\newfontface\hebrewfont{Noto Serif Hebrew}
-\newfontface\cjkfont{AR PL KaitiM Big5}
-\newfontface\cjkfontgb{AR PL KaitiM GB}
-\newfontface\devfont{Noto Serif Devanagari}[Script=Devanagari, Renderer=HarfBuzz]
-\newfontface\symbfont{DejaVu Sans}
-\newfontface\symbserif{FreeSerif}
 \newfontface\alchfont{Noto Sans Symbols}
-\newfontface\arabfont{Noto Naskh Arabic}[Script=Arabic]
-\newfontface\kufifont{Noto Kufi Arabic}[Script=Arabic]
-\newfontface\greekfont{GFS Theokritos}
 \setmainfont{Gentium Book Basic}[Scale=1.0]
-
-% Alchemical and elemental symbols (drawn, matching card designs)
-\newcommand{\tinysulfur}{\raisebox{-1.5mm}{\begin{tikzpicture}[baseline=0mm, line width=0.6mm, line cap=butt]
-  \draw (0,-2mm) -- (0,0.5mm);
-  \draw (-1mm,-0.75mm) -- (1mm,-0.75mm);
-  \draw (-1.5mm,0.5mm) -- (0,3mm) -- (1.5mm,0.5mm) -- cycle;
-\end{tikzpicture}}}
-\newcommand{\tinysalt}{\raisebox{-1mm}{\begin{tikzpicture}[baseline=0mm, line width=0.6mm]
-  \draw (0,0) circle (2mm);
-  \draw (-2mm,0) -- (2mm,0);
-\end{tikzpicture}}}
-\newcommand{\tinymercury}{\raisebox{-2mm}{\begin{tikzpicture}[baseline=0mm, line width=0.6mm, line cap=butt]
-  \draw (0,-2.75mm) -- (0,-0.5mm);
-  \draw (-1mm,-1.5mm) -- (1mm,-1.5mm);
-  \draw (-1mm,1.8mm) -- (-1mm,0.5mm) arc (180:360:1mm) -- (1mm,1.8mm);
-\end{tikzpicture}}}
-\newcommand{\tinyfire}{\raisebox{-0.5mm}{\begin{tikzpicture}[baseline=0mm, line width=0.5mm]
-  \draw (-2mm,0) -- (0,3.5mm) -- (2mm,0) -- cycle;
-\end{tikzpicture}}}
-\newcommand{\tinywater}{\raisebox{-0.5mm}{\begin{tikzpicture}[baseline=0mm, line width=0.5mm]
-  \draw (-2mm,3.5mm) -- (0,0) -- (2mm,3.5mm) -- cycle;
-\end{tikzpicture}}}
-\newcommand{\tinyair}{\raisebox{-0.5mm}{\begin{tikzpicture}[baseline=0mm, line width=0.5mm]
-  \draw (-2mm,0) -- (0,3.5mm) -- (2mm,0) -- cycle;
-  \draw (-2.3mm,1.1mm) -- (2.3mm,1.1mm);
-\end{tikzpicture}}}
-\newcommand{\tinyearth}{\raisebox{-0.5mm}{\begin{tikzpicture}[baseline=0mm, line width=0.5mm]
-  \draw (-2mm,3.5mm) -- (0,0) -- (2mm,3.5mm) -- cycle;
-  \draw (-2.3mm,2.4mm) -- (2.3mm,2.4mm);
-\end{tikzpicture}}}
 
 % Moon phase — #1=x, #2=y, #3=phase (0=new, 4=first quarter, 8=full, 12=third quarter)
 \newcommand{\bookmoonphase}[3]{%
@@ -83,7 +48,7 @@
 
 % Section headings
 \usepackage{titlesec}
-\titleformat{\chapter}[display]
+\titleformat{\chapter}[block]
   {\cardfont\fontsize{18}{22}\selectfont\centering}{}{0pt}{}
 \renewcommand{\chaptername}{}
 \newcommand{\numchapter}[2]{%
@@ -122,7 +87,7 @@
 }
 \titleformat{\section}
   {\cardfont\fontsize{14}{17}\selectfont\centering}{}{0pt}{}
-\titlespacing*{\chapter}{0pt}{10mm}{6mm}
+\titlespacing*{\chapter}{0pt}{-20pt}{4mm}
 \titlespacing*{\section}{0pt}{4mm}{2mm}
 
 % TOC formatting
@@ -403,7 +368,10 @@ and the tongue of edict decides between them.
 
 \partpage[The Cards]{The\\Cards}
 
-% Gematria / Abjad / Isopsephy number table (recto)
+% Individual card chapters
+\input{book-cards}
+
+% Gematria / Abjad / Isopsephy number table (hidden track)
 \cleardoublepage
 \thispagestyle{empty}
 \restoregeometry
