@@ -342,33 +342,36 @@ Western and eastern systems disagree somewhat about which planets should be cons
     \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (50mm, \ypos mm) {\opp};
   }
   % Classical elements
-  \foreach \word/\opp [count=\i from 0] in {%
-    fire/water,
-    air/earth%
-  } {
-    \pgfmathsetmacro{\ypos}{-93 - \i*5}
-    \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (0, \ypos mm) {\word};
-    \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (50mm, \ypos mm) {\opp};
-  }
+  \node[anchor=north] at (0, -91mm) {\tinyfire};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (0, -96mm) {fire};
+  \node[anchor=north] at (50mm, -91mm) {\tinywater};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (50mm, -96mm) {water};
+  \node[anchor=north] at (0, -101mm) {\tinyair};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (0, -106mm) {air};
+  \node[anchor=north] at (50mm, -101mm) {\tinyearth};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (50mm, -106mm) {earth};
   % Celestial pairs
-  \foreach \word/\opp [count=\i from 0] in {%
-    sun/moon,
-    jupiter/saturn,
-    mars/venus%
-  } {
-    \pgfmathsetmacro{\ypos}{-106 - \i*5}
-    \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (0, \ypos mm) {\word};
-    \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (50mm, \ypos mm) {\opp};
-  }
+  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (0, -112mm) {☉};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (0, -118mm) {sun};
+  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (50mm, -112mm) {☽};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (50mm, -118mm) {moon};
+  \node[anchor=north, font=\symbserif\fontsize{12}{14}\selectfont] at (0, -122mm) {♃};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (0, -128mm) {jupiter};
+  \node[anchor=north, font=\symbserif\fontsize{12}{14}\selectfont] at (50mm, -122mm) {♄};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (50mm, -128mm) {saturn};
+  \node[anchor=north, font=\symbserif\fontsize{12}{14}\selectfont] at (0, -132mm) {♂};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (0, -138mm) {mars};
+  \node[anchor=north, font=\symbserif\fontsize{12}{14}\selectfont] at (50mm, -132mm) {♀};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (50mm, -138mm) {venus};
   % Wuxing pairs
-  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (0, -126mm) {木};
-  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (0, -131mm) {wood (jupiter)};
-  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (50mm, -126mm) {金};
-  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (50mm, -131mm) {metal (venus)};
-  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (0, -136mm) {火};
-  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (0, -141mm) {fire (mars)};
-  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (50mm, -136mm) {水};
-  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (50mm, -141mm) {water (mercury)};
+  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (0, -145mm) {木};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (0, -150mm) {wood (jupiter)};
+  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (50mm, -145mm) {金};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (50mm, -150mm) {metal (venus)};
+  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (0, -155mm) {火};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (0, -160mm) {fire (mars)};
+  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (50mm, -155mm) {水};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (50mm, -160mm) {water (mercury)};
 \end{tikzpicture}
 \end{center}
 
@@ -428,7 +431,7 @@ and the tongue of edict decides between them.
 \null\vfill
 \begin{center}
 \begin{tikzpicture}
-  \useasboundingbox (-20mm, -145mm) rectangle (70mm, 2mm);
+  \useasboundingbox (-20mm, -82mm) rectangle (70mm, 2mm);
   % Column positions
   \pgfmathsetmacro{\cola}{0}
   \pgfmathsetmacro{\colb}{25}
@@ -437,52 +440,60 @@ and the tongue of edict decides between them.
   \node[anchor=center] at (\cola mm, 0) {\tinysulfur};
   \node[anchor=center] at (\colb mm, 0) {\tinysalt};
   \node[anchor=center] at (\colc mm, 0) {\tinymercury};
+  % Header labels
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -4mm) {Sulfur};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -4mm) {Salt};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -4mm) {Quicksilver};
+  % Modality
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -9mm) {cardinal};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -9mm) {fixed};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -9mm) {mutable};
   % Three Treasures (Chinese)
-  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\cola mm, -5mm) {神};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -10mm) {shén};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -14mm) {spirit};
-  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colb mm, -5mm) {精};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -10mm) {jīng};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -14mm) {essence};
-  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colc mm, -5mm) {氣};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -10mm) {qì};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -14mm) {breath};
+  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\cola mm, -15mm) {神};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -20mm) {shén};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -24mm) {spirit};
+  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colb mm, -15mm) {精};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -20mm) {jīng};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -24mm) {essence};
+  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colc mm, -15mm) {氣};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -20mm) {qì};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -24mm) {breath};
   % Nefesh/Ruach/Neshama (Kabbalistic)
-  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\cola mm, -19mm) {נשמה};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -23mm) {neshama};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -27mm) {spirit};
-  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\colb mm, -19mm) {נפש};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -23mm) {nefesh};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -27mm) {soul};
-  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\colc mm, -19mm) {רוח};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -23mm) {ruach};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -27mm) {breath};
+  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\cola mm, -29mm) {נשמה};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -33mm) {neshama};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -37mm) {spirit};
+  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\colb mm, -29mm) {נפש};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -33mm) {nefesh};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -37mm) {soul};
+  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\colc mm, -29mm) {רוח};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -33mm) {ruach};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -37mm) {breath};
   % Tridosha (Ayurvedic)
-  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\cola mm, -32mm) {पित्त};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -36mm) {pitta};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -40mm) {bile};
-  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\colb mm, -32mm) {कफ};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -36mm) {kapha};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -40mm) {phlegm};
-  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\colc mm, -32mm) {वात};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -36mm) {vāta};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -40mm) {wind};
+  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\cola mm, -42mm) {पित्त};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -46mm) {pitta};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -50mm) {bile};
+  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\colb mm, -42mm) {कफ};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -46mm) {kapha};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -50mm) {phlegm};
+  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\colc mm, -42mm) {वात};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -46mm) {vāta};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -50mm) {wind};
   % Lots with symbols
   % Lot of Spirit — circle with vertical line
-  \begin{scope}[shift={(\cola mm, -51mm)}]
+  \begin{scope}[shift={(\cola mm, -61mm)}]
     \draw[thick] (0,0) circle (2.5mm);
     \draw[thick] (0,-3.2mm) -- (0,3.2mm);
   \end{scope}
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -54mm) {Lot of Spirit};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -64mm) {Lot of Spirit};
   % Lot of Fortune — circle with X
-  \begin{scope}[shift={(\colb mm, -51mm)}]
+  \begin{scope}[shift={(\colb mm, -61mm)}]
     \draw[thick] (0,0) circle (2.5mm);
     \draw[thick] (-1.7mm,1.7mm) -- (1.7mm,-1.7mm);
     \draw[thick] (-1.7mm,-1.7mm) -- (1.7mm,1.7mm);
   \end{scope}
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -54mm) {Lot of Fortune};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -64mm) {Lot of Fortune};
   % Lot of Eros — circle with heart
-  \begin{scope}[shift={(\colc mm, -51mm)}]
+  \begin{scope}[shift={(\colc mm, -61mm)}]
     \draw[thick] (0,0) circle (2.5mm);
     \draw[thick] (0,0.7mm)
       .. controls (-0.8mm,2.1mm) and (-2mm,1.3mm) .. (-2mm,0.5mm)
@@ -490,11 +501,11 @@ and the tongue of edict decides between them.
       .. controls (0,-1.5mm) and (2mm,-0.3mm) .. (2mm,0.5mm)
       .. controls (2mm,1.3mm) and (0.8mm,2.1mm) .. (0,0.7mm);
   \end{scope}
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -54mm) {Lot of Eros};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -64mm) {Lot of Eros};
   %
   % === Mahjong dragons ===
-  \node[anchor=north, text=red, font=\cjkfont\fontsize{12}{14}\selectfont] at (\cola mm, -61mm) {中};
-  \begin{scope}[shift={(\colb mm, -63.5mm)}]
+  \node[anchor=north, text=red, font=\cjkfont\fontsize{12}{14}\selectfont] at (\cola mm, -71mm) {中};
+  \begin{scope}[shift={(\colb mm, -73.5mm)}]
     \draw[thick, rounded corners=0.3mm] (-2mm,-2.5mm) rectangle (2mm,2.5mm);
     \draw[thin, rounded corners=0.2mm] (-1.4mm,-1.8mm) rectangle (1.4mm,1.8mm);
     \draw[thin] (-1.4mm,1.4mm) -- (-0.8mm,1.8mm);
@@ -502,11 +513,11 @@ and the tongue of edict decides between them.
     \draw[thin] (-1.4mm,-1.4mm) -- (-0.8mm,-1.8mm);
     \draw[thin] (1.4mm,-1.4mm) -- (0.8mm,-1.8mm);
   \end{scope}
-  \node[anchor=north, text=green!50!black, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colc mm, -61mm) {發};
+  \node[anchor=north, text=green!50!black, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colc mm, -71mm) {發};
   % Dragon labels
-  \node[anchor=north, text=red, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -67mm) {red dragon};
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -67mm) {white dragon};
-  \node[anchor=north, text=green!50!black, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -67mm) {green dragon};
+  \node[anchor=north, text=red, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -77mm) {red dragon};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -77mm) {white dragon};
+  \node[anchor=north, text=green!50!black, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -77mm) {green dragon};
 \end{tikzpicture}
 \end{center}
 \vfill\null
