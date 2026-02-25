@@ -296,6 +296,8 @@ The oldest such system is the I Ching, which originated in the Yellow River vall
 
 A remarkably similar system developed in West Africa where it is known as Ifá (or Fa, or Afa), and was transmitted to the Arab world where it was called \textit{ilm al-raml} (``the science of sand''), and eventually reached medieval Europe where it became Geomancy. In this system, active and passive elements are marked as single (odd) or paired (even) dots.
 
+We will discuss how binary symbols combine to form more complicated symbols in Chapter 8: Trigrams, Chapter 16: Geomantic Figures, and Chapter 64: Hexagrams.
+
 Notably, Mercury moves between both categories and cannot be pinned down as day/night or male/female.
 
 \newpage
@@ -303,7 +305,7 @@ Notably, Mercury moves between both categories and cannot be pinned down as day/
 \null\vfill
 \begin{center}
 \begin{tikzpicture}
-  \useasboundingbox (-15mm, -107mm) rectangle (65mm, 2mm);
+  \useasboundingbox (-15mm, -130mm) rectangle (65mm, 2mm);
   % I Ching lines
   \begin{scope}[shift={(0,0)}, line width=2mm, line cap=butt]
     \draw (-8mm, 0) -- (8mm, 0);
@@ -340,13 +342,22 @@ Notably, Mercury moves between both categories and cannot be pinned down as day/
     \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (0, \ypos mm) {\word};
     \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (50mm, \ypos mm) {\opp};
   }
-  % Celestial pairs below with gap
+  % Wuxing pairs
+  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (0, -93mm) {木};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (0, -98mm) {wood};
+  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (50mm, -93mm) {金};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (50mm, -98mm) {metal};
+  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (0, -103mm) {火};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (0, -108mm) {fire};
+  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (50mm, -103mm) {水};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (50mm, -108mm) {water};
+  % Celestial pairs below
   \foreach \word/\opp [count=\i from 0] in {%
     sun/moon,
     jupiter/saturn,
     mars/venus%
   } {
-    \pgfmathsetmacro{\ypos}{-93 - \i*5}
+    \pgfmathsetmacro{\ypos}{-116 - \i*5}
     \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (0, \ypos mm) {\word};
     \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (50mm, \ypos mm) {\opp};
   }
@@ -591,6 +602,47 @@ and the tongue of edict decides between them.
 \end{tikzpicture}
 \end{center}
 \vfill\null
+
+\numchapter{4}{The Elements}
+
+\begin{center}\fontsize{10}{13}\selectfont\itshape
+Of all things that exist, some exist by nature, some\\
+from other causes. By nature the animals and their\\
+parts exist, and the plants and the simple bodies\\
+(earth, fire, air, water) --- for we say that these\\
+and the like exist by nature.
+\end{center}
+\begin{flushright}
+{\fontsize{8}{10}\selectfont --- Aristotle, \textit{Physics} II.1}
+\end{flushright}
+
+\newpage
+
+\noindent The classical western elements --- Fire, Water, Air, and Earth --- are one of the oldest and most persistent frameworks for understanding the material world. Empedocles proposed them as the four ``roots'' from which everything is composed, and Aristotle refined the idea by associating each element with pairs of qualities: hot or cold, wet or dry.
+
+In the tarot, the four elements correspond directly to the four suits: Wands are Fire, Cups are Water, Swords are Air, and Pentacles are Earth. Each suit thus carries the qualities of its element through all fourteen of its cards.
+
+The elements also map neatly onto the duality system: Fire and Air are active (yang), while Water and Earth are passive (yin). And the Tria Prima cuts across them differently: Sulphur (soul) is associated with Fire, Salt (body) with Earth, and Mercury (spirit) moves between them.
+
+\numchapter{5}{Wǔ Xíng}
+
+\begin{center}\fontsize{10}{13}\selectfont\itshape
+The five phases are not either set in a row,\\
+nor piled up in a heap.
+\end{center}
+\begin{flushright}
+{\fontsize{8}{10}\selectfont --- Zhū Xī}
+\end{flushright}
+
+\newpage
+
+\noindent The Chinese five phases --- Wood (木), Fire (火), Earth (土), Metal (金), and Water (水) --- are not elements in the Greek sense of static building blocks. They are processes, transformations, phases of change that cycle through the natural world.
+
+Each phase has a yin or yang quality. Wood and Fire are yang: expanding, rising, active. Metal and Water are yin: contracting, sinking, receptive. Earth sits at the center, the pivot between them.
+
+The five phases generate and overcome each other in two interlocking cycles. In the generating cycle (\textit{xiāngshēng}), Wood feeds Fire, Fire produces Earth (ash), Earth yields Metal (ore), Metal collects Water (condensation), and Water nourishes Wood. In the overcoming cycle (\textit{xiāngkè}), Wood parts Earth (roots), Earth dams Water, Water quenches Fire, Fire melts Metal, and Metal chops Wood.
+
+On the cards, the Wǔ Xíng appears in the bottom center of each major arcanum, written in Chinese with pinyin transliteration. The phase assigned to each card follows from its planetary or zodiacal association through the traditional Chinese correspondences.
 
 \partpage[The Cards]{The\\Cards}
 
