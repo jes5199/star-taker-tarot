@@ -298,13 +298,13 @@ A remarkably similar system developed in West Africa where it is known as Ifá (
 
 We will discuss how binary symbols combine to form more complicated symbols in Chapter 8: Trigrams, Chapter 16: Geomantic Figures, and Chapter 64: Hexagrams.
 
-Notably, Mercury moves between both categories and cannot be pinned down as day/night or male/female.
+Western and eastern systems disagree somewhat about which planets should be considered active or passive --- in the European tradition, Mercury stands outside the binary, but in the Chinese system, it is Saturn who is ambiguous.
 
 \newpage
 
 \begin{center}
 \begin{tikzpicture}
-  \useasboundingbox (-15mm, -145mm) rectangle (65mm, 2mm);
+  \useasboundingbox (-15mm, -148mm) rectangle (65mm, 2mm);
   % I Ching lines
   \begin{scope}[shift={(0,0)}, line width=2mm, line cap=butt]
     \draw (-8mm, 0) -- (8mm, 0);
@@ -335,11 +335,18 @@ Notably, Mercury moves between both categories and cannot be pinned down as day/
     loud/quiet,
     explicit/implicit,
     manifest/potential,
-    movement/rest,
+    movement/rest%
+  } {
+    \pgfmathsetmacro{\ypos}{-35 - \i*5}
+    \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (0, \ypos mm) {\word};
+    \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (50mm, \ypos mm) {\opp};
+  }
+  % Classical elements
+  \foreach \word/\opp [count=\i from 0] in {%
     fire/water,
     air/earth%
   } {
-    \pgfmathsetmacro{\ypos}{-35 - \i*5}
+    \pgfmathsetmacro{\ypos}{-93 - \i*5}
     \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (0, \ypos mm) {\word};
     \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (50mm, \ypos mm) {\opp};
   }
@@ -349,19 +356,19 @@ Notably, Mercury moves between both categories and cannot be pinned down as day/
     jupiter/saturn,
     mars/venus%
   } {
-    \pgfmathsetmacro{\ypos}{-103 - \i*5}
+    \pgfmathsetmacro{\ypos}{-106 - \i*5}
     \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (0, \ypos mm) {\word};
     \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (50mm, \ypos mm) {\opp};
   }
   % Wuxing pairs
-  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (0, -123mm) {木};
-  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (0, -128mm) {wood (jupiter)};
-  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (50mm, -123mm) {金};
-  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (50mm, -128mm) {metal (venus)};
-  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (0, -133mm) {火};
-  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (0, -138mm) {fire (mars)};
-  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (50mm, -133mm) {水};
-  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (50mm, -138mm) {water (mercury)};
+  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (0, -126mm) {木};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (0, -131mm) {wood (jupiter)};
+  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (50mm, -126mm) {金};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (50mm, -131mm) {metal (venus)};
+  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (0, -136mm) {火};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (0, -141mm) {fire (mars)};
+  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (50mm, -136mm) {水};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (50mm, -141mm) {water (mercury)};
 \end{tikzpicture}
 \end{center}
 
