@@ -52,8 +52,9 @@
   {\cardfont\fontsize{18}{22}\selectfont\centering}{}{0pt}{}
 \renewcommand{\chaptername}{}
 \newcommand{\numchapter}[2]{%
-  \chapter*{{\fontsize{14}{17}\selectfont #1}\\[2mm] #2}%
-  \addcontentsline{toc}{chapter}{#1\hspace{1.5mm}#2}%
+  \newpage
+  \section*{{\fontsize{14}{17}\selectfont #1}\\[2mm] #2}%
+  \addcontentsline{toc}{section}{#1\hspace{1.5mm}#2}%
 }
 \newcommand{\partpage}[2][]{%
   \cleardoublepage
@@ -92,12 +93,13 @@
 
 % TOC formatting
 \usepackage{tocloft}
-\renewcommand{\cftchapfont}{\cardfont\fontsize{10}{13}\selectfont}
-\renewcommand{\cftchappagefont}{\fontsize{10}{13}\selectfont}
-\renewcommand{\cftsecfont}{\fontsize{9}{12}\selectfont}
-\renewcommand{\cftsecpagefont}{\fontsize{9}{12}\selectfont}
+\renewcommand{\cftchapfont}{\cardfont\fontsize{11}{14}\selectfont}
+\renewcommand{\cftchappagefont}{\fontsize{11}{14}\selectfont}
+\renewcommand{\cftchapdotsep}{\cftnodots}
+\renewcommand{\cftsecfont}{\cardfont\fontsize{10}{13}\selectfont}
+\renewcommand{\cftsecpagefont}{\fontsize{10}{13}\selectfont}
 \renewcommand{\cfttoctitlefont}{\cardfont\fontsize{18}{22}\selectfont\centering}
-\setlength{\cftbeforechapskip}{2mm}
+\setlength{\cftbeforechapskip}{3mm}
 \setlength{\cftbeforesecskip}{1mm}
 \setlength{\cftsecindent}{5mm}
 \renewcommand{\cftdotsep}{2}
@@ -107,7 +109,37 @@
 \setlength{\cftpartindent}{0pt}
 \setlength{\cftpartnumwidth}{0pt}
 
+
+% Suit divider page command
+\newcommand{\suitpage}[1]{%
+  \cleardoublepage
+  \thispagestyle{empty}
+  \restoregeometry
+  \noindent
+  \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle (139.7mm, 215.9mm);
+    \clip (0,0) rectangle (139.7mm, 215.9mm);
+    \foreach \a in {0,5,...,355} {
+      \foreach \s in {0,1,...,19} {
+        \pgfmathsetmacro{\op}{1 - \s/19}%
+        \pgfmathsetmacro{\startrad}{10 + \s*5}%
+        \draw[black, thin, opacity=\op]
+          (69.85mm, 107.95mm) ++(\a:\startrad mm) -- ++(\a:5mm);
+      }
+    }
+    \fill[white] (69.85mm, 107.95mm) circle (20mm);
+    \node[anchor=center, font=\cardfont\fontsize{36}{44}\selectfont,
+          text=black, text width=100mm, align=center]
+      at (69.85mm, 107.95mm) {#1};
+  \end{tikzpicture}
+  \addcontentsline{toc}{chapter}{#1}%
+  \newpage
+  \newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=18mm, top=20mm, bottom=24mm, footskip=10mm}
+  \pagestyle{content}
+}
+
 \pagestyle{empty}
+\setcounter{secnumdepth}{0}
 
 \begin{document}
 % Title page
