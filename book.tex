@@ -302,10 +302,9 @@ Notably, Mercury moves between both categories and cannot be pinned down as day/
 
 \newpage
 
-\null\vfill
 \begin{center}
 \begin{tikzpicture}
-  \useasboundingbox (-15mm, -130mm) rectangle (65mm, 2mm);
+  \useasboundingbox (-15mm, -135mm) rectangle (65mm, 2mm);
   % I Ching lines
   \begin{scope}[shift={(0,0)}, line width=2mm, line cap=butt]
     \draw (-8mm, 0) -- (8mm, 0);
@@ -342,28 +341,27 @@ Notably, Mercury moves between both categories and cannot be pinned down as day/
     \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (0, \ypos mm) {\word};
     \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (50mm, \ypos mm) {\opp};
   }
-  % Wuxing pairs
-  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (0, -93mm) {木};
-  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (0, -98mm) {wood};
-  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (50mm, -93mm) {金};
-  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (50mm, -98mm) {metal};
-  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (0, -103mm) {火};
-  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (0, -108mm) {fire};
-  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (50mm, -103mm) {水};
-  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (50mm, -108mm) {water};
-  % Celestial pairs below
+  % Celestial pairs
   \foreach \word/\opp [count=\i from 0] in {%
     sun/moon,
     jupiter/saturn,
     mars/venus%
   } {
-    \pgfmathsetmacro{\ypos}{-116 - \i*5}
+    \pgfmathsetmacro{\ypos}{-93 - \i*5}
     \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (0, \ypos mm) {\word};
     \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (50mm, \ypos mm) {\opp};
   }
+  % Wuxing pairs
+  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (0, -113mm) {木};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (0, -118mm) {wood (jupiter)};
+  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (50mm, -113mm) {金};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (50mm, -118mm) {metal (venus)};
+  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (0, -123mm) {火};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (0, -128mm) {fire (mars)};
+  \node[anchor=north, font=\cjkfont\fontsize{10}{12}\selectfont] at (50mm, -123mm) {水};
+  \node[anchor=north, font=\cardfont\fontsize{7}{9}\selectfont] at (50mm, -128mm) {water (mercury)};
 \end{tikzpicture}
 \end{center}
-\vfill\null
 
 \numchapter{3}{Tria Prima}
 
