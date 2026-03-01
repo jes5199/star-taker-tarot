@@ -58,6 +58,15 @@
   \section*{{\fontsize{14}{17}\selectfont #1}\\[2mm] #2}%
   \addcontentsline{toc}{section}{#1\hspace{1.5mm}#2}%
 }
+\newcommand{\thema}[1]{%
+  \newpage
+  \newgeometry{margin=12mm}%
+  \section*{#1}%
+  \addcontentsline{toc}{section}{\hspace{1.5mm}#1}%
+}
+\newcommand{\endthema}{%
+  \restoregeometry
+}
 \newcommand{\partpage}[2][]{%
   \cleardoublepage
   \thispagestyle{empty}
@@ -432,6 +441,8 @@ and the tongue of edict decides between them.
 
 For this deck, we're focusing on theories that the body or soul has three fundamental parts. It was surprising to me how consistent different systems are at describing the breath as a fundamental part of the body. This is also the origin of the English word ``spirit'', which has the same root as ``respiratory''. The breath is seen as a sort of bridge connecting the animal body to the higher consciousness, though how exactly those two sides are described varies considerably.
 
+The Tria Prima --- sulfur, salt, and mercury --- was already a familiar idea in alchemy before Paracelsus, but he wrote about it extensively in the sixteenth century and made it central to his practice. He understood the three primes as a description of what actually happens to physical substances in the alchemical furnace: quicksilver is that which flows, sulfur is that which burns away, and salt is that which remains behind. But for Paracelsus these were also the three parts of the human being: salt is the body, sulfur the soul, and mercury the spirit. This was not merely a poetic metaphor --- it was a working theory of medicine. A disease of the body called for a salt remedy; an affliction of the soul required sulfur; and a disorder of the spirit demanded mercury. The correspondence between the cosmic and the bodily was, for Paracelsus, the very foundation of healing.
+
 \newpage
 
 \null\vfill
@@ -598,6 +609,91 @@ For this deck, we're focusing on theories that the body or soul has three fundam
 \end{tikzpicture}
 \end{center}
 \vfill\null
+
+% Ace minicard for tableaus: #1=element symbol command (e.g. \tinyfire)
+\newcommand{\acemini}[1]{%
+  \begin{tikzpicture}[baseline=-0.5ex]
+    \draw[black!60, rounded corners=0.6mm, fill=white] (-3.2mm,-4.5mm) rectangle (3.2mm,4.5mm);
+    \node[anchor=center] at (0,-0.5mm) {#1};
+    \foreach \angle in {0,45,...,315}{%
+      \node[anchor=north west, text=white, font=\cardfont\fontsize{5}{6}\selectfont,
+        inner sep=0.3mm, xshift={0.12*cos(\angle)*1mm}, yshift={0.12*sin(\angle)*1mm}]
+        at (-3mm,4.5mm) {A};
+    }%
+    \node[anchor=north west, text=black, font=\cardfont\fontsize{5}{6}\selectfont,
+      inner sep=0.3mm] at (-3mm,4.5mm) {A};
+  \end{tikzpicture}%
+}
+
+% Tria prima minicard for tableaus: #1=alchemical symbol, #2=roman numeral
+\newcommand{\primemini}[2]{%
+  \begin{tikzpicture}[baseline=-0.5ex]
+    \draw[black!60, rounded corners=0.6mm, fill=white] (-3.2mm,-4.5mm) rectangle (3.2mm,4.5mm);
+    \node[anchor=center] at (0,0) {#1};
+    \foreach \angle in {0,45,...,315}{%
+      \node[anchor=north west, text=white, font=\cardfont\fontsize{4}{5}\selectfont,
+        inner sep=0.3mm, xshift={0.12*cos(\angle)*1mm}, yshift={0.12*sin(\angle)*1mm}]
+        at (-3mm,4.5mm) {#2};
+    }%
+    \node[anchor=north west, text=black, font=\cardfont\fontsize{4}{5}\selectfont,
+      inner sep=0.3mm] at (-3mm,4.5mm) {#2};
+  \end{tikzpicture}%
+}
+
+% Planet minicard for tableaus: #1=planet symbol (with font), #2=roman numeral
+\newcommand{\planetmini}[2]{%
+  \begin{tikzpicture}[baseline=-0.5ex]
+    \draw[black!60, rounded corners=0.6mm, fill=white] (-3.2mm,-4.5mm) rectangle (3.2mm,4.5mm);
+    \node[anchor=center] at (0,0) {#1};
+    \foreach \angle in {0,45,...,315}{%
+      \node[anchor=north west, text=white, font=\cardfont\fontsize{4}{5}\selectfont,
+        inner sep=0.3mm, xshift={0.12*cos(\angle)*1mm}, yshift={0.12*sin(\angle)*1mm}]
+        at (-3mm,4.5mm) {#2};
+    }%
+    \node[anchor=north west, text=black, font=\cardfont\fontsize{4}{5}\selectfont,
+      inner sep=0.3mm] at (-3mm,4.5mm) {#2};
+  \end{tikzpicture}%
+}
+
+\thema{Thema Azoth}
+
+\vspace{2mm}
+\begin{center}
+\includegraphics[height=0.40\textheight]{images/vitriol.jpg}
+\end{center}
+\vspace{-2mm}
+\begin{center}
+\begin{tikzpicture}
+  \useasboundingbox (-50mm,-35mm) rectangle (50mm,35mm);
+  \node at (-42mm,27mm) {\acemini{\raisebox{0.5mm}{\tinyfire}}};
+  \node at (42mm,27mm) {\acemini{\raisebox{0.5mm}{\tinyair}}};
+  \node at (-42mm,-27mm) {\acemini{\tinyearth}};
+  \node at (42mm,-27mm) {\acemini{\tinywater}};
+  \node at (-28mm,14mm) {\primemini{\tinysulfur}{XX}};
+  \node at (28mm,14mm) {\primemini{\tinymercury}{0}};
+  \node at (0,-27mm) {\primemini{\tinysalt}{XII}};
+  % 7 planets in Chaldean order (CW), circle radius=16mm, Saturn at bottom (270°)
+  % rotate = angle - 90 so card bottom points toward center
+  \node[rotate=180] at (270:16mm) {\planetmini{{\symbserif\fontsize{17}{18}\selectfont ♄}}{XXI}};
+  \node[rotate=128.6] at (218.6:16mm) {\planetmini{{\symbserif\fontsize{17}{18}\selectfont ♃}}{X}};
+  \node[rotate=77.1] at (167.1:16mm) {\planetmini{{\symbserif\fontsize{17}{18}\selectfont ♂}}{XVI}};
+  \node[rotate=25.7] at (115.7:16mm) {\planetmini{{\symbfont\fontsize{17}{18}\selectfont ☉}}{XIX}};
+  \node[rotate=334.3] at (64.3:16mm) {\planetmini{{\symbserif\fontsize{17}{18}\selectfont ♀}}{III}};
+  \node[rotate=282.9] at (12.9:16mm) {\planetmini{{\symbserif\fontsize{17}{18}\selectfont ☿}}{I}};
+  \node[rotate=231.4] at (321.4:16mm) {\planetmini{{\symbfont\fontsize{17}{18}\selectfont ☽}}{II}};
+  % VITRIOL letters between planets (CW), radius=22mm
+  \foreach \letter/\ang in {V/244.3, I/192.9, T/141.4, R/90, I/38.6, O/347.1, L/295.7} {
+    \node[font=\cardfont\fontsize{8}{9}\selectfont, rotate=\ang-90] at (\ang:22mm) {\letter};
+  }
+\end{tikzpicture}
+
+\smallskip
+{\itshape Visita Interiora Terrae Rectificando Invenies Occultum Lapidem}
+
+\smallskip
+Visit the interior of the earth; by rectifying, you will find the hidden stone.
+\end{center}
+\endthema
 
 \numchapter{4}{The Elements}
 
