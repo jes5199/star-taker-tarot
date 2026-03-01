@@ -3,6 +3,8 @@
 \usepackage{tikz}
 \usepackage{fontspec}
 \usepackage{graphicx}
+\usepackage{array}
+\usepackage{longtable}
 
 % Card rendering machinery (fonts, symbols, card commands)
 \input{cards-preamble}
@@ -637,6 +639,90 @@ Each phase has a yin or yang quality. Wood and Fire are yang: expanding, rising,
 The five phases generate and overcome each other in two interlocking cycles. In the generating cycle (\textit{xiāngshēng}), Wood feeds Fire, Fire produces Earth (ash), Earth yields Metal (ore), Metal collects Water (condensation), and Water nourishes Wood. In the overcoming cycle (\textit{xiāngkè}), Wood parts Earth (roots), Earth dams Water, Water quenches Fire, Fire melts Metal, and Metal chops Wood.
 
 On the cards, the Wǔ Xíng appears in the bottom center of each major arcanum, written in Chinese with pinyin transliteration. The phase assigned to each card follows from its planetary or zodiacal association through the traditional Chinese correspondences.
+
+% Lenormand minicard for table: #1=image basename (e.g. rider-crop), #2=number
+\newcommand{\lenormandmini}[2]{%
+  \begin{tikzpicture}[baseline=-0.5ex]
+    \begin{scope}
+      \clip[rounded corners=0.6mm] (-3.2mm,-4.5mm) rectangle (3.2mm,4.5mm);
+      \node[anchor=center, inner sep=0pt] at (0,0) {%
+        \includegraphics[height=9mm]{images/#1.png}%
+      };
+    \end{scope}
+    \draw[black!60, rounded corners=0.6mm] (-3.2mm,-4.5mm) rectangle (3.2mm,4.5mm);
+    \foreach \angle in {0,45,...,315}{%
+      \node[anchor=south east, text=white, font=\cardfont\fontsize{5}{6}\selectfont,
+        inner sep=0.3mm, xshift={0.12*cos(\angle)*1mm}, yshift={0.12*sin(\angle)*1mm}]
+        at (3mm,-4.5mm) {#2};
+    }%
+    \node[anchor=south east, text=black, font=\cardfont\fontsize{5}{6}\selectfont,
+      inner sep=0.3mm] at (3mm,-4.5mm) {#2};
+  \end{tikzpicture}%
+}
+
+% Playing card notation for table: #1=color (red/black), #2=rank, #3=suit symbol
+\newcommand{\pcnote}[3]{{\color{#1}\rankfont #2\symbfont #3}}
+
+% Tiny inline geomancy figure for table: #1 = comma-separated rows (1 or 2)
+\newcommand{\tinygeomancy}[1]{%
+  \begin{tikzpicture}[baseline=-3mm]
+    \foreach \dots [count=\i from 0] in {#1} {
+      \ifnum\dots=1
+        \node[fill=black, inner sep=0.35mm, rotate=45] at (0, -\i*1.4mm) {};
+      \else
+        \node[fill=black, inner sep=0.35mm, rotate=45] at (-0.9mm, -\i*1.4mm) {};
+        \node[fill=black, inner sep=0.35mm, rotate=45] at (0.9mm, -\i*1.4mm) {};
+      \fi
+    }
+  \end{tikzpicture}%
+}
+
+\numchapter{36}{The Game of Hope}
+
+\newpage
+\noindent{\fontsize{8}{10.5}\selectfont
+\begin{longtable}{@{\hspace{1.5mm}}c@{\hspace{1.5mm}}m{21mm}@{\hspace{1.5mm}}c@{\hspace{1.5mm}}m{26mm}@{\hspace{1.5mm}}m{22mm}@{\hspace{1.5mm}}c@{\hspace{1.5mm}}}
+%
+\lenormandmini{rider-crop}{1} & 1.\ Rider\newline{\itshape news, arrival} & \pcnote{red}{9}{♥} & Nine of Cups\newline{\itshape Vigil of Water} & 2nd decan of\newline Pisces & {\symbfont ♃\,♓} \\[5.5mm]
+\lenormandmini{clover-crop}{2} & 2.\ Clover\newline{\itshape luck, opportunity} & \pcnote{red}{6}{♦} & Six of Pentacles\newline{\itshape Grace of Earth} & 2nd decan of\newline Taurus & {\symbfont ☽\,♉} \\[5.5mm]
+\lenormandmini{ship-crop}{3} & 3.\ Ship\newline{\itshape travel, commerce} & \pcnote{black}{10}{♠} & Ten of Swords\newline{\itshape Harvest of Air} & 3rd decan of\newline Gemini & {\symbfont ☉\,♊} \\[5.5mm]
+\lenormandmini{house-crop}{4} & 4.\ House\newline{\itshape home, stability} & \pcnote{red}{K}{♥} & King of Cups\newline{\itshape Fire of Water} & \tinygeomancy{1,2,1,1}\;{\itshape Puella} & {\symbfont ♀\,♎} \\[5.5mm]
+\lenormandmini{tree-crop}{5} & 5.\ Tree\newline{\itshape health, growth} & \pcnote{red}{7}{♥} & Seven of Cups\newline{\itshape Venture of Water} & 3rd decan of\newline Scorpio & {\symbfont ♀\,♏} \\[5.5mm]
+\lenormandmini{clouds-crop}{6} & 6.\ Clouds\newline{\itshape confusion, doubt} & \pcnote{black}{K}{♣} & King of Wands\newline{\itshape Fire of Fire} & \tinygeomancy{1,2,2,2}\;{\itshape Laetitia} & R.\,{\symbfont ♃\,♓} \\[5.5mm]
+\lenormandmini{snake-crop}{7} & 7.\ Snake\newline{\itshape deception, desire} & \pcnote{black}{Q}{♣} & Queen of Wands\newline{\itshape Water of Fire} & \tinygeomancy{1,2,1,2}\;{\itshape Amissio} & R.\,{\symbfont ♀\,♉} \\[5.5mm]
+\lenormandmini{coffin-crop}{8} & 8.\ Coffin\newline{\itshape ending, loss} & \pcnote{red}{9}{♦} & Nine of Pentacles\newline{\itshape Vigil of Earth} & 2nd decan of\newline Virgo & {\symbfont ♀\,♍} \\[5.5mm]
+\lenormandmini{bouquet-crop}{9} & 9.\ Bouquet\newline{\itshape gift, invitation} & \pcnote{black}{Q}{♠} & Queen of Swords\newline{\itshape Water of Air} & \tinygeomancy{2,1,1,2}\;{\itshape Conjunctio} & R.\,{\symbfont ☿\,♍} \\[5.5mm]
+\lenormandmini{scythe-crop}{10} & 10.\ Scythe\newline{\itshape danger, decision} & \pcnote{red}{J}{♦} & Page of Pentacles\newline{\itshape Earth of Earth} & \tinygeomancy{2,2,2,1}\;{\itshape Tristitia} & {\symbfont ♄\,♒} \\[5.5mm]
+\lenormandmini{whip-crop}{11} & 11.\ Whip\newline{\itshape conflict, passion} & \pcnote{black}{J}{♣} & Page of Wands\newline{\itshape Earth of Fire} & \tinygeomancy{1,1,1,2}\;{\itshape Cauda Draconis} & S.\,{\symbfont ☋} \\[5.5mm]
+\lenormandmini{birds-crop}{12} & 12.\ Birds\newline{\itshape talk, anxiety} & \pcnote{red}{7}{♦} & Seven of Pentacles\newline{\itshape Venture of Earth} & 3rd decan of\newline Taurus & {\symbfont ♄\,♉} \\[5.5mm]
+\newpage
+\lenormandmini{child-crop}{13} & 13.\ Child\newline{\itshape new beginning} & \pcnote{black}{J}{♠} & Page of Swords\newline{\itshape Earth of Air} & \tinygeomancy{2,1,2,1}\;{\itshape Acquisitio} & {\symbfont ♃\,♐} \\[5.5mm]
+\lenormandmini{fox-crop}{14} & 14.\ Fox\newline{\itshape cunning, work} & \pcnote{black}{9}{♣} & Nine of Wands\newline{\itshape Vigil of Fire} & 2nd decan of\newline Sagittarius & {\symbfont ☽\,♐} \\[5.5mm]
+\lenormandmini{bear-crop}{15} & 15.\ Bear\newline{\itshape power, authority} & \pcnote{black}{10}{♣} & Ten of Wands\newline{\itshape Harvest of Fire} & 3rd decan of\newline Sagittarius & {\symbfont ♄\,♐} \\[5.5mm]
+\lenormandmini{stars-crop}{16} & 16.\ Stars\newline{\itshape hope, guidance} & \pcnote{red}{6}{♥} & Six of Cups\newline{\itshape Grace of Water} & 2nd decan of\newline Scorpio & {\symbfont ☉\,♏} \\[5.5mm]
+\lenormandmini{stork-crop}{17} & 17.\ Stork\newline{\itshape change, move} & \pcnote{red}{Q}{♥} & Queen of Cups\newline{\itshape Water of Water} & \tinygeomancy{2,2,1,2}\;{\itshape Albus} & {\symbfont ☿\,♊} \\[5.5mm]
+\lenormandmini{dog-crop}{18} & 18.\ Dog\newline{\itshape loyalty, friend} & \pcnote{red}{10}{♥} & Ten of Cups\newline{\itshape Harvest of Water} & 3rd decan of\newline Pisces & {\symbfont ♂\,♓} \\[5.5mm]
+\lenormandmini{tower-crop}{19} & 19.\ Tower\newline{\itshape authority, solitude} & \pcnote{black}{6}{♠} & Six of Swords\newline{\itshape Grace of Air} & 2nd decan of\newline Aquarius & {\symbfont ☿\,♒} \\[5.5mm]
+\lenormandmini{garden-crop}{20} & 20.\ Garden\newline{\itshape society, public} & \pcnote{black}{8}{♠} & Eight of Swords\newline{\itshape Labor of Air} & 1st decan of\newline Gemini & {\symbfont ♃\,♊} \\[5.5mm]
+\lenormandmini{mountain-crop}{21} & 21.\ Mountain\newline{\itshape obstacle, delay} & \pcnote{black}{8}{♣} & Eight of Wands\newline{\itshape Labor of Fire} & 1st decan of\newline Sagittarius & {\symbfont ☿\,♐} \\[5.5mm]
+\lenormandmini{crossroads-crop}{22} & 22.\ Crossroads\newline{\itshape choice, path} & \pcnote{red}{Q}{♦} & Queen of Pentacles\newline{\itshape Water of Earth} & \tinygeomancy{2,2,1,1}\;{\itshape Fortuna Major} & N.\,{\symbfont ☉\,♌} \\[5.5mm]
+\lenormandmini{mice-crop}{23} & 23.\ Mice\newline{\itshape theft, worry} & \pcnote{black}{7}{♣} & Seven of Wands\newline{\itshape Venture of Fire} & 3rd decan of\newline Leo & {\symbfont ♂\,♌} \\[5.5mm]
+\lenormandmini{heart-crop}{24} & 24.\ Heart\newline{\itshape love, happiness} & \pcnote{red}{J}{♥} & Page of Cups\newline{\itshape Earth of Water} & \tinygeomancy{2,2,2,2}\;{\itshape Populus} & Wax.\,{\symbfont ☽\,♋} \\[5.5mm]
+\newpage
+\lenormandmini{ring-crop}{25} & 25.\ Ring\newline{\itshape commitment, bond} & \pcnote{black}{A}{♣} & Ace of Wands\newline{\itshape Seed of Fire} & Spring Equinox & \tinyfire \\[5.5mm]
+\lenormandmini{book-crop}{26} & 26.\ Book\newline{\itshape secret, knowledge} & \pcnote{red}{10}{♦} & Ten of Pentacles\newline{\itshape Harvest of Earth} & 3rd decan of\newline Virgo & {\symbfont ☿\,♍} \\[5.5mm]
+\lenormandmini{letter-crop}{27} & 27.\ Letter\newline{\itshape message, document} & \pcnote{black}{7}{♠} & Seven of Swords\newline{\itshape Venture of Air} & 3rd decan of\newline Aquarius & {\symbfont ☽\,♒} \\[5.5mm]
+\lenormandmini{man-crop}{28} & 28.\ Man\newline{\itshape male querent} & \pcnote{red}{A}{♥} & Ace of Cups\newline{\itshape Seed of Water} & Summer Solstice & \tinywater \\[5.5mm]
+\lenormandmini{lady-crop}{29} & 29.\ Woman\newline{\itshape female querent} & \pcnote{black}{A}{♠} & Ace of Swords\newline{\itshape Seed of Air} & Autumn Equinox & \tinyair \\[5.5mm]
+\lenormandmini{lily-crop}{30} & 30.\ Lily\newline{\itshape maturity, virtue} & \pcnote{black}{K}{♠} & King of Swords\newline{\itshape Fire of Air} & \tinygeomancy{1,1,2,1}\;{\itshape Puer} & {\symbfont ♂\,♈} \\[5.5mm]
+\lenormandmini{sun-crop}{31} & 31.\ Sun\newline{\itshape success, vitality} & \pcnote{red}{A}{♦} & Ace of Pentacles\newline{\itshape Seed of Earth} & Winter Solstice & \tinyearth \\[5.5mm]
+\lenormandmini{moon-crop}{32} & 32.\ Moon\newline{\itshape emotion, intuition} & \pcnote{red}{8}{♥} & Eight of Cups\newline{\itshape Labor of Water} & 1st decan of\newline Pisces & {\symbfont ♄\,♓} \\[5.5mm]
+\lenormandmini{key-crop}{33} & 33.\ Key\newline{\itshape certainty, answer} & \pcnote{red}{8}{♦} & Eight of Pentacles\newline{\itshape Labor of Earth} & 1st decan of\newline Virgo & {\symbfont ☉\,♍} \\[5.5mm]
+\lenormandmini{fish-crop}{34} & 34.\ Fish\newline{\itshape money, abundance} & \pcnote{red}{K}{♦} & King of Pentacles\newline{\itshape Fire of Earth} & \tinygeomancy{1,2,2,1}\;{\itshape Carcer} & R.\,{\symbfont ♄\,♑} \\[5.5mm]
+\lenormandmini{anchor-crop}{35} & 35.\ Anchor\newline{\itshape stability, work} & \pcnote{black}{9}{♠} & Nine of Swords\newline{\itshape Vigil of Air} & 2nd decan of\newline Gemini & {\symbfont ♂\,♊} \\[5.5mm]
+\lenormandmini{cross-crop}{36} & 36.\ Cross\newline{\itshape burden, suffering} & \pcnote{black}{6}{♣} & Six of Wands\newline{\itshape Grace of Fire} & 2nd decan of\newline Leo & {\symbfont ♃\,♌} \\[5.5mm]
+\end{longtable}
+}
 
 \partpage[The Cards]{The\\Cards}
 
