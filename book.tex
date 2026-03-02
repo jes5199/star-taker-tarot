@@ -777,36 +777,37 @@ On the cards, the Wǔ Xíng appears in the bottom center of each major arcanum, 
 
 \thema{Thema Mundi}
 
-\vfill
+\vspace{2mm}
+\begin{center}
+\includegraphics[height=0.38\textheight]{images/thema_mundi_square.jpg}
+\end{center}
+\vspace{-2mm}
 \begin{center}
 \begin{tikzpicture}
   \useasboundingbox (-50mm,-40mm) rectangle (50mm,40mm);
-  % 12 zodiac signs in outer ring (CW from Cancer at bottom, 30° intervals, radius=32mm)
-  % Cancer=VII, Leo=VIII, Virgo=IX, Libra=XI, Scorpio=XIII, Sagittarius=XIV
-  % Capricorn=XV, Aquarius=XVII, Pisces=XVIII, Aries=IV, Taurus=V, Gemini=VI
-  \node[rotate=180] at (270:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♋}}{VII}};
-  \node[rotate=150] at (240:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♌}}{VIII}};
-  \node[rotate=120] at (210:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♍}}{IX}};
-  \node[rotate=90] at (180:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♎}}{XI}};
-  \node[rotate=60] at (150:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♏}}{XIII}};
-  \node[rotate=30] at (120:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♐}}{XIV}};
-  \node[rotate=0] at (90:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♑}}{XV}};
-  \node[rotate=330] at (60:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♒}}{XVII}};
-  \node[rotate=300] at (30:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♓}}{XVIII}};
-  \node[rotate=270] at (0:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♈}}{IV}};
-  \node[rotate=240] at (330:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♉}}{V}};
-  \node[rotate=210] at (300:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♊}}{VI}};
-  % 7 planets in inner ring (Thema Mundi domicile order), CW
-  \node[rotate=180] at (270:16mm) {\planetmini{{\symbfont\fontsize{17}{18}\selectfont ☽}}{II}};
-  \node[rotate=150] at (240:16mm) {\planetmini{{\symbfont\fontsize{17}{18}\selectfont ☉}}{XIX}};
-  \node[rotate=120] at (210:16mm) {\planetmini{{\symbserif\fontsize{17}{18}\selectfont ☿}}{I}};
-  \node[rotate=90] at (180:16mm) {\planetmini{{\symbserif\fontsize{17}{18}\selectfont ♀}}{III}};
-  \node[rotate=60] at (150:16mm) {\planetmini{{\symbserif\fontsize{17}{18}\selectfont ♂}}{XVI}};
-  \node[rotate=30] at (120:16mm) {\planetmini{{\symbserif\fontsize{17}{18}\selectfont ♃}}{X}};
-  \node[rotate=0] at (90:16mm) {\planetmini{{\symbserif\fontsize{17}{18}\selectfont ♄}}{XXI}};
+  % 12 zodiac signs in outer ring (CCW, Libra at bottom, 30° intervals, radius=32mm)
+  \node[rotate=180] at (270:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♎}}{XI}};
+  \node[rotate=210] at (300:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♏}}{XIII}};
+  \node[rotate=240] at (330:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♐}}{XIV}};
+  \node[rotate=270] at (0:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♑}}{XV}};
+  \node[rotate=300] at (30:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♒}}{XVII}};
+  \node[rotate=330] at (60:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♓}}{XVIII}};
+  \node[rotate=0] at (90:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♈}}{IV}};
+  \node[rotate=30] at (120:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♉}}{V}};
+  \node[rotate=60] at (150:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♊}}{VI}};
+  \node[rotate=90] at (180:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♋}}{VII}};
+  \node[rotate=120] at (210:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♌}}{VIII}};
+  \node[rotate=150] at (240:32mm) {\planetmini{{\symbfont\fontsize{14}{15}\selectfont ♍}}{IX}};
+  % 7 planets in inner ring (Thema Mundi domiciles), CCW
+  \node[rotate=90] at (180:16mm) {\planetmini{{\symbfont\fontsize{17}{18}\selectfont ☽}}{II}};
+  \node[rotate=120] at (210:16mm) {\planetmini{{\symbfont\fontsize{17}{18}\selectfont ☉}}{XIX}};
+  \node[rotate=150] at (240:16mm) {\planetmini{{\symbserif\fontsize{17}{18}\selectfont ☿}}{I}};
+  \node[rotate=180] at (270:16mm) {\planetmini{{\symbserif\fontsize{17}{18}\selectfont ♀}}{III}};
+  \node[rotate=210] at (300:16mm) {\planetmini{{\symbserif\fontsize{17}{18}\selectfont ♂}}{XVI}};
+  \node[rotate=240] at (330:16mm) {\planetmini{{\symbserif\fontsize{17}{18}\selectfont ♃}}{X}};
+  \node[rotate=270] at (0:16mm) {\planetmini{{\symbserif\fontsize{17}{18}\selectfont ♄}}{XXI}};
 \end{tikzpicture}
 \end{center}
-\vfill
 
 \endthema
 
