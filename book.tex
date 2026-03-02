@@ -610,18 +610,18 @@ The Tria Prima --- sulfur, salt, and mercury --- was already a familiar idea in 
 \end{center}
 \vfill\null
 
-% Ace minicard for tableaus: #1=element symbol command (e.g. \tinyfire)
-\newcommand{\acemini}[1]{%
+% Ace minicard for tableaus: #1=element symbol, #2=suit color, #3=suit symbol
+\newcommand{\acemini}[3]{%
   \begin{tikzpicture}[baseline=-0.5ex]
     \draw[black!60, rounded corners=0.6mm, fill=white] (-3.2mm,-4.5mm) rectangle (3.2mm,4.5mm);
-    \node[anchor=center] at (0,-0.5mm) {#1};
+    \node[anchor=center] at (0,-1mm) {#1};
     \foreach \angle in {0,45,...,315}{%
-      \node[anchor=north west, text=white, font=\cardfont\fontsize{5}{6}\selectfont,
+      \node[anchor=north west, text=white, font=\fontsize{5}{6}\selectfont,
         inner sep=0.3mm, xshift={0.12*cos(\angle)*1mm}, yshift={0.12*sin(\angle)*1mm}]
-        at (-3mm,4.5mm) {A};
+        at (-3mm,4.5mm) {{\rankfont A}{\symbfont #3}};
     }%
-    \node[anchor=north west, text=black, font=\cardfont\fontsize{5}{6}\selectfont,
-      inner sep=0.3mm] at (-3mm,4.5mm) {A};
+    \node[anchor=north west, text=#2, font=\fontsize{5}{6}\selectfont,
+      inner sep=0.3mm] at (-3mm,4.5mm) {{\rankfont A}{\symbfont #3}};
   \end{tikzpicture}%
 }
 
@@ -629,14 +629,14 @@ The Tria Prima --- sulfur, salt, and mercury --- was already a familiar idea in 
 \newcommand{\primemini}[2]{%
   \begin{tikzpicture}[baseline=-0.5ex]
     \draw[black!60, rounded corners=0.6mm, fill=white] (-3.2mm,-4.5mm) rectangle (3.2mm,4.5mm);
-    \node[anchor=center] at (0,0) {#1};
+    \node[anchor=center] at (0,-0.5mm) {#1};
     \foreach \angle in {0,45,...,315}{%
-      \node[anchor=north west, text=white, font=\cardfont\fontsize{4}{5}\selectfont,
+      \node[anchor=north, text=white, font=\cardfont\fontsize{4}{5}\selectfont,
         inner sep=0.3mm, xshift={0.12*cos(\angle)*1mm}, yshift={0.12*sin(\angle)*1mm}]
-        at (-3mm,4.5mm) {#2};
+        at (0,4.5mm) {#2};
     }%
-    \node[anchor=north west, text=black, font=\cardfont\fontsize{4}{5}\selectfont,
-      inner sep=0.3mm] at (-3mm,4.5mm) {#2};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont,
+      inner sep=0.3mm] at (0,4.5mm) {#2};
   \end{tikzpicture}%
 }
 
@@ -646,12 +646,12 @@ The Tria Prima --- sulfur, salt, and mercury --- was already a familiar idea in 
     \draw[black!60, rounded corners=0.6mm, fill=white] (-3.2mm,-4.5mm) rectangle (3.2mm,4.5mm);
     \node[anchor=center] at (0,0) {#1};
     \foreach \angle in {0,45,...,315}{%
-      \node[anchor=north west, text=white, font=\cardfont\fontsize{4}{5}\selectfont,
+      \node[anchor=north, text=white, font=\cardfont\fontsize{4}{5}\selectfont,
         inner sep=0.3mm, xshift={0.12*cos(\angle)*1mm}, yshift={0.12*sin(\angle)*1mm}]
-        at (-3mm,4.5mm) {#2};
+        at (0,4.5mm) {#2};
     }%
-    \node[anchor=north west, text=black, font=\cardfont\fontsize{4}{5}\selectfont,
-      inner sep=0.3mm] at (-3mm,4.5mm) {#2};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont,
+      inner sep=0.3mm] at (0,4.5mm) {#2};
   \end{tikzpicture}%
 }
 
@@ -665,10 +665,10 @@ The Tria Prima --- sulfur, salt, and mercury --- was already a familiar idea in 
 \begin{center}
 \begin{tikzpicture}
   \useasboundingbox (-50mm,-35mm) rectangle (50mm,35mm);
-  \node at (-42mm,27mm) {\acemini{\raisebox{0.5mm}{\tinyfire}}};
-  \node at (42mm,27mm) {\acemini{\raisebox{0.5mm}{\tinyair}}};
-  \node at (-42mm,-27mm) {\acemini{\tinyearth}};
-  \node at (42mm,-27mm) {\acemini{\tinywater}};
+  \node at (-35mm,27mm) {\acemini{\tinyfire}{black}{♣}};
+  \node at (35mm,27mm) {\acemini{\tinyair}{black}{♠}};
+  \node at (-35mm,-27mm) {\acemini{\tinyearth}{red}{♦}};
+  \node at (35mm,-27mm) {\acemini{\tinywater}{red}{♥}};
   \node at (-28mm,14mm) {\primemini{\tinysulfur}{XX}};
   \node at (28mm,14mm) {\primemini{\tinymercury}{0}};
   \node at (0,-27mm) {\primemini{\tinysalt}{XII}};
@@ -681,9 +681,9 @@ The Tria Prima --- sulfur, salt, and mercury --- was already a familiar idea in 
   \node[rotate=334.3] at (64.3:16mm) {\planetmini{{\symbserif\fontsize{17}{18}\selectfont ♀}}{III}};
   \node[rotate=282.9] at (12.9:16mm) {\planetmini{{\symbserif\fontsize{17}{18}\selectfont ☿}}{I}};
   \node[rotate=231.4] at (321.4:16mm) {\planetmini{{\symbfont\fontsize{17}{18}\selectfont ☽}}{II}};
-  % VITRIOL letters between planets (CW), radius=22mm
+  % VITRIOL letters between planets (CW), radius=19mm
   \foreach \letter/\ang in {V/244.3, I/192.9, T/141.4, R/90, I/38.6, O/347.1, L/295.7} {
-    \node[font=\cardfont\fontsize{8}{9}\selectfont, rotate=\ang-90] at (\ang:22mm) {\letter};
+    \node[font=\cardfont\fontsize{8}{9}\selectfont, rotate=\ang-90] at (\ang:19mm) {\letter};
   }
 \end{tikzpicture}
 
