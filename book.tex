@@ -447,12 +447,20 @@ In this deck, I have chosen to call elemental mercury ``quicksilver'' and to use
 
 A practice that has become rare in modern astrology that I have revived for this deck is using the symbols for the three primes to also represent the astrological modalities: \textmercury\ mutable, \textsalt\ fixed, \textsulfur\ cardinal. Having a glyph distinct from the planet Mercury ({\symbserif ☿}) makes this less confusing.
 
+The Golden Dawn assigned three Hebrew letters --- the ``mother letters'' of the Sefer Yetzirah --- to the three non-planetary, non-zodiacal major arcana: shin ({\hebrewfont\textdir TRT ש}) to Judgement, mem ({\hebrewfont\textdir TRT מ}) to the Hanged Man, and aleph ({\hebrewfont\textdir TRT א}) to the Fool. Each mother letter carries an elemental association: shin is fire, mem is water, and aleph is air. This maps neatly onto the Tria Prima: sulfur, the soul, has always been associated with fire and combustion; salt, the body, with the waters of dissolution; and mercury, the spirit, with the airy breath.
+
+Across the traditions surveyed here, the quicksilver column is the most consistent. The Kabbalistic ruach, the Chinese qì, and the Ayurvedic vāta are all, at root, the same word: breath. Each tradition independently identified the breath as a fundamental principle --- not merely respiration, but the animating current that moves between body and spirit, between the fixed and the volatile. That so many systems converge on this middle term suggests it may be the easiest of the three to observe directly --- after all, you can feel your own breath right now.
+
+The other two columns are less tidy. Sulfur is the soul, the fiery, active principle --- Paracelsus's ``that which burns away.'' The Kabbalistic neshama is the highest soul, the divine breath closest to God; the Chinese shén is spirit or consciousness; the Ayurvedic pitta is the dosha of fire and transformation. These all share a quality of animating intensity, though they sit at different levels of abstraction. Salt is the body, the fixed, the material remainder --- nefesh is the animal soul bound to the flesh, jīng is the vital essence stored in the body, and kapha is the dosha of earth and water, of structure and cohesion. The pattern holds loosely: one pole burns, the other endures, and the breath moves between them.
+
+The mapping to the three Lots --- Spirit, Fortune, and Eros --- comes from my friend Taalumot, who was working to syncretize the Jewish and Chinese traditions with Hellenistic astrology. I do not know his full reasoning, but the assignments feel right: the Lot of Spirit with sulfur, the Lot of Fortune with salt, and the Lot of Eros with quicksilver.
+
 \newpage
 
 \null\vfill
 \begin{center}
 \begin{tikzpicture}
-  \useasboundingbox (-20mm, -91mm) rectangle (70mm, 2mm);
+  \useasboundingbox (-20mm, -109mm) rectangle (70mm, 2mm);
   % Column positions
   \pgfmathsetmacro{\cola}{0}
   \pgfmathsetmacro{\colb}{25}
@@ -476,52 +484,66 @@ A practice that has become rare in modern astrology that I have revived for this
   \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -18mm) {The Hanged Man};
   \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -14mm) {0};
   \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -18mm) {The Fool};
+  % Mother letters (Golden Dawn element assignments)
+  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\cola mm, -23mm) {{\textdir TRT ש}};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -27mm) {shin};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -31mm) {fire};
+  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\colb mm, -23mm) {{\textdir TRT מ}};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -27mm) {mem};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -31mm) {water};
+  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\colc mm, -23mm) {{\textdir TRT א}};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -27mm) {aleph};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -31mm) {air};
   % Three Treasures (Chinese)
-  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\cola mm, -24mm) {神};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -29mm) {shén};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -33mm) {spirit};
-  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colb mm, -24mm) {精};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -29mm) {jīng};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -33mm) {essence};
-  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colc mm, -24mm) {氣};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -29mm) {qì};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -33mm) {breath};
-  % Nefesh/Ruach/Neshama (Kabbalistic)
-  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\cola mm, -38mm) {{\textdir TRT נשמה}};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -42mm) {neshama};
+  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\cola mm, -37mm) {神};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -42mm) {shén};
   \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -46mm) {spirit};
-  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\colb mm, -38mm) {{\textdir TRT נפש}};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -42mm) {nefesh};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -46mm) {soul};
-  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\colc mm, -38mm) {{\textdir TRT רוח}};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -42mm) {ruach};
+  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colb mm, -37mm) {精};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -42mm) {jīng};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -46mm) {essence};
+  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colc mm, -37mm) {氣};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -42mm) {qì};
   \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -46mm) {breath};
+  % Nefesh/Ruach/Neshama (Kabbalistic)
+  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\cola mm, -51mm) {{\textdir TRT נשמה}};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -55mm) {neshama};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -59mm) {spirit};
+  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\colb mm, -51mm) {{\textdir TRT נפש}};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -55mm) {nefesh};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -59mm) {soul};
+  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\colc mm, -51mm) {{\textdir TRT רוח}};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -55mm) {ruach};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -59mm) {breath};
   % Tridosha (Ayurvedic)
-  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\cola mm, -51mm) {पित्त};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -55mm) {pitta};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -59mm) {bile};
-  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\colb mm, -51mm) {कफ};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -55mm) {kapha};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -59mm) {phlegm};
-  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\colc mm, -51mm) {वात};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -55mm) {vāta};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -59mm) {wind};
+  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\cola mm, -64mm) {पित्त};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -68mm) {pitta};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -72mm) {bile};
+  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\colb mm, -64mm) {कफ};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -68mm) {kapha};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -72mm) {phlegm};
+  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\colc mm, -64mm) {वात};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -68mm) {vāta};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -72mm) {wind};
+  % Dosha element assignments
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont] at (\cola mm, -76mm) {Fire \& Water};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont] at (\colb mm, -76mm) {Water \& Earth};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont] at (\colc mm, -76mm) {Air \& Void};
   % Lots with symbols
   % Lot of Spirit — circle with vertical line
-  \begin{scope}[shift={(\cola mm, -70mm)}]
+  \begin{scope}[shift={(\cola mm, -88mm)}]
     \draw[thick] (0,0) circle (2.5mm);
     \draw[thick] (0,-3.2mm) -- (0,3.2mm);
   \end{scope}
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -73mm) {Lot of Spirit};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -91mm) {Lot of Spirit};
   % Lot of Fortune — circle with X
-  \begin{scope}[shift={(\colb mm, -70mm)}]
+  \begin{scope}[shift={(\colb mm, -88mm)}]
     \draw[thick] (0,0) circle (2.5mm);
     \draw[thick] (-1.7mm,1.7mm) -- (1.7mm,-1.7mm);
     \draw[thick] (-1.7mm,-1.7mm) -- (1.7mm,1.7mm);
   \end{scope}
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -73mm) {Lot of Fortune};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -91mm) {Lot of Fortune};
   % Lot of Eros — circle with heart
-  \begin{scope}[shift={(\colc mm, -70mm)}]
+  \begin{scope}[shift={(\colc mm, -88mm)}]
     \draw[thick] (0,0) circle (2.5mm);
     \draw[thick] (0,0.7mm)
       .. controls (-0.8mm,2.1mm) and (-2mm,1.3mm) .. (-2mm,0.5mm)
@@ -529,11 +551,11 @@ A practice that has become rare in modern astrology that I have revived for this
       .. controls (0,-1.5mm) and (2mm,-0.3mm) .. (2mm,0.5mm)
       .. controls (2mm,1.3mm) and (0.8mm,2.1mm) .. (0,0.7mm);
   \end{scope}
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -73mm) {Lot of Eros};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -91mm) {Lot of Eros};
   %
   % === Mahjong dragons ===
-  \node[anchor=north, text=red, font=\cjkfont\fontsize{12}{14}\selectfont] at (\cola mm, -80mm) {中};
-  \begin{scope}[shift={(\colb mm, -82.5mm)}]
+  \node[anchor=north, text=red, font=\cjkfont\fontsize{12}{14}\selectfont] at (\cola mm, -98mm) {中};
+  \begin{scope}[shift={(\colb mm, -100.5mm)}]
     \draw[thick, rounded corners=0.3mm] (-2mm,-2.5mm) rectangle (2mm,2.5mm);
     \draw[thin, rounded corners=0.2mm] (-1.4mm,-1.8mm) rectangle (1.4mm,1.8mm);
     \draw[thin] (-1.4mm,1.4mm) -- (-0.8mm,1.8mm);
@@ -541,11 +563,11 @@ A practice that has become rare in modern astrology that I have revived for this
     \draw[thin] (-1.4mm,-1.4mm) -- (-0.8mm,-1.8mm);
     \draw[thin] (1.4mm,-1.4mm) -- (0.8mm,-1.8mm);
   \end{scope}
-  \node[anchor=north, text=green!50!black, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colc mm, -80mm) {發};
+  \node[anchor=north, text=green!50!black, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colc mm, -98mm) {發};
   % Dragon labels
-  \node[anchor=north, text=red, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -86mm) {red dragon};
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -86mm) {white dragon};
-  \node[anchor=north, text=green!50!black, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -86mm) {green dragon};
+  \node[anchor=north, text=red, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -104mm) {red dragon};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -104mm) {white dragon};
+  \node[anchor=north, text=green!50!black, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -104mm) {green dragon};
 \end{tikzpicture}
 \end{center}
 \vfill\null
