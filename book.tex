@@ -448,7 +448,7 @@ The Tria Prima --- sulfur, salt, and mercury --- was already a familiar idea in 
 \null\vfill
 \begin{center}
 \begin{tikzpicture}
-  \useasboundingbox (-20mm, -82mm) rectangle (70mm, 2mm);
+  \useasboundingbox (-20mm, -91mm) rectangle (70mm, 2mm);
   % Column positions
   \pgfmathsetmacro{\cola}{0}
   \pgfmathsetmacro{\colb}{25}
@@ -465,52 +465,59 @@ The Tria Prima --- sulfur, salt, and mercury --- was already a familiar idea in 
   \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -9mm) {cardinal};
   \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -9mm) {fixed};
   \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -9mm) {mutable};
+  % Tarot cards
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -14mm) {XX};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -18mm) {Judgement};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -14mm) {XII};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -18mm) {The Hanged Man};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -14mm) {0};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -18mm) {The Fool};
   % Three Treasures (Chinese)
-  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\cola mm, -15mm) {神};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -20mm) {shén};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -24mm) {spirit};
-  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colb mm, -15mm) {精};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -20mm) {jīng};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -24mm) {essence};
-  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colc mm, -15mm) {氣};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -20mm) {qì};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -24mm) {breath};
+  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\cola mm, -24mm) {神};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -29mm) {shén};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -33mm) {spirit};
+  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colb mm, -24mm) {精};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -29mm) {jīng};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -33mm) {essence};
+  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colc mm, -24mm) {氣};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -29mm) {qì};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -33mm) {breath};
   % Nefesh/Ruach/Neshama (Kabbalistic)
-  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\cola mm, -29mm) {נשמה};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -33mm) {neshama};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -37mm) {spirit};
-  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\colb mm, -29mm) {נפש};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -33mm) {nefesh};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -37mm) {soul};
-  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\colc mm, -29mm) {רוח};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -33mm) {ruach};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -37mm) {breath};
+  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\cola mm, -38mm) {נשמה};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -42mm) {neshama};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -46mm) {spirit};
+  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\colb mm, -38mm) {נפש};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -42mm) {nefesh};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -46mm) {soul};
+  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\colc mm, -38mm) {רוח};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -42mm) {ruach};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -46mm) {breath};
   % Tridosha (Ayurvedic)
-  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\cola mm, -42mm) {पित्त};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -46mm) {pitta};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -50mm) {bile};
-  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\colb mm, -42mm) {कफ};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -46mm) {kapha};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -50mm) {phlegm};
-  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\colc mm, -42mm) {वात};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -46mm) {vāta};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -50mm) {wind};
+  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\cola mm, -51mm) {पित्त};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -55mm) {pitta};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -59mm) {bile};
+  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\colb mm, -51mm) {कफ};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -55mm) {kapha};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -59mm) {phlegm};
+  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\colc mm, -51mm) {वात};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -55mm) {vāta};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -59mm) {wind};
   % Lots with symbols
   % Lot of Spirit — circle with vertical line
-  \begin{scope}[shift={(\cola mm, -61mm)}]
+  \begin{scope}[shift={(\cola mm, -70mm)}]
     \draw[thick] (0,0) circle (2.5mm);
     \draw[thick] (0,-3.2mm) -- (0,3.2mm);
   \end{scope}
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -64mm) {Lot of Spirit};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -73mm) {Lot of Spirit};
   % Lot of Fortune — circle with X
-  \begin{scope}[shift={(\colb mm, -61mm)}]
+  \begin{scope}[shift={(\colb mm, -70mm)}]
     \draw[thick] (0,0) circle (2.5mm);
     \draw[thick] (-1.7mm,1.7mm) -- (1.7mm,-1.7mm);
     \draw[thick] (-1.7mm,-1.7mm) -- (1.7mm,1.7mm);
   \end{scope}
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -64mm) {Lot of Fortune};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -73mm) {Lot of Fortune};
   % Lot of Eros — circle with heart
-  \begin{scope}[shift={(\colc mm, -61mm)}]
+  \begin{scope}[shift={(\colc mm, -70mm)}]
     \draw[thick] (0,0) circle (2.5mm);
     \draw[thick] (0,0.7mm)
       .. controls (-0.8mm,2.1mm) and (-2mm,1.3mm) .. (-2mm,0.5mm)
@@ -518,11 +525,11 @@ The Tria Prima --- sulfur, salt, and mercury --- was already a familiar idea in 
       .. controls (0,-1.5mm) and (2mm,-0.3mm) .. (2mm,0.5mm)
       .. controls (2mm,1.3mm) and (0.8mm,2.1mm) .. (0,0.7mm);
   \end{scope}
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -64mm) {Lot of Eros};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -73mm) {Lot of Eros};
   %
   % === Mahjong dragons ===
-  \node[anchor=north, text=red, font=\cjkfont\fontsize{12}{14}\selectfont] at (\cola mm, -71mm) {中};
-  \begin{scope}[shift={(\colb mm, -73.5mm)}]
+  \node[anchor=north, text=red, font=\cjkfont\fontsize{12}{14}\selectfont] at (\cola mm, -80mm) {中};
+  \begin{scope}[shift={(\colb mm, -82.5mm)}]
     \draw[thick, rounded corners=0.3mm] (-2mm,-2.5mm) rectangle (2mm,2.5mm);
     \draw[thin, rounded corners=0.2mm] (-1.4mm,-1.8mm) rectangle (1.4mm,1.8mm);
     \draw[thin] (-1.4mm,1.4mm) -- (-0.8mm,1.8mm);
@@ -530,11 +537,11 @@ The Tria Prima --- sulfur, salt, and mercury --- was already a familiar idea in 
     \draw[thin] (-1.4mm,-1.4mm) -- (-0.8mm,-1.8mm);
     \draw[thin] (1.4mm,-1.4mm) -- (0.8mm,-1.8mm);
   \end{scope}
-  \node[anchor=north, text=green!50!black, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colc mm, -71mm) {發};
+  \node[anchor=north, text=green!50!black, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colc mm, -80mm) {發};
   % Dragon labels
-  \node[anchor=north, text=red, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -77mm) {red dragon};
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -77mm) {white dragon};
-  \node[anchor=north, text=green!50!black, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -77mm) {green dragon};
+  \node[anchor=north, text=red, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -86mm) {red dragon};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -86mm) {white dragon};
+  \node[anchor=north, text=green!50!black, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -86mm) {green dragon};
 \end{tikzpicture}
 \end{center}
 \vfill\null
@@ -810,6 +817,10 @@ On the cards, the Wǔ Xíng appears in the bottom center of each major arcanum, 
 \end{center}
 
 \endthema
+
+\numchapter{8}{The Trigrams}
+
+\numchapter{16}{The Geomantic Figures}
 
 \numchapter{36}{The Game of Hope}
 
