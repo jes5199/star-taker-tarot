@@ -680,7 +680,7 @@ and the like exist by nature.
 \null\vfill
 \begin{center}
 \begin{tikzpicture}
-  \useasboundingbox (-30mm, -142mm) rectangle (80mm, 2mm);
+  \useasboundingbox (-30mm, -163mm) rectangle (80mm, 2mm);
   % Column positions
   \pgfmathsetmacro{\cola}{-15}
   \pgfmathsetmacro{\colb}{15}
@@ -696,6 +696,9 @@ and the like exist by nature.
   \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -4mm) {Water};
   \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -4mm) {Air};
   \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cold mm, -4mm) {Earth};
+  %
+  % === ELEMENTAL CONCEPTS ===
+  %
   % Aristotelian qualities
   \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -10mm) {hot \& dry};
   \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -10mm) {cold \& wet};
@@ -712,105 +715,87 @@ and the like exist by nature.
   \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -21mm) {Swords};
   \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cold mm, -21mm) {Pentacles};
   % Playing card suits
-  \node[anchor=north, text=red, font=\symbserif\fontsize{10}{12}\selectfont] at (\cola mm, -27mm) {♣};
+  \node[anchor=north, font=\symbserif\fontsize{10}{12}\selectfont] at (\cola mm, -27mm) {♣};
   \node[anchor=north, text=red, font=\symbserif\fontsize{10}{12}\selectfont] at (\colb mm, -27mm) {♥};
   \node[anchor=north, font=\symbserif\fontsize{10}{12}\selectfont] at (\colc mm, -27mm) {♠};
-  \node[anchor=north, font=\symbserif\fontsize{10}{12}\selectfont] at (\cold mm, -27mm) {♦};
+  \node[anchor=north, text=red, font=\symbserif\fontsize{10}{12}\selectfont] at (\cold mm, -27mm) {♦};
   % Court card ranks
   \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -33mm) {King};
   \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -33mm) {Queen};
   \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -33mm) {Knight};
   \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cold mm, -33mm) {Page};
-  % Zodiac triplicities
-  \node[anchor=north, font=\symbserif\fontsize{9}{11}\selectfont] at (\cola mm, -39mm) {♈\hspace{1mm}♌\hspace{1mm}♐};
-  \node[anchor=north, font=\symbserif\fontsize{9}{11}\selectfont] at (\colb mm, -39mm) {♋\hspace{1mm}♏\hspace{1mm}♓};
-  \node[anchor=north, font=\symbserif\fontsize{9}{11}\selectfont] at (\colc mm, -39mm) {♊\hspace{1mm}♎\hspace{1mm}♒};
-  \node[anchor=north, font=\symbserif\fontsize{9}{11}\selectfont] at (\cold mm, -39mm) {♉\hspace{1mm}♍\hspace{1mm}♑};
-  % Triplicity names
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -44mm) {Aries, Leo, Sag.};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -44mm) {Cancer, Scorpio, Pisces};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -44mm) {Gemini, Libra, Aquarius};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cold mm, -44mm) {Taurus, Virgo, Cap.};
-  % Seasons (by cardinal sign)
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -50mm) {spring};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -50mm) {summer};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -50mm) {autumn};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cold mm, -50mm) {winter};
   % Humours
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -56mm) {yellow bile};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -56mm) {phlegm};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -56mm) {blood};
-  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cold mm, -56mm) {black bile};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -39mm) {yellow bile};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -39mm) {phlegm};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -39mm) {blood};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cold mm, -39mm) {black bile};
   % Temperaments
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont\itshape] at (\cola mm, -60mm) {choleric};
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont\itshape] at (\colb mm, -60mm) {phlegmatic};
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont\itshape] at (\colc mm, -60mm) {sanguine};
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont\itshape] at (\cold mm, -60mm) {melancholic};
-  % Hebrew letters (Golden Dawn)
-  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\cola mm, -67mm) {{\textdir TRT י}};
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -71mm) {yod};
-  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\colb mm, -67mm) {{\textdir TRT ה}};
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -71mm) {heh};
-  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\colc mm, -67mm) {{\textdir TRT ו}};
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -71mm) {vav};
-  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\cold mm, -67mm) {{\textdir TRT ה}};
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cold mm, -71mm) {heh};
-  % Tattvas
-  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\cola mm, -78mm) {तेजस्};
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -82mm) {tejas};
-  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\colb mm, -78mm) {अपस्};
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -82mm) {apas};
-  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\colc mm, -78mm) {वायु};
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -82mm) {vāyu};
-  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\cold mm, -78mm) {पृथ्वी};
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cold mm, -82mm) {pṛthvī};
-  % Tattva English
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -86mm) {radiance};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -86mm) {waters};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -86mm) {wind};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cold mm, -86mm) {ground};
-  % Mahjong winds
-  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\cola mm, -92mm) {南};
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -97mm) {nán};
-  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colb mm, -92mm) {西};
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -97mm) {xī};
-  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colc mm, -92mm) {東};
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -97mm) {dōng};
-  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\cold mm, -92mm) {北};
-  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cold mm, -97mm) {běi};
-  % Mahjong wind English
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -101mm) {south};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -101mm) {west};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -101mm) {east};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cold mm, -101mm) {north};
-  % Early Heaven trigrams (Fuxi)
-  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\cola mm, -107mm) {☰};
-  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\colb mm, -107mm) {☵};
-  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\colc mm, -107mm) {☲};
-  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\cold mm, -107mm) {☷};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -112mm) {qián, heaven};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -112mm) {kǎn, water};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -112mm) {lí, fire};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cold mm, -112mm) {kūn, earth};
-  % Later Heaven trigrams (King Wen)
-  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\cola mm, -118mm) {☲};
-  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\colb mm, -118mm) {☱};
-  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\colc mm, -118mm) {☳};
-  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\cold mm, -118mm) {☵};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -123mm) {lí, fire};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -123mm) {duì, lake};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -123mm) {zhèn, thunder};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cold mm, -123mm) {kǎn, water};
-  % Doubled trigram hexagrams (as on the ace cards)
-  % Fire/South: Zhèn (Thunder) {1,0,0,1,0,0}  Water/West: Lí (Clinging) {1,0,1,1,0,1}
-  % Air/East: Duì (Joyous) {0,1,1,0,1,1}  Earth/North: Kǎn (Abysmal) {0,1,0,0,1,0}
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont\itshape] at (\cola mm, -43mm) {choleric};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont\itshape] at (\colb mm, -43mm) {phlegmatic};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont\itshape] at (\colc mm, -43mm) {sanguine};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont\itshape] at (\cold mm, -43mm) {melancholic};
+  % Hebrew elements
+  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\cola mm, -49mm) {{\textdir TRT אֵשׁ}};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -53mm) {esh};
+  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\colb mm, -49mm) {{\textdir TRT מַיִם}};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -53mm) {mayim};
+  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\colc mm, -49mm) {{\textdir TRT רוּחַ}};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -53mm) {ruach};
+  \node[anchor=north, font=\hebrewfont\fontsize{10}{12}\selectfont] at (\cold mm, -49mm) {{\textdir TRT עָפָר}};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cold mm, -53mm) {afar};
+  % Arabic elements
+  \node[anchor=north, font=\arabfont\fontsize{10}{12}\selectfont] at (\cola mm, -59mm) {{\textdir TRT نار}};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -64mm) {nār};
+  \node[anchor=north, font=\arabfont\fontsize{10}{12}\selectfont] at (\colb mm, -59mm) {{\textdir TRT ماء}};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -64mm) {mā'};
+  \node[anchor=north, font=\arabfont\fontsize{10}{12}\selectfont] at (\colc mm, -59mm) {{\textdir TRT هواء}};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -64mm) {hawā'};
+  \node[anchor=north, font=\arabfont\fontsize{10}{12}\selectfont] at (\cold mm, -59mm) {{\textdir TRT تراب}};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cold mm, -64mm) {turāb};
+  % Pancha Bhuta
+  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\cola mm, -70mm) {अग्नि};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -74mm) {agni};
+  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\colb mm, -70mm) {जल};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -74mm) {jala};
+  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\colc mm, -70mm) {वायु};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -74mm) {vāyu};
+  \node[anchor=north, font=\devfont\fontsize{9}{11}\selectfont] at (\cold mm, -70mm) {पृथ्वी};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cold mm, -74mm) {pṛthvī};
+  % Pancha Bhuta English
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -78mm) {fire};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -78mm) {water};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -78mm) {wind};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cold mm, -78mm) {earth};
+  % Zodiac triplicities
+  \node[anchor=north, font=\symbserif\fontsize{9}{11}\selectfont] at (\cola mm, -84mm) {♈\hspace{1mm}♌\hspace{1mm}♐};
+  \node[anchor=north, font=\symbserif\fontsize{9}{11}\selectfont] at (\colb mm, -84mm) {♋\hspace{1mm}♏\hspace{1mm}♓};
+  \node[anchor=north, font=\symbserif\fontsize{9}{11}\selectfont] at (\colc mm, -84mm) {♎\hspace{1mm}♒\hspace{1mm}♊};
+  \node[anchor=north, font=\symbserif\fontsize{9}{11}\selectfont] at (\cold mm, -84mm) {♑\hspace{1mm}♉\hspace{1mm}♍};
+  % Triplicity names
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -89mm) {Aries, Leo, Sag.};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -89mm) {Cancer, Scorpio, Pisces};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -89mm) {Libra, Aquarius, Gemini};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cold mm, -89mm) {Cap., Taurus, Virgo};
+  %
+  % === SEASONAL CONCEPTS ===
+  %
+  % Seasons (by cardinal sign)
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -97mm) {spring};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -97mm) {summer};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -97mm) {autumn};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cold mm, -97mm) {winter};
+  % Guà qì hexagrams (as on the ace cards)
+  \node[anchor=south, font=\cardfont\fontsize{6}{7}\selectfont] at (\cola mm, -106.5mm) {zhèn};
+  \node[anchor=south, font=\cardfont\fontsize{6}{7}\selectfont] at (\colb mm, -106.5mm) {lí};
+  \node[anchor=south, font=\cardfont\fontsize{6}{7}\selectfont] at (\colc mm, -106.5mm) {duì};
+  \node[anchor=south, font=\cardfont\fontsize{6}{7}\selectfont] at (\cold mm, -106.5mm) {kǎn};
   \foreach \lines/\col in {
     {1,0,0,1,0,0}/\cola,
     {1,0,1,1,0,1}/\colb,
-    {0,1,1,0,1,1}/\colc,
+    {1,1,0,1,1,0}/\colc,
     {0,1,0,0,1,0}/\cold%
   } {
-    \begin{scope}[shift={(\col mm, -133mm)}, line width=0.6mm, line cap=butt]
+    \begin{scope}[shift={(\col mm, -111mm)}, line width=0.6mm, line cap=butt]
       \foreach \type [count=\j from 0] in \lines {
         \ifnum\type=1
           \draw (-2mm, \j*1.5mm-3.75mm) -- (2mm, \j*1.5mm-3.75mm);
@@ -821,10 +806,53 @@ and the like exist by nature.
       }
     \end{scope}
   }
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -137mm) {zhèn, thunder};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -137mm) {lí, clinging};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -137mm) {duì, joyous};
-  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cold mm, -137mm) {kǎn, abysmal};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -115mm) {51. thunder};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -115mm) {30. clinging};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -115mm) {58. joyous};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cold mm, -115mm) {29. abysmal};
+  %
+  % === DIRECTIONAL CONCEPTS ===
+  %
+  % Mahjong winds
+  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\cola mm, -123mm) {東};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -128mm) {dōng};
+  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colb mm, -123mm) {南};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -128mm) {nán};
+  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colc mm, -123mm) {西};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -128mm) {xī};
+  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\cold mm, -123mm) {北};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cold mm, -128mm) {běi};
+  % Mahjong wind English
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -132mm) {east};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -132mm) {south};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -132mm) {west};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cold mm, -132mm) {north};
+  % Early Heaven trigrams (Fuxi)
+  \node[anchor=south, font=\cardfont\fontsize{6}{7}\selectfont] at (\cola mm, -142mm) {lí};
+  \node[anchor=south, font=\cardfont\fontsize{6}{7}\selectfont] at (\colb mm, -142mm) {qián};
+  \node[anchor=south, font=\cardfont\fontsize{6}{7}\selectfont] at (\colc mm, -142mm) {kǎn};
+  \node[anchor=south, font=\cardfont\fontsize{6}{7}\selectfont] at (\cold mm, -142mm) {kūn};
+  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\cola mm, -141mm) {☲};
+  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\colb mm, -141mm) {☰};
+  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\colc mm, -141mm) {☵};
+  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\cold mm, -141mm) {☷};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -146mm) {fire};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -146mm) {heaven};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -146mm) {water};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cold mm, -146mm) {earth};
+  % Later Heaven trigrams (King Wen)
+  \node[anchor=south, font=\cardfont\fontsize{6}{7}\selectfont] at (\cola mm, -155mm) {zhèn};
+  \node[anchor=south, font=\cardfont\fontsize{6}{7}\selectfont] at (\colb mm, -155mm) {lí};
+  \node[anchor=south, font=\cardfont\fontsize{6}{7}\selectfont] at (\colc mm, -155mm) {duì};
+  \node[anchor=south, font=\cardfont\fontsize{6}{7}\selectfont] at (\cold mm, -155mm) {kǎn};
+  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\cola mm, -154mm) {☳};
+  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\colb mm, -154mm) {☲};
+  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\colc mm, -154mm) {☱};
+  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\cold mm, -154mm) {☵};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -159mm) {thunder};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -159mm) {fire};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -159mm) {lake};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cold mm, -159mm) {water};
 \end{tikzpicture}
 \end{center}
 \vfill\null
@@ -836,6 +864,12 @@ and the like exist by nature.
 In the tarot, the four elements correspond directly to the four suits: Wands are Fire, Cups are Water, Swords are Air, and Pentacles are Earth. Each suit thus carries the qualities of its element through all fourteen of its cards.
 
 The elements also map neatly onto the duality system: Fire and Air are active (yang), while Water and Earth are passive (yin). And the Tria Prima cuts across them differently: Sulphur (soul) is associated with Fire, Salt (body) with Earth, and Mercury (spirit) moves between them.
+
+In the Kabbalistic tradition, the four elements are mapped to the four letters of the Tetragrammaton, {\hebrewfont\textdir TRT יהוה} (YHVH): {\hebrewfont\textdir TRT י} (yod) is Fire, the first {\hebrewfont\textdir TRT ה} (heh) is Water, {\hebrewfont\textdir TRT ו} (vav) is Air, and the final {\hebrewfont\textdir TRT ה} (heh) is Earth. This mapping, central to the Golden Dawn system, connects each suit of the tarot to a letter of the divine name.
+
+The Sanskrit names on the facing page are the \textit{Pancha Bhuta}, the five great elements of Hindu philosophy --- here showing only the four that map to Western elements, omitting the fifth, \textit{ākāśa} (आकाश), space or ether. The Golden Dawn adopted this system for their ``tattva vision'' meditations but used the \textit{tanmatra} (subtle quality) names instead: \textit{tejas} for fire, \textit{apas} for water, \textit{vāyu} for air, and \textit{pṛthvī} for earth --- drawing from Rama Prasad's 1890 translation \textit{Nature's Finer Forces}.
+
+The directional correspondences on the facing page deserve a note. In both Chinese and Western traditions, south is associated with summer and north with winter, because in the Northern Hemisphere the sun reaches its peak in the southern sky at the summer solstice and is entirely absent from the north. But the Western \textit{astrological} elements seem to contradict this: the hottest season begins with a Water sign (Cancer), and the coldest with an Earth sign (Capricorn). The Chinese system is more internally consistent --- south is summer is fire, north is winter is water. The Western zodiacal elements make more sense if understood as initiating forces rather than descriptions: Aries' fire is the spark that ignites spring's growth, Cancer's water is the nourishment that sustains summer's abundance, Libra's air is the weighing and turning of autumn, and Capricorn's earth is the material hardening against winter's cold.
 
 \numchapter{5}{The Five Movements}
 
