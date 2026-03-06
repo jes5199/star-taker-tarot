@@ -1,3 +1,4 @@
+% Star Taker Tarot
 \documentclass[openright]{book}
 \usepackage[paperwidth=5.5in, paperheight=8.5in, margin=0mm, headsep=0pt, headheight=0pt, footskip=0pt]{geometry}
 \usepackage{tikz}
@@ -442,9 +443,9 @@ and the tongue of edict decides between them.
 \begin{tikzpicture}
   \useasboundingbox (-20mm, -113mm) rectangle (70mm, 2mm);
   % Column positions
-  \pgfmathsetmacro{\cola}{0}
+  \pgfmathsetmacro{\cola}{50}
   \pgfmathsetmacro{\colb}{25}
-  \pgfmathsetmacro{\colc}{50}
+  \pgfmathsetmacro{\colc}{0}
   % Alchemical symbols as headers
   \node[anchor=center] at (\cola mm, 0) {\tinysulfur};
   \node[anchor=center] at (\colb mm, 0) {\tinysalt};
@@ -881,6 +882,185 @@ each one has its nature.
 {\fontsize{8}{10}\selectfont --- Zhōu Dūnyí}
 \end{flushright}
 
+\begin{center}
+\begin{tikzpicture}
+  \useasboundingbox (-33mm, -148mm) rectangle (93mm, 2mm);
+  % Column positions (5 columns, 24mm apart)
+  \pgfmathsetmacro{\cola}{-18}  % Wood
+  \pgfmathsetmacro{\colb}{6}    % Fire
+  \pgfmathsetmacro{\colc}{30}   % Earth
+  \pgfmathsetmacro{\cold}{54}   % Metal
+  \pgfmathsetmacro{\cole}{78}   % Water
+  %
+  % === PHASE NAMES ===
+  %
+  % Chinese characters
+  \node[anchor=north, font=\cjkfont\fontsize{14}{16}\selectfont] at (\cola mm, 0) {木};
+  \node[anchor=north, font=\cjkfont\fontsize{14}{16}\selectfont] at (\colb mm, 0) {火};
+  \node[anchor=north, font=\cjkfont\fontsize{14}{16}\selectfont] at (\colc mm, 0) {土};
+  \node[anchor=north, font=\cjkfont\fontsize{14}{16}\selectfont] at (\cold mm, 0) {金};
+  \node[anchor=north, font=\cjkfont\fontsize{14}{16}\selectfont] at (\cole mm, 0) {水};
+  % Pinyin
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -7mm) {mù};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -7mm) {huǒ};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -7mm) {tǔ};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cold mm, -7mm) {jīn};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cole mm, -7mm) {shuǐ};
+  % English names
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -12mm) {Wood};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -12mm) {Fire};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -12mm) {Earth};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cold mm, -12mm) {Metal};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cole mm, -12mm) {Water};
+  %
+  % === QUALITIES ===
+  %
+  % Yin/Yang
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -19mm) {yang};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -19mm) {yang};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -19mm) {center};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cold mm, -19mm) {yin};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cole mm, -19mm) {yin};
+  % Movement
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -23mm) {expanding};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -23mm) {rising};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -23mm) {stabilizing};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cold mm, -23mm) {contracting};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cole mm, -23mm) {sinking};
+  %
+  % === CORRESPONDENCES ===
+  %
+  % Seasons
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -30mm) {spring};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -30mm) {summer};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -30mm) {late summer};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cold mm, -30mm) {autumn};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cole mm, -30mm) {winter};
+  % Directions (Chinese)
+  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\cola mm, -37mm) {東};
+  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colb mm, -37mm) {南};
+  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\colc mm, -37mm) {中};
+  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\cold mm, -37mm) {西};
+  \node[anchor=north, font=\cjkfont\fontsize{12}{14}\selectfont] at (\cole mm, -37mm) {北};
+  % Direction English
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -43mm) {east};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -43mm) {south};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -43mm) {center};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cold mm, -43mm) {west};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cole mm, -43mm) {north};
+  % Colors
+  \node[anchor=north, text={rgb,255:red,0;green,128;blue,0}, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -49mm) {green};
+  \node[anchor=north, text=red, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -49mm) {red};
+  \node[anchor=north, text={rgb,255:red,180;green,150;blue,0}, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -49mm) {yellow};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cold mm, -49mm) {white};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cole mm, -49mm) {black};
+  % Celestial animals
+  \node[anchor=north, font=\cjkfont\fontsize{9}{11}\selectfont] at (\cola mm, -56mm) {青龍};
+  \node[anchor=north, font=\cjkfont\fontsize{9}{11}\selectfont] at (\colb mm, -56mm) {朱雀};
+  \node[anchor=north, font=\cjkfont\fontsize{9}{11}\selectfont] at (\colc mm, -56mm) {黃龍};
+  \node[anchor=north, font=\cjkfont\fontsize{9}{11}\selectfont] at (\cold mm, -56mm) {白虎};
+  \node[anchor=north, font=\cjkfont\fontsize{9}{11}\selectfont] at (\cole mm, -56mm) {玄武};
+  % Celestial animal English
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -61mm) {azure dragon};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -61mm) {vermilion bird};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -61mm) {yellow dragon};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cold mm, -61mm) {white tiger};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cole mm, -61mm) {black tortoise};
+  % Planets (Chinese astrology)
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -68mm) {Jupiter};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -68mm) {Mars};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -68mm) {Saturn};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cold mm, -68mm) {Venus};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cole mm, -68mm) {Mercury};
+  % Planet symbols
+  \node[anchor=north, font=\symbserif\fontsize{10}{12}\selectfont] at (\cola mm, -73mm) {♃};
+  \node[anchor=north, font=\symbserif\fontsize{10}{12}\selectfont] at (\colb mm, -73mm) {♂};
+  \node[anchor=north, font=\symbserif\fontsize{10}{12}\selectfont] at (\colc mm, -73mm) {♄};
+  \node[anchor=north, font=\symbserif\fontsize{10}{12}\selectfont] at (\cold mm, -73mm) {♀};
+  \node[anchor=north, font=\symbserif\fontsize{10}{12}\selectfont] at (\cole mm, -73mm) {☿};
+  %
+  % === TRIGRAMS ===
+  %
+  % Later Heaven trigram (primary association)
+  \node[anchor=south, font=\cardfont\fontsize{6}{7}\selectfont] at (\cola mm, -84mm) {zhèn};
+  \node[anchor=south, font=\cardfont\fontsize{6}{7}\selectfont] at (\colb mm, -84mm) {lí};
+  \node[anchor=south, font=\cardfont\fontsize{6}{7}\selectfont] at (\colc mm, -84mm) {kūn};
+  \node[anchor=south, font=\cardfont\fontsize{6}{7}\selectfont] at (\cold mm, -84mm) {duì};
+  \node[anchor=south, font=\cardfont\fontsize{6}{7}\selectfont] at (\cole mm, -84mm) {kǎn};
+  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\cola mm, -83mm) {☳};
+  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\colb mm, -83mm) {☲};
+  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\colc mm, -83mm) {☷};
+  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\cold mm, -83mm) {☱};
+  \node[anchor=north, font=\symbfont\fontsize{12}{14}\selectfont] at (\cole mm, -83mm) {☵};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -88mm) {thunder};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -88mm) {fire};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -88mm) {earth};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cold mm, -88mm) {lake};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cole mm, -88mm) {water};
+  %
+  % === BODY ===
+  %
+  % Zang organ
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cola mm, -95mm) {liver};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colb mm, -95mm) {heart};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\colc mm, -95mm) {spleen};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cold mm, -95mm) {lungs};
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont] at (\cole mm, -95mm) {kidneys};
+  % Zang organ Chinese
+  \node[anchor=north, font=\cjkfont\fontsize{9}{11}\selectfont] at (\cola mm, -100mm) {肝};
+  \node[anchor=north, font=\cjkfont\fontsize{9}{11}\selectfont] at (\colb mm, -100mm) {心};
+  \node[anchor=north, font=\cjkfont\fontsize{9}{11}\selectfont] at (\colc mm, -100mm) {脾};
+  \node[anchor=north, font=\cjkfont\fontsize{9}{11}\selectfont] at (\cold mm, -100mm) {肺};
+  \node[anchor=north, font=\cjkfont\fontsize{9}{11}\selectfont] at (\cole mm, -100mm) {腎};
+  % Taste
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -108mm) {sour};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -108mm) {bitter};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -108mm) {sweet};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cold mm, -108mm) {pungent};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cole mm, -108mm) {salty};
+  % Emotion
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cola mm, -114mm) {anger};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colb mm, -114mm) {joy};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\colc mm, -114mm) {pensiveness};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cold mm, -114mm) {grief};
+  \node[anchor=north, font=\cardfont\fontsize{7}{8}\selectfont] at (\cole mm, -114mm) {fear};
+  %
+  % === GENERATING/OVERCOMING CYCLES ===
+  %
+  % Generates
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont] at (\cola mm, -121mm) {generates};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont] at (\colb mm, -121mm) {generates};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont] at (\colc mm, -121mm) {generates};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont] at (\cold mm, -121mm) {generates};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont] at (\cole mm, -121mm) {generates};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -125mm) {Fire};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -125mm) {Earth};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -125mm) {Metal};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cold mm, -125mm) {Water};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cole mm, -125mm) {Wood};
+  % Overcomes
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont] at (\cola mm, -131mm) {overcomes};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont] at (\colb mm, -131mm) {overcomes};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont] at (\colc mm, -131mm) {overcomes};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont] at (\cold mm, -131mm) {overcomes};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont] at (\cole mm, -131mm) {overcomes};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cola mm, -135mm) {Earth};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colb mm, -135mm) {Metal};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\colc mm, -135mm) {Water};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cold mm, -135mm) {Wood};
+  \node[anchor=north, font=\cardfont\fontsize{6}{7}\selectfont\itshape] at (\cole mm, -135mm) {Fire};
+  %
+  % === HEAVENLY STEMS ===
+  %
+  \node[anchor=north, font=\cjkfont\fontsize{9}{11}\selectfont] at (\cola mm, -142mm) {甲乙};
+  \node[anchor=north, font=\cjkfont\fontsize{9}{11}\selectfont] at (\colb mm, -142mm) {丙丁};
+  \node[anchor=north, font=\cjkfont\fontsize{9}{11}\selectfont] at (\colc mm, -142mm) {戊己};
+  \node[anchor=north, font=\cjkfont\fontsize{9}{11}\selectfont] at (\cold mm, -142mm) {庚辛};
+  \node[anchor=north, font=\cjkfont\fontsize{9}{11}\selectfont] at (\cole mm, -142mm) {壬癸};
+\end{tikzpicture}
+\end{center}
+\vfill\null
+
 \newpage
 
 \noindent The Chinese five phases --- Wood ({\cjkfont 木}), Fire ({\cjkfont 火}), Earth ({\cjkfont 土}), Metal ({\cjkfont 金}), and Water ({\cjkfont 水}) --- are not elements in the Greek sense of static building blocks. They are processes, transformations, phases of change that cycle through the natural world.
@@ -890,6 +1070,76 @@ Each phase has a yin or yang quality. Wood and Fire are yang: expanding, rising,
 The five phases generate and overcome each other in two interlocking cycles. In the generating cycle (\textit{xiāngshēng}), Wood feeds Fire, Fire produces Earth (ash), Earth yields Metal (ore), Metal collects Water (condensation), and Water nourishes Wood. In the overcoming cycle (\textit{xiāngkè}), Wood parts Earth (roots), Earth dams Water, Water quenches Fire, Fire melts Metal, and Metal chops Wood.
 
 On the cards, the Wǔ Xíng appears in the bottom center of each major arcanum, written in Chinese with pinyin transliteration. The phase assigned to each card follows from its planetary or zodiacal association through the traditional Chinese correspondences.
+
+\null\vfill
+\begin{center}
+\begin{tikzpicture}[
+  >=latex,
+  gen/.style={->, thick},
+  over/.style={->, thick, dashed},
+]
+  % Pentagon radius
+  \pgfmathsetmacro{\R}{32}
+  % Angles: Fire at top (90°), then clockwise:
+  % Earth (90-72=18°), Metal (18-72=-54°), Water (-54-72=-126°), Wood (-126-72=-198°=162°)
+  \pgfmathsetmacro{\aFire}{90}
+  \pgfmathsetmacro{\aEarth}{18}
+  \pgfmathsetmacro{\aMetal}{-54}
+  \pgfmathsetmacro{\aWater}{-126}
+  \pgfmathsetmacro{\aWood}{162}
+  % Compute node positions
+  \coordinate (Fire)  at (\aFire:\R mm);
+  \coordinate (Earth) at (\aEarth:\R mm);
+  \coordinate (Metal) at (\aMetal:\R mm);
+  \coordinate (Water) at (\aWater:\R mm);
+  \coordinate (Wood)  at (\aWood:\R mm);
+  %
+  % === GENERATING CYCLE (solid arrows along pentagon edges) ===
+  % Wood → Fire → Earth → Metal → Water → Wood
+  \draw[gen] (Wood)  -- (Fire);
+  \draw[gen] (Fire)  -- (Earth);
+  \draw[gen] (Earth) -- (Metal);
+  \draw[gen] (Metal) -- (Water);
+  \draw[gen] (Water) -- (Wood);
+  %
+  % === OVERCOMING CYCLE (dashed arrows forming inner star) ===
+  % Wood → Earth → Water → Fire → Metal → Wood
+  \draw[over] (Wood)  -- (Earth);
+  \draw[over] (Earth) -- (Water);
+  \draw[over] (Water) -- (Fire);
+  \draw[over] (Fire)  -- (Metal);
+  \draw[over] (Metal) -- (Wood);
+  %
+  % === NODE LABELS ===
+  % Fire (top)
+  \node[above=3mm, font=\cjkfont\fontsize{14}{16}\selectfont] at (Fire) {火};
+  \node[above=10mm, font=\cardfont\fontsize{8}{10}\selectfont] at (Fire) {Fire};
+  \node[above=16mm, font=\cardfont\fontsize{6}{7}\selectfont] at (Fire) {huǒ};
+  % Earth (upper right)
+  \node[right=3mm, font=\cjkfont\fontsize{14}{16}\selectfont, anchor=west] at (Earth) {土};
+  \node[right=11mm, font=\cardfont\fontsize{8}{10}\selectfont, anchor=west] at (Earth) {Earth};
+  \node[right=3mm, yshift=-5mm, font=\cardfont\fontsize{6}{7}\selectfont, anchor=west] at (Earth) {tǔ};
+  % Metal (lower right)
+  \node[right=3mm, font=\cjkfont\fontsize{14}{16}\selectfont, anchor=west] at (Metal) {金};
+  \node[right=11mm, font=\cardfont\fontsize{8}{10}\selectfont, anchor=west] at (Metal) {Metal};
+  \node[right=3mm, yshift=-5mm, font=\cardfont\fontsize{6}{7}\selectfont, anchor=west] at (Metal) {jīn};
+  % Water (lower left)
+  \node[left=3mm, font=\cjkfont\fontsize{14}{16}\selectfont, anchor=east] at (Water) {水};
+  \node[left=11mm, font=\cardfont\fontsize{8}{10}\selectfont, anchor=east] at (Water) {Water};
+  \node[left=3mm, yshift=-5mm, font=\cardfont\fontsize{6}{7}\selectfont, anchor=east] at (Water) {shuǐ};
+  % Wood (upper left)
+  \node[left=3mm, font=\cjkfont\fontsize{14}{16}\selectfont, anchor=east] at (Wood) {木};
+  \node[left=11mm, font=\cardfont\fontsize{8}{10}\selectfont, anchor=east] at (Wood) {Wood};
+  \node[left=3mm, yshift=-5mm, font=\cardfont\fontsize{6}{7}\selectfont, anchor=east] at (Wood) {mù};
+  %
+  % === LEGEND ===
+  \draw[gen]  (-15mm, -\R mm - 12mm) -- (-5mm, -\R mm - 12mm)
+    node[right, font=\cardfont\fontsize{7}{8}\selectfont\itshape] {xiāngshēng (generating)};
+  \draw[over] (-15mm, -\R mm - 18mm) -- (-5mm, -\R mm - 18mm)
+    node[right, font=\cardfont\fontsize{7}{8}\selectfont\itshape] {xiāngkè (overcoming)};
+\end{tikzpicture}
+\end{center}
+\vfill\null
 
 % Lenormand minicard for table: #1=image basename (e.g. rider-crop), #2=number
 \newcommand{\lenormandmini}[2]{%
