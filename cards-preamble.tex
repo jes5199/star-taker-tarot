@@ -50,7 +50,8 @@
 \newfontface\cardfontplain{EB Garamond}
 \newfontface\rankfont{cardcharacters.ttf}[Path=/home/jes/tarot/]
 
-% Hebrew font
+% Hebrew font + bidi support for RTL
+\usepackage{luabidi}
 \newfontface\hebrewfont{Noto Serif Hebrew}[Script=Hebrew]
 
 % CJK fonts
@@ -174,7 +175,7 @@
     at (0.5\cardwidth, 0.52\cardheight-34mm) {Spirit};
   % נשמה above neshama
   \node[anchor=base, text=black, font=\hebrewfont\fontsize{14}{16}\selectfont]
-    at (0.5\cardwidth-21mm, 0.52\cardheight-40.5mm) {נשמה};
+    at (0.5\cardwidth-21mm, 0.52\cardheight-40.5mm) {\RLE{נשמה}};
   \node[anchor=base, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
     at (0.5\cardwidth-21mm, 0.52\cardheight-43mm) {neshama};
   % pitta with पित्त below
@@ -272,7 +273,7 @@
     at (0.5\cardwidth, 0.52\cardheight-34mm) {Essence};
   % נפש above nefesh
   \node[anchor=base, text=black, font=\hebrewfont\fontsize{14}{16}\selectfont]
-    at (0.5\cardwidth-21mm, 0.52\cardheight-40.5mm) {נפש};
+    at (0.5\cardwidth-21mm, 0.52\cardheight-40.5mm) {\RLE{נפש}};
   \node[anchor=base, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
     at (0.5\cardwidth-21mm, 0.52\cardheight-43mm) {nefesh};
   % kapha
@@ -348,7 +349,7 @@
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-34mm) {Breath};
   \node[anchor=base, text=black, font=\hebrewfont\fontsize{14}{16}\selectfont]
-    at (0.5\cardwidth-21mm, 0.52\cardheight-40.5mm) {רוח};
+    at (0.5\cardwidth-21mm, 0.52\cardheight-40.5mm) {\RLE{רוח}};
   \node[anchor=base, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
     at (0.5\cardwidth-21mm, 0.52\cardheight-43mm) {ruach};
   \node[anchor=base, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
@@ -1702,7 +1703,7 @@
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-31mm) {29};
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Air};
-  \drawsmallhexagram{0.5\cardwidth}{0.52\cardheight-41mm}{0,1,1,0,1,1}{Duì}{Joyous}
+  \drawsmallhexagram{0.5\cardwidth}{0.52\cardheight-41mm}{1,1,0,1,1,0}{Duì}{Joyous}
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]
     at (0.5\cardwidth, \cardheight-6.5mm) {Autumn Equinox};
   \node[anchor=north, text=black, font=\cardfont\fontsize{11}{13}\selectfont]

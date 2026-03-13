@@ -1,0 +1,185 @@
+% Star Taker Tarot — Pamphlet
+% Saddle-stitched booklet: print duplex on letter paper, fold, staple
+\documentclass{article}
+\usepackage[paperwidth=5.5in, paperheight=8.5in, margin=0mm]{geometry}
+\usepackage{tikz}
+\usepackage{fontspec}
+\usepackage{graphicx}
+
+% Card rendering machinery (fonts, symbols, card commands)
+\input{cards-preamble}
+\input{card-defs}
+
+% Additional fonts (only what's needed beyond cards-preamble)
+\newfontface\reversedC{FreeSerif}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% Front cover — same as book
+\noindent
+\begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle (139.7mm, 215.9mm);
+  \clip (0,0) rectangle (139.7mm, 215.9mm);
+  \foreach \a in {0,5,...,355} {
+    \foreach \s in {0,1,...,19} {
+      \pgfmathsetmacro{\op}{1 - \s/19}%
+      \pgfmathsetmacro{\startrad}{10 + \s*5}%
+      \draw[black, thin, opacity=\op]
+        (69.85mm, 107.95mm) ++(\a:\startrad mm) -- ++(\a:5mm);
+    }
+  }
+  \fill[white] (69.85mm, 107.95mm) circle (28mm);
+  \node[anchor=center, font=\cardfont\fontsize{60}{66}\selectfont,
+        text=black, text width=120mm, align=center]
+    at (69.85mm, 107.95mm) {Star\\Taker\\Tarot};
+\end{tikzpicture}
+
+\newpage
+
+% Page 2 — Three Primes
+\newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=12mm, top=10mm, bottom=12mm}
+
+\begin{center}
+{\cardfont\fontsize{18}{22}\selectfont Three Primes}
+\end{center}
+
+\vspace{2mm}
+
+% Three small cards across the top
+\begin{center}
+\resizebox{!}{38mm}{\cardAzero}%
+\hspace{4mm}%
+\resizebox{!}{38mm}{\cardAtwelve}%
+\hspace{4mm}%
+\resizebox{!}{38mm}{\cardAtwenty}%
+\end{center}
+
+\vspace{8mm}
+
+% The Fool large in center with annotated callouts
+% The Fool — resizebox (same as book.tex), no TikZ node wrapper
+\begin{center}
+\resizebox{!}{100mm}{\cardAzero}%
+\tikz[remember picture, overlay] {
+  % Anchors relative to current position (baseline-right of card after resizebox)
+  % resizebox output: 58.3mm wide, 100mm tall, baseline at bottom
+  \coordinate (cardNE) at (0, 100mm);
+  \coordinate (cardNW) at (-58.3mm, 100mm);
+  \coordinate (cardSE) at (0, 0);
+  \coordinate (cardSW) at (-58.3mm, 0);
+  \coordinate (cardN)  at (-29.15mm, 100mm);
+  \coordinate (cardE)  at (0, 50mm);
+  \coordinate (cardW)  at (-58.3mm, 50mm);
+  \coordinate (cardC)  at (-29.15mm, 50mm);
+
+  \tikzset{
+    annot/.style={font=\fontsize{8}{10}\selectfont, text=black},
+    annotline/.style={thick, -{Stealth[length=2mm]}},
+  }
+
+  % Left-side annotations
+  \draw[annotline, red!70!black]
+    ([xshift=-6mm, yshift=2mm]cardNW) node[annot, anchor=east] {Major Arcana number}
+    -- ([xshift=4mm, yshift=-4mm]cardNW);
+
+  \draw[annotline, magenta!70!black]
+    ([xshift=-6mm, yshift=-10mm]cardNW) node[annot, anchor=east, align=right] {Mercury cards\\are jokers}
+    -- ([xshift=2mm, yshift=-17mm]cardNW);
+
+  \draw[annotline, teal!70!black]
+    ([xshift=-6mm, yshift=10mm]cardW) node[annot, anchor=east, align=right] {Neidan\\trigram\\pair}
+    -- ([xshift=-23mm, yshift=2mm]cardC);
+
+  % Right-side annotations
+  \draw[annotline, blue!70!black]
+    ([xshift=6mm, yshift=2mm]cardNE) node[annot, anchor=west, align=left] {Hebrew mother-letter\\(Golden Dawn)}
+    -- ([xshift=-4mm, yshift=-4mm]cardNE);
+
+  \draw[annotline, red!50!blue]
+    ([xshift=6mm, yshift=-10mm]cardNE) node[annot, anchor=west, align=left] {Chinese money-suited\\card number}
+    -- ([xshift=-4mm, yshift=-10mm]cardNE);
+
+  \draw[annotline, green!50!black]
+    ([xshift=8mm, yshift=3mm]cardN) node[annot, anchor=south] {Card name}
+    -- ([yshift=-3mm]cardN);
+
+  \draw[annotline, red!60!black]
+    ([xshift=6mm, yshift=5mm]cardE) node[annot, anchor=west, align=left] {Treasure line\\highlighted}
+    -- ([xshift=24.5mm, yshift=2mm]cardC);
+
+  \draw[annotline, brown!70!black]
+    ([xshift=6mm, yshift=18mm]cardE) node[annot, anchor=west] {Rider-Waite image}
+    -- ([yshift=10mm]cardC);
+
+  \draw[annotline, orange!80!black]
+    ([xshift=6mm, yshift=28mm]cardE) node[annot, anchor=west] {Tria Prima symbol}
+    -- ([yshift=2mm]cardC);
+
+  \draw[annotline, purple!70!black]
+    ([xshift=6mm, yshift=-8mm]cardE) node[annot, anchor=west] {Alchemical element}
+    -- ([yshift=-25mm]cardC);
+
+  \draw[annotline, violet!70!black]
+    ([xshift=6mm, yshift=-18mm]cardE) node[annot, anchor=west] {Astrological modality}
+    -- ([yshift=-30mm]cardC);
+
+  \draw[annotline, cyan!60!black]
+    ([xshift=6mm, yshift=-28mm]cardE) node[annot, anchor=west] {Tria Prima concept}
+    -- ([yshift=-35mm]cardC);
+
+  \draw[annotline, olive!70!black]
+    ([xshift=6mm, yshift=-38mm]cardE) node[annot, anchor=west, align=left] {Chinese medicine\\three treasures}
+    -- ([xshift=20mm, yshift=-35mm]cardC);
+
+  \draw[annotline, green!40!black]
+    ([xshift=6mm, yshift=-48mm]cardE) node[annot, anchor=west] {Mahjong dragon}
+    -- ([xshift=23mm, yshift=-46mm]cardC);
+
+  \draw[annotline, brown!60!orange]
+    ([xshift=15mm, yshift=-52mm]cardC) node[annot, anchor=north, align=left] {Ayurvedic\\medicine\\dosha}
+    -- ([yshift=-40mm]cardC);
+
+  \draw[annotline, gray!70!black]
+    ([xshift=-15mm, yshift=-52mm]cardC) node[annot, anchor=north, align=right] {Dosha elemental\\association}
+    -- ([yshift=-47.5mm]cardC);
+
+  \draw[annotline, pink!60!black]
+    ([xshift=-6mm, yshift=-38mm]cardW) node[annot, anchor=east] {Hellenistic lot}
+    -- ([xshift=6.5mm, yshift=3.5mm]cardSW);
+
+  \draw[annotline, blue!40!purple]
+    ([xshift=-6mm, yshift=-28mm]cardW) node[annot, anchor=east] {Kabbalistic soul}
+    -- ([xshift=-20mm, yshift=-37mm]cardC);
+}
+\end{center}
+
+\newpage
+
+% Page 3 — blank (inside back)
+\restoregeometry
+\phantom{x}
+
+\newpage
+
+% Back cover — same as book
+\noindent
+\begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle (139.7mm, 215.9mm);
+  \clip (0,0) rectangle (139.7mm, 215.9mm);
+  \foreach \a in {0,5,...,355} {
+    \foreach \s in {0,1,...,19} {
+      \pgfmathsetmacro{\op}{1 - \s/19}%
+      \pgfmathsetmacro{\startrad}{10 + \s*5}%
+      \draw[black, thin, opacity=\op]
+        (69.85mm, 107.95mm) ++(\a:\startrad mm) -- ++(\a:5mm);
+    }
+  }
+  \fill[white] (69.85mm, 107.95mm) circle (28mm);
+  \node[anchor=center, font=\cardfont\fontsize{50}{60}\selectfont,
+        text=black, text width=100mm, align=center]
+    at (69.85mm, 107.95mm) {written\\in the\\stars};
+\end{tikzpicture}
+
+\end{document}
