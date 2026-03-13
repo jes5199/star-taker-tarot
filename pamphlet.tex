@@ -256,8 +256,9 @@
     \end{scope}
   }
 
-  % === 36 Decans — French playing card labels ===
-  \def\decanR{46mm}
+  % === 36 Decans — French suit (inner) and rank (outer) ===
+  \def\decanSuitR{44mm}
+  \def\decanRankR{48mm}
   \foreach \rank/\suit/\col/\ang in {
     2/♣/black/0, 3/♣/black/10, 4/♣/black/20,
     5/♦/red/30, 6/♦/red/40, 7/♦/red/50,
@@ -271,52 +272,114 @@
     2/♦/red/270, 3/♦/red/280, 4/♦/red/290,
     5/♠/black/300, 6/♠/black/310, 7/♠/black/320,
     8/♥/red/330, 9/♥/red/340, {10}/♥/red/350} {
-    \node[anchor=center, text=\col, rotate={\ang-90}]
-      at ({64.85mm + \decanR*cos(\ang)}, {102.95mm + \decanR*sin(\ang)})
-      {{\rankfont\fontsize{10}{11}\selectfont\rank}{\symbfont\fontsize{10}{11}\selectfont\suit}};
+    \node[anchor=center, text=\col, font=\symbfont\fontsize{10}{11}\selectfont,
+          rotate={\ang-90}]
+      at ({64.85mm + \decanSuitR*cos(\ang)}, {102.95mm + \decanSuitR*sin(\ang)}) {\suit};
+    \node[anchor=center, text=\col, font=\rankfont\fontsize{10}{11}\selectfont,
+          rotate={\ang-90}]
+      at ({64.85mm + \decanRankR*cos(\ang)}, {102.95mm + \decanRankR*sin(\ang)}) {\rank};
   }
 
   % === 28 Manāzil — Arabic Lunar Mansions (2030) ===
-  \def\manzilR{50mm}
+  \def\manzilR{53mm}
   \foreach \ltr/\ang in {
     أ/25.1, ب/38.0, ج/50.9, د/63.7, ه/76.6, و/89.4, ز/102.3,
     ح/115.2, ط/128.0, ي/140.9, ك/153.7, ل/166.6, م/179.4, ن/192.3,
     س/205.2, ع/218.0, ف/230.9, ص/243.7, ق/256.6, ر/269.4, ش/282.3,
     ت/295.1, ث/308.0, خ/320.9, ذ/333.7, ض/346.6, ظ/359.4, غ/12.3} {
+    \draw[thin, gray] ({64.85mm + \manzilR*cos(\ang)}, {102.95mm + \manzilR*sin(\ang)}) circle (2.5mm);
     \node[anchor=center, font=\kufifont\fontsize{9}{10}\selectfont,
           rotate={\ang-90}]
       at ({64.85mm + \manzilR*cos(\ang)}, {102.95mm + \manzilR*sin(\ang)}) {\beginR\ltr\endR};
   }
 
-  % === Twelve Cì (十二次) — Chinese Jupiter Stations (2030) ===
-  \def\ciR{53mm}
+  % === 28 Xiù (二十八宿) — Chinese Lunar Mansions (2030) ===
+  % With Cì (十二次) boundary arcs
+  % 參 nudged from 85.2→87, 柳 nudged from 132.2→134 to avoid overlap
+  \def\xiuR{61mm}
+  % Non-Cì-starting xiù (thin circles)
   \foreach \hanzi/\ang in {
-    星紀/282.9, 玄枵/314.8, 娵訾/347.6,
-    降婁/13.6, 大梁/38.9, 實沈/83.7,
-    鶉首/96.8, 鶉火/132.2, 鶉尾/166.5,
-    壽星/200.1, 大火/220.7, 析木/252.1} {
+    亢/211.4, 房/238.0, 心/243.9, 箕/272.1,
+    牛/308.1, 虛/325.6, 危/333.8, 壁/3.4,
+    婁/27.0, 昴/54.4, 畢/65.8, 參/87,
+    鬼/130.8, 星/144.6, 張/150.4, 軫/184.0} {
+    \draw[thin, gray] ({64.85mm + \xiuR*cos(\ang)}, {102.95mm + \xiuR*sin(\ang)}) circle (2.5mm);
     \node[anchor=center, font=\cjkfont\fontsize{9}{10}\selectfont,
           rotate={\ang-90}]
-      at ({64.85mm + \ciR*cos(\ang)}, {102.95mm + \ciR*sin(\ang)}) {\hanzi};
+      at ({64.85mm + \xiuR*cos(\ang)}, {102.95mm + \xiuR*sin(\ang)}) {\hanzi};
   }
-
-  % === 28 Xiù (二十八宿) — Chinese Lunar Mansions (2030) ===
-  % 參 nudged from 85.2→87, 柳 nudged from 132.2→134 to avoid overlap
-  \def\xiuR{56mm}
+  % Cì-starting xiù (thick circles)
   \foreach \hanzi/\ang in {
-    角/200.1, 亢/211.4, 氐/220.7, 房/238.0, 心/243.9, 尾/252.1, 箕/272.1,
-    斗/282.9, 牛/308.1, 女/314.8, 虛/325.6, 危/333.8, 室/347.6, 壁/3.4,
-    奎/13.6, 婁/27.0, 胃/38.9, 昴/54.4, 畢/65.8, 觜/83.7, 參/87,
-    井/96.8, 鬼/130.8, 柳/134, 星/144.6, 張/150.4, 翼/166.5, 軫/184.0} {
+    角/200.1, 氐/220.7, 尾/252.1, 斗/282.9, 女/314.8, 室/347.6,
+    奎/13.6, 胃/38.9, 觜/83.7, 井/96.8, 柳/134, 翼/166.5} {
+    \draw[very thick, black] ({64.85mm + \xiuR*cos(\ang)}, {102.95mm + \xiuR*sin(\ang)}) circle (2.5mm);
     \node[anchor=center, font=\cjkfont\fontsize{9}{10}\selectfont,
           rotate={\ang-90}]
       at ({64.85mm + \xiuR*cos(\ang)}, {102.95mm + \xiuR*sin(\ang)}) {\hanzi};
   }
 
-  % === Space for more circles ===
-  % Outer guide circles (dashed, for future use)
-  \draw[thin, gray, dashed] (\cx, \cy) circle (76mm);
-  \draw[thin, gray, dashed] (\cx, \cy) circle (90mm);
+  % === 108 Nakṣatra Pādas — Devanagari syllables ===
+  \def\padaR{68mm}
+  % Non-nakshatra-starting padas (no border)
+  \foreach \syl/\ang in {
+    चे/27.6, चो/30.9, ला/34.3,
+    लू/40.9, ले/44.3, लो/47.6,
+    ई/54.3, उ/57.6, ए/60.9,
+    वा/67.6, वी/70.9, वु/74.3,
+    वो/80.9, का/84.3, की/87.6,
+    घ/94.3, ङ/97.6, छ/100.9,
+    को/107.6, हा/110.9, ही/114.3,
+    हे/120.9, हो/124.3, डा/127.6,
+    डू/134.3, डे/137.6, डो/140.9,
+    मी/147.6, मू/150.9, मे/154.3,
+    टा/160.9, टी/164.3, टू/167.6,
+    टो/174.3, पा/177.6, पी/180.9,
+    ष/187.6, ण/190.9, ठ/194.3,
+    पो/200.9, रा/204.3, री/207.6,
+    रे/214.3, रो/217.6, ता/220.9,
+    तू/227.6, ते/230.9, तो/234.3,
+    नी/240.9, नू/244.3, ने/247.6,
+    या/254.3, यी/257.6, यू/260.9,
+    यो/267.6, भा/270.9, भी/274.3,
+    धा/280.9, फा/284.3, ढ/287.6,
+    भो/294.3, जा/297.6, जी/300.9,
+    खू/307.6, खे/310.9, खो/314.3,
+    गी/320.9, गु/324.3, गे/327.6,
+    सा/334.3, सी/337.6, सू/340.9,
+    सो/347.6, दा/350.9, दी/354.3,
+    थ/0.9, झ/4.3, ञ/7.6,
+    दो/14.3, च/17.6, ची/20.9} {
+    \node[anchor=center, font=\devfont\fontsize{6}{7}\selectfont,
+          rotate={\ang-90}]
+      at ({64.85mm + \padaR*cos(\ang)}, {102.95mm + \padaR*sin(\ang)}) {\syl};
+  }
+  % Nakshatra-starting padas (with circle border)
+  \foreach \syl/\ang in {
+    चु/24.3, ली/37.6, अ/50.9, ओ/64.3,
+    वे/77.6, कु/90.9, के/104.3, हु/117.6,
+    डी/130.9, मा/144.3, मो/157.6, टे/170.9,
+    पू/184.3, पे/197.6, रू/210.9, ती/224.3,
+    ना/237.6, नो/250.9, ये/264.3, भू/277.6,
+    भे/290.9, खी/304.3, गा/317.6, गो/330.9,
+    से/344.3, दू/357.6, दे/10.9} {
+    \draw[thin, gray] ({64.85mm + \padaR*cos(\ang)}, {102.95mm + \padaR*sin(\ang)}) circle (2mm);
+    \node[anchor=center, font=\devfont\fontsize{6}{7}\selectfont,
+          rotate={\ang-90}]
+      at ({64.85mm + \padaR*cos(\ang)}, {102.95mm + \padaR*sin(\ang)}) {\syl};
+  }
+
+  % === 12 Rāśi (sidereal zodiac) — offset by Lahiri ayanamsa 24°16' ===
+  \def\rashiR{76mm}
+  \foreach \sym/\col/\ang/\xs in {
+    ♈/red/24.3/1, ♉/red!50!orange/54.3/1, ♊/orange/84.3/1,
+    ♋/yellow!50!orange/114.3/1, ♌/yellow!80!orange/144.3/1, ♍/yellow!50!green/174.3/0.78,
+    ♎/green!70!black/204.3/1, ♏/blue!50!green/234.3/0.73, ♐/blue/264.3/1,
+    ♑/blue!50!violet/294.3/1, ♒/violet/324.3/1, ♓/red!50!violet/354.3/1} {
+    \draw[very thick, black] ({64.85mm + \rashiR*cos(\ang)}, {102.95mm + \rashiR*sin(\ang)}) circle (3.5mm);
+    \node[anchor=center, text=black, font=\symbserif\fontsize{12}{14}\selectfont, xscale=\xs,
+          rotate={\ang-90}]
+      at ({64.85mm + \rashiR*cos(\ang)}, {102.95mm + \rashiR*sin(\ang)}) {\sym};
+  }
 
 \end{tikzpicture}
 
