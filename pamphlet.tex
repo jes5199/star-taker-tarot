@@ -296,7 +296,7 @@
   % === 28 Xiù (二十八宿) — Chinese Lunar Mansions (2030) ===
   % With Cì (十二次) boundary arcs
   % 參 nudged from 85.2→87, 柳 nudged from 132.2→134 to avoid overlap
-  \def\xiuR{61mm}
+  \def\xiuR{59mm}
   % Non-Cì-starting xiù (thin circles)
   \foreach \hanzi/\ang in {
     亢/211.4, 房/238.0, 心/243.9, 箕/272.1,
@@ -318,8 +318,21 @@
       at ({64.85mm + \xiuR*cos(\ang)}, {102.95mm + \xiuR*sin(\ang)}) {\hanzi};
   }
 
+  % === 12 Rāśi (sidereal zodiac) — offset by Lahiri ayanamsa 24°16' ===
+  \def\rashiR{65mm}
+  \foreach \sym/\col/\ang/\xs in {
+    ♈/red/24.3/1, ♉/red!50!orange/54.3/1, ♊/orange/84.3/1,
+    ♋/yellow!50!orange/114.3/1, ♌/yellow!80!orange/144.3/1, ♍/yellow!50!green/174.3/0.78,
+    ♎/green!70!black/204.3/1, ♏/blue!50!green/234.3/0.73, ♐/blue/264.3/1,
+    ♑/blue!50!violet/294.3/1, ♒/violet/324.3/1, ♓/red!50!violet/354.3/1} {
+    \draw[very thick, gray!50] ({64.85mm + \rashiR*cos(\ang)}, {102.95mm + \rashiR*sin(\ang)}) circle (3.5mm);
+    \node[anchor=center, text=gray!50, font=\symbserif\bfseries\fontsize{14}{16}\selectfont, xscale=\xs,
+          rotate={\ang-90}]
+      at ({64.85mm + \rashiR*cos(\ang)}, {102.95mm + \rashiR*sin(\ang)}) {\sym};
+  }
+
   % === 108 Nakṣatra Pādas — Devanagari syllables ===
-  \def\padaR{68mm}
+  \def\padaR{65mm}
   % Non-nakshatra-starting padas (no border)
   \foreach \syl/\ang in {
     चे/27.6, चो/30.9, ला/34.3,
@@ -366,19 +379,6 @@
     \node[anchor=center, font=\devfont\fontsize{6}{7}\selectfont,
           rotate={\ang-90}]
       at ({64.85mm + \padaR*cos(\ang)}, {102.95mm + \padaR*sin(\ang)}) {\syl};
-  }
-
-  % === 12 Rāśi (sidereal zodiac) — offset by Lahiri ayanamsa 24°16' ===
-  \def\rashiR{76mm}
-  \foreach \sym/\col/\ang/\xs in {
-    ♈/red/24.3/1, ♉/red!50!orange/54.3/1, ♊/orange/84.3/1,
-    ♋/yellow!50!orange/114.3/1, ♌/yellow!80!orange/144.3/1, ♍/yellow!50!green/174.3/0.78,
-    ♎/green!70!black/204.3/1, ♏/blue!50!green/234.3/0.73, ♐/blue/264.3/1,
-    ♑/blue!50!violet/294.3/1, ♒/violet/324.3/1, ♓/red!50!violet/354.3/1} {
-    \draw[very thick, black] ({64.85mm + \rashiR*cos(\ang)}, {102.95mm + \rashiR*sin(\ang)}) circle (3.5mm);
-    \node[anchor=center, text=black, font=\symbserif\fontsize{12}{14}\selectfont, xscale=\xs,
-          rotate={\ang-90}]
-      at ({64.85mm + \rashiR*cos(\ang)}, {102.95mm + \rashiR*sin(\ang)}) {\sym};
   }
 
 \end{tikzpicture}
