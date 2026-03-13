@@ -167,27 +167,24 @@
 
   % === Four Elements square (innermost) ===
   \def\elemR{16mm}
-  % Fire=East, Water=South, Air=West, Earth=North
+  % Aries=Fire(0°/right), Cancer=Water(90°/top), Libra=Air(180°/left), Capricorn=Earth(270°/bottom)
   \node[anchor=center, red] at ({64.85mm + 16mm}, \cy)
-    {\scalebox{2.5}{\tinyfire}};  % right = East (Fire)
-  \node[anchor=center, blue] at (\cx, {102.95mm - 16mm})
-    {\scalebox{2.5}{\tinywater}};  % bottom = South (Water)
+    {\scalebox{2.5}{\tinyfire}};  % right = East (Fire/Aries)
+  \node[anchor=center, blue] at (\cx, {102.95mm + 16mm})
+    {\scalebox{2.5}{\tinywater}};  % top (Water/Cancer)
   \node[anchor=center, yellow!80!orange] at ({64.85mm - 16mm}, \cy)
-    {\scalebox{2.5}{\tinyair}};  % left = West (Air)
-  \node[anchor=center, green!50!black] at (\cx, {102.95mm + 16mm})
-    {\scalebox{2.5}{\tinyearth}};  % top = North (Earth)
-  % Square connecting them
-  \draw[thin, gray]
-    ({64.85mm - 16mm}, {102.95mm + 16mm}) rectangle ({64.85mm + 16mm}, {102.95mm - 16mm});
+    {\scalebox{2.5}{\tinyair}};  % left = West (Air/Libra)
+  \node[anchor=center, green!50!black] at (\cx, {102.95mm - 16mm})
+    {\scalebox{2.5}{\tinyearth}};  % bottom (Earth/Capricorn)
 
   % === Twelve Zodiac Signs circle ===
   % Aries/Pisces boundary at 0° (right), signs spaced 30° each
   \def\zodiacR{30mm}
   \foreach \sym/\col/\ang/\xs in {
-    ♈/red/15/1, ♉/red!50!orange/45/1, ♊/orange/75/1,
-    ♋/yellow!50!orange/105/1, ♌/yellow!80!orange/135/1, ♍/yellow!50!green/165/0.78,
-    ♎/green!70!black/195/1, ♏/blue!50!green/225/0.73, ♐/blue/255/1,
-    ♑/blue!50!violet/285/1, ♒/violet/315/1, ♓/red!50!violet/345/1} {
+    ♈/red/0/1, ♉/red!50!orange/30/1, ♊/orange/60/1,
+    ♋/yellow!50!orange/90/1, ♌/yellow!80!orange/120/1, ♍/yellow!50!green/150/0.78,
+    ♎/green!70!black/180/1, ♏/blue!50!green/210/0.73, ♐/blue/240/1,
+    ♑/blue!50!violet/270/1, ♒/violet/300/1, ♓/red!50!violet/330/1} {
     \node[anchor=center, text=\col, font=\symbserif\fontsize{20}{22}\selectfont, xscale=\xs]
       at ({64.85mm + 27mm*cos(\ang)}, {102.95mm + 27mm*sin(\ang)}) {\sym};
   }
@@ -200,11 +197,11 @@
   \def\solarR{37mm}
   \def\arcW{3.5mm}
   % Azure Dragon (Spring): 315°–45°
-  \fill[teal] (\cx, \cy) ++(315:{\solarR-\arcW}) arc[start angle=315, end angle=405,
+  \fill[blue!50] (\cx, \cy) ++(315:{\solarR-\arcW}) arc[start angle=315, end angle=405,
     radius={\solarR-\arcW}] -- ++(45:2*\arcW) arc[start angle=405, end angle=315,
     radius={\solarR+\arcW}] -- cycle;
   % Vermillion Bird (Summer): 45°–135°
-  \fill[red] (\cx, \cy) ++(45:{\solarR-\arcW}) arc[start angle=45, end angle=135,
+  \fill[red!50] (\cx, \cy) ++(45:{\solarR-\arcW}) arc[start angle=45, end angle=135,
     radius={\solarR-\arcW}] -- ++(135:2*\arcW) arc[start angle=135, end angle=45,
     radius={\solarR+\arcW}] -- cycle;
   % White Tiger (Autumn): 135°–225°
@@ -234,18 +231,18 @@
   % Counterclockwise from Dàzhuàng at 0°
   \def\guaR{44mm}
   \foreach \lines/\ang in {
-    {1,1,1,1,0,0}/0,
-    {1,1,1,1,1,0}/330,
-    {1,1,1,1,1,1}/300,
-    {0,1,1,1,1,1}/270,
-    {0,0,1,1,1,1}/240,
-    {0,0,0,1,1,1}/210,
-    {0,0,0,0,1,1}/180,
-    {0,0,0,0,0,1}/150,
-    {0,0,0,0,0,0}/120,
-    {1,0,0,0,0,0}/90,
-    {1,1,0,0,0,0}/60,
-    {1,1,1,0,0,0}/30} {
+    {1,1,1,1,0,0}/345,
+    {1,1,1,1,1,0}/315,
+    {1,1,1,1,1,1}/285,
+    {0,1,1,1,1,1}/255,
+    {0,0,1,1,1,1}/225,
+    {0,0,0,1,1,1}/195,
+    {0,0,0,0,1,1}/165,
+    {0,0,0,0,0,1}/135,
+    {0,0,0,0,0,0}/105,
+    {1,0,0,0,0,0}/75,
+    {1,1,0,0,0,0}/45,
+    {1,1,1,0,0,0}/15} {
     \begin{scope}[shift={({64.85mm + 27mm*cos(\ang)}, {102.95mm + 27mm*sin(\ang)})},
                   line width=0.4mm, line cap=butt]
       \foreach \type [count=\i from 0] in \lines {
@@ -259,11 +256,67 @@
     \end{scope}
   }
 
+  % === 36 Decans — French playing card labels ===
+  \def\decanR{46mm}
+  \foreach \rank/\suit/\col/\ang in {
+    2/♣/black/0, 3/♣/black/10, 4/♣/black/20,
+    5/♦/red/30, 6/♦/red/40, 7/♦/red/50,
+    8/♠/black/60, 9/♠/black/70, {10}/♠/black/80,
+    2/♥/red/90, 3/♥/red/100, 4/♥/red/110,
+    5/♣/black/120, 6/♣/black/130, 7/♣/black/140,
+    8/♦/red/150, 9/♦/red/160, {10}/♦/red/170,
+    2/♠/black/180, 3/♠/black/190, 4/♠/black/200,
+    5/♥/red/210, 6/♥/red/220, 7/♥/red/230,
+    8/♣/black/240, 9/♣/black/250, {10}/♣/black/260,
+    2/♦/red/270, 3/♦/red/280, 4/♦/red/290,
+    5/♠/black/300, 6/♠/black/310, 7/♠/black/320,
+    8/♥/red/330, 9/♥/red/340, {10}/♥/red/350} {
+    \node[anchor=center, text=\col, rotate={\ang-90}]
+      at ({64.85mm + \decanR*cos(\ang)}, {102.95mm + \decanR*sin(\ang)})
+      {{\rankfont\fontsize{10}{11}\selectfont\rank}{\symbfont\fontsize{10}{11}\selectfont\suit}};
+  }
+
+  % === 28 Manāzil — Arabic Lunar Mansions (2030) ===
+  \def\manzilR{50mm}
+  \foreach \ltr/\ang in {
+    أ/25.1, ب/38.0, ج/50.9, د/63.7, ه/76.6, و/89.4, ز/102.3,
+    ح/115.2, ط/128.0, ي/140.9, ك/153.7, ل/166.6, م/179.4, ن/192.3,
+    س/205.2, ع/218.0, ف/230.9, ص/243.7, ق/256.6, ر/269.4, ش/282.3,
+    ت/295.1, ث/308.0, خ/320.9, ذ/333.7, ض/346.6, ظ/359.4, غ/12.3} {
+    \node[anchor=center, font=\kufifont\fontsize{9}{10}\selectfont,
+          rotate={\ang-90}]
+      at ({64.85mm + \manzilR*cos(\ang)}, {102.95mm + \manzilR*sin(\ang)}) {\beginR\ltr\endR};
+  }
+
+  % === Twelve Cì (十二次) — Chinese Jupiter Stations (2030) ===
+  \def\ciR{53mm}
+  \foreach \hanzi/\ang in {
+    星紀/282.9, 玄枵/314.8, 娵訾/347.6,
+    降婁/13.6, 大梁/38.9, 實沈/83.7,
+    鶉首/96.8, 鶉火/132.2, 鶉尾/166.5,
+    壽星/200.1, 大火/220.7, 析木/252.1} {
+    \node[anchor=center, font=\cjkfont\fontsize{9}{10}\selectfont,
+          rotate={\ang-90}]
+      at ({64.85mm + \ciR*cos(\ang)}, {102.95mm + \ciR*sin(\ang)}) {\hanzi};
+  }
+
+  % === 28 Xiù (二十八宿) — Chinese Lunar Mansions (2030) ===
+  % 參 nudged from 85.2→87, 柳 nudged from 132.2→134 to avoid overlap
+  \def\xiuR{56mm}
+  \foreach \hanzi/\ang in {
+    角/200.1, 亢/211.4, 氐/220.7, 房/238.0, 心/243.9, 尾/252.1, 箕/272.1,
+    斗/282.9, 牛/308.1, 女/314.8, 虛/325.6, 危/333.8, 室/347.6, 壁/3.4,
+    奎/13.6, 婁/27.0, 胃/38.9, 昴/54.4, 畢/65.8, 觜/83.7, 參/87,
+    井/96.8, 鬼/130.8, 柳/134, 星/144.6, 張/150.4, 翼/166.5, 軫/184.0} {
+    \node[anchor=center, font=\cjkfont\fontsize{9}{10}\selectfont,
+          rotate={\ang-90}]
+      at ({64.85mm + \xiuR*cos(\ang)}, {102.95mm + \xiuR*sin(\ang)}) {\hanzi};
+  }
+
   % === Space for more circles ===
   % Outer guide circles (dashed, for future use)
-  \draw[thin, gray, dashed] (\cx, \cy) circle (58mm);
-  \draw[thin, gray, dashed] (\cx, \cy) circle (72mm);
-  \draw[thin, gray, dashed] (\cx, \cy) circle (86mm);
+  \draw[thin, gray, dashed] (\cx, \cy) circle (76mm);
+  \draw[thin, gray, dashed] (\cx, \cy) circle (90mm);
 
 \end{tikzpicture}
 
