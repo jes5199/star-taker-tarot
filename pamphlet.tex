@@ -157,8 +157,123 @@
 
 \newpage
 
-% Page 3 — blank (inside back)
+% Page 3 — Cosmological diagram
+\newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=5mm}
+\noindent
+\begin{tikzpicture}
+  \useasboundingbox (0,0) rectangle (129.7mm, 205.9mm);
+  \def\cx{64.85mm}
+  \def\cy{102.95mm}
+
+  % === Four Elements square (innermost) ===
+  \def\elemR{16mm}
+  % Fire=East, Water=South, Air=West, Earth=North
+  \node[anchor=center, red] at ({64.85mm + 16mm}, \cy)
+    {\scalebox{2.5}{\tinyfire}};  % right = East (Fire)
+  \node[anchor=center, blue] at (\cx, {102.95mm - 16mm})
+    {\scalebox{2.5}{\tinywater}};  % bottom = South (Water)
+  \node[anchor=center, yellow!80!orange] at ({64.85mm - 16mm}, \cy)
+    {\scalebox{2.5}{\tinyair}};  % left = West (Air)
+  \node[anchor=center, green!50!black] at (\cx, {102.95mm + 16mm})
+    {\scalebox{2.5}{\tinyearth}};  % top = North (Earth)
+  % Square connecting them
+  \draw[thin, gray]
+    ({64.85mm - 16mm}, {102.95mm + 16mm}) rectangle ({64.85mm + 16mm}, {102.95mm - 16mm});
+
+  % === Twelve Zodiac Signs circle ===
+  % Aries/Pisces boundary at 0° (right), signs spaced 30° each
+  \def\zodiacR{30mm}
+  \foreach \sym/\col/\ang/\xs in {
+    ♈/red/15/1, ♉/red!50!orange/45/1, ♊/orange/75/1,
+    ♋/yellow!50!orange/105/1, ♌/yellow!80!orange/135/1, ♍/yellow!50!green/165/0.78,
+    ♎/green!70!black/195/1, ♏/blue!50!green/225/0.73, ♐/blue/255/1,
+    ♑/blue!50!violet/285/1, ♒/violet/315/1, ♓/red!50!violet/345/1} {
+    \node[anchor=center, text=\col, font=\symbserif\fontsize{20}{22}\selectfont, xscale=\xs]
+      at ({64.85mm + 27mm*cos(\ang)}, {102.95mm + 27mm*sin(\ang)}) {\sym};
+  }
+
+  % === 24 Solar Term dots — Four Celestial Animals (四象) color-coded ===
+  % Spring=Azure Dragon (teal), Summer=Vermillion Bird (red),
+  % Autumn=White Tiger (white/outlined), Winter=Black Tortoise (black)
+  \def\dotR{37mm}
+  % Four Celestial Animals — colored arc wedges
+  \def\solarR{37mm}
+  \def\arcW{3.5mm}
+  % Azure Dragon (Spring): 315°–45°
+  \fill[teal] (\cx, \cy) ++(315:{\solarR-\arcW}) arc[start angle=315, end angle=405,
+    radius={\solarR-\arcW}] -- ++(45:2*\arcW) arc[start angle=405, end angle=315,
+    radius={\solarR+\arcW}] -- cycle;
+  % Vermillion Bird (Summer): 45°–135°
+  \fill[red] (\cx, \cy) ++(45:{\solarR-\arcW}) arc[start angle=45, end angle=135,
+    radius={\solarR-\arcW}] -- ++(135:2*\arcW) arc[start angle=135, end angle=45,
+    radius={\solarR+\arcW}] -- cycle;
+  % White Tiger (Autumn): 135°–225°
+  \fill[white] (\cx, \cy) ++(135:{\solarR-\arcW}) arc[start angle=135, end angle=225,
+    radius={\solarR-\arcW}] -- ++(225:2*\arcW) arc[start angle=225, end angle=135,
+    radius={\solarR+\arcW}] -- cycle;
+  \draw[black, thin] (\cx, \cy) ++(135:{\solarR-\arcW}) arc[start angle=135, end angle=225,
+    radius={\solarR-\arcW}] -- ++(225:2*\arcW) arc[start angle=225, end angle=135,
+    radius={\solarR+\arcW}] -- cycle;
+  % Black Tortoise (Winter): 225°–315°
+  \fill[gray!70] (\cx, \cy) ++(225:{\solarR-\arcW}) arc[start angle=225, end angle=315,
+    radius={\solarR-\arcW}] -- ++(315:2*\arcW) arc[start angle=315, end angle=225,
+    radius={\solarR+\arcW}] -- cycle;
+
+  % 24 Solar Term hanzi — counterclockwise from 0° (春分)
+  \foreach \hanzi/\ang in {
+    春分/0, 清明/15, 谷雨/30, 立夏/45, 小滿/60, 芒種/75,
+    夏至/90, 小暑/105, 大暑/120, 立秋/135, 處暑/150, 白露/165,
+    秋分/180, 寒露/195, 霜降/210, 立冬/225, 小雪/240, 大雪/255,
+    冬至/270, 小寒/285, 大寒/300, 立春/315, 雨水/330, 驚蟄/345} {
+    \node[anchor=center, font=\cjkfont\fontsize{9}{10}\selectfont,
+          rotate={\ang-90}]
+      at ({64.85mm + 37mm*cos(\ang)}, {102.95mm + 37mm*sin(\ang)}) {\hanzi};
+  }
+
+  % === Twelve Tidal Hexagrams (消息卦) circle ===
+  % Counterclockwise from Dàzhuàng at 0°
+  \def\guaR{44mm}
+  \foreach \lines/\ang in {
+    {1,1,1,1,0,0}/0,
+    {1,1,1,1,1,0}/330,
+    {1,1,1,1,1,1}/300,
+    {0,1,1,1,1,1}/270,
+    {0,0,1,1,1,1}/240,
+    {0,0,0,1,1,1}/210,
+    {0,0,0,0,1,1}/180,
+    {0,0,0,0,0,1}/150,
+    {0,0,0,0,0,0}/120,
+    {1,0,0,0,0,0}/90,
+    {1,1,0,0,0,0}/60,
+    {1,1,1,0,0,0}/30} {
+    \begin{scope}[shift={({64.85mm + 27mm*cos(\ang)}, {102.95mm + 27mm*sin(\ang)})},
+                  line width=0.4mm, line cap=butt]
+      \foreach \type [count=\i from 0] in \lines {
+        \ifnum\type=1
+          \draw (-1.7mm, \i*1.0mm-2.5mm) -- (1.7mm, \i*1.0mm-2.5mm);
+        \else
+          \draw (-1.7mm, \i*1.0mm-2.5mm) -- (-0.5mm, \i*1.0mm-2.5mm);
+          \draw (0.5mm, \i*1.0mm-2.5mm) -- (1.7mm, \i*1.0mm-2.5mm);
+        \fi
+      }
+    \end{scope}
+  }
+
+  % === Space for more circles ===
+  % Outer guide circles (dashed, for future use)
+  \draw[thin, gray, dashed] (\cx, \cy) circle (58mm);
+  \draw[thin, gray, dashed] (\cx, \cy) circle (72mm);
+  \draw[thin, gray, dashed] (\cx, \cy) circle (86mm);
+
+\end{tikzpicture}
+
+\newpage
+
+% Pages 4-6 — blank (padding for 8-page booklet)
 \restoregeometry
+\phantom{x}\newpage
+\phantom{x}\newpage
+\phantom{x}\newpage
 \phantom{x}
 
 \newpage
