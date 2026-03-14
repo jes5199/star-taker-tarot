@@ -468,6 +468,11 @@
     annotline/.style={thick, -{Stealth[length=2mm]}},
   }
 
+  % Major Arcana number
+  \draw[annotline, red!70!black]
+    ([xshift=-6mm, yshift=2mm]cardNW) node[annot, anchor=east] {Major Arcana number}
+    -- ([xshift=4mm, yshift=-4mm]cardNW);
+
   % Card name
   \draw[annotline, green!50!black]
     ([xshift=8mm, yshift=3mm]cardN) node[annot, anchor=south] {Card name}
