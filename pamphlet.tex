@@ -159,8 +159,8 @@
 
 % Page 3 — Cosmological diagram
 \newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=5mm}
-\noindent
-\begin{tikzpicture}
+\centering
+\begin{tikzpicture}[scale=0.95, every node/.style={scale=0.95}]
   \useasboundingbox (0,0) rectangle (129.7mm, 205.9mm);
   \def\cx{64.85mm}
   \def\cy{102.95mm}
@@ -381,13 +381,109 @@
       at ({64.85mm + \padaR*cos(\ang)}, {102.95mm + \padaR*sin(\ang)}) {\syl};
   }
 
+  % === 360 degree tick marks — Meng Xi Guaqi hexagram lines ===
+  % Yang lines = solid ticks, Yin lines = broken ticks (gap in middle)
+  \def\tickR{69mm}
+  \def\tickEnd{70.5mm}
+  \def\tickMidA{69.5mm}
+  \def\tickMidB{70.0mm}
+  % Yang (solid) ticks
+  \foreach \ang in {
+    1,3,6,7,8,9,15,19,21,22,23,25,26,29,30,32,33,34,36,37,38,39,40,42,44,47,
+    52,55,60,61,62,64,65,66,67,68,69,70,71,72,73,74,75,77,78,80,82,83,85,86,
+    88,92,93,94,97,98,99,100,101,103,104,105,107,108,111,113,115,118,119,120,
+    121,123,124,125,128,129,130,131,133,134,135,138,139,142,144,146,147,148,149,
+    150,151,155,159,160,161,163,164,166,167,168,169,174,175,176,179,180,182,185,
+    187,188,192,193,195,198,201,202,203,204,206,211,213,214,221,224,227,229,231,
+    233,234,237,239,240,241,244,245,252,254,256,260,262,264,269,270,271,274,275,
+    276,282,286,290,294,295,297,299,304,305,306,307,314,315,319,323,324,328,329,
+    332,334,335,336,337,338,342,343,344,346,348,349,351,357,359} {
+    \draw[black, line width=0.1pt]
+      ({64.85mm + \tickR*cos(\ang)}, {102.95mm + \tickR*sin(\ang)})
+      -- ({64.85mm + \tickEnd*cos(\ang)}, {102.95mm + \tickEnd*sin(\ang)});
+  }
+  % Yin (broken) ticks — two segments with gap
+  \foreach \ang in {
+    0,2,4,5,10,11,12,13,14,16,17,18,20,24,27,28,31,35,41,43,45,46,48,49,50,51,
+    53,54,56,57,58,59,63,76,79,81,84,87,89,90,91,95,96,102,106,109,110,112,114,
+    116,117,122,126,127,132,136,137,140,141,143,145,152,153,154,156,157,158,162,
+    165,170,171,172,173,177,178,181,183,184,186,189,190,191,194,196,197,199,200,
+    205,207,208,209,210,212,215,216,217,218,219,220,222,223,225,226,228,230,232,
+    235,236,238,242,243,246,247,248,249,250,251,253,255,257,258,259,261,263,265,
+    266,267,268,272,273,277,278,279,280,281,283,284,285,287,288,289,291,292,293,
+    296,298,300,301,302,303,308,309,310,311,312,313,316,317,318,320,321,322,325,
+    326,327,330,331,333,339,340,341,345,347,350,352,353,354,355,356,358} {
+    \draw[black, line width=0.1pt]
+      ({64.85mm + \tickR*cos(\ang)}, {102.95mm + \tickR*sin(\ang)})
+      -- ({64.85mm + \tickMidA*cos(\ang)}, {102.95mm + \tickMidA*sin(\ang)});
+    \draw[black, line width=0.1pt]
+      ({64.85mm + \tickMidB*cos(\ang)}, {102.95mm + \tickMidB*sin(\ang)})
+      -- ({64.85mm + \tickEnd*cos(\ang)}, {102.95mm + \tickEnd*sin(\ang)});
+  }
+
 \end{tikzpicture}
 
 \newpage
 
-% Pages 4-6 — blank (padding for 8-page booklet)
+% Page 4 — Seven Planets
 \restoregeometry
-\phantom{x}\newpage
+\newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=12mm, top=10mm, bottom=12mm}
+
+\begin{center}
+{\cardfont\fontsize{18}{22}\selectfont Seven Planets}
+\end{center}
+
+\vspace{2mm}
+
+% Seven planet cards in Chaldean order: Saturn, Jupiter, Mars, Sun, Venus, Mercury, Moon
+\begin{center}
+\resizebox{!}{24mm}{\cardAtwentyone}%
+\hspace{1.5mm}%
+\resizebox{!}{24mm}{\cardAten}%
+\hspace{1.5mm}%
+\resizebox{!}{24mm}{\cardAsixteen}%
+\hspace{1.5mm}%
+\resizebox{!}{24mm}{\cardAnineteen}%
+\hspace{1.5mm}%
+\resizebox{!}{24mm}{\cardAthree}%
+\hspace{1.5mm}%
+\resizebox{!}{24mm}{\cardAone}%
+\hspace{1.5mm}%
+\resizebox{!}{24mm}{\cardAtwo}%
+\end{center}
+
+\vspace{8mm}
+
+% Jupiter (Wheel of Fortune) large in center with annotations
+\begin{center}
+\resizebox{!}{100mm}{\cardAten}%
+\tikz[remember picture, overlay] {
+  \coordinate (cardNE) at (0, 100mm);
+  \coordinate (cardNW) at (-58.3mm, 100mm);
+  \coordinate (cardN)  at (-29.15mm, 100mm);
+  \coordinate (cardC)  at (-29.15mm, 50mm);
+
+  \tikzset{
+    annot/.style={font=\fontsize{8}{10}\selectfont, text=black},
+    annotline/.style={thick, -{Stealth[length=2mm]}},
+  }
+
+  % Card name
+  \draw[annotline, green!50!black]
+    ([xshift=8mm, yshift=3mm]cardN) node[annot, anchor=south] {Card name}
+    -- ([yshift=-3mm]cardN);
+
+  % Hebrew double-letter (Golden Dawn)
+  \draw[annotline, blue!70!black]
+    ([xshift=6mm, yshift=2mm]cardNE) node[annot, anchor=west, align=left] {Hebrew double-letter\\(Golden Dawn)}
+    -- ([xshift=-4mm, yshift=-4mm]cardNE);
+}
+\end{center}
+
+\restoregeometry
+\newpage
+
+% Pages 5-6 — blank (padding for 8-page booklet)
 \phantom{x}\newpage
 \phantom{x}\newpage
 \phantom{x}
