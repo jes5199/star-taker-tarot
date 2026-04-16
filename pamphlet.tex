@@ -462,6 +462,8 @@
   \coordinate (cardNW) at (-58.3mm, 100mm);
   \coordinate (cardN)  at (-29.15mm, 100mm);
   \coordinate (cardC)  at (-29.15mm, 50mm);
+  \coordinate (cardSW) at (-58.3mm, 0mm);
+  \coordinate (cardSE) at (0mm, 0mm);
 
   \tikzset{
     annot/.style={font=\fontsize{8}{10}\selectfont, text=black},
@@ -482,6 +484,26 @@
   \draw[annotline, blue!70!black]
     ([xshift=6mm, yshift=2mm]cardNE) node[annot, anchor=west, align=left] {Hebrew double-letter\\(Golden Dawn)}
     -- ([xshift=-4mm, yshift=-4mm]cardNE);
+
+  % Hellenistic sect ("Benefic of Day", centered at \cardheight-6mm → 94.2mm scaled)
+  \draw[annotline, teal!70!black]
+    ([xshift=6mm, yshift=-9mm]cardNE) node[annot, anchor=west] {Hellenistic sect}
+    -- (-29.15mm, 91.7mm);
+
+  % Planet's exaltation ("exalted in ♋ Cancer", at \cardheight-13mm → 87.4mm scaled)
+  \draw[annotline, cyan!60!black]
+    ([xshift=6mm, yshift=-17mm]cardNE) node[annot, anchor=west] {Planet's exaltation}
+    -- (-29.15mm, 87.4mm);
+
+  % Pythagorean Vowel (bottom-left of card, 7mm from left × 100/102.86 ≈ 6.8mm)
+  \draw[annotline, orange!70!black]
+    ([xshift=-6mm, yshift=5mm]cardSW) node[annot, anchor=east] {Pythagorean Vowel}
+    -- ([xshift=6.8mm, yshift=4.9mm]cardSW);
+
+  % Chakra seed syllable (bottom-right of card, \cardwidth-9mm × scale ≈ -8.7mm from right)
+  \draw[annotline, violet!70!black]
+    ([xshift=6mm, yshift=7mm]cardSE) node[annot, anchor=west] {Chakra seed syllable}
+    -- (-8.7mm, 6.8mm);
 }
 \end{center}
 
