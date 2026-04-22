@@ -1098,15 +1098,7 @@
   \courtattrib{0.52\cardheight-35mm}{direct}{♄}{Saturn}{♒}{Aquarius}
   \chakrastack{1}
   \lunarstack{1}{reclaims}
-  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{1}
-  % Zhèn trigram (Thunder) — under waxing crescent moon
-  \begin{scope}[shift={(\cardwidth-5mm,\cardheight-22mm)}, line width=1mm, line cap=butt]
-    \draw (-2.5mm,3mm) -- (-0.6mm,3mm); \draw (0.6mm,3mm) -- (2.5mm,3mm);
-    \draw (-2.5mm,0mm) -- (-0.6mm,0mm); \draw (0.6mm,0mm) -- (2.5mm,0mm);
-    \draw (-2.5mm,-3mm) -- (2.5mm,-3mm);
-    \node[above, font=\cardfont\fontsize{7}{8}\selectfont] at (0,3.5mm) {Zhèn};
-    \node[below, font=\cardfont\fontsize{5}{6}\selectfont] at (0,-3.5mm) {Thunder};
-  \end{scope}}
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{1}}
 ]{images/p-11}{Page of Pentacles}%
 }
 
@@ -1127,7 +1119,7 @@
     at (0.5\cardwidth, 0.52\cardheight-42mm) {राहु};
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-48mm) {Head of the Dragon};
-  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{0}
+  \drawmoonphase[30/0]{\cardwidth-5mm}{\cardheight-6mm}{0}
   % Kūn trigram (Earth) — under new moon icon
   \begin{scope}[shift={(\cardwidth-5mm,\cardheight-22mm)}, line width=1mm, line cap=butt]
     \draw (-2.5mm,3mm) -- (-0.6mm,3mm); \draw (0.6mm,3mm) -- (2.5mm,3mm);
@@ -1135,6 +1127,31 @@
     \draw (-2.5mm,-3mm) -- (-0.6mm,-3mm); \draw (0.6mm,-3mm) -- (2.5mm,-3mm);
     \node[above, font=\cardfont\fontsize{7}{8}\selectfont] at (0,3.5mm) {Kūn};
     \node[below, font=\cardfont\fontsize{5}{6}\selectfont] at (0,-3.5mm) {Earth};
+  \end{scope}
+  % Upper hexagram (䷃ Méng / Youthful Folly, pattern 0,1,0,0,0,1) — rendered all-filled (pip-card "inside decan" style)
+  \begin{scope}[shift={(\cardwidth-5mm, 52mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {0,1,0,0,0,1} {%
+      \ifnum\type=1
+        \draw[line width=0.6mm] (-3mm, \i*1.5mm-3.75mm) -- (3mm, \i*1.5mm-3.75mm);
+      \else
+        \draw[line width=0.6mm] (-3mm, \i*1.5mm-3.75mm) -- (-0.5mm, \i*1.5mm-3.75mm);
+        \draw[line width=0.6mm] (0.5mm, \i*1.5mm-3.75mm) -- (3mm, \i*1.5mm-3.75mm);
+      \fi
+    }%
+  \end{scope}
+  % Lower hexagram (䷂ Zhūn / Sprouting, pattern 1,0,0,0,1,0) — rendered all-outlined (pip-card "outside decan" style)
+  \begin{scope}[shift={(\cardwidth-5mm, 26mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {1,0,0,0,1,0} {%
+      \ifnum\type=1
+        \fill[white, draw=black, line width=0.2mm]
+          (-3mm, \i*1.5mm-3.75mm-0.3mm) rectangle (3mm, \i*1.5mm-3.75mm+0.3mm);
+      \else
+        \fill[white, draw=black, line width=0.2mm]
+          (-3mm, \i*1.5mm-3.75mm-0.3mm) rectangle (-0.5mm, \i*1.5mm-3.75mm+0.3mm);
+        \fill[white, draw=black, line width=0.2mm]
+          (0.5mm, \i*1.5mm-3.75mm-0.3mm) rectangle (3mm, \i*1.5mm-3.75mm+0.3mm);
+      \fi
+    }%
   \end{scope}}
 ]{images/p-12}{Knight of Pentacles}%
 }
@@ -1692,7 +1709,15 @@
   \courtattrib{0.52\cardheight-35mm}{direct}{♃}{Jupiter}{♐}{Sagittarius}
   \chakrastack{2}
   \lunarstack{2}{reclaims}
-  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{2}}
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{2}
+  % Zhèn trigram (Thunder) — under waxing crescent moon
+  \begin{scope}[shift={(\cardwidth-5mm,\cardheight-22mm)}, line width=1mm, line cap=butt]
+    \draw (-2.5mm,3mm) -- (-0.6mm,3mm); \draw (0.6mm,3mm) -- (2.5mm,3mm);
+    \draw (-2.5mm,0mm) -- (-0.6mm,0mm); \draw (0.6mm,0mm) -- (2.5mm,0mm);
+    \draw (-2.5mm,-3mm) -- (2.5mm,-3mm);
+    \node[above, font=\cardfont\fontsize{7}{8}\selectfont] at (0,3.5mm) {Zhèn};
+    \node[below, font=\cardfont\fontsize{5}{6}\selectfont] at (0,-3.5mm) {Thunder};
+  \end{scope}}
 ]{images/s-11}{Page of Swords}%
 }
 

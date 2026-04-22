@@ -596,13 +596,13 @@
     at (0.5\cardwidth, 0.52\cardheight-30mm) {Joy in 9\textsuperscript{th} House of God};
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-34mm) {Glory};
-  % 日 Sun / Yang
+  % 日 Sun / Great Yang (太陽)
   \node[anchor=base, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-43mm) {rì};
   \node[anchor=north, text=black, font=\cjkfont\fontsize{18}{20}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-42.5mm) {日};
   \node[anchor=north, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
-    at (0.5\cardwidth, 0.52\cardheight-49mm) {yang};
+    at (0.5\cardwidth, 0.52\cardheight-49mm) {Great Yang};
   \node[anchor=center, text=black, font=\greekfont\fontsize{18}{20}\selectfont]
     at (7mm, 5mm) {Ι};
   \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
@@ -840,13 +840,13 @@
     at (0.5\cardwidth, 0.52\cardheight-30mm) {Joy in 2\textsuperscript{nd} H. of the Goddess};
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-34mm) {Mystery};
-  % 月 Moon / Yin
+  % 月 Moon / Great Yin (太陰)
   \node[anchor=base, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-43mm) {yuè};
   \node[anchor=north, text=black, font=\cjkfont\fontsize{18}{20}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-42.5mm) {月};
   \node[anchor=north, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
-    at (0.5\cardwidth, 0.52\cardheight-49mm) {yin};
+    at (0.5\cardwidth, 0.52\cardheight-49mm) {Great Yin};
   \node[anchor=center, text=black, font=\greekfont\fontsize{18}{20}\selectfont]
     at (7mm, 5mm) {Α};
   \begin{scope}[shift={(\cardwidth-9mm,7mm)}]
@@ -1348,10 +1348,11 @@
 }
 
 % Moon phase diagram — draws a circle showing the lunar phase
-% #1 = x, #2 = y, #3 = phase (0=new, 4=first quarter, 8=full, 12=third quarter)
-\newcommand{\drawmoonphase}[3]{%
-  \begin{scope}[shift={(#1,#2)}]
-    \pgfmathtruncatemacro{\p}{#3}%
+% Optional #1 = label override (default: auto day-pair from phase)
+% #2 = x, #3 = y, #4 = phase (0=new, 4=first quarter, 8=full, 12=third quarter)
+\newcommand{\drawmoonphase}[4][]{%
+  \begin{scope}[shift={(#2,#3)}]
+    \pgfmathtruncatemacro{\p}{#4}%
     \fill[lenormandblack!80] (0,0) circle (3mm);
     \ifnum\p=8
       \fill[lenormandwhite] (0,0) circle (3mm);
@@ -1367,8 +1368,10 @@
       \fill[lenormandwhite] (0, 3mm) arc(90:270:3mm) arc(-90:90:\tx mm and 3mm);
     \fi\fi
     \draw[lenormandblack!60, thin] (0,0) circle (3mm);
+    % Label: new=0 and full=15 are singletons; all others are day-pairs (e.g. 1/2, 16/17).
+    % Optional arg overrides the default (e.g. [30/0] for the Knight of Pentacles).
     \node[anchor=north, text=black, font=\cardfont\fontsize{9}{10}\selectfont]
-      at (0, -3.2mm) {#3};
+      at (0, -3.2mm) {\ifx\relax#1\relax\ifcase#4 0\or 1/2\or 3/4\or 5/6\or 7/8\or 9/10\or 11/12\or 13/14\or 15\or 16/17\or 18/19\or 20/21\or 22/23\or 24/25\or 26/27\or 28/29\fi\else#1\fi};
   \end{scope}%
 }
 

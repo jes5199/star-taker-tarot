@@ -461,6 +461,8 @@
   \coordinate (cardNE) at (0, 100mm);
   \coordinate (cardNW) at (-58.3mm, 100mm);
   \coordinate (cardN)  at (-29.15mm, 100mm);
+  \coordinate (cardE)  at (0, 50mm);
+  \coordinate (cardW)  at (-58.3mm, 50mm);
   \coordinate (cardC)  at (-29.15mm, 50mm);
   \coordinate (cardSW) at (-58.3mm, 0mm);
   \coordinate (cardSE) at (0mm, 0mm);
@@ -494,6 +496,26 @@
   \draw[annotline, cyan!60!black]
     ([xshift=6mm, yshift=-17mm]cardNE) node[annot, anchor=west] {Planet's exaltation}
     -- (-29.15mm, 87.4mm);
+
+  % Planet symbol (♃ at 0.52·cardheight → ~50.5mm scaled)
+  \draw[annotline, orange!80!black]
+    ([xshift=6mm, yshift=28mm]cardE) node[annot, anchor=west] {Planet symbol}
+    -- ([yshift=2mm]cardC);
+
+  % Rider-Waite image (wheel; target well above center to land on the illustration)
+  \draw[annotline, brown!70!black]
+    ([xshift=6mm, yshift=18mm]cardE) node[annot, anchor=west] {Rider-Waite image}
+    -- ([yshift=32mm]cardC);
+
+  % Later Heaven Yang Trigram (Zhèn, left side at ~-51.5mm, 52mm scaled)
+  \draw[annotline, teal!70!black]
+    ([xshift=-6mm, yshift=10mm]cardW) node[annot, anchor=east, align=right] {Later Heaven\\Yang Trigram}
+    -- ([xshift=-23mm, yshift=2mm]cardC);
+
+  % Later Heaven Yin Trigram (Xùn, right side at ~-6.8mm, 52mm scaled)
+  \draw[annotline, red!60!black]
+    ([xshift=6mm, yshift=5mm]cardE) node[annot, anchor=west, align=left] {Later Heaven\\Yin Trigram}
+    -- ([xshift=24.5mm, yshift=2mm]cardC);
 
   % Pythagorean Vowel (bottom-left of card, 7mm from left × 100/102.86 ≈ 6.8mm)
   \draw[annotline, orange!70!black]
