@@ -651,7 +651,75 @@
   \courtattrib{0.52\cardheight-35mm}{direct}{♀}{Venus}{♎}{Libra}
   \chakrastack{5}
   \lunarstack{5}{reclaims}
-  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{5}}
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{5}
+  % Four hexagrams along the bottom, King Wen 21-24, alternating outlined (white) / filled (black)
+  % Same sizing/spacing as prior court cards: 4mm wide, centers 18/26/34/42 at y=7mm
+  % ䷔ Shì Hé (Biting Through) — outlined
+  \begin{scope}[shift={(18mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {1,0,0,1,0,1} {%
+      \ifnum\type=1
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \else
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
+        \fill[white, draw=black, line width=0.15mm]
+          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 3mm) {Shì Kè};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
+      at (0, -3mm) {Biting\\Through};
+  \end{scope}
+  % ䷕ Bì (Grace) — filled
+  \begin{scope}[shift={(26mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {1,0,1,0,0,1} {%
+      \ifnum\type=1
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \else
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
+        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 3mm) {Bì};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
+      at (0, -3mm) {Grace};
+  \end{scope}
+  % ䷖ Bō (Splitting Apart) — outlined
+  \begin{scope}[shift={(34mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {0,0,0,0,0,1} {%
+      \ifnum\type=1
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \else
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
+        \fill[white, draw=black, line width=0.15mm]
+          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 3mm) {Bō};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
+      at (0, -3mm) {Splitting\\Apart};
+  \end{scope}
+  % ䷗ Fù (Return) — filled
+  \begin{scope}[shift={(42mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {1,0,0,0,0,0} {%
+      \ifnum\type=1
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \else
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
+        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 3mm) {Fù};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
+      at (0, -3mm) {Return};
+  \end{scope}}
 ]{images/c-14}{King of Cups}%
 }
 
@@ -1098,7 +1166,75 @@
   \courtattrib{0.52\cardheight-35mm}{direct}{♄}{Saturn}{♒}{Aquarius}
   \chakrastack{1}
   \lunarstack{1}{reclaims}
-  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{1}}
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{1}
+  % Four hexagrams along the bottom, King Wen 5-8, alternating outlined (white) / filled (black)
+  % Tighter-packed variant: 4mm wide, centers at x=15/25/35/45 (10mm spacing)
+  % ䷄ Xū (Waiting) — outlined
+  \begin{scope}[shift={(18mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {1,1,1,0,1,0} {%
+      \ifnum\type=1
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \else
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
+        \fill[white, draw=black, line width=0.15mm]
+          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 3mm) {Xū};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
+      at (0, -3mm) {Waiting};
+  \end{scope}
+  % ䷅ Sòng (Conflict) — filled
+  \begin{scope}[shift={(26mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {0,1,0,1,1,1} {%
+      \ifnum\type=1
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \else
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
+        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 3mm) {Sòng};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
+      at (0, -3mm) {Conflict};
+  \end{scope}
+  % ䷆ Shī (The Army) — outlined
+  \begin{scope}[shift={(34mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {0,1,0,0,0,0} {%
+      \ifnum\type=1
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \else
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
+        \fill[white, draw=black, line width=0.15mm]
+          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 3mm) {Shī};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
+      at (0, -3mm) {The Army};
+  \end{scope}
+  % ䷇ Bǐ (Holding Together) — filled
+  \begin{scope}[shift={(42mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {0,0,0,0,1,0} {%
+      \ifnum\type=1
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \else
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
+        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 3mm) {Bǐ};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
+      at (0, -3mm) {Holding\\Together};
+  \end{scope}}
 ]{images/p-11}{Page of Pentacles}%
 }
 
@@ -1119,7 +1255,7 @@
     at (0.5\cardwidth, 0.52\cardheight-42mm) {राहु};
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-48mm) {Head of the Dragon};
-  \drawmoonphase[30/0]{\cardwidth-5mm}{\cardheight-6mm}{0}
+  \drawmoonphase[\underline{30}/0]{\cardwidth-5mm}{\cardheight-6mm}{0}
   % Kūn trigram (Earth) — under new moon icon
   \begin{scope}[shift={(\cardwidth-5mm,\cardheight-22mm)}, line width=1mm, line cap=butt]
     \draw (-2.5mm,3mm) -- (-0.6mm,3mm); \draw (0.6mm,3mm) -- (2.5mm,3mm);
@@ -1129,7 +1265,7 @@
     \node[below, font=\cardfont\fontsize{5}{6}\selectfont] at (0,-3.5mm) {Earth};
   \end{scope}
   % Upper hexagram (䷃ Méng / Youthful Folly, pattern 0,1,0,0,0,1) — rendered all-filled (pip-card "inside decan" style)
-  \begin{scope}[shift={(\cardwidth-5mm, 52mm)}, line cap=butt]
+  \begin{scope}[shift={(\cardwidth-5mm, 60mm)}, line cap=butt]
     \foreach \type [count=\i from 0] in {0,1,0,0,0,1} {%
       \ifnum\type=1
         \draw[line width=0.6mm] (-3mm, \i*1.5mm-3.75mm) -- (3mm, \i*1.5mm-3.75mm);
@@ -1138,9 +1274,13 @@
         \draw[line width=0.6mm] (0.5mm, \i*1.5mm-3.75mm) -- (3mm, \i*1.5mm-3.75mm);
       \fi
     }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 4.5mm) {Méng};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
+      at (0, -4.5mm) {Youthful\\Folly};
   \end{scope}
   % Lower hexagram (䷂ Zhūn / Sprouting, pattern 1,0,0,0,1,0) — rendered all-outlined (pip-card "outside decan" style)
-  \begin{scope}[shift={(\cardwidth-5mm, 26mm)}, line cap=butt]
+  \begin{scope}[shift={(\cardwidth-5mm, 38mm)}, line cap=butt]
     \foreach \type [count=\i from 0] in {1,0,0,0,1,0} {%
       \ifnum\type=1
         \fill[white, draw=black, line width=0.2mm]
@@ -1152,6 +1292,10 @@
           (0.5mm, \i*1.5mm-3.75mm-0.3mm) rectangle (3mm, \i*1.5mm-3.75mm+0.3mm);
       \fi
     }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 4.5mm) {Zhūn};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
+      at (0, -4.5mm) {Sprouting};
   \end{scope}}
 ]{images/p-12}{Knight of Pentacles}%
 }
@@ -1194,6 +1338,74 @@
     \draw (-2.5mm,-3mm) -- (2.5mm,-3mm);
     \node[above, font=\cardfont\fontsize{7}{8}\selectfont] at (0,3.5mm) {Duì};
     \node[below, font=\cardfont\fontsize{5}{6}\selectfont] at (0,-3.5mm) {Lake};
+  \end{scope}
+  % Four hexagrams along the bottom, King Wen 17-20, alternating outlined (white) / filled (black)
+  % Same sizing/spacing as prior court cards: 4mm wide, centers 18/26/34/42 at y=7mm
+  % ䷐ Suí (Following) — outlined
+  \begin{scope}[shift={(18mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {1,0,0,1,1,0} {%
+      \ifnum\type=1
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \else
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
+        \fill[white, draw=black, line width=0.15mm]
+          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 3mm) {Suí};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
+      at (0, -3mm) {Following};
+  \end{scope}
+  % ䷑ Gǔ (Correcting) — filled
+  \begin{scope}[shift={(26mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {0,1,1,0,0,1} {%
+      \ifnum\type=1
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \else
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
+        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 3mm) {Gǔ};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
+      at (0, -3mm) {Correcting};
+  \end{scope}
+  % ䷒ Lín (Approach) — outlined
+  \begin{scope}[shift={(34mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {1,1,0,0,0,0} {%
+      \ifnum\type=1
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \else
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
+        \fill[white, draw=black, line width=0.15mm]
+          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 3mm) {Lín};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
+      at (0, -3mm) {Approach};
+  \end{scope}
+  % ䷓ Guān (Contemplation) — filled
+  \begin{scope}[shift={(42mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {0,0,0,0,1,1} {%
+      \ifnum\type=1
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \else
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
+        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 3mm) {Guān};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
+      at (0, -3mm) {Contemplation};
   \end{scope}}
 ]{images/p-13}{Queen of Pentacles}%
 }
@@ -1265,7 +1477,7 @@
   \pentadlane{5}{蟄蟲壞戶}{Zhé chóng huài hù}{Insects Seal Burrows}
   % Hexagrams
   \hexagram{3}{1,0,1,0,0,1}{0}{0}{Bì}{Grace}
-  \hexagram{8}{0,0,0,1,1,0}{0}{2}{Guān}{Contemplation}
+  \hexagram{8}{0,0,0,0,1,1}{0}{2}{Guān}{Contemplation}
   \chinesecardmarks{二}{十}}]{images/s-02}{Two of Swords}%
 }
 
@@ -1305,7 +1517,7 @@
   \pentadlane{0}{水始涸}{Shuǐ shǐ hé}{Waters Dry Up}
   \pentadlane{5}{鴻雁來賓}{Hóngyàn lái bīn}{Wild Geese Arrive}
   % Hexagrams
-  \hexagram{1}{0,0,0,1,1,0}{4}{0}{Guān}{Contemplation}
+  \hexagram{1}{0,0,0,0,1,1}{4}{0}{Guān}{Contemplation}
   \hexagram{5}{1,1,0,1,0,0}{0}{0}{Guī Mèi}{Marrying\\Maiden}
   \hexagram{9}{1,0,0,1,1,1}{0}{4}{Wú Wàng}{Innocence}}]{images/s-03}{Three of Swords}%
 }
@@ -1717,6 +1929,74 @@
     \draw (-2.5mm,-3mm) -- (2.5mm,-3mm);
     \node[above, font=\cardfont\fontsize{7}{8}\selectfont] at (0,3.5mm) {Zhèn};
     \node[below, font=\cardfont\fontsize{5}{6}\selectfont] at (0,-3.5mm) {Thunder};
+  \end{scope}
+  % Four hexagrams along the bottom, King Wen 9-12, alternating outlined (white) / filled (black)
+  % Same sizing/spacing as Page of Pentacles: 4mm wide, centers 18/26/34/42 at y=7mm
+  % ䷈ Xiǎo Xù (Small Taming) — outlined
+  \begin{scope}[shift={(18mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {1,1,1,0,1,1} {%
+      \ifnum\type=1
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \else
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
+        \fill[white, draw=black, line width=0.15mm]
+          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 3mm) {Xiǎo Chù};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
+      at (0, -3mm) {Small\\Taming};
+  \end{scope}
+  % ䷉ Lǚ (Treading) — filled
+  \begin{scope}[shift={(26mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {1,1,0,1,1,1} {%
+      \ifnum\type=1
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \else
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
+        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 3mm) {Lǚ};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
+      at (0, -3mm) {Treading};
+  \end{scope}
+  % ䷊ Tài (Peace) — outlined
+  \begin{scope}[shift={(34mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {1,1,1,0,0,0} {%
+      \ifnum\type=1
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \else
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
+        \fill[white, draw=black, line width=0.15mm]
+          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 3mm) {Tài};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
+      at (0, -3mm) {Peace};
+  \end{scope}
+  % ䷋ Pǐ (Standstill) — filled
+  \begin{scope}[shift={(42mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {0,0,0,1,1,1} {%
+      \ifnum\type=1
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \else
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
+        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 3mm) {Pǐ};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
+      at (0, -3mm) {Standstill};
   \end{scope}}
 ]{images/s-11}{Page of Swords}%
 }
@@ -1789,7 +2069,75 @@
   \courtattrib{0.52\cardheight-35mm}{direct}{♂}{Mars}{♈}{Aries}
   \chakrastack{3}
   \lunarstack{3}{reclaims}
-  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{3}}
+  \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{3}
+  % Four hexagrams along the bottom, King Wen 13-16, alternating outlined (white) / filled (black)
+  % Same sizing/spacing as Page of Pentacles / Page of Swords: 4mm wide, centers 18/26/34/42 at y=7mm
+  % ䷌ Tóng Rén (Fellowship) — outlined
+  \begin{scope}[shift={(18mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {1,0,1,1,1,1} {%
+      \ifnum\type=1
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \else
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
+        \fill[white, draw=black, line width=0.15mm]
+          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 3mm) {Tóng Rén};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
+      at (0, -3mm) {Fellowship};
+  \end{scope}
+  % ䷍ Dà Yǒu (Great Possession) — filled
+  \begin{scope}[shift={(26mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {1,1,1,1,0,1} {%
+      \ifnum\type=1
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \else
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
+        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 3mm) {Dà Yǒu};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
+      at (0, -3mm) {Great\\Possession};
+  \end{scope}
+  % ䷎ Qiān (Modesty) — outlined
+  \begin{scope}[shift={(34mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {0,0,1,0,0,0} {%
+      \ifnum\type=1
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \else
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
+        \fill[white, draw=black, line width=0.15mm]
+          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 3mm) {Qiān};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
+      at (0, -3mm) {Modesty};
+  \end{scope}
+  % ䷏ Yù (Enthusiasm) — filled
+  \begin{scope}[shift={(42mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {0,0,0,1,0,0} {%
+      \ifnum\type=1
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \else
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
+        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 3mm) {Yù};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{5}\selectfont, align=center]
+      at (0, -3mm) {Enthusiasm};
+  \end{scope}}
 ]{images/s-14}{King of Swords}%
 }
 

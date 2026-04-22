@@ -1371,7 +1371,7 @@
     % Label: new=0 and full=15 are singletons; all others are day-pairs (e.g. 1/2, 16/17).
     % Optional arg overrides the default (e.g. [30/0] for the Knight of Pentacles).
     \node[anchor=north, text=black, font=\cardfont\fontsize{9}{10}\selectfont]
-      at (0, -3.2mm) {\ifx\relax#1\relax\ifcase#4 0\or 1/2\or 3/4\or 5/6\or 7/8\or 9/10\or 11/12\or 13/14\or 15\or 16/17\or 18/19\or 20/21\or 22/23\or 24/25\or 26/27\or 28/29\fi\else#1\fi};
+      at (0, -3.2mm) {\ifx\relax#1\relax\ifcase#4 0\or 1/2\or \underline{3}/4\or 5/6\or 7/\underline{8}\or 9/10\or 11/12\or 13/14\or \underline{15}\or \underline{16}/17\or 18/19\or 20/21\or 22/\underline{23}\or 24/25\or 26/27\or 28/29\fi\else#1\fi};
   \end{scope}%
 }
 
