@@ -410,65 +410,65 @@
     ([xshift=6mm, yshift=2mm]cardNE) node[annot, anchor=west, align=left] {Hebrew simple letter\\(Golden Dawn)}
     -- ([xshift=-4mm, yshift=-4mm]cardNE);
 
-  % Rider-Waite image (upper-middle of card)
-  \draw[annotline, brown!70!black]
-    ([xshift=6mm, yshift=22mm]cardE) node[annot, anchor=west] {Rider-Waite image}
-    -- ([yshift=28mm]cardC);
-
-  % Tidal hexagram, left edge (Gòu)
-  \draw[annotline, teal!70!black]
-    ([xshift=-6mm, yshift=6mm]cardW) node[annot, anchor=east, align=right] {Tidal hexagram\\(prior sign → this)}
-    -- ([xshift=-52mm, yshift=2mm]cardC);
-
-  % Tidal hexagram, right edge (Dùn)
-  \draw[annotline, red!60!black]
-    ([xshift=6mm, yshift=10mm]cardE) node[annot, anchor=west, align=left] {Tidal hexagram\\(this sign → next)}
-    -- ([xshift=28mm, yshift=2mm]cardC);
-
-  % Zodiac symbol (♋ large glyph in middle)
-  \draw[annotline, orange!80!black]
-    ([xshift=-6mm, yshift=-6mm]cardW) node[annot, anchor=east] {Zodiac symbol}
-    -- ([xshift=-18mm, yshift=2mm]cardC);
-
-  % Sign name ("Cancer")
-  \draw[annotline, purple!70!black]
-    ([xshift=6mm, yshift=-3mm]cardE) node[annot, anchor=west] {Sign name}
-    -- (-20mm, 24.3mm);
-
-  % Decan rulers (3 planets at ~11.7mm scaled)
-  \draw[annotline, olive!70!black]
-    ([xshift=-6mm, yshift=-18mm]cardW) node[annot, anchor=east, align=right] {Decan rulers\\(Chaldean order)}
-    -- (-40mm, 11.7mm);
-
-  % Triplicity rulers (water: Venus/Mars/Moon)
-  \draw[annotline, cyan!60!black]
-    ([xshift=6mm, yshift=-18mm]cardE) node[annot, anchor=west, align=left] {Triplicity rulers\\(day/night/partic.)}
-    -- (-18mm, 12.7mm);
-
-  % Domicile / ruling planet ("Domicile of ☽ Moon" row at top-of-bottom)
+  % Domicile / ruler ("Domicile of ☽ Moon" text, y=90.25 scaled)
   \draw[annotline, pink!70!black]
-    ([xshift=6mm, yshift=25mm]cardSE) node[annot, anchor=west] {Domicile / ruler}
-    -- (-15mm, 9.8mm);
+    ([xshift=6mm, yshift=-8mm]cardNE) node[annot, anchor=west] {Domicile / ruler}
+    -- (-22mm, 90mm);
 
-  % Modality + element ("cardinal water")
+  % Modality \& element ("cardinal water" label, y≈88 scaled)
   \draw[annotline, violet!70!black]
-    ([xshift=-6mm, yshift=22mm]cardSW) node[annot, anchor=east] {Modality \& element}
-    -- (-40mm, 6.6mm);
+    ([xshift=-6mm, yshift=-6mm]cardNW) node[annot, anchor=east] {Modality \& element}
+    -- (-38mm, 88mm);
 
-  % Modality alchemical glyph (sulfur for cardinal)
+  % Modality alchemical glyph (sulfur at (-32.55, 84.43) scaled)
   \draw[annotline, magenta!70!black]
-    (-46mm, -5mm) node[annot, anchor=north east, align=right] {Modality glyph\\(sulfur)}
-    -- (-33mm, 4mm);
+    ([xshift=-6mm, yshift=-14mm]cardNW) node[annot, anchor=east, align=right] {Modality glyph\\(sulfur)}
+    -- (-34.55mm, 84.43mm);
 
-  % Element alchemical glyph (water)
+  % Element alchemical glyph (water at (-25.75, 84.43) scaled)
   \draw[annotline, blue!60!black]
-    (-12mm, -5mm) node[annot, anchor=north west, align=left] {Element glyph\\(water)}
-    -- (-26mm, 4mm);
+    ([xshift=6mm, yshift=-14mm]cardNE) node[annot, anchor=west, align=left] {Element glyph\\(water)}
+    -- (-23.75mm, 84.43mm);
 
-  % Solar terms (bottom of card, at y ~= 29mm scaled)
+  % Rider-Waite image (illustration in upper-middle of card)
+  \draw[annotline, brown!70!black]
+    ([xshift=6mm, yshift=18mm]cardE) node[annot, anchor=west] {Rider-Waite image}
+    -- (-15mm, 70mm);
+
+  % Tidal hexagram, LEFT edge (Gòu, drawn at scaled x=-58.3, y=50)
+  \draw[annotline, teal!70!black]
+    ([xshift=-6mm, yshift=8mm]cardW) node[annot, anchor=east, align=right] {Tidal hexagram\\(prior sign → this)}
+    -- ([xshift=3mm]cardW);
+
+  % Tidal hexagram, RIGHT edge (Dùn, drawn at scaled x=0, y=50)
+  \draw[annotline, red!60!black]
+    ([xshift=6mm, yshift=8mm]cardE) node[annot, anchor=west, align=left] {Tidal hexagram\\(this sign → next)}
+    -- ([xshift=-3mm]cardE);
+
+  % Zodiac symbol (♋ large glyph at center, (-29.15, 52) scaled)
+  \draw[annotline, orange!80!black]
+    ([xshift=-6mm, yshift=-4mm]cardW) node[annot, anchor=east] {Zodiac symbol}
+    -- ([yshift=2mm]cardC);
+
+  % Sign name ("Cancer" at (-29.15, 28.7) scaled)
+  \draw[annotline, purple!70!black]
+    ([xshift=6mm, yshift=-20mm]cardE) node[annot, anchor=west] {Sign name}
+    -- (-29.15mm, 28.7mm);
+
+  % Triplicity rulers (water: Venus/Mars/Moon at y=17.48 scaled)
+  \draw[annotline, cyan!60!black]
+    ([xshift=6mm, yshift=20mm]cardSE) node[annot, anchor=west, align=left] {Triplicity rulers\\(day/night/partic.)}
+    -- (-19mm, 17.48mm);
+
+  % Decan rulers (Chaldean order, y=11.37 scaled)
+  \draw[annotline, olive!70!black]
+    ([xshift=-6mm, yshift=18mm]cardSW) node[annot, anchor=east, align=right] {Decan rulers\\(Chaldean order)}
+    -- (-39mm, 11.37mm);
+
+  % Solar terms (kanji at bottom edge, y≈4.4 scaled)
   \draw[annotline, gray!60!black]
     (-29.15mm, -13mm) node[annot, anchor=north] {Solar terms}
-    -- (-29.15mm, 30mm);
+    -- (-29.15mm, 4.4mm);
 }
 \end{center}
 
