@@ -1,0 +1,53 @@
+% Star Taker Tarot — Oracle, Lunar
+% 30 cards, one per page; black page bleed, white moon phase, day number top-left.
+\documentclass{article}
+\usepackage[paperwidth=60mm, paperheight=102.86mm, margin=0mm]{geometry}
+\usepackage{tikz}
+\usepackage{fontspec}
+
+\input{cards-preamble}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% \drawlunarday{d}{r} — draws a moon phase for lunar day d (1-30) at radius r mm.
+% d=1..14 : waxing, right side lit
+% d=15    : full moon
+% d=16..29: waning, left side lit
+% d=30    : new moon (thin white outline so it's visible on the black page)
+\newcommand{\drawlunarday}[2]{%
+  \pgfmathsetmacro{\r}{#2}%
+  \pgfmathtruncatemacro{\d}{#1}%
+  \ifnum\d=30
+    \draw[white, line width=0.3mm] (0,0) circle (\r mm);
+  \else
+    \ifnum\d=15
+      \fill[white] (0,0) circle (\r mm);
+    \else
+      \ifnum\d<15
+        \pgfmathsetmacro{\tx}{\r * cos(\d * 12)}%
+        \fill[white] (0,\r mm) arc(90:-90:\r mm) arc(-90:90:\tx mm and \r mm);
+      \else
+        \pgfmathsetmacro{\tx}{-\r * cos(\d * 12)}%
+        \fill[white] (0,\r mm) arc(90:270:\r mm) arc(-90:90:\tx mm and \r mm);
+      \fi
+    \fi
+  \fi
+}
+
+\begin{document}
+
+\foreach \day in {1,...,30}{%
+  \noindent\begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle (60mm, 102.86mm);
+    \fill[black] (0,0) rectangle (60mm, 102.86mm);
+    \begin{scope}[shift={(30mm, 55mm)}]
+      \drawlunarday{\day}{20}
+    \end{scope}
+    \node[anchor=north west, text=white, font=\cardfont\fontsize{20}{22}\selectfont]
+      at (5mm, 97.86mm) {\day};
+  \end{tikzpicture}%
+  \newpage
+}
+
+\end{document}

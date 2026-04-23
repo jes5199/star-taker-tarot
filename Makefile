@@ -11,7 +11,7 @@ LUALATEX = lualatex -interaction=nonstopmode
 DEPS = cards-preamble.tex card-defs.tex
 
 # Main targets
-all: book.pdf cards.pdf singles.pdf dark.pdf print.pdf cardback.pdf pamphlet-book.pdf pngs
+all: book.pdf cards.pdf singles.pdf dark.pdf print.pdf cardback.pdf pamphlet-book.pdf oracle-lunar.pdf pngs
 
 # Book (requires two passes for TOC)
 book.pdf: book.tex book-cards.tex $(DEPS)
@@ -44,6 +44,10 @@ pamphlet.pdf: pamphlet.tex $(DEPS)
 
 pamphlet-book.pdf: pamphlet.pdf
 	pdfbook2 --paper=letterpaper --short-edge pamphlet.pdf
+
+# Oracle, Lunar — 30 cards, one moon phase per page
+oracle-lunar.pdf: oracle-lunar.tex $(DEPS)
+	-$(LUALATEX) oracle-lunar.tex
 
 # Individual card PDFs + PNGs
 pngs: singles.pdf
