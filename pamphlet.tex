@@ -157,7 +157,48 @@
 
 \newpage
 
-% Page 3 — Cosmological diagram
+% Page 3 — Zodiac signs with elemental correspondences
+\newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=8mm, top=10mm, bottom=12mm}
+
+\begin{center}
+{\cardfont\fontsize{18}{22}\selectfont Zodiac \& Elements}
+\end{center}
+
+\vspace{10mm}
+
+\begin{center}
+\begin{tikzpicture}
+  % Zodiac signs at radius 38mm, sized larger than on cosmological diagram.
+  % Each sign is paired with its triplicity element at radius 57mm.
+  % Colors match the cosmological diagram's rainbow zodiac ring.
+  % Element glyphs are colored per element: fire=red, earth=green!50!black,
+  % air=yellow!80!orange, water=blue (same palette as cosmological square).
+  \foreach \sym/\col/\ang/\xs/\elem/\ecol in {%
+    ♈/red/0/1/\tinyfire/red,%
+    ♉/red!50!orange/30/1/\tinyearth/green!50!black,%
+    ♊/orange/60/1/\tinyair/yellow!80!orange,%
+    ♋/yellow!50!orange/90/1/\tinywater/blue,%
+    ♌/yellow!80!orange/120/1/\tinyfire/red,%
+    ♍/yellow!50!green/150/0.78/\tinyearth/green!50!black,%
+    ♎/green!70!black/180/1/\tinyair/yellow!80!orange,%
+    ♏/blue!50!green/210/0.73/\tinywater/blue,%
+    ♐/blue/240/1/\tinyfire/red,%
+    ♑/blue!50!violet/270/1/\tinyearth/green!50!black,%
+    ♒/violet/300/1/\tinyair/yellow!80!orange,%
+    ♓/red!50!violet/330/1/\tinywater/blue}{%
+    \node[anchor=center, text=\col,
+          font=\symbserif\fontsize{36}{40}\selectfont, xscale=\xs]
+      at ({38mm*cos(\ang)}, {38mm*sin(\ang)}) {\sym};
+    \node[anchor=center, text=\ecol]
+      at ({57mm*cos(\ang)}, {57mm*sin(\ang)}) {\scalebox{2.8}{\elem}};
+  }
+\end{tikzpicture}
+\end{center}
+
+\restoregeometry
+\newpage
+
+% Page 4 — Cosmological diagram
 \newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=5mm}
 \centering
 \begin{tikzpicture}[scale=0.95, every node/.style={scale=0.95}]
@@ -596,18 +637,21 @@
       \draw[lenormandblack!60, thin] (0,0) circle (3mm);
     \end{scope}
   }
-  % 4 nàjiǎ trigrams paired with moon phases on court cards, just outside
-  % the 16-moon ring. Kūn (☷, new/phase 0) and Qián (☰, full/phase 8) are
-  % omitted per spec. Pattern (top,mid,bot): 1 = yang (solid), 0 = yin (broken).
-  %   Zhèn ☳ phase 2  (0,0,1) Thunder    — lower-left  (waxing crescent)
-  %   Duì  ☱ phase 4  (0,1,1) Lake       — left        (first quarter)
-  %   Xùn  ☴ phase 9  (1,1,0) Wind       — upper-right (waning gibbous)
-  %   Gèn  ☶ phase 12 (1,0,0) Mountain   — right       (third quarter)
-  \foreach \p/\top/\mid/\bot/\py/\en in {%
-    2/0/0/1/Zhèn/Thunder,%
-    4/0/1/1/Duì/Lake,%
-    9/1/1/0/Xùn/Wind,%
-    12/1/0/0/Gèn/Mountain}{%
+  % 6 nàjiǎ trigrams paired with moon phases on court cards, just outside
+  % the 16-moon ring. Pattern (top,mid,bot): 1 = yang (solid), 0 = yin (broken).
+  %   Kūn  ☷ phase 0  (0,0,0) — new moon,         bottom (6 o'clock)
+  %   Zhèn ☳ phase 2  (0,0,1) — waxing crescent,  lower-left
+  %   Duì  ☱ phase 4  (0,1,1) — first quarter,    left (9 o'clock)
+  %   Qián ☰ phase 8  (1,1,1) — full moon,        top (12 o'clock)
+  %   Xùn  ☴ phase 9  (1,1,0) — waning gibbous,   upper-right
+  %   Gèn  ☶ phase 12 (1,0,0) — third quarter,    right (3 o'clock)
+  \foreach \p/\top/\mid/\bot in {%
+    0/0/0/0,%
+    2/0/0/1,%
+    4/0/1/1,%
+    8/1/1/1,%
+    9/1/1/0,%
+    12/1/0/0}{%
     \pgfmathsetmacro{\tang}{270 - \p * 22.5}%
     \pgfmathsetmacro{\txp}{53 * cos(\tang)}%
     \pgfmathsetmacro{\typ}{53 * sin(\tang)}%
@@ -627,8 +671,6 @@
       \else
         \draw (-2.5mm, -3mm) -- (-0.6mm, -3mm); \draw (0.6mm, -3mm) -- (2.5mm, -3mm);
       \fi
-      \node[above, font=\cardfont\fontsize{7}{8}\selectfont] at (0, 3.5mm) {\py};
-      \node[below, font=\cardfont\fontsize{5}{6}\selectfont] at (0, -3.5mm) {\en};
     \end{scope}
   }
   % 7 seed syllables stacked in the center (Root → Crown, bottom to top).
@@ -645,8 +687,7 @@
 \restoregeometry
 \newpage
 
-% Pages 6-7 — blank (padding for 8-page booklet)
-\phantom{x}\newpage
+% Page 7 — blank (padding for 8-page booklet)
 \phantom{x}
 
 \newpage
