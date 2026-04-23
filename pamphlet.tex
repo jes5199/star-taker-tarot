@@ -527,15 +527,35 @@
     ([xshift=6mm, yshift=7mm]cardSE) node[annot, anchor=west] {Chakra seed syllable}
     -- (-8.7mm, 6.8mm);
 
-  % Planet name ("Jupiter", at 0.52·cardheight-24mm → ~28.7mm scaled, card-center x)
+  % Planet name ("Jupiter", 17pt text anchored north at ~28.7mm → visual middle ~25.5mm)
   \draw[annotline, purple!70!black]
     ([xshift=-6mm, yshift=-15mm]cardW) node[annot, anchor=east] {Planet name}
-    -- (-32mm, 28.7mm);
+    -- (-32mm, 25.5mm);
 
-  % Planetary joy ("Joy in 11th H. of Good Spirit", at 0.52·cardheight-30mm → ~22.8mm scaled)
+  % Planetary joy ("Joy in 11th H. of Good Spirit", 9pt text top at ~22.8mm → middle ~20mm)
   \draw[annotline, olive!70!black]
     ([xshift=6mm, yshift=-18mm]cardE) node[annot, anchor=west] {Planetary joy}
-    -- (-15mm, 22.8mm);
+    -- (-15mm, 20mm);
+
+  % Modern interpretation ("Abundance", 17pt anchored north at ~18.9mm → middle ~16mm)
+  \draw[annotline, pink!70!black]
+    ([xshift=6mm, yshift=-28mm]cardE) node[annot, anchor=west] {Modern interpretation}
+    -- (-15mm, 16mm);
+
+  % Yang heavenly stem (甲 jiǎ, 10pt anchored north at ~10.7mm → visual middle ~9mm)
+  \draw[annotline, yellow!50!black]
+    (-46mm, -5mm) node[annot, anchor=north east, align=right] {Yang heavenly\\stem}
+    -- (-37.9mm, 9mm);
+
+  % Wuxing element (木 mù — wood, 10pt anchored north at ~10.7mm)
+  \draw[annotline, gray!60!black]
+    (-29.15mm, -13mm) node[annot, anchor=north] {Wuxing element}
+    -- (-29.1mm, 9mm);
+
+  % Yin heavenly stem (乙 yǐ, 10pt anchored north at ~10.7mm)
+  \draw[annotline, blue!40!purple]
+    (-12mm, -5mm) node[annot, anchor=north west, align=left] {Yin heavenly\\stem}
+    -- (-20.4mm, 9mm);
 }
 \end{center}
 
