@@ -173,24 +173,26 @@
   % Colors match the cosmological diagram's rainbow zodiac ring.
   % Element glyphs are colored per element: fire=red, earth=green!50!black,
   % air=yellow!80!orange, water=blue (same palette as cosmological square).
-  \foreach \sym/\col/\ang/\xs/\elem/\ecol in {%
-    ♈/red/0/1/\tinyfire/red,%
-    ♉/red!50!orange/30/1/\tinyearth/green!50!black,%
-    ♊/orange/60/1/\tinyair/yellow!80!orange,%
-    ♋/yellow!50!orange/90/1/\tinywater/blue,%
-    ♌/yellow!80!orange/120/1/\tinyfire/red,%
-    ♍/yellow!50!green/150/0.78/\tinyearth/green!50!black,%
-    ♎/green!70!black/180/1/\tinyair/yellow!80!orange,%
-    ♏/blue!50!green/210/0.73/\tinywater/blue,%
-    ♐/blue/240/1/\tinyfire/red,%
-    ♑/blue!50!violet/270/1/\tinyearth/green!50!black,%
-    ♒/violet/300/1/\tinyair/yellow!80!orange,%
-    ♓/red!50!violet/330/1/\tinywater/blue}{%
+  \foreach \sym/\col/\ang/\xs/\elem/\ecol/\mod/\mcol in {%
+    ♈/red/0/1/\tinyfire/red/\tinysulfur/magenta,%
+    ♉/red!50!orange/30/1/\tinyearth/green!50!black/\tinysalt/cyan,%
+    ♊/orange/60/1/\tinyair/yellow!80!orange/\tinymercury/yellow,%
+    ♋/yellow!50!orange/90/1/\tinywater/blue/\tinysulfur/magenta,%
+    ♌/yellow!80!orange/120/1/\tinyfire/red/\tinysalt/cyan,%
+    ♍/yellow!50!green/150/0.78/\tinyearth/green!50!black/\tinymercury/yellow,%
+    ♎/green!70!black/180/1/\tinyair/yellow!80!orange/\tinysulfur/magenta,%
+    ♏/blue!50!green/210/0.73/\tinywater/blue/\tinysalt/cyan,%
+    ♐/blue/240/1/\tinyfire/red/\tinymercury/yellow,%
+    ♑/blue!50!violet/270/1/\tinyearth/green!50!black/\tinysulfur/magenta,%
+    ♒/violet/300/1/\tinyair/yellow!80!orange/\tinysalt/cyan,%
+    ♓/red!50!violet/330/1/\tinywater/blue/\tinymercury/yellow}{%
     \node[anchor=center, text=\col,
           font=\symbserif\fontsize{36}{40}\selectfont, xscale=\xs]
       at ({38mm*cos(\ang)}, {38mm*sin(\ang)}) {\sym};
     \node[anchor=center, text=\ecol]
       at ({57mm*cos(\ang)}, {57mm*sin(\ang)}) {\scalebox{2.8}{\elem}};
+    \node[anchor=center, text=\mcol]
+      at ({25mm*cos(\ang)}, {25mm*sin(\ang)}) {\scalebox{1.6}{\mod}};
   }
 \end{tikzpicture}
 \end{center}
@@ -198,7 +200,144 @@
 \restoregeometry
 \newpage
 
-% Page 4 — Cosmological diagram
+% Page 4 — Seven Planets
+\restoregeometry
+\newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=12mm, top=10mm, bottom=12mm}
+
+\begin{center}
+{\cardfont\fontsize{18}{22}\selectfont Seven Planets}
+\end{center}
+
+\vspace{2mm}
+
+% Seven planet cards in Chaldean order: Saturn, Jupiter, Mars, Sun, Venus, Mercury, Moon
+\begin{center}
+\resizebox{!}{24mm}{\cardAtwentyone}%
+\hspace{1.5mm}%
+\resizebox{!}{24mm}{\cardAten}%
+\hspace{1.5mm}%
+\resizebox{!}{24mm}{\cardAsixteen}%
+\hspace{1.5mm}%
+\resizebox{!}{24mm}{\cardAnineteen}%
+\hspace{1.5mm}%
+\resizebox{!}{24mm}{\cardAthree}%
+\hspace{1.5mm}%
+\resizebox{!}{24mm}{\cardAone}%
+\hspace{1.5mm}%
+\resizebox{!}{24mm}{\cardAtwo}%
+\end{center}
+
+\vspace{8mm}
+
+% Jupiter (Wheel of Fortune) large in center with annotations
+\begin{center}
+\resizebox{!}{100mm}{\cardAten}%
+\tikz[remember picture, overlay] {
+  \coordinate (cardNE) at (0, 100mm);
+  \coordinate (cardNW) at (-58.3mm, 100mm);
+  \coordinate (cardN)  at (-29.15mm, 100mm);
+  \coordinate (cardE)  at (0, 50mm);
+  \coordinate (cardW)  at (-58.3mm, 50mm);
+  \coordinate (cardC)  at (-29.15mm, 50mm);
+  \coordinate (cardSW) at (-58.3mm, 0mm);
+  \coordinate (cardSE) at (0mm, 0mm);
+
+  \tikzset{
+    annot/.style={font=\fontsize{8}{10}\selectfont, text=black},
+    annotline/.style={thick, -{Stealth[length=2mm]}},
+  }
+
+  % Major Arcana number
+  \draw[annotline, red!70!black]
+    ([xshift=-6mm, yshift=2mm]cardNW) node[annot, anchor=east] {Major Arcana number}
+    -- ([xshift=4mm, yshift=-4mm]cardNW);
+
+  % Card name
+  \draw[annotline, green!50!black]
+    ([xshift=8mm, yshift=3mm]cardN) node[annot, anchor=south] {Card name}
+    -- ([yshift=-3mm]cardN);
+
+  % Hebrew double-letter (Golden Dawn)
+  \draw[annotline, blue!70!black]
+    ([xshift=6mm, yshift=2mm]cardNE) node[annot, anchor=west, align=left] {Hebrew double-letter\\(Golden Dawn)}
+    -- ([xshift=-4mm, yshift=-4mm]cardNE);
+
+  % Hellenistic sect ("Benefic of Day", centered at \cardheight-6mm → 94.2mm scaled)
+  \draw[annotline, teal!70!black]
+    ([xshift=6mm, yshift=-9mm]cardNE) node[annot, anchor=west] {Hellenistic sect}
+    -- (-29.15mm, 91.7mm);
+
+  % Planet's exaltation ("exalted in ♋ Cancer", at \cardheight-13mm → 87.4mm scaled)
+  \draw[annotline, cyan!60!black]
+    ([xshift=6mm, yshift=-17mm]cardNE) node[annot, anchor=west] {Planet's exaltation}
+    -- (-29.15mm, 87.4mm);
+
+  % Planet symbol (♃ at 0.52·cardheight → ~50.5mm scaled)
+  \draw[annotline, orange!80!black]
+    ([xshift=6mm, yshift=28mm]cardE) node[annot, anchor=west] {Planet symbol}
+    -- ([yshift=2mm]cardC);
+
+  % Rider-Waite image (wheel; target well above center to land on the illustration)
+  \draw[annotline, brown!70!black]
+    ([xshift=6mm, yshift=18mm]cardE) node[annot, anchor=west] {Rider-Waite image}
+    -- ([yshift=32mm]cardC);
+
+  % Later Heaven Yang Trigram (Zhèn, left side at ~-51.5mm, 52mm scaled)
+  \draw[annotline, teal!70!black]
+    ([xshift=-6mm, yshift=10mm]cardW) node[annot, anchor=east, align=right] {Later Heaven\\Yang Trigram}
+    -- ([xshift=-23mm, yshift=2mm]cardC);
+
+  % Later Heaven Yin Trigram (Xùn, right side at ~-6.8mm, 52mm scaled)
+  \draw[annotline, red!60!black]
+    ([xshift=6mm, yshift=5mm]cardE) node[annot, anchor=west, align=left] {Later Heaven\\Yin Trigram}
+    -- ([xshift=24.5mm, yshift=2mm]cardC);
+
+  % Pythagorean Vowel (bottom-left of card, 7mm from left × 100/102.86 ≈ 6.8mm)
+  \draw[annotline, orange!70!black]
+    ([xshift=-6mm, yshift=5mm]cardSW) node[annot, anchor=east] {Pythagorean Vowel}
+    -- ([xshift=6.8mm, yshift=4.9mm]cardSW);
+
+  % Chakra seed syllable (bottom-right of card, \cardwidth-9mm × scale ≈ -8.7mm from right)
+  \draw[annotline, violet!70!black]
+    ([xshift=6mm, yshift=7mm]cardSE) node[annot, anchor=west] {Chakra seed syllable}
+    -- (-8.7mm, 6.8mm);
+
+  % Planet name ("Jupiter", 17pt text anchored north at ~28.7mm → visual middle ~25.5mm)
+  \draw[annotline, purple!70!black]
+    ([xshift=-6mm, yshift=-15mm]cardW) node[annot, anchor=east] {Planet name}
+    -- (-32mm, 25.5mm);
+
+  % Planetary joy ("Joy in 11th H. of Good Spirit", 9pt text top at ~22.8mm → middle ~20mm)
+  \draw[annotline, olive!70!black]
+    ([xshift=6mm, yshift=-18mm]cardE) node[annot, anchor=west] {Planetary joy}
+    -- (-15mm, 20mm);
+
+  % Modern interpretation ("Abundance", 17pt anchored north at ~18.9mm → middle ~16mm)
+  \draw[annotline, pink!70!black]
+    ([xshift=6mm, yshift=-28mm]cardE) node[annot, anchor=west] {Modern interpretation}
+    -- (-15mm, 16mm);
+
+  % Yang heavenly stem (甲 jiǎ, 10pt anchored north at ~10.7mm → visual middle ~9mm)
+  \draw[annotline, yellow!50!black]
+    (-46mm, -5mm) node[annot, anchor=north east, align=right] {Yang heavenly\\stem}
+    -- (-37.9mm, 9mm);
+
+  % Wuxing element (木 mù — wood, 10pt anchored north at ~10.7mm)
+  \draw[annotline, gray!60!black]
+    (-29.15mm, -13mm) node[annot, anchor=north] {Wuxing element}
+    -- (-29.1mm, 9mm);
+
+  % Yin heavenly stem (乙 yǐ, 10pt anchored north at ~10.7mm)
+  \draw[annotline, blue!40!purple]
+    (-12mm, -5mm) node[annot, anchor=north west, align=left] {Yin heavenly\\stem}
+    -- (-20.4mm, 9mm);
+}
+\end{center}
+
+\restoregeometry
+\newpage
+
+% Page 5 — Cosmological diagram
 \newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=5mm}
 \centering
 \begin{tikzpicture}[scale=0.95, every node/.style={scale=0.95}]
@@ -464,146 +603,10 @@
 
 \end{tikzpicture}
 
-\newpage
-
-% Page 4 — Seven Planets
-\restoregeometry
-\newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=12mm, top=10mm, bottom=12mm}
-
-\begin{center}
-{\cardfont\fontsize{18}{22}\selectfont Seven Planets}
-\end{center}
-
-\vspace{2mm}
-
-% Seven planet cards in Chaldean order: Saturn, Jupiter, Mars, Sun, Venus, Mercury, Moon
-\begin{center}
-\resizebox{!}{24mm}{\cardAtwentyone}%
-\hspace{1.5mm}%
-\resizebox{!}{24mm}{\cardAten}%
-\hspace{1.5mm}%
-\resizebox{!}{24mm}{\cardAsixteen}%
-\hspace{1.5mm}%
-\resizebox{!}{24mm}{\cardAnineteen}%
-\hspace{1.5mm}%
-\resizebox{!}{24mm}{\cardAthree}%
-\hspace{1.5mm}%
-\resizebox{!}{24mm}{\cardAone}%
-\hspace{1.5mm}%
-\resizebox{!}{24mm}{\cardAtwo}%
-\end{center}
-
-\vspace{8mm}
-
-% Jupiter (Wheel of Fortune) large in center with annotations
-\begin{center}
-\resizebox{!}{100mm}{\cardAten}%
-\tikz[remember picture, overlay] {
-  \coordinate (cardNE) at (0, 100mm);
-  \coordinate (cardNW) at (-58.3mm, 100mm);
-  \coordinate (cardN)  at (-29.15mm, 100mm);
-  \coordinate (cardE)  at (0, 50mm);
-  \coordinate (cardW)  at (-58.3mm, 50mm);
-  \coordinate (cardC)  at (-29.15mm, 50mm);
-  \coordinate (cardSW) at (-58.3mm, 0mm);
-  \coordinate (cardSE) at (0mm, 0mm);
-
-  \tikzset{
-    annot/.style={font=\fontsize{8}{10}\selectfont, text=black},
-    annotline/.style={thick, -{Stealth[length=2mm]}},
-  }
-
-  % Major Arcana number
-  \draw[annotline, red!70!black]
-    ([xshift=-6mm, yshift=2mm]cardNW) node[annot, anchor=east] {Major Arcana number}
-    -- ([xshift=4mm, yshift=-4mm]cardNW);
-
-  % Card name
-  \draw[annotline, green!50!black]
-    ([xshift=8mm, yshift=3mm]cardN) node[annot, anchor=south] {Card name}
-    -- ([yshift=-3mm]cardN);
-
-  % Hebrew double-letter (Golden Dawn)
-  \draw[annotline, blue!70!black]
-    ([xshift=6mm, yshift=2mm]cardNE) node[annot, anchor=west, align=left] {Hebrew double-letter\\(Golden Dawn)}
-    -- ([xshift=-4mm, yshift=-4mm]cardNE);
-
-  % Hellenistic sect ("Benefic of Day", centered at \cardheight-6mm → 94.2mm scaled)
-  \draw[annotline, teal!70!black]
-    ([xshift=6mm, yshift=-9mm]cardNE) node[annot, anchor=west] {Hellenistic sect}
-    -- (-29.15mm, 91.7mm);
-
-  % Planet's exaltation ("exalted in ♋ Cancer", at \cardheight-13mm → 87.4mm scaled)
-  \draw[annotline, cyan!60!black]
-    ([xshift=6mm, yshift=-17mm]cardNE) node[annot, anchor=west] {Planet's exaltation}
-    -- (-29.15mm, 87.4mm);
-
-  % Planet symbol (♃ at 0.52·cardheight → ~50.5mm scaled)
-  \draw[annotline, orange!80!black]
-    ([xshift=6mm, yshift=28mm]cardE) node[annot, anchor=west] {Planet symbol}
-    -- ([yshift=2mm]cardC);
-
-  % Rider-Waite image (wheel; target well above center to land on the illustration)
-  \draw[annotline, brown!70!black]
-    ([xshift=6mm, yshift=18mm]cardE) node[annot, anchor=west] {Rider-Waite image}
-    -- ([yshift=32mm]cardC);
-
-  % Later Heaven Yang Trigram (Zhèn, left side at ~-51.5mm, 52mm scaled)
-  \draw[annotline, teal!70!black]
-    ([xshift=-6mm, yshift=10mm]cardW) node[annot, anchor=east, align=right] {Later Heaven\\Yang Trigram}
-    -- ([xshift=-23mm, yshift=2mm]cardC);
-
-  % Later Heaven Yin Trigram (Xùn, right side at ~-6.8mm, 52mm scaled)
-  \draw[annotline, red!60!black]
-    ([xshift=6mm, yshift=5mm]cardE) node[annot, anchor=west, align=left] {Later Heaven\\Yin Trigram}
-    -- ([xshift=24.5mm, yshift=2mm]cardC);
-
-  % Pythagorean Vowel (bottom-left of card, 7mm from left × 100/102.86 ≈ 6.8mm)
-  \draw[annotline, orange!70!black]
-    ([xshift=-6mm, yshift=5mm]cardSW) node[annot, anchor=east] {Pythagorean Vowel}
-    -- ([xshift=6.8mm, yshift=4.9mm]cardSW);
-
-  % Chakra seed syllable (bottom-right of card, \cardwidth-9mm × scale ≈ -8.7mm from right)
-  \draw[annotline, violet!70!black]
-    ([xshift=6mm, yshift=7mm]cardSE) node[annot, anchor=west] {Chakra seed syllable}
-    -- (-8.7mm, 6.8mm);
-
-  % Planet name ("Jupiter", 17pt text anchored north at ~28.7mm → visual middle ~25.5mm)
-  \draw[annotline, purple!70!black]
-    ([xshift=-6mm, yshift=-15mm]cardW) node[annot, anchor=east] {Planet name}
-    -- (-32mm, 25.5mm);
-
-  % Planetary joy ("Joy in 11th H. of Good Spirit", 9pt text top at ~22.8mm → middle ~20mm)
-  \draw[annotline, olive!70!black]
-    ([xshift=6mm, yshift=-18mm]cardE) node[annot, anchor=west] {Planetary joy}
-    -- (-15mm, 20mm);
-
-  % Modern interpretation ("Abundance", 17pt anchored north at ~18.9mm → middle ~16mm)
-  \draw[annotline, pink!70!black]
-    ([xshift=6mm, yshift=-28mm]cardE) node[annot, anchor=west] {Modern interpretation}
-    -- (-15mm, 16mm);
-
-  % Yang heavenly stem (甲 jiǎ, 10pt anchored north at ~10.7mm → visual middle ~9mm)
-  \draw[annotline, yellow!50!black]
-    (-46mm, -5mm) node[annot, anchor=north east, align=right] {Yang heavenly\\stem}
-    -- (-37.9mm, 9mm);
-
-  % Wuxing element (木 mù — wood, 10pt anchored north at ~10.7mm)
-  \draw[annotline, gray!60!black]
-    (-29.15mm, -13mm) node[annot, anchor=north] {Wuxing element}
-    -- (-29.1mm, 9mm);
-
-  % Yin heavenly stem (乙 yǐ, 10pt anchored north at ~10.7mm)
-  \draw[annotline, blue!40!purple]
-    (-12mm, -5mm) node[annot, anchor=north west, align=left] {Yin heavenly\\stem}
-    -- (-20.4mm, 9mm);
-}
-\end{center}
-
 \restoregeometry
 \newpage
 
-% Page 5 — Lunar Phase Cycle
+% Page 6 — Lunar Phase Cycle
 \newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=12mm, top=10mm, bottom=12mm}
 
 \begin{center}
@@ -645,16 +648,20 @@
   %   Qián ☰ phase 8  (1,1,1) — full moon,        top (12 o'clock)
   %   Xùn  ☴ phase 9  (1,1,0) — waning gibbous,   upper-right
   %   Gèn  ☶ phase 12 (1,0,0) — third quarter,    right (3 o'clock)
-  \foreach \p/\top/\mid/\bot in {%
-    0/0/0/0,%
-    2/0/0/1,%
-    4/0/1/1,%
-    8/1/1/1,%
-    9/1/1/0,%
-    12/1/0/0}{%
-    \pgfmathsetmacro{\tang}{270 - \p * 22.5}%
-    \pgfmathsetmacro{\txp}{53 * cos(\tang)}%
-    \pgfmathsetmacro{\typ}{53 * sin(\tang)}%
+  % Plus the sun/moon polar axis (Lí above Qián, Kǎn below Kūn) at y = ±63mm:
+  %   Lí   ☲ (1,0,1) — sun, above full
+  %   Kǎn  ☵ (0,1,0) — moon, below new
+  \foreach \tang/\trad/\top/\mid/\bot in {%
+    270/53/0/0/0,%
+    225/53/0/0/1,%
+    180/53/0/1/1,%
+    90/53/1/1/1,%
+    67.5/53/1/1/0,%
+    0/53/1/0/0,%
+    90/63/1/0/1,%
+    270/63/0/1/0}{%
+    \pgfmathsetmacro{\txp}{\trad * cos(\tang)}%
+    \pgfmathsetmacro{\typ}{\trad * sin(\tang)}%
     \begin{scope}[shift={(\txp mm, \typ mm)}, line width=1mm, line cap=butt]
       \ifnum\top=1
         \draw (-2.5mm, 3mm) -- (2.5mm, 3mm);
