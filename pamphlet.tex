@@ -596,6 +596,41 @@
       \draw[lenormandblack!60, thin] (0,0) circle (3mm);
     \end{scope}
   }
+  % 4 nàjiǎ trigrams paired with moon phases on court cards, just outside
+  % the 16-moon ring. Kūn (☷, new/phase 0) and Qián (☰, full/phase 8) are
+  % omitted per spec. Pattern (top,mid,bot): 1 = yang (solid), 0 = yin (broken).
+  %   Zhèn ☳ phase 2  (0,0,1) Thunder    — lower-left  (waxing crescent)
+  %   Duì  ☱ phase 4  (0,1,1) Lake       — left        (first quarter)
+  %   Xùn  ☴ phase 9  (1,1,0) Wind       — upper-right (waning gibbous)
+  %   Gèn  ☶ phase 12 (1,0,0) Mountain   — right       (third quarter)
+  \foreach \p/\top/\mid/\bot/\py/\en in {%
+    2/0/0/1/Zhèn/Thunder,%
+    4/0/1/1/Duì/Lake,%
+    9/1/1/0/Xùn/Wind,%
+    12/1/0/0/Gèn/Mountain}{%
+    \pgfmathsetmacro{\tang}{270 - \p * 22.5}%
+    \pgfmathsetmacro{\txp}{53 * cos(\tang)}%
+    \pgfmathsetmacro{\typ}{53 * sin(\tang)}%
+    \begin{scope}[shift={(\txp mm, \typ mm)}, line width=1mm, line cap=butt]
+      \ifnum\top=1
+        \draw (-2.5mm, 3mm) -- (2.5mm, 3mm);
+      \else
+        \draw (-2.5mm, 3mm) -- (-0.6mm, 3mm); \draw (0.6mm, 3mm) -- (2.5mm, 3mm);
+      \fi
+      \ifnum\mid=1
+        \draw (-2.5mm, 0mm) -- (2.5mm, 0mm);
+      \else
+        \draw (-2.5mm, 0mm) -- (-0.6mm, 0mm); \draw (0.6mm, 0mm) -- (2.5mm, 0mm);
+      \fi
+      \ifnum\bot=1
+        \draw (-2.5mm, -3mm) -- (2.5mm, -3mm);
+      \else
+        \draw (-2.5mm, -3mm) -- (-0.6mm, -3mm); \draw (0.6mm, -3mm) -- (2.5mm, -3mm);
+      \fi
+      \node[above, font=\cardfont\fontsize{7}{8}\selectfont] at (0, 3.5mm) {\py};
+      \node[below, font=\cardfont\fontsize{5}{6}\selectfont] at (0, -3.5mm) {\en};
+    \end{scope}
+  }
   % 7 seed syllables stacked in the center (Root → Crown, bottom to top).
   % Sized to match the moons (~6mm glyphs), uniform (no highlight).
   \foreach \syllable [count=\i from 1] in {लं,वं,रं,यं,हं,ॐ} {
