@@ -59,4 +59,25 @@
   \newpage
 }
 
+% 28 Arabic letter cards in Mashriqi manzil-abjad order (see manzil-abjad.txt).
+% Each letter centered in a thin white circle (same radius as moon circles),
+% numbered 1-28 top-left (independent sequence from the moon deck).
+\foreach \n/\letter in {%
+  1/ا,2/ب,3/ج,4/د,5/ه,6/و,7/ز,8/ح,9/ط,10/ي,%
+  11/ك,12/ل,13/م,14/ن,15/س,16/ع,17/ف,18/ص,19/ق,20/ر,%
+  21/ش,22/ت,23/ث,24/خ,25/ذ,26/ض,27/ظ,28/غ}{%
+  \noindent\begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle (60mm, 102.86mm);
+    \fill[black] (0,0) rectangle (60mm, 102.86mm);
+    \begin{scope}[shift={(30mm, 55mm)}]
+      \draw[white, line width=0.3mm] (0,0) circle (20mm);
+      \node[anchor=center, text=white, font=\kufifont\fontsize{60}{66}\selectfont]
+        at (0,0) {\beginR\letter\endR};
+    \end{scope}
+    \node[anchor=north west, text=white, font=\cardfont\fontsize{20}{22}\selectfont]
+      at (5mm, 97.86mm) {\n};
+  \end{tikzpicture}%
+  \newpage
+}
+
 \end{document}
