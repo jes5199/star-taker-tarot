@@ -11,10 +11,9 @@
 \setlength{\parindent}{0pt}
 
 % \drawlunarday{d}{r} — draws a moon phase for lunar day d (1-30) at radius r mm.
-% d=1..14 : waxing, right side lit
-% d=15    : full moon
-% d=16..29: waning, left side lit
-% d=30    : new moon (thin white outline so it's visible on the black page)
+% Checkpoints: day 0/30 = new, 8 = exact first quarter, 15 = full,
+% 23 = exact third quarter. Phase angle is linearly interpolated
+% between these checkpoints (90° per segment) rather than evenly spaced.
 \newcommand{\drawlunarday}[2]{%
   \pgfmathsetmacro{\r}{#2}%
   \pgfmathtruncatemacro{\d}{#1}%
@@ -25,10 +24,20 @@
       \fill[white] (0,0) circle (\r mm);
     \else
       \ifnum\d<15
-        \pgfmathsetmacro{\tx}{\r * cos(\d * 12)}%
+        \ifnum\d<9
+          \pgfmathsetmacro{\ang}{\d * 11.25}%
+        \else
+          \pgfmathsetmacro{\ang}{90 + (\d - 8) * 90/7}%
+        \fi
+        \pgfmathsetmacro{\tx}{\r * cos(\ang)}%
         \fill[white] (0,\r mm) arc(90:-90:\r mm) arc(-90:90:\tx mm and \r mm);
       \else
-        \pgfmathsetmacro{\tx}{-\r * cos(\d * 12)}%
+        \ifnum\d<24
+          \pgfmathsetmacro{\ang}{180 + (\d - 15) * 11.25}%
+        \else
+          \pgfmathsetmacro{\ang}{270 + (\d - 23) * 90/7}%
+        \fi
+        \pgfmathsetmacro{\tx}{-\r * cos(\ang)}%
         \fill[white] (0,\r mm) arc(90:270:\r mm) arc(-90:90:\tx mm and \r mm);
       \fi
     \fi
