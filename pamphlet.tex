@@ -562,8 +562,41 @@
 \restoregeometry
 \newpage
 
-% Pages 5-6 — blank (padding for 8-page booklet)
-\phantom{x}\newpage
+% Page 5 — Lunar Phase Cycle
+\newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=12mm, top=10mm, bottom=12mm}
+
+\begin{center}
+{\cardfont\fontsize{18}{22}\selectfont Lunar Phase Cycle}
+\end{center}
+
+\vspace{12mm}
+
+\begin{center}
+\begin{tikzpicture}
+  % 16 moons at 22.5° spacing around a circle. Phase i at angle 270°-i·22.5°
+  % (clockwise from new at 6 o'clock through first quarter at 9 o'clock,
+  % full at 12, third quarter at 3, back to new).
+  \foreach \i in {0,...,15}{%
+    \pgfmathsetmacro{\ang}{270 - \i * 22.5}%
+    \pgfmathsetmacro{\xp}{45 * cos(\ang)}%
+    \pgfmathsetmacro{\yp}{45 * sin(\ang)}%
+    \drawmoonphase{\xp mm}{\yp mm}{\i}
+  }
+  % 7 seed syllables stacked in the center (Root → Crown, bottom to top).
+  % Same Devanagari rendering as the court-card chakra stack, uniform (no highlight).
+  \foreach \syllable [count=\i from 1] in {लं,वं,रं,यं,हं,ॐ} {
+    \node[anchor=center, text=black, font=\devfont\fontsize{10}{12}\selectfont]
+      at (0, \i*5mm - 20mm) {\syllable};
+  }
+  \node[anchor=center, text=black, font=\devfont\fontsize{10}{12}\selectfont]
+    at (0, 15mm) {०};
+\end{tikzpicture}
+\end{center}
+
+\restoregeometry
+\newpage
+
+% Pages 6-7 — blank (padding for 8-page booklet)
 \phantom{x}\newpage
 \phantom{x}
 
