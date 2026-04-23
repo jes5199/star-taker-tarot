@@ -575,21 +575,35 @@
 \begin{tikzpicture}
   % 16 moons at 22.5° spacing around a circle. Phase i at angle 270°-i·22.5°
   % (clockwise from new at 6 o'clock through first quarter at 9 o'clock,
-  % full at 12, third quarter at 3, back to new).
+  % full at 12, third quarter at 3, back to new). No day-pair labels.
   \foreach \i in {0,...,15}{%
     \pgfmathsetmacro{\ang}{270 - \i * 22.5}%
     \pgfmathsetmacro{\xp}{45 * cos(\ang)}%
     \pgfmathsetmacro{\yp}{45 * sin(\ang)}%
-    \drawmoonphase{\xp mm}{\yp mm}{\i}
+    \begin{scope}[shift={(\xp mm, \yp mm)}]
+      \fill[lenormandblack!80] (0,0) circle (3mm);
+      \ifnum\i=8
+        \fill[lenormandwhite] (0,0) circle (3mm);
+      \fi
+      \ifnum\i>0 \ifnum\i<8
+        \pgfmathsetmacro{\tx}{3 * cos(\i * 22.5)}%
+        \fill[lenormandwhite] (0, 3mm) arc(90:-90:3mm) arc(-90:90:\tx mm and 3mm);
+      \fi\fi
+      \ifnum\i>8 \ifnum\i<16
+        \pgfmathsetmacro{\tx}{-3 * cos(\i * 22.5)}%
+        \fill[lenormandwhite] (0, 3mm) arc(90:270:3mm) arc(-90:90:\tx mm and 3mm);
+      \fi\fi
+      \draw[lenormandblack!60, thin] (0,0) circle (3mm);
+    \end{scope}
   }
   % 7 seed syllables stacked in the center (Root → Crown, bottom to top).
-  % Same Devanagari rendering as the court-card chakra stack, uniform (no highlight).
+  % Sized to match the moons (~6mm glyphs), uniform (no highlight).
   \foreach \syllable [count=\i from 1] in {लं,वं,रं,यं,हं,ॐ} {
-    \node[anchor=center, text=black, font=\devfont\fontsize{10}{12}\selectfont]
-      at (0, \i*5mm - 20mm) {\syllable};
+    \node[anchor=center, text=black, font=\devfont\fontsize{36}{40}\selectfont]
+      at (0, \i*11mm - 44mm) {\syllable};
   }
-  \node[anchor=center, text=black, font=\devfont\fontsize{10}{12}\selectfont]
-    at (0, 15mm) {०};
+  \node[anchor=center, text=black, font=\devfont\fontsize{36}{40}\selectfont]
+    at (0, 33mm) {०};
 \end{tikzpicture}
 \end{center}
 
