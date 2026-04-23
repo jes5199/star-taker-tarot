@@ -1839,9 +1839,9 @@
 % English label is clamped so it never drops below the card bottom edge.
 \newcommand{\hexagram}[6]{%
   \pgfmathsetmacro{\hextickpos}{#1 * (\cardheight-20mm)/10}%
-  % +4.0 (not +4.5) keeps the bottom label 0.5mm clear of the hex at #1=1
+  % +3.75 (not +4.5) keeps the bottom label 0.75mm clear of the hex at #1=1
   % position (sovereign-hexagram pivot row); other positions hit the -4.5 clamp.
-  \pgfmathsetmacro{\hexbotlabel}{max(-4.5, -\hextickpos * 25.4/72.27 + 4.0)}%
+  \pgfmathsetmacro{\hexbotlabel}{max(-4.5, -\hextickpos * 25.4/72.27 + 3.75)}%
   \begin{scope}[shift={(\cardwidth-17mm, \hextickpos pt)}, line cap=butt]
     \foreach \type [count=\i from 0] in {#2} {%
       \pgfmathtruncatemacro{\isout}{(\i < #3) || (\i >= (6 - #4)) ? 1 : 0}%
