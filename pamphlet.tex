@@ -337,7 +337,145 @@
 \restoregeometry
 \newpage
 
-% Page 5 — Cosmological diagram
+% Page 5 — Twelve Signs
+\newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=12mm, top=10mm, bottom=12mm}
+
+\begin{center}
+{\cardfont\fontsize{18}{22}\selectfont Twelve Signs}
+\end{center}
+
+\vspace{2mm}
+
+% Twelve zodiac cards in ecliptic order: Aries → Pisces
+\begin{center}
+\resizebox{!}{22mm}{\cardAfour}%
+\hspace{1mm}%
+\resizebox{!}{22mm}{\cardAfive}%
+\hspace{1mm}%
+\resizebox{!}{22mm}{\cardAsix}%
+\hspace{1mm}%
+\resizebox{!}{22mm}{\cardAseven}%
+\hspace{1mm}%
+\resizebox{!}{22mm}{\cardAeight}%
+\hspace{1mm}%
+\resizebox{!}{22mm}{\cardAnine}%
+
+\vspace{2mm}
+
+\resizebox{!}{22mm}{\cardAeleven}%
+\hspace{1mm}%
+\resizebox{!}{22mm}{\cardAthirteen}%
+\hspace{1mm}%
+\resizebox{!}{22mm}{\cardAfourteen}%
+\hspace{1mm}%
+\resizebox{!}{22mm}{\cardAfifteen}%
+\hspace{1mm}%
+\resizebox{!}{22mm}{\cardAseventeen}%
+\hspace{1mm}%
+\resizebox{!}{22mm}{\cardAeighteen}%
+\end{center}
+
+\vspace{6mm}
+
+% Chariot (Cancer) large in center with annotations
+\begin{center}
+\resizebox{!}{100mm}{\cardAseven}%
+\tikz[remember picture, overlay] {
+  \coordinate (cardNE) at (0, 100mm);
+  \coordinate (cardNW) at (-58.3mm, 100mm);
+  \coordinate (cardN)  at (-29.15mm, 100mm);
+  \coordinate (cardE)  at (0, 50mm);
+  \coordinate (cardW)  at (-58.3mm, 50mm);
+  \coordinate (cardC)  at (-29.15mm, 50mm);
+  \coordinate (cardSW) at (-58.3mm, 0mm);
+  \coordinate (cardSE) at (0mm, 0mm);
+
+  \tikzset{
+    annot/.style={font=\fontsize{8}{10}\selectfont, text=black},
+    annotline/.style={thick, -{Stealth[length=2mm]}},
+  }
+
+  % Major Arcana number (VII, top-left)
+  \draw[annotline, red!70!black]
+    ([xshift=-6mm, yshift=2mm]cardNW) node[annot, anchor=east] {Major Arcana number}
+    -- ([xshift=4mm, yshift=-4mm]cardNW);
+
+  % Card name (top-center)
+  \draw[annotline, green!50!black]
+    ([xshift=8mm, yshift=3mm]cardN) node[annot, anchor=south] {Card name}
+    -- ([yshift=-3mm]cardN);
+
+  % Hebrew simple-letter (top-right)
+  \draw[annotline, blue!70!black]
+    ([xshift=6mm, yshift=2mm]cardNE) node[annot, anchor=west, align=left] {Hebrew simple letter\\(Golden Dawn)}
+    -- ([xshift=-4mm, yshift=-4mm]cardNE);
+
+  % Rider-Waite image (upper-middle of card)
+  \draw[annotline, brown!70!black]
+    ([xshift=6mm, yshift=22mm]cardE) node[annot, anchor=west] {Rider-Waite image}
+    -- ([yshift=28mm]cardC);
+
+  % Tidal hexagram, left edge (Gòu)
+  \draw[annotline, teal!70!black]
+    ([xshift=-6mm, yshift=6mm]cardW) node[annot, anchor=east, align=right] {Tidal hexagram\\(prior sign → this)}
+    -- ([xshift=-52mm, yshift=2mm]cardC);
+
+  % Tidal hexagram, right edge (Dùn)
+  \draw[annotline, red!60!black]
+    ([xshift=6mm, yshift=10mm]cardE) node[annot, anchor=west, align=left] {Tidal hexagram\\(this sign → next)}
+    -- ([xshift=28mm, yshift=2mm]cardC);
+
+  % Zodiac symbol (♋ large glyph in middle)
+  \draw[annotline, orange!80!black]
+    ([xshift=-6mm, yshift=-6mm]cardW) node[annot, anchor=east] {Zodiac symbol}
+    -- ([xshift=-18mm, yshift=2mm]cardC);
+
+  % Sign name ("Cancer")
+  \draw[annotline, purple!70!black]
+    ([xshift=6mm, yshift=-3mm]cardE) node[annot, anchor=west] {Sign name}
+    -- (-20mm, 24.3mm);
+
+  % Decan rulers (3 planets at ~11.7mm scaled)
+  \draw[annotline, olive!70!black]
+    ([xshift=-6mm, yshift=-18mm]cardW) node[annot, anchor=east, align=right] {Decan rulers\\(Chaldean order)}
+    -- (-40mm, 11.7mm);
+
+  % Triplicity rulers (water: Venus/Mars/Moon)
+  \draw[annotline, cyan!60!black]
+    ([xshift=6mm, yshift=-18mm]cardE) node[annot, anchor=west, align=left] {Triplicity rulers\\(day/night/partic.)}
+    -- (-18mm, 12.7mm);
+
+  % Domicile / ruling planet ("Domicile of ☽ Moon" row at top-of-bottom)
+  \draw[annotline, pink!70!black]
+    ([xshift=6mm, yshift=25mm]cardSE) node[annot, anchor=west] {Domicile / ruler}
+    -- (-15mm, 9.8mm);
+
+  % Modality + element ("cardinal water")
+  \draw[annotline, violet!70!black]
+    ([xshift=-6mm, yshift=22mm]cardSW) node[annot, anchor=east] {Modality \& element}
+    -- (-40mm, 6.6mm);
+
+  % Modality alchemical glyph (sulfur for cardinal)
+  \draw[annotline, magenta!70!black]
+    (-46mm, -5mm) node[annot, anchor=north east, align=right] {Modality glyph\\(sulfur)}
+    -- (-33mm, 4mm);
+
+  % Element alchemical glyph (water)
+  \draw[annotline, blue!60!black]
+    (-12mm, -5mm) node[annot, anchor=north west, align=left] {Element glyph\\(water)}
+    -- (-26mm, 4mm);
+
+  % Solar terms (bottom of card, at y ~= 29mm scaled)
+  \draw[annotline, gray!60!black]
+    (-29.15mm, -13mm) node[annot, anchor=north] {Solar terms}
+    -- (-29.15mm, 30mm);
+}
+\end{center}
+
+\restoregeometry
+\newpage
+
+% Page 6 — Cosmological diagram
 \newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=5mm}
 \centering
 \begin{tikzpicture}[scale=0.95, every node/.style={scale=0.95}]
@@ -606,7 +744,7 @@
 \restoregeometry
 \newpage
 
-% Page 6 — Lunar Phase Cycle
+% Page 7 — Lunar Phase Cycle
 \newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=12mm, top=10mm, bottom=12mm}
 
 \begin{center}
@@ -692,11 +830,6 @@
 \end{center}
 
 \restoregeometry
-\newpage
-
-% Page 7 — blank (padding for 8-page booklet)
-\phantom{x}
-
 \newpage
 
 % Back cover — same as book
