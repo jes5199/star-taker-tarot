@@ -756,21 +756,21 @@
 \newcommand{\plsaturn}{%
   \node[anchor=center, text=black, font=\symbserif\fontsize{160}{170}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight) {♄};
-  % Kūn trigram (Earth) — left side: all broken
+  % Gèn trigram (Mountain) — left side: solid top, broken, broken
   \begin{scope}[shift={(0.5\cardwidth-23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
-    \draw (-4mm,5mm) -- (-1mm,5mm); \draw (1mm,5mm) -- (4mm,5mm);
-    \draw (-4mm,0mm) -- (-1mm,0mm); \draw (1mm,0mm) -- (4mm,0mm);
-    \draw (-4mm,-5mm) -- (-1mm,-5mm); \draw (1mm,-5mm) -- (4mm,-5mm);
-    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Kūn};
-    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Earth};
-  \end{scope}%
-  % Gèn trigram (Mountain) — right side: solid top, broken, broken
-  \begin{scope}[shift={(0.5\cardwidth+23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
     \draw (-4mm,5mm) -- (4mm,5mm);
     \draw (-4mm,0mm) -- (-1mm,0mm); \draw (1mm,0mm) -- (4mm,0mm);
     \draw (-4mm,-5mm) -- (-1mm,-5mm); \draw (1mm,-5mm) -- (4mm,-5mm);
     \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Gèn};
     \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {\resizebox{12mm}{\height}{Mountain}};
+  \end{scope}%
+  % Kūn trigram (Earth) — right side: all broken
+  \begin{scope}[shift={(0.5\cardwidth+23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
+    \draw (-4mm,5mm) -- (-1mm,5mm); \draw (1mm,5mm) -- (4mm,5mm);
+    \draw (-4mm,0mm) -- (-1mm,0mm); \draw (1mm,0mm) -- (4mm,0mm);
+    \draw (-4mm,-5mm) -- (-1mm,-5mm); \draw (1mm,-5mm) -- (4mm,-5mm);
+    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Kūn};
+    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Earth};
   \end{scope}%
   % Sect and Exaltation — under title
   \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
