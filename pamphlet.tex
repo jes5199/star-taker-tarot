@@ -337,7 +337,82 @@
 \restoregeometry
 \newpage
 
-% Page 5 — Twelve Signs
+% Page 5 — Wǔxíng Cycle (Five Phases with Chinese-tradition planet mapping)
+\newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=12mm, top=10mm, bottom=12mm}
+
+\begin{center}
+{\cardfont\fontsize{18}{22}\selectfont Wǔxíng \& Planets}
+\end{center}
+
+\vspace{16mm}
+
+\begin{center}
+\begin{tikzpicture}
+  % Pentagon radius
+  \def\R{42}
+  \coordinate (fire)  at (90:\R mm);
+  \coordinate (earth) at (18:\R mm);
+  \coordinate (metal) at (-54:\R mm);
+  \coordinate (water) at (234:\R mm);
+  \coordinate (wood)  at (162:\R mm);
+
+  % Sheng (生) generating cycle — green arrows around the pentagon edges
+  % Fire → Earth (ash), Earth → Metal (ore), Metal → Water (condensation),
+  % Water → Wood (nourishment), Wood → Fire (fuel)
+  \foreach \from/\to in {fire/earth, earth/metal, metal/water, water/wood, wood/fire} {
+    \draw[-{Stealth[length=4mm, width=3mm]}, line width=0.6mm, green!55!black,
+          shorten <=9mm, shorten >=9mm] (\from) -- (\to);
+  }
+
+  % Kè (克) overcoming cycle — red dashed arrows forming the inner pentagram
+  % Wood → Earth (roots break soil), Earth → Water (dams block), Water → Fire
+  % (extinguishes), Fire → Metal (melts), Metal → Wood (axe cuts)
+  \foreach \from/\to in {wood/earth, earth/water, water/fire, fire/metal, metal/wood} {
+    \draw[-{Stealth[length=4mm, width=3mm]}, line width=0.45mm, red!65!black,
+          dashed, shorten <=9mm, shorten >=9mm] (\from) -- (\to);
+  }
+
+  % Planet symbols at the five vertices, colored per wuxing palette
+  \node[text=red!80!black, font=\symbserif\fontsize{44}{48}\selectfont]    at (fire)  {♂};
+  \node[text=yellow!40!brown, font=\symbserif\fontsize{44}{48}\selectfont] at (earth) {♄};
+  \node[text=gray!55!black, font=\symbserif\fontsize{44}{48}\selectfont]   at (metal) {♀};
+  \node[text=blue!65!black, font=\symbserif\fontsize{44}{48}\selectfont]   at (water) {☿};
+  \node[text=green!50!black, font=\symbserif\fontsize{44}{48}\selectfont]  at (wood)  {♃};
+
+  % Labels outside each vertex: planet name + wuxing element
+  \def\Rlbl{58}
+  \node[text=red!80!black,    font=\cardfont\fontsize{10}{12}\selectfont, align=center]
+    at (90:\Rlbl mm)  {Mars\\Fire {\cjkfont 火}};
+  \node[text=yellow!40!brown, font=\cardfont\fontsize{10}{12}\selectfont, align=center]
+    at (18:\Rlbl mm)  {Saturn\\Earth {\cjkfont 土}};
+  \node[text=gray!55!black,   font=\cardfont\fontsize{10}{12}\selectfont, align=center]
+    at (-54:\Rlbl mm) {Venus\\Metal {\cjkfont 金}};
+  \node[text=blue!65!black,   font=\cardfont\fontsize{10}{12}\selectfont, align=center]
+    at (234:\Rlbl mm) {Mercury\\Water {\cjkfont 水}};
+  \node[text=green!50!black,  font=\cardfont\fontsize{10}{12}\selectfont, align=center]
+    at (162:\Rlbl mm) {Jupiter\\Wood {\cjkfont 木}};
+
+  % Legend below the pentagon — use small inline TikZ arrows so the sample
+  % arrows match the diagram's stroke style
+  \node[anchor=north west, font=\cardfont\fontsize{9}{12}\selectfont]
+    at (-30mm, -74mm) {%
+      \tikz[baseline=-0.8mm]{\draw[-{Stealth[length=2.5mm, width=2mm]},
+        line width=0.5mm, green!55!black] (0,0) -- (8mm, 0);}%
+      \ \ Shēng ({\cjkfont 生}) --- generating cycle%
+    };
+  \node[anchor=north west, font=\cardfont\fontsize{9}{12}\selectfont]
+    at (-30mm, -80mm) {%
+      \tikz[baseline=-0.8mm]{\draw[-{Stealth[length=2.5mm, width=2mm]},
+        line width=0.4mm, red!65!black, dashed] (0,0) -- (8mm, 0);}%
+      \ \ Kè ({\cjkfont 克}) --- overcoming cycle%
+    };
+\end{tikzpicture}
+\end{center}
+
+\restoregeometry
+\newpage
+
+% Page 6 — Twelve Signs
 \newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=12mm, top=10mm, bottom=12mm}
 
 \begin{center}
@@ -486,7 +561,7 @@
 \restoregeometry
 \newpage
 
-% Page 6 — Cosmological diagram
+% Page 7 — Cosmological diagram
 \newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=5mm}
 \centering
 \begin{tikzpicture}[scale=0.95, every node/.style={scale=0.95}]
@@ -755,7 +830,7 @@
 \restoregeometry
 \newpage
 
-% Page 7 — Lunar Phase Cycle
+% Page 8 — Lunar Phase Cycle
 \newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=12mm, top=10mm, bottom=12mm}
 
 \begin{center}
@@ -843,7 +918,13 @@
 \restoregeometry
 \newpage
 
-% Back cover — same as book
+% Pages 9-11 — blank padding to bring 12-page booklet to a saddle-stitch
+% multiple of 4 (1 cover + 7 content + 3 blanks + 1 back = 12)
+\phantom{x}\newpage
+\phantom{x}\newpage
+\phantom{x}\newpage
+
+% Page 12 — Back cover — same as book
 \noindent
 \begin{tikzpicture}
   \useasboundingbox (0,0) rectangle (139.7mm, 215.9mm);
