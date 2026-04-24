@@ -412,7 +412,127 @@
 \restoregeometry
 \newpage
 
-% Page 6 — Twelve Signs
+% Page 6 — Bagua Arrangements (先天/後天 with planet symbols by wuxing)
+\newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=12mm, top=10mm, bottom=12mm}
+
+\begin{center}
+{\cardfont\fontsize{18}{22}\selectfont Bagua Arrangements}
+\end{center}
+
+\vspace{6mm}
+
+\begin{center}
+\begin{tikzpicture}
+  % Two bagua side-by-side. Each trigram is rendered with its top yao (天)
+  % facing OUTWARD from the bagua's center; the planet symbol for the
+  % trigram's wǔxíng element is placed beyond the trigram, further outward.
+  % Trigram → wuxing → planet:
+  %   Qián ☰ (Heaven), Duì ☱ (Lake)        → Metal  → Venus ♀
+  %   Zhèn ☳ (Thunder), Xùn ☴ (Wind)        → Wood   → Jupiter ♃
+  %   Lí ☲ (Fire)                            → Fire   → Mars ♂
+  %   Kǎn ☵ (Water)                          → Water  → Mercury ☿
+  %   Gèn ☶ (Mountain), Kūn ☷ (Earth)        → Earth  → Saturn ♄
+  % Chinese map orientation: South=top, North=bottom, East=LEFT, West=RIGHT.
+
+  % --- LEFT: Earlier Heaven (先天八卦 / Fuxi) ---
+  % Polar pairs on opposite sides:
+  %   S(top) Qián ↔ N(bot) Kūn,  E(left) Lí ↔ W(right) Kǎn,
+  %   SE(UL) Duì ↔ NW(LR) Gèn,   NE(LL) Zhèn ↔ SW(UR) Xùn
+  \begin{scope}[shift={(-32mm, 0mm)}]
+    \foreach \ang/\top/\mid/\bot/\planet/\col in {%
+      90/1/1/1/♀/gray!55!black,
+      135/0/1/1/♀/gray!55!black,
+      180/1/0/1/♂/red!80!black,
+      225/0/0/1/♃/green!50!black,
+      270/0/0/0/♄/yellow!40!brown,
+      315/1/0/0/♄/yellow!40!brown,
+      0/0/1/0/☿/blue!65!black,
+      45/1/1/0/♃/green!50!black}{%
+      \pgfmathsetmacro{\tx}{17 * cos(\ang)}%
+      \pgfmathsetmacro{\ty}{17 * sin(\ang)}%
+      \pgfmathsetmacro{\px}{25 * cos(\ang)}%
+      \pgfmathsetmacro{\py}{25 * sin(\ang)}%
+      \pgfmathsetmacro{\rot}{\ang - 90}%
+      \begin{scope}[shift={(\tx mm, \ty mm)}, rotate=\rot, line width=0.5mm, line cap=butt]
+        \ifnum\top=1
+          \draw (-3mm, 3mm) -- (3mm, 3mm);
+        \else
+          \draw (-3mm, 3mm) -- (-0.7mm, 3mm); \draw (0.7mm, 3mm) -- (3mm, 3mm);
+        \fi
+        \ifnum\mid=1
+          \draw (-3mm, 0) -- (3mm, 0);
+        \else
+          \draw (-3mm, 0) -- (-0.7mm, 0); \draw (0.7mm, 0) -- (3mm, 0);
+        \fi
+        \ifnum\bot=1
+          \draw (-3mm, -3mm) -- (3mm, -3mm);
+        \else
+          \draw (-3mm, -3mm) -- (-0.7mm, -3mm); \draw (0.7mm, -3mm) -- (3mm, -3mm);
+        \fi
+      \end{scope}
+      \node[anchor=center, text=\col, font=\symbserif\fontsize{12}{14}\selectfont]
+        at (\px mm, \py mm) {\planet};
+    }
+    \node[anchor=north, font=\cjkfont\fontsize{14}{16}\selectfont]
+      at (0, -34mm) {先天八卦};
+    \node[anchor=north, font=\cardfont\fontsize{10}{12}\selectfont]
+      at (0, -42mm) {Earlier Heaven (Fuxi)};
+  \end{scope}
+
+  % --- RIGHT: Later Heaven (後天八卦 / King Wen) ---
+  % Lí S, Kūn SW(UR), Duì W(R), Qián NW(LR), Kǎn N(bot),
+  % Gèn NE(LL), Zhèn E(L), Xùn SE(UL)
+  \begin{scope}[shift={(32mm, 0mm)}]
+    \foreach \ang/\top/\mid/\bot/\planet/\col in {%
+      90/1/0/1/♂/red!80!black,
+      135/1/1/0/♃/green!50!black,
+      180/0/0/1/♃/green!50!black,
+      225/1/0/0/♄/yellow!40!brown,
+      270/0/1/0/☿/blue!65!black,
+      315/1/1/1/♀/gray!55!black,
+      0/0/1/1/♀/gray!55!black,
+      45/0/0/0/♄/yellow!40!brown}{%
+      \pgfmathsetmacro{\tx}{17 * cos(\ang)}%
+      \pgfmathsetmacro{\ty}{17 * sin(\ang)}%
+      \pgfmathsetmacro{\px}{25 * cos(\ang)}%
+      \pgfmathsetmacro{\py}{25 * sin(\ang)}%
+      \pgfmathsetmacro{\rot}{\ang - 90}%
+      \begin{scope}[shift={(\tx mm, \ty mm)}, rotate=\rot, line width=0.5mm, line cap=butt]
+        \ifnum\top=1
+          \draw (-3mm, 3mm) -- (3mm, 3mm);
+        \else
+          \draw (-3mm, 3mm) -- (-0.7mm, 3mm); \draw (0.7mm, 3mm) -- (3mm, 3mm);
+        \fi
+        \ifnum\mid=1
+          \draw (-3mm, 0) -- (3mm, 0);
+        \else
+          \draw (-3mm, 0) -- (-0.7mm, 0); \draw (0.7mm, 0) -- (3mm, 0);
+        \fi
+        \ifnum\bot=1
+          \draw (-3mm, -3mm) -- (3mm, -3mm);
+        \else
+          \draw (-3mm, -3mm) -- (-0.7mm, -3mm); \draw (0.7mm, -3mm) -- (3mm, -3mm);
+        \fi
+      \end{scope}
+      \node[anchor=center, text=\col, font=\symbserif\fontsize{12}{14}\selectfont]
+        at (\px mm, \py mm) {\planet};
+    }
+    \node[anchor=north, font=\cjkfont\fontsize{14}{16}\selectfont]
+      at (0, -34mm) {後天八卦};
+    \node[anchor=north, font=\cardfont\fontsize{10}{12}\selectfont]
+      at (0, -42mm) {Later Heaven (King Wen)};
+  \end{scope}
+
+  % Compass note (S=top, E=left convention)
+  \node[anchor=north, font=\cardfont\fontsize{8}{10}\selectfont, text=gray!50!black]
+    at (0, -52mm) {(South at top, East at left — Chinese map convention.)};
+\end{tikzpicture}
+\end{center}
+
+\restoregeometry
+\newpage
+
+% Page 7 — Twelve Signs
 \newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=12mm, top=10mm, bottom=12mm}
 
 \begin{center}
@@ -561,7 +681,7 @@
 \restoregeometry
 \newpage
 
-% Page 7 — Cosmological diagram
+% Page 8 — Cosmological diagram
 \newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=5mm}
 \centering
 \begin{tikzpicture}[scale=0.95, every node/.style={scale=0.95}]
@@ -830,7 +950,7 @@
 \restoregeometry
 \newpage
 
-% Page 8 — Lunar Phase Cycle
+% Page 9 — Lunar Phase Cycle
 \newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=12mm, top=10mm, bottom=12mm}
 
 \begin{center}
@@ -918,9 +1038,8 @@
 \restoregeometry
 \newpage
 
-% Pages 9-11 — blank padding to bring 12-page booklet to a saddle-stitch
-% multiple of 4 (1 cover + 7 content + 3 blanks + 1 back = 12)
-\phantom{x}\newpage
+% Pages 10-11 — blank padding so the 12-page booklet saddle-stitches cleanly
+% (1 cover + 8 content + 2 blanks + 1 back = 12, a multiple of 4)
 \phantom{x}\newpage
 \phantom{x}\newpage
 
