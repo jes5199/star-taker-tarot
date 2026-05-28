@@ -3,6 +3,7 @@
 \documentclass{article}
 \usepackage[paperwidth=5.5in, paperheight=8.5in, margin=0mm]{geometry}
 \usepackage{tikz}
+\usetikzlibrary{arrows.meta}
 \usepackage{fontspec}
 \usepackage{graphicx}
 
@@ -76,7 +77,7 @@
 
   \tikzset{
     annot/.style={font=\fontsize{8}{10}\selectfont, text=black},
-    annotline/.style={thick, -{Stealth[length=2mm]}},
+    annotline/.style={thick},
   }
 
   % Left-side annotations
@@ -244,7 +245,7 @@
 
   \tikzset{
     annot/.style={font=\fontsize{8}{10}\selectfont, text=black},
-    annotline/.style={thick, -{Stealth[length=2mm]}},
+    annotline/.style={thick},
   }
 
   % Major Arcana number
@@ -587,7 +588,7 @@
 
   \tikzset{
     annot/.style={font=\fontsize{8}{10}\selectfont, text=black},
-    annotline/.style={thick, -{Stealth[length=2mm]}},
+    annotline/.style={thick},
   }
 
   % Major Arcana number (VII, top-left)
@@ -987,7 +988,7 @@
 
   \tikzset{
     annot/.style={font=\fontsize{8}{10}\selectfont, text=black},
-    annotline/.style={thick, -{Stealth[length=2mm]}},
+    annotline/.style={thick},
   }
 
   % Card name (top-center)
@@ -998,12 +999,12 @@
   % Cardinal solar event ("Winter Solstice" for Pentacles, y≈93.7 scaled)
   \draw[annotline, blue!70!black]
     ([xshift=6mm, yshift=-7mm]cardNE) node[annot, anchor=west, align=left] {Cardinal solar event\\(equinox or solstice)}
-    -- (-22mm, 93mm);
+    -- (-22mm, 91mm);
 
-  % Element seed phrase ("Seed of Earth", y≈89.4 scaled)
+  % Numerology interpretation ("Seed of Earth", y≈89.4 scaled)
   \draw[annotline, purple!70!black]
-    ([xshift=6mm, yshift=-15mm]cardNE) node[annot, anchor=west] {Element seed phrase}
-    -- (-22mm, 89mm);
+    ([xshift=6mm, yshift=-15mm]cardNE) node[annot, anchor=west, align=left] {Numerology\\interpretation}
+    -- (-22mm, 87mm);
 
   % Element name ("Earth" big label at y≈26 scaled)
   \draw[annotline, red!70!black]
@@ -1012,33 +1013,28 @@
 
   % Suit symbol — large green pentacle (elemental triangle) at center y=52
   \draw[annotline, green!60!black]
-    ([xshift=-6mm, yshift=2mm]cardW) node[annot, anchor=east, align=right] {Suit symbol\\(elemental triangle)}
+    ([xshift=-6mm, yshift=2mm]cardW) node[annot, anchor=east, align=right] {Elemental symbol}
     -- (-39mm, 52mm);
 
-  % Decan illustration (sun image inset for Pentacles, native (8, 29.5) → scaled (-50.5, 28.7))
+  % Lenormand Card (mini-card inset for Pentacles, native (8, 29.5) → scaled (-50.5, 28.7))
   \draw[annotline, orange!80!black]
-    ([xshift=-6mm, yshift=-3mm]cardW) node[annot, anchor=east] {Decan illustration}
+    ([xshift=-6mm, yshift=-10mm]cardW) node[annot, anchor=east] {Lenormand card}
     -- (-50.5mm, 28.7mm);
 
-  % Decan number (1-36, "31" for Capricorn III/Pentacles ace, native (13, 22.5) → scaled (-45.7, 22))
-  \draw[annotline, gray!60!black]
-    ([xshift=-6mm, yshift=-12mm]cardW) node[annot, anchor=east] {Decan number (1-36)}
-    -- (-45.7mm, 22mm);
-
-  % Sovereign hexagram (Kǎn for Pentacles, drawn at y≈12 scaled)
+  % Sovereign hexagram (Kǎn for Pentacles, drawn at y≈12 scaled) — label below card
   \draw[annotline, teal!70!black]
-    ([xshift=6mm, yshift=-12mm]cardE) node[annot, anchor=west] {Sovereign hexagram}
+    ([xshift=29.15mm, yshift=-3mm]cardSW) node[annot, anchor=north] {Sovereign hexagram}
     -- (-29mm, 12mm);
 
   % Geomancy figure (Tristitia for Pentacles, native (52, 36) → scaled (-7.8, 35))
   \draw[annotline, brown!70!black]
     ([xshift=6mm, yshift=-22mm]cardE) node[annot, anchor=west] {Geomancy figure}
-    -- (-7.8mm, 35mm);
+    -- (-7.8mm, 33mm);
 
   % Cardinal zodiac glyph (♑ Capricorn for Pentacles, lower-right)
   \draw[annotline, violet!70!black]
     ([xshift=6mm, yshift=14mm]cardSE) node[annot, anchor=west] {Cardinal zodiac sign}
-    -- (-9.7mm, 8mm);
+    -- (-11.7mm, 8mm);
 
   % Chinese cardinal direction (北 north for Pentacles, lower-left)
   \draw[annotline, cyan!60!black]
@@ -1052,7 +1048,7 @@
 
   % Chinese money-suit mark (mahjong tile + 一 + suit hanzi, top-right of card)
   \draw[annotline, magenta!70!black]
-    ([xshift=8mm, yshift=2mm]cardNE) node[annot, anchor=west, align=left] {Chinese money-suit mark}
+    ([xshift=8mm, yshift=2mm]cardNE) node[annot, anchor=west, align=left] {Chinese money-suit\\mark}
     -- ([xshift=-4mm, yshift=-7mm]cardNE);
 }
 \end{center}
@@ -1060,7 +1056,160 @@
 \restoregeometry
 \newpage
 
-% Page 10 — Lunar Phase Cycle
+% Page 10 — 36 Decans
+\newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=12mm, top=10mm, bottom=12mm}
+
+\begin{center}
+{\cardfont\fontsize{18}{22}\selectfont 36 Decans}
+\end{center}
+
+\vspace{2mm}
+
+% Top strip — 36 decan cards in zodiac order, three rows of 12 at 16mm tall, flush.
+% Row 1: Aries→Cancer (12 decans, spring quarter)
+% Row 2: Leo→Scorpio (12 decans, summer/early autumn quarter)
+% Row 3: Sagittarius→Pisces (12 decans, late autumn/winter quarter)
+{\setlength{\parskip}{0pt}\setlength{\lineskip}{0pt}\setlength{\baselineskip}{0pt}%
+\begin{center}
+\resizebox{!}{16mm}{\cardWtwo{black}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardWthree{black}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardWfour{black}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardPfive{red}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardPsix{red}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardPseven{red}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardSeight{black}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardSnine{black}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardSten{black}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardCtwo{red}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardCthree{red}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardCfour{red}}\\[0pt]
+\resizebox{!}{16mm}{\cardWfive{black}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardWsix{black}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardWseven{black}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardPeight{red}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardPnine{red}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardPten{red}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardStwo{black}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardSthree{black}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardSfour{black}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardCfive{red}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardCsix{red}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardCseven{red}}\\[0pt]
+\resizebox{!}{16mm}{\cardWeight{black}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardWnine{black}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardWten{black}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardPtwo{red}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardPthree{red}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardPfour{red}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardSfive{black}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardSsix{black}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardSseven{black}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardCeight{red}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardCnine{red}}\hspace{0.3mm}%
+\resizebox{!}{16mm}{\cardCten{red}}%
+\end{center}}
+
+\vspace{6mm}
+
+% Featured: C7 (Seven of Cups = Scorpio III) with annotations — chosen because it
+% shows all three lunar-mansion systems (Manzil + Xiu + Nakshatra) on one card.
+\begin{center}
+\resizebox{!}{100mm}{\cardCseven{red}}%
+\tikz[remember picture, overlay] {
+  \coordinate (cardNE) at (0, 100mm);
+  \coordinate (cardNW) at (-58.3mm, 100mm);
+  \coordinate (cardN)  at (-29.15mm, 100mm);
+  \coordinate (cardE)  at (0, 50mm);
+  \coordinate (cardW)  at (-58.3mm, 50mm);
+  \coordinate (cardSW) at (-58.3mm, 0mm);
+  \coordinate (cardSE) at (0mm, 0mm);
+
+  \tikzset{
+    annot/.style={font=\fontsize{8}{10}\selectfont, text=black},
+    annotline/.style={thick},
+  }
+
+  % Card name "Seven of Cups" (top-center)
+  \draw[annotline, green!50!black]
+    ([xshift=8mm, yshift=3mm]cardN) node[annot, anchor=south] {Card name}
+    -- ([yshift=-3mm]cardN);
+
+  % Numerology interpretation "Venture of Water"
+  \draw[annotline, purple!70!black]
+    ([xshift=6mm, yshift=-7mm]cardNE) node[annot, anchor=west, align=left] {Numerology\\interpretation}
+    -- (-22mm, 93mm);
+
+  % Decan ruler ♀ Venus (native (30, 63.49) → (-29.16, 61.7))
+  \draw[annotline, blue!70!black]
+    ([xshift=6mm, yshift=14mm]cardE) node[annot, anchor=west, align=left] {Decan ruler\\(Chaldean)}
+    -- (-22mm, 62mm);
+
+  % Zodiac sign ♏ Scorpio (native (30, 59.49) → (-29.16, 57.83))
+  \draw[annotline, red!70!black]
+    ([xshift=6mm, yshift=6mm]cardE) node[annot, anchor=west] {Zodiac sign}
+    -- (-22mm, 53mm);
+
+  % Decan name "Third Decan of Scorpio" rotated on right edge
+  \draw[annotline, teal!70!black]
+    ([xshift=6mm, yshift=-3mm]cardE) node[annot, anchor=west] {Decan name}
+    -- (-3mm, 48mm);
+
+  % Sovereign hexagram — upper hex Shì Kè at tick 7, native (43, 58) → (-16.5, 56)
+  \draw[annotline, brown!70!black]
+    ([xshift=6mm, yshift=-10mm]cardE) node[annot, anchor=west] {Sovereign hexagram}
+    -- (-13mm, 38mm);
+
+  % Decan number 24 (bottom-center "24" for Scorpio III)
+  \draw[annotline, violet!70!black]
+    ([xshift=6mm, yshift=14mm]cardSE) node[annot, anchor=west] {Decan number (1–36)}
+    -- (-26mm, 2mm);
+
+  % Chaldean planet rulers — left-edge tick column
+  \draw[annotline, green!60!black]
+    ([xshift=-6mm, yshift=18mm]cardW) node[annot, anchor=east] {Monomoiria}
+    -- (-57mm, 60mm);
+
+  % Xiu 房 Fáng (Chinese lunar mansion) — native (12.5, 66.29) → (-46.16, 64.4)
+  \draw[annotline, orange!70!black]
+    ([xshift=-6mm, yshift=8mm]cardW) node[annot, anchor=east, align=right] {Xiu\\(Chinese lunar mansion)}
+    -- (-46mm, 64mm);
+
+  % Vedic pāda ना + Anurādhā nakṣatra — native (9, 62.97) → (-49.57, 61.2)
+  \draw[annotline, blue!50!black]
+    ([xshift=-6mm, yshift=-2mm]cardW) node[annot, anchor=east, align=right] {Vedic pāda\\(nakṣatra syllable)}
+    -- (-49mm, 61mm);
+
+  % Egyptian bound — Saturn @ 4° at native (2.5, 33.14) → (-55.89, 32.2)
+  \draw[annotline, magenta!70!black]
+    ([xshift=-6mm, yshift=-13mm]cardW) node[annot, anchor=east] {Egyptian bound}
+    -- (-55mm, 32mm);
+
+  % Manzil ف Iklīl (Arabic lunar mansion) — native (5, ~5) → (-53.5, ~5)
+  \draw[annotline, cyan!60!black]
+    ([xshift=-6mm, yshift=-25mm]cardW) node[annot, anchor=east, align=right] {Manzil\\(Arabic lunar mansion)}
+    -- (-53mm, 5mm);
+
+  % Lenormand card (Tree #5 inset) — native (30, 17) → (-29.16, 16.5), label below
+  \draw[annotline, orange!80!black]
+    ([xshift=29.15mm, yshift=-3mm]cardSW) node[annot, anchor=north] {Lenormand card}
+    -- (-29mm, 12mm);
+
+  % Playing-card mark 7♥ — top-left of card
+  \draw[annotline, red!60!black]
+    ([xshift=-8mm, yshift=2mm]cardNW) node[annot, anchor=east] {Playing-card mark}
+    -- ([xshift=4mm, yshift=-7mm]cardNW);
+
+  % Chinese money-suit mark 七万 + mahjong tile — top-right of card
+  \draw[annotline, magenta!70!black]
+    ([xshift=8mm, yshift=2mm]cardNE) node[annot, anchor=west, align=left] {Chinese money-suit\\mark}
+    -- ([xshift=-4mm, yshift=-7mm]cardNE);
+}
+\end{center}
+
+\restoregeometry
+\newpage
+
+% Page 11 — Lunar Phase Cycle
 \newgeometry{paperwidth=5.5in, paperheight=8.5in, margin=12mm, top=10mm, bottom=12mm}
 
 \begin{center}
