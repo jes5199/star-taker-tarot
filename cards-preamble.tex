@@ -1433,12 +1433,6 @@
     local syms = {Jupiter="♃", Venus="♀", Mercury="☿", Mars="♂", Saturn="♄"}
     tex.sprint(syms["#1"] or "☉")
   }}
-% Egyptian bound starting at bottom of decan
-% #1 = bound number within sign (1-5), #2 = ruling planet
-\newcommand{\boundstart}[2]{%
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, 0.5mm) {\makebox[0.6em][c]{\symbserif\fontsize{5}{6}\selectfont \planetsym{#2}}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont #1.}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont \scalebox{0.7}[1]{Bounds of} #2}};
-}
 % Egyptian bounds marker: planet symbol in a thin square
 % #1 = degree position within decan (0-10), #2 = ruling planet
 \newcommand{\boundsquare}[2]{%
@@ -1527,14 +1521,6 @@
   \end{scope}
 }
 
-% Solar term at bottom of decan (above bounds label) — OLD, kept for other cards
-% #1 = term number (1-24), #2 = CJK name, #3 = pinyin, #4 = English name
-\newcommand{\solartermstart}[4]{%
-  \node[anchor=south west, text=black, inner sep=0pt, xscale=0.48]
-    at (7mm, 5.05mm) {{\cardfont\fontsize{5}{6}\selectfont #3}};
-  \node[anchor=south west, text=black, inner sep=0pt]
-    at (2.5mm, 3mm) {\makebox[0.6em][c]{\symbfont\fontsize{5}{6}\selectfont ☉}\makebox[0.6em][r]{\cardfont\fontsize{5}{6}\selectfont #1.}\hspace{0.1em}{\cjkfont\fontsize{5}{6}\selectfont #2}\hspace{0.1em}{\cardfont\fontsize{5}{6}\selectfont #4}};
-}
 % Solar term lane: rotated label left of hexagrams
 % #1 = degree position, #2 = CJK name, #3 = pinyin, #4 = English name
 \newcommand{\solartermlane}[4]{%
