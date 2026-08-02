@@ -438,26 +438,26 @@
   }
 }
 
+% Kǎn trigram (Water) block, used twice (left/right of the Mercury glyph) in
+% \alcmercurytrad below — #1 = x-shift expression for the scope origin
+\newcommand{\kantrigramat}[1]{%
+  \begin{scope}[shift={(#1,0.52\cardheight)}, line width=2mm, line cap=butt]
+    \draw (-4mm,5mm) -- (-1mm,5mm); \draw (1mm,5mm) -- (4mm,5mm);
+    \draw (-4mm,0mm) -- (4mm,0mm);
+    \draw (-4mm,-5mm) -- (-1mm,-5mm); \draw (1mm,-5mm) -- (4mm,-5mm);
+    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Kǎn};
+    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Water};
+  \end{scope}%
+}
+
 % Traditional Mercury symbol (Unicode glyph, orange)
 \newcommand{\alcmercurytrad}{%
   \node[anchor=center, text=orange, font=\symbserif\fontsize{160}{170}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight) {☿};
   % Kǎn trigram (Water) — left side: broken, solid, broken
-  \begin{scope}[shift={(0.5\cardwidth-23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
-    \draw (-4mm,5mm) -- (-1mm,5mm); \draw (1mm,5mm) -- (4mm,5mm);
-    \draw (-4mm,0mm) -- (4mm,0mm);
-    \draw (-4mm,-5mm) -- (-1mm,-5mm); \draw (1mm,-5mm) -- (4mm,-5mm);
-    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Kǎn};
-    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Water};
-  \end{scope}%
+  \kantrigramat{0.5\cardwidth-23mm}%
   % Kǎn trigram (Water) — right side
-  \begin{scope}[shift={(0.5\cardwidth+23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
-    \draw (-4mm,5mm) -- (-1mm,5mm); \draw (1mm,5mm) -- (4mm,5mm);
-    \draw (-4mm,0mm) -- (4mm,0mm);
-    \draw (-4mm,-5mm) -- (-1mm,-5mm); \draw (1mm,-5mm) -- (4mm,-5mm);
-    \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Kǎn};
-    \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Water};
-  \end{scope}%
+  \kantrigramat{0.5\cardwidth+23mm}%
   % Mercury
   \node[anchor=north, text=black, font=\cardfont\fontsize{17}{19}\selectfont]
     at (0.5\cardwidth, 0.52\cardheight-24mm) {Mercury};
@@ -1294,6 +1294,26 @@
     \node[anchor=base west, text=black, font=\cardfont\fontsize{9}{11}\selectfont, inner xsep=2.5mm]
       at (0.5\cardwidth, #1-4mm) {#6};
   \fi
+}
+
+% Lunar node attribution — used by the Page/Knave of court cards whose
+% attribute block departs from \courtattrib (north/south node, glyph, name,
+% Devanagari, and gloss all differ; y-offsets are fixed).
+% #1 = north/south, #2 = node glyph, #3 = node name, #4 = Devanagari name,
+% #5 = "Head/Tail of the Dragon" gloss
+\newcommand{\nodeattrib}[5]{%
+  \node[anchor=base east, text=black, font=\cardfont\fontsize{12}{14}\selectfont, inner xsep=4mm]
+    at (0.5\cardwidth, 0.52\cardheight-35mm) {#1};
+  \node[anchor=base, text=black, font=\symbfont\fontsize{16}{18}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight-35mm) {#2};
+  \node[anchor=base west, text=black, font=\cardfont\fontsize{12}{14}\selectfont, inner xsep=4mm]
+    at (0.5\cardwidth, 0.52\cardheight-35mm) {node};
+  \node[anchor=base, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight-42mm) {#3};
+  \node[anchor=north, text=black, font=\devfont\fontsize{14}{16}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight-42mm) {#4};
+  \node[anchor=north, text=black, font=\cardfont\fontsize{9}{11}\selectfont]
+    at (0.5\cardwidth, 0.52\cardheight-48mm) {#5};%
 }
 
 % Fixed star: ★ glyph + name label at degree position
