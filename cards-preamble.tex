@@ -1856,6 +1856,52 @@
   \end{scope}
 }
 
+% Court-card bottom-row hexagram (filled/solid style): \courthexagramfilled{xShift}{line1,...,line6}{pinyin}{gloss}
+% xShift = x-offset in mm (y is fixed at 7mm); the 4 hexagrams along a court
+% card's bottom row sit at 18/26/34/42mm. Lines are bottom to top, Yang=1
+% (solid), Yin=0 (broken). Used for "filled" (in-decan / emphasized) hexagrams,
+% drawn as solid 0.4mm strokes. gloss may contain raw tokens (e.g. \\ line
+% breaks or a \fittext{7mm}{...} wrapper) — it is substituted verbatim.
+\newcommand{\courthexagramfilled}[4]{%
+  \begin{scope}[shift={(#1mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {#2} {%
+      \ifnum\type=1
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \else
+        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
+        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 2.2mm) {#3};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
+      at (0, -3mm) {#4};
+  \end{scope}%
+}
+
+% Court-card bottom-row hexagram (outlined style): \courthexagramoutlined{xShift}{line1,...,line6}{pinyin}{gloss}
+% Same parameters as \courthexagramfilled; used for "outlined" (out-of-decan
+% / de-emphasized) hexagrams, drawn as hollow 0.15mm-stroke rectangles.
+\newcommand{\courthexagramoutlined}[4]{%
+  \begin{scope}[shift={(#1mm, 7mm)}, line cap=butt]
+    \foreach \type [count=\i from 0] in {#2} {%
+      \ifnum\type=1
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \else
+        \fill[white, draw=black, line width=0.15mm]
+          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
+        \fill[white, draw=black, line width=0.15mm]
+          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
+      \fi
+    }%
+    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
+      at (0, 2.2mm) {#3};
+    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
+      at (0, -3mm) {#4};
+  \end{scope}%
+}
+
 % Minor arcana card command: \minorcard[overlay]{image file}{card name}
 \newcommand{\minorcardshift}{-2mm}
 \newcommand{\minorcardimgwidth}{1.0\cardwidth}

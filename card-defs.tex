@@ -566,71 +566,13 @@
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{7}
   % Four hexagrams along the bottom, Days 13+14 morning/evening — KW 27, 28, 33, 34
   % ䷚ Yí (Nourishment) — Day 13 morning, filled
-  \begin{scope}[shift={(18mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,0,0,0,0,1} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Yí};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {\fittext{7mm}{Nourishment}};
-  \end{scope}
+  \courthexagramfilled{18}{1,0,0,0,0,1}{Yí}{\fittext{7mm}{Nourishment}}
   % ䷛ Dà Guò (Great Exceeding) — Day 13 evening, outlined
-  \begin{scope}[shift={(26mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,1,1,1,1,0} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Dà Guò};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Great\\Exceeding};
-  \end{scope}
+  \courthexagramoutlined{26}{0,1,1,1,1,0}{Dà Guò}{Great\\Exceeding}
   % ䷞ Xián (Influence) — Day 14 morning, filled
-  \begin{scope}[shift={(34mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,0,1,1,1,0} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Xián};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Influence};
-  \end{scope}
+  \courthexagramfilled{34}{0,0,1,1,1,0}{Xián}{Influence}
   % ䷟ Héng (Duration) — Day 14 evening, outlined
-  \begin{scope}[shift={(42mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,1,1,1,0,0} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Héng};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Duration};
-  \end{scope}}
+  \courthexagramoutlined{42}{0,1,1,1,0,0}{Héng}{Duration}}
 ]{images/c-11}{Page of Cups}%
 }
 
@@ -653,71 +595,13 @@
   \end{scope}
   % Four hexagrams along the bottom, Days 16+17 morning/evening — KW 35-38
   % ䷢ Jìn (Progress) — Day 16 morning, filled
-  \begin{scope}[shift={(18mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,0,0,1,0,1} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Jìn};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Progress};
-  \end{scope}
+  \courthexagramfilled{18}{0,0,0,1,0,1}{Jìn}{Progress}
   % ䷣ Míng Yí (Darkening) — Day 16 evening, outlined
-  \begin{scope}[shift={(26mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,0,1,0,0,0} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Míng Yí};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Darkening};
-  \end{scope}
+  \courthexagramoutlined{26}{1,0,1,0,0,0}{Míng Yí}{Darkening}
   % ䷤ Jiā Rén (The Family) — Day 17 morning, filled
-  \begin{scope}[shift={(34mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,0,1,0,1,1} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Jiā Rén};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {The Family};
-  \end{scope}
+  \courthexagramfilled{34}{1,0,1,0,1,1}{Jiā Rén}{The Family}
   % ䷥ Kuí (Opposition) — Day 17 evening, outlined
-  \begin{scope}[shift={(42mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,1,0,1,0,1} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Kuí};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Opposition};
-  \end{scope}}
+  \courthexagramoutlined{42}{1,1,0,1,0,1}{Kuí}{Opposition}}
 ]{images/c-12}{Knight of Cups}%
 }
 
@@ -754,71 +638,13 @@
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{6}
   % Four hexagrams along the bottom, Days 11+12 morning/evening — KW 23-26
   % ䷖ Bō (Splitting Apart) — Day 11 morning, filled
-  \begin{scope}[shift={(18mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,0,0,0,0,1} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Bō};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Splitting\\Apart};
-  \end{scope}
+  \courthexagramfilled{18}{0,0,0,0,0,1}{Bō}{Splitting\\Apart}
   % ䷗ Fù (Return) — Day 11 evening, outlined
-  \begin{scope}[shift={(26mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,0,0,0,0,0} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Fù};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Return};
-  \end{scope}
+  \courthexagramoutlined{26}{1,0,0,0,0,0}{Fù}{Return}
   % ䷘ Wú Wàng (Innocence) — Day 12 morning, filled
-  \begin{scope}[shift={(34mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,0,0,1,1,1} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Wú Wàng};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Innocence};
-  \end{scope}
+  \courthexagramfilled{34}{1,0,0,1,1,1}{Wú Wàng}{Innocence}
   % ䷙ Dà Chù (Great Taming) — Day 12 evening, outlined
-  \begin{scope}[shift={(42mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,1,1,0,0,1} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Dà Chù};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Great\\Taming};
-  \end{scope}}
+  \courthexagramoutlined{42}{1,1,1,0,0,1}{Dà Chù}{Great\\Taming}}
 ]{images/c-13}{Queen of Cups}%
 }
 
@@ -856,71 +682,13 @@
   % Four hexagrams along the bottom, Days 9+10 morning/evening — KW 19-22
   % Morning (朝) = filled/black, Evening (暮) = outlined/white
   % ䷒ Lín (Approach) — Day 9 morning, filled
-  \begin{scope}[shift={(18mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,1,0,0,0,0} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Lín};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Approach};
-  \end{scope}
+  \courthexagramfilled{18}{1,1,0,0,0,0}{Lín}{Approach}
   % ䷓ Guān (Contemplation) — Day 9 evening, outlined
-  \begin{scope}[shift={(26mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,0,0,0,1,1} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Guān};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {\fittext{7mm}{Contemplation}};
-  \end{scope}
+  \courthexagramoutlined{26}{0,0,0,0,1,1}{Guān}{\fittext{7mm}{Contemplation}}
   % ䷔ Shì Kè (Biting Through) — Day 10 morning, filled
-  \begin{scope}[shift={(34mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,0,0,1,0,1} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Shì Kè};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Biting\\Through};
-  \end{scope}
+  \courthexagramfilled{34}{1,0,0,1,0,1}{Shì Kè}{Biting\\Through}
   % ䷕ Bì (Grace) — Day 10 evening, outlined
-  \begin{scope}[shift={(42mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,0,1,0,0,1} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Bì};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Grace};
-  \end{scope}}
+  \courthexagramoutlined{42}{1,0,1,0,0,1}{Bì}{Grace}}
 ]{images/c-14}{King of Cups}%
 }
 
@@ -1372,71 +1140,13 @@
   % Four hexagrams along the bottom, Days 1+2 morning/evening — KW 3-6
   % Morning (朝) = filled/black, Evening (暮) = outlined/white
   % ䷂ Zhūn (Difficulty) — Day 1 morning, filled
-  \begin{scope}[shift={(18mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,0,0,0,1,0} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Zhūn};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Difficulty};
-  \end{scope}
+  \courthexagramfilled{18}{1,0,0,0,1,0}{Zhūn}{Difficulty}
   % ䷃ Méng (Youthful Folly) — Day 1 evening, outlined
-  \begin{scope}[shift={(26mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,1,0,0,0,1} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Méng};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Youthful\\Folly};
-  \end{scope}
+  \courthexagramoutlined{26}{0,1,0,0,0,1}{Méng}{Youthful\\Folly}
   % ䷄ Xū (Waiting) — Day 2 morning, filled
-  \begin{scope}[shift={(34mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,1,1,0,1,0} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Xū};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Waiting};
-  \end{scope}
+  \courthexagramfilled{34}{1,1,1,0,1,0}{Xū}{Waiting}
   % ䷅ Sòng (Conflict) — Day 2 evening, outlined
-  \begin{scope}[shift={(42mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,1,0,1,1,1} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Sòng};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Conflict};
-  \end{scope}}
+  \courthexagramoutlined{42}{0,1,0,1,1,1}{Sòng}{Conflict}}
 ]{images/p-11}{Page of Pentacles}%
 }
 
@@ -1544,71 +1254,13 @@
   % Four hexagrams along the bottom, Days 7+8 morning/evening — KW 15-18
   % Morning (朝) = filled/black, Evening (暮) = outlined/white
   % ䷎ Qiān (Modesty) — Day 7 morning, filled
-  \begin{scope}[shift={(18mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,0,1,0,0,0} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Qiān};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Modesty};
-  \end{scope}
+  \courthexagramfilled{18}{0,0,1,0,0,0}{Qiān}{Modesty}
   % ䷏ Yù (Enthusiasm) — Day 7 evening, outlined
-  \begin{scope}[shift={(26mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,0,0,1,0,0} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Yù};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Enthusiasm};
-  \end{scope}
+  \courthexagramoutlined{26}{0,0,0,1,0,0}{Yù}{Enthusiasm}
   % ䷐ Suí (Following) — Day 8 morning, filled
-  \begin{scope}[shift={(34mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,0,0,1,1,0} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Suí};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Following};
-  \end{scope}
+  \courthexagramfilled{34}{1,0,0,1,1,0}{Suí}{Following}
   % ䷑ Gǔ (Correcting) — Day 8 evening, outlined
-  \begin{scope}[shift={(42mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,1,1,0,0,1} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Gǔ};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Correcting};
-  \end{scope}}
+  \courthexagramoutlined{42}{0,1,1,0,0,1}{Gǔ}{Correcting}}
 ]{images/p-13}{Queen of Pentacles}%
 }
 
@@ -1645,71 +1297,13 @@
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{15}
   % Four hexagrams along the bottom, Days 28+29 morning/evening — KW 59-62
   % ䷺ Huàn (Dispersion) — Day 28 morning, filled
-  \begin{scope}[shift={(18mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,1,0,0,1,1} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Huàn};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Dispersion};
-  \end{scope}
+  \courthexagramfilled{18}{0,1,0,0,1,1}{Huàn}{Dispersion}
   % ䷻ Jié (Limitation) — Day 28 evening, outlined
-  \begin{scope}[shift={(26mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,1,0,0,1,0} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Jié};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Limitation};
-  \end{scope}
+  \courthexagramoutlined{26}{1,1,0,0,1,0}{Jié}{Limitation}
   % ䷼ Zhōng Fú (Inner Truth) — Day 29 morning, filled
-  \begin{scope}[shift={(34mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,1,0,0,1,1} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Zhōng Fú};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Inner\\Truth};
-  \end{scope}
+  \courthexagramfilled{34}{1,1,0,0,1,1}{Zhōng Fú}{Inner\\Truth}
   % ䷽ Xiǎo Guò (Small Exceeding) — Day 29 evening, outlined
-  \begin{scope}[shift={(42mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,0,1,1,0,0} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Xiǎo Guò};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Small\\Exceeding};
-  \end{scope}}
+  \courthexagramoutlined{42}{0,0,1,1,0,0}{Xiǎo Guò}{Small\\Exceeding}}
 ]{images/p-14}{King of Pentacles}%
 }
 
@@ -2202,71 +1796,13 @@
   % Four hexagrams along the bottom, Days 3+4 morning/evening — KW 7-10
   % Morning (朝) = filled/black, Evening (暮) = outlined/white
   % ䷆ Shī (The Army) — Day 3 morning, filled
-  \begin{scope}[shift={(18mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,1,0,0,0,0} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Shī};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {The Army};
-  \end{scope}
+  \courthexagramfilled{18}{0,1,0,0,0,0}{Shī}{The Army}
   % ䷇ Bǐ (Holding Together) — Day 3 evening, outlined
-  \begin{scope}[shift={(26mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,0,0,0,1,0} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Bǐ};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Holding\\Together};
-  \end{scope}
+  \courthexagramoutlined{26}{0,0,0,0,1,0}{Bǐ}{Holding\\Together}
   % ䷈ Xiǎo Chù (Small Taming) — Day 4 morning, filled
-  \begin{scope}[shift={(34mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,1,1,0,1,1} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Xiǎo Chù};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Small\\Taming};
-  \end{scope}
+  \courthexagramfilled{34}{1,1,1,0,1,1}{Xiǎo Chù}{Small\\Taming}
   % ䷉ Lǚ (Treading) — Day 4 evening, outlined
-  \begin{scope}[shift={(42mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,1,0,1,1,1} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Lǚ};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Treading};
-  \end{scope}}
+  \courthexagramoutlined{42}{1,1,0,1,1,1}{Lǚ}{Treading}}
 ]{images/s-11}{Page of Swords}%
 }
 
@@ -2281,71 +1817,13 @@
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{13}
   % Four hexagrams along the bottom, Days 24+25 morning/evening — KW 51-54
   % ䷲ Zhèn (Arousing) — Day 24 morning, filled
-  \begin{scope}[shift={(18mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,0,0,1,0,0} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Zhèn};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Arousing};
-  \end{scope}
+  \courthexagramfilled{18}{1,0,0,1,0,0}{Zhèn}{Arousing}
   % ䷳ Gèn (Keeping Still) — Day 24 evening, outlined
-  \begin{scope}[shift={(26mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,0,1,0,0,1} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Gèn};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Keeping\\Still};
-  \end{scope}
+  \courthexagramoutlined{26}{0,0,1,0,0,1}{Gèn}{Keeping\\Still}
   % ䷴ Jiàn (Development) — Day 25 morning, filled
-  \begin{scope}[shift={(34mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,0,1,0,1,1} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Jiàn};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {\fittext{7mm}{Development}};
-  \end{scope}
+  \courthexagramfilled{34}{0,0,1,0,1,1}{Jiàn}{\fittext{7mm}{Development}}
   % ䷵ Guī Mèi (Marrying Maiden) — Day 25 evening, outlined
-  \begin{scope}[shift={(42mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,1,0,1,0,0} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Guī Mèi};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Marrying\\Maiden};
-  \end{scope}}
+  \courthexagramoutlined{42}{1,1,0,1,0,0}{Guī Mèi}{Marrying\\Maiden}}
 ]{images/s-12}{Knight of Swords}%
 }
 
@@ -2378,71 +1856,13 @@
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{10}
   % Four hexagrams along the bottom, Days 18+19 morning/evening — KW 39-42
   % ䷦ Jiǎn (Obstruction) — Day 18 morning, filled
-  \begin{scope}[shift={(18mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,0,1,0,1,0} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Jiǎn};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {\fittext{7mm}{Obstruction}};
-  \end{scope}
+  \courthexagramfilled{18}{0,0,1,0,1,0}{Jiǎn}{\fittext{7mm}{Obstruction}}
   % ䷧ Jiě (Deliverance) — Day 18 evening, outlined
-  \begin{scope}[shift={(26mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,1,0,1,0,0} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Jiě};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {\fittext{7mm}{Deliverance}};
-  \end{scope}
+  \courthexagramoutlined{26}{0,1,0,1,0,0}{Jiě}{\fittext{7mm}{Deliverance}}
   % ䷨ Sǔn (Decrease) — Day 19 morning, filled
-  \begin{scope}[shift={(34mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,1,0,0,0,1} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Sǔn};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Decrease};
-  \end{scope}
+  \courthexagramfilled{34}{1,1,0,0,0,1}{Sǔn}{Decrease}
   % ䷩ Yì (Increase) — Day 19 evening, outlined
-  \begin{scope}[shift={(42mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,0,0,0,1,1} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Yì};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Increase};
-  \end{scope}}
+  \courthexagramoutlined{42}{1,0,0,0,1,1}{Yì}{Increase}}
 ]{images/s-13}{Queen of Swords}%
 }
 
@@ -2476,71 +1896,13 @@
   % Four hexagrams along the bottom, Days 5+6 morning/evening — KW 11-14
   % Morning (朝) = filled/black, Evening (暮) = outlined/white
   % ䷊ Tài (Peace) — Day 5 morning, filled
-  \begin{scope}[shift={(18mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,1,1,0,0,0} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Tài};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Peace};
-  \end{scope}
+  \courthexagramfilled{18}{1,1,1,0,0,0}{Tài}{Peace}
   % ䷋ Pǐ (Standstill) — Day 5 evening, outlined
-  \begin{scope}[shift={(26mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,0,0,1,1,1} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Pǐ};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Standstill};
-  \end{scope}
+  \courthexagramoutlined{26}{0,0,0,1,1,1}{Pǐ}{Standstill}
   % ䷌ Tóng Rén (Fellowship) — Day 6 morning, filled
-  \begin{scope}[shift={(34mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,0,1,1,1,1} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Tóng Rén};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Fellowship};
-  \end{scope}
+  \courthexagramfilled{34}{1,0,1,1,1,1}{Tóng Rén}{Fellowship}
   % ䷍ Dà Yǒu (Great Possession) — Day 6 evening, outlined
-  \begin{scope}[shift={(42mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,1,1,1,0,1} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Dà Yǒu};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Great\\Possession};
-  \end{scope}}
+  \courthexagramoutlined{42}{1,1,1,1,0,1}{Dà Yǒu}{Great\\Possession}}
 ]{images/s-14}{King of Swords}%
 }
 
@@ -3065,71 +2427,13 @@
   \end{scope}
   % Four hexagrams along the bottom, Days 22+23 morning/evening — KW 47-50
   % ䷮ Kùn (Oppression) — Day 22 morning, filled
-  \begin{scope}[shift={(18mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,1,0,1,1,0} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Kùn};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Oppression};
-  \end{scope}
+  \courthexagramfilled{18}{0,1,0,1,1,0}{Kùn}{Oppression}
   % ䷯ Jǐng (The Well) — Day 22 evening, outlined
-  \begin{scope}[shift={(26mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,1,1,0,1,0} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Jǐng};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {The Well};
-  \end{scope}
+  \courthexagramoutlined{26}{0,1,1,0,1,0}{Jǐng}{The Well}
   % ䷰ Gé (Revolution) — Day 23 morning, filled
-  \begin{scope}[shift={(34mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,0,1,1,1,0} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Gé};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {\fittext{7mm}{Revolution}};
-  \end{scope}
+  \courthexagramfilled{34}{1,0,1,1,1,0}{Gé}{\fittext{7mm}{Revolution}}
   % ䷱ Dǐng (The Cauldron) — Day 23 evening, outlined
-  \begin{scope}[shift={(42mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,1,1,1,0,1} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Dǐng};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {\fittext{7mm}{The Cauldron}};
-  \end{scope}}
+  \courthexagramoutlined{42}{0,1,1,1,0,1}{Dǐng}{\fittext{7mm}{The Cauldron}}}
 ]{images/w-12}{Knight of Wands}%
 }
 
@@ -3166,71 +2470,13 @@
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{11}
   % Four hexagrams along the bottom, Days 20+21 morning/evening — KW 43-46
   % ䷪ Guài (Breakthrough) — Day 20 morning, filled
-  \begin{scope}[shift={(18mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,1,1,1,1,0} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Guài};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {\fittext{7mm}{Breakthrough}};
-  \end{scope}
+  \courthexagramfilled{18}{1,1,1,1,1,0}{Guài}{\fittext{7mm}{Breakthrough}}
   % ䷫ Gòu (Coming to Meet) — Day 20 evening, outlined
-  \begin{scope}[shift={(26mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,1,1,1,1,1} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Gòu};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Coming\\to Meet};
-  \end{scope}
+  \courthexagramoutlined{26}{0,1,1,1,1,1}{Gòu}{Coming\\to Meet}
   % ䷬ Cuì (Gathering) — Day 21 morning, filled
-  \begin{scope}[shift={(34mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,0,0,1,1,0} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Cuì};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Gathering};
-  \end{scope}
+  \courthexagramfilled{34}{0,0,0,1,1,0}{Cuì}{Gathering}
   % ䷭ Shēng (Pushing Upward) — Day 21 evening, outlined
-  \begin{scope}[shift={(42mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,1,1,0,0,0} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Shēng};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Pushing\\Upward};
-  \end{scope}}
+  \courthexagramoutlined{42}{0,1,1,0,0,0}{Shēng}{Pushing\\Upward}}
 ]{images/w-13}{Queen of Wands}%
 }
 
@@ -3263,70 +2509,12 @@
   \drawmoonphase{\cardwidth-5mm}{\cardheight-6mm}{14}
   % Four hexagrams along the bottom, Days 26+27 morning/evening — KW 55-58
   % ䷶ Fēng (Abundance) — Day 26 morning, filled
-  \begin{scope}[shift={(18mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,0,1,1,0,0} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Fēng};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Abundance};
-  \end{scope}
+  \courthexagramfilled{18}{1,0,1,1,0,0}{Fēng}{Abundance}
   % ䷷ Lǚ (The Wanderer) — Day 26 evening, outlined
-  \begin{scope}[shift={(26mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,0,1,1,0,1} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Lǚ};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {The\\Wanderer};
-  \end{scope}
+  \courthexagramoutlined{26}{0,0,1,1,0,1}{Lǚ}{The\\Wanderer}
   % ䷸ Xùn (The Gentle) — Day 27 morning, filled
-  \begin{scope}[shift={(34mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {0,1,1,0,1,1} {%
-      \ifnum\type=1
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \else
-        \draw[line width=0.4mm] (-2mm, \i*1mm-2.5mm) -- (-0.33mm, \i*1mm-2.5mm);
-        \draw[line width=0.4mm] (0.33mm, \i*1mm-2.5mm) -- (2mm, \i*1mm-2.5mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Xùn};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {The Gentle};
-  \end{scope}
+  \courthexagramfilled{34}{0,1,1,0,1,1}{Xùn}{The Gentle}
   % ䷹ Duì (Joyous) — Day 27 evening, outlined
-  \begin{scope}[shift={(42mm, 7mm)}, line cap=butt]
-    \foreach \type [count=\i from 0] in {1,1,0,1,1,0} {%
-      \ifnum\type=1
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \else
-        \fill[white, draw=black, line width=0.15mm]
-          (-2mm, \i*1mm-2.5mm-0.2mm) rectangle (-0.33mm, \i*1mm-2.5mm+0.2mm);
-        \fill[white, draw=black, line width=0.15mm]
-          (0.33mm, \i*1mm-2.5mm-0.2mm) rectangle (2mm, \i*1mm-2.5mm+0.2mm);
-      \fi
-    }%
-    \node[anchor=south, text=black, font=\cardfont\fontsize{4}{5}\selectfont]
-      at (0, 2.2mm) {Duì};
-    \node[anchor=north, text=black, font=\cardfont\fontsize{4}{4}\selectfont, align=center, inner sep=0.5pt]
-      at (0, -3mm) {Joyous};
-  \end{scope}}
+  \courthexagramoutlined{42}{1,1,0,1,1,0}{Duì}{Joyous}}
 ]{images/w-14}{King of Wands}%
 }
