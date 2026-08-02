@@ -24,6 +24,15 @@ make pamphlet-book.pdf # saddle-stitched pamphlet booklet
 
 The pamphlet booklet (`pamphlet-book.pdf`) prints duplex on letter paper (short-edge flip), fold in half, staple.
 
+### Render-identity harness
+
+`harness/check.sh` force-rebuilds every PDF target with `SOURCE_DATE_EPOCH=0`
+(lualatex is byte-reproducible under it) and sha256-compares against
+`harness/baseline.sha256`; `pamphlet-book.pdf` is compared via 150 DPI page
+rasters because pdfbook2 embeds a wall-clock timestamp. Use it when refactoring
+`.tex` files that must not change rendered output; after an intentional visual
+change, refresh the baselines with `harness/check.sh --update`.
+
 ## Preview
 
 Start a webserver on port 8000 to browse the PDF:

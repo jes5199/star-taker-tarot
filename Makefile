@@ -13,8 +13,8 @@ DEPS = cards-preamble.tex card-defs.tex
 # Main targets
 all: book.pdf cards.pdf singles.pdf dark.pdf print.pdf cardback.pdf pamphlet-book.pdf oracle-lunar.pdf pngs
 
-# Book (requires two passes for TOC)
-book.pdf: book.tex book-cards.tex $(DEPS)
+# Book (requires two passes for TOC; embeds cardback.pdf via \includegraphics)
+book.pdf: book.tex book-cards.tex cardback.pdf $(DEPS)
 	-$(LUALATEX) book.tex
 	-$(LUALATEX) book.tex
 
