@@ -254,23 +254,10 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Scorpio};
   % Lenormand mini-card: Stars (16)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-5.4mm, 19mm-7.5mm)
-      rectangle
-      (0.5\cardwidth+5.4mm, 19mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth, 19mm) {%
-        \includegraphics[width=10.8mm]{images/stars-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-5.4mm, 19mm-7.5mm)
-    rectangle
-    (0.5\cardwidth+5.4mm, 19mm+7.5mm);
+  \lenormandcard{0.5\cardwidth}{19mm}{width=10.8mm}{stars}{%
   \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 19mm-7.5mm) {16};
+  }
   \decanticks{220}
   % Bounds: Venus at 0°, Mercury at 1°, Jupiter at 9°
   \boundsquare{0}{Venus}
@@ -310,23 +297,10 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Scorpio};
   % Lenormand mini-card: Tree (5)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-      rectangle
-      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth, 17mm) {%
-        \includegraphics[width=10.8mm]{images/tree-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-    rectangle
-    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \lenormandcard{0.5\cardwidth}{17mm}{width=10.8mm}{tree}{%
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm+1.5mm) {5};
+  }
   \decanticks{230}
   % Bounds: Jupiter at 0°, Saturn at 4°
   \boundsquare{0}{Jupiter}
@@ -364,23 +338,10 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Pisces};
   % Lenormand mini-card: Moon (32)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-      rectangle
-      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth, 17mm) {%
-        \includegraphics[width=10.8mm]{images/moon-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-    rectangle
-    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \lenormandcard{0.5\cardwidth}{17mm}{width=10.8mm}{moon}{%
   \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {32};
+  }
   \decanticks{330}
   % Bounds: Venus @0 (Venus rules 0–12° Pisces)
   \boundsquare{0}{Venus}
@@ -427,27 +388,14 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Pisces};
   % Lenormand mini-card: Rider (1)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-      rectangle
-      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth, 17mm) {%
-        \includegraphics[width=10.8mm]{images/rider-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-    rectangle
-    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \lenormandcard{0.5\cardwidth}{17mm}{width=10.8mm}{rider}{%
   \foreach \angle in {0,22.5,...,337.5}{
     \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
       inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth+5mm, 17mm-7.5mm+0.75mm) {1};
   }
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm+0.75mm) {1};
+  }
   \decanticks{340}
   % Bounds: Venus @0, Jupiter @2, Mercury @6, Mars @9
   \boundsquare{0}{Venus}
@@ -488,27 +436,14 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Pisces};
   % Lenormand mini-card: Dog (18)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-      rectangle
-      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth, 17mm) {%
-        \includegraphics[width=10.8mm]{images/dog-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-    rectangle
-    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \lenormandcard{0.5\cardwidth}{17mm}{width=10.8mm}{dog}{%
   \foreach \angle in {0,22.5,...,337.5}{
     \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
       inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth+5mm, 17mm-7.5mm+0.25mm) {18};
   }
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm+0.25mm) {18};
+  }
   \decanticks{350}
   % Bounds: Mars @0, Saturn @8
   \boundsquare{0}{Mars}
@@ -543,23 +478,10 @@
     at (0.5\cardwidth, \cardheight-6.5mm) {Earth of Water};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,2,2,2}{Populus}
   % Lenormand mini-card: Heart (24)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-      rectangle
-      (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth-22mm, 0.52\cardheight-44mm) {%
-        \includegraphics[width=10.8mm]{images/heart-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-    rectangle
-    (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
+  \lenormandcard{0.5\cardwidth-22mm}{0.52\cardheight-44mm}{width=10.8mm}{heart}{%
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {24};
+  }
   \courtattrib{0.52\cardheight-35mm}{waxing}{☽}{Moon}{♋}{Cancer}
   \chakrastack{7}
   \lunarstack{7}{reclaims}
@@ -611,27 +533,14 @@
     at (0.5\cardwidth, \cardheight-6.5mm) {Water of Water};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,2,1,2}{Albus}
   % Lenormand mini-card: Stork (17)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-      rectangle
-      (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth-22mm, 0.52\cardheight-44mm) {%
-        \includegraphics[height=15mm]{images/stork-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-    rectangle
-    (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
+  \lenormandcard{0.5\cardwidth-22mm}{0.52\cardheight-44mm}{height=15mm}{stork}{%
   \foreach \angle in {0,22.5,...,337.5}{
     \node[anchor=south west, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
       inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth-27mm, 0.52\cardheight-51mm) {17};
   }
   \node[anchor=south west, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth-27mm, 0.52\cardheight-51mm) {17};
+  }
   \courtattrib{0.52\cardheight-35mm}{direct}{☿}{Mercury}{♊}{Gemini}
   \chakrastack{6}
   \lunarstack{6}{reclaims}
@@ -654,27 +563,14 @@
     at (0.5\cardwidth, \cardheight-6.5mm) {Fire of Water};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,2,1,1}{Puella}
   % Lenormand mini-card: House (4)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-      rectangle
-      (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth-22mm, 0.52\cardheight-44mm) {%
-        \includegraphics[height=15mm]{images/house-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-    rectangle
-    (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
+  \lenormandcard{0.5\cardwidth-22mm}{0.52\cardheight-44mm}{height=15mm}{house}{%
   \foreach \angle in {0,22.5,...,337.5}{
     \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
       inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {4};
   }
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {4};
+  }
   \courtattrib{0.52\cardheight-35mm}{direct}{♀}{Venus}{♎}{Libra}
   \chakrastack{5}
   \lunarstack{5}{reclaims}
@@ -847,23 +743,10 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Taurus};
   % Lenormand mini-card: Clover (2)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-      rectangle
-      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth, 17mm) {%
-        \includegraphics[width=10.8mm]{images/clover-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-    rectangle
-    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \lenormandcard{0.5\cardwidth}{17mm}{width=10.8mm}{clover}{%
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm+0.5mm) {2};
+  }
   \decanticks{40}
   % Bounds: Mercury @0, Jupiter @4
   \boundsquare{0}{Mercury}
@@ -898,27 +781,14 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Taurus};
   % Lenormand mini-card: Birds (12)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-      rectangle
-      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth, 17mm) {%
-        \includegraphics[width=10.8mm]{images/birds-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-    rectangle
-    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \lenormandcard{0.5\cardwidth}{17mm}{width=10.8mm}{birds}{%
   \foreach \angle in {0,22.5,...,337.5}{
     \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
       inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth+5mm, 17mm-7.5mm+0.5mm) {12};
   }
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm+0.5mm) {12};
+  }
   \decanticks{50}
   % Bounds: Jupiter @0, Saturn @2, Mars @7
   \boundsquare{0}{Jupiter}
@@ -958,23 +828,10 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Virgo};
   % Lenormand mini-card: Key (33)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-      rectangle
-      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth, 17mm) {%
-        \includegraphics[width=10.8mm]{images/key-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-    rectangle
-    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \lenormandcard{0.5\cardwidth}{17mm}{width=10.8mm}{key}{%
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.25mm) {33};
+  }
   \decanticks{150}
   % Bounds: Mercury @0, Venus @7
   \boundsquare{0}{Mercury}
@@ -1012,23 +869,10 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Virgo};
   % Lenormand mini-card: Coffin (8)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-      rectangle
-      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth, 17mm) {%
-        \includegraphics[width=10.8mm]{images/coffin-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-    rectangle
-    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \lenormandcard{0.5\cardwidth}{17mm}{width=10.8mm}{coffin}{%
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm+0.25mm) {8};
+  }
   \decanticks{160}
   % Bounds: Venus @0, Jupiter @7
   \boundsquare{0}{Venus}
@@ -1066,23 +910,10 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Virgo};
   % Lenormand mini-card: Book (26)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-      rectangle
-      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth, 17mm) {%
-        \includegraphics[width=10.8mm]{images/book-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-    rectangle
-    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \lenormandcard{0.5\cardwidth}{17mm}{width=10.8mm}{book}{%
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm+0.4mm) {26};
+  }
   \decanticks{170}
   % Bounds: Jupiter @0, Mars @1, Saturn @8
   \boundsquare{0}{Jupiter}
@@ -1116,23 +947,10 @@
     at (0.5\cardwidth, \cardheight-6.5mm) {Earth of Earth};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,2,2,1}{Tristitia}
   % Lenormand mini-card: Scythe (10)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-      rectangle
-      (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth-22mm, 0.52\cardheight-44mm) {%
-        \includegraphics[height=15mm]{images/scythe-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-    rectangle
-    (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
+  \lenormandcard{0.5\cardwidth-22mm}{0.52\cardheight-44mm}{height=15mm}{scythe}{%
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {10};
+  }
   \courtattrib{0.52\cardheight-35mm}{direct}{♄}{Saturn}{♒}{Aquarius}
   \chakrastack{1}
   \lunarstack{1}{reclaims}
@@ -1218,27 +1036,14 @@
     at (0.5\cardwidth, \cardheight-6.5mm) {Water of Earth};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,2,1,1}{Fortuna Major}
   % Lenormand mini-card: Crossroads (22)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-      rectangle
-      (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth-22mm, 0.52\cardheight-44mm) {%
-        \includegraphics[height=15mm]{images/crossroads-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-    rectangle
-    (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
+  \lenormandcard{0.5\cardwidth-22mm}{0.52\cardheight-44mm}{height=15mm}{crossroads}{%
   \foreach \angle in {0,22.5,...,337.5}{
     \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
       inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {22};
   }
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {22};
+  }
   \courtattrib{0.52\cardheight-35mm}{northern}{☉}{Sun}{♌}{Leo}
   \chakrastack{4}
   \lunarstack{4}{reclaims}
@@ -1270,27 +1075,14 @@
     at (0.5\cardwidth, \cardheight-6.5mm) {Fire of Earth};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,2,2,1}{Carcer}
   % Lenormand mini-card: Fish (34)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-      rectangle
-      (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth-22mm, 0.52\cardheight-44mm) {%
-        \includegraphics[height=15mm]{images/fish-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-    rectangle
-    (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
+  \lenormandcard{0.5\cardwidth-22mm}{0.52\cardheight-44mm}{height=15mm}{fish}{%
   \foreach \angle in {0,22.5,...,337.5}{
     \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
       inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {34};
   }
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {34};
+  }
   \courtattrib{0.52\cardheight-35mm}{{\symbserif ℞}etrograde}{♄}{Saturn}{♑}{Capricorn}
   \chakrastack{1}
   \lunarstack{1}{removes}
@@ -1475,23 +1267,10 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Aquarius};
   % Lenormand mini-card: Tower (19)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-      rectangle
-      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth, 17mm) {%
-        \includegraphics[width=10.8mm]{images/tower-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-    rectangle
-    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \lenormandcard{0.5\cardwidth}{17mm}{width=10.8mm}{tower}{%
   \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {19};
+  }
   \decanticks{310}
   % Bounds: Venus @0, Jupiter @3
   \boundsquare{0}{Venus}
@@ -1529,27 +1308,14 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Aquarius};
   % Lenormand mini-card: Letter (27)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-      rectangle
-      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth, 17mm) {%
-        \includegraphics[width=10.8mm]{images/letter-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-    rectangle
-    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \lenormandcard{0.5\cardwidth}{17mm}{width=10.8mm}{letter}{%
   \foreach \angle in {0,22.5,...,337.5}{
     \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
       inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth+5mm, 17mm-7.5mm) {27};
   }
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {27};
+  }
   \decanticks{320}
   % Bounds: Mars @0, Saturn @5
   \boundsquare{0}{Mars}
@@ -1590,27 +1356,14 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Gemini};
   % Lenormand mini-card: Garden (20)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-      rectangle
-      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth, 17mm) {%
-        \includegraphics[width=10.8mm]{images/garden-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-    rectangle
-    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \lenormandcard{0.5\cardwidth}{17mm}{width=10.8mm}{garden}{%
   \foreach \angle in {0,22.5,...,337.5}{
     \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
       inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth+5mm, 17mm-7.5mm) {20};
   }
   \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {20};
+  }
   \decanticks{60}
   % Bounds: Mercury @0, Jupiter @6
   \boundsquare{0}{Mercury}
@@ -1648,27 +1401,14 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Gemini};
   % Lenormand mini-card: Anchor (35)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-      rectangle
-      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth, 17mm) {%
-        \includegraphics[width=10.8mm]{images/anchor-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-    rectangle
-    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \lenormandcard{0.5\cardwidth}{17mm}{width=10.8mm}{anchor}{%
   \foreach \angle in {0,22.5,...,337.5}{
     \node[anchor=south west, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
       inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth-5mm, 17mm-7.25mm) {35};
   }
   \node[anchor=south west, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth-5mm, 17mm-7.25mm) {35};
+  }
   \decanticks{70}
   % Bounds: Jupiter @0, Venus @2, Mars @7
   \boundsquare{0}{Jupiter}
@@ -1707,27 +1447,14 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Gemini};
   % Lenormand mini-card: Ship (3)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-      rectangle
-      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth, 17mm) {%
-        \includegraphics[width=10.8mm]{images/ship-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-    rectangle
-    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \lenormandcard{0.5\cardwidth}{17mm}{width=10.8mm}{ship}{%
   \foreach \angle in {0,22.5,...,337.5}{
     \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
       inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth+5mm, 17mm-7.5mm) {3};
   }
   \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {3};
+  }
   \decanticks{80}
   % Bounds: Mars @0, Saturn @4
   \boundsquare{0}{Mars}
@@ -1764,23 +1491,10 @@
     at (0.5\cardwidth, \cardheight-6.5mm) {Earth of Air};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,1,2,1}{Acquisitio}
   % Lenormand mini-card: Child (13)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-      rectangle
-      (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth-22mm, 0.52\cardheight-44mm) {%
-        \includegraphics[height=15mm]{images/child-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-    rectangle
-    (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
+  \lenormandcard{0.5\cardwidth-22mm}{0.52\cardheight-44mm}{height=15mm}{child}{%
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {13};
+  }
   \courtattrib{0.52\cardheight-35mm}{direct}{♃}{Jupiter}{♐}{Sagittarius}
   \chakrastack{2}
   \lunarstack{2}{reclaims}
@@ -1833,23 +1547,10 @@
     at (0.5\cardwidth, \cardheight-6.5mm) {Water of Air};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{2,1,1,2}{Conjunctio}
   % Lenormand mini-card: Bouquet (9)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-      rectangle
-      (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth-22mm, 0.52\cardheight-44mm) {%
-        \includegraphics[height=15mm]{images/bouquet-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-    rectangle
-    (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
+  \lenormandcard{0.5\cardwidth-22mm}{0.52\cardheight-44mm}{height=15mm}{bouquet}{%
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {9};
+  }
   \courtattrib{0.52\cardheight-35mm}{{\symbserif ℞}etrograde}{☿}{Mercury}{♍}{Virgo}
   \chakrastack{6}
   \lunarstack{6}{removes}
@@ -1872,23 +1573,10 @@
     at (0.5\cardwidth, \cardheight-6.5mm) {Fire of Air};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,1,2,1}{Puer}
   % Lenormand mini-card: Lily (30)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-      rectangle
-      (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth-22mm, 0.52\cardheight-44mm) {%
-        \includegraphics[height=15mm]{images/lily-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-    rectangle
-    (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
+  \lenormandcard{0.5\cardwidth-22mm}{0.52\cardheight-44mm}{height=15mm}{lily}{%
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {30};
+  }
   \courtattrib{0.52\cardheight-35mm}{direct}{♂}{Mars}{♈}{Aries}
   \chakrastack{3}
   \lunarstack{3}{reclaims}
@@ -2057,23 +1745,10 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Leo};
   % Lenormand mini-card: Cross (36)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-      rectangle
-      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth, 17mm) {%
-        \includegraphics[width=10.8mm]{images/cross-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-    rectangle
-    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \lenormandcard{0.5\cardwidth}{17mm}{width=10.8mm}{cross}{%
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.25mm) {3\kern-0.3ex6};
+  }
   \decanticks{130}
   % Bounds: Venus at 0° (cont.), Saturn at 1°, Mercury at 8°
   \boundsquare{0}{Venus}
@@ -2114,27 +1789,14 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Leo};
   % Lenormand mini-card: Mice (23)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-      rectangle
-      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth, 17mm) {%
-        \includegraphics[width=10.8mm]{images/mice-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-    rectangle
-    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \lenormandcard{0.5\cardwidth}{17mm}{width=10.8mm}{mice}{%
   \foreach \angle in {0,22.5,...,337.5}{
     \node[anchor=south west, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
       inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth-5mm, 17mm-7.25mm) {23};
   }
   \node[anchor=south west, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth-5mm, 17mm-7.25mm) {23};
+  }
   \decanticks{140}
   % Bounds: Mercury at 0°, Mars at 4°
   \boundsquare{0}{Mercury}
@@ -2170,23 +1832,10 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {First Decan of Sagittarius};
   % Lenormand mini-card: Mountain (21)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-      rectangle
-      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth, 17mm) {%
-        \includegraphics[width=10.8mm]{images/mountain-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-    rectangle
-    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \lenormandcard{0.5\cardwidth}{17mm}{width=10.8mm}{mountain}{%
   \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.25mm) {21};
+  }
   \decanticks{240}
   % Bounds: Jupiter spans entire decan (0°-12° Sag)
   \boundsquare{0}{Jupiter}
@@ -2223,27 +1872,14 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Second Decan of Sagittarius};
   % Lenormand mini-card: Fox (14)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-      rectangle
-      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth, 17mm) {%
-        \includegraphics[width=10.8mm]{images/fox-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-    rectangle
-    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \lenormandcard{0.5\cardwidth}{17mm}{width=10.8mm}{fox}{%
   \foreach \angle in {0,22.5,...,337.5}{
     \node[anchor=south west, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
       inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth-5mm, 17mm-7.25mm) {14};
   }
   \node[anchor=south west, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth-5mm, 17mm-7.25mm) {14};
+  }
   \decanticks{250}
   % Bounds: Jupiter at 0°, Venus at 2°, Mercury at 7°
   \boundsquare{0}{Jupiter}
@@ -2284,27 +1920,14 @@
   \node[anchor=center, text=black, font=\cardfont\fontsize{10}{12}\selectfont, rotate=90]
     at (\cardwidth-2.5mm, 0.5\cardheight) {Third Decan of Sagittarius};
   % Lenormand mini-card: Bear (15)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-      rectangle
-      (0.5\cardwidth+5.4mm, 17mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth, 17mm) {%
-        \includegraphics[width=10.8mm]{images/bear-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-5.4mm, 17mm-7.5mm)
-    rectangle
-    (0.5\cardwidth+5.4mm, 17mm+7.5mm);
+  \lenormandcard{0.5\cardwidth}{17mm}{width=10.8mm}{bear}{%
   \foreach \angle in {0,22.5,...,337.5}{
     \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
       inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth+5mm, 17mm-7.5mm) {15};
   }
   \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth+5mm, 17mm-7.5mm) {15};
+  }
   \decanticks{260}
   % Bounds: Mercury at 0°, Saturn at 1°, Mars at 6°
   \boundsquare{0}{Mercury}
@@ -2334,23 +1957,10 @@
     at (0.5\cardwidth, \cardheight-6.5mm) {Earth of Fire};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,1,1,2}{Cauda Draconis}
   % Lenormand mini-card: Whip/Broom (11)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-14mm-7.5mm)
-      rectangle
-      (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-14mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth-22mm, 0.52\cardheight-14mm) {%
-        \includegraphics[width=10.8mm]{images/whip-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-14mm-7.5mm)
-    rectangle
-    (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-14mm+7.5mm);
+  \lenormandcard{0.5\cardwidth-22mm}{0.52\cardheight-14mm}{width=10.8mm}{whip}{%
   \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-21mm) {11};
+  }
   \node[anchor=base east, text=black, font=\cardfont\fontsize{12}{14}\selectfont, inner xsep=4mm]
     at (0.5\cardwidth, 0.52\cardheight-35mm) {south};
   \node[anchor=base, text=black, font=\symbfont\fontsize{16}{18}\selectfont]
@@ -2443,27 +2053,14 @@
     at (0.5\cardwidth, \cardheight-6.5mm) {Water of Fire};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,2,1,2}{Amissio}
   % Lenormand mini-card: Snake (7)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-      rectangle
-      (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth-22mm, 0.52\cardheight-44mm) {%
-        \includegraphics[height=15mm]{images/snake-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-    rectangle
-    (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
+  \lenormandcard{0.5\cardwidth-22mm}{0.52\cardheight-44mm}{height=15mm}{snake}{%
   \foreach \angle in {0,22.5,...,337.5}{
     \node[anchor=south east, text=lenormandblack, font=\cardfont\fontsize{10}{11}\selectfont,
       inner sep=0pt, xshift={0.15*cos(\angle)*1mm}, yshift={0.15*sin(\angle)*1mm}] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {7};
   }
   \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {7};
+  }
   \courtattrib{0.52\cardheight-35mm}{{\symbserif ℞}etrograde}{♀}{Venus}{♉}{Taurus}
   \chakrastack{5}
   \lunarstack{5}{removes}
@@ -2486,23 +2083,10 @@
     at (0.5\cardwidth, \cardheight-6.5mm) {Fire of Fire};
   \drawgeomancy{0.5\cardwidth}{0.65\cardheight}{1,2,2,2}{Laetitia}
   % Lenormand mini-card: Clouds (6)
-  \begin{scope}
-    \clip[rounded corners=1mm]
-      (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-      rectangle
-      (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
-    \node[anchor=center, inner sep=0pt]
-      at (0.5\cardwidth-22mm, 0.52\cardheight-44mm) {%
-        \includegraphics[height=15mm]{images/clouds-crop.png}%
-      };
-    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
-  \end{scope}
-  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
-    (0.5\cardwidth-22mm-5.4mm, 0.52\cardheight-44mm-7.5mm)
-    rectangle
-    (0.5\cardwidth-22mm+5.4mm, 0.52\cardheight-44mm+7.5mm);
+  \lenormandcard{0.5\cardwidth-22mm}{0.52\cardheight-44mm}{height=15mm}{clouds}{%
   \node[anchor=south east, text=lenormandwhite, font=\cardfont\fontsize{10}{11}\selectfont,
     inner sep=0pt] at (0.5\cardwidth-17mm, 0.52\cardheight-51mm) {6};
+  }
   \courtattrib{0.52\cardheight-35mm}{{\symbserif ℞}etrograde}{♃}{Jupiter}{♓}{Pisces}
   \chakrastack{2}
   \lunarstack{2}{removes}

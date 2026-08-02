@@ -1803,6 +1803,34 @@
   \end{scope}%
 }
 
+% Inline Lenormand mini-card: clipped/bordered image swatch + number badge.
+% \lenormandcard{centerX}{centerY}{includegraphics sizing}{image basename}{badge}
+% centerX/centerY = tikz coordinate expressions for the swatch center (the
+% clip/border rectangle is always centerX/Y ± 5.4mm/7.5mm); sizing is the
+% raw \includegraphics[...] option (width=10.8mm or height=15mm); image
+% basename resolves to images/<name>-crop.png; badge is the site's own
+% literal number-badge node(s) — either a single \node, or a 16-copy
+% \foreach halo followed by the solid \node — passed through verbatim since
+% anchor side, color, paint order, and y-nudge all vary per site.
+\newcommand{\lenormandcard}[5]{%
+  \begin{scope}
+    \clip[rounded corners=1mm]
+      (#1-5.4mm, #2-7.5mm)
+      rectangle
+      (#1+5.4mm, #2+7.5mm);
+    \node[anchor=center, inner sep=0pt]
+      at (#1, #2) {%
+        \includegraphics[#3]{images/#4-crop.png}%
+      };
+    \ifjaunty\fill[gray, blend mode=color] (-99mm,-99mm) rectangle (99mm,99mm);\fi
+  \end{scope}
+  \draw[\ifjaunty gray\else black\fi, thick, rounded corners=1mm]
+    (#1-5.4mm, #2-7.5mm)
+    rectangle
+    (#1+5.4mm, #2+7.5mm);
+  #5%
+}
+
 % Minor arcana card command: \minorcard[overlay]{image file}{card name}
 \newcommand{\minorcardshift}{-2mm}
 \newcommand{\minorcardimgwidth}{1.0\cardwidth}
