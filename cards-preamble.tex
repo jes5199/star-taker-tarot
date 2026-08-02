@@ -127,7 +127,7 @@
 
 % Alchemical Sulfur: upward triangle above a cross
 \newcommand{\alcsulfur}{%
-  % Li trigram (Fire) — left side: solid (red top), broken, solid
+  % Lí trigram (Fire) — left side: solid (red top), broken, solid
   \begin{scope}[shift={(0.5\cardwidth-23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
     % Top line — solid, red
     \draw[red] (-4mm,5mm) -- (4mm,5mm);
@@ -140,7 +140,7 @@
     \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Lí};
     \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Fire};
   \end{scope}%
-  % Qian trigram (Heaven) — right side: all solid (yellow top)
+  % Qián trigram (Heaven) — right side: all solid (yellow top)
   \begin{scope}[shift={(0.5\cardwidth+23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
     % Top line — solid, yellow
     \draw[yellow!70!orange] (-4mm,5mm) -- (4mm,5mm);
@@ -228,7 +228,7 @@
     \draw (0,0) circle (14mm);
     \draw (-14mm,0) -- (14mm,0);
   \end{scope}%
-  % Kan trigram (Water) — left side: broken, solid, broken (bottom line blue)
+  % Kǎn trigram (Water) — left side: broken, solid, broken (bottom line blue)
   \begin{scope}[shift={(0.5\cardwidth-23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
     % Top line — broken
     \draw (-4mm,5mm) -- (-1mm,5mm);
@@ -366,7 +366,7 @@
     at (0.5\cardwidth+21mm, 0.52\cardheight-40.5mm) {氣};
   \node[anchor=base, text=black, font=\cardfont\fontsize{10}{12}\selectfont]
     at (0.5\cardwidth+21mm, 0.52\cardheight-43mm) {qi};
-  % Kan trigram (Water) — left side: broken, solid (blue), broken
+  % Kǎn trigram (Water) — left side: broken, solid (blue), broken
   \begin{scope}[shift={(0.5\cardwidth-23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
     % Top line — broken
     \draw (-4mm,5mm) -- (-1mm,5mm);
@@ -380,7 +380,7 @@
     \node[above, font=\cardfont\fontsize{14}{16}\selectfont] at (0,6mm) {Kǎn};
     \node[below, font=\cardfont\fontsize{10}{12}\selectfont] at (0,-6mm) {Water};
   \end{scope}%
-  % Li trigram (Fire) — right side: solid, broken (red), solid
+  % Lí trigram (Fire) — right side: solid, broken (red), solid
   \begin{scope}[shift={(0.5\cardwidth+23mm,0.52\cardheight)}, line width=2mm, line cap=butt]
     % Top line — solid
     \draw (-4mm,5mm) -- (4mm,5mm);
@@ -918,6 +918,7 @@
 
 % Tidal hexagram (消息卦) — drawn centered on card edge, clipped to half
 % #1=x, #2=y (center), #3=line pattern, #4=phonetic, #5=english
+% #6=earthly branch pinyin, #7=earthly branch hanzi, #8=earthly branch animal
 \newcommand{\drawhexagram}[8]{%
   \begin{scope}[shift={(#1, #2)}, line width=1.5mm, line cap=butt]
     \foreach \type [count=\i from 0] in {#3} {
@@ -1250,7 +1251,6 @@
   \end{scope}%
 }
 
-% Geomancy figure — 4 rows of 1 or 2 black diamonds
 % Small geomancy figure for Aces
 % #1 = x, #2 = y, #3 = comma-separated rows (1 or 2, top to bottom), #4 = label below
 \newcommand{\drawsmallgeomancy}[4]{%
@@ -1395,9 +1395,8 @@
   \fi
 }
 
-% Fixed star annotation on decan scale
-% #1 = position in decan (degrees, 0-10), #2 = star name
 % Fixed star: ★ glyph + name label at degree position
+% #1 = optional TikZ/pgfkeys settings, #2 = degree position in decan (0-10), #3 = star name
 % Optional keys: xshift (move node right), rotate label (rotate just the name text),
 %   label below (1 = place name below the ★ instead of beside it)
 \pgfkeys{
@@ -1442,7 +1441,7 @@
     at (2.5mm, \bsqpos pt) {\planetsym{#2}};
 }
 % Nakṣatra pāda syllable: Devanagari syllable in a thin circle
-% #1 = degree position (bottom of pāda span), #2 = unused (kept for compat), #3 = syllable
+% #2 = degree position (bottom of pāda span), #3 = unused (kept for compat), #4 = syllable
 \newcounter{padactr}
 % #1 = optional draw style (default=dotted for continuation pādas; use "solid" for 1st pāda of nakṣatra)
 \newcommand{\padasyllable}[4][dotted]{%
@@ -1461,7 +1460,7 @@
 }
 
 % Rāśi start marker (standalone, when not coinciding with nakṣatra start)
-% #1 = pada node name, #2 = rāśi symbol, #3 = rāśi Devanagari, #4 = rāśi romanization
+% #1 = optional TikZ keys, #2 = pada node name, #3 = rāśi symbol, #4 = rāśi Devanagari, #5 = rāśi romanization
 \newcommand{\rashistart}[5][]{%
   \node[anchor=west, text=black, inner sep=0pt, #1,
         font=\fontsize{5}{6}\selectfont]
@@ -1555,7 +1554,7 @@
 }
 
 % Chinese money suit marks — top-right only
-% #1 = numeral (e.g. 一), #2 = suit name (e.g. 条), #3 = optional mahjong tile
+% #1 = optional mahjong tile, #2 = numeral (e.g. 一), #3 = suit name (e.g. 条)
 \newcommand{\chinesecardmarks}[3][]{%
   \directlua{
     if "\luaescapestring{#2}" == "一" then
