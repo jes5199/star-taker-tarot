@@ -1,0 +1,98 @@
+\contentsline {section}{0\hspace {1.5mm}The Void}{5}{}%
+\contentsline {section}{1\hspace {1.5mm}The One}{7}{}%
+\contentsline {part}{The Systems}{10}{}%
+\contentsline {section}{2\hspace {1.5mm}Father Sky \& Mother Earth}{11}{}%
+\contentsline {section}{3\hspace {1.5mm}The Three Primes}{14}{}%
+\contentsline {section}{\hspace {1.5mm}Thema Azoth}{19}{}%
+\contentsline {section}{4\hspace {1.5mm}The Elements}{20}{}%
+\contentsline {section}{5\hspace {1.5mm}The Five Movements}{23}{}%
+\contentsline {section}{6\hspace {1.5mm}Three Pairs Tally}{27}{}%
+\contentsline {section}{7\hspace {1.5mm}The Planets}{28}{}%
+\contentsline {section}{\hspace {1.5mm}Thema Mundi}{29}{}%
+\contentsline {section}{8\hspace {1.5mm}The Trigrams}{30}{}%
+\contentsline {section}{16\hspace {1.5mm}The Geomantic Figures}{31}{}%
+\contentsline {section}{36\hspace {1.5mm}The Game of Hope}{32}{}%
+\contentsline {part}{The Cards}{38}{}%
+\contentsline {chapter}{Major Arcana}{40}{}%
+\contentsline {section}{0\hspace {1.5mm}The Fool}{41}{}%
+\contentsline {section}{I\hspace {1.5mm}The Magician}{42}{}%
+\contentsline {section}{II\hspace {1.5mm}The High Priestess}{43}{}%
+\contentsline {section}{III\hspace {1.5mm}The Empress}{44}{}%
+\contentsline {section}{IV\hspace {1.5mm}The Emperor}{45}{}%
+\contentsline {section}{V\hspace {1.5mm}The Hierophant}{46}{}%
+\contentsline {section}{VI\hspace {1.5mm}The Lovers}{47}{}%
+\contentsline {section}{VII\hspace {1.5mm}The Chariot}{48}{}%
+\contentsline {section}{VIII\hspace {1.5mm}Strength}{49}{}%
+\contentsline {section}{IX\hspace {1.5mm}The Hermit}{50}{}%
+\contentsline {section}{X\hspace {1.5mm}Wheel of Fortune}{51}{}%
+\contentsline {section}{XI\hspace {1.5mm}Justice}{52}{}%
+\contentsline {section}{XII\hspace {1.5mm}The Hanged Man}{53}{}%
+\contentsline {section}{XIII\hspace {1.5mm}Death}{54}{}%
+\contentsline {section}{XIV\hspace {1.5mm}Temperance}{55}{}%
+\contentsline {section}{XV\hspace {1.5mm}The Devil}{56}{}%
+\contentsline {section}{XVI\hspace {1.5mm}The Tower}{57}{}%
+\contentsline {section}{XVII\hspace {1.5mm}The Star}{58}{}%
+\contentsline {section}{XVIII\hspace {1.5mm}The Moon}{59}{}%
+\contentsline {section}{XIX\hspace {1.5mm}The Sun}{60}{}%
+\contentsline {section}{XX\hspace {1.5mm}Judgement}{61}{}%
+\contentsline {section}{XXI\hspace {1.5mm}The World}{62}{}%
+\contentsline {chapter}{Cups}{64}{}%
+\contentsline {section}{Ace of Cups}{65}{}%
+\contentsline {section}{Two of Cups}{66}{}%
+\contentsline {section}{Three of Cups}{67}{}%
+\contentsline {section}{Four of Cups}{68}{}%
+\contentsline {section}{Five of Cups}{69}{}%
+\contentsline {section}{Six of Cups}{70}{}%
+\contentsline {section}{Seven of Cups}{71}{}%
+\contentsline {section}{Eight of Cups}{72}{}%
+\contentsline {section}{Nine of Cups}{73}{}%
+\contentsline {section}{Ten of Cups}{74}{}%
+\contentsline {section}{Page of Cups}{75}{}%
+\contentsline {section}{Knight of Cups}{76}{}%
+\contentsline {section}{Queen of Cups}{77}{}%
+\contentsline {section}{King of Cups}{78}{}%
+\contentsline {chapter}{Pentacles}{80}{}%
+\contentsline {section}{Ace of Pentacles}{81}{}%
+\contentsline {section}{Two of Pentacles}{82}{}%
+\contentsline {section}{Three of Pentacles}{83}{}%
+\contentsline {section}{Four of Pentacles}{84}{}%
+\contentsline {section}{Five of Pentacles}{85}{}%
+\contentsline {section}{Six of Pentacles}{86}{}%
+\contentsline {section}{Seven of Pentacles}{87}{}%
+\contentsline {section}{Eight of Pentacles}{88}{}%
+\contentsline {section}{Nine of Pentacles}{89}{}%
+\contentsline {section}{Ten of Pentacles}{90}{}%
+\contentsline {section}{Page of Pentacles}{91}{}%
+\contentsline {section}{Knight of Pentacles}{92}{}%
+\contentsline {section}{Queen of Pentacles}{93}{}%
+\contentsline {section}{King of Pentacles}{94}{}%
+\contentsline {chapter}{Swords}{96}{}%
+\contentsline {section}{Ace of Swords}{97}{}%
+\contentsline {section}{Two of Swords}{98}{}%
+\contentsline {section}{Three of Swords}{99}{}%
+\contentsline {section}{Four of Swords}{100}{}%
+\contentsline {section}{Five of Swords}{101}{}%
+\contentsline {section}{Six of Swords}{102}{}%
+\contentsline {section}{Seven of Swords}{103}{}%
+\contentsline {section}{Eight of Swords}{104}{}%
+\contentsline {section}{Nine of Swords}{105}{}%
+\contentsline {section}{Ten of Swords}{106}{}%
+\contentsline {section}{Page of Swords}{107}{}%
+\contentsline {section}{Knight of Swords}{108}{}%
+\contentsline {section}{Queen of Swords}{109}{}%
+\contentsline {section}{King of Swords}{110}{}%
+\contentsline {chapter}{Wands}{112}{}%
+\contentsline {section}{Ace of Wands}{113}{}%
+\contentsline {section}{Two of Wands}{114}{}%
+\contentsline {section}{Three of Wands}{115}{}%
+\contentsline {section}{Four of Wands}{116}{}%
+\contentsline {section}{Five of Wands}{117}{}%
+\contentsline {section}{Six of Wands}{118}{}%
+\contentsline {section}{Seven of Wands}{119}{}%
+\contentsline {section}{Eight of Wands}{120}{}%
+\contentsline {section}{Nine of Wands}{121}{}%
+\contentsline {section}{Ten of Wands}{122}{}%
+\contentsline {section}{Page of Wands}{123}{}%
+\contentsline {section}{Knight of Wands}{124}{}%
+\contentsline {section}{Queen of Wands}{125}{}%
+\contentsline {section}{King of Wands}{126}{}%

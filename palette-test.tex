@@ -1,0 +1,120 @@
+\documentclass[letterpaper]{article}
+\usepackage[margin=20mm]{geometry}
+\usepackage{tikz}
+\usepackage{fontspec}
+\newfontface\symbserif{FreeSerif}
+
+\pagestyle{empty}
+
+\newcommand{\swatch}[3]{%
+  % #1 = color, #2 = sign glyph, #3 = label
+  \begin{tikzpicture}
+    \fill[#1] (0,0) rectangle (18mm, 18mm);
+    \node[anchor=center, text=white, font=\symbserif\fontsize{24}{26}\selectfont]
+      at (9mm, 11mm) {#2};
+    \node[anchor=center, text=white, font=\fontsize{6}{7}\selectfont]
+      at (9mm, 3.5mm) {#3};
+  \end{tikzpicture}%
+}
+
+\begin{document}
+\centering
+
+{\Large\bfseries Element Colors (from Aces)}
+
+\vspace{4mm}
+\noindent
+\swatch{red}{△}{Fire / Wands}\hfill
+\swatch{blue}{▽}{Water / Cups}\hfill
+\swatch{yellow!80!orange}{△}{Air / Swords}\hfill
+\swatch{green!50!black}{▽}{Earth / Pentacles}
+
+\vspace{10mm}
+{\Large\bfseries Current Palette}
+
+\vspace{4mm}
+\noindent
+\swatch{red}{♈}{Aries}\hfill
+\swatch{red!50!orange}{♉}{Taurus}\hfill
+\swatch{orange}{♊}{Gemini}\hfill
+\swatch{yellow!50!orange}{♋}{Cancer}\hfill
+\swatch{yellow!80!orange}{♌}{Leo}\hfill
+\swatch{yellow!50!green}{♍}{Virgo}
+
+\vspace{2mm}
+\noindent
+\swatch{green!70!black}{♎}{Libra}\hfill
+\swatch{blue!50!green}{♏}{Scorpio}\hfill
+\swatch{blue}{♐}{Sagittarius}\hfill
+\swatch{blue!50!violet}{♑}{Capricorn}\hfill
+\swatch{violet}{♒}{Aquarius}\hfill
+\swatch{red!50!violet}{♓}{Pisces}
+
+\vspace{10mm}
+{\Large\bfseries Proposed Palette (element anchors)}
+
+\vspace{4mm}
+\noindent
+\swatch{red}{♈}{Aries / Fire}\hfill
+\swatch{red!50!magenta}{♉}{Taurus}\hfill
+\swatch{magenta!50!blue}{♊}{Gemini}\hfill
+\swatch{blue}{♋}{Cancer / Water}\hfill
+\swatch{blue!50!cyan}{♌}{Leo}\hfill
+\swatch{cyan!50!green}{♍}{Virgo}
+
+\vspace{2mm}
+\noindent
+\swatch{yellow!80!orange}{♎}{Libra / Air}\hfill
+\swatch{yellow!50!green}{♏}{Scorpio}\hfill
+\swatch{green!70!black}{♐}{Sagittarius}\hfill
+\swatch{green!50!black}{♑}{Capricorn / Earth}\hfill
+\swatch{violet!60!black}{♒}{Aquarius}\hfill
+\swatch{red!60!black}{♓}{Pisces}
+
+\vspace{10mm}
+{\Large\bfseries HSB Palette (true yellow for Air)}
+
+\vspace{4mm}
+
+% HSB palette: anchor element colors at cardinal signs, interpolate between
+% Aries (Fire) = red, H=0
+% Cancer (Water) = blue, H=240
+% Libra (Air) = yellow, H=60
+% Capricorn (Earth) = dark green, H=120, B=0.5
+%
+% Aries→Taurus→Gemini→Cancer: 0° → 240° going through 300° (magenta/violet)
+% Cancer→Leo→Virgo→Libra: 240° → 60° going through 150° (teal/green)
+% Libra→Scorpio→Sagittarius→Capricorn: 60° → 120° (yellow-green)
+% Capricorn→Aquarius→Pisces→Aries: 120° → 0°/360° going through 270° (dark tones)
+
+\definecolor{hsb-aries}{Hsb}{0, 1, 1}         % red (Fire)
+\definecolor{hsb-taurus}{Hsb}{320, 1, 0.85}    % magenta-rose
+\definecolor{hsb-gemini}{Hsb}{280, 0.8, 0.8}   % violet
+\definecolor{hsb-cancer}{Hsb}{240, 1, 1}        % blue (Water)
+\definecolor{hsb-leo}{Hsb}{190, 0.9, 0.85}      % teal-cyan
+\definecolor{hsb-virgo}{Hsb}{140, 0.8, 0.7}    % green
+\definecolor{hsb-libra}{Hsb}{60, 1, 1}          % yellow (Air)
+\definecolor{hsb-scorpio}{Hsb}{80, 0.9, 0.7}   % yellow-green
+\definecolor{hsb-sagittarius}{Hsb}{100, 0.9, 0.6} % green
+\definecolor{hsb-capricorn}{Hsb}{120, 1, 0.5}   % dark green (Earth)
+\definecolor{hsb-aquarius}{Hsb}{270, 0.7, 0.45}  % dark violet
+\definecolor{hsb-pisces}{Hsb}{340, 0.8, 0.55}    % dark rose
+
+\noindent
+\swatch{hsb-aries}{♈}{Aries / Fire}\hfill
+\swatch{hsb-taurus}{♉}{Taurus}\hfill
+\swatch{hsb-gemini}{♊}{Gemini}\hfill
+\swatch{hsb-cancer}{♋}{Cancer / Water}\hfill
+\swatch{hsb-leo}{♌}{Leo}\hfill
+\swatch{hsb-virgo}{♍}{Virgo}
+
+\vspace{2mm}
+\noindent
+\swatch{hsb-libra}{♎}{Libra / Air}\hfill
+\swatch{hsb-scorpio}{♏}{Scorpio}\hfill
+\swatch{hsb-sagittarius}{♐}{Sagittarius}\hfill
+\swatch{hsb-capricorn}{♑}{Capricorn / Earth}\hfill
+\swatch{hsb-aquarius}{♒}{Aquarius}\hfill
+\swatch{hsb-pisces}{♓}{Pisces}
+
+\end{document}

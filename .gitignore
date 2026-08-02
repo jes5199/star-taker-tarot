@@ -1,3 +1,7 @@
 *.aux
 *.log
 *.pdf
+
+# Agent working state — not source, and this repo is public.
+# (2026-08-02: excluded deliberately when everything else was committed.)
+.claude/
