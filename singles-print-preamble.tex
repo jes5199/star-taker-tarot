@@ -1,0 +1,35 @@
+% Shared by singles.tex and print.tex: card scaling, decan geometry, \printpipcard
+\showbordertrue
+\def\cardscale{1.06257}
+\newlength{\scaledcardwidth}
+\pgfmathsetlength{\scaledcardwidth}{\cardwidth*\cardscale}
+\newlength{\scaledcardheight}
+\pgfmathsetlength{\scaledcardheight}{\cardheight*\cardscale}
+% Offset from page center to top of decan meter (left edge of card)
+\newlength{\decantopx}
+\pgfmathsetlength{\decantopx}{-0.5*\scaledcardwidth}
+\newlength{\decantopy}
+\pgfmathsetlength{\decantopy}{\cardscale*(0.5*\cardheight-20mm)}
+% Scaled decan meter height (from y=0 to y=cardheight-20mm)
+\newlength{\decanmeterheight}
+\pgfmathsetlength{\decanmeterheight}{(\cardheight-20mm)*\cardscale}
+% Anchor position for bottom jaunty card (south-west, rotate=-10)
+% such that its decan meter top lands at bottom-left of main card
+\newlength{\decanbotx}
+\pgfmathsetlength{\decanbotx}{\decantopx - \decanmeterheight*sin(10)}
+\newlength{\decanboty}
+\pgfmathsetlength{\decanboty}{-0.5*\scaledcardheight - \decanmeterheight*cos(10)}
+% Print pip card with decan neighbors: #1=prev decan, #2=this card, #3=next decan
+% Ecliptic goes CCW, so prev is below (next wall down) and next is above (next wall up)
+\newcommand{\printpipcard}[3]{%
+  ~\begin{tikzpicture}[remember picture, overlay]
+  {\jauntytrue
+   \colorlet{lenormandblack}{gray!60}\colorlet{lenormandwhite}{gray!40}%
+  \node[anchor=south west, rotate=-10, inner sep=0pt, outer sep=0pt]
+    at ([xshift=\decanbotx, yshift=\decanboty]current page.center) {#1};
+  \node[anchor=south west, rotate=10, inner sep=0pt, outer sep=0pt]
+    at ([xshift=\decantopx, yshift=\decantopy]current page.center) {#3};}%
+  \node[inner sep=0pt, outer sep=0pt] at (current page.center) {#2};
+  \end{tikzpicture}%
+  \newpage
+}

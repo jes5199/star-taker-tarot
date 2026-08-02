@@ -23,7 +23,7 @@ cards.pdf: cards.tex cards-body.tex $(DEPS)
 	-$(LUALATEX) cards.tex
 
 # Singles (one card per page)
-singles.pdf: singles.tex singles-body.tex $(DEPS)
+singles.pdf: singles.tex singles-body.tex singles-print-preamble.tex $(DEPS)
 	-$(LUALATEX) singles.tex
 
 # Dark background variant
@@ -31,7 +31,7 @@ dark.pdf: dark.tex cards-body.tex $(DEPS)
 	-$(LUALATEX) dark.tex
 
 # Print-ready version
-print.pdf: print.tex print-body.tex $(DEPS)
+print.pdf: print.tex print-body.tex singles-print-preamble.tex $(DEPS)
 	-$(LUALATEX) print.tex
 
 # Card back
