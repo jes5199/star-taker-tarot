@@ -33,3 +33,27 @@
   \end{tikzpicture}%
   \newpage
 }
+% Single card centered on its own page
+\newcommand{\printsinglecard}[1]{%
+~\begin{tikzpicture}[remember picture, overlay]
+\node at (current page.center) {
+#1%
+};
+\end{tikzpicture}
+\newpage
+}
+% Three cards side by side on one page (previous / this / next)
+\newcommand{\printtriplecard}[3]{%
+~\begin{tikzpicture}[remember picture, overlay]
+\node at ([xshift=-\scaledcardwidth]current page.center) {
+#1%
+};
+\node at (current page.center) {
+#2%
+};
+\node at ([xshift=\scaledcardwidth]current page.center) {
+#3%
+};
+\end{tikzpicture}
+\newpage
+}
