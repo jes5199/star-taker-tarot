@@ -4,36 +4,36 @@ Equal-sized sidereal divisions: 12°51'26" each (360° ÷ 28)
 Fagan-Allen ayanamsa for 2030: 25°09'
 Source: https://shulyrose.com/a-technical-guide-to-the-sidereal-manzil
 
-#    Name                       Indicator Star          Start               End                 Meaning
-──────────────────────────────────────────────────────────────────────────────────────────────────────────────
-1    Sharaṭayn · Naṭḥ           Sheratan (β Arietis)    25°09' Aries        08°01' Taurus       The Two Signs
-2    Buṭayn                     Botein (δ Arietis)      08°01' Taurus       20°52' Taurus       The Little Belly
-3    Thurayyā                   Alcyone (η Tauri)       20°52' Taurus       03°44' Gemini       The Pleiades
-4    Dabarān                    Aldebaran (α Tauri)     03°44' Gemini       16°35' Gemini       The Follower
-5    Haqʿa                      Meissa (λ Orionis)      16°35' Gemini       29°26' Gemini       The Circle
-6    Hanʿa                      Alhena (γ Geminorum)    29°26' Gemini       12°18' Cancer       The Brand
-7    Dhirāʿ                     Castor (α Geminorum)    12°18' Cancer       25°09' Cancer       The Forearm
-8    Nathra                     Praesepe (M44 Cancri)   25°09' Cancer       08°01' Leo          The Gap
-9    Ṭarf                       Alterf (λ Leonis)       08°01' Leo          20°52' Leo          The Glance
-10   Jabha                      Regulus (α Leonis)      20°52' Leo          03°44' Virgo        The Forehead
-11   Zubra · Kharātān           Zosma (δ Leonis)        03°44' Virgo        16°35' Virgo        The Mane
-12   Ṣarfa                      Denebola (β Leonis)     16°35' Virgo        29°26' Virgo        The Changer
-13   ʿAwwāʾ · Zāwiya            Zavijava (β Virginis)   29°26' Virgo        12°18' Libra        The Howler
-14   Simāk al-Aʿzal             Spica (α Virginis)      12°18' Libra        25°09' Libra        The Unarmed
-15   Ghafr                      Syrma (ι Virginis)      25°09' Libra        08°01' Scorpio      The Cover
-16   Zubānā                     Zuben Elgenubi (α Lib)  08°01' Scorpio      20°52' Scorpio      The Claws
-17   Iklīl                      Acrab (β Scorpii)       20°52' Scorpio      03°44' Sagittarius  The Crown
-18   Qalb                       Antares (α Scorpii)     03°44' Sagittarius  16°35' Sagittarius  The Heart
-19   Shawla                     Shaula (λ Scorpii)      16°35' Sagittarius  29°26' Sagittarius  The Raised Tail
-20   Naʿāʾim                    Ascella (ζ Sagittarii)  29°26' Sagittarius  12°18' Capricorn    The Ostriches
-21   Balda                      Al-Baldah (π Sgr)       12°18' Capricorn    25°09' Capricorn    The Empty Place
-22   Saʿd al-Dhābiḥ             Giedi Prima (α Cap)     25°09' Capricorn    08°01' Aquarius     The Slaughterer
-23   Saʿd Bulaʿ                 Al Bali (ε Aquarii)     08°01' Aquarius     20°52' Aquarius     The Swallower
-24   Saʿd al-Suʿūd              Sadalsuud (β Aquarii)   20°52' Aquarius     03°44' Pisces       Luckiest of the Lucky
-25   Saʿd al-Akhbiya            Sadalachbia (γ Aqr)     03°44' Pisces       16°35' Pisces       The Tents
-26   Fargh al-Muqaddam          Markab (α Pegasi)       16°35' Pisces       29°26' Pisces       The Former Spout
-27   Fargh al-Muʾakhkhar        Algenib (γ Pegasi)      29°26' Pisces       12°18' Aries        The Latter Spout
-28   Rishāʾ · Baṭn al-Ḥūt      Mirach (β Andromedae)   12°18' Aries        25°09' Aries        Belly of the Fish
+#    Name                                        Indicator Star          Start               End                 Meaning
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+1    al-Sharaṭān · al-Naṭḥ                       Sheratan (β Arietis)    25°09' Aries        08°01' Taurus       The Two Signs
+2    al-Buṭayn                                   Botein (δ Arietis)      08°01' Taurus       20°52' Taurus       The Little Belly
+3    al-Thurayyā                                 Alcyone (η Tauri)       20°52' Taurus       03°44' Gemini       The Pleiades
+4    al-Dabarān                                  Aldebaran (α Tauri)     03°44' Gemini       16°35' Gemini       The Follower
+5    al-Haqʿa                                    Meissa (λ Orionis)      16°35' Gemini       29°26' Gemini       The Circle
+6    al-Hanʿa                                    Alhena (γ Geminorum)    29°26' Gemini       12°18' Cancer       The Brand
+7    al-Dhirāʿ                                   Castor (α Geminorum)    12°18' Cancer       25°09' Cancer       The Forearm
+8    al-Nathra                                   Praesepe (M44 Cancri)   25°09' Cancer       08°01' Leo          The Gap
+9    al-Ṭarf                                     Alterf (λ Leonis)       08°01' Leo          20°52' Leo          The Glance
+10   al-Jabha                                    Regulus (α Leonis)      20°52' Leo          03°44' Virgo        The Forehead
+11   al-Zubra · al-Kharātān                      Zosma (δ Leonis)        03°44' Virgo        16°35' Virgo        The Mane
+12   al-Ṣarfa                                    Denebola (β Leonis)     16°35' Virgo        29°26' Virgo        The Changer
+13   al-ʿAwwāʾ                                   Zavijava (β Virginis)   29°26' Virgo        12°18' Libra        The Howler
+14   al-Simāk al-Aʿzal                           Spica (α Virginis)      12°18' Libra        25°09' Libra        The Unarmed
+15   al-Ghafr                                    Syrma (ι Virginis)      25°09' Libra        08°01' Scorpio      The Cover
+16   al-Zubānā                                   Zuben Elgenubi (α Lib)  08°01' Scorpio      20°52' Scorpio      The Claws
+17   al-Iklīl                                    Acrab (β Scorpii)       20°52' Scorpio      03°44' Sagittarius  The Crown
+18   al-Qalb                                     Antares (α Scorpii)     03°44' Sagittarius  16°35' Sagittarius  The Heart
+19   al-Shawla                                   Shaula (λ Scorpii)      16°35' Sagittarius  29°26' Sagittarius  The Raised Tail
+20   al-Naʿāʾim                                  Ascella (ζ Sagittarii)  29°26' Sagittarius  12°18' Capricorn    The Ostriches
+21   al-Balda                                    Al-Baldah (π Sgr)       12°18' Capricorn    25°09' Capricorn    The Empty Place
+22   Saʿd al-Dhābiḥ                              Giedi Prima (α Cap)     25°09' Capricorn    08°01' Aquarius     The Slaughterer
+23   Saʿd al-Bulaʿ                               Al Bali (ε Aquarii)     08°01' Aquarius     20°52' Aquarius     The Swallower
+24   Saʿd al-Suʿūd                               Sadalsuud (β Aquarii)   20°52' Aquarius     03°44' Pisces       Luckiest of the Lucky
+25   Saʿd al-Akhbiya                             Sadalachbia (γ Aqr)     03°44' Pisces       16°35' Pisces       The Tents
+26   al-Fargh al-Muqaddam                        Markab (α Pegasi)       16°35' Pisces       29°26' Pisces       The Former Spout
+27   al-Fargh al-Thānī · al-Fargh al-Muʾakhkhar  Algenib (γ Pegasi)      29°26' Pisces       12°18' Aries        The Latter Spout
+28   Baṭn al-Ḥūt · al-Rishāʾ                     Mirach (β Andromedae)   12°18' Aries        25°09' Aries        Belly of the Fish
 
 Indicator stars from al-Bīrūnī via Shuly Rose.
 Boundaries computed via compute-manzil.py using Fagan-Allen ayanamsa (25°00' in 2019, +50.29"/year).

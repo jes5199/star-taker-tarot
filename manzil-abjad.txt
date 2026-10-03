@@ -16,36 +16,36 @@ origin, and all modern practitioners follow suit.
 
 Full Mashriqī abjad mapping for manāzil:
 
-#    Manzil                    Letter    Abjad #
-──────────────────────────────────────────────────
-1    Sharaṭayn · Naṭḥ          أ         1
-2    Buṭayn                    ب         2
-3    Thurayyā                  ج         3
-4    Dabarān                   د         4
-5    Haqʿa                     ه         5
-6    Hanʿa                     و         6
-7    Dhirāʿ                    ز         7
-8    Nathra                    ح         8
-9    Ṭarf                      ط         9
-10   Jabha                     ي         10
-11   Zubra · Kharātān          ك         11
-12   Ṣarfa                     ل         12
-13   ʿAwwāʾ · Zāwiya           م         13
-14   Simāk al-Aʿzal            ن         14
-15   Ghafr                     س         15
-16   Zubānā                    ع         16
-17   Iklīl                     ف         17
-18   Qalb                      ص         18
-19   Shawla                    ق         19
-20   Naʿāʾim                   ر         20
-21   Balda                     ش         21
-22   Saʿd al-Dhābiḥ            ت         22
-23   Saʿd Bulaʿ                ث         23
-24   Saʿd al-Suʿūd             خ         24
-25   Saʿd al-Akhbiya           ذ         25
-26   Fargh al-Muqaddam         ض         26
-27   Fargh al-Muʾakhkhar       ظ         27
-28   Rishāʾ · Baṭn al-Ḥūt     غ         28
+#    Manzil                                      Letter    Abjad #
+────────────────────────────────────────────────────────────────────
+1    al-Sharaṭān · al-Naṭḥ                       أ         1
+2    al-Buṭayn                                   ب         2
+3    al-Thurayyā                                 ج         3
+4    al-Dabarān                                  د         4
+5    al-Haqʿa                                    ه         5
+6    al-Hanʿa                                    و         6
+7    al-Dhirāʿ                                   ز         7
+8    al-Nathra                                   ح         8
+9    al-Ṭarf                                     ط         9
+10   al-Jabha                                    ي         10
+11   al-Zubra · al-Kharātān                      ك         11
+12   al-Ṣarfa                                    ل         12
+13   al-ʿAwwāʾ                                   م         13
+14   al-Simāk al-Aʿzal                           ن         14
+15   al-Ghafr                                    س         15
+16   al-Zubānā                                   ع         16
+17   al-Iklīl                                    ف         17
+18   al-Qalb                                     ص         18
+19   al-Shawla                                   ق         19
+20   al-Naʿāʾim                                  ر         20
+21   al-Balda                                    ش         21
+22   Saʿd al-Dhābiḥ                              ت         22
+23   Saʿd al-Bulaʿ                               ث         23
+24   Saʿd al-Suʿūd                               خ         24
+25   Saʿd al-Akhbiya                             ذ         25
+26   al-Fargh al-Muqaddam                        ض         26
+27   al-Fargh al-Thānī · al-Fargh al-Muʾakhkhar  ظ         27
+28   Baṭn al-Ḥūt · al-Rishāʾ                     غ         28
 
 Source: Shams al-Maʿārif (al-Būnī), Ch. 2 on Mansions of the Moon.
 Mashriqī mnemonic سعفص (saʿfaṣ) for positions 15–18.

@@ -12,34 +12,34 @@ SIGNS = [
 
 # 28 manāzil with Arabic transliteration and English meaning
 MANZIL = [
-    ("Sharaṭayn · Naṭḥ", "الشرطين", "The Two Signs"),
-    ("Buṭayn", "البطين", "The Little Belly"),
-    ("Thurayyā", "الثريا", "The Pleiades"),
-    ("Dabarān", "الدبران", "The Follower"),
-    ("Haqʿa", "الهقعة", "The Circle"),
-    ("Hanʿa", "الهنعة", "The Brand"),
-    ("Dhirāʿ", "الذراع", "The Forearm"),
-    ("Nathra", "النثرة", "The Gap"),
-    ("Ṭarf", "الطرف", "The Glance"),
-    ("Jabha", "الجبهة", "The Forehead"),
-    ("Zubra · Kharātān", "الزبرة", "The Mane"),
-    ("Ṣarfa", "الصرفة", "The Changer"),
-    ("ʿAwwāʾ · Zāwiya", "العواء", "The Howler"),
-    ("Simāk al-Aʿzal", "السماك الأعزل", "The Unarmed"),
-    ("Ghafr", "الغفر", "The Cover"),
-    ("Zubānā", "الزبانى", "The Claws"),
-    ("Iklīl", "الإكليل", "The Crown"),
-    ("Qalb", "القلب", "The Heart"),
-    ("Shawla", "الشولة", "The Raised Tail"),
-    ("Naʿāʾim", "النعائم", "The Ostriches"),
-    ("Balda", "البلدة", "The Empty Place"),
+    ("al-Sharaṭān · al-Naṭḥ", "الشرطان", "The Two Signs"),
+    ("al-Buṭayn", "البطين", "The Little Belly"),
+    ("al-Thurayyā", "الثريا", "The Pleiades"),
+    ("al-Dabarān", "الدبران", "The Follower"),
+    ("al-Haqʿa", "الهقعة", "The Circle"),
+    ("al-Hanʿa", "الهنعة", "The Brand"),
+    ("al-Dhirāʿ", "الذراع", "The Forearm"),
+    ("al-Nathra", "النثرة", "The Gap"),
+    ("al-Ṭarf", "الطرف", "The Glance"),
+    ("al-Jabha", "الجبهة", "The Forehead"),
+    ("al-Zubra · al-Kharātān", "الزبرة", "The Mane"),
+    ("al-Ṣarfa", "الصرفة", "The Changer"),
+    ("al-ʿAwwāʾ", "العواء", "The Howler"),
+    ("al-Simāk al-Aʿzal", "السماك الأعزل", "The Unarmed"),
+    ("al-Ghafr", "الغفر", "The Cover"),
+    ("al-Zubānā", "الزبانى", "The Claws"),
+    ("al-Iklīl", "الإكليل", "The Crown"),
+    ("al-Qalb", "القلب", "The Heart"),
+    ("al-Shawla", "الشولة", "The Raised Tail"),
+    ("al-Naʿāʾim", "النعائم", "The Ostriches"),
+    ("al-Balda", "البلدة", "The Empty Place"),
     ("Saʿd al-Dhābiḥ", "سعد الذابح", "The Slaughterer"),
-    ("Saʿd Bulaʿ", "سعد بلع", "The Swallower"),
+    ("Saʿd al-Bulaʿ", "سعد البلع", "The Swallower"),
     ("Saʿd al-Suʿūd", "سعد السعود", "Luckiest of the Lucky"),
     ("Saʿd al-Akhbiya", "سعد الأخبية", "The Tents"),
-    ("Fargh al-Muqaddam", "الفرغ المقدم", "The Former Spout"),
-    ("Fargh al-Muʾakhkhar", "الفرغ المؤخر", "The Latter Spout"),
-    ("Rishāʾ · Baṭn al-Ḥūt", "بطن الحوت", "Belly of the Fish"),
+    ("al-Fargh al-Muqaddam", "الفرغ المقدم", "The Former Spout"),
+    ("al-Fargh al-Thānī · al-Fargh al-Muʾakhkhar", "الفرغ الثاني", "The Latter Spout"),
+    ("Baṭn al-Ḥūt · al-Rishāʾ", "بطن الحوت", "Belly of the Fish"),
 ]
 
 # Fagan-Allen ayanamsa: 25°00'00" in 2019
@@ -70,7 +70,7 @@ for year in [2024, 2030, 2050]:
     print(f"28 Lunar Mansions (Manāzil) — Tropical Boundaries ({year})")
     print(f"Fagan-Allen ayanamsa: {lon_to_zodiac(ayanamsa).replace(SIGNS[0], '').strip()}")
     print()
-    print(f"{'#':<4} {'Name':<26} {'Start':<22} {'End':<22} {'Meaning'}")
+    print(f"{'#':<4} {'Name':<44} {'Start':<22} {'End':<22} {'Meaning'}")
     print("─" * 100)
 
     for i, (name, arabic, meaning) in enumerate(MANZIL):
@@ -78,7 +78,7 @@ for year in [2024, 2030, 2050]:
         sid_end = (i + 1) * MANSION_SIZE
         trop_start = (sid_start + ayanamsa) % 360
         trop_end = (sid_end + ayanamsa) % 360
-        print(f"{i+1:<4} {name:<26} {lon_to_zodiac(trop_start):<22} {lon_to_zodiac(trop_end):<22} {meaning}")
+        print(f"{i+1:<4} {name:<44} {lon_to_zodiac(trop_start):<22} {lon_to_zodiac(trop_end):<22} {meaning}")
 
     print()
     print()
