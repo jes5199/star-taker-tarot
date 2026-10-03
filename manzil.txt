@@ -14,12 +14,12 @@ Source: https://shulyrose.com/a-technical-guide-to-the-sidereal-manzil
 6    Hanʿa                      Alhena (γ Geminorum)    29°26' Gemini       12°18' Cancer       The Brand
 7    Dhirāʿ                     Castor (α Geminorum)    12°18' Cancer       25°09' Cancer       The Forearm
 8    Nathra                     Praesepe (M44 Cancri)   25°09' Cancer       08°01' Leo          The Gap
-9    Ṭarfa                      Alterf (λ Leonis)       08°01' Leo          20°52' Leo          The Glance
+9    Ṭarf                       Alterf (λ Leonis)       08°01' Leo          20°52' Leo          The Glance
 10   Jabha                      Regulus (α Leonis)      20°52' Leo          03°44' Virgo        The Forehead
 11   Zubra · Kharātān           Zosma (δ Leonis)        03°44' Virgo        16°35' Virgo        The Mane
 12   Ṣarfa                      Denebola (β Leonis)     16°35' Virgo        29°26' Virgo        The Changer
 13   ʿAwwāʾ · Zāwiya            Zavijava (β Virginis)   29°26' Virgo        12°18' Libra        The Howler
-14   Simāk al-ʿĀzal             Spica (α Virginis)      12°18' Libra        25°09' Libra        The Unarmed
+14   Simāk al-Aʿzal             Spica (α Virginis)      12°18' Libra        25°09' Libra        The Unarmed
 15   Ghafr                      Syrma (ι Virginis)      25°09' Libra        08°01' Scorpio      The Cover
 16   Zubānā                     Zuben Elgenubi (α Lib)  08°01' Scorpio      20°52' Scorpio      The Claws
 17   Iklīl                      Acrab (β Scorpii)       20°52' Scorpio      03°44' Sagittarius  The Crown
@@ -30,11 +30,11 @@ Source: https://shulyrose.com/a-technical-guide-to-the-sidereal-manzil
 22   Saʿd al-Dhābiḥ             Giedi Prima (α Cap)     25°09' Capricorn    08°01' Aquarius     The Slaughterer
 23   Saʿd Bulaʿ                 Al Bali (ε Aquarii)     08°01' Aquarius     20°52' Aquarius     The Swallower
 24   Saʿd al-Suʿūd              Sadalsuud (β Aquarii)   20°52' Aquarius     03°44' Pisces       Luckiest of the Lucky
-25   Saʿd al-Akhbiyya           Sadalachbia (γ Aqr)     03°44' Pisces       16°35' Pisces       The Tents
-26   Fargh al-Muqaddim          Markab (α Pegasi)       16°35' Pisces       29°26' Pisces       The Former Spout
-27   Fargh al-Muʾakkhir         Algenib (γ Pegasi)      29°26' Pisces       12°18' Aries        The Latter Spout
+25   Saʿd al-Akhbiya            Sadalachbia (γ Aqr)     03°44' Pisces       16°35' Pisces       The Tents
+26   Fargh al-Muqaddam          Markab (α Pegasi)       16°35' Pisces       29°26' Pisces       The Former Spout
+27   Fargh al-Muʾakhkhar        Algenib (γ Pegasi)      29°26' Pisces       12°18' Aries        The Latter Spout
 28   Rishāʾ · Baṭn al-Ḥūt      Mirach (β Andromedae)   12°18' Aries        25°09' Aries        Belly of the Fish
 
-Indicator stars from al-Biruni via Shuly Rose.
+Indicator stars from al-Bīrūnī via Shuly Rose.
 Boundaries computed via compute-manzil.py using Fagan-Allen ayanamsa (25°00' in 2019, +50.29"/year).
 Shuly's 2019 boundaries confirm: all values offset by exactly +9' from hers, consistent with precession.

@@ -80,6 +80,6 @@ Scheat                  29°42' Pisces       29°48' Pisces       00°05' Aries 
 
 2024 source: https://orphicastrology.com/fixedstars/behenian (Behenian 15)
 2030/2050 positions: computed via skyfield (Hipparcos + DE421), see precess-stars.py
-Manzil indicator stars from al-Biruni via Shuly Rose.
+Manzil indicator stars from al-Bīrūnī via Shuly Rose.
 Xiù determinative stars from astrologyking.com/chinese-lunar-mansions.
 Praesepe position uses Epsilon Cancri (Meleph), brightest member of the M44 cluster.

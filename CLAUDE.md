@@ -64,3 +64,15 @@ LuaLaTeX does not automatically handle right-to-left rendering. Single character
 - Arabic uses `\beginR...\endR` blocks via `\kufifont`
 
 The `Script=Hebrew` / `Script=Arabic` font options handle glyph shaping but NOT bidi ordering — `luabidi` is required for that.
+
+### Arabic transliteration
+
+One scheme everywhere (data files, comments, rendered text): ʿ (U+02BF) for
+ʿayn, ʾ (U+02BE) for hamza — never ASCII `'`; macrons for long vowels;
+dot-under emphatics (ṭ ḥ ṣ ḍ ẓ); digraphs th kh dh sh gh, doubled as
+`khkh`, `shsh`; tāʾ marbūṭa as `-a`; article written `al-` with no
+sun-letter assimilation. Lunar-mansion names drop a leading article
+(`Sharaṭayn`, not `al-Sharaṭayn`) but keep internal ones
+(`Saʿd al-Dhābiḥ`); alternate names are joined with ` · `. The canonical
+28 names live in `manzil.txt`. Western star names (Sheratan, Sadalsuud)
+and English-loan terms (abjad, manzil, Kufi) stay unmarked.

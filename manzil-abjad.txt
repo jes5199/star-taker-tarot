@@ -1,20 +1,20 @@
-Mashriqi Abjad Letter Assignments for 28 Manāzil
+Mashriqī Abjad Letter Assignments for 28 Manāzil
 =================================================
 
-The project uses the Mashriqi (Eastern) abjad ordering, following the
-Shams al-Ma'arif (al-Buni) and the standard tradition of manzil-letter
-correspondences. The key difference from the Maghrebi ordering is in
+The project uses the Mashriqī (Eastern) abjad ordering, following the
+Shams al-Maʿārif (al-Būnī) and the standard tradition of manzil-letter
+correspondences. The key difference from the Maghribī ordering is in
 positions 15–21 and 26–28:
 
-  Mashriqi: ...ن(14) س(15) ع ف ص(18) ق ر ش(21)...ض(26) ظ(27) غ(28)
-  Maghrebi: ...ن(14) ص(15) ع ف ض(18) ق ر س(21)...ظ(26) غ(27) ش(28)
+  Mashriqī: ...ن(14) س(15) ع ف ص(18) ق ر ش(21)...ض(26) ظ(27) غ(28)
+  Maghribī: ...ن(14) ص(15) ع ف ض(18) ق ر س(21)...ظ(26) غ(27) ش(28)
 
-Rationale: Although the Maghrebi order is considered older as a general
+Rationale: Although the Maghribī order is considered older as a general
 abjad system, no classical source on manzil-letter magic uses it. The
-Shams al-Ma'arif uses Mashriqi ordering despite al-Buni's North African
+Shams al-Maʿārif uses Mashriqī ordering despite al-Būnī's North African
 origin, and all modern practitioners follow suit.
 
-Full Mashriqi abjad mapping for manāzil:
+Full Mashriqī abjad mapping for manāzil:
 
 #    Manzil                    Letter    Abjad #
 ──────────────────────────────────────────────────
@@ -26,12 +26,12 @@ Full Mashriqi abjad mapping for manāzil:
 6    Hanʿa                     و         6
 7    Dhirāʿ                    ز         7
 8    Nathra                    ح         8
-9    Ṭarfa                     ط         9
+9    Ṭarf                      ط         9
 10   Jabha                     ي         10
 11   Zubra · Kharātān          ك         11
 12   Ṣarfa                     ل         12
 13   ʿAwwāʾ · Zāwiya           م         13
-14   Simāk al-ʿĀzal            ن         14
+14   Simāk al-Aʿzal            ن         14
 15   Ghafr                     س         15
 16   Zubānā                    ع         16
 17   Iklīl                     ف         17
@@ -42,10 +42,10 @@ Full Mashriqi abjad mapping for manāzil:
 22   Saʿd al-Dhābiḥ            ت         22
 23   Saʿd Bulaʿ                ث         23
 24   Saʿd al-Suʿūd             خ         24
-25   Saʿd al-Akhbiyya          ذ         25
-26   Fargh al-Muqaddim         ض         26
-27   Fargh al-Muʾakkhir        ظ         27
+25   Saʿd al-Akhbiya           ذ         25
+26   Fargh al-Muqaddam         ض         26
+27   Fargh al-Muʾakhkhar       ظ         27
 28   Rishāʾ · Baṭn al-Ḥūt     غ         28
 
-Source: Shams al-Ma'arif (al-Buni), Ch. 2 on Mansions of the Moon.
-Mashriqi mnemonic سعفص (saʿfaṣ) for positions 15–18.
+Source: Shams al-Maʿārif (al-Būnī), Ch. 2 on Mansions of the Moon.
+Mashriqī mnemonic سعفص (saʿfaṣ) for positions 15–18.
